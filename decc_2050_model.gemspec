@@ -8,8 +8,7 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
   s.summary = "A C version of DECC's 2050 Pathway Excel Spreadsheet"
   s.description = File.read(File.join(File.dirname(__FILE__), 'README'))
-  s.files = ["LICENSE", "README", "{src,bin}/**/*"].map{|p| Dir[p]}.flatten
-  s.executables = ["excel_to_c","excel_to_ruby"]
-  s.require_path = "src"
+  s.files = ["LICENSE", "README", "{lib}/**/*",'ext/**/*.{c,h,rb}'].map{|p| Dir[p]}.flatten
+  s.extensions = ['ext/extconf.rb']
   s.has_rdoc = false
 end
