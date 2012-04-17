@@ -1,0 +1,18 @@
+DECC 2050 CALCULATOR TOOL
+
+A c version and ruby wrapper for the www.decc.gov.uk 2050 energy and climate change excel calculator
+
+Further detail on the project:
+http://www.decc.gov.uk/2050
+
+Canonical source:
+http://github.com/decc/decc_2050_model
+
+DEPENDENCIES
+ruby 1.9.2 (including development headers)
+basic c development headers
+
+INSTALLATION
+
+  gem install decc_2050_model
+
