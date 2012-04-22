@@ -2,7 +2,7 @@ require 'ffi'
 
 module Decc2050Model
   extend FFI::Library
-  ffi_lib File.join('decc_2050_model')
+  ffi_lib File.join(File.dirname(__FILE__),FFI.map_library_name('decc_2050_model'))
   ExcelType = enum :ExcelEmpty, :ExcelNumber, :ExcelString, :ExcelBoolean, :ExcelError, :ExcelRange
                 
   class ExcelValue < FFI::Struct

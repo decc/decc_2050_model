@@ -1,0 +1,22 @@
+require 'rake/clean'
+require 'ffi'
+
+this_directory = File.dirname(__FILE__)
+
+COMPILER = "cc"
+COMPILER_FLAGS = "-shared"
+OUTPUT = FFI.map_library_name "decc_2050_model"
+OUTPUT_DIR = "../lib"
+SRC = "decc_2050_model.c"
+CLOBBER.include OUTPUT
+
+task :default => [:build]
+
+desc "Build the 2050 model, then install it"
+task :build => [OUTPUT]
+
+file OUTPUT => SRC do
+  puts "Building #{SRC} and putting it in #{OUTPUT_DIR} as #{OUTPUT}"
+  puts "Note that this is a really large c file, it may take tens of minutes to compile."
+  sh "#{COMPILER} #{COMPILER_FLAGS} -o #{OUTPUT_DIR}/#{OUTPUT} #{SRC}"
+end

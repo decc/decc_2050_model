@@ -12,7 +12,12 @@ DEPENDENCIES
 ruby 1.9.2 (including development headers)
 basic c development headers
 
+This has ONLY been tested on OSX and on Ubuntu 64 bit EC2 ami.
+Grateful for reports from other platforms. 
+
 INSTALLATION
+
+Note that this compiles the underlying c code, which might take 10-20 minutes or so
 
   gem install decc_2050_model
 
