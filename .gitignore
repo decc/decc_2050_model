@@ -1,3 +1,4 @@
 *.o
 *.dylib
 *.gem
+spreadsheet/2050Model
