@@ -1,22 +1,29 @@
-require 'rake/clean'
 require 'ffi'
 
 this_directory = File.dirname(__FILE__)
 
-COMPILER = "cc"
-COMPILER_FLAGS = "-shared"
+COMPILER = "gcc"
+COMPILE_FLAGS = "-fpic"
+SHARED_LIBRARY_FLAGS = "-shared"
+
 OUTPUT = FFI.map_library_name "decc_2050_model"
-OUTPUT_DIR = "../lib"
-SRC = "decc_2050_model.c"
-CLOBBER.include OUTPUT
+OUTPUT_DIR = "../lib/decc_2050_model/"
+SOURCE = "decc_2050_model.c"
+OBJECT = "decc_2050_model.o"
 
 task :default => [:build]
 
 desc "Build the 2050 model, then install it"
 task :build => [OUTPUT]
 
-file OUTPUT => SRC do
-  puts "Building #{SRC} and putting it in #{OUTPUT_DIR} as #{OUTPUT}"
+file OUTPUT => OBJECT do
+  puts "Turning #{OBJECT} and putting it in #{OUTPUT_DIR} as #{OUTPUT}"
   puts "Note that this is a really large c file, it may take tens of minutes to compile."
-  sh "#{COMPILER} #{COMPILER_FLAGS} -o #{OUTPUT_DIR}/#{OUTPUT} #{SRC}"
+  sh "#{COMPILER} #{SHARED_LIBRARY_FLAGS} -o #{File.join(OUTPUT_DIR,OUTPUT)} #{OBJECT}"
+end
+
+file OBJECT => SOURCE do
+  puts "Building #{SOURCE}"
+  puts "Note that this is a really large c file, it may take tens of minutes to compile."
+  sh "#{COMPILER} #{COMPILE_FLAGS} -o #{OBJECT} -c #{SOURCE}"
 end
