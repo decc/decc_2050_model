@@ -20,4 +20,18 @@ INSTALLATION
 Note that this compiles the underlying c code, which might take 10-20 minutes or so
 
   gem install decc_2050_model
+  
+UPDATING TO NEWER VERSIONS OF EXCEL MODEL
+
+First, put the new spreadsheet in spreadsheet/2050Model.xlsx
+
+Then, from the top directory of the gem:
+  
+  bundle
+  rm ext/decc_2050_model.c
+  bundle exec rake
+  
+Finally, lib/decc_2050_model/decc_2050_model_result.rb and lib/decc_2050_model/model_structure.rb may need to be altered so that they
+pick up the correct places in the underlying excel.
+
 

@@ -1,5 +1,8 @@
+task :default => 'ext/decc_2050_model.c'
+
 desc "Generates c version of 2050 pathways model"
-file 'ext/decc_2050_model.c' do  
+file 'ext/decc_2050_model.c' do
+  require 'excel_to_code'
   command = ExcelToC.new
 
   command.excel_file = "spreadsheet/2050Model.xlsx"
