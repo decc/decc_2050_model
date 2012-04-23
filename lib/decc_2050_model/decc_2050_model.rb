@@ -2,7 +2,7 @@ require 'ffi'
 
 module Decc2050Model
   extend FFI::Library
-  ffi_lib File.join(File.dirname(__FILE__),FFI.map_library_name('decc_2050_model'))
+  ffi_lib  File.join(File.dirname(__FILE__),FFI.map_library_name('decc_2050_model'))
   ExcelType = enum :ExcelEmpty, :ExcelNumber, :ExcelString, :ExcelBoolean, :ExcelError, :ExcelRange
                 
   class ExcelValue < FFI::Struct
@@ -24,6 +24,9 @@ module Decc2050Model
   attach_function 'set_control_e5', [ExcelValue.by_value], :void
   attach_function 'set_control_f5', [ExcelValue.by_value], :void
   attach_function 'set_control_h5', [ExcelValue.by_value], :void
+  attach_function 'set_control_i5', [ExcelValue.by_value], :void
+  attach_function 'set_control_j5', [ExcelValue.by_value], :void
+  attach_function 'set_control_k5', [ExcelValue.by_value], :void
   attach_function 'set_control_bp5', [ExcelValue.by_value], :void
   attach_function 'set_control_bq5', [ExcelValue.by_value], :void
   attach_function 'set_control_br5', [ExcelValue.by_value], :void
@@ -33,6 +36,9 @@ module Decc2050Model
   attach_function 'set_control_e7', [ExcelValue.by_value], :void
   attach_function 'set_control_f7', [ExcelValue.by_value], :void
   attach_function 'set_control_h7', [ExcelValue.by_value], :void
+  attach_function 'set_control_i7', [ExcelValue.by_value], :void
+  attach_function 'set_control_j7', [ExcelValue.by_value], :void
+  attach_function 'set_control_k7', [ExcelValue.by_value], :void
   attach_function 'set_control_bp7', [ExcelValue.by_value], :void
   attach_function 'set_control_bq7', [ExcelValue.by_value], :void
   attach_function 'set_control_br7', [ExcelValue.by_value], :void
@@ -41,6 +47,9 @@ module Decc2050Model
   attach_function 'set_control_e8', [ExcelValue.by_value], :void
   attach_function 'set_control_f8', [ExcelValue.by_value], :void
   attach_function 'set_control_h8', [ExcelValue.by_value], :void
+  attach_function 'set_control_i8', [ExcelValue.by_value], :void
+  attach_function 'set_control_j8', [ExcelValue.by_value], :void
+  attach_function 'set_control_k8', [ExcelValue.by_value], :void
   attach_function 'set_control_bp8', [ExcelValue.by_value], :void
   attach_function 'set_control_bq8', [ExcelValue.by_value], :void
   attach_function 'set_control_br8', [ExcelValue.by_value], :void
@@ -49,6 +58,9 @@ module Decc2050Model
   attach_function 'set_control_e9', [ExcelValue.by_value], :void
   attach_function 'set_control_f9', [ExcelValue.by_value], :void
   attach_function 'set_control_h9', [ExcelValue.by_value], :void
+  attach_function 'set_control_i9', [ExcelValue.by_value], :void
+  attach_function 'set_control_j9', [ExcelValue.by_value], :void
+  attach_function 'set_control_k9', [ExcelValue.by_value], :void
   attach_function 'set_control_bp9', [ExcelValue.by_value], :void
   attach_function 'set_control_bq9', [ExcelValue.by_value], :void
   attach_function 'set_control_br9', [ExcelValue.by_value], :void
@@ -57,6 +69,9 @@ module Decc2050Model
   attach_function 'set_control_e10', [ExcelValue.by_value], :void
   attach_function 'set_control_f10', [ExcelValue.by_value], :void
   attach_function 'set_control_h10', [ExcelValue.by_value], :void
+  attach_function 'set_control_i10', [ExcelValue.by_value], :void
+  attach_function 'set_control_j10', [ExcelValue.by_value], :void
+  attach_function 'set_control_k10', [ExcelValue.by_value], :void
   attach_function 'set_control_bp10', [ExcelValue.by_value], :void
   attach_function 'set_control_bq10', [ExcelValue.by_value], :void
   attach_function 'set_control_br10', [ExcelValue.by_value], :void
@@ -65,6 +80,9 @@ module Decc2050Model
   attach_function 'set_control_e11', [ExcelValue.by_value], :void
   attach_function 'set_control_f11', [ExcelValue.by_value], :void
   attach_function 'set_control_h11', [ExcelValue.by_value], :void
+  attach_function 'set_control_i11', [ExcelValue.by_value], :void
+  attach_function 'set_control_j11', [ExcelValue.by_value], :void
+  attach_function 'set_control_k11', [ExcelValue.by_value], :void
   attach_function 'set_control_bp11', [ExcelValue.by_value], :void
   attach_function 'set_control_bq11', [ExcelValue.by_value], :void
   attach_function 'set_control_br11', [ExcelValue.by_value], :void
@@ -73,6 +91,9 @@ module Decc2050Model
   attach_function 'set_control_e12', [ExcelValue.by_value], :void
   attach_function 'set_control_f12', [ExcelValue.by_value], :void
   attach_function 'set_control_h12', [ExcelValue.by_value], :void
+  attach_function 'set_control_i12', [ExcelValue.by_value], :void
+  attach_function 'set_control_j12', [ExcelValue.by_value], :void
+  attach_function 'set_control_k12', [ExcelValue.by_value], :void
   attach_function 'set_control_bp12', [ExcelValue.by_value], :void
   attach_function 'set_control_bq12', [ExcelValue.by_value], :void
   attach_function 'set_control_br12', [ExcelValue.by_value], :void
@@ -81,6 +102,9 @@ module Decc2050Model
   attach_function 'set_control_e13', [ExcelValue.by_value], :void
   attach_function 'set_control_f13', [ExcelValue.by_value], :void
   attach_function 'set_control_h13', [ExcelValue.by_value], :void
+  attach_function 'set_control_i13', [ExcelValue.by_value], :void
+  attach_function 'set_control_j13', [ExcelValue.by_value], :void
+  attach_function 'set_control_k13', [ExcelValue.by_value], :void
   attach_function 'set_control_bp13', [ExcelValue.by_value], :void
   attach_function 'set_control_bq13', [ExcelValue.by_value], :void
   attach_function 'set_control_br13', [ExcelValue.by_value], :void
@@ -89,6 +113,9 @@ module Decc2050Model
   attach_function 'set_control_e14', [ExcelValue.by_value], :void
   attach_function 'set_control_f14', [ExcelValue.by_value], :void
   attach_function 'set_control_h14', [ExcelValue.by_value], :void
+  attach_function 'set_control_i14', [ExcelValue.by_value], :void
+  attach_function 'set_control_j14', [ExcelValue.by_value], :void
+  attach_function 'set_control_k14', [ExcelValue.by_value], :void
   attach_function 'set_control_bp14', [ExcelValue.by_value], :void
   attach_function 'set_control_bq14', [ExcelValue.by_value], :void
   attach_function 'set_control_br14', [ExcelValue.by_value], :void
@@ -97,6 +124,9 @@ module Decc2050Model
   attach_function 'set_control_e15', [ExcelValue.by_value], :void
   attach_function 'set_control_f15', [ExcelValue.by_value], :void
   attach_function 'set_control_h15', [ExcelValue.by_value], :void
+  attach_function 'set_control_i15', [ExcelValue.by_value], :void
+  attach_function 'set_control_j15', [ExcelValue.by_value], :void
+  attach_function 'set_control_k15', [ExcelValue.by_value], :void
   attach_function 'set_control_bp15', [ExcelValue.by_value], :void
   attach_function 'set_control_bq15', [ExcelValue.by_value], :void
   attach_function 'set_control_br15', [ExcelValue.by_value], :void
@@ -105,6 +135,9 @@ module Decc2050Model
   attach_function 'set_control_e16', [ExcelValue.by_value], :void
   attach_function 'set_control_f16', [ExcelValue.by_value], :void
   attach_function 'set_control_h16', [ExcelValue.by_value], :void
+  attach_function 'set_control_i16', [ExcelValue.by_value], :void
+  attach_function 'set_control_j16', [ExcelValue.by_value], :void
+  attach_function 'set_control_k16', [ExcelValue.by_value], :void
   attach_function 'set_control_bp16', [ExcelValue.by_value], :void
   attach_function 'set_control_bq16', [ExcelValue.by_value], :void
   attach_function 'set_control_br16', [ExcelValue.by_value], :void
@@ -113,6 +146,9 @@ module Decc2050Model
   attach_function 'set_control_e17', [ExcelValue.by_value], :void
   attach_function 'set_control_f17', [ExcelValue.by_value], :void
   attach_function 'set_control_h17', [ExcelValue.by_value], :void
+  attach_function 'set_control_i17', [ExcelValue.by_value], :void
+  attach_function 'set_control_j17', [ExcelValue.by_value], :void
+  attach_function 'set_control_k17', [ExcelValue.by_value], :void
   attach_function 'set_control_bp17', [ExcelValue.by_value], :void
   attach_function 'set_control_bq17', [ExcelValue.by_value], :void
   attach_function 'set_control_br17', [ExcelValue.by_value], :void
@@ -121,6 +157,9 @@ module Decc2050Model
   attach_function 'set_control_e18', [ExcelValue.by_value], :void
   attach_function 'set_control_f18', [ExcelValue.by_value], :void
   attach_function 'set_control_h18', [ExcelValue.by_value], :void
+  attach_function 'set_control_i18', [ExcelValue.by_value], :void
+  attach_function 'set_control_j18', [ExcelValue.by_value], :void
+  attach_function 'set_control_k18', [ExcelValue.by_value], :void
   attach_function 'set_control_bp18', [ExcelValue.by_value], :void
   attach_function 'set_control_bq18', [ExcelValue.by_value], :void
   attach_function 'set_control_br18', [ExcelValue.by_value], :void
@@ -129,6 +168,9 @@ module Decc2050Model
   attach_function 'set_control_e19', [ExcelValue.by_value], :void
   attach_function 'set_control_f19', [ExcelValue.by_value], :void
   attach_function 'set_control_h19', [ExcelValue.by_value], :void
+  attach_function 'set_control_i19', [ExcelValue.by_value], :void
+  attach_function 'set_control_j19', [ExcelValue.by_value], :void
+  attach_function 'set_control_k19', [ExcelValue.by_value], :void
   attach_function 'set_control_bp19', [ExcelValue.by_value], :void
   attach_function 'set_control_bq19', [ExcelValue.by_value], :void
   attach_function 'set_control_br19', [ExcelValue.by_value], :void
@@ -137,6 +179,9 @@ module Decc2050Model
   attach_function 'set_control_e20', [ExcelValue.by_value], :void
   attach_function 'set_control_f20', [ExcelValue.by_value], :void
   attach_function 'set_control_h20', [ExcelValue.by_value], :void
+  attach_function 'set_control_i20', [ExcelValue.by_value], :void
+  attach_function 'set_control_j20', [ExcelValue.by_value], :void
+  attach_function 'set_control_k20', [ExcelValue.by_value], :void
   attach_function 'set_control_bp20', [ExcelValue.by_value], :void
   attach_function 'set_control_bq20', [ExcelValue.by_value], :void
   attach_function 'set_control_br20', [ExcelValue.by_value], :void
@@ -146,6 +191,9 @@ module Decc2050Model
   attach_function 'set_control_e22', [ExcelValue.by_value], :void
   attach_function 'set_control_f22', [ExcelValue.by_value], :void
   attach_function 'set_control_h22', [ExcelValue.by_value], :void
+  attach_function 'set_control_i22', [ExcelValue.by_value], :void
+  attach_function 'set_control_j22', [ExcelValue.by_value], :void
+  attach_function 'set_control_k22', [ExcelValue.by_value], :void
   attach_function 'set_control_bp22', [ExcelValue.by_value], :void
   attach_function 'set_control_bq22', [ExcelValue.by_value], :void
   attach_function 'set_control_br22', [ExcelValue.by_value], :void
@@ -154,6 +202,9 @@ module Decc2050Model
   attach_function 'set_control_e23', [ExcelValue.by_value], :void
   attach_function 'set_control_f23', [ExcelValue.by_value], :void
   attach_function 'set_control_h23', [ExcelValue.by_value], :void
+  attach_function 'set_control_i23', [ExcelValue.by_value], :void
+  attach_function 'set_control_j23', [ExcelValue.by_value], :void
+  attach_function 'set_control_k23', [ExcelValue.by_value], :void
   attach_function 'set_control_bp23', [ExcelValue.by_value], :void
   attach_function 'set_control_bq23', [ExcelValue.by_value], :void
   attach_function 'set_control_br23', [ExcelValue.by_value], :void
@@ -162,6 +213,9 @@ module Decc2050Model
   attach_function 'set_control_e24', [ExcelValue.by_value], :void
   attach_function 'set_control_f24', [ExcelValue.by_value], :void
   attach_function 'set_control_h24', [ExcelValue.by_value], :void
+  attach_function 'set_control_i24', [ExcelValue.by_value], :void
+  attach_function 'set_control_j24', [ExcelValue.by_value], :void
+  attach_function 'set_control_k24', [ExcelValue.by_value], :void
   attach_function 'set_control_bp24', [ExcelValue.by_value], :void
   attach_function 'set_control_bq24', [ExcelValue.by_value], :void
   attach_function 'set_control_br24', [ExcelValue.by_value], :void
@@ -170,6 +224,9 @@ module Decc2050Model
   attach_function 'set_control_e25', [ExcelValue.by_value], :void
   attach_function 'set_control_f25', [ExcelValue.by_value], :void
   attach_function 'set_control_h25', [ExcelValue.by_value], :void
+  attach_function 'set_control_i25', [ExcelValue.by_value], :void
+  attach_function 'set_control_j25', [ExcelValue.by_value], :void
+  attach_function 'set_control_k25', [ExcelValue.by_value], :void
   attach_function 'set_control_bp25', [ExcelValue.by_value], :void
   attach_function 'set_control_bq25', [ExcelValue.by_value], :void
   attach_function 'set_control_br25', [ExcelValue.by_value], :void
@@ -178,6 +235,9 @@ module Decc2050Model
   attach_function 'set_control_e26', [ExcelValue.by_value], :void
   attach_function 'set_control_f26', [ExcelValue.by_value], :void
   attach_function 'set_control_h26', [ExcelValue.by_value], :void
+  attach_function 'set_control_i26', [ExcelValue.by_value], :void
+  attach_function 'set_control_j26', [ExcelValue.by_value], :void
+  attach_function 'set_control_k26', [ExcelValue.by_value], :void
   attach_function 'set_control_bp26', [ExcelValue.by_value], :void
   attach_function 'set_control_bq26', [ExcelValue.by_value], :void
   attach_function 'set_control_br26', [ExcelValue.by_value], :void
@@ -186,6 +246,9 @@ module Decc2050Model
   attach_function 'set_control_e27', [ExcelValue.by_value], :void
   attach_function 'set_control_f27', [ExcelValue.by_value], :void
   attach_function 'set_control_h27', [ExcelValue.by_value], :void
+  attach_function 'set_control_i27', [ExcelValue.by_value], :void
+  attach_function 'set_control_j27', [ExcelValue.by_value], :void
+  attach_function 'set_control_k27', [ExcelValue.by_value], :void
   attach_function 'set_control_bp27', [ExcelValue.by_value], :void
   attach_function 'set_control_bq27', [ExcelValue.by_value], :void
   attach_function 'set_control_br27', [ExcelValue.by_value], :void
@@ -195,6 +258,9 @@ module Decc2050Model
   attach_function 'set_control_e30', [ExcelValue.by_value], :void
   attach_function 'set_control_f30', [ExcelValue.by_value], :void
   attach_function 'set_control_h30', [ExcelValue.by_value], :void
+  attach_function 'set_control_i30', [ExcelValue.by_value], :void
+  attach_function 'set_control_j30', [ExcelValue.by_value], :void
+  attach_function 'set_control_k30', [ExcelValue.by_value], :void
   attach_function 'set_control_bp30', [ExcelValue.by_value], :void
   attach_function 'set_control_bq30', [ExcelValue.by_value], :void
   attach_function 'set_control_br30', [ExcelValue.by_value], :void
@@ -203,6 +269,9 @@ module Decc2050Model
   attach_function 'set_control_e31', [ExcelValue.by_value], :void
   attach_function 'set_control_f31', [ExcelValue.by_value], :void
   attach_function 'set_control_h31', [ExcelValue.by_value], :void
+  attach_function 'set_control_i31', [ExcelValue.by_value], :void
+  attach_function 'set_control_j31', [ExcelValue.by_value], :void
+  attach_function 'set_control_k31', [ExcelValue.by_value], :void
   attach_function 'set_control_bp31', [ExcelValue.by_value], :void
   attach_function 'set_control_bq31', [ExcelValue.by_value], :void
   attach_function 'set_control_br31', [ExcelValue.by_value], :void
@@ -211,6 +280,9 @@ module Decc2050Model
   attach_function 'set_control_e32', [ExcelValue.by_value], :void
   attach_function 'set_control_f32', [ExcelValue.by_value], :void
   attach_function 'set_control_h32', [ExcelValue.by_value], :void
+  attach_function 'set_control_i32', [ExcelValue.by_value], :void
+  attach_function 'set_control_j32', [ExcelValue.by_value], :void
+  attach_function 'set_control_k32', [ExcelValue.by_value], :void
   attach_function 'set_control_bp32', [ExcelValue.by_value], :void
   attach_function 'set_control_bq32', [ExcelValue.by_value], :void
   attach_function 'set_control_br32', [ExcelValue.by_value], :void
@@ -219,6 +291,9 @@ module Decc2050Model
   attach_function 'set_control_e33', [ExcelValue.by_value], :void
   attach_function 'set_control_f33', [ExcelValue.by_value], :void
   attach_function 'set_control_h33', [ExcelValue.by_value], :void
+  attach_function 'set_control_i33', [ExcelValue.by_value], :void
+  attach_function 'set_control_j33', [ExcelValue.by_value], :void
+  attach_function 'set_control_k33', [ExcelValue.by_value], :void
   attach_function 'set_control_bp33', [ExcelValue.by_value], :void
   attach_function 'set_control_bq33', [ExcelValue.by_value], :void
   attach_function 'set_control_br33', [ExcelValue.by_value], :void
@@ -227,6 +302,9 @@ module Decc2050Model
   attach_function 'set_control_e34', [ExcelValue.by_value], :void
   attach_function 'set_control_f34', [ExcelValue.by_value], :void
   attach_function 'set_control_h34', [ExcelValue.by_value], :void
+  attach_function 'set_control_i34', [ExcelValue.by_value], :void
+  attach_function 'set_control_j34', [ExcelValue.by_value], :void
+  attach_function 'set_control_k34', [ExcelValue.by_value], :void
   attach_function 'set_control_bp34', [ExcelValue.by_value], :void
   attach_function 'set_control_bq34', [ExcelValue.by_value], :void
   attach_function 'set_control_br34', [ExcelValue.by_value], :void
@@ -235,6 +313,9 @@ module Decc2050Model
   attach_function 'set_control_e35', [ExcelValue.by_value], :void
   attach_function 'set_control_f35', [ExcelValue.by_value], :void
   attach_function 'set_control_h35', [ExcelValue.by_value], :void
+  attach_function 'set_control_i35', [ExcelValue.by_value], :void
+  attach_function 'set_control_j35', [ExcelValue.by_value], :void
+  attach_function 'set_control_k35', [ExcelValue.by_value], :void
   attach_function 'set_control_bp35', [ExcelValue.by_value], :void
   attach_function 'set_control_bq35', [ExcelValue.by_value], :void
   attach_function 'set_control_br35', [ExcelValue.by_value], :void
@@ -244,6 +325,9 @@ module Decc2050Model
   attach_function 'set_control_e37', [ExcelValue.by_value], :void
   attach_function 'set_control_f37', [ExcelValue.by_value], :void
   attach_function 'set_control_h37', [ExcelValue.by_value], :void
+  attach_function 'set_control_i37', [ExcelValue.by_value], :void
+  attach_function 'set_control_j37', [ExcelValue.by_value], :void
+  attach_function 'set_control_k37', [ExcelValue.by_value], :void
   attach_function 'set_control_bp37', [ExcelValue.by_value], :void
   attach_function 'set_control_bq37', [ExcelValue.by_value], :void
   attach_function 'set_control_br37', [ExcelValue.by_value], :void
@@ -252,6 +336,9 @@ module Decc2050Model
   attach_function 'set_control_e38', [ExcelValue.by_value], :void
   attach_function 'set_control_f38', [ExcelValue.by_value], :void
   attach_function 'set_control_h38', [ExcelValue.by_value], :void
+  attach_function 'set_control_i38', [ExcelValue.by_value], :void
+  attach_function 'set_control_j38', [ExcelValue.by_value], :void
+  attach_function 'set_control_k38', [ExcelValue.by_value], :void
   attach_function 'set_control_bp38', [ExcelValue.by_value], :void
   attach_function 'set_control_bq38', [ExcelValue.by_value], :void
   attach_function 'set_control_br38', [ExcelValue.by_value], :void
@@ -260,6 +347,9 @@ module Decc2050Model
   attach_function 'set_control_e39', [ExcelValue.by_value], :void
   attach_function 'set_control_f39', [ExcelValue.by_value], :void
   attach_function 'set_control_h39', [ExcelValue.by_value], :void
+  attach_function 'set_control_i39', [ExcelValue.by_value], :void
+  attach_function 'set_control_j39', [ExcelValue.by_value], :void
+  attach_function 'set_control_k39', [ExcelValue.by_value], :void
   attach_function 'set_control_bp39', [ExcelValue.by_value], :void
   attach_function 'set_control_bq39', [ExcelValue.by_value], :void
   attach_function 'set_control_br39', [ExcelValue.by_value], :void
@@ -268,6 +358,9 @@ module Decc2050Model
   attach_function 'set_control_e40', [ExcelValue.by_value], :void
   attach_function 'set_control_f40', [ExcelValue.by_value], :void
   attach_function 'set_control_h40', [ExcelValue.by_value], :void
+  attach_function 'set_control_i40', [ExcelValue.by_value], :void
+  attach_function 'set_control_j40', [ExcelValue.by_value], :void
+  attach_function 'set_control_k40', [ExcelValue.by_value], :void
   attach_function 'set_control_bp40', [ExcelValue.by_value], :void
   attach_function 'set_control_bq40', [ExcelValue.by_value], :void
   attach_function 'set_control_br40', [ExcelValue.by_value], :void
@@ -277,6 +370,9 @@ module Decc2050Model
   attach_function 'set_control_e42', [ExcelValue.by_value], :void
   attach_function 'set_control_f42', [ExcelValue.by_value], :void
   attach_function 'set_control_h42', [ExcelValue.by_value], :void
+  attach_function 'set_control_i42', [ExcelValue.by_value], :void
+  attach_function 'set_control_j42', [ExcelValue.by_value], :void
+  attach_function 'set_control_k42', [ExcelValue.by_value], :void
   attach_function 'set_control_bp42', [ExcelValue.by_value], :void
   attach_function 'set_control_bq42', [ExcelValue.by_value], :void
   attach_function 'set_control_br42', [ExcelValue.by_value], :void
@@ -285,6 +381,9 @@ module Decc2050Model
   attach_function 'set_control_e43', [ExcelValue.by_value], :void
   attach_function 'set_control_f43', [ExcelValue.by_value], :void
   attach_function 'set_control_h43', [ExcelValue.by_value], :void
+  attach_function 'set_control_i43', [ExcelValue.by_value], :void
+  attach_function 'set_control_j43', [ExcelValue.by_value], :void
+  attach_function 'set_control_k43', [ExcelValue.by_value], :void
   attach_function 'set_control_bp43', [ExcelValue.by_value], :void
   attach_function 'set_control_bq43', [ExcelValue.by_value], :void
   attach_function 'set_control_br43', [ExcelValue.by_value], :void
@@ -294,6 +393,9 @@ module Decc2050Model
   attach_function 'set_control_e45', [ExcelValue.by_value], :void
   attach_function 'set_control_f45', [ExcelValue.by_value], :void
   attach_function 'set_control_h45', [ExcelValue.by_value], :void
+  attach_function 'set_control_i45', [ExcelValue.by_value], :void
+  attach_function 'set_control_j45', [ExcelValue.by_value], :void
+  attach_function 'set_control_k45', [ExcelValue.by_value], :void
   attach_function 'set_control_bp45', [ExcelValue.by_value], :void
   attach_function 'set_control_bq45', [ExcelValue.by_value], :void
   attach_function 'set_control_br45', [ExcelValue.by_value], :void
@@ -302,6 +404,9 @@ module Decc2050Model
   attach_function 'set_control_e46', [ExcelValue.by_value], :void
   attach_function 'set_control_f46', [ExcelValue.by_value], :void
   attach_function 'set_control_h46', [ExcelValue.by_value], :void
+  attach_function 'set_control_i46', [ExcelValue.by_value], :void
+  attach_function 'set_control_j46', [ExcelValue.by_value], :void
+  attach_function 'set_control_k46', [ExcelValue.by_value], :void
   attach_function 'set_control_bp46', [ExcelValue.by_value], :void
   attach_function 'set_control_bq46', [ExcelValue.by_value], :void
   attach_function 'set_control_br46', [ExcelValue.by_value], :void
@@ -311,6 +416,9 @@ module Decc2050Model
   attach_function 'set_control_e48', [ExcelValue.by_value], :void
   attach_function 'set_control_f48', [ExcelValue.by_value], :void
   attach_function 'set_control_h48', [ExcelValue.by_value], :void
+  attach_function 'set_control_i48', [ExcelValue.by_value], :void
+  attach_function 'set_control_j48', [ExcelValue.by_value], :void
+  attach_function 'set_control_k48', [ExcelValue.by_value], :void
   attach_function 'set_control_bp48', [ExcelValue.by_value], :void
   attach_function 'set_control_bq48', [ExcelValue.by_value], :void
   attach_function 'set_control_br48', [ExcelValue.by_value], :void
@@ -319,6 +427,9 @@ module Decc2050Model
   attach_function 'set_control_e49', [ExcelValue.by_value], :void
   attach_function 'set_control_f49', [ExcelValue.by_value], :void
   attach_function 'set_control_h49', [ExcelValue.by_value], :void
+  attach_function 'set_control_i49', [ExcelValue.by_value], :void
+  attach_function 'set_control_j49', [ExcelValue.by_value], :void
+  attach_function 'set_control_k49', [ExcelValue.by_value], :void
   attach_function 'set_control_bp49', [ExcelValue.by_value], :void
   attach_function 'set_control_bq49', [ExcelValue.by_value], :void
   attach_function 'set_control_br49', [ExcelValue.by_value], :void
@@ -327,6 +438,9 @@ module Decc2050Model
   attach_function 'set_control_e50', [ExcelValue.by_value], :void
   attach_function 'set_control_f50', [ExcelValue.by_value], :void
   attach_function 'set_control_h50', [ExcelValue.by_value], :void
+  attach_function 'set_control_i50', [ExcelValue.by_value], :void
+  attach_function 'set_control_j50', [ExcelValue.by_value], :void
+  attach_function 'set_control_k50', [ExcelValue.by_value], :void
   attach_function 'set_control_bp50', [ExcelValue.by_value], :void
   attach_function 'set_control_bq50', [ExcelValue.by_value], :void
   attach_function 'set_control_br50', [ExcelValue.by_value], :void
@@ -336,6 +450,9 @@ module Decc2050Model
   attach_function 'set_control_e52', [ExcelValue.by_value], :void
   attach_function 'set_control_f52', [ExcelValue.by_value], :void
   attach_function 'set_control_h52', [ExcelValue.by_value], :void
+  attach_function 'set_control_i52', [ExcelValue.by_value], :void
+  attach_function 'set_control_j52', [ExcelValue.by_value], :void
+  attach_function 'set_control_k52', [ExcelValue.by_value], :void
   attach_function 'set_control_bp52', [ExcelValue.by_value], :void
   attach_function 'set_control_bq52', [ExcelValue.by_value], :void
   attach_function 'set_control_br52', [ExcelValue.by_value], :void
@@ -344,6 +461,9 @@ module Decc2050Model
   attach_function 'set_control_e53', [ExcelValue.by_value], :void
   attach_function 'set_control_f53', [ExcelValue.by_value], :void
   attach_function 'set_control_h53', [ExcelValue.by_value], :void
+  attach_function 'set_control_i53', [ExcelValue.by_value], :void
+  attach_function 'set_control_j53', [ExcelValue.by_value], :void
+  attach_function 'set_control_k53', [ExcelValue.by_value], :void
   attach_function 'set_control_bp53', [ExcelValue.by_value], :void
   attach_function 'set_control_bq53', [ExcelValue.by_value], :void
   attach_function 'set_control_br53', [ExcelValue.by_value], :void
@@ -352,6 +472,9 @@ module Decc2050Model
   attach_function 'set_control_e55', [ExcelValue.by_value], :void
   attach_function 'set_control_f55', [ExcelValue.by_value], :void
   attach_function 'set_control_h55', [ExcelValue.by_value], :void
+  attach_function 'set_control_i55', [ExcelValue.by_value], :void
+  attach_function 'set_control_j55', [ExcelValue.by_value], :void
+  attach_function 'set_control_k55', [ExcelValue.by_value], :void
   attach_function 'set_control_bp55', [ExcelValue.by_value], :void
   attach_function 'set_control_bq55', [ExcelValue.by_value], :void
   attach_function 'set_control_br55', [ExcelValue.by_value], :void
@@ -360,14 +483,112 @@ module Decc2050Model
   attach_function 'set_control_e56', [ExcelValue.by_value], :void
   attach_function 'set_control_f56', [ExcelValue.by_value], :void
   attach_function 'set_control_h56', [ExcelValue.by_value], :void
+  attach_function 'set_control_i56', [ExcelValue.by_value], :void
+  attach_function 'set_control_j56', [ExcelValue.by_value], :void
+  attach_function 'set_control_k56', [ExcelValue.by_value], :void
   attach_function 'set_control_bp56', [ExcelValue.by_value], :void
   attach_function 'set_control_bq56', [ExcelValue.by_value], :void
   attach_function 'set_control_br56', [ExcelValue.by_value], :void
   attach_function 'set_control_bs56', [ExcelValue.by_value], :void
   attach_function 'set_control_e57', [ExcelValue.by_value], :void
+  attach_function 'set_control_f6', [ExcelValue.by_value], :void
+  attach_function 'set_control_h6', [ExcelValue.by_value], :void
+  attach_function 'set_control_i6', [ExcelValue.by_value], :void
+  attach_function 'set_control_j6', [ExcelValue.by_value], :void
+  attach_function 'set_control_k6', [ExcelValue.by_value], :void
+  attach_function 'set_control_bp6', [ExcelValue.by_value], :void
+  attach_function 'set_control_bq6', [ExcelValue.by_value], :void
+  attach_function 'set_control_br6', [ExcelValue.by_value], :void
+  attach_function 'set_control_bs6', [ExcelValue.by_value], :void
+  attach_function 'set_control_f21', [ExcelValue.by_value], :void
+  attach_function 'set_control_h21', [ExcelValue.by_value], :void
+  attach_function 'set_control_i21', [ExcelValue.by_value], :void
+  attach_function 'set_control_j21', [ExcelValue.by_value], :void
+  attach_function 'set_control_k21', [ExcelValue.by_value], :void
+  attach_function 'set_control_bp21', [ExcelValue.by_value], :void
+  attach_function 'set_control_bq21', [ExcelValue.by_value], :void
+  attach_function 'set_control_br21', [ExcelValue.by_value], :void
+  attach_function 'set_control_bs21', [ExcelValue.by_value], :void
+  attach_function 'set_control_d28', [ExcelValue.by_value], :void
+  attach_function 'set_control_f28', [ExcelValue.by_value], :void
+  attach_function 'set_control_h28', [ExcelValue.by_value], :void
+  attach_function 'set_control_i28', [ExcelValue.by_value], :void
+  attach_function 'set_control_j28', [ExcelValue.by_value], :void
+  attach_function 'set_control_k28', [ExcelValue.by_value], :void
+  attach_function 'set_control_bp28', [ExcelValue.by_value], :void
+  attach_function 'set_control_bq28', [ExcelValue.by_value], :void
+  attach_function 'set_control_br28', [ExcelValue.by_value], :void
+  attach_function 'set_control_bs28', [ExcelValue.by_value], :void
+  attach_function 'set_control_f29', [ExcelValue.by_value], :void
+  attach_function 'set_control_h29', [ExcelValue.by_value], :void
+  attach_function 'set_control_i29', [ExcelValue.by_value], :void
+  attach_function 'set_control_j29', [ExcelValue.by_value], :void
+  attach_function 'set_control_k29', [ExcelValue.by_value], :void
+  attach_function 'set_control_bp29', [ExcelValue.by_value], :void
+  attach_function 'set_control_bq29', [ExcelValue.by_value], :void
+  attach_function 'set_control_br29', [ExcelValue.by_value], :void
+  attach_function 'set_control_bs29', [ExcelValue.by_value], :void
+  attach_function 'set_control_f36', [ExcelValue.by_value], :void
+  attach_function 'set_control_h36', [ExcelValue.by_value], :void
+  attach_function 'set_control_i36', [ExcelValue.by_value], :void
+  attach_function 'set_control_j36', [ExcelValue.by_value], :void
+  attach_function 'set_control_k36', [ExcelValue.by_value], :void
+  attach_function 'set_control_bp36', [ExcelValue.by_value], :void
+  attach_function 'set_control_bq36', [ExcelValue.by_value], :void
+  attach_function 'set_control_br36', [ExcelValue.by_value], :void
+  attach_function 'set_control_bs36', [ExcelValue.by_value], :void
+  attach_function 'set_control_f41', [ExcelValue.by_value], :void
+  attach_function 'set_control_h41', [ExcelValue.by_value], :void
+  attach_function 'set_control_i41', [ExcelValue.by_value], :void
+  attach_function 'set_control_j41', [ExcelValue.by_value], :void
+  attach_function 'set_control_k41', [ExcelValue.by_value], :void
+  attach_function 'set_control_bp41', [ExcelValue.by_value], :void
+  attach_function 'set_control_bq41', [ExcelValue.by_value], :void
+  attach_function 'set_control_br41', [ExcelValue.by_value], :void
+  attach_function 'set_control_bs41', [ExcelValue.by_value], :void
+  attach_function 'set_control_f44', [ExcelValue.by_value], :void
+  attach_function 'set_control_h44', [ExcelValue.by_value], :void
+  attach_function 'set_control_i44', [ExcelValue.by_value], :void
+  attach_function 'set_control_j44', [ExcelValue.by_value], :void
+  attach_function 'set_control_k44', [ExcelValue.by_value], :void
+  attach_function 'set_control_bp44', [ExcelValue.by_value], :void
+  attach_function 'set_control_bq44', [ExcelValue.by_value], :void
+  attach_function 'set_control_br44', [ExcelValue.by_value], :void
+  attach_function 'set_control_bs44', [ExcelValue.by_value], :void
+  attach_function 'set_control_f47', [ExcelValue.by_value], :void
+  attach_function 'set_control_h47', [ExcelValue.by_value], :void
+  attach_function 'set_control_i47', [ExcelValue.by_value], :void
+  attach_function 'set_control_j47', [ExcelValue.by_value], :void
+  attach_function 'set_control_k47', [ExcelValue.by_value], :void
+  attach_function 'set_control_bp47', [ExcelValue.by_value], :void
+  attach_function 'set_control_bq47', [ExcelValue.by_value], :void
+  attach_function 'set_control_br47', [ExcelValue.by_value], :void
+  attach_function 'set_control_bs47', [ExcelValue.by_value], :void
+  attach_function 'set_control_f51', [ExcelValue.by_value], :void
+  attach_function 'set_control_h51', [ExcelValue.by_value], :void
+  attach_function 'set_control_i51', [ExcelValue.by_value], :void
+  attach_function 'set_control_j51', [ExcelValue.by_value], :void
+  attach_function 'set_control_k51', [ExcelValue.by_value], :void
+  attach_function 'set_control_bp51', [ExcelValue.by_value], :void
+  attach_function 'set_control_bq51', [ExcelValue.by_value], :void
+  attach_function 'set_control_br51', [ExcelValue.by_value], :void
+  attach_function 'set_control_bs51', [ExcelValue.by_value], :void
+  attach_function 'set_control_d54', [ExcelValue.by_value], :void
+  attach_function 'set_control_f54', [ExcelValue.by_value], :void
+  attach_function 'set_control_h54', [ExcelValue.by_value], :void
+  attach_function 'set_control_i54', [ExcelValue.by_value], :void
+  attach_function 'set_control_j54', [ExcelValue.by_value], :void
+  attach_function 'set_control_k54', [ExcelValue.by_value], :void
+  attach_function 'set_control_bp54', [ExcelValue.by_value], :void
+  attach_function 'set_control_bq54', [ExcelValue.by_value], :void
+  attach_function 'set_control_br54', [ExcelValue.by_value], :void
+  attach_function 'set_control_bs54', [ExcelValue.by_value], :void
   attach_function 'control_d5', [], ExcelValue.by_value
   attach_function 'control_f5', [], ExcelValue.by_value
   attach_function 'control_h5', [], ExcelValue.by_value
+  attach_function 'control_i5', [], ExcelValue.by_value
+  attach_function 'control_j5', [], ExcelValue.by_value
+  attach_function 'control_k5', [], ExcelValue.by_value
   attach_function 'control_bp5', [], ExcelValue.by_value
   attach_function 'control_bq5', [], ExcelValue.by_value
   attach_function 'control_br5', [], ExcelValue.by_value
@@ -375,6 +596,9 @@ module Decc2050Model
   attach_function 'control_d6', [], ExcelValue.by_value
   attach_function 'control_f6', [], ExcelValue.by_value
   attach_function 'control_h6', [], ExcelValue.by_value
+  attach_function 'control_i6', [], ExcelValue.by_value
+  attach_function 'control_j6', [], ExcelValue.by_value
+  attach_function 'control_k6', [], ExcelValue.by_value
   attach_function 'control_bp6', [], ExcelValue.by_value
   attach_function 'control_bq6', [], ExcelValue.by_value
   attach_function 'control_br6', [], ExcelValue.by_value
@@ -382,6 +606,9 @@ module Decc2050Model
   attach_function 'control_d7', [], ExcelValue.by_value
   attach_function 'control_f7', [], ExcelValue.by_value
   attach_function 'control_h7', [], ExcelValue.by_value
+  attach_function 'control_i7', [], ExcelValue.by_value
+  attach_function 'control_j7', [], ExcelValue.by_value
+  attach_function 'control_k7', [], ExcelValue.by_value
   attach_function 'control_bp7', [], ExcelValue.by_value
   attach_function 'control_bq7', [], ExcelValue.by_value
   attach_function 'control_br7', [], ExcelValue.by_value
@@ -389,6 +616,9 @@ module Decc2050Model
   attach_function 'control_d8', [], ExcelValue.by_value
   attach_function 'control_f8', [], ExcelValue.by_value
   attach_function 'control_h8', [], ExcelValue.by_value
+  attach_function 'control_i8', [], ExcelValue.by_value
+  attach_function 'control_j8', [], ExcelValue.by_value
+  attach_function 'control_k8', [], ExcelValue.by_value
   attach_function 'control_bp8', [], ExcelValue.by_value
   attach_function 'control_bq8', [], ExcelValue.by_value
   attach_function 'control_br8', [], ExcelValue.by_value
@@ -396,6 +626,9 @@ module Decc2050Model
   attach_function 'control_d9', [], ExcelValue.by_value
   attach_function 'control_f9', [], ExcelValue.by_value
   attach_function 'control_h9', [], ExcelValue.by_value
+  attach_function 'control_i9', [], ExcelValue.by_value
+  attach_function 'control_j9', [], ExcelValue.by_value
+  attach_function 'control_k9', [], ExcelValue.by_value
   attach_function 'control_bp9', [], ExcelValue.by_value
   attach_function 'control_bq9', [], ExcelValue.by_value
   attach_function 'control_br9', [], ExcelValue.by_value
@@ -403,6 +636,9 @@ module Decc2050Model
   attach_function 'control_d10', [], ExcelValue.by_value
   attach_function 'control_f10', [], ExcelValue.by_value
   attach_function 'control_h10', [], ExcelValue.by_value
+  attach_function 'control_i10', [], ExcelValue.by_value
+  attach_function 'control_j10', [], ExcelValue.by_value
+  attach_function 'control_k10', [], ExcelValue.by_value
   attach_function 'control_bp10', [], ExcelValue.by_value
   attach_function 'control_bq10', [], ExcelValue.by_value
   attach_function 'control_br10', [], ExcelValue.by_value
@@ -410,6 +646,9 @@ module Decc2050Model
   attach_function 'control_d11', [], ExcelValue.by_value
   attach_function 'control_f11', [], ExcelValue.by_value
   attach_function 'control_h11', [], ExcelValue.by_value
+  attach_function 'control_i11', [], ExcelValue.by_value
+  attach_function 'control_j11', [], ExcelValue.by_value
+  attach_function 'control_k11', [], ExcelValue.by_value
   attach_function 'control_bp11', [], ExcelValue.by_value
   attach_function 'control_bq11', [], ExcelValue.by_value
   attach_function 'control_br11', [], ExcelValue.by_value
@@ -417,6 +656,9 @@ module Decc2050Model
   attach_function 'control_d12', [], ExcelValue.by_value
   attach_function 'control_f12', [], ExcelValue.by_value
   attach_function 'control_h12', [], ExcelValue.by_value
+  attach_function 'control_i12', [], ExcelValue.by_value
+  attach_function 'control_j12', [], ExcelValue.by_value
+  attach_function 'control_k12', [], ExcelValue.by_value
   attach_function 'control_bp12', [], ExcelValue.by_value
   attach_function 'control_bq12', [], ExcelValue.by_value
   attach_function 'control_br12', [], ExcelValue.by_value
@@ -424,6 +666,9 @@ module Decc2050Model
   attach_function 'control_d13', [], ExcelValue.by_value
   attach_function 'control_f13', [], ExcelValue.by_value
   attach_function 'control_h13', [], ExcelValue.by_value
+  attach_function 'control_i13', [], ExcelValue.by_value
+  attach_function 'control_j13', [], ExcelValue.by_value
+  attach_function 'control_k13', [], ExcelValue.by_value
   attach_function 'control_bp13', [], ExcelValue.by_value
   attach_function 'control_bq13', [], ExcelValue.by_value
   attach_function 'control_br13', [], ExcelValue.by_value
@@ -431,6 +676,9 @@ module Decc2050Model
   attach_function 'control_d14', [], ExcelValue.by_value
   attach_function 'control_f14', [], ExcelValue.by_value
   attach_function 'control_h14', [], ExcelValue.by_value
+  attach_function 'control_i14', [], ExcelValue.by_value
+  attach_function 'control_j14', [], ExcelValue.by_value
+  attach_function 'control_k14', [], ExcelValue.by_value
   attach_function 'control_bp14', [], ExcelValue.by_value
   attach_function 'control_bq14', [], ExcelValue.by_value
   attach_function 'control_br14', [], ExcelValue.by_value
@@ -438,6 +686,9 @@ module Decc2050Model
   attach_function 'control_d15', [], ExcelValue.by_value
   attach_function 'control_f15', [], ExcelValue.by_value
   attach_function 'control_h15', [], ExcelValue.by_value
+  attach_function 'control_i15', [], ExcelValue.by_value
+  attach_function 'control_j15', [], ExcelValue.by_value
+  attach_function 'control_k15', [], ExcelValue.by_value
   attach_function 'control_bp15', [], ExcelValue.by_value
   attach_function 'control_bq15', [], ExcelValue.by_value
   attach_function 'control_br15', [], ExcelValue.by_value
@@ -445,6 +696,9 @@ module Decc2050Model
   attach_function 'control_d16', [], ExcelValue.by_value
   attach_function 'control_f16', [], ExcelValue.by_value
   attach_function 'control_h16', [], ExcelValue.by_value
+  attach_function 'control_i16', [], ExcelValue.by_value
+  attach_function 'control_j16', [], ExcelValue.by_value
+  attach_function 'control_k16', [], ExcelValue.by_value
   attach_function 'control_bp16', [], ExcelValue.by_value
   attach_function 'control_bq16', [], ExcelValue.by_value
   attach_function 'control_br16', [], ExcelValue.by_value
@@ -452,6 +706,9 @@ module Decc2050Model
   attach_function 'control_d17', [], ExcelValue.by_value
   attach_function 'control_f17', [], ExcelValue.by_value
   attach_function 'control_h17', [], ExcelValue.by_value
+  attach_function 'control_i17', [], ExcelValue.by_value
+  attach_function 'control_j17', [], ExcelValue.by_value
+  attach_function 'control_k17', [], ExcelValue.by_value
   attach_function 'control_bp17', [], ExcelValue.by_value
   attach_function 'control_bq17', [], ExcelValue.by_value
   attach_function 'control_br17', [], ExcelValue.by_value
@@ -459,6 +716,9 @@ module Decc2050Model
   attach_function 'control_d18', [], ExcelValue.by_value
   attach_function 'control_f18', [], ExcelValue.by_value
   attach_function 'control_h18', [], ExcelValue.by_value
+  attach_function 'control_i18', [], ExcelValue.by_value
+  attach_function 'control_j18', [], ExcelValue.by_value
+  attach_function 'control_k18', [], ExcelValue.by_value
   attach_function 'control_bp18', [], ExcelValue.by_value
   attach_function 'control_bq18', [], ExcelValue.by_value
   attach_function 'control_br18', [], ExcelValue.by_value
@@ -466,6 +726,9 @@ module Decc2050Model
   attach_function 'control_d19', [], ExcelValue.by_value
   attach_function 'control_f19', [], ExcelValue.by_value
   attach_function 'control_h19', [], ExcelValue.by_value
+  attach_function 'control_i19', [], ExcelValue.by_value
+  attach_function 'control_j19', [], ExcelValue.by_value
+  attach_function 'control_k19', [], ExcelValue.by_value
   attach_function 'control_bp19', [], ExcelValue.by_value
   attach_function 'control_bq19', [], ExcelValue.by_value
   attach_function 'control_br19', [], ExcelValue.by_value
@@ -473,6 +736,9 @@ module Decc2050Model
   attach_function 'control_d20', [], ExcelValue.by_value
   attach_function 'control_f20', [], ExcelValue.by_value
   attach_function 'control_h20', [], ExcelValue.by_value
+  attach_function 'control_i20', [], ExcelValue.by_value
+  attach_function 'control_j20', [], ExcelValue.by_value
+  attach_function 'control_k20', [], ExcelValue.by_value
   attach_function 'control_bp20', [], ExcelValue.by_value
   attach_function 'control_bq20', [], ExcelValue.by_value
   attach_function 'control_br20', [], ExcelValue.by_value
@@ -480,6 +746,9 @@ module Decc2050Model
   attach_function 'control_d21', [], ExcelValue.by_value
   attach_function 'control_f21', [], ExcelValue.by_value
   attach_function 'control_h21', [], ExcelValue.by_value
+  attach_function 'control_i21', [], ExcelValue.by_value
+  attach_function 'control_j21', [], ExcelValue.by_value
+  attach_function 'control_k21', [], ExcelValue.by_value
   attach_function 'control_bp21', [], ExcelValue.by_value
   attach_function 'control_bq21', [], ExcelValue.by_value
   attach_function 'control_br21', [], ExcelValue.by_value
@@ -487,6 +756,9 @@ module Decc2050Model
   attach_function 'control_d22', [], ExcelValue.by_value
   attach_function 'control_f22', [], ExcelValue.by_value
   attach_function 'control_h22', [], ExcelValue.by_value
+  attach_function 'control_i22', [], ExcelValue.by_value
+  attach_function 'control_j22', [], ExcelValue.by_value
+  attach_function 'control_k22', [], ExcelValue.by_value
   attach_function 'control_bp22', [], ExcelValue.by_value
   attach_function 'control_bq22', [], ExcelValue.by_value
   attach_function 'control_br22', [], ExcelValue.by_value
@@ -494,6 +766,9 @@ module Decc2050Model
   attach_function 'control_d23', [], ExcelValue.by_value
   attach_function 'control_f23', [], ExcelValue.by_value
   attach_function 'control_h23', [], ExcelValue.by_value
+  attach_function 'control_i23', [], ExcelValue.by_value
+  attach_function 'control_j23', [], ExcelValue.by_value
+  attach_function 'control_k23', [], ExcelValue.by_value
   attach_function 'control_bp23', [], ExcelValue.by_value
   attach_function 'control_bq23', [], ExcelValue.by_value
   attach_function 'control_br23', [], ExcelValue.by_value
@@ -501,6 +776,9 @@ module Decc2050Model
   attach_function 'control_d24', [], ExcelValue.by_value
   attach_function 'control_f24', [], ExcelValue.by_value
   attach_function 'control_h24', [], ExcelValue.by_value
+  attach_function 'control_i24', [], ExcelValue.by_value
+  attach_function 'control_j24', [], ExcelValue.by_value
+  attach_function 'control_k24', [], ExcelValue.by_value
   attach_function 'control_bp24', [], ExcelValue.by_value
   attach_function 'control_bq24', [], ExcelValue.by_value
   attach_function 'control_br24', [], ExcelValue.by_value
@@ -508,6 +786,9 @@ module Decc2050Model
   attach_function 'control_d25', [], ExcelValue.by_value
   attach_function 'control_f25', [], ExcelValue.by_value
   attach_function 'control_h25', [], ExcelValue.by_value
+  attach_function 'control_i25', [], ExcelValue.by_value
+  attach_function 'control_j25', [], ExcelValue.by_value
+  attach_function 'control_k25', [], ExcelValue.by_value
   attach_function 'control_bp25', [], ExcelValue.by_value
   attach_function 'control_bq25', [], ExcelValue.by_value
   attach_function 'control_br25', [], ExcelValue.by_value
@@ -515,6 +796,9 @@ module Decc2050Model
   attach_function 'control_d26', [], ExcelValue.by_value
   attach_function 'control_f26', [], ExcelValue.by_value
   attach_function 'control_h26', [], ExcelValue.by_value
+  attach_function 'control_i26', [], ExcelValue.by_value
+  attach_function 'control_j26', [], ExcelValue.by_value
+  attach_function 'control_k26', [], ExcelValue.by_value
   attach_function 'control_bp26', [], ExcelValue.by_value
   attach_function 'control_bq26', [], ExcelValue.by_value
   attach_function 'control_br26', [], ExcelValue.by_value
@@ -522,6 +806,9 @@ module Decc2050Model
   attach_function 'control_d27', [], ExcelValue.by_value
   attach_function 'control_f27', [], ExcelValue.by_value
   attach_function 'control_h27', [], ExcelValue.by_value
+  attach_function 'control_i27', [], ExcelValue.by_value
+  attach_function 'control_j27', [], ExcelValue.by_value
+  attach_function 'control_k27', [], ExcelValue.by_value
   attach_function 'control_bp27', [], ExcelValue.by_value
   attach_function 'control_bq27', [], ExcelValue.by_value
   attach_function 'control_br27', [], ExcelValue.by_value
@@ -529,6 +816,9 @@ module Decc2050Model
   attach_function 'control_d28', [], ExcelValue.by_value
   attach_function 'control_f28', [], ExcelValue.by_value
   attach_function 'control_h28', [], ExcelValue.by_value
+  attach_function 'control_i28', [], ExcelValue.by_value
+  attach_function 'control_j28', [], ExcelValue.by_value
+  attach_function 'control_k28', [], ExcelValue.by_value
   attach_function 'control_bp28', [], ExcelValue.by_value
   attach_function 'control_bq28', [], ExcelValue.by_value
   attach_function 'control_br28', [], ExcelValue.by_value
@@ -536,6 +826,9 @@ module Decc2050Model
   attach_function 'control_d29', [], ExcelValue.by_value
   attach_function 'control_f29', [], ExcelValue.by_value
   attach_function 'control_h29', [], ExcelValue.by_value
+  attach_function 'control_i29', [], ExcelValue.by_value
+  attach_function 'control_j29', [], ExcelValue.by_value
+  attach_function 'control_k29', [], ExcelValue.by_value
   attach_function 'control_bp29', [], ExcelValue.by_value
   attach_function 'control_bq29', [], ExcelValue.by_value
   attach_function 'control_br29', [], ExcelValue.by_value
@@ -543,6 +836,9 @@ module Decc2050Model
   attach_function 'control_d30', [], ExcelValue.by_value
   attach_function 'control_f30', [], ExcelValue.by_value
   attach_function 'control_h30', [], ExcelValue.by_value
+  attach_function 'control_i30', [], ExcelValue.by_value
+  attach_function 'control_j30', [], ExcelValue.by_value
+  attach_function 'control_k30', [], ExcelValue.by_value
   attach_function 'control_bp30', [], ExcelValue.by_value
   attach_function 'control_bq30', [], ExcelValue.by_value
   attach_function 'control_br30', [], ExcelValue.by_value
@@ -550,6 +846,9 @@ module Decc2050Model
   attach_function 'control_d31', [], ExcelValue.by_value
   attach_function 'control_f31', [], ExcelValue.by_value
   attach_function 'control_h31', [], ExcelValue.by_value
+  attach_function 'control_i31', [], ExcelValue.by_value
+  attach_function 'control_j31', [], ExcelValue.by_value
+  attach_function 'control_k31', [], ExcelValue.by_value
   attach_function 'control_bp31', [], ExcelValue.by_value
   attach_function 'control_bq31', [], ExcelValue.by_value
   attach_function 'control_br31', [], ExcelValue.by_value
@@ -557,6 +856,9 @@ module Decc2050Model
   attach_function 'control_d32', [], ExcelValue.by_value
   attach_function 'control_f32', [], ExcelValue.by_value
   attach_function 'control_h32', [], ExcelValue.by_value
+  attach_function 'control_i32', [], ExcelValue.by_value
+  attach_function 'control_j32', [], ExcelValue.by_value
+  attach_function 'control_k32', [], ExcelValue.by_value
   attach_function 'control_bp32', [], ExcelValue.by_value
   attach_function 'control_bq32', [], ExcelValue.by_value
   attach_function 'control_br32', [], ExcelValue.by_value
@@ -564,6 +866,9 @@ module Decc2050Model
   attach_function 'control_d33', [], ExcelValue.by_value
   attach_function 'control_f33', [], ExcelValue.by_value
   attach_function 'control_h33', [], ExcelValue.by_value
+  attach_function 'control_i33', [], ExcelValue.by_value
+  attach_function 'control_j33', [], ExcelValue.by_value
+  attach_function 'control_k33', [], ExcelValue.by_value
   attach_function 'control_bp33', [], ExcelValue.by_value
   attach_function 'control_bq33', [], ExcelValue.by_value
   attach_function 'control_br33', [], ExcelValue.by_value
@@ -571,6 +876,9 @@ module Decc2050Model
   attach_function 'control_d34', [], ExcelValue.by_value
   attach_function 'control_f34', [], ExcelValue.by_value
   attach_function 'control_h34', [], ExcelValue.by_value
+  attach_function 'control_i34', [], ExcelValue.by_value
+  attach_function 'control_j34', [], ExcelValue.by_value
+  attach_function 'control_k34', [], ExcelValue.by_value
   attach_function 'control_bp34', [], ExcelValue.by_value
   attach_function 'control_bq34', [], ExcelValue.by_value
   attach_function 'control_br34', [], ExcelValue.by_value
@@ -578,6 +886,9 @@ module Decc2050Model
   attach_function 'control_d35', [], ExcelValue.by_value
   attach_function 'control_f35', [], ExcelValue.by_value
   attach_function 'control_h35', [], ExcelValue.by_value
+  attach_function 'control_i35', [], ExcelValue.by_value
+  attach_function 'control_j35', [], ExcelValue.by_value
+  attach_function 'control_k35', [], ExcelValue.by_value
   attach_function 'control_bp35', [], ExcelValue.by_value
   attach_function 'control_bq35', [], ExcelValue.by_value
   attach_function 'control_br35', [], ExcelValue.by_value
@@ -585,6 +896,9 @@ module Decc2050Model
   attach_function 'control_d36', [], ExcelValue.by_value
   attach_function 'control_f36', [], ExcelValue.by_value
   attach_function 'control_h36', [], ExcelValue.by_value
+  attach_function 'control_i36', [], ExcelValue.by_value
+  attach_function 'control_j36', [], ExcelValue.by_value
+  attach_function 'control_k36', [], ExcelValue.by_value
   attach_function 'control_bp36', [], ExcelValue.by_value
   attach_function 'control_bq36', [], ExcelValue.by_value
   attach_function 'control_br36', [], ExcelValue.by_value
@@ -592,6 +906,9 @@ module Decc2050Model
   attach_function 'control_d37', [], ExcelValue.by_value
   attach_function 'control_f37', [], ExcelValue.by_value
   attach_function 'control_h37', [], ExcelValue.by_value
+  attach_function 'control_i37', [], ExcelValue.by_value
+  attach_function 'control_j37', [], ExcelValue.by_value
+  attach_function 'control_k37', [], ExcelValue.by_value
   attach_function 'control_bp37', [], ExcelValue.by_value
   attach_function 'control_bq37', [], ExcelValue.by_value
   attach_function 'control_br37', [], ExcelValue.by_value
@@ -599,6 +916,9 @@ module Decc2050Model
   attach_function 'control_d38', [], ExcelValue.by_value
   attach_function 'control_f38', [], ExcelValue.by_value
   attach_function 'control_h38', [], ExcelValue.by_value
+  attach_function 'control_i38', [], ExcelValue.by_value
+  attach_function 'control_j38', [], ExcelValue.by_value
+  attach_function 'control_k38', [], ExcelValue.by_value
   attach_function 'control_bp38', [], ExcelValue.by_value
   attach_function 'control_bq38', [], ExcelValue.by_value
   attach_function 'control_br38', [], ExcelValue.by_value
@@ -606,6 +926,9 @@ module Decc2050Model
   attach_function 'control_d39', [], ExcelValue.by_value
   attach_function 'control_f39', [], ExcelValue.by_value
   attach_function 'control_h39', [], ExcelValue.by_value
+  attach_function 'control_i39', [], ExcelValue.by_value
+  attach_function 'control_j39', [], ExcelValue.by_value
+  attach_function 'control_k39', [], ExcelValue.by_value
   attach_function 'control_bp39', [], ExcelValue.by_value
   attach_function 'control_bq39', [], ExcelValue.by_value
   attach_function 'control_br39', [], ExcelValue.by_value
@@ -613,6 +936,9 @@ module Decc2050Model
   attach_function 'control_d40', [], ExcelValue.by_value
   attach_function 'control_f40', [], ExcelValue.by_value
   attach_function 'control_h40', [], ExcelValue.by_value
+  attach_function 'control_i40', [], ExcelValue.by_value
+  attach_function 'control_j40', [], ExcelValue.by_value
+  attach_function 'control_k40', [], ExcelValue.by_value
   attach_function 'control_bp40', [], ExcelValue.by_value
   attach_function 'control_bq40', [], ExcelValue.by_value
   attach_function 'control_br40', [], ExcelValue.by_value
@@ -620,6 +946,9 @@ module Decc2050Model
   attach_function 'control_d41', [], ExcelValue.by_value
   attach_function 'control_f41', [], ExcelValue.by_value
   attach_function 'control_h41', [], ExcelValue.by_value
+  attach_function 'control_i41', [], ExcelValue.by_value
+  attach_function 'control_j41', [], ExcelValue.by_value
+  attach_function 'control_k41', [], ExcelValue.by_value
   attach_function 'control_bp41', [], ExcelValue.by_value
   attach_function 'control_bq41', [], ExcelValue.by_value
   attach_function 'control_br41', [], ExcelValue.by_value
@@ -627,6 +956,9 @@ module Decc2050Model
   attach_function 'control_d42', [], ExcelValue.by_value
   attach_function 'control_f42', [], ExcelValue.by_value
   attach_function 'control_h42', [], ExcelValue.by_value
+  attach_function 'control_i42', [], ExcelValue.by_value
+  attach_function 'control_j42', [], ExcelValue.by_value
+  attach_function 'control_k42', [], ExcelValue.by_value
   attach_function 'control_bp42', [], ExcelValue.by_value
   attach_function 'control_bq42', [], ExcelValue.by_value
   attach_function 'control_br42', [], ExcelValue.by_value
@@ -634,6 +966,9 @@ module Decc2050Model
   attach_function 'control_d43', [], ExcelValue.by_value
   attach_function 'control_f43', [], ExcelValue.by_value
   attach_function 'control_h43', [], ExcelValue.by_value
+  attach_function 'control_i43', [], ExcelValue.by_value
+  attach_function 'control_j43', [], ExcelValue.by_value
+  attach_function 'control_k43', [], ExcelValue.by_value
   attach_function 'control_bp43', [], ExcelValue.by_value
   attach_function 'control_bq43', [], ExcelValue.by_value
   attach_function 'control_br43', [], ExcelValue.by_value
@@ -641,6 +976,9 @@ module Decc2050Model
   attach_function 'control_d44', [], ExcelValue.by_value
   attach_function 'control_f44', [], ExcelValue.by_value
   attach_function 'control_h44', [], ExcelValue.by_value
+  attach_function 'control_i44', [], ExcelValue.by_value
+  attach_function 'control_j44', [], ExcelValue.by_value
+  attach_function 'control_k44', [], ExcelValue.by_value
   attach_function 'control_bp44', [], ExcelValue.by_value
   attach_function 'control_bq44', [], ExcelValue.by_value
   attach_function 'control_br44', [], ExcelValue.by_value
@@ -648,6 +986,9 @@ module Decc2050Model
   attach_function 'control_d45', [], ExcelValue.by_value
   attach_function 'control_f45', [], ExcelValue.by_value
   attach_function 'control_h45', [], ExcelValue.by_value
+  attach_function 'control_i45', [], ExcelValue.by_value
+  attach_function 'control_j45', [], ExcelValue.by_value
+  attach_function 'control_k45', [], ExcelValue.by_value
   attach_function 'control_bp45', [], ExcelValue.by_value
   attach_function 'control_bq45', [], ExcelValue.by_value
   attach_function 'control_br45', [], ExcelValue.by_value
@@ -655,6 +996,9 @@ module Decc2050Model
   attach_function 'control_d46', [], ExcelValue.by_value
   attach_function 'control_f46', [], ExcelValue.by_value
   attach_function 'control_h46', [], ExcelValue.by_value
+  attach_function 'control_i46', [], ExcelValue.by_value
+  attach_function 'control_j46', [], ExcelValue.by_value
+  attach_function 'control_k46', [], ExcelValue.by_value
   attach_function 'control_bp46', [], ExcelValue.by_value
   attach_function 'control_bq46', [], ExcelValue.by_value
   attach_function 'control_br46', [], ExcelValue.by_value
@@ -662,6 +1006,9 @@ module Decc2050Model
   attach_function 'control_d47', [], ExcelValue.by_value
   attach_function 'control_f47', [], ExcelValue.by_value
   attach_function 'control_h47', [], ExcelValue.by_value
+  attach_function 'control_i47', [], ExcelValue.by_value
+  attach_function 'control_j47', [], ExcelValue.by_value
+  attach_function 'control_k47', [], ExcelValue.by_value
   attach_function 'control_bp47', [], ExcelValue.by_value
   attach_function 'control_bq47', [], ExcelValue.by_value
   attach_function 'control_br47', [], ExcelValue.by_value
@@ -669,6 +1016,9 @@ module Decc2050Model
   attach_function 'control_d48', [], ExcelValue.by_value
   attach_function 'control_f48', [], ExcelValue.by_value
   attach_function 'control_h48', [], ExcelValue.by_value
+  attach_function 'control_i48', [], ExcelValue.by_value
+  attach_function 'control_j48', [], ExcelValue.by_value
+  attach_function 'control_k48', [], ExcelValue.by_value
   attach_function 'control_bp48', [], ExcelValue.by_value
   attach_function 'control_bq48', [], ExcelValue.by_value
   attach_function 'control_br48', [], ExcelValue.by_value
@@ -676,6 +1026,9 @@ module Decc2050Model
   attach_function 'control_d49', [], ExcelValue.by_value
   attach_function 'control_f49', [], ExcelValue.by_value
   attach_function 'control_h49', [], ExcelValue.by_value
+  attach_function 'control_i49', [], ExcelValue.by_value
+  attach_function 'control_j49', [], ExcelValue.by_value
+  attach_function 'control_k49', [], ExcelValue.by_value
   attach_function 'control_bp49', [], ExcelValue.by_value
   attach_function 'control_bq49', [], ExcelValue.by_value
   attach_function 'control_br49', [], ExcelValue.by_value
@@ -683,6 +1036,9 @@ module Decc2050Model
   attach_function 'control_d50', [], ExcelValue.by_value
   attach_function 'control_f50', [], ExcelValue.by_value
   attach_function 'control_h50', [], ExcelValue.by_value
+  attach_function 'control_i50', [], ExcelValue.by_value
+  attach_function 'control_j50', [], ExcelValue.by_value
+  attach_function 'control_k50', [], ExcelValue.by_value
   attach_function 'control_bp50', [], ExcelValue.by_value
   attach_function 'control_bq50', [], ExcelValue.by_value
   attach_function 'control_br50', [], ExcelValue.by_value
@@ -690,6 +1046,9 @@ module Decc2050Model
   attach_function 'control_d51', [], ExcelValue.by_value
   attach_function 'control_f51', [], ExcelValue.by_value
   attach_function 'control_h51', [], ExcelValue.by_value
+  attach_function 'control_i51', [], ExcelValue.by_value
+  attach_function 'control_j51', [], ExcelValue.by_value
+  attach_function 'control_k51', [], ExcelValue.by_value
   attach_function 'control_bp51', [], ExcelValue.by_value
   attach_function 'control_bq51', [], ExcelValue.by_value
   attach_function 'control_br51', [], ExcelValue.by_value
@@ -697,6 +1056,9 @@ module Decc2050Model
   attach_function 'control_d52', [], ExcelValue.by_value
   attach_function 'control_f52', [], ExcelValue.by_value
   attach_function 'control_h52', [], ExcelValue.by_value
+  attach_function 'control_i52', [], ExcelValue.by_value
+  attach_function 'control_j52', [], ExcelValue.by_value
+  attach_function 'control_k52', [], ExcelValue.by_value
   attach_function 'control_bp52', [], ExcelValue.by_value
   attach_function 'control_bq52', [], ExcelValue.by_value
   attach_function 'control_br52', [], ExcelValue.by_value
@@ -704,6 +1066,9 @@ module Decc2050Model
   attach_function 'control_d53', [], ExcelValue.by_value
   attach_function 'control_f53', [], ExcelValue.by_value
   attach_function 'control_h53', [], ExcelValue.by_value
+  attach_function 'control_i53', [], ExcelValue.by_value
+  attach_function 'control_j53', [], ExcelValue.by_value
+  attach_function 'control_k53', [], ExcelValue.by_value
   attach_function 'control_bp53', [], ExcelValue.by_value
   attach_function 'control_bq53', [], ExcelValue.by_value
   attach_function 'control_br53', [], ExcelValue.by_value
@@ -711,6 +1076,9 @@ module Decc2050Model
   attach_function 'control_d54', [], ExcelValue.by_value
   attach_function 'control_f54', [], ExcelValue.by_value
   attach_function 'control_h54', [], ExcelValue.by_value
+  attach_function 'control_i54', [], ExcelValue.by_value
+  attach_function 'control_j54', [], ExcelValue.by_value
+  attach_function 'control_k54', [], ExcelValue.by_value
   attach_function 'control_bp54', [], ExcelValue.by_value
   attach_function 'control_bq54', [], ExcelValue.by_value
   attach_function 'control_br54', [], ExcelValue.by_value
@@ -718,6 +1086,9 @@ module Decc2050Model
   attach_function 'control_d55', [], ExcelValue.by_value
   attach_function 'control_f55', [], ExcelValue.by_value
   attach_function 'control_h55', [], ExcelValue.by_value
+  attach_function 'control_i55', [], ExcelValue.by_value
+  attach_function 'control_j55', [], ExcelValue.by_value
+  attach_function 'control_k55', [], ExcelValue.by_value
   attach_function 'control_bp55', [], ExcelValue.by_value
   attach_function 'control_bq55', [], ExcelValue.by_value
   attach_function 'control_br55', [], ExcelValue.by_value
@@ -725,6 +1096,9 @@ module Decc2050Model
   attach_function 'control_d56', [], ExcelValue.by_value
   attach_function 'control_f56', [], ExcelValue.by_value
   attach_function 'control_h56', [], ExcelValue.by_value
+  attach_function 'control_i56', [], ExcelValue.by_value
+  attach_function 'control_j56', [], ExcelValue.by_value
+  attach_function 'control_k56', [], ExcelValue.by_value
   attach_function 'control_bp56', [], ExcelValue.by_value
   attach_function 'control_bq56', [], ExcelValue.by_value
   attach_function 'control_br56', [], ExcelValue.by_value
