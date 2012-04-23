@@ -1,11 +1,11 @@
 # coding: utf-8
-# Test for excelspreadsheet
+# Test for decc_2050_model
 require 'rubygems'
 gem 'minitest'
 require 'test/unit'
-require_relative '../lib/decc_2050_model'
+require_relative 'decc_2050_model'
 
-class TestExcelspreadsheet < Test::Unit::TestCase
+class TestDecc_2050_model < Test::Unit::TestCase
   def spreadsheet; @spreadsheet ||= init_spreadsheet; end
   def init_spreadsheet; Decc2050Model end
 
@@ -26,6 +26,24 @@ def test_control_h5
   r = spreadsheet.control_h5
   assert_equal(:ExcelString,r[:type])
   assert_equal("No new nuclear power installed; estimated closure of final plant in 2035",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i5
+  r = spreadsheet.control_i5
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~13 3GW power stations delivering ~280 TWh/yr",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j5
+  r = spreadsheet.control_j5
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~30 3GW power stations delivering ~630 TWh/yr",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k5
+  r = spreadsheet.control_k5
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~50 3GW power stations delivering ~1030 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp5
@@ -76,6 +94,24 @@ def test_control_h7
   assert_equal("Demonstration plants only; no roll-out of CCS",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i7
+  r = spreadsheet.control_i7
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~240 TWh/yr from 25-40 CCS power stations; comparable to current gas & coal generation",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j7
+  r = spreadsheet.control_j7
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~340 TWh/yr from 35-60 CCS power stations; comparable to total current demand",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k7
+  r = spreadsheet.control_k7
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~510 TWh/yr  from 50-90 CCS power stations; build rate of gas plants in the 1990s",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp7
   r = spreadsheet.control_bp7
   assert_equal(:ExcelString,r[:type])
@@ -116,6 +152,24 @@ def test_control_h8
   r = spreadsheet.control_h8
   assert_equal(:ExcelString,r[:type])
   assert_equal("100% coal/biomass, 0% gas/biogas CCS after demonstration plants",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i8
+  r = spreadsheet.control_i8
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("66% coal/biomass, 33% gas/biogas CCS after demonstration plants",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j8
+  r = spreadsheet.control_j8
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("33% coal/biomass, 66% gas/biogas CCS after demonstration plants",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k8
+  r = spreadsheet.control_k8
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("0% coal/biomas, 100% gas/biogas CCS after demonstration plants",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp8
@@ -160,6 +214,24 @@ def test_control_h9
   assert_equal("~1,400 turbines in 2025, reducing to zero as decommissioned sites are not replanted",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i9
+  r = spreadsheet.control_i9
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~10,000 turbines in 2050, delivering ~180 TWh/yr",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j9
+  r = spreadsheet.control_j9
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~17,000 turbines in 2050, delivering ~310 TWh/yr",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k9
+  r = spreadsheet.control_k9
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~40,000 turbines in 2050, delivering ~430 TWh/yr",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp9
   r = spreadsheet.control_bp9
   assert_equal(:ExcelString,r[:type])
@@ -200,6 +272,24 @@ def test_control_h10
   r = spreadsheet.control_h10
   assert_equal(:ExcelString,r[:type])
   assert_equal("~4,400 turbines in 2025, reducing to zero as decommissioned sites are not replanted",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i10
+  r = spreadsheet.control_i10
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~8,000 turbines in 2050, delivering ~50 TWh/yr. ",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j10
+  r = spreadsheet.control_j10
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~13,000 turbines in 2050, delivering ~80 TWh/yr",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k10
+  r = spreadsheet.control_k10
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~20,000 turbines in 2050, delivering ~130 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp10
@@ -244,6 +334,24 @@ def test_control_h11
   assert_equal("None in 2050",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i11
+  r = spreadsheet.control_i11
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~300km of wave farms",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j11
+  r = spreadsheet.control_j11
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~600km of wave farms",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k11
+  r = spreadsheet.control_k11
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~900km of wave farms",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp11
   r = spreadsheet.control_bp11
   assert_equal(:ExcelString,r[:type])
@@ -284,6 +392,24 @@ def test_control_h12
   r = spreadsheet.control_h12
   assert_equal(:ExcelString,r[:type])
   assert_equal("None in 2050",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i12
+  r = spreadsheet.control_i12
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("1,000 tidal stream turbines",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j12
+  r = spreadsheet.control_j12
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("4,700 tidal stream turbines",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k12
+  r = spreadsheet.control_k12
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("10,600 tidal stream turbines",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp12
@@ -328,6 +454,24 @@ def test_control_h13
   assert_equal("None in  2050",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i13
+  r = spreadsheet.control_i13
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("3 small tidal range schemes",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j13
+  r = spreadsheet.control_j13
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("4 tidal range schemes",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k13
+  r = spreadsheet.control_k13
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("8 tidal range schemes",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp13
   r = spreadsheet.control_bp13
   assert_equal(:ExcelString,r[:type])
@@ -368,6 +512,24 @@ def test_control_h14
   r = spreadsheet.control_h14
   assert_equal(:ExcelString,r[:type])
   assert_equal("Only plants built and under construction (0.6GW)",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i14
+  r = spreadsheet.control_i14
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("8GW power stations by 2050 delivering 62TWh/yr",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j14
+  r = spreadsheet.control_j14
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("12GW power stations by 2050 delivering 100TWh/yr",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k14
+  r = spreadsheet.control_k14
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Over 20GW installed capacity by 2050 delivering 180TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp14
@@ -412,6 +574,24 @@ def test_control_h15
   assert_equal("No significant solar PV capacity is installed",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i15
+  r = spreadsheet.control_i15
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("4m2 of photovoltaic panels per person in 2050, supplying ~60 TWh/yr of electricity",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j15
+  r = spreadsheet.control_j15
+  assert_equal(:ExcelString,r[:type])
+  assert_equal(" 5.4m2 of photovoltaic panels per person in 2050, supplying ~80 TWh/yr",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k15
+  r = spreadsheet.control_k15
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("9.5m2 of photovoltaic panels per person – all suitable roof and facade space used",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp15
   r = spreadsheet.control_bp15
   assert_equal(:ExcelString,r[:type])
@@ -452,6 +632,24 @@ def test_control_h16
   r = spreadsheet.control_h16
   assert_equal(:ExcelString,r[:type])
   assert_equal("As today, a negligible proportion of buildings have solar thermal in 2050",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i16
+  r = spreadsheet.control_i16
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~30% of suitable buildings get ~30% of their hot water from solar thermal",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j16
+  r = spreadsheet.control_j16
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("All suitable buildings get ~30% of their hot water from solar thermal",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k16
+  r = spreadsheet.control_k16
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("All suitable buildings get ~60% of their hot water from solar thermal",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp16
@@ -496,6 +694,24 @@ def test_control_h17
   assert_equal("No deployment of geothermal electricity generation",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i17
+  r = spreadsheet.control_i17
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Supply of geothermal electricity grows slowly to 7 TWh/yr in 2035 and is sustained",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j17
+  r = spreadsheet.control_j17
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Supply grows quickly reaching 21 TWh/yr by 2030 and is sustained",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k17
+  r = spreadsheet.control_k17
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Supply grows rapidly reaching 35 TWh/yr by 2030 and is sustained",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp17
   r = spreadsheet.control_bp17
   assert_equal(:ExcelString,r[:type])
@@ -536,6 +752,24 @@ def test_control_h18
   r = spreadsheet.control_h18
   assert_equal(:ExcelString,r[:type])
   assert_equal("Supply of electricity is maintained at current levels of 5 TWh/yr",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i18
+  r = spreadsheet.control_i18
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Supply grows slowly, reaching 7 TWh/yr by 2050",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j18
+  r = spreadsheet.control_j18
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Supply grows more quickly, reaching 8 TWh/yr by 2030 and is sustained",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k18
+  r = spreadsheet.control_k18
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Supply grows rapidly reaching 13 TWh/yr by 2035 and is sustained",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp18
@@ -580,6 +814,24 @@ def test_control_h19
   assert_equal("As today, no discernable supply of electricity from micro-wind turbines",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i19
+  r = spreadsheet.control_i19
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Supply increases to 1.3 TWh/yr by 2020 and is sustained",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j19
+  r = spreadsheet.control_j19
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Installed in all ~450,000 suitable domestic properties; supplies 3.5 TWh/year from 2020",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k19
+  r = spreadsheet.control_k19
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Installed in all suitable domestic and non-domestic sties; 8.9 TWh/year from 2020",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp19
   r = spreadsheet.control_bp19
   assert_equal(:ExcelString,r[:type])
@@ -620,6 +872,24 @@ def test_control_h20
   r = spreadsheet.control_h20
   assert_equal(:ExcelString,r[:type])
   assert_equal("No electricity imports, other than for balancing",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i20
+  r = spreadsheet.control_i20
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("30 TWh/yr of electricity imported from Southern Europe",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j20
+  r = spreadsheet.control_j20
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("70 TWh/yr imported from UK 10% share of international desert solar project ",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k20
+  r = spreadsheet.control_k20
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("140 TWh/yr imported from UK 20% share of international desert solar project",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp20
@@ -670,6 +940,24 @@ def test_control_h22
   assert_equal("Energy crops and food production similar to today",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i22
+  r = spreadsheet.control_i22
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("5% of land used for energy crops",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j22
+  r = spreadsheet.control_j22
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("10% of land used for energy crops",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k22
+  r = spreadsheet.control_k22
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("17% of land used for energy crops",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp22
   r = spreadsheet.control_bp22
   assert_equal(:ExcelString,r[:type])
@@ -710,6 +998,24 @@ def test_control_h23
   r = spreadsheet.control_h23
   assert_equal(:ExcelString,r[:type])
   assert_equal("Livestock numbers increase by 10%",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i23
+  r = spreadsheet.control_i23
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Livestock numbers same as today",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j23
+  r = spreadsheet.control_j23
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Livestock numbers decrease by 10%",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k23
+  r = spreadsheet.control_k23
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Livestock numbers decrease by 20%",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp23
@@ -754,6 +1060,24 @@ def test_control_h24
   assert_equal("Quantity of waste increases 50%; Small increase in rates of recycling and EFW.",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i24
+  r = spreadsheet.control_i24
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Quantity of waste increases 20%; Increase in rates of recycling and EFW.",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j24
+  r = spreadsheet.control_j24
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Quantity of waste increases 33%; Significant increase in rates of recycling and EFW through innovation.",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k24
+  r = spreadsheet.control_k24
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Quantity of waste decreases 20%; Significant increase in rate of recycling.",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp24
   r = spreadsheet.control_bp24
   assert_equal(:ExcelString,r[:type])
@@ -794,6 +1118,24 @@ def test_control_h25
   r = spreadsheet.control_h25
   assert_equal(:ExcelString,r[:type])
   assert_equal("No development of macro-algae cultivation",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i25
+  r = spreadsheet.control_i25
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Area same as half of natural reserve used, delivering ~4 TWh/yr",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j25
+  r = spreadsheet.control_j25
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Area same as all of natural reserve used, delivering ~9 TWh/yr",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k25
+  r = spreadsheet.control_k25
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Area same as four times natural reserve used, delivering ~46 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp25
@@ -838,6 +1180,24 @@ def test_control_h26
   assert_equal("Biomass converted to a mixture of solid, liquid and gas biofuels",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i26
+  r = spreadsheet.control_i26
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Biomass mainly converted to solid biofuel",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j26
+  r = spreadsheet.control_j26
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Biomass mainly converted to liquid biofuel",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k26
+  r = spreadsheet.control_k26
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Biomass mainly converted to biogas fuel",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp26
   r = spreadsheet.control_bp26
   assert_equal(:ExcelString,r[:type])
@@ -878,6 +1238,24 @@ def test_control_h27
   r = spreadsheet.control_h27
   assert_equal(:ExcelString,r[:type])
   assert_equal("Imported biofuel declines from ~ 4 TWh/yr currently to zero",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i27
+  r = spreadsheet.control_i27
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Up to 70 TWh/yr of imported bioenergy in 2050",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j27
+  r = spreadsheet.control_j27
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Up to 140 TWh/yr of imported bioenergy in 2050",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k27
+  r = spreadsheet.control_k27
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Up to 280 TWh/yr of imported bioenergy in 2050",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp27
@@ -928,6 +1306,24 @@ def test_control_h30
   assert_equal("In 2050, individuals travel 9% further than today. No noticeable modal shift.",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i30
+  r = spreadsheet.control_i30
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j30
+  r = spreadsheet.control_j30
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k30
+  r = spreadsheet.control_k30
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("In 2050, individuals travel the same distance as today. Signficant shift to public transport.",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp30
   r = spreadsheet.control_bp30
   assert_equal(:ExcelString,r[:type])
@@ -968,6 +1364,24 @@ def test_control_h31
   r = spreadsheet.control_h31
   assert_equal(:ExcelString,r[:type])
   assert_equal("By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars.",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i31
+  r = spreadsheet.control_i31
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("By 2050, 54% plug-in hybrid vehicles; 11%  zero emission vehicles, all buses hybrids.",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j31
+  r = spreadsheet.control_j31
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("By 2050, 32% plug-in hybrid vehicles; 48% zero emission vehicles; 22% buses electric.",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k31
+  r = spreadsheet.control_k31
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("By 2050 100%  zero emission vehiclesl; all passenger trains electrified; 50% bus electrified ",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp31
@@ -1012,6 +1426,24 @@ def test_control_h32
   assert_equal("By 2050, 100% battery powered.",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i32
+  r = spreadsheet.control_i32
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("By 2050, 80% battery;  20% hydrogen fuel cell",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j32
+  r = spreadsheet.control_j32
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("By 2050, 20% battery; 80% hydrogen fuel cell",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k32
+  r = spreadsheet.control_k32
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("By 2050, 100% hydrogen fuel cells",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp32
   r = spreadsheet.control_bp32
   assert_equal(:ExcelString,r[:type])
@@ -1052,6 +1484,24 @@ def test_control_h33
   r = spreadsheet.control_h33
   assert_equal(:ExcelString,r[:type])
   assert_equal("Road haulage makes up 73% of distance, using conventional engines. Rail all diesel",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i33
+  r = spreadsheet.control_i33
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Some shift from road to rail and water, and more efficient engines",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j33
+  r = spreadsheet.control_j33
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Greater modal shift to rail and water; more efficient HGVs; more efficient logistics",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k33
+  r = spreadsheet.control_k33
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Road modal share falls to half; greater hybridisation. Rail freight is all electric ",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp33
@@ -1096,6 +1546,24 @@ def test_control_h34
   assert_equal("By 2050, 130% passengers increase; 50% more fuel use",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i34
+  r = spreadsheet.control_i34
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("By 2050, 130% passengers increase; 45% more fuel use",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j34
+  r = spreadsheet.control_j34
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("By 2050, 130% passengers increase; 31% more fuel use",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k34
+  r = spreadsheet.control_k34
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("By 2050, 85% passengers increase; 5% more fuel use",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp34
   r = spreadsheet.control_bp34
   assert_equal(:ExcelString,r[:type])
@@ -1136,6 +1604,24 @@ def test_control_h35
   r = spreadsheet.control_h35
   assert_equal(:ExcelString,r[:type])
   assert_equal("no improvements from energy efficiency; between 2007 and 2050 emissions increase by 139%",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i35
+  r = spreadsheet.control_i35
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("1/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 78%",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j35
+  r = spreadsheet.control_j35
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("2/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 16%",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k35
+  r = spreadsheet.control_k35
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("maximum technical feasible reductions realised; between 2007 and 2050 emissions decrease by 46%",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp35
@@ -1186,6 +1672,24 @@ def test_control_h37
   assert_equal("Average room temperature increases to 20°C (a 2.5°C increase on 2007)",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i37
+  r = spreadsheet.control_i37
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Average room temperature increases to 18°C (a 0.5°C increase on 2007)",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j37
+  r = spreadsheet.control_j37
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Average room temperature decreases to 17°C (a 0.5°C decrease on 2007)",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k37
+  r = spreadsheet.control_k37
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Average room temperature decreases to 16°C (a 1.5°C decrease on 2007)",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp37
   r = spreadsheet.control_bp37
   assert_equal(:ExcelString,r[:type])
@@ -1226,6 +1730,24 @@ def test_control_h38
   r = spreadsheet.control_h38
   assert_equal(:ExcelString,r[:type])
   assert_equal("Over 7m homes insulated, average thermal leakiness falls by 25%",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i38
+  r = spreadsheet.control_i38
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Over 8m homes insulated, average thermal leakiness falls by 33%",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j38
+  r = spreadsheet.control_j38
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Over 18m homes insulated, average thermal leakiness falls by 42%",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k38
+  r = spreadsheet.control_k38
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Over 24m homes insulated, average thermal leakiness decreases by 50% ",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp38
@@ -1270,6 +1792,24 @@ def test_control_h39
   assert_equal("The proportion of domestic heat supplied using electricity is 0-10%, as today",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i39
+  r = spreadsheet.control_i39
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("The proportion of new domestic heating systems using electricity is 20%",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j39
+  r = spreadsheet.control_j39
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("The proportion of new domestic heating systems supplied using electricity is 30-60%",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k39
+  r = spreadsheet.control_k39
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("The proportion of new domestic heating systems supplied using electricity is 80-100%",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp39
   r = spreadsheet.control_bp39
   assert_equal(:ExcelString,r[:type])
@@ -1310,6 +1850,24 @@ def test_control_h40
   r = spreadsheet.control_h40
   assert_equal(:ExcelString,r[:type])
   assert_equal("The dominant non-electric heat source is gas or gas CHP (biogas if available)",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i40
+  r = spreadsheet.control_i40
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("The dominant non-electric heat source is coal or coal CHP (biomass if available)",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j40
+  r = spreadsheet.control_j40
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("The dominant non-electric heat source is waste heat from power stations",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k40
+  r = spreadsheet.control_k40
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("A mixture of gas/biogas; coal/biomass; and heat from power stations",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp40
@@ -1360,6 +1918,24 @@ def test_control_h42
   assert_equal("Energy demand for domestic lights and appliances increases by 20% (relative to 2007)",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i42
+  r = spreadsheet.control_i42
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Energy demand for domestic lights and appliances is stable",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j42
+  r = spreadsheet.control_j42
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Energy demand for domestic lights and appliances decreases by 40%",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k42
+  r = spreadsheet.control_k42
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Energy demand for domestic lights and appliances decreases by 60%",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp42
   r = spreadsheet.control_bp42
   assert_equal(:ExcelString,r[:type])
@@ -1400,6 +1976,24 @@ def test_control_h43
   r = spreadsheet.control_h43
   assert_equal(:ExcelString,r[:type])
   assert_equal("Energy used for domestic cooking remains at 63% electricity and 37% gas",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i43
+  r = spreadsheet.control_i43
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Energy used for domestic cooking is entirely electric",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j43
+  r = spreadsheet.control_j43
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Same as B",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k43
+  r = spreadsheet.control_k43
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Same as B",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp43
@@ -1450,6 +2044,24 @@ def test_control_h45
   assert_equal("UK industry output more than doubles by 2050",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i45
+  r = spreadsheet.control_i45
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("UK industry grows in line with current trends",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j45
+  r = spreadsheet.control_j45
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("UK industry output falls 30-40% by 2050",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k45
+  r = spreadsheet.control_k45
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Same as C",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp45
   r = spreadsheet.control_bp45
   assert_equal(:ExcelString,r[:type])
@@ -1490,6 +2102,24 @@ def test_control_h46
   r = spreadsheet.control_h46
   assert_equal(:ExcelString,r[:type])
   assert_equal("No electrification of processes, little improvement in energy intensity",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i46
+  r = spreadsheet.control_i46
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Some processes electrified; moderate improvements in process emissions and energy demand",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j46
+  r = spreadsheet.control_j46
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("High electrification; CCS captures 48% of emissions; process emissions reduced",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k46
+  r = spreadsheet.control_k46
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Same as 3",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp46
@@ -1540,6 +2170,24 @@ def test_control_h48
   assert_equal("Space heating demand increases by 50%, hot water demand by 60%, cooling demand by 250%",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i48
+  r = spreadsheet.control_i48
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Space heating demand increases by 30%, hot water demand by 50%, cooling demand by 60%",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j48
+  r = spreadsheet.control_j48
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Space heating demand stable, hot water demand increases by 25%, cooling demand stable",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k48
+  r = spreadsheet.control_k48
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Space heating demand drops by 25%, hot water demand by 10%, cooling demand by 60%",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp48
   r = spreadsheet.control_bp48
   assert_equal(:ExcelString,r[:type])
@@ -1582,6 +2230,24 @@ def test_control_h49
   assert_equal("The proportion of non-domestic heat supplied using electricity is 0-10%, as today",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i49
+  r = spreadsheet.control_i49
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("The proportion of non-domestic heat supplied using electricity is 20%",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j49
+  r = spreadsheet.control_j49
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("The proportion of non-domestic heat supplied using electricity is 30-60%",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k49
+  r = spreadsheet.control_k49
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("The proportion of non-domestic heat supplied using electricity is 80-100%",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp49
   r = spreadsheet.control_bp49
   assert_equal(:ExcelString,r[:type])
@@ -1622,6 +2288,24 @@ def test_control_h50
   r = spreadsheet.control_h50
   assert_equal(:ExcelString,r[:type])
   assert_equal("The dominant non-electric heat source is gas or gas CHP (biogas if available)",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i50
+  r = spreadsheet.control_i50
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("The dominant non-electric heat source is coal or coal CHP (biomass if available)",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j50
+  r = spreadsheet.control_j50
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("The dominant non-electric heat source is heat from power stations",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k50
+  r = spreadsheet.control_k50
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("A mixture of gas/biogas, coal/biomass, and heat from power stations",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp50
@@ -1672,6 +2356,24 @@ def test_control_h52
   assert_equal("Energy demand for lights & appliances increases by 33%. Energy for cooking is stable",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i52
+  r = spreadsheet.control_i52
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Energy demand for lights & appliances increases by 15%; decreases by 5% for cooking",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j52
+  r = spreadsheet.control_j52
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Energy demand for lights & appliances decreases by 5%; decreases by 20% for cooking",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k52
+  r = spreadsheet.control_k52
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Energy demand for lights & appliances decreases by 30%; decreases by 25% for cooking",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp52
   r = spreadsheet.control_bp52
   assert_equal(:ExcelString,r[:type])
@@ -1712,6 +2414,24 @@ def test_control_h53
   r = spreadsheet.control_h53
   assert_equal(:ExcelString,r[:type])
   assert_equal("60% electricity and 40% gas (no change from 2007)",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i53
+  r = spreadsheet.control_i53
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("100% electric",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j53
+  r = spreadsheet.control_j53
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Same as B",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k53
+  r = spreadsheet.control_k53
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Same as B",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp53
@@ -1756,6 +2476,24 @@ def test_control_h55
   assert_equal("No geosequestration",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_i55
+  r = spreadsheet.control_i55
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Carbon dioxide sequestration rate of 1 million tonnes per annum by 2050",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j55
+  r = spreadsheet.control_j55
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Carbon dioxide sequestration rate of ~30 million tonnes per annum by 2050",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k55
+  r = spreadsheet.control_k55
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Carbon dioxide sequestration rate of ~110 million tonnes per annum by 2050",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp55
   r = spreadsheet.control_bp55
   assert_equal(:ExcelString,r[:type])
@@ -1796,6 +2534,24 @@ def test_control_h56
   r = spreadsheet.control_h56
   assert_equal(:ExcelString,r[:type])
   assert_equal("Today’s 3.5 GW storage & 4 GW interconnection with Europe for balancing",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_i56
+  r = spreadsheet.control_i56
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("4 GW storage & 10 GW interconnection with Europe for balancing",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_j56
+  r = spreadsheet.control_j56
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("7 GW storage with 2 more pumped storage, 15 GW interconnection & some demand shifting",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_k56
+  r = spreadsheet.control_k56
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("20 GW storage with large lagoons, 30 GW interconnection & substantial demand shifting",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bp56
