@@ -9,7 +9,7 @@ file 'ext/decc_2050_model.c' do
   command.cells_that_can_be_set_at_runtime = { "Control" => :all }
 
   command.cells_to_keep = {
-    "Control" => (5.upto(56).to_a.map { |r| ["d#{r}","f#{r}","h#{r}","bp#{r}","bq#{r}","br#{r}","bs#{r}"] }).flatten, # The 10 worders and long descriptions
+    "Control" => (5.upto(56).to_a.map { |r| ["d#{r}","f#{r}","h#{r}","i#{r}","j#{r}","k#{r}","bp#{r}","bq#{r}","br#{r}","bs#{r}"] }).flatten, # The 10 worders and long descriptions
     "Intermediate output" => :all, 
     "CostPerCapita" => :all, 
     "Land Use" => :all, 
