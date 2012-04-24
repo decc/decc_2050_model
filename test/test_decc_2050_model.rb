@@ -3,7 +3,7 @@
 require 'rubygems'
 gem 'minitest'
 require 'test/unit'
-require_relative 'decc_2050_model'
+require_relative '../lib/decc_2050_model'
 
 class TestDecc_2050_model < Test::Unit::TestCase
   def spreadsheet; @spreadsheet ||= init_spreadsheet; end
