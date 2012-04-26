@@ -19,570 +19,58 @@ module Decc2050Model
   attach_function 'reset', [], :void
 
   # start of Control
-  attach_function 'set_control_e4', [ExcelValue.by_value], :void
-  attach_function 'set_control_d5', [ExcelValue.by_value], :void
   attach_function 'set_control_e5', [ExcelValue.by_value], :void
-  attach_function 'set_control_f5', [ExcelValue.by_value], :void
-  attach_function 'set_control_h5', [ExcelValue.by_value], :void
-  attach_function 'set_control_i5', [ExcelValue.by_value], :void
-  attach_function 'set_control_j5', [ExcelValue.by_value], :void
-  attach_function 'set_control_k5', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp5', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq5', [ExcelValue.by_value], :void
-  attach_function 'set_control_br5', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs5', [ExcelValue.by_value], :void
-  attach_function 'set_control_d6', [ExcelValue.by_value], :void
-  attach_function 'set_control_d7', [ExcelValue.by_value], :void
+  attach_function 'set_control_e6', [ExcelValue.by_value], :void
   attach_function 'set_control_e7', [ExcelValue.by_value], :void
-  attach_function 'set_control_f7', [ExcelValue.by_value], :void
-  attach_function 'set_control_h7', [ExcelValue.by_value], :void
-  attach_function 'set_control_i7', [ExcelValue.by_value], :void
-  attach_function 'set_control_j7', [ExcelValue.by_value], :void
-  attach_function 'set_control_k7', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp7', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq7', [ExcelValue.by_value], :void
-  attach_function 'set_control_br7', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs7', [ExcelValue.by_value], :void
-  attach_function 'set_control_d8', [ExcelValue.by_value], :void
   attach_function 'set_control_e8', [ExcelValue.by_value], :void
-  attach_function 'set_control_f8', [ExcelValue.by_value], :void
-  attach_function 'set_control_h8', [ExcelValue.by_value], :void
-  attach_function 'set_control_i8', [ExcelValue.by_value], :void
-  attach_function 'set_control_j8', [ExcelValue.by_value], :void
-  attach_function 'set_control_k8', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp8', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq8', [ExcelValue.by_value], :void
-  attach_function 'set_control_br8', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs8', [ExcelValue.by_value], :void
-  attach_function 'set_control_d9', [ExcelValue.by_value], :void
   attach_function 'set_control_e9', [ExcelValue.by_value], :void
-  attach_function 'set_control_f9', [ExcelValue.by_value], :void
-  attach_function 'set_control_h9', [ExcelValue.by_value], :void
-  attach_function 'set_control_i9', [ExcelValue.by_value], :void
-  attach_function 'set_control_j9', [ExcelValue.by_value], :void
-  attach_function 'set_control_k9', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp9', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq9', [ExcelValue.by_value], :void
-  attach_function 'set_control_br9', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs9', [ExcelValue.by_value], :void
-  attach_function 'set_control_d10', [ExcelValue.by_value], :void
   attach_function 'set_control_e10', [ExcelValue.by_value], :void
-  attach_function 'set_control_f10', [ExcelValue.by_value], :void
-  attach_function 'set_control_h10', [ExcelValue.by_value], :void
-  attach_function 'set_control_i10', [ExcelValue.by_value], :void
-  attach_function 'set_control_j10', [ExcelValue.by_value], :void
-  attach_function 'set_control_k10', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp10', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq10', [ExcelValue.by_value], :void
-  attach_function 'set_control_br10', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs10', [ExcelValue.by_value], :void
-  attach_function 'set_control_d11', [ExcelValue.by_value], :void
   attach_function 'set_control_e11', [ExcelValue.by_value], :void
-  attach_function 'set_control_f11', [ExcelValue.by_value], :void
-  attach_function 'set_control_h11', [ExcelValue.by_value], :void
-  attach_function 'set_control_i11', [ExcelValue.by_value], :void
-  attach_function 'set_control_j11', [ExcelValue.by_value], :void
-  attach_function 'set_control_k11', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp11', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq11', [ExcelValue.by_value], :void
-  attach_function 'set_control_br11', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs11', [ExcelValue.by_value], :void
-  attach_function 'set_control_d12', [ExcelValue.by_value], :void
   attach_function 'set_control_e12', [ExcelValue.by_value], :void
-  attach_function 'set_control_f12', [ExcelValue.by_value], :void
-  attach_function 'set_control_h12', [ExcelValue.by_value], :void
-  attach_function 'set_control_i12', [ExcelValue.by_value], :void
-  attach_function 'set_control_j12', [ExcelValue.by_value], :void
-  attach_function 'set_control_k12', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp12', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq12', [ExcelValue.by_value], :void
-  attach_function 'set_control_br12', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs12', [ExcelValue.by_value], :void
-  attach_function 'set_control_d13', [ExcelValue.by_value], :void
   attach_function 'set_control_e13', [ExcelValue.by_value], :void
-  attach_function 'set_control_f13', [ExcelValue.by_value], :void
-  attach_function 'set_control_h13', [ExcelValue.by_value], :void
-  attach_function 'set_control_i13', [ExcelValue.by_value], :void
-  attach_function 'set_control_j13', [ExcelValue.by_value], :void
-  attach_function 'set_control_k13', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp13', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq13', [ExcelValue.by_value], :void
-  attach_function 'set_control_br13', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs13', [ExcelValue.by_value], :void
-  attach_function 'set_control_d14', [ExcelValue.by_value], :void
   attach_function 'set_control_e14', [ExcelValue.by_value], :void
-  attach_function 'set_control_f14', [ExcelValue.by_value], :void
-  attach_function 'set_control_h14', [ExcelValue.by_value], :void
-  attach_function 'set_control_i14', [ExcelValue.by_value], :void
-  attach_function 'set_control_j14', [ExcelValue.by_value], :void
-  attach_function 'set_control_k14', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp14', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq14', [ExcelValue.by_value], :void
-  attach_function 'set_control_br14', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs14', [ExcelValue.by_value], :void
-  attach_function 'set_control_d15', [ExcelValue.by_value], :void
   attach_function 'set_control_e15', [ExcelValue.by_value], :void
-  attach_function 'set_control_f15', [ExcelValue.by_value], :void
-  attach_function 'set_control_h15', [ExcelValue.by_value], :void
-  attach_function 'set_control_i15', [ExcelValue.by_value], :void
-  attach_function 'set_control_j15', [ExcelValue.by_value], :void
-  attach_function 'set_control_k15', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp15', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq15', [ExcelValue.by_value], :void
-  attach_function 'set_control_br15', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs15', [ExcelValue.by_value], :void
-  attach_function 'set_control_d16', [ExcelValue.by_value], :void
   attach_function 'set_control_e16', [ExcelValue.by_value], :void
-  attach_function 'set_control_f16', [ExcelValue.by_value], :void
-  attach_function 'set_control_h16', [ExcelValue.by_value], :void
-  attach_function 'set_control_i16', [ExcelValue.by_value], :void
-  attach_function 'set_control_j16', [ExcelValue.by_value], :void
-  attach_function 'set_control_k16', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp16', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq16', [ExcelValue.by_value], :void
-  attach_function 'set_control_br16', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs16', [ExcelValue.by_value], :void
-  attach_function 'set_control_d17', [ExcelValue.by_value], :void
   attach_function 'set_control_e17', [ExcelValue.by_value], :void
-  attach_function 'set_control_f17', [ExcelValue.by_value], :void
-  attach_function 'set_control_h17', [ExcelValue.by_value], :void
-  attach_function 'set_control_i17', [ExcelValue.by_value], :void
-  attach_function 'set_control_j17', [ExcelValue.by_value], :void
-  attach_function 'set_control_k17', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp17', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq17', [ExcelValue.by_value], :void
-  attach_function 'set_control_br17', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs17', [ExcelValue.by_value], :void
-  attach_function 'set_control_d18', [ExcelValue.by_value], :void
   attach_function 'set_control_e18', [ExcelValue.by_value], :void
-  attach_function 'set_control_f18', [ExcelValue.by_value], :void
-  attach_function 'set_control_h18', [ExcelValue.by_value], :void
-  attach_function 'set_control_i18', [ExcelValue.by_value], :void
-  attach_function 'set_control_j18', [ExcelValue.by_value], :void
-  attach_function 'set_control_k18', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp18', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq18', [ExcelValue.by_value], :void
-  attach_function 'set_control_br18', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs18', [ExcelValue.by_value], :void
-  attach_function 'set_control_d19', [ExcelValue.by_value], :void
   attach_function 'set_control_e19', [ExcelValue.by_value], :void
-  attach_function 'set_control_f19', [ExcelValue.by_value], :void
-  attach_function 'set_control_h19', [ExcelValue.by_value], :void
-  attach_function 'set_control_i19', [ExcelValue.by_value], :void
-  attach_function 'set_control_j19', [ExcelValue.by_value], :void
-  attach_function 'set_control_k19', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp19', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq19', [ExcelValue.by_value], :void
-  attach_function 'set_control_br19', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs19', [ExcelValue.by_value], :void
-  attach_function 'set_control_d20', [ExcelValue.by_value], :void
   attach_function 'set_control_e20', [ExcelValue.by_value], :void
-  attach_function 'set_control_f20', [ExcelValue.by_value], :void
-  attach_function 'set_control_h20', [ExcelValue.by_value], :void
-  attach_function 'set_control_i20', [ExcelValue.by_value], :void
-  attach_function 'set_control_j20', [ExcelValue.by_value], :void
-  attach_function 'set_control_k20', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp20', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq20', [ExcelValue.by_value], :void
-  attach_function 'set_control_br20', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs20', [ExcelValue.by_value], :void
-  attach_function 'set_control_d21', [ExcelValue.by_value], :void
-  attach_function 'set_control_d22', [ExcelValue.by_value], :void
+  attach_function 'set_control_e21', [ExcelValue.by_value], :void
   attach_function 'set_control_e22', [ExcelValue.by_value], :void
-  attach_function 'set_control_f22', [ExcelValue.by_value], :void
-  attach_function 'set_control_h22', [ExcelValue.by_value], :void
-  attach_function 'set_control_i22', [ExcelValue.by_value], :void
-  attach_function 'set_control_j22', [ExcelValue.by_value], :void
-  attach_function 'set_control_k22', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp22', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq22', [ExcelValue.by_value], :void
-  attach_function 'set_control_br22', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs22', [ExcelValue.by_value], :void
-  attach_function 'set_control_d23', [ExcelValue.by_value], :void
   attach_function 'set_control_e23', [ExcelValue.by_value], :void
-  attach_function 'set_control_f23', [ExcelValue.by_value], :void
-  attach_function 'set_control_h23', [ExcelValue.by_value], :void
-  attach_function 'set_control_i23', [ExcelValue.by_value], :void
-  attach_function 'set_control_j23', [ExcelValue.by_value], :void
-  attach_function 'set_control_k23', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp23', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq23', [ExcelValue.by_value], :void
-  attach_function 'set_control_br23', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs23', [ExcelValue.by_value], :void
-  attach_function 'set_control_d24', [ExcelValue.by_value], :void
   attach_function 'set_control_e24', [ExcelValue.by_value], :void
-  attach_function 'set_control_f24', [ExcelValue.by_value], :void
-  attach_function 'set_control_h24', [ExcelValue.by_value], :void
-  attach_function 'set_control_i24', [ExcelValue.by_value], :void
-  attach_function 'set_control_j24', [ExcelValue.by_value], :void
-  attach_function 'set_control_k24', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp24', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq24', [ExcelValue.by_value], :void
-  attach_function 'set_control_br24', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs24', [ExcelValue.by_value], :void
-  attach_function 'set_control_d25', [ExcelValue.by_value], :void
   attach_function 'set_control_e25', [ExcelValue.by_value], :void
-  attach_function 'set_control_f25', [ExcelValue.by_value], :void
-  attach_function 'set_control_h25', [ExcelValue.by_value], :void
-  attach_function 'set_control_i25', [ExcelValue.by_value], :void
-  attach_function 'set_control_j25', [ExcelValue.by_value], :void
-  attach_function 'set_control_k25', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp25', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq25', [ExcelValue.by_value], :void
-  attach_function 'set_control_br25', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs25', [ExcelValue.by_value], :void
-  attach_function 'set_control_d26', [ExcelValue.by_value], :void
   attach_function 'set_control_e26', [ExcelValue.by_value], :void
-  attach_function 'set_control_f26', [ExcelValue.by_value], :void
-  attach_function 'set_control_h26', [ExcelValue.by_value], :void
-  attach_function 'set_control_i26', [ExcelValue.by_value], :void
-  attach_function 'set_control_j26', [ExcelValue.by_value], :void
-  attach_function 'set_control_k26', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp26', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq26', [ExcelValue.by_value], :void
-  attach_function 'set_control_br26', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs26', [ExcelValue.by_value], :void
-  attach_function 'set_control_d27', [ExcelValue.by_value], :void
   attach_function 'set_control_e27', [ExcelValue.by_value], :void
-  attach_function 'set_control_f27', [ExcelValue.by_value], :void
-  attach_function 'set_control_h27', [ExcelValue.by_value], :void
-  attach_function 'set_control_i27', [ExcelValue.by_value], :void
-  attach_function 'set_control_j27', [ExcelValue.by_value], :void
-  attach_function 'set_control_k27', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp27', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq27', [ExcelValue.by_value], :void
-  attach_function 'set_control_br27', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs27', [ExcelValue.by_value], :void
-  attach_function 'set_control_d29', [ExcelValue.by_value], :void
-  attach_function 'set_control_d30', [ExcelValue.by_value], :void
+  attach_function 'set_control_e28', [ExcelValue.by_value], :void
+  attach_function 'set_control_e29', [ExcelValue.by_value], :void
   attach_function 'set_control_e30', [ExcelValue.by_value], :void
-  attach_function 'set_control_f30', [ExcelValue.by_value], :void
-  attach_function 'set_control_h30', [ExcelValue.by_value], :void
-  attach_function 'set_control_i30', [ExcelValue.by_value], :void
-  attach_function 'set_control_j30', [ExcelValue.by_value], :void
-  attach_function 'set_control_k30', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp30', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq30', [ExcelValue.by_value], :void
-  attach_function 'set_control_br30', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs30', [ExcelValue.by_value], :void
-  attach_function 'set_control_d31', [ExcelValue.by_value], :void
   attach_function 'set_control_e31', [ExcelValue.by_value], :void
-  attach_function 'set_control_f31', [ExcelValue.by_value], :void
-  attach_function 'set_control_h31', [ExcelValue.by_value], :void
-  attach_function 'set_control_i31', [ExcelValue.by_value], :void
-  attach_function 'set_control_j31', [ExcelValue.by_value], :void
-  attach_function 'set_control_k31', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp31', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq31', [ExcelValue.by_value], :void
-  attach_function 'set_control_br31', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs31', [ExcelValue.by_value], :void
-  attach_function 'set_control_d32', [ExcelValue.by_value], :void
   attach_function 'set_control_e32', [ExcelValue.by_value], :void
-  attach_function 'set_control_f32', [ExcelValue.by_value], :void
-  attach_function 'set_control_h32', [ExcelValue.by_value], :void
-  attach_function 'set_control_i32', [ExcelValue.by_value], :void
-  attach_function 'set_control_j32', [ExcelValue.by_value], :void
-  attach_function 'set_control_k32', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp32', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq32', [ExcelValue.by_value], :void
-  attach_function 'set_control_br32', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs32', [ExcelValue.by_value], :void
-  attach_function 'set_control_d33', [ExcelValue.by_value], :void
   attach_function 'set_control_e33', [ExcelValue.by_value], :void
-  attach_function 'set_control_f33', [ExcelValue.by_value], :void
-  attach_function 'set_control_h33', [ExcelValue.by_value], :void
-  attach_function 'set_control_i33', [ExcelValue.by_value], :void
-  attach_function 'set_control_j33', [ExcelValue.by_value], :void
-  attach_function 'set_control_k33', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp33', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq33', [ExcelValue.by_value], :void
-  attach_function 'set_control_br33', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs33', [ExcelValue.by_value], :void
-  attach_function 'set_control_d34', [ExcelValue.by_value], :void
   attach_function 'set_control_e34', [ExcelValue.by_value], :void
-  attach_function 'set_control_f34', [ExcelValue.by_value], :void
-  attach_function 'set_control_h34', [ExcelValue.by_value], :void
-  attach_function 'set_control_i34', [ExcelValue.by_value], :void
-  attach_function 'set_control_j34', [ExcelValue.by_value], :void
-  attach_function 'set_control_k34', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp34', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq34', [ExcelValue.by_value], :void
-  attach_function 'set_control_br34', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs34', [ExcelValue.by_value], :void
-  attach_function 'set_control_d35', [ExcelValue.by_value], :void
   attach_function 'set_control_e35', [ExcelValue.by_value], :void
-  attach_function 'set_control_f35', [ExcelValue.by_value], :void
-  attach_function 'set_control_h35', [ExcelValue.by_value], :void
-  attach_function 'set_control_i35', [ExcelValue.by_value], :void
-  attach_function 'set_control_j35', [ExcelValue.by_value], :void
-  attach_function 'set_control_k35', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp35', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq35', [ExcelValue.by_value], :void
-  attach_function 'set_control_br35', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs35', [ExcelValue.by_value], :void
-  attach_function 'set_control_d36', [ExcelValue.by_value], :void
-  attach_function 'set_control_d37', [ExcelValue.by_value], :void
+  attach_function 'set_control_e36', [ExcelValue.by_value], :void
   attach_function 'set_control_e37', [ExcelValue.by_value], :void
-  attach_function 'set_control_f37', [ExcelValue.by_value], :void
-  attach_function 'set_control_h37', [ExcelValue.by_value], :void
-  attach_function 'set_control_i37', [ExcelValue.by_value], :void
-  attach_function 'set_control_j37', [ExcelValue.by_value], :void
-  attach_function 'set_control_k37', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp37', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq37', [ExcelValue.by_value], :void
-  attach_function 'set_control_br37', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs37', [ExcelValue.by_value], :void
-  attach_function 'set_control_d38', [ExcelValue.by_value], :void
   attach_function 'set_control_e38', [ExcelValue.by_value], :void
-  attach_function 'set_control_f38', [ExcelValue.by_value], :void
-  attach_function 'set_control_h38', [ExcelValue.by_value], :void
-  attach_function 'set_control_i38', [ExcelValue.by_value], :void
-  attach_function 'set_control_j38', [ExcelValue.by_value], :void
-  attach_function 'set_control_k38', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp38', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq38', [ExcelValue.by_value], :void
-  attach_function 'set_control_br38', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs38', [ExcelValue.by_value], :void
-  attach_function 'set_control_d39', [ExcelValue.by_value], :void
   attach_function 'set_control_e39', [ExcelValue.by_value], :void
-  attach_function 'set_control_f39', [ExcelValue.by_value], :void
-  attach_function 'set_control_h39', [ExcelValue.by_value], :void
-  attach_function 'set_control_i39', [ExcelValue.by_value], :void
-  attach_function 'set_control_j39', [ExcelValue.by_value], :void
-  attach_function 'set_control_k39', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp39', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq39', [ExcelValue.by_value], :void
-  attach_function 'set_control_br39', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs39', [ExcelValue.by_value], :void
-  attach_function 'set_control_d40', [ExcelValue.by_value], :void
   attach_function 'set_control_e40', [ExcelValue.by_value], :void
-  attach_function 'set_control_f40', [ExcelValue.by_value], :void
-  attach_function 'set_control_h40', [ExcelValue.by_value], :void
-  attach_function 'set_control_i40', [ExcelValue.by_value], :void
-  attach_function 'set_control_j40', [ExcelValue.by_value], :void
-  attach_function 'set_control_k40', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp40', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq40', [ExcelValue.by_value], :void
-  attach_function 'set_control_br40', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs40', [ExcelValue.by_value], :void
-  attach_function 'set_control_d41', [ExcelValue.by_value], :void
-  attach_function 'set_control_d42', [ExcelValue.by_value], :void
+  attach_function 'set_control_e41', [ExcelValue.by_value], :void
   attach_function 'set_control_e42', [ExcelValue.by_value], :void
-  attach_function 'set_control_f42', [ExcelValue.by_value], :void
-  attach_function 'set_control_h42', [ExcelValue.by_value], :void
-  attach_function 'set_control_i42', [ExcelValue.by_value], :void
-  attach_function 'set_control_j42', [ExcelValue.by_value], :void
-  attach_function 'set_control_k42', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp42', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq42', [ExcelValue.by_value], :void
-  attach_function 'set_control_br42', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs42', [ExcelValue.by_value], :void
-  attach_function 'set_control_d43', [ExcelValue.by_value], :void
   attach_function 'set_control_e43', [ExcelValue.by_value], :void
-  attach_function 'set_control_f43', [ExcelValue.by_value], :void
-  attach_function 'set_control_h43', [ExcelValue.by_value], :void
-  attach_function 'set_control_i43', [ExcelValue.by_value], :void
-  attach_function 'set_control_j43', [ExcelValue.by_value], :void
-  attach_function 'set_control_k43', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp43', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq43', [ExcelValue.by_value], :void
-  attach_function 'set_control_br43', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs43', [ExcelValue.by_value], :void
-  attach_function 'set_control_d44', [ExcelValue.by_value], :void
-  attach_function 'set_control_d45', [ExcelValue.by_value], :void
+  attach_function 'set_control_e44', [ExcelValue.by_value], :void
   attach_function 'set_control_e45', [ExcelValue.by_value], :void
-  attach_function 'set_control_f45', [ExcelValue.by_value], :void
-  attach_function 'set_control_h45', [ExcelValue.by_value], :void
-  attach_function 'set_control_i45', [ExcelValue.by_value], :void
-  attach_function 'set_control_j45', [ExcelValue.by_value], :void
-  attach_function 'set_control_k45', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp45', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq45', [ExcelValue.by_value], :void
-  attach_function 'set_control_br45', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs45', [ExcelValue.by_value], :void
-  attach_function 'set_control_d46', [ExcelValue.by_value], :void
   attach_function 'set_control_e46', [ExcelValue.by_value], :void
-  attach_function 'set_control_f46', [ExcelValue.by_value], :void
-  attach_function 'set_control_h46', [ExcelValue.by_value], :void
-  attach_function 'set_control_i46', [ExcelValue.by_value], :void
-  attach_function 'set_control_j46', [ExcelValue.by_value], :void
-  attach_function 'set_control_k46', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp46', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq46', [ExcelValue.by_value], :void
-  attach_function 'set_control_br46', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs46', [ExcelValue.by_value], :void
-  attach_function 'set_control_d47', [ExcelValue.by_value], :void
-  attach_function 'set_control_d48', [ExcelValue.by_value], :void
+  attach_function 'set_control_e47', [ExcelValue.by_value], :void
   attach_function 'set_control_e48', [ExcelValue.by_value], :void
-  attach_function 'set_control_f48', [ExcelValue.by_value], :void
-  attach_function 'set_control_h48', [ExcelValue.by_value], :void
-  attach_function 'set_control_i48', [ExcelValue.by_value], :void
-  attach_function 'set_control_j48', [ExcelValue.by_value], :void
-  attach_function 'set_control_k48', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp48', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq48', [ExcelValue.by_value], :void
-  attach_function 'set_control_br48', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs48', [ExcelValue.by_value], :void
-  attach_function 'set_control_d49', [ExcelValue.by_value], :void
   attach_function 'set_control_e49', [ExcelValue.by_value], :void
-  attach_function 'set_control_f49', [ExcelValue.by_value], :void
-  attach_function 'set_control_h49', [ExcelValue.by_value], :void
-  attach_function 'set_control_i49', [ExcelValue.by_value], :void
-  attach_function 'set_control_j49', [ExcelValue.by_value], :void
-  attach_function 'set_control_k49', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp49', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq49', [ExcelValue.by_value], :void
-  attach_function 'set_control_br49', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs49', [ExcelValue.by_value], :void
-  attach_function 'set_control_d50', [ExcelValue.by_value], :void
   attach_function 'set_control_e50', [ExcelValue.by_value], :void
-  attach_function 'set_control_f50', [ExcelValue.by_value], :void
-  attach_function 'set_control_h50', [ExcelValue.by_value], :void
-  attach_function 'set_control_i50', [ExcelValue.by_value], :void
-  attach_function 'set_control_j50', [ExcelValue.by_value], :void
-  attach_function 'set_control_k50', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp50', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq50', [ExcelValue.by_value], :void
-  attach_function 'set_control_br50', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs50', [ExcelValue.by_value], :void
-  attach_function 'set_control_d51', [ExcelValue.by_value], :void
-  attach_function 'set_control_d52', [ExcelValue.by_value], :void
+  attach_function 'set_control_e51', [ExcelValue.by_value], :void
   attach_function 'set_control_e52', [ExcelValue.by_value], :void
-  attach_function 'set_control_f52', [ExcelValue.by_value], :void
-  attach_function 'set_control_h52', [ExcelValue.by_value], :void
-  attach_function 'set_control_i52', [ExcelValue.by_value], :void
-  attach_function 'set_control_j52', [ExcelValue.by_value], :void
-  attach_function 'set_control_k52', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp52', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq52', [ExcelValue.by_value], :void
-  attach_function 'set_control_br52', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs52', [ExcelValue.by_value], :void
-  attach_function 'set_control_d53', [ExcelValue.by_value], :void
   attach_function 'set_control_e53', [ExcelValue.by_value], :void
-  attach_function 'set_control_f53', [ExcelValue.by_value], :void
-  attach_function 'set_control_h53', [ExcelValue.by_value], :void
-  attach_function 'set_control_i53', [ExcelValue.by_value], :void
-  attach_function 'set_control_j53', [ExcelValue.by_value], :void
-  attach_function 'set_control_k53', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp53', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq53', [ExcelValue.by_value], :void
-  attach_function 'set_control_br53', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs53', [ExcelValue.by_value], :void
-  attach_function 'set_control_d55', [ExcelValue.by_value], :void
+  attach_function 'set_control_e54', [ExcelValue.by_value], :void
   attach_function 'set_control_e55', [ExcelValue.by_value], :void
-  attach_function 'set_control_f55', [ExcelValue.by_value], :void
-  attach_function 'set_control_h55', [ExcelValue.by_value], :void
-  attach_function 'set_control_i55', [ExcelValue.by_value], :void
-  attach_function 'set_control_j55', [ExcelValue.by_value], :void
-  attach_function 'set_control_k55', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp55', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq55', [ExcelValue.by_value], :void
-  attach_function 'set_control_br55', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs55', [ExcelValue.by_value], :void
-  attach_function 'set_control_d56', [ExcelValue.by_value], :void
   attach_function 'set_control_e56', [ExcelValue.by_value], :void
-  attach_function 'set_control_f56', [ExcelValue.by_value], :void
-  attach_function 'set_control_h56', [ExcelValue.by_value], :void
-  attach_function 'set_control_i56', [ExcelValue.by_value], :void
-  attach_function 'set_control_j56', [ExcelValue.by_value], :void
-  attach_function 'set_control_k56', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp56', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq56', [ExcelValue.by_value], :void
-  attach_function 'set_control_br56', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs56', [ExcelValue.by_value], :void
-  attach_function 'set_control_e57', [ExcelValue.by_value], :void
-  attach_function 'set_control_f6', [ExcelValue.by_value], :void
-  attach_function 'set_control_h6', [ExcelValue.by_value], :void
-  attach_function 'set_control_i6', [ExcelValue.by_value], :void
-  attach_function 'set_control_j6', [ExcelValue.by_value], :void
-  attach_function 'set_control_k6', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp6', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq6', [ExcelValue.by_value], :void
-  attach_function 'set_control_br6', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs6', [ExcelValue.by_value], :void
-  attach_function 'set_control_f21', [ExcelValue.by_value], :void
-  attach_function 'set_control_h21', [ExcelValue.by_value], :void
-  attach_function 'set_control_i21', [ExcelValue.by_value], :void
-  attach_function 'set_control_j21', [ExcelValue.by_value], :void
-  attach_function 'set_control_k21', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp21', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq21', [ExcelValue.by_value], :void
-  attach_function 'set_control_br21', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs21', [ExcelValue.by_value], :void
-  attach_function 'set_control_d28', [ExcelValue.by_value], :void
-  attach_function 'set_control_f28', [ExcelValue.by_value], :void
-  attach_function 'set_control_h28', [ExcelValue.by_value], :void
-  attach_function 'set_control_i28', [ExcelValue.by_value], :void
-  attach_function 'set_control_j28', [ExcelValue.by_value], :void
-  attach_function 'set_control_k28', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp28', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq28', [ExcelValue.by_value], :void
-  attach_function 'set_control_br28', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs28', [ExcelValue.by_value], :void
-  attach_function 'set_control_f29', [ExcelValue.by_value], :void
-  attach_function 'set_control_h29', [ExcelValue.by_value], :void
-  attach_function 'set_control_i29', [ExcelValue.by_value], :void
-  attach_function 'set_control_j29', [ExcelValue.by_value], :void
-  attach_function 'set_control_k29', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp29', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq29', [ExcelValue.by_value], :void
-  attach_function 'set_control_br29', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs29', [ExcelValue.by_value], :void
-  attach_function 'set_control_f36', [ExcelValue.by_value], :void
-  attach_function 'set_control_h36', [ExcelValue.by_value], :void
-  attach_function 'set_control_i36', [ExcelValue.by_value], :void
-  attach_function 'set_control_j36', [ExcelValue.by_value], :void
-  attach_function 'set_control_k36', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp36', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq36', [ExcelValue.by_value], :void
-  attach_function 'set_control_br36', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs36', [ExcelValue.by_value], :void
-  attach_function 'set_control_f41', [ExcelValue.by_value], :void
-  attach_function 'set_control_h41', [ExcelValue.by_value], :void
-  attach_function 'set_control_i41', [ExcelValue.by_value], :void
-  attach_function 'set_control_j41', [ExcelValue.by_value], :void
-  attach_function 'set_control_k41', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp41', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq41', [ExcelValue.by_value], :void
-  attach_function 'set_control_br41', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs41', [ExcelValue.by_value], :void
-  attach_function 'set_control_f44', [ExcelValue.by_value], :void
-  attach_function 'set_control_h44', [ExcelValue.by_value], :void
-  attach_function 'set_control_i44', [ExcelValue.by_value], :void
-  attach_function 'set_control_j44', [ExcelValue.by_value], :void
-  attach_function 'set_control_k44', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp44', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq44', [ExcelValue.by_value], :void
-  attach_function 'set_control_br44', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs44', [ExcelValue.by_value], :void
-  attach_function 'set_control_f47', [ExcelValue.by_value], :void
-  attach_function 'set_control_h47', [ExcelValue.by_value], :void
-  attach_function 'set_control_i47', [ExcelValue.by_value], :void
-  attach_function 'set_control_j47', [ExcelValue.by_value], :void
-  attach_function 'set_control_k47', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp47', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq47', [ExcelValue.by_value], :void
-  attach_function 'set_control_br47', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs47', [ExcelValue.by_value], :void
-  attach_function 'set_control_f51', [ExcelValue.by_value], :void
-  attach_function 'set_control_h51', [ExcelValue.by_value], :void
-  attach_function 'set_control_i51', [ExcelValue.by_value], :void
-  attach_function 'set_control_j51', [ExcelValue.by_value], :void
-  attach_function 'set_control_k51', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp51', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq51', [ExcelValue.by_value], :void
-  attach_function 'set_control_br51', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs51', [ExcelValue.by_value], :void
-  attach_function 'set_control_d54', [ExcelValue.by_value], :void
-  attach_function 'set_control_f54', [ExcelValue.by_value], :void
-  attach_function 'set_control_h54', [ExcelValue.by_value], :void
-  attach_function 'set_control_i54', [ExcelValue.by_value], :void
-  attach_function 'set_control_j54', [ExcelValue.by_value], :void
-  attach_function 'set_control_k54', [ExcelValue.by_value], :void
-  attach_function 'set_control_bp54', [ExcelValue.by_value], :void
-  attach_function 'set_control_bq54', [ExcelValue.by_value], :void
-  attach_function 'set_control_br54', [ExcelValue.by_value], :void
-  attach_function 'set_control_bs54', [ExcelValue.by_value], :void
   attach_function 'control_d5', [], ExcelValue.by_value
   attach_function 'control_f5', [], ExcelValue.by_value
   attach_function 'control_h5', [], ExcelValue.by_value
@@ -23162,6 +22650,7 @@ module Decc2050Model
   # end of VIII.a
 
   # start of IX.a
+  attach_function 'ix_a_f595', [], ExcelValue.by_value
   attach_function 'ix_a_f596', [], ExcelValue.by_value
   attach_function 'ix_a_f597', [], ExcelValue.by_value
   attach_function 'ix_a_f598', [], ExcelValue.by_value
@@ -23174,7 +22663,6 @@ module Decc2050Model
   attach_function 'ix_a_f605', [], ExcelValue.by_value
   attach_function 'ix_a_f606', [], ExcelValue.by_value
   attach_function 'ix_a_f607', [], ExcelValue.by_value
-  attach_function 'ix_a_f608', [], ExcelValue.by_value
   # end of IX.a
 
   # start of IX.c

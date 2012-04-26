@@ -3,9 +3,9 @@
 require 'rubygems'
 gem 'minitest'
 require 'test/unit'
-require_relative '../lib/decc_2050_model'
+require_relative 'decc_2050_model'
 
-class TestDecc_2050_model < Test::Unit::TestCase
+class TestDecc2050Model < Test::Unit::TestCase
   def spreadsheet; @spreadsheet ||= init_spreadsheet; end
   def init_spreadsheet; Decc2050Model end
 
@@ -134372,6 +134372,12 @@ end
   # start of VIII.a
 
   # start of IX.a
+def test_ix_a_f595
+  r = spreadsheet.ix_a_f595
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(0.0,r[:number])
+end
+
 def test_ix_a_f596
   r = spreadsheet.ix_a_f596
   assert_equal(:ExcelNumber,r[:type])
