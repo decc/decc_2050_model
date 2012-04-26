@@ -1,6 +1,7 @@
 task :default => :generate_new_mode_from_excel
 
-task :generate_new_mode_from_excel => ['ext/decc_2050_model.c',:put_generated_files_in_right_place]
+desc "Update all the code, based on the spreadsheet in spreadsheet/2050Model.xlsx"
+task :generate_new_mode_from_excel => [:clean,'ext/decc_2050_model.c',:put_generated_files_in_right_place]
 
 desc "Generates c version of 2050 pathways model"
 file 'ext/decc_2050_model.c' do
@@ -24,19 +25,24 @@ file 'ext/decc_2050_model.c' do
     'IX.c' => (0.upto(12).to_a.map { |i| "n#{317+i}" })
   }
 
-  p command.cells_to_keep
-
   command.actually_compile_code = true
   command.actually_run_tests = true
 
-  command.run_in_memory = true
+  # command.run_in_memory = true
 
   command.go!
 end
 
 # Put things in their place
-task :put_generated_files_in_right_place => ['ext/decc_2050_model.rb']
-  mv 'ext/decc_2050_model.rb' 'lib/decc_2050_model/decc_2050_model.rb'
-  mv 'ext/test_decc_2050_model.rb' 'test/test_decc_2050_model.rb'
+task :put_generated_files_in_right_place do
+  mv 'ext/decc_2050_model.rb', 'lib/decc_2050_model/decc_2050_model.rb'
+  mv 'ext/test_decc_2050_model.rb', 'test/test_decc_2050_model.rb'
   rm 'ext/Makefile'
+end
+
+desc "Remove all the spreadsheet code, ready to be regenerated"
+task :clean do
+  rm 'lib/decc_2050_model/decc_2050_model.rb', :force => true
+  rm 'test/test_decc_2050_model.rb', :force => true
+  rm 'ext/decc_2050_model.c', :force => true
 end
