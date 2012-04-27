@@ -1,7 +1,7 @@
 task :default => :generate_new_mode_from_excel
 
 desc "Update all the code, based on the spreadsheet in spreadsheet/2050Model.xlsx"
-task :generate_new_mode_from_excel => [:clean,'ext/decc_2050_model.c',:put_generated_files_in_right_place]
+task :generate_new_mode_from_excel => [:clean,'ext/decc_2050_model.c',:put_generated_files_in_right_place,:fix_test_require]
 
 desc "Generates c version of 2050 pathways model"
 file 'ext/decc_2050_model.c' do
@@ -38,6 +38,19 @@ task :put_generated_files_in_right_place do
   mv 'ext/decc_2050_model.rb', 'lib/decc_2050_model/decc_2050_model.rb'
   mv 'ext/test_decc_2050_model.rb', 'test/test_decc_2050_model.rb'
   rm 'ext/Makefile'
+end
+
+task :fix_test_require do
+  test = IO.readlines('test/test_decc_2050_model.rb').join
+  test.gsub!("require_relative 'decc_2050_model'","require_relative '../lib/decc_2050_model'")
+  File.open('test/test_decc_2050_model.rb','w') { |f| f.puts test }
+end
+
+desc "This updates the Decc2050Model.last_modified_date attribute to the current time"
+task :change_last_modified_date do
+  File.open('lib/decc_2050_model/decc_2050_model_version.rb','w') do |f|
+    f.puts "Decc2050Model.last_modified_date = Time.parse('#{Time.now}')"
+  end
 end
 
 desc "Remove all the spreadsheet code, ready to be regenerated"
