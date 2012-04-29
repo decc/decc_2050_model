@@ -49,7 +49,7 @@ end
 desc "This updates the Decc2050Model.last_modified_date attribute to the current time"
 task :change_last_modified_date do
   File.open('lib/decc_2050_model/decc_2050_model_version.rb','w') do |f|
-    f.puts "Decc2050Model.last_modified_date = Time.parse('#{Time.now}')"
+    f.puts "def Decc2050Model.last_modified_date() @last_modified_date ||= Time.utc(*#{Time.now.to_a}); end"
   end
 end
 
