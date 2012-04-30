@@ -102,7 +102,7 @@ class Decc2050ModelResult
       'Community scale gas CHP',
       'Community scale solid-fuel CHP',
       'District heating from power stations'].each_with_index do |name,i| 
-        r[name] = r("ix_a_f#{596+i}")
+        r[name] = r("ix_a_f#{595+i}")
       end
     h['residential'] = r
     
