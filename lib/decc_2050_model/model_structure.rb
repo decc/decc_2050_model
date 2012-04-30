@@ -61,7 +61,7 @@ class ModelStructure
   def ruby_value(excel_value)
     case excel_value[:type]
     when :ExcelNumber; excel_value[:number]
-    when :ExcelString; excel_value[:string]
+    when :ExcelString; excel_value[:string].encode("utf-8","utf-8")
     when :ExcelBoolean; excel_value[:number] == 1
     when :ExcelEmpty; 0
     when :ExcelError; [:value,:name,:div0,:ref,:na][excel_value[:number]]
