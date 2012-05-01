@@ -326,7 +326,7 @@ if __FILE__ == $0
   t = Time.now
   a = []
   tests.times do
-    a << g.calculate_pathway(Decc2050ModelResult::CONTROL.map { rand(3)+1 }.join)
+    a << g.calculate_pathway(Decc2050ModelResult::CONTROL.map { rand(4)+1 }.join)
   end
   te = Time.now - t
   puts "#{te/tests} seconds per run"
