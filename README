@@ -23,7 +23,11 @@ Note that this compiles the underlying c code, which might take 10-20 minutes or
   
 UPDATING TO NEWER VERSIONS OF EXCEL MODEL
 
-First, put the new spreadsheet in spreadsheet/2050Model.xlsx
+First of all, you need to be working on the github version of the code, not the rubygem:
+    
+	git clone http://github.com/decc/decc_2050_model
+
+Then put the new spreadsheet in spreadsheet/2050Model.xlsx
 
 Then, from the top directory of the gem:
   
