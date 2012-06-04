@@ -1,4 +1,5 @@
 require_relative "decc_2050_model/decc_2050_model"
+require_relative "decc_2050_model/decc_2050_model_utilities"
 require_relative "decc_2050_model/decc_2050_model_result"
 require_relative "decc_2050_model/model_structure"
 require_relative "decc_2050_model/model_choice"

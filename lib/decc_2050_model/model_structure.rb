@@ -1,7 +1,7 @@
 require_relative 'decc_2050_model'
 require 'singleton'
 
-class ModelStructure
+class ModelStructure < Decc2050ModelUtilities
   include Singleton
   
   attr_accessor :excel, :choices
@@ -18,6 +18,10 @@ class ModelStructure
     end
   end
   
+  def reported_calculator_version
+    r("control_m1")
+  end
+  
   def types
     @types ||= (5..56).to_a.map { |row| r("control_f#{row}") }
   end
@@ -31,7 +35,7 @@ class ModelStructure
   end
 
   def long_descriptions
-    @long_descriptions ||=  (5..56).to_a.map  { |row| [r("control_bp#{row}"),r("control_bq#{row}"),r("control_br#{row}"),r("control_bs#{row}")] }
+    @long_descriptions ||=  (5..56).to_a.map  { |row| [r("control_bo#{row}"),r("control_bp#{row}"),r("control_bq#{row}"),r("control_br#{row}")] }
   end
     
   def demand_choices
@@ -50,24 +54,20 @@ class ModelStructure
     choices[41]
   end
   
-  def r(reference)
-    if excel.respond_to?(reference)
-      ruby_value(excel.send(reference))
-    else
-      0
-    end
+  def example_pathways
+    @example_pathways ||= generate_example_pathways
   end
   
-  def ruby_value(excel_value)
-    case excel_value[:type]
-    when :ExcelNumber; excel_value[:number]
-    when :ExcelString; excel_value[:string].encode("utf-8","utf-8")
-    when :ExcelBoolean; excel_value[:number] == 1
-    when :ExcelEmpty; 0
-    when :ExcelError; [:value,:name,:div0,:ref,:na][excel_value[:number]]
-    else
-      raise Exception.new("ExcelValue type #{excel_value[:type].inspect} not recognised")
+  def generate_example_pathways
+    pathways = {}
+    rows = (5..57).to_a
+    ('m'..'z').to_a.push("aa").each do |column|
+      name = r("control_#{column}4")
+      next unless name.is_a?(String) && name.length > 0
+      choices = rows.map { |row| r("control_#{column}#{row}") }
+      pathways[name] = convert_float_to_letters(choices).join
     end
+    pathways
   end
   
 end
