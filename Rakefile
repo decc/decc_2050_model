@@ -15,7 +15,8 @@ file 'ext/decc_2050_model.c' do
   command.cells_that_can_be_set_at_runtime = { "Control" => (5.upto(56).to_a.map { |r| "e#{r}" }) }
 
   command.cells_to_keep = {
-    "Control" => (5.upto(56).to_a.map { |r| ["d#{r}","f#{r}","h#{r}","i#{r}","j#{r}","k#{r}","bp#{r}","bq#{r}","br#{r}","bs#{r}"] }).flatten, # The 10 worders and long descriptions
+    # The names, limits, 10 worders, example pathways, long descriptions
+    "Control" => (5.upto(56).to_a.map { |r| ["d#{r}","f#{r}","h#{r}","i#{r}","j#{r}","k#{r}","bo#{r}","bp#{r}","bq#{r}","br#{r}"] }).flatten, 
     "Intermediate output" => :all, 
     "CostPerCapita" => :all, 
     "Land Use" => :all, 
@@ -24,6 +25,17 @@ file 'ext/decc_2050_model.c' do
     'IX.a' => (0.upto(12).to_a.map { |i| "f#{595+i}" }),
     'IX.c' => (0.upto(12).to_a.map { |i| "n#{317+i}" })
   }
+  
+  # Add the version number
+  command.cells_to_keep["Control"] << "m1"
+  
+  # Add the example pathways
+  rows = (4..57).to_a
+  ('m'..'z').to_a.push("aa").each do |column|
+    rows.each do |row|
+      command.cells_to_keep["Control"].push("#{column}#{row}")
+    end
+  end
 
   command.actually_compile_code = true
   command.actually_run_tests = true
