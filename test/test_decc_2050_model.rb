@@ -10,6 +10,84 @@ class TestDecc2050Model < Test::Unit::TestCase
   def init_spreadsheet; Decc2050Model end
 
   # start of Control
+def test_control_m1
+  r = spreadsheet.control_m1
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Version 2.1",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_m4
+  r = spreadsheet.control_m4
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("All at level 1",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_n4
+  r = spreadsheet.control_n4
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Maximium demand, no supply",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_o4
+  r = spreadsheet.control_o4
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Maximum supply, no demand",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_q4
+  r = spreadsheet.control_q4
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Renewables; Higher electric",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_r4
+  r = spreadsheet.control_r4
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Nuclear; Central electric",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_s4
+  r = spreadsheet.control_s4
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("CCS; Lower electric",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_t4
+  r = spreadsheet.control_t4
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("MARKAL 3.26",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_u4
+  r = spreadsheet.control_u4
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Atkins",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_w4
+  r = spreadsheet.control_w4
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("National grid",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_x4
+  r = spreadsheet.control_x4
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Mark Brinkley",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_z4
+  r = spreadsheet.control_z4
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("CPRE",r[:string].force_encoding('utf-8'))
+end
+
+def test_control_aa4
+  r = spreadsheet.control_aa4
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("FOTE",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_d5
   r = spreadsheet.control_d5
   assert_equal(:ExcelString,r[:type])
@@ -46,26 +124,98 @@ def test_control_k5
   assert_equal("~50 3GW power stations delivering ~1030 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m5
+  r = spreadsheet.control_m5
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n5
+  r = spreadsheet.control_n5
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o5
+  r = spreadsheet.control_o5
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q5
+  r = spreadsheet.control_q5
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.4,r[:number])
+end
+
+def test_control_r5
+  r = spreadsheet.control_r5
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.7,r[:number])
+end
+
+def test_control_s5
+  r = spreadsheet.control_s5
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.5,r[:number])
+end
+
+def test_control_t5
+  r = spreadsheet.control_t5
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.8,r[:number])
+end
+
+def test_control_u5
+  r = spreadsheet.control_u5
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.6,r[:number])
+end
+
+def test_control_w5
+  r = spreadsheet.control_w5
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.7,r[:number])
+end
+
+def test_control_x5
+  r = spreadsheet.control_x5
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_z5
+  r = spreadsheet.control_z5
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_aa5
+  r = spreadsheet.control_aa5
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_bo5
+  r = spreadsheet.control_bo5
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("No new nuclear power installed. Final nuclear power stattion estimated to close in 2035",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp5
   r = spreadsheet.control_bp5
   assert_equal(:ExcelString,r[:type])
-  assert_equal("No new nuclear power installed. Final nuclear power stattion estimated to close in 2035",r[:string].force_encoding('utf-8'))
+  assert_equal("~13 3GW nuclear power stations delivering ~280 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq5
   r = spreadsheet.control_bq5
   assert_equal(:ExcelString,r[:type])
-  assert_equal("~13 3GW nuclear power stations delivering ~280 TWh/yr",r[:string].force_encoding('utf-8'))
+  assert_equal("~30 3GW nuclear power stations delivering ~630 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br5
   r = spreadsheet.control_br5
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("~30 3GW nuclear power stations delivering ~630 TWh/yr",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs5
-  r = spreadsheet.control_bs5
   assert_equal(:ExcelString,r[:type])
   assert_equal("~50 3GW nuclear power stations delivering ~1030 TWh/yr",r[:string].force_encoding('utf-8'))
 end
@@ -112,26 +262,98 @@ def test_control_k7
   assert_equal("~510 TWh/yr  from 50-90 CCS power stations; build rate of gas plants in the 1990s",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m7
+  r = spreadsheet.control_m7
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n7
+  r = spreadsheet.control_n7
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o7
+  r = spreadsheet.control_o7
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q7
+  r = spreadsheet.control_q7
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.3,r[:number])
+end
+
+def test_control_r7
+  r = spreadsheet.control_r7
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_s7
+  r = spreadsheet.control_s7
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_t7
+  r = spreadsheet.control_t7
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.6,r[:number])
+end
+
+def test_control_u7
+  r = spreadsheet.control_u7
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.5,r[:number])
+end
+
+def test_control_w7
+  r = spreadsheet.control_w7
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.7,r[:number])
+end
+
+def test_control_x7
+  r = spreadsheet.control_x7
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_z7
+  r = spreadsheet.control_z7
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.7,r[:number])
+end
+
+def test_control_aa7
+  r = spreadsheet.control_aa7
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_bo7
+  r = spreadsheet.control_bo7
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("CCS demonstration plants only",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp7
   r = spreadsheet.control_bp7
   assert_equal(:ExcelString,r[:type])
-  assert_equal("CCS demonstration plants only",r[:string].force_encoding('utf-8'))
+  assert_equal("~240 TWh/yr from 25-40 CCS power stations - comparable to current gas & coal generation",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq7
   r = spreadsheet.control_bq7
   assert_equal(:ExcelString,r[:type])
-  assert_equal("~240 TWh/yr from 25-40 CCS power stations - comparable to current gas & coal generation",r[:string].force_encoding('utf-8'))
+  assert_equal("~340 TWh/yr from 35-60 CCS power stations - comparable to total current demand",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br7
   r = spreadsheet.control_br7
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("~340 TWh/yr from 35-60 CCS power stations - comparable to total current demand",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs7
-  r = spreadsheet.control_bs7
   assert_equal(:ExcelString,r[:type])
   assert_equal("~510 TWh/yr  from 50-90 CCS power stations - this requires a similar build rate to that of gas plants in the 1990s",r[:string].force_encoding('utf-8'))
 end
@@ -172,26 +394,98 @@ def test_control_k8
   assert_equal("0% coal/biomas, 100% gas/biogas CCS after demonstration plants",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m8
+  r = spreadsheet.control_m8
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n8
+  r = spreadsheet.control_n8
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o8
+  r = spreadsheet.control_o8
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q8
+  r = spreadsheet.control_q8
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_r8
+  r = spreadsheet.control_r8
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_s8
+  r = spreadsheet.control_s8
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_t8
+  r = spreadsheet.control_t8
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_u8
+  r = spreadsheet.control_u8
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_w8
+  r = spreadsheet.control_w8
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_x8
+  r = spreadsheet.control_x8
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_z8
+  r = spreadsheet.control_z8
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_aa8
+  r = spreadsheet.control_aa8
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_bo8
+  r = spreadsheet.control_bo8
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("After demonstration plants, all CCS electricity is from solid fuel (coal or biomass)",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp8
   r = spreadsheet.control_bp8
   assert_equal(:ExcelString,r[:type])
-  assert_equal("After demonstration plants, all CCS electricity is from solid fuel (coal or biomass)",r[:string].force_encoding('utf-8'))
+  assert_equal("After demonstration plants, two thirds of CCS electricity is from solid fuel (coal or biomass), one third from gas (natural gas or biogas)",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq8
   r = spreadsheet.control_bq8
   assert_equal(:ExcelString,r[:type])
-  assert_equal("After demonstration plants, two thirds of CCS electricity is from solid fuel (coal or biomass), one third from gas (natural gas or biogas)",r[:string].force_encoding('utf-8'))
+  assert_equal("After demonstration plants, one third of CCS electricity is from solid fuel (coal or biomass), two thirds from gas (natural gas or biogas)",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br8
   r = spreadsheet.control_br8
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("After demonstration plants, one third of CCS electricity is from solid fuel (coal or biomass), two thirds from gas (natural gas or biogas)",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs8
-  r = spreadsheet.control_bs8
   assert_equal(:ExcelString,r[:type])
   assert_equal("After demonstration plants, all CCS electricity is from gas (natural gas or biogas)",r[:string].force_encoding('utf-8'))
 end
@@ -232,26 +526,98 @@ def test_control_k9
   assert_equal("~40,000 turbines in 2050, delivering ~430 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m9
+  r = spreadsheet.control_m9
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n9
+  r = spreadsheet.control_n9
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o9
+  r = spreadsheet.control_o9
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q9
+  r = spreadsheet.control_q9
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.9,r[:number])
+end
+
+def test_control_r9
+  r = spreadsheet.control_r9
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.2,r[:number])
+end
+
+def test_control_s9
+  r = spreadsheet.control_s9
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.3,r[:number])
+end
+
+def test_control_t9
+  r = spreadsheet.control_t9
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.3,r[:number])
+end
+
+def test_control_u9
+  r = spreadsheet.control_u9
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.4,r[:number])
+end
+
+def test_control_w9
+  r = spreadsheet.control_w9
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.6,r[:number])
+end
+
+def test_control_x9
+  r = spreadsheet.control_x9
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_z9
+  r = spreadsheet.control_z9
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.5,r[:number])
+end
+
+def test_control_aa9
+  r = spreadsheet.control_aa9
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_bo9
+  r = spreadsheet.control_bo9
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~1,400 offshore wind turbines in 2025, reducing to zero as decommissioned sites are not replanted",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp9
   r = spreadsheet.control_bp9
   assert_equal(:ExcelString,r[:type])
-  assert_equal("~1,400 offshore wind turbines in 2025, reducing to zero as decommissioned sites are not replanted",r[:string].force_encoding('utf-8'))
+  assert_equal("~10,000 offshore wind turbines in 2050, delivering ~180 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq9
   r = spreadsheet.control_bq9
   assert_equal(:ExcelString,r[:type])
-  assert_equal("~10,000 offshore wind turbines in 2050, delivering ~180 TWh/yr",r[:string].force_encoding('utf-8'))
+  assert_equal("~17,000 offshore wind turbines in 2050, delivering ~310 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br9
   r = spreadsheet.control_br9
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("~17,000 offshore wind turbines in 2050, delivering ~310 TWh/yr",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs9
-  r = spreadsheet.control_bs9
   assert_equal(:ExcelString,r[:type])
   assert_equal("~40,000 offshore wind turbines in 2050, delivering ~430 TWh/yr",r[:string].force_encoding('utf-8'))
 end
@@ -292,26 +658,98 @@ def test_control_k10
   assert_equal("~20,000 turbines in 2050, delivering ~130 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m10
+  r = spreadsheet.control_m10
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n10
+  r = spreadsheet.control_n10
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o10
+  r = spreadsheet.control_o10
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q10
+  r = spreadsheet.control_q10
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.7,r[:number])
+end
+
+def test_control_r10
+  r = spreadsheet.control_r10
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.4,r[:number])
+end
+
+def test_control_s10
+  r = spreadsheet.control_s10
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.5,r[:number])
+end
+
+def test_control_t10
+  r = spreadsheet.control_t10
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.3,r[:number])
+end
+
+def test_control_u10
+  r = spreadsheet.control_u10
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.9,r[:number])
+end
+
+def test_control_w10
+  r = spreadsheet.control_w10
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.6,r[:number])
+end
+
+def test_control_x10
+  r = spreadsheet.control_x10
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_z10
+  r = spreadsheet.control_z10
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.3,r[:number])
+end
+
+def test_control_aa10
+  r = spreadsheet.control_aa10
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_bo10
+  r = spreadsheet.control_bo10
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("~4,400 onshore wind turbines in 2025, reducing to zero as decommissioned sites are not replanted",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp10
   r = spreadsheet.control_bp10
   assert_equal(:ExcelString,r[:type])
-  assert_equal("~4,400 onshore wind turbines in 2025, reducing to zero as decommissioned sites are not replanted",r[:string].force_encoding('utf-8'))
+  assert_equal("~8,000 onshore wind turbines in 2050, delivering ~50 TWh/yr. ",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq10
   r = spreadsheet.control_bq10
   assert_equal(:ExcelString,r[:type])
-  assert_equal("~8,000 onshore wind turbines in 2050, delivering ~50 TWh/yr. ",r[:string].force_encoding('utf-8'))
+  assert_equal("~13,000 onshore wind turbines in 2050, delivering ~80 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br10
   r = spreadsheet.control_br10
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("~13,000 onshore wind turbines in 2050, delivering ~80 TWh/yr",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs10
-  r = spreadsheet.control_bs10
   assert_equal(:ExcelString,r[:type])
   assert_equal("~20,000 onshore wind turbines in 2050, delivering ~130 TWh/yr",r[:string].force_encoding('utf-8'))
 end
@@ -352,26 +790,98 @@ def test_control_k11
   assert_equal("~900km of wave farms",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m11
+  r = spreadsheet.control_m11
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n11
+  r = spreadsheet.control_n11
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o11
+  r = spreadsheet.control_o11
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q11
+  r = spreadsheet.control_q11
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.6,r[:number])
+end
+
+def test_control_r11
+  r = spreadsheet.control_r11
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_s11
+  r = spreadsheet.control_s11
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_t11
+  r = spreadsheet.control_t11
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_u11
+  r = spreadsheet.control_u11
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_w11
+  r = spreadsheet.control_w11
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_x11
+  r = spreadsheet.control_x11
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_z11
+  r = spreadsheet.control_z11
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.5,r[:number])
+end
+
+def test_control_aa11
+  r = spreadsheet.control_aa11
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_bo11
+  r = spreadsheet.control_bo11
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("None in 2050",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp11
   r = spreadsheet.control_bp11
   assert_equal(:ExcelString,r[:type])
-  assert_equal("None in 2050",r[:string].force_encoding('utf-8'))
+  assert_equal("~300km of wave farms",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq11
   r = spreadsheet.control_bq11
   assert_equal(:ExcelString,r[:type])
-  assert_equal("~300km of wave farms",r[:string].force_encoding('utf-8'))
+  assert_equal("~600km of wave farms",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br11
   r = spreadsheet.control_br11
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("~600km of wave farms",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs11
-  r = spreadsheet.control_bs11
   assert_equal(:ExcelString,r[:type])
   assert_equal("~900km of wave farms",r[:string].force_encoding('utf-8'))
 end
@@ -412,26 +922,98 @@ def test_control_k12
   assert_equal("10,600 tidal stream turbines",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m12
+  r = spreadsheet.control_m12
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n12
+  r = spreadsheet.control_n12
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o12
+  r = spreadsheet.control_o12
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q12
+  r = spreadsheet.control_q12
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_r12
+  r = spreadsheet.control_r12
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_s12
+  r = spreadsheet.control_s12
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_t12
+  r = spreadsheet.control_t12
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.5,r[:number])
+end
+
+def test_control_u12
+  r = spreadsheet.control_u12
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_w12
+  r = spreadsheet.control_w12
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_x12
+  r = spreadsheet.control_x12
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_z12
+  r = spreadsheet.control_z12
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.5,r[:number])
+end
+
+def test_control_aa12
+  r = spreadsheet.control_aa12
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_bo12
+  r = spreadsheet.control_bo12
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("None in 2050",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp12
   r = spreadsheet.control_bp12
   assert_equal(:ExcelString,r[:type])
-  assert_equal("None in 2050",r[:string].force_encoding('utf-8'))
+  assert_equal("1,000 tidal stream turbines",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq12
   r = spreadsheet.control_bq12
   assert_equal(:ExcelString,r[:type])
-  assert_equal("1,000 tidal stream turbines",r[:string].force_encoding('utf-8'))
+  assert_equal("4,700 tidal stream turbines",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br12
   r = spreadsheet.control_br12
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("4,700 tidal stream turbines",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs12
-  r = spreadsheet.control_bs12
   assert_equal(:ExcelString,r[:type])
   assert_equal("10,600 tidal stream turbines",r[:string].force_encoding('utf-8'))
 end
@@ -472,26 +1054,98 @@ def test_control_k13
   assert_equal("8 tidal range schemes",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m13
+  r = spreadsheet.control_m13
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n13
+  r = spreadsheet.control_n13
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o13
+  r = spreadsheet.control_o13
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q13
+  r = spreadsheet.control_q13
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_r13
+  r = spreadsheet.control_r13
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_s13
+  r = spreadsheet.control_s13
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_t13
+  r = spreadsheet.control_t13
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.5,r[:number])
+end
+
+def test_control_u13
+  r = spreadsheet.control_u13
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.9,r[:number])
+end
+
+def test_control_w13
+  r = spreadsheet.control_w13
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_x13
+  r = spreadsheet.control_x13
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_z13
+  r = spreadsheet.control_z13
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.5,r[:number])
+end
+
+def test_control_aa13
+  r = spreadsheet.control_aa13
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_bo13
+  r = spreadsheet.control_bo13
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("None in  2050",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp13
   r = spreadsheet.control_bp13
   assert_equal(:ExcelString,r[:type])
-  assert_equal("None in  2050",r[:string].force_encoding('utf-8'))
+  assert_equal("3 small tidal range schemes",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq13
   r = spreadsheet.control_bq13
   assert_equal(:ExcelString,r[:type])
-  assert_equal("3 small tidal range schemes",r[:string].force_encoding('utf-8'))
+  assert_equal("4 tidal range schemes",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br13
   r = spreadsheet.control_br13
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("4 tidal range schemes",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs13
-  r = spreadsheet.control_bs13
   assert_equal(:ExcelString,r[:type])
   assert_equal("8 tidal range schemes",r[:string].force_encoding('utf-8'))
 end
@@ -532,26 +1186,98 @@ def test_control_k14
   assert_equal("Over 20GW installed capacity by 2050 delivering 180TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m14
+  r = spreadsheet.control_m14
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n14
+  r = spreadsheet.control_n14
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o14
+  r = spreadsheet.control_o14
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q14
+  r = spreadsheet.control_q14
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_r14
+  r = spreadsheet.control_r14
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_s14
+  r = spreadsheet.control_s14
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_t14
+  r = spreadsheet.control_t14
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_u14
+  r = spreadsheet.control_u14
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_w14
+  r = spreadsheet.control_w14
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_x14
+  r = spreadsheet.control_x14
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_z14
+  r = spreadsheet.control_z14
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_aa14
+  r = spreadsheet.control_aa14
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_bo14
+  r = spreadsheet.control_bo14
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Only existing biomass plants and those already under construction (0.6GW)",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp14
   r = spreadsheet.control_bp14
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Only existing biomass plants and those already under construction (0.6GW)",r[:string].force_encoding('utf-8'))
+  assert_equal("8GW of biomass power stations by 2050 delivering 62TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq14
   r = spreadsheet.control_bq14
   assert_equal(:ExcelString,r[:type])
-  assert_equal("8GW of biomass power stations by 2050 delivering 62TWh/yr",r[:string].force_encoding('utf-8'))
+  assert_equal("12GW of biomass power stations by 2050 delivering 100TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br14
   r = spreadsheet.control_br14
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("12GW of biomass power stations by 2050 delivering 100TWh/yr",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs14
-  r = spreadsheet.control_bs14
   assert_equal(:ExcelString,r[:type])
   assert_equal("Over 20GW of biomass power stations by 2050 delivering 180TWh/yr",r[:string].force_encoding('utf-8'))
 end
@@ -592,26 +1318,98 @@ def test_control_k15
   assert_equal("9.5m2 of photovoltaic panels per person – all suitable roof and facade space used",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m15
+  r = spreadsheet.control_m15
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n15
+  r = spreadsheet.control_n15
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o15
+  r = spreadsheet.control_o15
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q15
+  r = spreadsheet.control_q15
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.2,r[:number])
+end
+
+def test_control_r15
+  r = spreadsheet.control_r15
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_s15
+  r = spreadsheet.control_s15
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_t15
+  r = spreadsheet.control_t15
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_u15
+  r = spreadsheet.control_u15
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.7,r[:number])
+end
+
+def test_control_w15
+  r = spreadsheet.control_w15
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.2,r[:number])
+end
+
+def test_control_x15
+  r = spreadsheet.control_x15
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_z15
+  r = spreadsheet.control_z15
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_aa15
+  r = spreadsheet.control_aa15
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_bo15
+  r = spreadsheet.control_bo15
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("No significant solar PV capacity is installed",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp15
   r = spreadsheet.control_bp15
   assert_equal(:ExcelString,r[:type])
-  assert_equal("No significant solar PV capacity is installed",r[:string].force_encoding('utf-8'))
+  assert_equal("4m2 of photovoltaic panels per person in 2050, supplying ~60 TWh/yr of electricity",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq15
   r = spreadsheet.control_bq15
   assert_equal(:ExcelString,r[:type])
-  assert_equal("4m2 of photovoltaic panels per person in 2050, supplying ~60 TWh/yr of electricity",r[:string].force_encoding('utf-8'))
+  assert_equal(" 5.4m2 of photovoltaic panels per person in 2050, supplying ~80 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br15
   r = spreadsheet.control_br15
-  assert_equal(:ExcelString,r[:type])
-  assert_equal(" 5.4m2 of photovoltaic panels per person in 2050, supplying ~80 TWh/yr",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs15
-  r = spreadsheet.control_bs15
   assert_equal(:ExcelString,r[:type])
   assert_equal("9.5m2 of photovoltaic panels per person – all suitable roof and facade space used",r[:string].force_encoding('utf-8'))
 end
@@ -652,26 +1450,98 @@ def test_control_k16
   assert_equal("All suitable buildings get ~60% of their hot water from solar thermal",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m16
+  r = spreadsheet.control_m16
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n16
+  r = spreadsheet.control_n16
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o16
+  r = spreadsheet.control_o16
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q16
+  r = spreadsheet.control_q16
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.8,r[:number])
+end
+
+def test_control_r16
+  r = spreadsheet.control_r16
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_s16
+  r = spreadsheet.control_s16
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_t16
+  r = spreadsheet.control_t16
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_u16
+  r = spreadsheet.control_u16
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.6,r[:number])
+end
+
+def test_control_w16
+  r = spreadsheet.control_w16
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.9,r[:number])
+end
+
+def test_control_x16
+  r = spreadsheet.control_x16
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_z16
+  r = spreadsheet.control_z16
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_aa16
+  r = spreadsheet.control_aa16
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_bo16
+  r = spreadsheet.control_bo16
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("As today, a negligible proportion of buildings have solar thermal in 2050",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp16
   r = spreadsheet.control_bp16
   assert_equal(:ExcelString,r[:type])
-  assert_equal("As today, a negligible proportion of buildings have solar thermal in 2050",r[:string].force_encoding('utf-8'))
+  assert_equal("~30% of suitable buildings get ~30% of their hot water from solar thermal",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq16
   r = spreadsheet.control_bq16
   assert_equal(:ExcelString,r[:type])
-  assert_equal("~30% of suitable buildings get ~30% of their hot water from solar thermal",r[:string].force_encoding('utf-8'))
+  assert_equal("All suitable buildings get ~30% of their hot water from solar thermal",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br16
   r = spreadsheet.control_br16
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("All suitable buildings get ~30% of their hot water from solar thermal",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs16
-  r = spreadsheet.control_bs16
   assert_equal(:ExcelString,r[:type])
   assert_equal("All suitable buildings get ~60% of their hot water from solar thermal",r[:string].force_encoding('utf-8'))
 end
@@ -712,26 +1582,98 @@ def test_control_k17
   assert_equal("Supply grows rapidly reaching 35 TWh/yr by 2030 and is sustained",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m17
+  r = spreadsheet.control_m17
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n17
+  r = spreadsheet.control_n17
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o17
+  r = spreadsheet.control_o17
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q17
+  r = spreadsheet.control_q17
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_r17
+  r = spreadsheet.control_r17
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_s17
+  r = spreadsheet.control_s17
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_t17
+  r = spreadsheet.control_t17
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_u17
+  r = spreadsheet.control_u17
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.6,r[:number])
+end
+
+def test_control_w17
+  r = spreadsheet.control_w17
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_x17
+  r = spreadsheet.control_x17
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_z17
+  r = spreadsheet.control_z17
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_aa17
+  r = spreadsheet.control_aa17
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_bo17
+  r = spreadsheet.control_bo17
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("No deployment of geothermal electricity generation",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp17
   r = spreadsheet.control_bp17
   assert_equal(:ExcelString,r[:type])
-  assert_equal("No deployment of geothermal electricity generation",r[:string].force_encoding('utf-8'))
+  assert_equal("Supply of geothermal electricity grows slowly to 7 TWh/yr in 2035 and is sustained",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq17
   r = spreadsheet.control_bq17
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Supply of geothermal electricity grows slowly to 7 TWh/yr in 2035 and is sustained",r[:string].force_encoding('utf-8'))
+  assert_equal("Supply of geothermal electricity grows quickly reaching 21 TWh/yr by 2030 and is sustained",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br17
   r = spreadsheet.control_br17
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Supply of geothermal electricity grows quickly reaching 21 TWh/yr by 2030 and is sustained",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs17
-  r = spreadsheet.control_bs17
   assert_equal(:ExcelString,r[:type])
   assert_equal("Supply of geothermal electricity grows rapidly reaching 35 TWh/yr by 2030 and is sustained",r[:string].force_encoding('utf-8'))
 end
@@ -772,26 +1714,98 @@ def test_control_k18
   assert_equal("Supply grows rapidly reaching 13 TWh/yr by 2035 and is sustained",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m18
+  r = spreadsheet.control_m18
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n18
+  r = spreadsheet.control_n18
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o18
+  r = spreadsheet.control_o18
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q18
+  r = spreadsheet.control_q18
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_r18
+  r = spreadsheet.control_r18
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_s18
+  r = spreadsheet.control_s18
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_t18
+  r = spreadsheet.control_t18
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.5,r[:number])
+end
+
+def test_control_u18
+  r = spreadsheet.control_u18
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.9,r[:number])
+end
+
+def test_control_w18
+  r = spreadsheet.control_w18
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.9,r[:number])
+end
+
+def test_control_x18
+  r = spreadsheet.control_x18
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_z18
+  r = spreadsheet.control_z18
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_aa18
+  r = spreadsheet.control_aa18
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_bo18
+  r = spreadsheet.control_bo18
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Supply of hydroelectricity is maintained at current levels of 5 TWh/yr",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp18
   r = spreadsheet.control_bp18
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Supply of hydroelectricity is maintained at current levels of 5 TWh/yr",r[:string].force_encoding('utf-8'))
+  assert_equal("Supply of hydroelectricity grows slowly, reaching 7 TWh/yr by 2050",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq18
   r = spreadsheet.control_bq18
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Supply of hydroelectricity grows slowly, reaching 7 TWh/yr by 2050",r[:string].force_encoding('utf-8'))
+  assert_equal("Supply of hydroelectricity grows more quickly, reaching 8 TWh/yr by 2030 and is sustained",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br18
   r = spreadsheet.control_br18
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Supply of hydroelectricity grows more quickly, reaching 8 TWh/yr by 2030 and is sustained",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs18
-  r = spreadsheet.control_bs18
   assert_equal(:ExcelString,r[:type])
   assert_equal("Supply of hydroelectricity grows rapidly reaching 13 TWh/yr by 2035 and is sustained",r[:string].force_encoding('utf-8'))
 end
@@ -832,26 +1846,98 @@ def test_control_k19
   assert_equal("Installed in all suitable domestic and non-domestic sties; 8.9 TWh/year from 2020",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m19
+  r = spreadsheet.control_m19
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n19
+  r = spreadsheet.control_n19
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o19
+  r = spreadsheet.control_o19
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q19
+  r = spreadsheet.control_q19
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_r19
+  r = spreadsheet.control_r19
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_s19
+  r = spreadsheet.control_s19
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_t19
+  r = spreadsheet.control_t19
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_u19
+  r = spreadsheet.control_u19
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_w19
+  r = spreadsheet.control_w19
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_x19
+  r = spreadsheet.control_x19
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_z19
+  r = spreadsheet.control_z19
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_aa19
+  r = spreadsheet.control_aa19
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_bo19
+  r = spreadsheet.control_bo19
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("As today, no discernable supply of electricity from micro-wind turbines",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp19
   r = spreadsheet.control_bp19
   assert_equal(:ExcelString,r[:type])
-  assert_equal("As today, no discernable supply of electricity from micro-wind turbines",r[:string].force_encoding('utf-8'))
+  assert_equal("Supply of electricity from micro wind turbines increases to 1.3 TWh/yr by 2020 and is sustained",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq19
   r = spreadsheet.control_bq19
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Supply of electricity from micro wind turbines increases to 1.3 TWh/yr by 2020 and is sustained",r[:string].force_encoding('utf-8'))
+  assert_equal("Micro wind turbines installed in all ~450,000 suitable domestic properties, supplying 3.5 TWh/year from 2020",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br19
   r = spreadsheet.control_br19
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Micro wind turbines installed in all ~450,000 suitable domestic properties, supplying 3.5 TWh/year from 2020",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs19
-  r = spreadsheet.control_bs19
   assert_equal(:ExcelString,r[:type])
   assert_equal("Micro wind turbines installed in all suitable domestic and non-domestic sties, supplying 8.9 TWh/year from 2020",r[:string].force_encoding('utf-8'))
 end
@@ -892,26 +1978,98 @@ def test_control_k20
   assert_equal("140 TWh/yr imported from UK 20% share of international desert solar project",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m20
+  r = spreadsheet.control_m20
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n20
+  r = spreadsheet.control_n20
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o20
+  r = spreadsheet.control_o20
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q20
+  r = spreadsheet.control_q20
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_r20
+  r = spreadsheet.control_r20
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_s20
+  r = spreadsheet.control_s20
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.5,r[:number])
+end
+
+def test_control_t20
+  r = spreadsheet.control_t20
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.8,r[:number])
+end
+
+def test_control_u20
+  r = spreadsheet.control_u20
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.9,r[:number])
+end
+
+def test_control_w20
+  r = spreadsheet.control_w20
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_x20
+  r = spreadsheet.control_x20
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_z20
+  r = spreadsheet.control_z20
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_aa20
+  r = spreadsheet.control_aa20
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_bo20
+  r = spreadsheet.control_bo20
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("No electricity imports, other than for balancing",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp20
   r = spreadsheet.control_bp20
   assert_equal(:ExcelString,r[:type])
-  assert_equal("No electricity imports, other than for balancing",r[:string].force_encoding('utf-8'))
+  assert_equal("30 TWh/yr of electricity imported from Southern Europe",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq20
   r = spreadsheet.control_bq20
   assert_equal(:ExcelString,r[:type])
-  assert_equal("30 TWh/yr of electricity imported from Southern Europe",r[:string].force_encoding('utf-8'))
+  assert_equal("70 TWh/yr of electricity imported from a 10% share of an internationally coordinated desert solar project ",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br20
   r = spreadsheet.control_br20
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("70 TWh/yr of electricity imported from a 10% share of an internationally coordinated desert solar project ",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs20
-  r = spreadsheet.control_bs20
   assert_equal(:ExcelString,r[:type])
   assert_equal("140 TWh/yr of electricity imported from a 20% share of an internationally coordinated desert solar project",r[:string].force_encoding('utf-8'))
 end
@@ -958,26 +2116,98 @@ def test_control_k22
   assert_equal("17% of land used for energy crops",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m22
+  r = spreadsheet.control_m22
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n22
+  r = spreadsheet.control_n22
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o22
+  r = spreadsheet.control_o22
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q22
+  r = spreadsheet.control_q22
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_r22
+  r = spreadsheet.control_r22
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_s22
+  r = spreadsheet.control_s22
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_t22
+  r = spreadsheet.control_t22
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_u22
+  r = spreadsheet.control_u22
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_w22
+  r = spreadsheet.control_w22
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_x22
+  r = spreadsheet.control_x22
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_z22
+  r = spreadsheet.control_z22
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_aa22
+  r = spreadsheet.control_aa22
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_bo22
+  r = spreadsheet.control_bo22
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Energy crops and food production similar to today",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp22
   r = spreadsheet.control_bp22
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Energy crops and food production similar to today",r[:string].force_encoding('utf-8'))
+  assert_equal("5% of UK land used for energy crops",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq22
   r = spreadsheet.control_bq22
   assert_equal(:ExcelString,r[:type])
-  assert_equal("5% of UK land used for energy crops",r[:string].force_encoding('utf-8'))
+  assert_equal("10% of UK land used for energy crops",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br22
   r = spreadsheet.control_br22
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("10% of UK land used for energy crops",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs22
-  r = spreadsheet.control_bs22
   assert_equal(:ExcelString,r[:type])
   assert_equal("17% of UK land used for energy crops",r[:string].force_encoding('utf-8'))
 end
@@ -1018,26 +2248,98 @@ def test_control_k23
   assert_equal("Livestock numbers decrease by 20%",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m23
+  r = spreadsheet.control_m23
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n23
+  r = spreadsheet.control_n23
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o23
+  r = spreadsheet.control_o23
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q23
+  r = spreadsheet.control_q23
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_r23
+  r = spreadsheet.control_r23
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s23
+  r = spreadsheet.control_s23
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_t23
+  r = spreadsheet.control_t23
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_u23
+  r = spreadsheet.control_u23
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_w23
+  r = spreadsheet.control_w23
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_x23
+  r = spreadsheet.control_x23
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_z23
+  r = spreadsheet.control_z23
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_aa23
+  r = spreadsheet.control_aa23
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_bo23
+  r = spreadsheet.control_bo23
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Livestock numbers increase by 10%",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp23
   r = spreadsheet.control_bp23
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Livestock numbers increase by 10%",r[:string].force_encoding('utf-8'))
+  assert_equal("Livestock numbers same as today",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq23
   r = spreadsheet.control_bq23
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Livestock numbers same as today",r[:string].force_encoding('utf-8'))
+  assert_equal("Livestock numbers decrease by 10%",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br23
   r = spreadsheet.control_br23
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Livestock numbers decrease by 10%",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs23
-  r = spreadsheet.control_bs23
   assert_equal(:ExcelString,r[:type])
   assert_equal("Livestock numbers decrease by 20%",r[:string].force_encoding('utf-8'))
 end
@@ -1078,26 +2380,98 @@ def test_control_k24
   assert_equal("Quantity of waste decreases 20%; Significant increase in rate of recycling.",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m24
+  r = spreadsheet.control_m24
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n24
+  r = spreadsheet.control_n24
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o24
+  r = spreadsheet.control_o24
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_q24
+  r = spreadsheet.control_q24
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_r24
+  r = spreadsheet.control_r24
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s24
+  r = spreadsheet.control_s24
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_t24
+  r = spreadsheet.control_t24
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_u24
+  r = spreadsheet.control_u24
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_w24
+  r = spreadsheet.control_w24
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_x24
+  r = spreadsheet.control_x24
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_z24
+  r = spreadsheet.control_z24
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_aa24
+  r = spreadsheet.control_aa24
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_bo24
+  r = spreadsheet.control_bo24
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Overall quantity of waste increases 50% to 2050; 21% increase in recycling rate and 44% increase in rate of energy from waste. 24% of waste is sent to landfill",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp24
   r = spreadsheet.control_bp24
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Overall quantity of waste increases 50% to 2050; 21% increase in recycling rate and 44% increase in rate of energy from waste. 24% of waste is sent to landfill",r[:string].force_encoding('utf-8'))
+  assert_equal("Overall quantity of waste increases almost 20% by 2050; recycling and energy from waste rates increase by 36% and 89% respectively. 11% of waste is sent to landfill.",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq24
   r = spreadsheet.control_bq24
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Overall quantity of waste increases almost 20% by 2050; recycling and energy from waste rates increase by 36% and 89% respectively. 11% of waste is sent to landfill.",r[:string].force_encoding('utf-8'))
+  assert_equal("Overall quantity of waste increases 33%; waste is handled through high-tech and industry-led approaches; by 2050, recycling and energy from waste rates increase by 36% and 89% respectively. Only 2% is sent to landfill.",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br24
   r = spreadsheet.control_br24
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Overall quantity of waste increases 33%; waste is handled through high-tech and industry-led approaches; by 2050, recycling and energy from waste rates increase by 36% and 89% respectively. Only 2% is sent to landfill.",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs24
-  r = spreadsheet.control_bs24
   assert_equal(:ExcelString,r[:type])
   assert_equal("Quantity of waste decreases 20% by 2050; recycling and energy from waste increase by 70% and 7% respectively; by 2050, 3% of waste sent to landfill.",r[:string].force_encoding('utf-8'))
 end
@@ -1138,26 +2512,98 @@ def test_control_k25
   assert_equal("Area same as four times natural reserve used, delivering ~46 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m25
+  r = spreadsheet.control_m25
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n25
+  r = spreadsheet.control_n25
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o25
+  r = spreadsheet.control_o25
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q25
+  r = spreadsheet.control_q25
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_r25
+  r = spreadsheet.control_r25
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_s25
+  r = spreadsheet.control_s25
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_t25
+  r = spreadsheet.control_t25
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_u25
+  r = spreadsheet.control_u25
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_w25
+  r = spreadsheet.control_w25
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_x25
+  r = spreadsheet.control_x25
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_z25
+  r = spreadsheet.control_z25
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_aa25
+  r = spreadsheet.control_aa25
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_bo25
+  r = spreadsheet.control_bo25
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("No development of macro-algae cultivation",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp25
   r = spreadsheet.control_bp25
   assert_equal(:ExcelString,r[:type])
-  assert_equal("No development of macro-algae cultivation",r[:string].force_encoding('utf-8'))
+  assert_equal("Macro algae covering the same area as half of natural reserve used, delivering ~4 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq25
   r = spreadsheet.control_bq25
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Macro algae covering the same area as half of natural reserve used, delivering ~4 TWh/yr",r[:string].force_encoding('utf-8'))
+  assert_equal("Macro algae covering the same area as all of natural reserve used, delivering ~9 TWh/yr",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br25
   r = spreadsheet.control_br25
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Macro algae covering the same area as all of natural reserve used, delivering ~9 TWh/yr",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs25
-  r = spreadsheet.control_bs25
   assert_equal(:ExcelString,r[:type])
   assert_equal("Macro algae covering the same area as four times natural reserve used, delivering ~46 TWh/yr",r[:string].force_encoding('utf-8'))
 end
@@ -1198,26 +2644,98 @@ def test_control_k26
   assert_equal("Biomass mainly converted to biogas fuel",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m26
+  r = spreadsheet.control_m26
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n26
+  r = spreadsheet.control_n26
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o26
+  r = spreadsheet.control_o26
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_q26
+  r = spreadsheet.control_q26
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_r26
+  r = spreadsheet.control_r26
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_s26
+  r = spreadsheet.control_s26
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_t26
+  r = spreadsheet.control_t26
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_u26
+  r = spreadsheet.control_u26
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_w26
+  r = spreadsheet.control_w26
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_x26
+  r = spreadsheet.control_x26
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_z26
+  r = spreadsheet.control_z26
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_aa26
+  r = spreadsheet.control_aa26
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_bo26
+  r = spreadsheet.control_bo26
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Biomass converted to a mixture of solid, liquid and gas biofuels",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp26
   r = spreadsheet.control_bp26
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Biomass converted to a mixture of solid, liquid and gas biofuels",r[:string].force_encoding('utf-8'))
+  assert_equal("Biomass mainly converted to solid biofuel",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq26
   r = spreadsheet.control_bq26
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Biomass mainly converted to solid biofuel",r[:string].force_encoding('utf-8'))
+  assert_equal("Biomass mainly converted to liquid biofuel",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br26
   r = spreadsheet.control_br26
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Biomass mainly converted to liquid biofuel",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs26
-  r = spreadsheet.control_bs26
   assert_equal(:ExcelString,r[:type])
   assert_equal("Biomass mainly converted to biogas fuel",r[:string].force_encoding('utf-8'))
 end
@@ -1258,26 +2776,98 @@ def test_control_k27
   assert_equal("Up to 280 TWh/yr of imported bioenergy in 2050",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m27
+  r = spreadsheet.control_m27
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n27
+  r = spreadsheet.control_n27
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o27
+  r = spreadsheet.control_o27
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_q27
+  r = spreadsheet.control_q27
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_r27
+  r = spreadsheet.control_r27
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.7,r[:number])
+end
+
+def test_control_s27
+  r = spreadsheet.control_s27
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_t27
+  r = spreadsheet.control_t27
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.5,r[:number])
+end
+
+def test_control_u27
+  r = spreadsheet.control_u27
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_w27
+  r = spreadsheet.control_w27
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_x27
+  r = spreadsheet.control_x27
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_z27
+  r = spreadsheet.control_z27
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_aa27
+  r = spreadsheet.control_aa27
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_bo27
+  r = spreadsheet.control_bo27
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Imported biofuel declines from ~ 4 TWh/yr currently to zero",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp27
   r = spreadsheet.control_bp27
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Imported biofuel declines from ~ 4 TWh/yr currently to zero",r[:string].force_encoding('utf-8'))
+  assert_equal("Up to 70 TWh/yr of imported bioenergy in 2050",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq27
   r = spreadsheet.control_bq27
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Up to 70 TWh/yr of imported bioenergy in 2050",r[:string].force_encoding('utf-8'))
+  assert_equal("Up to 140 TWh/yr of imported bioenergy in 2050",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br27
   r = spreadsheet.control_br27
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Up to 140 TWh/yr of imported bioenergy in 2050",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs27
-  r = spreadsheet.control_bs27
   assert_equal(:ExcelString,r[:type])
   assert_equal("Up to 280 TWh/yr of imported bioenergy in 2050",r[:string].force_encoding('utf-8'))
 end
@@ -1324,26 +2914,98 @@ def test_control_k30
   assert_equal("In 2050, individuals travel the same distance as today. Signficant shift to public transport.",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m30
+  r = spreadsheet.control_m30
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n30
+  r = spreadsheet.control_n30
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o30
+  r = spreadsheet.control_o30
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q30
+  r = spreadsheet.control_q30
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_r30
+  r = spreadsheet.control_r30
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s30
+  r = spreadsheet.control_s30
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_t30
+  r = spreadsheet.control_t30
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_u30
+  r = spreadsheet.control_u30
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_w30
+  r = spreadsheet.control_w30
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_x30
+  r = spreadsheet.control_x30
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_z30
+  r = spreadsheet.control_z30
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_aa30
+  r = spreadsheet.control_aa30
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_bo30
+  r = spreadsheet.control_bo30
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("In 2050, individuals travel 9% further than today. No noticeable modal shift.",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp30
   r = spreadsheet.control_bp30
   assert_equal(:ExcelString,r[:type])
-  assert_equal("In 2050, individuals travel 9% further than today. No noticeable modal shift.",r[:string].force_encoding('utf-8'))
+  assert_equal("Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq30
   r = spreadsheet.control_bq30
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage",r[:string].force_encoding('utf-8'))
+  assert_equal("Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br30
   r = spreadsheet.control_br30
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs30
-  r = spreadsheet.control_bs30
   assert_equal(:ExcelString,r[:type])
   assert_equal("In 2050, individuals travel the same distance as today. Signficant shift to public transport.",r[:string].force_encoding('utf-8'))
 end
@@ -1384,26 +3046,98 @@ def test_control_k31
   assert_equal("By 2050 100%  zero emission vehiclesl; all passenger trains electrified; 50% bus electrified ",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m31
+  r = spreadsheet.control_m31
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n31
+  r = spreadsheet.control_n31
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o31
+  r = spreadsheet.control_o31
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q31
+  r = spreadsheet.control_q31
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_r31
+  r = spreadsheet.control_r31
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_s31
+  r = spreadsheet.control_s31
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_t31
+  r = spreadsheet.control_t31
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_u31
+  r = spreadsheet.control_u31
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_w31
+  r = spreadsheet.control_w31
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_x31
+  r = spreadsheet.control_x31
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_z31
+  r = spreadsheet.control_z31
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_aa31
+  r = spreadsheet.control_aa31
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_bo31
+  r = spreadsheet.control_bo31
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars.",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp31
   r = spreadsheet.control_bp31
   assert_equal(:ExcelString,r[:type])
-  assert_equal("By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars.",r[:string].force_encoding('utf-8'))
+  assert_equal("By 2050, 35% conventional petrol or diesel engine cars; 54% plug-in hybrid vehicles; 11%  zero emission vehicles; all buses hybrids; 73% of passenger railway is electrifi",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq31
   r = spreadsheet.control_bq31
   assert_equal(:ExcelString,r[:type])
-  assert_equal("By 2050, 35% conventional petrol or diesel engine cars; 54% plug-in hybrid vehicles; 11%  zero emission vehicles; all buses hybrids; 73% of passenger railway is electrifi",r[:string].force_encoding('utf-8'))
+  assert_equal("By 2050, 20% conventional combustion engine cars, with 32% in plug-in hybrid vehicles and 48% in zero emission vehicles: 22% of bus travel fully electric or fuel cell electric ",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br31
   r = spreadsheet.control_br31
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("By 2050, 20% conventional combustion engine cars, with 32% in plug-in hybrid vehicles and 48% in zero emission vehicles: 22% of bus travel fully electric or fuel cell electric ",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs31
-  r = spreadsheet.control_bs31
   assert_equal(:ExcelString,r[:type])
   assert_equal("By 2050 100%  electric motor or hydrogen fuel cell; all passenger trains electrified; 50% bus  electrified ",r[:string].force_encoding('utf-8'))
 end
@@ -1444,26 +3178,98 @@ def test_control_k32
   assert_equal("By 2050, 100% hydrogen fuel cells",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m32
+  r = spreadsheet.control_m32
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n32
+  r = spreadsheet.control_n32
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_o32
+  r = spreadsheet.control_o32
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_q32
+  r = spreadsheet.control_q32
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_r32
+  r = spreadsheet.control_r32
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s32
+  r = spreadsheet.control_s32
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_t32
+  r = spreadsheet.control_t32
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_u32
+  r = spreadsheet.control_u32
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_w32
+  r = spreadsheet.control_w32
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_x32
+  r = spreadsheet.control_x32
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_z32
+  r = spreadsheet.control_z32
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_aa32
+  r = spreadsheet.control_aa32
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_bo32
+  r = spreadsheet.control_bo32
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("By 2050, 100% electric",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp32
   r = spreadsheet.control_bp32
   assert_equal(:ExcelString,r[:type])
-  assert_equal("By 2050, 100% electric",r[:string].force_encoding('utf-8'))
+  assert_equal("by 2050, 80% electric,  20% hydrogen fuel cell",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq32
   r = spreadsheet.control_bq32
   assert_equal(:ExcelString,r[:type])
-  assert_equal("by 2050, 80% electric,  20% hydrogen fuel cell",r[:string].force_encoding('utf-8'))
+  assert_equal("By 2050, 20% electric, 80% hydrogen fuel cell",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br32
   r = spreadsheet.control_br32
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("By 2050, 20% electric, 80% hydrogen fuel cell",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs32
-  r = spreadsheet.control_bs32
   assert_equal(:ExcelString,r[:type])
   assert_equal("By 2050, 100% hydrogen fuel cells",r[:string].force_encoding('utf-8'))
 end
@@ -1504,26 +3310,98 @@ def test_control_k33
   assert_equal("Road modal share falls to half; greater hybridisation. Rail freight is all electric ",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m33
+  r = spreadsheet.control_m33
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n33
+  r = spreadsheet.control_n33
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o33
+  r = spreadsheet.control_o33
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q33
+  r = spreadsheet.control_q33
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_r33
+  r = spreadsheet.control_r33
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s33
+  r = spreadsheet.control_s33
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_t33
+  r = spreadsheet.control_t33
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_u33
+  r = spreadsheet.control_u33
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_w33
+  r = spreadsheet.control_w33
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_x33
+  r = spreadsheet.control_x33
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_z33
+  r = spreadsheet.control_z33
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_aa33
+  r = spreadsheet.control_aa33
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_bo33
+  r = spreadsheet.control_bo33
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Road haulage makes up 73% of distance, using conventional engines. Rail all diesel",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp33
   r = spreadsheet.control_bp33
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Road haulage makes up 73% of distance, using conventional engines. Rail all diesel",r[:string].force_encoding('utf-8'))
+  assert_equal("Some shift from road to rail and water, and more efficient engines",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq33
   r = spreadsheet.control_bq33
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Some shift from road to rail and water, and more efficient engines",r[:string].force_encoding('utf-8'))
+  assert_equal("Greater modal shift to rail and water; more efficient HGVs; more efficient logistics",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br33
   r = spreadsheet.control_br33
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Greater modal shift to rail and water; more efficient HGVs; more efficient logistics",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs33
-  r = spreadsheet.control_bs33
   assert_equal(:ExcelString,r[:type])
   assert_equal("Road modal share falls to half; greater hybridisation. Rail freight is all electric ",r[:string].force_encoding('utf-8'))
 end
@@ -1564,26 +3442,98 @@ def test_control_k34
   assert_equal("By 2050, 85% passengers increase; 5% more fuel use",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m34
+  r = spreadsheet.control_m34
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n34
+  r = spreadsheet.control_n34
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o34
+  r = spreadsheet.control_o34
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q34
+  r = spreadsheet.control_q34
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_r34
+  r = spreadsheet.control_r34
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s34
+  r = spreadsheet.control_s34
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_t34
+  r = spreadsheet.control_t34
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_u34
+  r = spreadsheet.control_u34
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_w34
+  r = spreadsheet.control_w34
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_x34
+  r = spreadsheet.control_x34
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_z34
+  r = spreadsheet.control_z34
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_aa34
+  r = spreadsheet.control_aa34
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_bo34
+  r = spreadsheet.control_bo34
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("By 2050, international aviation has 130% more passengers but uses only 50% more fuel",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp34
   r = spreadsheet.control_bp34
   assert_equal(:ExcelString,r[:type])
-  assert_equal("By 2050, international aviation has 130% more passengers but uses only 50% more fuel",r[:string].force_encoding('utf-8'))
+  assert_equal("By 2050, international aviation has 130% more passengers but uses only 45% more fuel",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq34
   r = spreadsheet.control_bq34
   assert_equal(:ExcelString,r[:type])
-  assert_equal("By 2050, international aviation has 130% more passengers but uses only 45% more fuel",r[:string].force_encoding('utf-8'))
+  assert_equal("By 2050, international aviation has 130% more passengers but uses only 31% more fuel",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br34
   r = spreadsheet.control_br34
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("By 2050, international aviation has 130% more passengers but uses only 31% more fuel",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs34
-  r = spreadsheet.control_bs34
   assert_equal(:ExcelString,r[:type])
   assert_equal("By 2050, international aviation has 85% more passengers but uses only 5% more fuel",r[:string].force_encoding('utf-8'))
 end
@@ -1624,26 +3574,98 @@ def test_control_k35
   assert_equal("maximum technical feasible reductions realised; between 2007 and 2050 emissions decrease by 46%",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m35
+  r = spreadsheet.control_m35
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n35
+  r = spreadsheet.control_n35
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o35
+  r = spreadsheet.control_o35
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q35
+  r = spreadsheet.control_q35
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_r35
+  r = spreadsheet.control_r35
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s35
+  r = spreadsheet.control_s35
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_t35
+  r = spreadsheet.control_t35
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_u35
+  r = spreadsheet.control_u35
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_w35
+  r = spreadsheet.control_w35
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_x35
+  r = spreadsheet.control_x35
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_z35
+  r = spreadsheet.control_z35
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_aa35
+  r = spreadsheet.control_aa35
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_bo35
+  r = spreadsheet.control_bo35
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("no improvements from energy efficiency; between 2007 and 2050 emissions increase by 139%",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp35
   r = spreadsheet.control_bp35
   assert_equal(:ExcelString,r[:type])
-  assert_equal("no improvements from energy efficiency; between 2007 and 2050 emissions increase by 139%",r[:string].force_encoding('utf-8'))
+  assert_equal("1/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 78%",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq35
   r = spreadsheet.control_bq35
   assert_equal(:ExcelString,r[:type])
-  assert_equal("1/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 78%",r[:string].force_encoding('utf-8'))
+  assert_equal("2/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 16%",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br35
   r = spreadsheet.control_br35
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("2/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 16%",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs35
-  r = spreadsheet.control_bs35
   assert_equal(:ExcelString,r[:type])
   assert_equal("maximum technical feasible reductions realised; between 2007 and 2050 emissions decrease by 46%",r[:string].force_encoding('utf-8'))
 end
@@ -1690,26 +3712,98 @@ def test_control_k37
   assert_equal("Average room temperature decreases to 16°C (a 1.5°C decrease on 2007)",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m37
+  r = spreadsheet.control_m37
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n37
+  r = spreadsheet.control_n37
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o37
+  r = spreadsheet.control_o37
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q37
+  r = spreadsheet.control_q37
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_r37
+  r = spreadsheet.control_r37
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s37
+  r = spreadsheet.control_s37
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_t37
+  r = spreadsheet.control_t37
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_u37
+  r = spreadsheet.control_u37
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_w37
+  r = spreadsheet.control_w37
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_x37
+  r = spreadsheet.control_x37
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_z37
+  r = spreadsheet.control_z37
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_aa37
+  r = spreadsheet.control_aa37
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_bo37
+  r = spreadsheet.control_bo37
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Average room temperature increases to 20°C (a 2.5°C increase on 2007)",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp37
   r = spreadsheet.control_bp37
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Average room temperature increases to 20°C (a 2.5°C increase on 2007)",r[:string].force_encoding('utf-8'))
+  assert_equal("Average room temperature increases to 18°C (a 0.5°C increase on 2007)",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq37
   r = spreadsheet.control_bq37
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Average room temperature increases to 18°C (a 0.5°C increase on 2007)",r[:string].force_encoding('utf-8'))
+  assert_equal("Average room temperature decreases to 17°C (a 0.5°C decrease on 2007)",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br37
   r = spreadsheet.control_br37
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Average room temperature decreases to 17°C (a 0.5°C decrease on 2007)",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs37
-  r = spreadsheet.control_bs37
   assert_equal(:ExcelString,r[:type])
   assert_equal("Average room temperature decreases to 16°C (a 1.5°C decrease on 2007)",r[:string].force_encoding('utf-8'))
 end
@@ -1750,26 +3844,98 @@ def test_control_k38
   assert_equal("Over 24m homes insulated, average thermal leakiness decreases by 50% ",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m38
+  r = spreadsheet.control_m38
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n38
+  r = spreadsheet.control_n38
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o38
+  r = spreadsheet.control_o38
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q38
+  r = spreadsheet.control_q38
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_r38
+  r = spreadsheet.control_r38
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_s38
+  r = spreadsheet.control_s38
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_t38
+  r = spreadsheet.control_t38
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_u38
+  r = spreadsheet.control_u38
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_w38
+  r = spreadsheet.control_w38
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_x38
+  r = spreadsheet.control_x38
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_z38
+  r = spreadsheet.control_z38
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_aa38
+  r = spreadsheet.control_aa38
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_bo38
+  r = spreadsheet.control_bo38
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Over 7m homes insulated, average thermal leakiness falls by 25%",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp38
   r = spreadsheet.control_bp38
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Over 7m homes insulated, average thermal leakiness falls by 25%",r[:string].force_encoding('utf-8'))
+  assert_equal("Over 8m homes insulated, average thermal leakiness falls by 33%",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq38
   r = spreadsheet.control_bq38
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Over 8m homes insulated, average thermal leakiness falls by 33%",r[:string].force_encoding('utf-8'))
+  assert_equal("Over 18m homes insulated, average thermal leakiness falls by 42%",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br38
   r = spreadsheet.control_br38
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Over 18m homes insulated, average thermal leakiness falls by 42%",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs38
-  r = spreadsheet.control_bs38
   assert_equal(:ExcelString,r[:type])
   assert_equal("Over 24m homes insulated, average thermal leakiness decreases by 50% ",r[:string].force_encoding('utf-8'))
 end
@@ -1810,26 +3976,98 @@ def test_control_k39
   assert_equal("The proportion of new domestic heating systems supplied using electricity is 80-100%",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m39
+  r = spreadsheet.control_m39
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n39
+  r = spreadsheet.control_n39
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o39
+  r = spreadsheet.control_o39
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q39
+  r = spreadsheet.control_q39
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_r39
+  r = spreadsheet.control_r39
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_s39
+  r = spreadsheet.control_s39
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_t39
+  r = spreadsheet.control_t39
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_u39
+  r = spreadsheet.control_u39
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_w39
+  r = spreadsheet.control_w39
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_x39
+  r = spreadsheet.control_x39
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_z39
+  r = spreadsheet.control_z39
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_aa39
+  r = spreadsheet.control_aa39
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_bo39
+  r = spreadsheet.control_bo39
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("The proportion of domestic heat supplied using electricity is 0-10%, as today",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp39
   r = spreadsheet.control_bp39
   assert_equal(:ExcelString,r[:type])
-  assert_equal("The proportion of domestic heat supplied using electricity is 0-10%, as today",r[:string].force_encoding('utf-8'))
+  assert_equal("The proportion of new domestic heating systems using electricity is 20%",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq39
   r = spreadsheet.control_bq39
   assert_equal(:ExcelString,r[:type])
-  assert_equal("The proportion of new domestic heating systems using electricity is 20%",r[:string].force_encoding('utf-8'))
+  assert_equal("The proportion of new domestic heating systems supplied using electricity is 30-60%",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br39
   r = spreadsheet.control_br39
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("The proportion of new domestic heating systems supplied using electricity is 30-60%",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs39
-  r = spreadsheet.control_bs39
   assert_equal(:ExcelString,r[:type])
   assert_equal("The proportion of new domestic heating systems supplied using electricity is 80-100%",r[:string].force_encoding('utf-8'))
 end
@@ -1870,26 +4108,98 @@ def test_control_k40
   assert_equal("A mixture of gas/biogas; coal/biomass; and heat from power stations",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m40
+  r = spreadsheet.control_m40
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n40
+  r = spreadsheet.control_n40
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o40
+  r = spreadsheet.control_o40
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q40
+  r = spreadsheet.control_q40
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_r40
+  r = spreadsheet.control_r40
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_s40
+  r = spreadsheet.control_s40
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_t40
+  r = spreadsheet.control_t40
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_u40
+  r = spreadsheet.control_u40
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_w40
+  r = spreadsheet.control_w40
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_x40
+  r = spreadsheet.control_x40
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_z40
+  r = spreadsheet.control_z40
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_aa40
+  r = spreadsheet.control_aa40
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_bo40
+  r = spreadsheet.control_bo40
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("The dominant non-electric heat source is gas (biogas if available)",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp40
   r = spreadsheet.control_bp40
   assert_equal(:ExcelString,r[:type])
-  assert_equal("The dominant non-electric heat source is gas (biogas if available)",r[:string].force_encoding('utf-8'))
+  assert_equal("The dominant non-electric heat source is coal (biomass if available)",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq40
   r = spreadsheet.control_bq40
   assert_equal(:ExcelString,r[:type])
-  assert_equal("The dominant non-electric heat source is coal (biomass if available)",r[:string].force_encoding('utf-8'))
+  assert_equal("The dominant non-electric heat source is waste heat from power stations",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br40
   r = spreadsheet.control_br40
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("The dominant non-electric heat source is waste heat from power stations",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs40
-  r = spreadsheet.control_bs40
   assert_equal(:ExcelString,r[:type])
   assert_equal("A mixture of gas/biogas; coal/biomass; and heat from power stations",r[:string].force_encoding('utf-8'))
 end
@@ -1936,26 +4246,98 @@ def test_control_k42
   assert_equal("Energy demand for domestic lights and appliances decreases by 60%",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m42
+  r = spreadsheet.control_m42
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n42
+  r = spreadsheet.control_n42
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o42
+  r = spreadsheet.control_o42
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q42
+  r = spreadsheet.control_q42
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_r42
+  r = spreadsheet.control_r42
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s42
+  r = spreadsheet.control_s42
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_t42
+  r = spreadsheet.control_t42
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_u42
+  r = spreadsheet.control_u42
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_w42
+  r = spreadsheet.control_w42
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_x42
+  r = spreadsheet.control_x42
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_z42
+  r = spreadsheet.control_z42
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_aa42
+  r = spreadsheet.control_aa42
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_bo42
+  r = spreadsheet.control_bo42
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Energy demand for domestic lights and appliances increases by 20% (relative to 2007)",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp42
   r = spreadsheet.control_bp42
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Energy demand for domestic lights and appliances increases by 20% (relative to 2007)",r[:string].force_encoding('utf-8'))
+  assert_equal("Energy demand for domestic lights and appliances is stable",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq42
   r = spreadsheet.control_bq42
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Energy demand for domestic lights and appliances is stable",r[:string].force_encoding('utf-8'))
+  assert_equal("Energy demand for domestic lights and appliances decreases by 40%",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br42
   r = spreadsheet.control_br42
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Energy demand for domestic lights and appliances decreases by 40%",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs42
-  r = spreadsheet.control_bs42
   assert_equal(:ExcelString,r[:type])
   assert_equal("Energy demand for domestic lights and appliances decreases by 60%",r[:string].force_encoding('utf-8'))
 end
@@ -1996,10 +4378,88 @@ def test_control_k43
   assert_equal("Same as B",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m43
+  r = spreadsheet.control_m43
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n43
+  r = spreadsheet.control_n43
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_o43
+  r = spreadsheet.control_o43
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q43
+  r = spreadsheet.control_q43
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_r43
+  r = spreadsheet.control_r43
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s43
+  r = spreadsheet.control_s43
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_t43
+  r = spreadsheet.control_t43
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_u43
+  r = spreadsheet.control_u43
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_w43
+  r = spreadsheet.control_w43
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_x43
+  r = spreadsheet.control_x43
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_z43
+  r = spreadsheet.control_z43
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_aa43
+  r = spreadsheet.control_aa43
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_bo43
+  r = spreadsheet.control_bo43
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Energy used for domestic cooking remains at 63% electricity and 37% gas",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp43
   r = spreadsheet.control_bp43
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Energy used for domestic cooking remains at 63% electricity and 37% gas",r[:string].force_encoding('utf-8'))
+  assert_equal("Energy used for domestic cooking is entirely electric",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq43
@@ -2010,12 +4470,6 @@ end
 
 def test_control_br43
   r = spreadsheet.control_br43
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Energy used for domestic cooking is entirely electric",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs43
-  r = spreadsheet.control_bs43
   assert_equal(:ExcelString,r[:type])
   assert_equal("Energy used for domestic cooking is entirely electric",r[:string].force_encoding('utf-8'))
 end
@@ -2062,26 +4516,98 @@ def test_control_k45
   assert_equal("Same as C",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m45
+  r = spreadsheet.control_m45
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n45
+  r = spreadsheet.control_n45
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o45
+  r = spreadsheet.control_o45
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_q45
+  r = spreadsheet.control_q45
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_r45
+  r = spreadsheet.control_r45
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s45
+  r = spreadsheet.control_s45
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_t45
+  r = spreadsheet.control_t45
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_u45
+  r = spreadsheet.control_u45
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_w45
+  r = spreadsheet.control_w45
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_x45
+  r = spreadsheet.control_x45
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_z45
+  r = spreadsheet.control_z45
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_aa45
+  r = spreadsheet.control_aa45
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_bo45
+  r = spreadsheet.control_bo45
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("UK industry output more than doubles by 2050",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp45
   r = spreadsheet.control_bp45
   assert_equal(:ExcelString,r[:type])
-  assert_equal("UK industry output more than doubles by 2050",r[:string].force_encoding('utf-8'))
+  assert_equal("UK industry grows in line with current trends",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq45
   r = spreadsheet.control_bq45
   assert_equal(:ExcelString,r[:type])
-  assert_equal("UK industry grows in line with current trends",r[:string].force_encoding('utf-8'))
+  assert_equal("UK industry output falls 30-40% by 2050",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br45
   r = spreadsheet.control_br45
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("UK industry output falls 30-40% by 2050",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs45
-  r = spreadsheet.control_bs45
   assert_equal(:ExcelString,r[:type])
   assert_equal("UK industry output falls 30-40% by 2050",r[:string].force_encoding('utf-8'))
 end
@@ -2122,26 +4648,98 @@ def test_control_k46
   assert_equal("Same as 3",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m46
+  r = spreadsheet.control_m46
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n46
+  r = spreadsheet.control_n46
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_o46
+  r = spreadsheet.control_o46
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q46
+  r = spreadsheet.control_q46
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_r46
+  r = spreadsheet.control_r46
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_s46
+  r = spreadsheet.control_s46
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_t46
+  r = spreadsheet.control_t46
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_u46
+  r = spreadsheet.control_u46
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_w46
+  r = spreadsheet.control_w46
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_x46
+  r = spreadsheet.control_x46
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_z46
+  r = spreadsheet.control_z46
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_aa46
+  r = spreadsheet.control_aa46
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_bo46
+  r = spreadsheet.control_bo46
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("No electrification of industrial processes and little improvement in industrial energy intensity",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp46
   r = spreadsheet.control_bp46
   assert_equal(:ExcelString,r[:type])
-  assert_equal("No electrification of industrial processes and little improvement in industrial energy intensity",r[:string].force_encoding('utf-8'))
+  assert_equal("Some industrial processes electrified and moderate improvements in process emissions and energy demand",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq46
   r = spreadsheet.control_bq46
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Some industrial processes electrified and moderate improvements in process emissions and energy demand",r[:string].force_encoding('utf-8'))
+  assert_equal("Many industrial processes electrified, CCS captures 48% of emissions and  substantial improvements in process emissions and energy demand",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br46
   r = spreadsheet.control_br46
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Many industrial processes electrified, CCS captures 48% of emissions and  substantial improvements in process emissions and energy demand",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs46
-  r = spreadsheet.control_bs46
   assert_equal(:ExcelString,r[:type])
   assert_equal("Many industrial processes electrified, CCS captures 48% of emissions and  substantial improvements in process emissions and energy demand",r[:string].force_encoding('utf-8'))
 end
@@ -2188,26 +4786,98 @@ def test_control_k48
   assert_equal("Space heating demand drops by 25%, hot water demand by 10%, cooling demand by 60%",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m48
+  r = spreadsheet.control_m48
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n48
+  r = spreadsheet.control_n48
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o48
+  r = spreadsheet.control_o48
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q48
+  r = spreadsheet.control_q48
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_r48
+  r = spreadsheet.control_r48
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s48
+  r = spreadsheet.control_s48
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_t48
+  r = spreadsheet.control_t48
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_u48
+  r = spreadsheet.control_u48
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_w48
+  r = spreadsheet.control_w48
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_x48
+  r = spreadsheet.control_x48
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_z48
+  r = spreadsheet.control_z48
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_aa48
+  r = spreadsheet.control_aa48
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_bo48
+  r = spreadsheet.control_bo48
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Commercial space heating demand increases by 50%, hot water demand by 60%, cooling demand by 250%",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp48
   r = spreadsheet.control_bp48
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Commercial space heating demand increases by 50%, hot water demand by 60%, cooling demand by 250%",r[:string].force_encoding('utf-8'))
+  assert_equal("Commercial space heating demand increases by 30%, hot water demand by 50%, cooling demand by 60%",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq48
   r = spreadsheet.control_bq48
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Commercial space heating demand increases by 30%, hot water demand by 50%, cooling demand by 60%",r[:string].force_encoding('utf-8'))
+  assert_equal("Commercial space heating demand stable, hot water demand increases by 25%, cooling demand stable",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br48
   r = spreadsheet.control_br48
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Commercial space heating demand stable, hot water demand increases by 25%, cooling demand stable",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs48
-  r = spreadsheet.control_bs48
   assert_equal(:ExcelString,r[:type])
   assert_equal("Commercial space heating demand drops by 25%, hot water demand by 10%, cooling demand by 60%",r[:string].force_encoding('utf-8'))
 end
@@ -2248,26 +4918,98 @@ def test_control_k49
   assert_equal("The proportion of non-domestic heat supplied using electricity is 80-100%",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m49
+  r = spreadsheet.control_m49
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n49
+  r = spreadsheet.control_n49
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o49
+  r = spreadsheet.control_o49
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q49
+  r = spreadsheet.control_q49
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_r49
+  r = spreadsheet.control_r49
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_s49
+  r = spreadsheet.control_s49
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_t49
+  r = spreadsheet.control_t49
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_u49
+  r = spreadsheet.control_u49
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_w49
+  r = spreadsheet.control_w49
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_x49
+  r = spreadsheet.control_x49
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_z49
+  r = spreadsheet.control_z49
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_aa49
+  r = spreadsheet.control_aa49
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_bo49
+  r = spreadsheet.control_bo49
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("The proportion of non-domestic heat supplied using electricity is 0-10%, as today",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp49
   r = spreadsheet.control_bp49
   assert_equal(:ExcelString,r[:type])
-  assert_equal("The proportion of non-domestic heat supplied using electricity is 0-10%, as today",r[:string].force_encoding('utf-8'))
+  assert_equal("The proportion of non-domestic heat supplied using electricity is 20%",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq49
   r = spreadsheet.control_bq49
   assert_equal(:ExcelString,r[:type])
-  assert_equal("The proportion of non-domestic heat supplied using electricity is 20%",r[:string].force_encoding('utf-8'))
+  assert_equal("The proportion of non-domestic heat supplied using electricity is 30-60%",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br49
   r = spreadsheet.control_br49
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("The proportion of non-domestic heat supplied using electricity is 30-60%",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs49
-  r = spreadsheet.control_bs49
   assert_equal(:ExcelString,r[:type])
   assert_equal("The proportion of non-domestic heat supplied using electricity is 80-100%",r[:string].force_encoding('utf-8'))
 end
@@ -2308,26 +5050,98 @@ def test_control_k50
   assert_equal("A mixture of gas/biogas, coal/biomass, and heat from power stations",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m50
+  r = spreadsheet.control_m50
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n50
+  r = spreadsheet.control_n50
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o50
+  r = spreadsheet.control_o50
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q50
+  r = spreadsheet.control_q50
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_r50
+  r = spreadsheet.control_r50
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_s50
+  r = spreadsheet.control_s50
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_t50
+  r = spreadsheet.control_t50
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_u50
+  r = spreadsheet.control_u50
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_w50
+  r = spreadsheet.control_w50
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_x50
+  r = spreadsheet.control_x50
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_z50
+  r = spreadsheet.control_z50
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_aa50
+  r = spreadsheet.control_aa50
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_bo50
+  r = spreadsheet.control_bo50
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("The dominant non-electric heat source is gas (biogas if available)",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp50
   r = spreadsheet.control_bp50
   assert_equal(:ExcelString,r[:type])
-  assert_equal("The dominant non-electric heat source is gas (biogas if available)",r[:string].force_encoding('utf-8'))
+  assert_equal("The dominant non-electric heating fuel is coal (biomass if available)",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq50
   r = spreadsheet.control_bq50
   assert_equal(:ExcelString,r[:type])
-  assert_equal("The dominant non-electric heating fuel is coal (biomass if available)",r[:string].force_encoding('utf-8'))
+  assert_equal("The dominant non-electric heat source is heat from power stations",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br50
   r = spreadsheet.control_br50
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("The dominant non-electric heat source is heat from power stations",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs50
-  r = spreadsheet.control_bs50
   assert_equal(:ExcelString,r[:type])
   assert_equal("A mixture of gas/biogas, coal/biomass, and heat from power stations",r[:string].force_encoding('utf-8'))
 end
@@ -2374,26 +5188,98 @@ def test_control_k52
   assert_equal("Energy demand for lights & appliances decreases by 30%; decreases by 25% for cooking",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m52
+  r = spreadsheet.control_m52
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n52
+  r = spreadsheet.control_n52
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_o52
+  r = spreadsheet.control_o52
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q52
+  r = spreadsheet.control_q52
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_r52
+  r = spreadsheet.control_r52
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s52
+  r = spreadsheet.control_s52
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_t52
+  r = spreadsheet.control_t52
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_u52
+  r = spreadsheet.control_u52
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_w52
+  r = spreadsheet.control_w52
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_x52
+  r = spreadsheet.control_x52
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_z52
+  r = spreadsheet.control_z52
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_aa52
+  r = spreadsheet.control_aa52
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_bo52
+  r = spreadsheet.control_bo52
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Energy demand for commercial lights & appliances increases by 33%. Energy for cooking is stable",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp52
   r = spreadsheet.control_bp52
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Energy demand for commercial lights & appliances increases by 33%. Energy for cooking is stable",r[:string].force_encoding('utf-8'))
+  assert_equal("Energy demand for commercial lights & appliances increases by 15%; decreases by 5% for cooking",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq52
   r = spreadsheet.control_bq52
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Energy demand for commercial lights & appliances increases by 15%; decreases by 5% for cooking",r[:string].force_encoding('utf-8'))
+  assert_equal("Energy demand for commercial lights & appliances decreases by 5%; decreases by 20% for cooking",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br52
   r = spreadsheet.control_br52
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Energy demand for commercial lights & appliances decreases by 5%; decreases by 20% for cooking",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs52
-  r = spreadsheet.control_bs52
   assert_equal(:ExcelString,r[:type])
   assert_equal("Energy demand for commercial lights & appliances decreases by 30%; decreases by 25% for cooking",r[:string].force_encoding('utf-8'))
 end
@@ -2434,10 +5320,88 @@ def test_control_k53
   assert_equal("Same as B",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m53
+  r = spreadsheet.control_m53
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n53
+  r = spreadsheet.control_n53
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_o53
+  r = spreadsheet.control_o53
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q53
+  r = spreadsheet.control_q53
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_r53
+  r = spreadsheet.control_r53
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s53
+  r = spreadsheet.control_s53
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_t53
+  r = spreadsheet.control_t53
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_u53
+  r = spreadsheet.control_u53
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_w53
+  r = spreadsheet.control_w53
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_x53
+  r = spreadsheet.control_x53
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_z53
+  r = spreadsheet.control_z53
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_aa53
+  r = spreadsheet.control_aa53
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_bo53
+  r = spreadsheet.control_bo53
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Energy used for commercial cooking is 60% electricity and 40% gas (no change from 2007)",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp53
   r = spreadsheet.control_bp53
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Energy used for commercial cooking is 60% electricity and 40% gas (no change from 2007)",r[:string].force_encoding('utf-8'))
+  assert_equal("Energy used for commercial cooking is 100% electric",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq53
@@ -2448,12 +5412,6 @@ end
 
 def test_control_br53
   r = spreadsheet.control_br53
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Energy used for commercial cooking is 100% electric",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs53
-  r = spreadsheet.control_bs53
   assert_equal(:ExcelString,r[:type])
   assert_equal("Energy used for commercial cooking is 100% electric",r[:string].force_encoding('utf-8'))
 end
@@ -2494,26 +5452,98 @@ def test_control_k55
   assert_equal("Carbon dioxide sequestration rate of ~110 million tonnes per annum by 2050",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m55
+  r = spreadsheet.control_m55
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n55
+  r = spreadsheet.control_n55
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o55
+  r = spreadsheet.control_o55
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q55
+  r = spreadsheet.control_q55
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_r55
+  r = spreadsheet.control_r55
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_s55
+  r = spreadsheet.control_s55
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_t55
+  r = spreadsheet.control_t55
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_u55
+  r = spreadsheet.control_u55
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_w55
+  r = spreadsheet.control_w55
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_x55
+  r = spreadsheet.control_x55
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_z55
+  r = spreadsheet.control_z55
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_aa55
+  r = spreadsheet.control_aa55
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_bo55
+  r = spreadsheet.control_bo55
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("No geosequestration",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp55
   r = spreadsheet.control_bp55
   assert_equal(:ExcelString,r[:type])
-  assert_equal("No geosequestration",r[:string].force_encoding('utf-8'))
+  assert_equal("Carbon dioxide sequestred at a rate of 1 million tonnes per annum by 2050",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq55
   r = spreadsheet.control_bq55
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Carbon dioxide sequestred at a rate of 1 million tonnes per annum by 2050",r[:string].force_encoding('utf-8'))
+  assert_equal("Carbon dioxide  sequestred at a rate of ~30 million tonnes per annum by 2050",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br55
   r = spreadsheet.control_br55
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("Carbon dioxide  sequestred at a rate of ~30 million tonnes per annum by 2050",r[:string].force_encoding('utf-8'))
-end
-
-def test_control_bs55
-  r = spreadsheet.control_bs55
   assert_equal(:ExcelString,r[:type])
   assert_equal("Carbon dioxide sequestred at a rate of ~110 million tonnes per annum by 2050",r[:string].force_encoding('utf-8'))
 end
@@ -2554,28 +5584,172 @@ def test_control_k56
   assert_equal("20 GW storage with large lagoons, 30 GW interconnection & substantial demand shifting",r[:string].force_encoding('utf-8'))
 end
 
+def test_control_m56
+  r = spreadsheet.control_m56
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n56
+  r = spreadsheet.control_n56
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o56
+  r = spreadsheet.control_o56
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q56
+  r = spreadsheet.control_q56
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_r56
+  r = spreadsheet.control_r56
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_s56
+  r = spreadsheet.control_s56
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_t56
+  r = spreadsheet.control_t56
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_u56
+  r = spreadsheet.control_u56
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_w56
+  r = spreadsheet.control_w56
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(2.0,r[:number])
+end
+
+def test_control_x56
+  r = spreadsheet.control_x56
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_z56
+  r = spreadsheet.control_z56
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(3.0,r[:number])
+end
+
+def test_control_aa56
+  r = spreadsheet.control_aa56
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(4.0,r[:number])
+end
+
+def test_control_bo56
+  r = spreadsheet.control_bo56
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("Today’s 3.5 GW of pumped storage and 4 GW interconnection with Europe available for balancing electricity supply and demand",r[:string].force_encoding('utf-8'))
+end
+
 def test_control_bp56
   r = spreadsheet.control_bp56
   assert_equal(:ExcelString,r[:type])
-  assert_equal("Today’s 3.5 GW of pumped storage and 4 GW interconnection with Europe available for balancing electricity supply and demand",r[:string].force_encoding('utf-8'))
+  assert_equal("4 GW of pumped storage and 10 GW interconnection with Europe available for balancing electricity supply and demand",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_bq56
   r = spreadsheet.control_bq56
   assert_equal(:ExcelString,r[:type])
-  assert_equal("4 GW of pumped storage and 10 GW interconnection with Europe available for balancing electricity supply and demand",r[:string].force_encoding('utf-8'))
+  assert_equal("7 GW of pumped storage (includign 2 more sites), 15 GW of interconnection with Europe and some demand shifting available for balancing electricity supply and demand",r[:string].force_encoding('utf-8'))
 end
 
 def test_control_br56
   r = spreadsheet.control_br56
   assert_equal(:ExcelString,r[:type])
-  assert_equal("7 GW of pumped storage (includign 2 more sites), 15 GW of interconnection with Europe and some demand shifting available for balancing electricity supply and demand",r[:string].force_encoding('utf-8'))
+  assert_equal("20 GW of pumped storage with large lagoons, 30 GW of interconnection with Europe and substantial demand shifting available for balancing electricity supply and demand",r[:string].force_encoding('utf-8'))
 end
 
-def test_control_bs56
-  r = spreadsheet.control_bs56
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("20 GW of pumped storage with large lagoons, 30 GW of interconnection with Europe and substantial demand shifting available for balancing electricity supply and demand",r[:string].force_encoding('utf-8'))
+def test_control_m57
+  r = spreadsheet.control_m57
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_n57
+  r = spreadsheet.control_n57
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_o57
+  r = spreadsheet.control_o57
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_q57
+  r = spreadsheet.control_q57
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_r57
+  r = spreadsheet.control_r57
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_s57
+  r = spreadsheet.control_s57
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_t57
+  r = spreadsheet.control_t57
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_u57
+  r = spreadsheet.control_u57
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_w57
+  r = spreadsheet.control_w57
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_x57
+  r = spreadsheet.control_x57
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_z57
+  r = spreadsheet.control_z57
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
+end
+
+def test_control_aa57
+  r = spreadsheet.control_aa57
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(1.0,r[:number])
 end
 
 
@@ -67781,25 +70955,25 @@ end
 def test_costpercapita_ay57
   r = spreadsheet.costpercapita_ay57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.09580890032128,r[:number])
+  assert_in_epsilon(2.095808900321279,r[:number])
 end
 
 def test_costpercapita_az57
   r = spreadsheet.costpercapita_az57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.599476708298992,r[:number])
+  assert_in_epsilon(11.59947670829899,r[:number])
 end
 
 def test_costpercapita_ba57
   r = spreadsheet.costpercapita_ba57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.421196796719517,r[:number])
+  assert_in_epsilon(15.421196796719514,r[:number])
 end
 
 def test_costpercapita_bb57
   r = spreadsheet.costpercapita_bb57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.280994399980898,r[:number])
+  assert_in_epsilon(18.280994399980894,r[:number])
 end
 
 def test_costpercapita_bc57
@@ -67811,43 +70985,43 @@ end
 def test_costpercapita_bd57
   r = spreadsheet.costpercapita_bd57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.52738671278149,r[:number])
+  assert_in_epsilon(17.527386712781485,r[:number])
 end
 
 def test_costpercapita_be57
   r = spreadsheet.costpercapita_be57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(34.37721055825549,r[:number])
+  assert_in_epsilon(34.377210558255484,r[:number])
 end
 
 def test_costpercapita_bf57
   r = spreadsheet.costpercapita_bf57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(34.34628171308858,r[:number])
+  assert_in_epsilon(34.34628171308857,r[:number])
 end
 
 def test_costpercapita_bg57
   r = spreadsheet.costpercapita_bg57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(33.02287042311749,r[:number])
+  assert_in_epsilon(33.02287042311748,r[:number])
 end
 
 def test_costpercapita_bi57
   r = spreadsheet.costpercapita_bi57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.09580890032128,r[:number])
+  assert_in_epsilon(2.095808900321279,r[:number])
 end
 
 def test_costpercapita_bj57
   r = spreadsheet.costpercapita_bj57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.626176164995224,r[:number])
+  assert_in_epsilon(13.62617616499522,r[:number])
 end
 
 def test_costpercapita_bk57
   r = spreadsheet.costpercapita_bk57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.601277156404855,r[:number])
+  assert_in_epsilon(28.60127715640485,r[:number])
 end
 
 def test_costpercapita_bl57
@@ -67859,31 +71033,31 @@ end
 def test_costpercapita_bm57
   r = spreadsheet.costpercapita_bm57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(49.65102385087768,r[:number])
+  assert_in_epsilon(49.651023850877664,r[:number])
 end
 
 def test_costpercapita_bn57
   r = spreadsheet.costpercapita_bn57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(51.81579981520083,r[:number])
+  assert_in_epsilon(51.815799815200826,r[:number])
 end
 
 def test_costpercapita_bo57
   r = spreadsheet.costpercapita_bo57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(68.09555227756354,r[:number])
+  assert_in_epsilon(68.09555227756351,r[:number])
 end
 
 def test_costpercapita_bp57
   r = spreadsheet.costpercapita_bp57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(84.84915058357714,r[:number])
+  assert_in_epsilon(84.84915058357711,r[:number])
 end
 
 def test_costpercapita_bq57
   r = spreadsheet.costpercapita_bq57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(99.79090640744158,r[:number])
+  assert_in_epsilon(99.79090640744155,r[:number])
 end
 
 def test_costpercapita_bs57
@@ -67895,7 +71069,7 @@ end
 def test_costpercapita_bt57
   r = spreadsheet.costpercapita_bt57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(59.863122770811096,r[:number])
+  assert_in_epsilon(59.86312277081109,r[:number])
 end
 
 def test_costpercapita_bu57
@@ -67913,61 +71087,61 @@ end
 def test_costpercapita_bw57
   r = spreadsheet.costpercapita_bw57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(92.92952395322038,r[:number])
+  assert_in_epsilon(92.92952395322037,r[:number])
 end
 
 def test_costpercapita_bx57
   r = spreadsheet.costpercapita_bx57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(98.53909628635049,r[:number])
+  assert_in_epsilon(98.53909628635047,r[:number])
 end
 
 def test_costpercapita_by57
   r = spreadsheet.costpercapita_by57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(118.24235288602029,r[:number])
+  assert_in_epsilon(118.24235288602027,r[:number])
 end
 
 def test_costpercapita_bz57
   r = spreadsheet.costpercapita_bz57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(138.0249612512563,r[:number])
+  assert_in_epsilon(138.02496125125626,r[:number])
 end
 
 def test_costpercapita_ca57
   r = spreadsheet.costpercapita_ca57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(154.9290026162408,r[:number])
+  assert_in_epsilon(154.92900261624078,r[:number])
 end
 
 def test_costpercapita_cc57
   r = spreadsheet.costpercapita_cc57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(97.54132704318292,r[:number])
+  assert_in_epsilon(97.54132704318289,r[:number])
 end
 
 def test_costpercapita_cd57
   r = spreadsheet.costpercapita_cd57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1896.2346198785037,r[:number])
+  assert_in_epsilon(1896.2346198785033,r[:number])
 end
 
 def test_costpercapita_cf57
   r = spreadsheet.costpercapita_cf57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-4.267006844768248,r[:number])
+  assert_in_epsilon(-4.2670068447682485,r[:number])
 end
 
 def test_costpercapita_cg57
   r = spreadsheet.costpercapita_cg57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-7.503231107695523,r[:number])
+  assert_in_epsilon(-7.503231107695527,r[:number])
 end
 
 def test_costpercapita_ch57
   r = spreadsheet.costpercapita_ch57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5102903003276615,r[:number])
+  assert_in_epsilon(0.5102903003276582,r[:number])
 end
 
 def test_costpercapita_ci57
@@ -67979,43 +71153,43 @@ end
 def test_costpercapita_cj57
   r = spreadsheet.costpercapita_cj57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.075652365307654,r[:number])
+  assert_in_epsilon(18.07565236530764,r[:number])
 end
 
 def test_costpercapita_ck57
   r = spreadsheet.costpercapita_ck57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.888213632339543,r[:number])
+  assert_in_epsilon(19.88821363233953,r[:number])
 end
 
 def test_costpercapita_cl57
   r = spreadsheet.costpercapita_cl57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.474616777539308,r[:number])
+  assert_in_epsilon(5.474616777539283,r[:number])
 end
 
 def test_costpercapita_cm57
   r = spreadsheet.costpercapita_cm57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.284554535964414,r[:number])
+  assert_in_epsilon(22.28455453596439,r[:number])
 end
 
 def test_costpercapita_cn57
   r = spreadsheet.costpercapita_cn57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(39.63701360431832,r[:number])
+  assert_in_epsilon(39.637013604318284,r[:number])
 end
 
 def test_costpercapita_cp57
   r = spreadsheet.costpercapita_cp57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.655198340649186,r[:number])
+  assert_in_epsilon(11.655198340649171,r[:number])
 end
 
 def test_costpercapita_cq57
   r = spreadsheet.costpercapita_cq57
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(182.21122708626703,r[:number])
+  assert_in_epsilon(182.2112270862668,r[:number])
 end
 
 def test_costpercapita_cr57
@@ -68291,19 +71465,19 @@ end
 def test_costpercapita_az58
   r = spreadsheet.costpercapita_az58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.5697990936614,r[:number])
+  assert_in_epsilon(2.5697990936613997,r[:number])
 end
 
 def test_costpercapita_ba58
   r = spreadsheet.costpercapita_ba58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.4782352538102699,r[:number])
+  assert_in_epsilon(1.4782352538102697,r[:number])
 end
 
 def test_costpercapita_bb58
   r = spreadsheet.costpercapita_bb58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-1.8191718338414997e-16,r[:number])
+  assert_in_epsilon(-1.8191718338414992e-16,r[:number])
 end
 
 def test_costpercapita_bc58
@@ -68345,31 +71519,31 @@ end
 def test_costpercapita_bj58
   r = spreadsheet.costpercapita_bj58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.5697990936614,r[:number])
+  assert_in_epsilon(2.5697990936613997,r[:number])
 end
 
 def test_costpercapita_bk58
   r = spreadsheet.costpercapita_bk58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.9639038781242633,r[:number])
+  assert_in_epsilon(3.9639038781242624,r[:number])
 end
 
 def test_costpercapita_bl58
   r = spreadsheet.costpercapita_bl58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.8411676404754864,r[:number])
+  assert_in_epsilon(3.8411676404754855,r[:number])
 end
 
 def test_costpercapita_bm58
   r = spreadsheet.costpercapita_bm58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.393328819327431,r[:number])
+  assert_in_epsilon(1.3933288193274307,r[:number])
 end
 
 def test_costpercapita_bn58
   r = spreadsheet.costpercapita_bn58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-1.7277906418079922e-16,r[:number])
+  assert_in_epsilon(-1.7277906418079917e-16,r[:number])
 end
 
 def test_costpercapita_bo58
@@ -68399,25 +71573,25 @@ end
 def test_costpercapita_bt58
   r = spreadsheet.costpercapita_bt58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.490744932556309,r[:number])
+  assert_in_epsilon(3.4907449325563085,r[:number])
 end
 
 def test_costpercapita_bu58
   r = spreadsheet.costpercapita_bu58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.652069619745654,r[:number])
+  assert_in_epsilon(5.652069619745653,r[:number])
 end
 
 def test_costpercapita_bv58
   r = spreadsheet.costpercapita_bv58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.479714491867084,r[:number])
+  assert_in_epsilon(5.4797144918670835,r[:number])
 end
 
 def test_costpercapita_bw58
   r = spreadsheet.costpercapita_bw58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.9898396333839337,r[:number])
+  assert_in_epsilon(2.989839633383933,r[:number])
 end
 
 def test_costpercapita_bx58
@@ -68465,31 +71639,31 @@ end
 def test_costpercapita_cg58
   r = spreadsheet.costpercapita_cg58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-2.1113027374336912,r[:number])
+  assert_in_epsilon(-2.1113027374336917,r[:number])
 end
 
 def test_costpercapita_ch58
   r = spreadsheet.costpercapita_ch58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.2711759639193374,r[:number])
+  assert_in_epsilon(1.2711759639193365,r[:number])
 end
 
 def test_costpercapita_ci58
   r = spreadsheet.costpercapita_ci58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.8411676404754864,r[:number])
+  assert_in_epsilon(3.8411676404754855,r[:number])
 end
 
 def test_costpercapita_cj58
   r = spreadsheet.costpercapita_cj58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.393328819327431,r[:number])
+  assert_in_epsilon(1.3933288193274307,r[:number])
 end
 
 def test_costpercapita_ck58
   r = spreadsheet.costpercapita_ck58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-1.7277906418079922e-16,r[:number])
+  assert_in_epsilon(-1.7277906418079917e-16,r[:number])
 end
 
 def test_costpercapita_cl58
@@ -68513,13 +71687,13 @@ end
 def test_costpercapita_cp58
   r = spreadsheet.costpercapita_cp58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.4882632984765071,r[:number])
+  assert_in_epsilon(0.4882632984765068,r[:number])
 end
 
 def test_costpercapita_cq58
   r = spreadsheet.costpercapita_cq58
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.582483819391888,r[:number])
+  assert_in_epsilon(10.582483819391882,r[:number])
 end
 
 def test_costpercapita_cr58
@@ -69293,25 +72467,25 @@ end
 def test_costpercapita_ay60
   r = spreadsheet.costpercapita_ay60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.0799186073341325,r[:number])
+  assert_in_epsilon(5.079918607334131,r[:number])
 end
 
 def test_costpercapita_az60
   r = spreadsheet.costpercapita_az60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.22491747931178,r[:number])
+  assert_in_epsilon(7.224917479311777,r[:number])
 end
 
 def test_costpercapita_ba60
   r = spreadsheet.costpercapita_ba60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.875220734256408,r[:number])
+  assert_in_epsilon(6.8752207342564065,r[:number])
 end
 
 def test_costpercapita_bb60
   r = spreadsheet.costpercapita_bb60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.552677723160984,r[:number])
+  assert_in_epsilon(6.552677723160982,r[:number])
 end
 
 def test_costpercapita_bc60
@@ -69347,19 +72521,19 @@ end
 def test_costpercapita_bi60
   r = spreadsheet.costpercapita_bi60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.0799186073341325,r[:number])
+  assert_in_epsilon(5.079918607334131,r[:number])
 end
 
 def test_costpercapita_bj60
   r = spreadsheet.costpercapita_bj60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.137325418779403,r[:number])
+  assert_in_epsilon(12.137325418779398,r[:number])
 end
 
 def test_costpercapita_bk60
   r = spreadsheet.costpercapita_bk60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.615192567448986,r[:number])
+  assert_in_epsilon(18.615192567448982,r[:number])
 end
 
 def test_costpercapita_bl60
@@ -69371,13 +72545,13 @@ end
 def test_costpercapita_bm60
   r = spreadsheet.costpercapita_bm60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.853981426140376,r[:number])
+  assert_in_epsilon(12.853981426140372,r[:number])
 end
 
 def test_costpercapita_bn60
   r = spreadsheet.costpercapita_bn60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.223521625746367,r[:number])
+  assert_in_epsilon(6.223521625746365,r[:number])
 end
 
 def test_costpercapita_bo60
@@ -69401,37 +72575,37 @@ end
 def test_costpercapita_bs60
   r = spreadsheet.costpercapita_bs60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.949685982987048,r[:number])
+  assert_in_epsilon(5.949685982987046,r[:number])
 end
 
 def test_costpercapita_bt60
   r = spreadsheet.costpercapita_bt60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.567948915087081,r[:number])
+  assert_in_epsilon(13.567948915087076,r[:number])
 end
 
 def test_costpercapita_bu60
   r = spreadsheet.costpercapita_bu60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20.569216513454144,r[:number])
+  assert_in_epsilon(20.569216513454137,r[:number])
 end
 
 def test_costpercapita_bv60
   r = spreadsheet.costpercapita_bv60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.200032267358623,r[:number])
+  assert_in_epsilon(22.20003226735862,r[:number])
 end
 
 def test_costpercapita_bw60
   r = spreadsheet.costpercapita_bw60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.472959450162667,r[:number])
+  assert_in_epsilon(14.472959450162664,r[:number])
 end
 
 def test_costpercapita_bx60
   r = spreadsheet.costpercapita_bx60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.279540942007691,r[:number])
+  assert_in_epsilon(7.279540942007688,r[:number])
 end
 
 def test_costpercapita_by60
@@ -69455,13 +72629,13 @@ end
 def test_costpercapita_cc60
   r = spreadsheet.costpercapita_cc60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.396818432181933,r[:number])
+  assert_in_epsilon(9.39681843218193,r[:number])
 end
 
 def test_costpercapita_cd60
   r = spreadsheet.costpercapita_cd60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(254.94650262006886,r[:number])
+  assert_in_epsilon(254.94650262006883,r[:number])
 end
 
 def test_costpercapita_cf60
@@ -69473,31 +72647,31 @@ end
 def test_costpercapita_cg60
   r = spreadsheet.costpercapita_cg60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-1.0234600003369219,r[:number])
+  assert_in_epsilon(-1.0234600003369272,r[:number])
 end
 
 def test_costpercapita_ch60
   r = spreadsheet.costpercapita_ch60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.091408724698844,r[:number])
+  assert_in_epsilon(6.091408724698837,r[:number])
 end
 
 def test_costpercapita_ci60
   r = spreadsheet.costpercapita_ci60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.050774990766147,r[:number])
+  assert_in_epsilon(8.050774990766143,r[:number])
 end
 
 def test_costpercapita_cj60
   r = spreadsheet.costpercapita_cj60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.853981426140376,r[:number])
+  assert_in_epsilon(12.853981426140372,r[:number])
 end
 
 def test_costpercapita_ck60
   r = spreadsheet.costpercapita_ck60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.223521625746367,r[:number])
+  assert_in_epsilon(6.223521625746365,r[:number])
 end
 
 def test_costpercapita_cl60
@@ -69521,13 +72695,13 @@ end
 def test_costpercapita_cp60
   r = spreadsheet.costpercapita_cp60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.428184233129398,r[:number])
+  assert_in_epsilon(2.4281842331293952,r[:number])
 end
 
 def test_costpercapita_cq60
   r = spreadsheet.costpercapita_cq60
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(76.43471851331684,r[:number])
+  assert_in_epsilon(76.43471851331677,r[:number])
 end
 
 def test_costpercapita_cr60
@@ -69797,25 +72971,25 @@ end
 def test_costpercapita_ay61
   r = spreadsheet.costpercapita_ay61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.160488211323133,r[:number])
+  assert_in_epsilon(5.160488211323131,r[:number])
 end
 
 def test_costpercapita_az61
   r = spreadsheet.costpercapita_az61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.010996665268822,r[:number])
+  assert_in_epsilon(13.01099666526882,r[:number])
 end
 
 def test_costpercapita_ba61
   r = spreadsheet.costpercapita_ba61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.467589599202839,r[:number])
+  assert_in_epsilon(12.467589599202835,r[:number])
 end
 
 def test_costpercapita_bb61
   r = spreadsheet.costpercapita_bb61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.574188238259605,r[:number])
+  assert_in_epsilon(9.574188238259602,r[:number])
 end
 
 def test_costpercapita_bc61
@@ -69851,37 +73025,37 @@ end
 def test_costpercapita_bi61
   r = spreadsheet.costpercapita_bi61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.160488211323133,r[:number])
+  assert_in_epsilon(5.160488211323131,r[:number])
 end
 
 def test_costpercapita_bj61
   r = spreadsheet.costpercapita_bj61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.001317420454377,r[:number])
+  assert_in_epsilon(18.00131742045437,r[:number])
 end
 
 def test_costpercapita_bk61
   r = spreadsheet.costpercapita_bk61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(29.87957718169828,r[:number])
+  assert_in_epsilon(29.879577181698277,r[:number])
 end
 
 def test_costpercapita_bl61
   r = spreadsheet.costpercapita_bl61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(33.85110205073226,r[:number])
+  assert_in_epsilon(33.85110205073225,r[:number])
 end
 
 def test_costpercapita_bm61
   r = spreadsheet.costpercapita_bm61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.06409986570957,r[:number])
+  assert_in_epsilon(21.06409986570956,r[:number])
 end
 
 def test_costpercapita_bn61
   r = spreadsheet.costpercapita_bn61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.093254707028613,r[:number])
+  assert_in_epsilon(9.09325470702861,r[:number])
 end
 
 def test_costpercapita_bo61
@@ -69905,13 +73079,13 @@ end
 def test_costpercapita_bs61
   r = spreadsheet.costpercapita_bs61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.743710830733077,r[:number])
+  assert_in_epsilon(6.743710830733075,r[:number])
 end
 
 def test_costpercapita_bt61
   r = spreadsheet.costpercapita_bt61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.38062856525562,r[:number])
+  assert_in_epsilon(22.380628565255613,r[:number])
 end
 
 def test_costpercapita_bu61
@@ -69923,19 +73097,19 @@ end
 def test_costpercapita_bv61
   r = spreadsheet.costpercapita_bv61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(42.6012336527764,r[:number])
+  assert_in_epsilon(42.601233652776386,r[:number])
 end
 
 def test_costpercapita_bw61
   r = spreadsheet.costpercapita_bw61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.335150741913388,r[:number])
+  assert_in_epsilon(28.33515074191338,r[:number])
 end
 
 def test_costpercapita_bx61
   r = spreadsheet.costpercapita_bx61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.657396558565093,r[:number])
+  assert_in_epsilon(13.65739655856509,r[:number])
 end
 
 def test_costpercapita_by61
@@ -69959,49 +73133,49 @@ end
 def test_costpercapita_cc61
   r = spreadsheet.costpercapita_cc61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.95265915127794,r[:number])
+  assert_in_epsilon(16.952659151277935,r[:number])
 end
 
 def test_costpercapita_cd61
   r = spreadsheet.costpercapita_cd61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(462.42905927119335,r[:number])
+  assert_in_epsilon(462.42905927119324,r[:number])
 end
 
 def test_costpercapita_cf61
   r = spreadsheet.costpercapita_cf61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-10.506606073047069,r[:number])
+  assert_in_epsilon(-10.50660607304707,r[:number])
 end
 
 def test_costpercapita_cg61
   r = spreadsheet.costpercapita_cg61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-5.699290329151681,r[:number])
+  assert_in_epsilon(-5.6992903291516885,r[:number])
 end
 
 def test_costpercapita_ch61
   r = spreadsheet.costpercapita_ch61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.168830397591754,r[:number])
+  assert_in_epsilon(7.1688303975917504,r[:number])
 end
 
 def test_costpercapita_ci61
   r = spreadsheet.costpercapita_ci61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.41092542217308,r[:number])
+  assert_in_epsilon(16.410925422173072,r[:number])
 end
 
 def test_costpercapita_cj61
   r = spreadsheet.costpercapita_cj61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.06409986570957,r[:number])
+  assert_in_epsilon(21.06409986570956,r[:number])
 end
 
 def test_costpercapita_ck61
   r = spreadsheet.costpercapita_ck61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.093254707028613,r[:number])
+  assert_in_epsilon(9.09325470702861,r[:number])
 end
 
 def test_costpercapita_cl61
@@ -70025,13 +73199,13 @@ end
 def test_costpercapita_cp61
   r = spreadsheet.costpercapita_cp61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.170134887811585,r[:number])
+  assert_in_epsilon(4.170134887811582,r[:number])
 end
 
 def test_costpercapita_cq61
   r = spreadsheet.costpercapita_cq61
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(112.05778378706994,r[:number])
+  assert_in_epsilon(112.05778378706987,r[:number])
 end
 
 def test_costpercapita_cr61
@@ -70301,7 +73475,7 @@ end
 def test_costpercapita_ay62
   r = spreadsheet.costpercapita_ay62
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5613068717432987,r[:number])
+  assert_in_epsilon(0.5613068717432985,r[:number])
 end
 
 def test_costpercapita_az62
@@ -70355,19 +73529,19 @@ end
 def test_costpercapita_bi62
   r = spreadsheet.costpercapita_bi62
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5613068717432987,r[:number])
+  assert_in_epsilon(0.5613068717432985,r[:number])
 end
 
 def test_costpercapita_bj62
   r = spreadsheet.costpercapita_bj62
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5427977387764764,r[:number])
+  assert_in_epsilon(0.5427977387764762,r[:number])
 end
 
 def test_costpercapita_bk62
   r = spreadsheet.costpercapita_bk62
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5250275447420033,r[:number])
+  assert_in_epsilon(0.5250275447420031,r[:number])
 end
 
 def test_costpercapita_bl62
@@ -70409,19 +73583,19 @@ end
 def test_costpercapita_bs62
   r = spreadsheet.costpercapita_bs62
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.225715845457846,r[:number])
+  assert_in_epsilon(3.2257158454578456,r[:number])
 end
 
 def test_costpercapita_bt62
   r = spreadsheet.costpercapita_bt62
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.1193476420696826,r[:number])
+  assert_in_epsilon(3.119347642069682,r[:number])
 end
 
 def test_costpercapita_bu62
   r = spreadsheet.costpercapita_bu62
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.0172259696664363,r[:number])
+  assert_in_epsilon(3.017225969666436,r[:number])
 end
 
 def test_costpercapita_bv62
@@ -70475,19 +73649,19 @@ end
 def test_costpercapita_cf62
   r = spreadsheet.costpercapita_cf62
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-1.142804701028299,r[:number])
+  assert_in_epsilon(-1.1428047010282991,r[:number])
 end
 
 def test_costpercapita_cg62
   r = spreadsheet.costpercapita_cg62
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5427977387764764,r[:number])
+  assert_in_epsilon(0.5427977387764762,r[:number])
 end
 
 def test_costpercapita_ch62
   r = spreadsheet.costpercapita_ch62
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5250275447420033,r[:number])
+  assert_in_epsilon(0.5250275447420031,r[:number])
 end
 
 def test_costpercapita_ci62
@@ -70529,13 +73703,13 @@ end
 def test_costpercapita_cp62
   r = spreadsheet.costpercapita_cp62
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.00833104638997991,r[:number])
+  assert_in_epsilon(-0.008331046389979982,r[:number])
 end
 
 def test_costpercapita_cq62
   r = spreadsheet.costpercapita_cq62
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.003310475295357,r[:number])
+  assert_in_epsilon(3.003310475295354,r[:number])
 end
 
 def test_costpercapita_cr62
@@ -70805,19 +73979,19 @@ end
 def test_costpercapita_ay63
   r = spreadsheet.costpercapita_ay63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.03224243221006735,r[:number])
+  assert_in_epsilon(0.03224243221006734,r[:number])
 end
 
 def test_costpercapita_az63
   r = spreadsheet.costpercapita_az63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.04988635675150714,r[:number])
+  assert_in_epsilon(0.04988635675150713,r[:number])
 end
 
 def test_costpercapita_ba63
   r = spreadsheet.costpercapita_ba63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6848050763174129,r[:number])
+  assert_in_epsilon(0.6848050763174126,r[:number])
 end
 
 def test_costpercapita_bb63
@@ -70841,49 +74015,49 @@ end
 def test_costpercapita_be63
   r = spreadsheet.costpercapita_be63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.023075107285572462,r[:number])
+  assert_in_epsilon(0.023075107285572456,r[:number])
 end
 
 def test_costpercapita_bf63
   r = spreadsheet.costpercapita_bf63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.2631008725259441,r[:number])
+  assert_in_epsilon(0.263100872525944,r[:number])
 end
 
 def test_costpercapita_bg63
   r = spreadsheet.costpercapita_bg63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.293954140208472,r[:number])
+  assert_in_epsilon(0.2939541402084719,r[:number])
 end
 
 def test_costpercapita_bi63
   r = spreadsheet.costpercapita_bi63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.03224243221006735,r[:number])
+  assert_in_epsilon(0.03224243221006734,r[:number])
 end
 
 def test_costpercapita_bj63
   r = spreadsheet.costpercapita_bj63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.08106559252662542,r[:number])
+  assert_in_epsilon(0.08106559252662539,r[:number])
 end
 
 def test_costpercapita_bk63
   r = spreadsheet.costpercapita_bk63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.7632167312798089,r[:number])
+  assert_in_epsilon(0.7632167312798087,r[:number])
 end
 
 def test_costpercapita_bl63
   r = spreadsheet.costpercapita_bl63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.654965239052293,r[:number])
+  assert_in_epsilon(1.6549652390522929,r[:number])
 end
 
 def test_costpercapita_bm63
   r = spreadsheet.costpercapita_bm63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.5642697167856459,r[:number])
+  assert_in_epsilon(1.5642697167856456,r[:number])
 end
 
 def test_costpercapita_bn63
@@ -70895,49 +74069,49 @@ end
 def test_costpercapita_bo63
   r = spreadsheet.costpercapita_bo63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.023075107285572462,r[:number])
+  assert_in_epsilon(0.023075107285572456,r[:number])
 end
 
 def test_costpercapita_bp63
   r = spreadsheet.costpercapita_bp63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.28571567929358077,r[:number])
+  assert_in_epsilon(0.28571567929358066,r[:number])
 end
 
 def test_costpercapita_bq63
   r = spreadsheet.costpercapita_bq63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5743378691447404,r[:number])
+  assert_in_epsilon(0.5743378691447402,r[:number])
 end
 
 def test_costpercapita_bs63
   r = spreadsheet.costpercapita_bs63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.044651585812753934,r[:number])
+  assert_in_epsilon(0.04465158581275393,r[:number])
 end
 
 def test_costpercapita_bt63
   r = spreadsheet.costpercapita_bt63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.13028521939969373,r[:number])
+  assert_in_epsilon(0.1302852193996937,r[:number])
 end
 
 def test_costpercapita_bu63
   r = spreadsheet.costpercapita_bu63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.150572234934041,r[:number])
+  assert_in_epsilon(1.1505722349340406,r[:number])
 end
 
 def test_costpercapita_bv63
   r = spreadsheet.costpercapita_bv63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.496240137172476,r[:number])
+  assert_in_epsilon(2.4962401371724754,r[:number])
 end
 
 def test_costpercapita_bw63
   r = spreadsheet.costpercapita_bw63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.2880852598420964,r[:number])
+  assert_in_epsilon(2.288085259842096,r[:number])
 end
 
 def test_costpercapita_bx63
@@ -70949,31 +74123,31 @@ end
 def test_costpercapita_by63
   r = spreadsheet.costpercapita_by63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.023075107285572462,r[:number])
+  assert_in_epsilon(0.023075107285572456,r[:number])
 end
 
 def test_costpercapita_bz63
   r = spreadsheet.costpercapita_bz63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.28571567929358077,r[:number])
+  assert_in_epsilon(0.28571567929358066,r[:number])
 end
 
 def test_costpercapita_ca63
   r = spreadsheet.costpercapita_ca63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5743378691447404,r[:number])
+  assert_in_epsilon(0.5743378691447402,r[:number])
 end
 
 def test_costpercapita_cc63
   r = spreadsheet.costpercapita_cc63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.8766798255553334,r[:number])
+  assert_in_epsilon(0.8766798255553332,r[:number])
 end
 
 def test_costpercapita_cd63
   r = spreadsheet.costpercapita_cd63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.01051612652793,r[:number])
+  assert_in_epsilon(21.010516126527925,r[:number])
 end
 
 def test_costpercapita_cf63
@@ -70985,25 +74159,25 @@ end
 def test_costpercapita_cg63
   r = spreadsheet.costpercapita_cg63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.009806536937559195,r[:number])
+  assert_in_epsilon(-0.009806536937559222,r[:number])
 end
 
 def test_costpercapita_ch63
   r = spreadsheet.costpercapita_ch63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.4842124177924313,r[:number])
+  assert_in_epsilon(-0.4842124177924316,r[:number])
 end
 
 def test_costpercapita_ci63
   r = spreadsheet.costpercapita_ci63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.06571102556527192,r[:number])
+  assert_in_epsilon(-0.06571102556527213,r[:number])
 end
 
 def test_costpercapita_cj63
   r = spreadsheet.costpercapita_cj63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.5642697167856459,r[:number])
+  assert_in_epsilon(1.5642697167856456,r[:number])
 end
 
 def test_costpercapita_ck63
@@ -71015,31 +74189,31 @@ end
 def test_costpercapita_cl63
   r = spreadsheet.costpercapita_cl63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.018958111277559836,r[:number])
+  assert_in_epsilon(-0.018958111277559846,r[:number])
 end
 
 def test_costpercapita_cm63
   r = spreadsheet.costpercapita_cm63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.19354434503351572,r[:number])
+  assert_in_epsilon(-0.1935443450335158,r[:number])
 end
 
 def test_costpercapita_cn63
   r = spreadsheet.costpercapita_cn63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.0388760630518285,r[:number])
+  assert_in_epsilon(0.038876063051828315,r[:number])
 end
 
 def test_costpercapita_cp63
   r = spreadsheet.costpercapita_cp63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.1847137791769591,r[:number])
+  assert_in_epsilon(0.18471377917695897,r[:number])
 end
 
 def test_costpercapita_cq63
   r = spreadsheet.costpercapita_cq63
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.5298595035148996,r[:number])
+  assert_in_epsilon(3.529859503514897,r[:number])
 end
 
 def test_costpercapita_cr63
@@ -71813,7 +74987,7 @@ end
 def test_costpercapita_ay65
   r = spreadsheet.costpercapita_ay65
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.11922971576537511,r[:number])
+  assert_in_epsilon(0.1192297157653751,r[:number])
 end
 
 def test_costpercapita_az65
@@ -71867,19 +75041,19 @@ end
 def test_costpercapita_bi65
   r = spreadsheet.costpercapita_bi65
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.11922971576537511,r[:number])
+  assert_in_epsilon(0.1192297157653751,r[:number])
 end
 
 def test_costpercapita_bj65
   r = spreadsheet.costpercapita_bj65
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.11529810763122954,r[:number])
+  assert_in_epsilon(0.11529810763122952,r[:number])
 end
 
 def test_costpercapita_bk65
   r = spreadsheet.costpercapita_bk65
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.11152346083731901,r[:number])
+  assert_in_epsilon(0.111523460837319,r[:number])
 end
 
 def test_costpercapita_bl65
@@ -71921,19 +75095,19 @@ end
 def test_costpercapita_bs65
   r = spreadsheet.costpercapita_bs65
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.11922971576537511,r[:number])
+  assert_in_epsilon(0.1192297157653751,r[:number])
 end
 
 def test_costpercapita_bt65
   r = spreadsheet.costpercapita_bt65
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.11529810763122954,r[:number])
+  assert_in_epsilon(0.11529810763122952,r[:number])
 end
 
 def test_costpercapita_bu65
   r = spreadsheet.costpercapita_bu65
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.11152346083731901,r[:number])
+  assert_in_epsilon(0.111523460837319,r[:number])
 end
 
 def test_costpercapita_bv65
@@ -71975,7 +75149,7 @@ end
 def test_costpercapita_cc65
   r = spreadsheet.costpercapita_cc65
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.03845014269265819,r[:number])
+  assert_in_epsilon(0.03845014269265818,r[:number])
 end
 
 def test_costpercapita_cd65
@@ -71993,13 +75167,13 @@ end
 def test_costpercapita_cg65
   r = spreadsheet.costpercapita_cg65
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.11529810763122954,r[:number])
+  assert_in_epsilon(0.11529810763122952,r[:number])
 end
 
 def test_costpercapita_ch65
   r = spreadsheet.costpercapita_ch65
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.11152346083731901,r[:number])
+  assert_in_epsilon(0.111523460837319,r[:number])
 end
 
 def test_costpercapita_ci65
@@ -72041,7 +75215,7 @@ end
 def test_costpercapita_cp65
   r = spreadsheet.costpercapita_cp65
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.0017696350126989446,r[:number])
+  assert_in_epsilon(-0.0017696350126989492,r[:number])
 end
 
 def test_costpercapita_cq65
@@ -73325,127 +76499,127 @@ end
 def test_costpercapita_ay68
   r = spreadsheet.costpercapita_ay68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.581481923401419,r[:number])
+  assert_in_epsilon(2.581481923401418,r[:number])
 end
 
 def test_costpercapita_az68
   r = spreadsheet.costpercapita_az68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.502884484834265,r[:number])
+  assert_in_epsilon(10.502884484834262,r[:number])
 end
 
 def test_costpercapita_ba68
   r = spreadsheet.costpercapita_ba68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.318402550602402,r[:number])
+  assert_in_epsilon(6.318402550602401,r[:number])
 end
 
 def test_costpercapita_bb68
   r = spreadsheet.costpercapita_bb68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.603624546892525,r[:number])
+  assert_in_epsilon(4.603624546892523,r[:number])
 end
 
 def test_costpercapita_bc68
   r = spreadsheet.costpercapita_bc68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.535741432532897,r[:number])
+  assert_in_epsilon(4.5357414325328955,r[:number])
 end
 
 def test_costpercapita_bd68
   r = spreadsheet.costpercapita_bd68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.6538329320565515,r[:number])
+  assert_in_epsilon(4.653832932056551,r[:number])
 end
 
 def test_costpercapita_be68
   r = spreadsheet.costpercapita_be68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.791652285026909,r[:number])
+  assert_in_epsilon(4.791652285026907,r[:number])
 end
 
 def test_costpercapita_bf68
   r = spreadsheet.costpercapita_bf68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.94401490814547,r[:number])
+  assert_in_epsilon(4.944014908145468,r[:number])
 end
 
 def test_costpercapita_bg68
   r = spreadsheet.costpercapita_bg68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.844420980106574,r[:number])
+  assert_in_epsilon(3.844420980106573,r[:number])
 end
 
 def test_costpercapita_bi68
   r = spreadsheet.costpercapita_bi68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.581481923401419,r[:number])
+  assert_in_epsilon(2.581481923401418,r[:number])
 end
 
 def test_costpercapita_bj68
   r = spreadsheet.costpercapita_bj68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.999241863041204,r[:number])
+  assert_in_epsilon(12.9992418630412,r[:number])
 end
 
 def test_costpercapita_bk68
   r = spreadsheet.costpercapita_bk68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.892073277831614,r[:number])
+  assert_in_epsilon(18.892073277831607,r[:number])
 end
 
 def test_costpercapita_bl68
   r = spreadsheet.costpercapita_bl68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20.57086770988059,r[:number])
+  assert_in_epsilon(20.570867709880584,r[:number])
 end
 
 def test_costpercapita_bm68
   r = spreadsheet.costpercapita_bm68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.96908228625106,r[:number])
+  assert_in_epsilon(14.969082286251059,r[:number])
 end
 
 def test_costpercapita_bn68
   r = spreadsheet.costpercapita_bn68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.45510569965331,r[:number])
+  assert_in_epsilon(13.455105699653306,r[:number])
 end
 
 def test_costpercapita_bo68
   r = spreadsheet.costpercapita_bo68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.680682257065664,r[:number])
+  assert_in_epsilon(13.68068225706566,r[:number])
 end
 
 def test_costpercapita_bp68
   r = spreadsheet.costpercapita_bp68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.10381267277605,r[:number])
+  assert_in_epsilon(14.103812672776046,r[:number])
 end
 
 def test_costpercapita_bq68
   r = spreadsheet.costpercapita_bq68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.304603962080268,r[:number])
+  assert_in_epsilon(13.304603962080266,r[:number])
 end
 
 def test_costpercapita_bs68
   r = spreadsheet.costpercapita_bs68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.940421904842555,r[:number])
+  assert_in_epsilon(10.940421904842554,r[:number])
 end
 
 def test_costpercapita_bt68
   r = spreadsheet.costpercapita_bt68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.686100996019874,r[:number])
+  assert_in_epsilon(22.68610099601987,r[:number])
 end
 
 def test_costpercapita_bu68
   r = spreadsheet.costpercapita_bu68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(33.12127765828868,r[:number])
+  assert_in_epsilon(33.121277658288676,r[:number])
 end
 
 def test_costpercapita_bv68
@@ -73457,7 +76631,7 @@ end
 def test_costpercapita_bw68
   r = spreadsheet.costpercapita_bw68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(31.6428018854952,r[:number])
+  assert_in_epsilon(31.642801885495192,r[:number])
 end
 
 def test_costpercapita_bx68
@@ -73469,25 +76643,25 @@ end
 def test_costpercapita_by68
   r = spreadsheet.costpercapita_by68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(31.287577964947552,r[:number])
+  assert_in_epsilon(31.287577964947545,r[:number])
 end
 
 def test_costpercapita_bz68
   r = spreadsheet.costpercapita_bz68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(32.266227899768516,r[:number])
+  assert_in_epsilon(32.26622789976851,r[:number])
 end
 
 def test_costpercapita_ca68
   r = spreadsheet.costpercapita_ca68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(32.090375114890215,r[:number])
+  assert_in_epsilon(32.09037511489021,r[:number])
 end
 
 def test_costpercapita_cc68
   r = spreadsheet.costpercapita_cc68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(29.034586150712723,r[:number])
+  assert_in_epsilon(29.034586150712716,r[:number])
 end
 
 def test_costpercapita_cd68
@@ -73505,61 +76679,61 @@ end
 def test_costpercapita_cg68
   r = spreadsheet.costpercapita_cg68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-6.1326318756519065,r[:number])
+  assert_in_epsilon(-6.13263187565191,r[:number])
 end
 
 def test_costpercapita_ch68
   r = spreadsheet.costpercapita_ch68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.38257986172182,r[:number])
+  assert_in_epsilon(7.382579861721813,r[:number])
 end
 
 def test_costpercapita_ci68
   r = spreadsheet.costpercapita_ci68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.184984412899256,r[:number])
+  assert_in_epsilon(12.184984412899249,r[:number])
 end
 
 def test_costpercapita_cj68
   r = spreadsheet.costpercapita_cj68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.706853702867024,r[:number])
+  assert_in_epsilon(6.70685370286702,r[:number])
 end
 
 def test_costpercapita_ck68
   r = spreadsheet.costpercapita_ck68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.977763671790105,r[:number])
+  assert_in_epsilon(4.977763671790101,r[:number])
 end
 
 def test_costpercapita_cl68
   r = spreadsheet.costpercapita_cl68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.9522908661836995,r[:number])
+  assert_in_epsilon(4.952290866183697,r[:number])
 end
 
 def test_costpercapita_cm68
   r = spreadsheet.costpercapita_cm68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.097880148102743,r[:number])
+  assert_in_epsilon(5.097880148102741,r[:number])
 end
 
 def test_costpercapita_cn68
   r = spreadsheet.costpercapita_cn68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.30167282483065,r[:number])
+  assert_in_epsilon(6.301672824830647,r[:number])
 end
 
 def test_costpercapita_cp68
   r = spreadsheet.costpercapita_cp68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.023952268309279,r[:number])
+  assert_in_epsilon(4.0239522683092765,r[:number])
 end
 
 def test_costpercapita_cq68
   r = spreadsheet.costpercapita_cq68
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(83.85380340204506,r[:number])
+  assert_in_epsilon(83.85380340204497,r[:number])
 end
 
 def test_costpercapita_cr68
@@ -75341,109 +78515,109 @@ end
 def test_costpercapita_ay72
   r = spreadsheet.costpercapita_ay72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.9842887741493159,r[:number])
+  assert_in_epsilon(0.9842887741493158,r[:number])
 end
 
 def test_costpercapita_az72
   r = spreadsheet.costpercapita_az72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.7368146495433665,r[:number])
+  assert_in_epsilon(1.736814649543366,r[:number])
 end
 
 def test_costpercapita_ba72
   r = spreadsheet.costpercapita_ba72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.8305410411162801,r[:number])
+  assert_in_epsilon(1.83054104111628,r[:number])
 end
 
 def test_costpercapita_bb72
   r = spreadsheet.costpercapita_bb72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.2534590948729702,r[:number])
+  assert_in_epsilon(2.2534590948729694,r[:number])
 end
 
 def test_costpercapita_bc72
   r = spreadsheet.costpercapita_bc72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.715381601058257,r[:number])
+  assert_in_epsilon(2.7153816010582568,r[:number])
 end
 
 def test_costpercapita_bd72
   r = spreadsheet.costpercapita_bd72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.9716591628631677,r[:number])
+  assert_in_epsilon(2.971659162863167,r[:number])
 end
 
 def test_costpercapita_be72
   r = spreadsheet.costpercapita_be72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.247464787552298,r[:number])
+  assert_in_epsilon(3.247464787552297,r[:number])
 end
 
 def test_costpercapita_bf72
   r = spreadsheet.costpercapita_bf72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.5414632959237684,r[:number])
+  assert_in_epsilon(3.5414632959237675,r[:number])
 end
 
 def test_costpercapita_bg72
   r = spreadsheet.costpercapita_bg72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.8544169124101355,r[:number])
+  assert_in_epsilon(3.854416912410135,r[:number])
 end
 
 def test_costpercapita_bi72
   r = spreadsheet.costpercapita_bi72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.9842887741493159,r[:number])
+  assert_in_epsilon(0.9842887741493158,r[:number])
 end
 
 def test_costpercapita_bj72
   r = spreadsheet.costpercapita_bj72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.688646433202083,r[:number])
+  assert_in_epsilon(2.6886464332020825,r[:number])
 end
 
 def test_costpercapita_bk72
   r = spreadsheet.costpercapita_bk72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.431166162888822,r[:number])
+  assert_in_epsilon(4.431166162888821,r[:number])
 end
 
 def test_costpercapita_bl72
   r = spreadsheet.costpercapita_bl72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.65525754462751,r[:number])
+  assert_in_epsilon(5.655257544627507,r[:number])
 end
 
 def test_costpercapita_bm72
   r = spreadsheet.costpercapita_bm72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.632674820632331,r[:number])
+  assert_in_epsilon(6.632674820632329,r[:number])
 end
 
 def test_costpercapita_bn72
   r = spreadsheet.costpercapita_bn72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.763340714154333,r[:number])
+  assert_in_epsilon(7.76334071415433,r[:number])
 end
 
 def test_costpercapita_bo72
   r = spreadsheet.costpercapita_bo72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.750622913760555,r[:number])
+  assert_in_epsilon(8.750622913760553,r[:number])
 end
 
 def test_costpercapita_bp72
   r = spreadsheet.costpercapita_bp72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.574418069603851,r[:number])
+  assert_in_epsilon(9.574418069603848,r[:number])
 end
 
 def test_costpercapita_bq72
   r = spreadsheet.costpercapita_bq72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.453080542968921,r[:number])
+  assert_in_epsilon(10.45308054296892,r[:number])
 end
 
 def test_costpercapita_bs72
@@ -75461,7 +78635,7 @@ end
 def test_costpercapita_bu72
   r = spreadsheet.costpercapita_bu72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.765648239950831,r[:number])
+  assert_in_epsilon(7.7656482399508295,r[:number])
 end
 
 def test_costpercapita_bv72
@@ -75473,13 +78647,13 @@ end
 def test_costpercapita_bw72
   r = spreadsheet.costpercapita_bw72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.384307539505196,r[:number])
+  assert_in_epsilon(11.384307539505192,r[:number])
 end
 
 def test_costpercapita_bx72
   r = spreadsheet.costpercapita_bx72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.912537605325184,r[:number])
+  assert_in_epsilon(12.91253760532518,r[:number])
 end
 
 def test_costpercapita_by72
@@ -75491,7 +78665,7 @@ end
 def test_costpercapita_bz72
   r = spreadsheet.costpercapita_bz72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.600467174392774,r[:number])
+  assert_in_epsilon(15.60046717439277,r[:number])
 end
 
 def test_costpercapita_ca72
@@ -75521,61 +78695,61 @@ end
 def test_costpercapita_cg72
   r = spreadsheet.costpercapita_cg72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.47510526096886885,r[:number])
+  assert_in_epsilon(-0.4751052609688693,r[:number])
 end
 
 def test_costpercapita_ch72
   r = spreadsheet.costpercapita_ch72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0966840858268134,r[:number])
+  assert_in_epsilon(1.0966840858268125,r[:number])
 end
 
 def test_costpercapita_ci72
   r = spreadsheet.costpercapita_ci72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.5503952146006903,r[:number])
+  assert_in_epsilon(1.5503952146006879,r[:number])
 end
 
 def test_costpercapita_cj72
   r = spreadsheet.costpercapita_cj72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.6863823979334922,r[:number])
+  assert_in_epsilon(1.6863823979334904,r[:number])
 end
 
 def test_costpercapita_ck72
   r = spreadsheet.costpercapita_ck72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.350217492583861,r[:number])
+  assert_in_epsilon(2.350217492583858,r[:number])
 end
 
 def test_costpercapita_cl72
   r = spreadsheet.costpercapita_cl72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.835096909831281,r[:number])
+  assert_in_epsilon(2.8350969098312797,r[:number])
 end
 
 def test_costpercapita_cm72
   r = spreadsheet.costpercapita_cm72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.1233494392990333,r[:number])
+  assert_in_epsilon(3.12334943929903,r[:number])
 end
 
 def test_costpercapita_cn72
   r = spreadsheet.costpercapita_cn72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.4319409873549565,r[:number])
+  assert_in_epsilon(3.4319409873549547,r[:number])
 end
 
 def test_costpercapita_cp72
   r = spreadsheet.costpercapita_cp72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.510553059655017,r[:number])
+  assert_in_epsilon(1.5105530596550154,r[:number])
 end
 
 def test_costpercapita_cq72
   r = spreadsheet.costpercapita_cq72
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.11931045291593,r[:number])
+  assert_in_epsilon(28.119310452915897,r[:number])
 end
 
 def test_costpercapita_cr72
@@ -75845,73 +79019,73 @@ end
 def test_costpercapita_ay73
   r = spreadsheet.costpercapita_ay73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.264501267803897,r[:number])
+  assert_in_epsilon(13.264501267803894,r[:number])
 end
 
 def test_costpercapita_az73
   r = spreadsheet.costpercapita_az73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.877956274051563,r[:number])
+  assert_in_epsilon(21.877956274051556,r[:number])
 end
 
 def test_costpercapita_ba73
   r = spreadsheet.costpercapita_ba73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(23.459402553908642,r[:number])
+  assert_in_epsilon(23.45940255390864,r[:number])
 end
 
 def test_costpercapita_bb73
   r = spreadsheet.costpercapita_bb73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(23.18531702241097,r[:number])
+  assert_in_epsilon(23.185317022410967,r[:number])
 end
 
 def test_costpercapita_bc73
   r = spreadsheet.costpercapita_bc73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(24.688513374283716,r[:number])
+  assert_in_epsilon(24.68851337428371,r[:number])
 end
 
 def test_costpercapita_bd73
   r = spreadsheet.costpercapita_bd73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.54494061428871,r[:number])
+  assert_in_epsilon(27.544940614288706,r[:number])
 end
 
 def test_costpercapita_be73
   r = spreadsheet.costpercapita_be73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.238945669237577,r[:number])
+  assert_in_epsilon(27.23894566923757,r[:number])
 end
 
 def test_costpercapita_bf73
   r = spreadsheet.costpercapita_bf73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.58771860601631,r[:number])
+  assert_in_epsilon(28.587718606016306,r[:number])
 end
 
 def test_costpercapita_bg73
   r = spreadsheet.costpercapita_bg73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(31.367673767968206,r[:number])
+  assert_in_epsilon(31.3676737679682,r[:number])
 end
 
 def test_costpercapita_bi73
   r = spreadsheet.costpercapita_bi73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.264501267803897,r[:number])
+  assert_in_epsilon(13.264501267803894,r[:number])
 end
 
 def test_costpercapita_bj73
   r = spreadsheet.costpercapita_bj73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(34.70505969396906,r[:number])
+  assert_in_epsilon(34.70505969396905,r[:number])
 end
 
 def test_costpercapita_bk73
   r = spreadsheet.costpercapita_bk73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(57.02828278233692,r[:number])
+  assert_in_epsilon(57.0282827823369,r[:number])
 end
 
 def test_costpercapita_bl73
@@ -75929,25 +79103,25 @@ end
 def test_costpercapita_bn73
   r = spreadsheet.costpercapita_bn73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(73.67256401382151,r[:number])
+  assert_in_epsilon(73.6725640138215,r[:number])
 end
 
 def test_costpercapita_bo73
   r = spreadsheet.costpercapita_bo73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(77.78929620011915,r[:number])
+  assert_in_epsilon(77.78929620011914,r[:number])
 end
 
 def test_costpercapita_bp73
   r = spreadsheet.costpercapita_bp73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(81.70306406213314,r[:number])
+  assert_in_epsilon(81.70306406213311,r[:number])
 end
 
 def test_costpercapita_bq73
   r = spreadsheet.costpercapita_bq73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(85.61929520958599,r[:number])
+  assert_in_epsilon(85.61929520958597,r[:number])
 end
 
 def test_costpercapita_bs73
@@ -75959,7 +79133,7 @@ end
 def test_costpercapita_bt73
   r = spreadsheet.costpercapita_bt73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(110.72144650948752,r[:number])
+  assert_in_epsilon(110.7214465094875,r[:number])
 end
 
 def test_costpercapita_bu73
@@ -75983,19 +79157,19 @@ end
 def test_costpercapita_bx73
   r = spreadsheet.costpercapita_bx73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(161.88050399237255,r[:number])
+  assert_in_epsilon(161.88050399237252,r[:number])
 end
 
 def test_costpercapita_by73
   r = spreadsheet.costpercapita_by73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(169.66913891425628,r[:number])
+  assert_in_epsilon(169.66913891425625,r[:number])
 end
 
 def test_costpercapita_bz73
   r = spreadsheet.costpercapita_bz73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(177.325399867306,r[:number])
+  assert_in_epsilon(177.32539986730598,r[:number])
 end
 
 def test_costpercapita_ca73
@@ -76007,31 +79181,31 @@ end
 def test_costpercapita_cc73
   r = spreadsheet.costpercapita_cc73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(147.47793221602012,r[:number])
+  assert_in_epsilon(147.4779322160201,r[:number])
 end
 
 def test_costpercapita_cd73
   r = spreadsheet.costpercapita_cd73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3011.0543694405715,r[:number])
+  assert_in_epsilon(3011.054369440571,r[:number])
 end
 
 def test_costpercapita_cf73
   r = spreadsheet.costpercapita_cf73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-27.00614435480248,r[:number])
+  assert_in_epsilon(-27.006144354802483,r[:number])
 end
 
 def test_costpercapita_cg73
   r = spreadsheet.costpercapita_cg73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-5.147449176350884,r[:number])
+  assert_in_epsilon(-5.147449176350898,r[:number])
 end
 
 def test_costpercapita_ch73
   r = spreadsheet.costpercapita_ch73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.295038567889371,r[:number])
+  assert_in_epsilon(14.295038567889351,r[:number])
 end
 
 def test_costpercapita_ci73
@@ -76049,37 +79223,37 @@ end
 def test_costpercapita_ck73
   r = spreadsheet.costpercapita_ck73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(23.497173935665547,r[:number])
+  assert_in_epsilon(23.497173935665522,r[:number])
 end
 
 def test_costpercapita_cl73
   r = spreadsheet.costpercapita_cl73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.17130125106795,r[:number])
+  assert_in_epsilon(28.171301251067934,r[:number])
 end
 
 def test_costpercapita_cm73
   r = spreadsheet.costpercapita_cm73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(29.628167528962084,r[:number])
+  assert_in_epsilon(29.62816752896205,r[:number])
 end
 
 def test_costpercapita_cn73
   r = spreadsheet.costpercapita_cn73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.4804801657915,r[:number])
+  assert_in_epsilon(28.48048016579149,r[:number])
 end
 
 def test_costpercapita_cp73
   r = spreadsheet.costpercapita_cp73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.609953499788743,r[:number])
+  assert_in_epsilon(15.60995349978873,r[:number])
 end
 
 def test_costpercapita_cq73
   r = spreadsheet.costpercapita_cq73
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(318.6309494160396,r[:number])
+  assert_in_epsilon(318.63094941603936,r[:number])
 end
 
 def test_costpercapita_cr73
@@ -77861,25 +81035,25 @@ end
 def test_costpercapita_ay77
   r = spreadsheet.costpercapita_ay77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.883285686259516,r[:number])
+  assert_in_epsilon(5.883285686259515,r[:number])
 end
 
 def test_costpercapita_az77
   r = spreadsheet.costpercapita_az77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.754816537876724,r[:number])
+  assert_in_epsilon(8.754816537876723,r[:number])
 end
 
 def test_costpercapita_ba77
   r = spreadsheet.costpercapita_ba77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.316147045952933,r[:number])
+  assert_in_epsilon(11.31614704595293,r[:number])
 end
 
 def test_costpercapita_bb77
   r = spreadsheet.costpercapita_bb77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.687721176967742,r[:number])
+  assert_in_epsilon(11.687721176967738,r[:number])
 end
 
 def test_costpercapita_bc77
@@ -77891,7 +81065,7 @@ end
 def test_costpercapita_bd77
   r = spreadsheet.costpercapita_bd77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.27910382056099,r[:number])
+  assert_in_epsilon(10.279103820560989,r[:number])
 end
 
 def test_costpercapita_be77
@@ -77903,49 +81077,49 @@ end
 def test_costpercapita_bf77
   r = spreadsheet.costpercapita_bf77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.739744772016266,r[:number])
+  assert_in_epsilon(10.739744772016262,r[:number])
 end
 
 def test_costpercapita_bg77
   r = spreadsheet.costpercapita_bg77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.99016921243608,r[:number])
+  assert_in_epsilon(11.990169212436076,r[:number])
 end
 
 def test_costpercapita_bi77
   r = spreadsheet.costpercapita_bi77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.883285686259516,r[:number])
+  assert_in_epsilon(5.883285686259515,r[:number])
 end
 
 def test_costpercapita_bj77
   r = spreadsheet.costpercapita_bj77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.444100471208154,r[:number])
+  assert_in_epsilon(14.444100471208152,r[:number])
 end
 
 def test_costpercapita_bk77
   r = spreadsheet.costpercapita_bk77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(25.28737438285997,r[:number])
+  assert_in_epsilon(25.28737438285996,r[:number])
 end
 
 def test_costpercapita_bl77
   r = spreadsheet.costpercapita_bl77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(30.8594761284616,r[:number])
+  assert_in_epsilon(30.859476128461594,r[:number])
 end
 
 def test_costpercapita_bm77
   r = spreadsheet.costpercapita_bm77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(32.08578422132789,r[:number])
+  assert_in_epsilon(32.085784221327884,r[:number])
 end
 
 def test_costpercapita_bn77
   r = spreadsheet.costpercapita_bn77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(31.194160633313793,r[:number])
+  assert_in_epsilon(31.19416063331378,r[:number])
 end
 
 def test_costpercapita_bo77
@@ -77957,49 +81131,49 @@ end
 def test_costpercapita_bp77
   r = spreadsheet.costpercapita_bp77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(30.898212413564412,r[:number])
+  assert_in_epsilon(30.89821241356441,r[:number])
 end
 
 def test_costpercapita_bq77
   r = spreadsheet.costpercapita_bq77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(32.636543610886704,r[:number])
+  assert_in_epsilon(32.6365436108867,r[:number])
 end
 
 def test_costpercapita_bs77
   r = spreadsheet.costpercapita_bs77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(25.753285492367777,r[:number])
+  assert_in_epsilon(25.753285492367773,r[:number])
 end
 
 def test_costpercapita_bt77
   r = spreadsheet.costpercapita_bt77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(33.14263729312704,r[:number])
+  assert_in_epsilon(33.14263729312703,r[:number])
 end
 
 def test_costpercapita_bu77
   r = spreadsheet.costpercapita_bu77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(44.393954535812306,r[:number])
+  assert_in_epsilon(44.39395453581229,r[:number])
 end
 
 def test_costpercapita_bv77
   r = spreadsheet.costpercapita_bv77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.469469775490126,r[:number])
+  assert_in_epsilon(50.46946977549011,r[:number])
 end
 
 def test_costpercapita_bw77
   r = spreadsheet.costpercapita_bw77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(51.31378697977628,r[:number])
+  assert_in_epsilon(51.313786979776275,r[:number])
 end
 
 def test_costpercapita_bx77
   r = spreadsheet.costpercapita_bx77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.30939468525451,r[:number])
+  assert_in_epsilon(50.309394685254496,r[:number])
 end
 
 def test_costpercapita_by77
@@ -78011,61 +81185,61 @@ end
 def test_costpercapita_bz77
   r = spreadsheet.costpercapita_bz77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.25367459884481,r[:number])
+  assert_in_epsilon(50.2536745988448,r[:number])
 end
 
 def test_costpercapita_ca77
   r = spreadsheet.costpercapita_ca77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(51.62550439620694,r[:number])
+  assert_in_epsilon(51.625504396206935,r[:number])
 end
 
 def test_costpercapita_cc77
   r = spreadsheet.costpercapita_cc77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(45.17919436467507,r[:number])
+  assert_in_epsilon(45.179194364675055,r[:number])
 end
 
 def test_costpercapita_cd77
   r = spreadsheet.costpercapita_cd77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(942.2121684340888,r[:number])
+  assert_in_epsilon(942.2121684340885,r[:number])
 end
 
 def test_costpercapita_cf77
   r = spreadsheet.costpercapita_cf77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-11.97820101305422,r[:number])
+  assert_in_epsilon(-11.978201013054221,r[:number])
 end
 
 def test_costpercapita_cg77
   r = spreadsheet.costpercapita_cg77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-1.5035227602895627,r[:number])
+  assert_in_epsilon(-1.5035227602895644,r[:number])
 end
 
 def test_costpercapita_ch77
   r = spreadsheet.costpercapita_ch77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.674075550118133,r[:number])
+  assert_in_epsilon(4.674075550118123,r[:number])
 end
 
 def test_costpercapita_ci77
   r = spreadsheet.costpercapita_ci77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.569324249358553,r[:number])
+  assert_in_epsilon(9.569324249358546,r[:number])
 end
 
 def test_costpercapita_cj77
   r = spreadsheet.costpercapita_cj77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.776691535005659,r[:number])
+  assert_in_epsilon(13.776691535005652,r[:number])
 end
 
 def test_costpercapita_ck77
   r = spreadsheet.costpercapita_ck77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.469921903862117,r[:number])
+  assert_in_epsilon(12.469921903862105,r[:number])
 end
 
 def test_costpercapita_cl77
@@ -78077,25 +81251,25 @@ end
 def test_costpercapita_cm77
   r = spreadsheet.costpercapita_cm77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.334878049495481,r[:number])
+  assert_in_epsilon(11.334878049495474,r[:number])
 end
 
 def test_costpercapita_cn77
   r = spreadsheet.costpercapita_cn77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.795457592171697,r[:number])
+  assert_in_epsilon(10.79545759217169,r[:number])
 end
 
 def test_costpercapita_cp77
   r = spreadsheet.costpercapita_cp77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.685524947288035,r[:number])
+  assert_in_epsilon(6.6855249472880285,r[:number])
 end
 
 def test_costpercapita_cq77
   r = spreadsheet.costpercapita_cq77
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(139.19861238143847,r[:number])
+  assert_in_epsilon(139.19861238143835,r[:number])
 end
 
 def test_costpercapita_cr77
@@ -78371,7 +81545,7 @@ end
 def test_costpercapita_az78
   r = spreadsheet.costpercapita_az78
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1356713183051916,r[:number])
+  assert_in_epsilon(1.1356713183051914,r[:number])
 end
 
 def test_costpercapita_ba78
@@ -78425,19 +81599,19 @@ end
 def test_costpercapita_bj78
   r = spreadsheet.costpercapita_bj78
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1356713183051916,r[:number])
+  assert_in_epsilon(1.1356713183051914,r[:number])
 end
 
 def test_costpercapita_bk78
   r = spreadsheet.costpercapita_bk78
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0984915398279278,r[:number])
+  assert_in_epsilon(1.0984915398279276,r[:number])
 end
 
 def test_costpercapita_bl78
   r = spreadsheet.costpercapita_bl78
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0644784247694237,r[:number])
+  assert_in_epsilon(1.0644784247694234,r[:number])
 end
 
 def test_costpercapita_bm78
@@ -78479,19 +81653,19 @@ end
 def test_costpercapita_bt78
   r = spreadsheet.costpercapita_bt78
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.616547401082186,r[:number])
+  assert_in_epsilon(2.6165474010821854,r[:number])
 end
 
 def test_costpercapita_bu78
   r = spreadsheet.costpercapita_bu78
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.5308864786132843,r[:number])
+  assert_in_epsilon(2.530886478613284,r[:number])
 end
 
 def test_costpercapita_bv78
   r = spreadsheet.costpercapita_bv78
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.452521439033125,r[:number])
+  assert_in_epsilon(2.4525214390331245,r[:number])
 end
 
 def test_costpercapita_bw78
@@ -78533,7 +81707,7 @@ end
 def test_costpercapita_cd78
   r = spreadsheet.costpercapita_cd78
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(40.8972101151328,r[:number])
+  assert_in_epsilon(40.89721011513279,r[:number])
 end
 
 def test_costpercapita_cf78
@@ -78545,19 +81719,19 @@ end
 def test_costpercapita_cg78
   r = spreadsheet.costpercapita_cg78
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.9330480227333324,r[:number])
+  assert_in_epsilon(-0.9330480227333326,r[:number])
 end
 
 def test_costpercapita_ch78
   r = spreadsheet.costpercapita_ch78
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0984915398279278,r[:number])
+  assert_in_epsilon(1.0984915398279276,r[:number])
 end
 
 def test_costpercapita_ci78
   r = spreadsheet.costpercapita_ci78
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0644784247694237,r[:number])
+  assert_in_epsilon(1.0644784247694234,r[:number])
 end
 
 def test_costpercapita_cj78
@@ -78593,13 +81767,13 @@ end
 def test_costpercapita_cp78
   r = spreadsheet.costpercapita_cp78
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.13665799354044655,r[:number])
+  assert_in_epsilon(0.1366579935404465,r[:number])
 end
 
 def test_costpercapita_cq78
   r = spreadsheet.costpercapita_cq78
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.142585531132733,r[:number])
+  assert_in_epsilon(3.14258553113273,r[:number])
 end
 
 def test_costpercapita_cr78
@@ -79373,73 +82547,73 @@ end
 def test_costpercapita_ay80
   r = spreadsheet.costpercapita_ay80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(49.0890277851612,r[:number])
+  assert_in_epsilon(49.089027785161186,r[:number])
 end
 
 def test_costpercapita_az80
   r = spreadsheet.costpercapita_az80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(65.09084242770815,r[:number])
+  assert_in_epsilon(65.09084242770814,r[:number])
 end
 
 def test_costpercapita_ba80
   r = spreadsheet.costpercapita_ba80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(66.20656748150607,r[:number])
+  assert_in_epsilon(66.20656748150606,r[:number])
 end
 
 def test_costpercapita_bb80
   r = spreadsheet.costpercapita_bb80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(79.09006268040775,r[:number])
+  assert_in_epsilon(79.09006268040774,r[:number])
 end
 
 def test_costpercapita_bc80
   r = spreadsheet.costpercapita_bc80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(91.2091036107039,r[:number])
+  assert_in_epsilon(91.20910361070388,r[:number])
 end
 
 def test_costpercapita_bd80
   r = spreadsheet.costpercapita_bd80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(104.9060129933724,r[:number])
+  assert_in_epsilon(104.90601299337239,r[:number])
 end
 
 def test_costpercapita_be80
   r = spreadsheet.costpercapita_be80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(117.45556504513472,r[:number])
+  assert_in_epsilon(117.45556504513469,r[:number])
 end
 
 def test_costpercapita_bf80
   r = spreadsheet.costpercapita_bf80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(133.15017910102947,r[:number])
+  assert_in_epsilon(133.15017910102944,r[:number])
 end
 
 def test_costpercapita_bg80
   r = spreadsheet.costpercapita_bg80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(149.94013112507656,r[:number])
+  assert_in_epsilon(149.94013112507653,r[:number])
 end
 
 def test_costpercapita_bi80
   r = spreadsheet.costpercapita_bi80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(49.0890277851612,r[:number])
+  assert_in_epsilon(49.089027785161186,r[:number])
 end
 
 def test_costpercapita_bj80
   r = spreadsheet.costpercapita_bj80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(112.56115612218721,r[:number])
+  assert_in_epsilon(112.56115612218719,r[:number])
 end
 
 def test_costpercapita_bk80
   r = spreadsheet.costpercapita_bk80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(175.08267954005254,r[:number])
+  assert_in_epsilon(175.0826795400525,r[:number])
 end
 
 def test_costpercapita_bl80
@@ -79451,31 +82625,31 @@ end
 def test_costpercapita_bm80
   r = spreadsheet.costpercapita_bm80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(230.5422281260323,r[:number])
+  assert_in_epsilon(230.54222812603223,r[:number])
 end
 
 def test_costpercapita_bn80
   r = spreadsheet.costpercapita_bn80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(269.0838093362474,r[:number])
+  assert_in_epsilon(269.0838093362473,r[:number])
 end
 
 def test_costpercapita_bo80
   r = spreadsheet.costpercapita_bo80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(307.2855806316708,r[:number])
+  assert_in_epsilon(307.28558063167077,r[:number])
 end
 
 def test_costpercapita_bp80
   r = spreadsheet.costpercapita_bp80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(348.8834676408684,r[:number])
+  assert_in_epsilon(348.8834676408683,r[:number])
 end
 
 def test_costpercapita_bq80
   r = spreadsheet.costpercapita_bq80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(393.56986673165045,r[:number])
+  assert_in_epsilon(393.56986673165034,r[:number])
 end
 
 def test_costpercapita_bs80
@@ -79487,7 +82661,7 @@ end
 def test_costpercapita_bt80
   r = spreadsheet.costpercapita_bt80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(194.3350527094768,r[:number])
+  assert_in_epsilon(194.33505270947677,r[:number])
 end
 
 def test_costpercapita_bu80
@@ -79505,13 +82679,13 @@ end
 def test_costpercapita_bw80
   r = spreadsheet.costpercapita_bw80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(315.6526824666067,r[:number])
+  assert_in_epsilon(315.6526824666066,r[:number])
 end
 
 def test_costpercapita_bx80
   r = spreadsheet.costpercapita_bx80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(356.20954558322785,r[:number])
+  assert_in_epsilon(356.2095455832278,r[:number])
 end
 
 def test_costpercapita_by80
@@ -79523,25 +82697,25 @@ end
 def test_costpercapita_bz80
   r = spreadsheet.costpercapita_bz80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(440.7288635779513,r[:number])
+  assert_in_epsilon(440.7288635779512,r[:number])
 end
 
 def test_costpercapita_ca80
   r = spreadsheet.costpercapita_ca80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(488.05944668790585,r[:number])
+  assert_in_epsilon(488.0594466879057,r[:number])
 end
 
 def test_costpercapita_cc80
   r = spreadsheet.costpercapita_cc80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(318.67382806660487,r[:number])
+  assert_in_epsilon(318.67382806660476,r[:number])
 end
 
 def test_costpercapita_cd80
   r = spreadsheet.costpercapita_cd80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6301.732528646992,r[:number])
+  assert_in_epsilon(6301.73252864699,r[:number])
 end
 
 def test_costpercapita_cf80
@@ -79553,13 +82727,13 @@ end
 def test_costpercapita_cg80
   r = spreadsheet.costpercapita_cg80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-6.007202948147907,r[:number])
+  assert_in_epsilon(-6.007202948147936,r[:number])
 end
 
 def test_costpercapita_ch80
   r = spreadsheet.costpercapita_ch80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(54.48193490104996,r[:number])
+  assert_in_epsilon(54.48193490104994,r[:number])
 end
 
 def test_costpercapita_ci80
@@ -79571,43 +82745,43 @@ end
 def test_costpercapita_cj80
   r = spreadsheet.costpercapita_cj80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(64.3972936921561,r[:number])
+  assert_in_epsilon(64.39729369215601,r[:number])
 end
 
 def test_costpercapita_ck80
   r = spreadsheet.costpercapita_ck80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(77.98882034374769,r[:number])
+  assert_in_epsilon(77.98882034374765,r[:number])
 end
 
 def test_costpercapita_cl80
   r = spreadsheet.costpercapita_cl80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(93.33054346115267,r[:number])
+  assert_in_epsilon(93.33054346115262,r[:number])
 end
 
 def test_costpercapita_cm80
   r = spreadsheet.costpercapita_cm80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(106.33939143745692,r[:number])
+  assert_in_epsilon(106.33939143745684,r[:number])
 end
 
 def test_costpercapita_cn80
   r = spreadsheet.costpercapita_cn80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(120.44150269125316,r[:number])
+  assert_in_epsilon(120.44150269125302,r[:number])
 end
 
 def test_costpercapita_cp80
   r = spreadsheet.costpercapita_cp80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(52.357378747515156,r[:number])
+  assert_in_epsilon(52.357378747515114,r[:number])
 end
 
 def test_costpercapita_cq80
   r = spreadsheet.costpercapita_cq80
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1063.6463598778182,r[:number])
+  assert_in_epsilon(1063.6463598778173,r[:number])
 end
 
 def test_costpercapita_cr80
@@ -79877,61 +83051,61 @@ end
 def test_costpercapita_ay81
   r = spreadsheet.costpercapita_ay81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.220188154605545,r[:number])
+  assert_in_epsilon(5.220188154605544,r[:number])
 end
 
 def test_costpercapita_az81
   r = spreadsheet.costpercapita_az81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.960850846778966,r[:number])
+  assert_in_epsilon(4.960850846778965,r[:number])
 end
 
 def test_costpercapita_ba81
   r = spreadsheet.costpercapita_ba81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.572082720175335,r[:number])
+  assert_in_epsilon(2.572082720175334,r[:number])
 end
 
 def test_costpercapita_bb81
   r = spreadsheet.costpercapita_bb81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.4924421018097007,r[:number])
+  assert_in_epsilon(2.4924421018097003,r[:number])
 end
 
 def test_costpercapita_bc81
   r = spreadsheet.costpercapita_bc81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.424348202004359,r[:number])
+  assert_in_epsilon(2.4243482020043587,r[:number])
 end
 
 def test_costpercapita_bd81
   r = spreadsheet.costpercapita_bd81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.367240993205842,r[:number])
+  assert_in_epsilon(2.367240993205841,r[:number])
 end
 
 def test_costpercapita_be81
   r = spreadsheet.costpercapita_be81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.3167562974153664,r[:number])
+  assert_in_epsilon(2.3167562974153655,r[:number])
 end
 
 def test_costpercapita_bf81
   r = spreadsheet.costpercapita_bf81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.2705418157042394,r[:number])
+  assert_in_epsilon(2.270541815704239,r[:number])
 end
 
 def test_costpercapita_bg81
   r = spreadsheet.costpercapita_bg81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.228169565516677,r[:number])
+  assert_in_epsilon(2.2281695655166764,r[:number])
 end
 
 def test_costpercapita_bi81
   r = spreadsheet.costpercapita_bi81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.220188154605545,r[:number])
+  assert_in_epsilon(5.220188154605544,r[:number])
 end
 
 def test_costpercapita_bj81
@@ -79943,49 +83117,49 @@ end
 def test_costpercapita_bk81
   r = spreadsheet.costpercapita_bk81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.25331268554482,r[:number])
+  assert_in_epsilon(12.253312685544818,r[:number])
 end
 
 def test_costpercapita_bl81
   r = spreadsheet.costpercapita_bl81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.634749538579138,r[:number])
+  assert_in_epsilon(9.634749538579136,r[:number])
 end
 
 def test_costpercapita_bm81
   r = spreadsheet.costpercapita_bm81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.27304460601308,r[:number])
+  assert_in_epsilon(7.2730446060130785,r[:number])
 end
 
 def test_costpercapita_bn81
   r = spreadsheet.costpercapita_bn81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.101722979617524,r[:number])
+  assert_in_epsilon(7.101722979617522,r[:number])
 end
 
 def test_costpercapita_bo81
   r = spreadsheet.costpercapita_bo81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.950268892246097,r[:number])
+  assert_in_epsilon(6.950268892246096,r[:number])
 end
 
 def test_costpercapita_bp81
   r = spreadsheet.costpercapita_bp81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.811625447112719,r[:number])
+  assert_in_epsilon(6.811625447112716,r[:number])
 end
 
 def test_costpercapita_bq81
   r = spreadsheet.costpercapita_bq81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.684508696550033,r[:number])
+  assert_in_epsilon(6.68450869655003,r[:number])
 end
 
 def test_costpercapita_bs81
   r = spreadsheet.costpercapita_bs81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.220188154605545,r[:number])
+  assert_in_epsilon(5.220188154605544,r[:number])
 end
 
 def test_costpercapita_bt81
@@ -79997,61 +83171,61 @@ end
 def test_costpercapita_bu81
   r = spreadsheet.costpercapita_bu81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.25331268554482,r[:number])
+  assert_in_epsilon(12.253312685544818,r[:number])
 end
 
 def test_costpercapita_bv81
   r = spreadsheet.costpercapita_bv81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.634749538579138,r[:number])
+  assert_in_epsilon(9.634749538579136,r[:number])
 end
 
 def test_costpercapita_bw81
   r = spreadsheet.costpercapita_bw81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.27304460601308,r[:number])
+  assert_in_epsilon(7.2730446060130785,r[:number])
 end
 
 def test_costpercapita_bx81
   r = spreadsheet.costpercapita_bx81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.101722979617524,r[:number])
+  assert_in_epsilon(7.101722979617522,r[:number])
 end
 
 def test_costpercapita_by81
   r = spreadsheet.costpercapita_by81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.950268892246097,r[:number])
+  assert_in_epsilon(6.950268892246096,r[:number])
 end
 
 def test_costpercapita_bz81
   r = spreadsheet.costpercapita_bz81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.811625447112719,r[:number])
+  assert_in_epsilon(6.811625447112716,r[:number])
 end
 
 def test_costpercapita_ca81
   r = spreadsheet.costpercapita_ca81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.684508696550033,r[:number])
+  assert_in_epsilon(6.68450869655003,r[:number])
 end
 
 def test_costpercapita_cc81
   r = spreadsheet.costpercapita_cc81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.993147103972429,r[:number])
+  assert_in_epsilon(7.993147103972427,r[:number])
 end
 
 def test_costpercapita_cd81
   r = spreadsheet.costpercapita_cd81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(184.5537581789168,r[:number])
+  assert_in_epsilon(184.55375817891678,r[:number])
 end
 
 def test_costpercapita_cf81
   r = spreadsheet.costpercapita_cf81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-10.628153446273357,r[:number])
+  assert_in_epsilon(-10.628153446273359,r[:number])
 end
 
 def test_costpercapita_cg81
@@ -80063,55 +83237,55 @@ end
 def test_costpercapita_ch81
   r = spreadsheet.costpercapita_ch81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.568051039667989,r[:number])
+  assert_in_epsilon(7.568051039667988,r[:number])
 end
 
 def test_costpercapita_ci81
   r = spreadsheet.costpercapita_ci81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.094559873379888,r[:number])
+  assert_in_epsilon(5.094559873379886,r[:number])
 end
 
 def test_costpercapita_cj81
   r = spreadsheet.costpercapita_cj81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.856893617553744,r[:number])
+  assert_in_epsilon(2.8568936175537427,r[:number])
 end
 
 def test_costpercapita_ck81
   r = spreadsheet.costpercapita_ck81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.7895975005199305,r[:number])
+  assert_in_epsilon(2.7895975005199287,r[:number])
 end
 
 def test_costpercapita_cl81
   r = spreadsheet.costpercapita_cl81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.730105466715253,r[:number])
+  assert_in_epsilon(2.730105466715252,r[:number])
 end
 
 def test_costpercapita_cm81
   r = spreadsheet.costpercapita_cm81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.675645526625001,r[:number])
+  assert_in_epsilon(2.675645526624998,r[:number])
 end
 
 def test_costpercapita_cn81
   r = spreadsheet.costpercapita_cn81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.6257133382445725,r[:number])
+  assert_in_epsilon(2.62571333824457,r[:number])
 end
 
 def test_costpercapita_cp81
   r = spreadsheet.costpercapita_cp81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.8538572523320878,r[:number])
+  assert_in_epsilon(1.8538572523320862,r[:number])
 end
 
 def test_costpercapita_cq81
   r = spreadsheet.costpercapita_cq81
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(61.031535443662904,r[:number])
+  assert_in_epsilon(61.031535443662875,r[:number])
 end
 
 def test_costpercapita_cr81
@@ -80381,163 +83555,163 @@ end
 def test_costpercapita_ay82
   r = spreadsheet.costpercapita_ay82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(31.732819686840912,r[:number])
+  assert_in_epsilon(31.732819686840905,r[:number])
 end
 
 def test_costpercapita_az82
   r = spreadsheet.costpercapita_az82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(87.64981543299251,r[:number])
+  assert_in_epsilon(87.6498154329925,r[:number])
 end
 
 def test_costpercapita_ba82
   r = spreadsheet.costpercapita_ba82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(94.32790231424474,r[:number])
+  assert_in_epsilon(94.32790231424471,r[:number])
 end
 
 def test_costpercapita_bb82
   r = spreadsheet.costpercapita_bb82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(100.59453380088402,r[:number])
+  assert_in_epsilon(100.59453380088401,r[:number])
 end
 
 def test_costpercapita_bc82
   r = spreadsheet.costpercapita_bc82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(106.64961624313212,r[:number])
+  assert_in_epsilon(106.64961624313209,r[:number])
 end
 
 def test_costpercapita_bd82
   r = spreadsheet.costpercapita_bd82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(112.63143508227826,r[:number])
+  assert_in_epsilon(112.63143508227824,r[:number])
 end
 
 def test_costpercapita_be82
   r = spreadsheet.costpercapita_be82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(118.63918146702083,r[:number])
+  assert_in_epsilon(118.63918146702082,r[:number])
 end
 
 def test_costpercapita_bf82
   r = spreadsheet.costpercapita_bf82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(124.74095516708614,r[:number])
+  assert_in_epsilon(124.74095516708611,r[:number])
 end
 
 def test_costpercapita_bg82
   r = spreadsheet.costpercapita_bg82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(130.7671500457272,r[:number])
+  assert_in_epsilon(130.76715004572716,r[:number])
 end
 
 def test_costpercapita_bi82
   r = spreadsheet.costpercapita_bi82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(31.732819686840912,r[:number])
+  assert_in_epsilon(31.732819686840905,r[:number])
 end
 
 def test_costpercapita_bj82
   r = spreadsheet.costpercapita_bj82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(118.33624319312894,r[:number])
+  assert_in_epsilon(118.33624319312891,r[:number])
 end
 
 def test_costpercapita_bk82
   r = spreadsheet.costpercapita_bk82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(208.79003577435864,r[:number])
+  assert_in_epsilon(208.7900357743586,r[:number])
 end
 
 def test_costpercapita_bl82
   r = spreadsheet.costpercapita_bl82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(274.1569457041878,r[:number])
+  assert_in_epsilon(274.1569457041877,r[:number])
 end
 
 def test_costpercapita_bm82
   r = spreadsheet.costpercapita_bm82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(293.4058164471944,r[:number])
+  assert_in_epsilon(293.40581644719435,r[:number])
 end
 
 def test_costpercapita_bn82
   r = spreadsheet.costpercapita_bn82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(312.31028403509015,r[:number])
+  assert_in_epsilon(312.3102840350901,r[:number])
 end
 
 def test_costpercapita_bo82
   r = spreadsheet.costpercapita_bo82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(330.7851307471486,r[:number])
+  assert_in_epsilon(330.78513074714857,r[:number])
 end
 
 def test_costpercapita_bp82
   r = spreadsheet.costpercapita_bp82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(349.0440965740745,r[:number])
+  assert_in_epsilon(349.04409657407444,r[:number])
 end
 
 def test_costpercapita_bq82
   r = spreadsheet.costpercapita_bq82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(367.2829504389296,r[:number])
+  assert_in_epsilon(367.28295043892956,r[:number])
 end
 
 def test_costpercapita_bs82
   r = spreadsheet.costpercapita_bs82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(45.53316740698188,r[:number])
+  assert_in_epsilon(45.533167406981875,r[:number])
 end
 
 def test_costpercapita_bt82
   r = spreadsheet.costpercapita_bt82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(132.5196876268181,r[:number])
+  assert_in_epsilon(132.51968762681807,r[:number])
 end
 
 def test_costpercapita_bu82
   r = spreadsheet.costpercapita_bu82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(223.62560758423683,r[:number])
+  assert_in_epsilon(223.6256075842368,r[:number])
 end
 
 def test_costpercapita_bv82
   r = spreadsheet.costpercapita_bv82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(289.71869722332053,r[:number])
+  assert_in_epsilon(289.7186972233204,r[:number])
 end
 
 def test_costpercapita_bw82
   r = spreadsheet.costpercapita_bw82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(309.80603269723184,r[:number])
+  assert_in_epsilon(309.80603269723173,r[:number])
 end
 
 def test_costpercapita_bx82
   r = spreadsheet.costpercapita_bx82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(329.6761575095089,r[:number])
+  assert_in_epsilon(329.67615750950887,r[:number])
 end
 
 def test_costpercapita_by82
   r = spreadsheet.costpercapita_by82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(349.23034851755625,r[:number])
+  assert_in_epsilon(349.23034851755614,r[:number])
 end
 
 def test_costpercapita_bz82
   r = spreadsheet.costpercapita_bz82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(368.67786063629427,r[:number])
+  assert_in_epsilon(368.67786063629416,r[:number])
 end
 
 def test_costpercapita_ca82
   r = spreadsheet.costpercapita_ca82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(388.2234282604527,r[:number])
+  assert_in_epsilon(388.22342826045264,r[:number])
 end
 
 def test_costpercapita_cc82
@@ -80549,7 +83723,7 @@ end
 def test_costpercapita_cd82
   r = spreadsheet.costpercapita_cd82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5439.976246446685,r[:number])
+  assert_in_epsilon(5439.976246446684,r[:number])
 end
 
 def test_costpercapita_cf82
@@ -80561,61 +83735,61 @@ end
 def test_costpercapita_cg82
   r = spreadsheet.costpercapita_cg82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-41.32515311234791,r[:number])
+  assert_in_epsilon(-41.325153112347934,r[:number])
 end
 
 def test_costpercapita_ch82
   r = spreadsheet.costpercapita_ch82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(36.963951262263265,r[:number])
+  assert_in_epsilon(36.96395126226324,r[:number])
 end
 
 def test_costpercapita_ci82
   r = spreadsheet.costpercapita_ci82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(90.91567305568844,r[:number])
+  assert_in_epsilon(90.91567305568833,r[:number])
 end
 
 def test_costpercapita_cj82
   r = spreadsheet.costpercapita_cj82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(99.1347097631267,r[:number])
+  assert_in_epsilon(99.13470976312658,r[:number])
 end
 
 def test_costpercapita_ck82
   r = spreadsheet.costpercapita_ck82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(107.14279903480539,r[:number])
+  assert_in_epsilon(107.14279903480535,r[:number])
 end
 
 def test_costpercapita_cl82
   r = spreadsheet.costpercapita_cl82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(114.67403825951574,r[:number])
+  assert_in_epsilon(114.67403825951564,r[:number])
 end
 
 def test_costpercapita_cm82
   r = spreadsheet.costpercapita_cm82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(121.81811805867534,r[:number])
+  assert_in_epsilon(121.81811805867524,r[:number])
 end
 
 def test_costpercapita_cn82
   r = spreadsheet.costpercapita_cn82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(129.07975897699208,r[:number])
+  assert_in_epsilon(129.079758976992,r[:number])
 end
 
 def test_costpercapita_cp82
   r = spreadsheet.costpercapita_cp82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(65.97742044849252,r[:number])
+  assert_in_epsilon(65.97742044849245,r[:number])
 end
 
 def test_costpercapita_cq82
   r = spreadsheet.costpercapita_cq82
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1202.1384233096264,r[:number])
+  assert_in_epsilon(1202.1384233096253,r[:number])
 end
 
 def test_costpercapita_cr82
@@ -80885,241 +84059,241 @@ end
 def test_costpercapita_ay83
   r = spreadsheet.costpercapita_ay83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.418495204363062,r[:number])
+  assert_in_epsilon(14.418495204363058,r[:number])
 end
 
 def test_costpercapita_az83
   r = spreadsheet.costpercapita_az83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(25.396857338034994,r[:number])
+  assert_in_epsilon(25.396857338034987,r[:number])
 end
 
 def test_costpercapita_ba83
   r = spreadsheet.costpercapita_ba83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(25.733673164828872,r[:number])
+  assert_in_epsilon(25.73367316482887,r[:number])
 end
 
 def test_costpercapita_bb83
   r = spreadsheet.costpercapita_bb83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(25.851737679369467,r[:number])
+  assert_in_epsilon(25.85173767936946,r[:number])
 end
 
 def test_costpercapita_bc83
   r = spreadsheet.costpercapita_bc83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(25.926351445302277,r[:number])
+  assert_in_epsilon(25.92635144530227,r[:number])
 end
 
 def test_costpercapita_bd83
   r = spreadsheet.costpercapita_bd83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.03306481666406,r[:number])
+  assert_in_epsilon(27.03306481666405,r[:number])
 end
 
 def test_costpercapita_be83
   r = spreadsheet.costpercapita_be83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.806097034515517,r[:number])
+  assert_in_epsilon(27.80609703451551,r[:number])
 end
 
 def test_costpercapita_bf83
   r = spreadsheet.costpercapita_bf83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.641519543083774,r[:number])
+  assert_in_epsilon(28.64151954308377,r[:number])
 end
 
 def test_costpercapita_bg83
   r = spreadsheet.costpercapita_bg83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(29.786227300823604,r[:number])
+  assert_in_epsilon(29.786227300823594,r[:number])
 end
 
 def test_costpercapita_bi83
   r = spreadsheet.costpercapita_bi83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.418495204363062,r[:number])
+  assert_in_epsilon(14.418495204363058,r[:number])
 end
 
 def test_costpercapita_bj83
   r = spreadsheet.costpercapita_bj83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(39.33990166453833,r[:number])
+  assert_in_epsilon(39.33990166453832,r[:number])
 end
 
 def test_costpercapita_bk83
   r = spreadsheet.costpercapita_bk83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(63.78565921009486,r[:number])
+  assert_in_epsilon(63.785659210094835,r[:number])
 end
 
 def test_costpercapita_bl83
   r = spreadsheet.costpercapita_bl83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(74.59338761699628,r[:number])
+  assert_in_epsilon(74.59338761699627,r[:number])
 end
 
 def test_costpercapita_bm83
   r = spreadsheet.costpercapita_bm83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(75.32740583399676,r[:number])
+  assert_in_epsilon(75.32740583399675,r[:number])
 end
 
 def test_costpercapita_bn83
   r = spreadsheet.costpercapita_bn83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(76.90184835488076,r[:number])
+  assert_in_epsilon(76.90184835488074,r[:number])
 end
 
 def test_costpercapita_bo83
   r = spreadsheet.costpercapita_bo83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(79.03839138756214,r[:number])
+  assert_in_epsilon(79.03839138756213,r[:number])
 end
 
 def test_costpercapita_bp83
   r = spreadsheet.costpercapita_bp83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(81.821736634184,r[:number])
+  assert_in_epsilon(81.82173663418398,r[:number])
 end
 
 def test_costpercapita_bq83
   r = spreadsheet.costpercapita_bq83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(84.63611063363881,r[:number])
+  assert_in_epsilon(84.63611063363878,r[:number])
 end
 
 def test_costpercapita_bs83
   r = spreadsheet.costpercapita_bs83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.418495204363062,r[:number])
+  assert_in_epsilon(14.418495204363058,r[:number])
 end
 
 def test_costpercapita_bt83
   r = spreadsheet.costpercapita_bt83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(39.33990166453833,r[:number])
+  assert_in_epsilon(39.33990166453832,r[:number])
 end
 
 def test_costpercapita_bu83
   r = spreadsheet.costpercapita_bu83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(63.78565921009486,r[:number])
+  assert_in_epsilon(63.785659210094835,r[:number])
 end
 
 def test_costpercapita_bv83
   r = spreadsheet.costpercapita_bv83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(74.59338761699628,r[:number])
+  assert_in_epsilon(74.59338761699627,r[:number])
 end
 
 def test_costpercapita_bw83
   r = spreadsheet.costpercapita_bw83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(75.32740583399676,r[:number])
+  assert_in_epsilon(75.32740583399675,r[:number])
 end
 
 def test_costpercapita_bx83
   r = spreadsheet.costpercapita_bx83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(76.90184835488076,r[:number])
+  assert_in_epsilon(76.90184835488074,r[:number])
 end
 
 def test_costpercapita_by83
   r = spreadsheet.costpercapita_by83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(79.03839138756214,r[:number])
+  assert_in_epsilon(79.03839138756213,r[:number])
 end
 
 def test_costpercapita_bz83
   r = spreadsheet.costpercapita_bz83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(81.821736634184,r[:number])
+  assert_in_epsilon(81.82173663418398,r[:number])
 end
 
 def test_costpercapita_ca83
   r = spreadsheet.costpercapita_ca83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(84.63611063363881,r[:number])
+  assert_in_epsilon(84.63611063363878,r[:number])
 end
 
 def test_costpercapita_cc83
   r = spreadsheet.costpercapita_cc83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(65.54032628225055,r[:number])
+  assert_in_epsilon(65.54032628225053,r[:number])
 end
 
 def test_costpercapita_cd83
   r = spreadsheet.costpercapita_cd83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1359.4541770953197,r[:number])
+  assert_in_epsilon(1359.4541770953194,r[:number])
 end
 
 def test_costpercapita_cf83
   r = spreadsheet.costpercapita_cf83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-29.355642930442727,r[:number])
+  assert_in_epsilon(-29.355642930442734,r[:number])
 end
 
 def test_costpercapita_cg83
   r = spreadsheet.costpercapita_cg83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-6.922576862431237,r[:number])
+  assert_in_epsilon(-6.922576862431251,r[:number])
 end
 
 def test_costpercapita_ch83
   r = spreadsheet.costpercapita_ch83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.909642765925607,r[:number])
+  assert_in_epsilon(16.909642765925582,r[:number])
 end
 
 def test_costpercapita_ci83
   r = spreadsheet.costpercapita_ci83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.50230688372888,r[:number])
+  assert_in_epsilon(27.502306883728867,r[:number])
 end
 
 def test_costpercapita_cj83
   r = spreadsheet.costpercapita_cj83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.100409947986694,r[:number])
+  assert_in_epsilon(28.10040994798668,r[:number])
 end
 
 def test_costpercapita_ck83
   r = spreadsheet.costpercapita_ck83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.658882425937186,r[:number])
+  assert_in_epsilon(27.658882425937175,r[:number])
 end
 
 def test_costpercapita_cl83
   r = spreadsheet.costpercapita_cl83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.387283265944603,r[:number])
+  assert_in_epsilon(28.38728326594458,r[:number])
 end
 
 def test_costpercapita_cm83
   r = spreadsheet.costpercapita_cm83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(29.648837239372003,r[:number])
+  assert_in_epsilon(29.64883723937198,r[:number])
 end
 
 def test_costpercapita_cn83
   r = spreadsheet.costpercapita_cn83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(30.378031275131686,r[:number])
+  assert_in_epsilon(30.37803127513165,r[:number])
 end
 
 def test_costpercapita_cp83
   r = spreadsheet.costpercapita_cp83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.923019334572523,r[:number])
+  assert_in_epsilon(16.923019334572505,r[:number])
 end
 
 def test_costpercapita_cq83
   r = spreadsheet.costpercapita_cq83
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(349.0441828268932,r[:number])
+  assert_in_epsilon(349.0441828268928,r[:number])
 end
 
 def test_costpercapita_cr83
@@ -82397,31 +85571,31 @@ end
 def test_costpercapita_ay86
   r = spreadsheet.costpercapita_ay86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(282.6121430007223,r[:number])
+  assert_in_epsilon(282.6121430007222,r[:number])
 end
 
 def test_costpercapita_az86
   r = spreadsheet.costpercapita_az86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(429.6698671417591,r[:number])
+  assert_in_epsilon(429.66986714175897,r[:number])
 end
 
 def test_costpercapita_ba86
   r = spreadsheet.costpercapita_ba86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(447.1806742124346,r[:number])
+  assert_in_epsilon(447.18067421243455,r[:number])
 end
 
 def test_costpercapita_bb86
   r = spreadsheet.costpercapita_bb86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(409.56773523222176,r[:number])
+  assert_in_epsilon(409.5677352322217,r[:number])
 end
 
 def test_costpercapita_bc86
   r = spreadsheet.costpercapita_bc86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(385.7713330521632,r[:number])
+  assert_in_epsilon(385.77133305216313,r[:number])
 end
 
 def test_costpercapita_bd86
@@ -82433,55 +85607,55 @@ end
 def test_costpercapita_be86
   r = spreadsheet.costpercapita_be86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(335.78752913148776,r[:number])
+  assert_in_epsilon(335.7875291314877,r[:number])
 end
 
 def test_costpercapita_bf86
   r = spreadsheet.costpercapita_bf86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(321.19947674656873,r[:number])
+  assert_in_epsilon(321.1994767465687,r[:number])
 end
 
 def test_costpercapita_bg86
   r = spreadsheet.costpercapita_bg86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(303.0552204263491,r[:number])
+  assert_in_epsilon(303.0552204263489,r[:number])
 end
 
 def test_costpercapita_bi86
   r = spreadsheet.costpercapita_bi86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(282.6121430007223,r[:number])
+  assert_in_epsilon(282.6121430007222,r[:number])
 end
 
 def test_costpercapita_bj86
   r = spreadsheet.costpercapita_bj86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(702.9628551558465,r[:number])
+  assert_in_epsilon(702.9628551558462,r[:number])
 end
 
 def test_costpercapita_bk86
   r = spreadsheet.costpercapita_bk86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1127.1298256573843,r[:number])
+  assert_in_epsilon(1127.1298256573841,r[:number])
 end
 
 def test_costpercapita_bl86
   r = spreadsheet.costpercapita_bl86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1245.636890948398,r[:number])
+  assert_in_epsilon(1245.6368909483979,r[:number])
 end
 
 def test_costpercapita_bm86
   r = spreadsheet.costpercapita_bm86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1205.6452594185753,r[:number])
+  assert_in_epsilon(1205.645259418575,r[:number])
 end
 
 def test_costpercapita_bn86
   r = spreadsheet.costpercapita_bn86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1127.831271499419,r[:number])
+  assert_in_epsilon(1127.8312714994188,r[:number])
 end
 
 def test_costpercapita_bo86
@@ -82493,25 +85667,25 @@ end
 def test_costpercapita_bp86
   r = spreadsheet.costpercapita_bp86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(997.6480441633832,r[:number])
+  assert_in_epsilon(997.648044163383,r[:number])
 end
 
 def test_costpercapita_bq86
   r = spreadsheet.costpercapita_bq86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(941.2084454228948,r[:number])
+  assert_in_epsilon(941.2084454228947,r[:number])
 end
 
 def test_costpercapita_bs86
   r = spreadsheet.costpercapita_bs86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1189.232053056553,r[:number])
+  assert_in_epsilon(1189.2320530565528,r[:number])
 end
 
 def test_costpercapita_bt86
   r = spreadsheet.costpercapita_bt86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1594.8362790473748,r[:number])
+  assert_in_epsilon(1594.8362790473745,r[:number])
 end
 
 def test_costpercapita_bu86
@@ -82547,13 +85721,13 @@ end
 def test_costpercapita_bz86
   r = spreadsheet.costpercapita_bz86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1768.7743950069578,r[:number])
+  assert_in_epsilon(1768.7743950069573,r[:number])
 end
 
 def test_costpercapita_ca86
   r = spreadsheet.costpercapita_ca86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1684.5835821889193,r[:number])
+  assert_in_epsilon(1684.5835821889189,r[:number])
 end
 
 def test_costpercapita_cc86
@@ -82565,73 +85739,73 @@ end
 def test_costpercapita_cd86
   r = spreadsheet.costpercapita_cd86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(39073.50867280027,r[:number])
+  assert_in_epsilon(39073.508672800264,r[:number])
 end
 
 def test_costpercapita_cf86
   r = spreadsheet.costpercapita_cf86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-575.3902220826734,r[:number])
+  assert_in_epsilon(-575.3902220826735,r[:number])
 end
 
 def test_costpercapita_cg86
   r = spreadsheet.costpercapita_cg86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-79.7163849469162,r[:number])
+  assert_in_epsilon(-79.71638494691642,r[:number])
 end
 
 def test_costpercapita_ch86
   r = spreadsheet.costpercapita_ch86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(312.55320056266766,r[:number])
+  assert_in_epsilon(312.5532005626674,r[:number])
 end
 
 def test_costpercapita_ci86
   r = spreadsheet.costpercapita_ci86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(499.57534859592073,r[:number])
+  assert_in_epsilon(499.5753485959205,r[:number])
 end
 
 def test_costpercapita_cj86
   r = spreadsheet.costpercapita_cj86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(502.93083400349093,r[:number])
+  assert_in_epsilon(502.9308340034907,r[:number])
 end
 
 def test_costpercapita_ck86
   r = spreadsheet.costpercapita_ck86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(468.13987542678166,r[:number])
+  assert_in_epsilon(468.1398754267815,r[:number])
 end
 
 def test_costpercapita_cl86
   r = spreadsheet.costpercapita_cl86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(447.2030837191781,r[:number])
+  assert_in_epsilon(447.20308371917787,r[:number])
 end
 
 def test_costpercapita_cm86
   r = spreadsheet.costpercapita_cm86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(412.55660162462266,r[:number])
+  assert_in_epsilon(412.55660162462243,r[:number])
 end
 
 def test_costpercapita_cn86
   r = spreadsheet.costpercapita_cn86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(389.16826813437814,r[:number])
+  assert_in_epsilon(389.1682681343779,r[:number])
 end
 
 def test_costpercapita_cp86
   r = spreadsheet.costpercapita_cp86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(264.1134005597167,r[:number])
+  assert_in_epsilon(264.11340055971647,r[:number])
 end
 
 def test_costpercapita_cq86
   r = spreadsheet.costpercapita_cq86
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5888.535508751821,r[:number])
+  assert_in_epsilon(5888.535508751816,r[:number])
 end
 
 def test_costpercapita_cr86
@@ -82901,97 +86075,97 @@ end
 def test_costpercapita_ay87
   r = spreadsheet.costpercapita_ay87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.49209848965853803,r[:number])
+  assert_in_epsilon(0.4920984896585379,r[:number])
 end
 
 def test_costpercapita_az87
   r = spreadsheet.costpercapita_az87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.540552227652938,r[:number])
+  assert_in_epsilon(8.540552227652935,r[:number])
 end
 
 def test_costpercapita_ba87
   r = spreadsheet.costpercapita_ba87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.77913530378703,r[:number])
+  assert_in_epsilon(11.779135303787026,r[:number])
 end
 
 def test_costpercapita_bb87
   r = spreadsheet.costpercapita_bb87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(60.177086708465104,r[:number])
+  assert_in_epsilon(60.17708670846509,r[:number])
 end
 
 def test_costpercapita_bc87
   r = spreadsheet.costpercapita_bc87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(78.57650639722543,r[:number])
+  assert_in_epsilon(78.57650639722539,r[:number])
 end
 
 def test_costpercapita_bd87
   r = spreadsheet.costpercapita_bd87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(99.11278760979282,r[:number])
+  assert_in_epsilon(99.1127876097928,r[:number])
 end
 
 def test_costpercapita_be87
   r = spreadsheet.costpercapita_be87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(111.96452707029795,r[:number])
+  assert_in_epsilon(111.96452707029793,r[:number])
 end
 
 def test_costpercapita_bf87
   r = spreadsheet.costpercapita_bf87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(115.7329796607228,r[:number])
+  assert_in_epsilon(115.73297966072279,r[:number])
 end
 
 def test_costpercapita_bg87
   r = spreadsheet.costpercapita_bg87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(120.25552811585325,r[:number])
+  assert_in_epsilon(120.25552811585322,r[:number])
 end
 
 def test_costpercapita_bi87
   r = spreadsheet.costpercapita_bi87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.49209848965853803,r[:number])
+  assert_in_epsilon(0.4920984896585379,r[:number])
 end
 
 def test_costpercapita_bj87
   r = spreadsheet.costpercapita_bj87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.016423735536652,r[:number])
+  assert_in_epsilon(9.016423735536648,r[:number])
 end
 
 def test_costpercapita_bk87
   r = spreadsheet.costpercapita_bk87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20.500378002573832,r[:number])
+  assert_in_epsilon(20.500378002573825,r[:number])
 end
 
 def test_costpercapita_bl87
   r = spreadsheet.costpercapita_bl87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(79.59666167019756,r[:number])
+  assert_in_epsilon(79.59666167019755,r[:number])
 end
 
 def test_costpercapita_bm87
   r = spreadsheet.costpercapita_bm87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(148.21211473635418,r[:number])
+  assert_in_epsilon(148.21211473635412,r[:number])
 end
 
 def test_costpercapita_bn87
   r = spreadsheet.costpercapita_bn87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(232.99262273739942,r[:number])
+  assert_in_epsilon(232.99262273739936,r[:number])
 end
 
 def test_costpercapita_bo87
   r = spreadsheet.costpercapita_bo87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(284.0528998023589,r[:number])
+  assert_in_epsilon(284.05289980235887,r[:number])
 end
 
 def test_costpercapita_bp87
@@ -83003,25 +86177,25 @@ end
 def test_costpercapita_bq87
   r = spreadsheet.costpercapita_bq87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(341.5120244744259,r[:number])
+  assert_in_epsilon(341.51202447442586,r[:number])
 end
 
 def test_costpercapita_bs87
   r = spreadsheet.costpercapita_bs87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.905115291370901,r[:number])
+  assert_in_epsilon(0.9051152913709007,r[:number])
 end
 
 def test_costpercapita_bt87
   r = spreadsheet.costpercapita_bt87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.45855667339781,r[:number])
+  assert_in_epsilon(16.458556673397805,r[:number])
 end
 
 def test_costpercapita_bu87
   r = spreadsheet.costpercapita_bu87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(34.67954308384647,r[:number])
+  assert_in_epsilon(34.67954308384646,r[:number])
 end
 
 def test_costpercapita_bv87
@@ -83033,7 +86207,7 @@ end
 def test_costpercapita_bw87
   r = spreadsheet.costpercapita_bw87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(244.43150422176214,r[:number])
+  assert_in_epsilon(244.4315042217621,r[:number])
 end
 
 def test_costpercapita_bx87
@@ -83045,7 +86219,7 @@ end
 def test_costpercapita_by87
   r = spreadsheet.costpercapita_by87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(446.9805580499629,r[:number])
+  assert_in_epsilon(446.98055804996284,r[:number])
 end
 
 def test_costpercapita_bz87
@@ -83063,7 +86237,7 @@ end
 def test_costpercapita_cc87
   r = spreadsheet.costpercapita_cc87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(253.7104666385257,r[:number])
+  assert_in_epsilon(253.71046663852565,r[:number])
 end
 
 def test_costpercapita_cd87
@@ -83075,43 +86249,43 @@ end
 def test_costpercapita_cf87
   r = spreadsheet.costpercapita_cf87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-1.0018984189594808,r[:number])
+  assert_in_epsilon(-1.001898418959481,r[:number])
 end
 
 def test_costpercapita_cg87
   r = spreadsheet.costpercapita_cg87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-6.540899313584609,r[:number])
+  assert_in_epsilon(-6.540899313584613,r[:number])
 end
 
 def test_costpercapita_ch87
   r = spreadsheet.costpercapita_ch87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.9562922777136581,r[:number])
+  assert_in_epsilon(-0.9562922777136649,r[:number])
 end
 
 def test_costpercapita_ci87
   r = spreadsheet.costpercapita_ci87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-30.02088449354179,r[:number])
+  assert_in_epsilon(-30.020884493541804,r[:number])
 end
 
 def test_costpercapita_cj87
   r = spreadsheet.costpercapita_cj87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.078502118786625,r[:number])
+  assert_in_epsilon(5.078502118786573,r[:number])
 end
 
 def test_costpercapita_ck87
   r = spreadsheet.costpercapita_ck87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(52.45047346607137,r[:number])
+  assert_in_epsilon(52.45047346607132,r[:number])
 end
 
 def test_costpercapita_cl87
   r = spreadsheet.costpercapita_cl87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(80.10024296656114,r[:number])
+  assert_in_epsilon(80.1002429665611,r[:number])
 end
 
 def test_costpercapita_cm87
@@ -83123,19 +86297,19 @@ end
 def test_costpercapita_cn87
   r = spreadsheet.costpercapita_cn87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(122.45662273079064,r[:number])
+  assert_in_epsilon(122.4566227307906,r[:number])
 end
 
 def test_costpercapita_cp87
   r = spreadsheet.costpercapita_cp87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(36.8085386697304,r[:number])
+  assert_in_epsilon(36.80853866973038,r[:number])
 end
 
 def test_costpercapita_cq87
   r = spreadsheet.costpercapita_cq87
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(475.80468590626884,r[:number])
+  assert_in_epsilon(475.8046859062684,r[:number])
 end
 
 def test_costpercapita_cr87
@@ -83411,43 +86585,43 @@ end
 def test_costpercapita_az88
   r = spreadsheet.costpercapita_az88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.2205650640878225,r[:number])
+  assert_in_epsilon(1.220565064087822,r[:number])
 end
 
 def test_costpercapita_ba88
   r = spreadsheet.costpercapita_ba88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.7045204395814713,r[:number])
+  assert_in_epsilon(1.7045204395814706,r[:number])
 end
 
 def test_costpercapita_bb88
   r = spreadsheet.costpercapita_bb88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.091358763838247,r[:number])
+  assert_in_epsilon(10.091358763838244,r[:number])
 end
 
 def test_costpercapita_bc88
   r = spreadsheet.costpercapita_bc88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.426551860376673,r[:number])
+  assert_in_epsilon(13.42655186037667,r[:number])
 end
 
 def test_costpercapita_bd88
   r = spreadsheet.costpercapita_bd88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.288665719001653,r[:number])
+  assert_in_epsilon(17.28866571900165,r[:number])
 end
 
 def test_costpercapita_be88
   r = spreadsheet.costpercapita_be88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.92567279677215,r[:number])
+  assert_in_epsilon(19.925672796772147,r[:number])
 end
 
 def test_costpercapita_bf88
   r = spreadsheet.costpercapita_bf88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.11279262354293,r[:number])
+  assert_in_epsilon(18.112792623542923,r[:number])
 end
 
 def test_costpercapita_bg88
@@ -83465,49 +86639,49 @@ end
 def test_costpercapita_bj88
   r = spreadsheet.costpercapita_bj88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.2205650640878225,r[:number])
+  assert_in_epsilon(1.220565064087822,r[:number])
 end
 
 def test_costpercapita_bk88
   r = spreadsheet.costpercapita_bk88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.8851264609705702,r[:number])
+  assert_in_epsilon(2.8851264609705694,r[:number])
 end
 
 def test_costpercapita_bl88
   r = spreadsheet.costpercapita_bl88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.887151684478866,r[:number])
+  assert_in_epsilon(12.887151684478864,r[:number])
 end
 
 def test_costpercapita_bm88
   r = spreadsheet.costpercapita_bm88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(24.848829862098874,r[:number])
+  assert_in_epsilon(24.848829862098864,r[:number])
 end
 
 def test_costpercapita_bn88
   r = spreadsheet.costpercapita_bn88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(39.983392373600886,r[:number])
+  assert_in_epsilon(39.98339237360087,r[:number])
 end
 
 def test_costpercapita_bo88
   r = spreadsheet.costpercapita_bo88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(49.676318944488074,r[:number])
+  assert_in_epsilon(49.67631894448807,r[:number])
 end
 
 def test_costpercapita_bp88
   r = spreadsheet.costpercapita_bp88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(54.22343242413371,r[:number])
+  assert_in_epsilon(54.2234324241337,r[:number])
 end
 
 def test_costpercapita_bq88
   r = spreadsheet.costpercapita_bq88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(55.44667482929044,r[:number])
+  assert_in_epsilon(55.446674829290416,r[:number])
 end
 
 def test_costpercapita_bs88
@@ -83519,37 +86693,37 @@ end
 def test_costpercapita_bt88
   r = spreadsheet.costpercapita_bt88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.8782669587301497,r[:number])
+  assert_in_epsilon(1.8782669587301493,r[:number])
 end
 
 def test_costpercapita_bu88
   r = spreadsheet.costpercapita_bu88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.151894521454853,r[:number])
+  assert_in_epsilon(4.151894521454852,r[:number])
 end
 
 def test_costpercapita_bv88
   r = spreadsheet.costpercapita_bv88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.611271436314997,r[:number])
+  assert_in_epsilon(18.611271436314993,r[:number])
 end
 
 def test_costpercapita_bw88
   r = spreadsheet.costpercapita_bw88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(34.497228576743105,r[:number])
+  assert_in_epsilon(34.49722857674309,r[:number])
 end
 
 def test_costpercapita_bx88
   r = spreadsheet.costpercapita_bx88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(53.465343970636425,r[:number])
+  assert_in_epsilon(53.46534397063641,r[:number])
 end
 
 def test_costpercapita_by88
   r = spreadsheet.costpercapita_by88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(66.26207866320652,r[:number])
+  assert_in_epsilon(66.26207866320651,r[:number])
 end
 
 def test_costpercapita_bz88
@@ -83561,19 +86735,19 @@ end
 def test_costpercapita_ca88
   r = spreadsheet.costpercapita_ca88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(72.78669886209651,r[:number])
+  assert_in_epsilon(72.7866988620965,r[:number])
 end
 
 def test_costpercapita_cc88
   r = spreadsheet.costpercapita_cc88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(35.89009702552869,r[:number])
+  assert_in_epsilon(35.89009702552868,r[:number])
 end
 
 def test_costpercapita_cd88
   r = spreadsheet.costpercapita_cd88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(602.1438417612815,r[:number])
+  assert_in_epsilon(602.1438417612814,r[:number])
 end
 
 def test_costpercapita_cf88
@@ -83585,61 +86759,61 @@ end
 def test_costpercapita_cg88
   r = spreadsheet.costpercapita_cg88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-1.0027952641826612,r[:number])
+  assert_in_epsilon(-1.0027952641826616,r[:number])
 end
 
 def test_costpercapita_ch88
   r = spreadsheet.costpercapita_ch88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.21979865576120458,r[:number])
+  assert_in_epsilon(-0.21979865576120544,r[:number])
 end
 
 def test_costpercapita_ci88
   r = spreadsheet.costpercapita_ci88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-5.495093878669787,r[:number])
+  assert_in_epsilon(-5.495093878669791,r[:number])
 end
 
 def test_costpercapita_cj88
   r = spreadsheet.costpercapita_cj88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.3912539162090834,r[:number])
+  assert_in_epsilon(0.39125391620907374,r[:number])
 end
 
 def test_costpercapita_ck88
   r = spreadsheet.costpercapita_ck88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.490656247251783,r[:number])
+  assert_in_epsilon(8.49065624725177,r[:number])
 end
 
 def test_costpercapita_cl88
   r = spreadsheet.costpercapita_cl88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.380056079099397,r[:number])
+  assert_in_epsilon(13.380056079099385,r[:number])
 end
 
 def test_costpercapita_cm88
   r = spreadsheet.costpercapita_cm88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.22948090261286,r[:number])
+  assert_in_epsilon(21.22948090261285,r[:number])
 end
 
 def test_costpercapita_cn88
   r = spreadsheet.costpercapita_cn88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.732580948010963,r[:number])
+  assert_in_epsilon(21.732580948010938,r[:number])
 end
 
 def test_costpercapita_cp88
   r = spreadsheet.costpercapita_cp88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.500704477174493,r[:number])
+  assert_in_epsilon(6.500704477174484,r[:number])
 end
 
 def test_costpercapita_cq88
   r = spreadsheet.costpercapita_cq88
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(82.81087686277044,r[:number])
+  assert_in_epsilon(82.8108768627703,r[:number])
 end
 
 def test_costpercapita_cr88
@@ -84413,91 +87587,91 @@ end
 def test_costpercapita_ay90
   r = spreadsheet.costpercapita_ay90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.52481087391591,r[:number])
+  assert_in_epsilon(17.524810873915907,r[:number])
 end
 
 def test_costpercapita_az90
   r = spreadsheet.costpercapita_az90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.780497891140072,r[:number])
+  assert_in_epsilon(27.78049789114007,r[:number])
 end
 
 def test_costpercapita_ba90
   r = spreadsheet.costpercapita_ba90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.60653316825255,r[:number])
+  assert_in_epsilon(28.606533168252547,r[:number])
 end
 
 def test_costpercapita_bb90
   r = spreadsheet.costpercapita_bb90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(29.16517293069916,r[:number])
+  assert_in_epsilon(29.165172930699153,r[:number])
 end
 
 def test_costpercapita_bc90
   r = spreadsheet.costpercapita_bc90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(29.388608865117746,r[:number])
+  assert_in_epsilon(29.38860886511774,r[:number])
 end
 
 def test_costpercapita_bd90
   r = spreadsheet.costpercapita_bd90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(29.42683554585147,r[:number])
+  assert_in_epsilon(29.426835545851464,r[:number])
 end
 
 def test_costpercapita_be90
   r = spreadsheet.costpercapita_be90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(29.02354944613223,r[:number])
+  assert_in_epsilon(29.023549446132222,r[:number])
 end
 
 def test_costpercapita_bf90
   r = spreadsheet.costpercapita_bf90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.342331792818648,r[:number])
+  assert_in_epsilon(28.342331792818644,r[:number])
 end
 
 def test_costpercapita_bg90
   r = spreadsheet.costpercapita_bg90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.333480383080943,r[:number])
+  assert_in_epsilon(27.33348038308093,r[:number])
 end
 
 def test_costpercapita_bi90
   r = spreadsheet.costpercapita_bi90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.52481087391591,r[:number])
+  assert_in_epsilon(17.524810873915907,r[:number])
 end
 
 def test_costpercapita_bj90
   r = spreadsheet.costpercapita_bj90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(44.727426912877156,r[:number])
+  assert_in_epsilon(44.72742691287714,r[:number])
 end
 
 def test_costpercapita_bk90
   r = spreadsheet.costpercapita_bk90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(71.86966684973906,r[:number])
+  assert_in_epsilon(71.86966684973905,r[:number])
 end
 
 def test_costpercapita_bl90
   r = spreadsheet.costpercapita_bl90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(82.92494418474088,r[:number])
+  assert_in_epsilon(82.92494418474087,r[:number])
 end
 
 def test_costpercapita_bm90
   r = spreadsheet.costpercapita_bm90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(84.72042447639726,r[:number])
+  assert_in_epsilon(84.72042447639724,r[:number])
 end
 
 def test_costpercapita_bn90
   r = spreadsheet.costpercapita_bn90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(85.82331438677218,r[:number])
+  assert_in_epsilon(85.82331438677217,r[:number])
 end
 
 def test_costpercapita_bo90
@@ -84515,7 +87689,7 @@ end
 def test_costpercapita_bq90
   r = spreadsheet.costpercapita_bq90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(83.06065952779294,r[:number])
+  assert_in_epsilon(83.06065952779292,r[:number])
 end
 
 def test_costpercapita_bs90
@@ -84527,31 +87701,31 @@ end
 def test_costpercapita_bt90
   r = spreadsheet.costpercapita_bt90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(71.78864464674022,r[:number])
+  assert_in_epsilon(71.78864464674021,r[:number])
 end
 
 def test_costpercapita_bu90
   r = spreadsheet.costpercapita_bu90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(101.81746501993982,r[:number])
+  assert_in_epsilon(101.8174650199398,r[:number])
 end
 
 def test_costpercapita_bv90
   r = spreadsheet.costpercapita_bv90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(115.92294256945456,r[:number])
+  assert_in_epsilon(115.92294256945453,r[:number])
 end
 
 def test_costpercapita_bw90
   r = spreadsheet.costpercapita_bw90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(120.89190045927302,r[:number])
+  assert_in_epsilon(120.89190045927299,r[:number])
 end
 
 def test_costpercapita_bx90
   r = spreadsheet.costpercapita_bx90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(125.5295495858987,r[:number])
+  assert_in_epsilon(125.52954958589869,r[:number])
 end
 
 def test_costpercapita_by90
@@ -84575,7 +87749,7 @@ end
 def test_costpercapita_cc90
   r = spreadsheet.costpercapita_cc90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(108.37226290254826,r[:number])
+  assert_in_epsilon(108.37226290254824,r[:number])
 end
 
 def test_costpercapita_cd90
@@ -84587,37 +87761,37 @@ end
 def test_costpercapita_cf90
   r = spreadsheet.costpercapita_cf90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-35.68001259122668,r[:number])
+  assert_in_epsilon(-35.680012591226685,r[:number])
 end
 
 def test_costpercapita_cg90
   r = spreadsheet.costpercapita_cg90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-5.87705024944679,r[:number])
+  assert_in_epsilon(-5.877050249446804,r[:number])
 end
 
 def test_costpercapita_ch90
   r = spreadsheet.costpercapita_ch90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.76049803358973,r[:number])
+  assert_in_epsilon(19.760498033589716,r[:number])
 end
 
 def test_costpercapita_ci90
   r = spreadsheet.costpercapita_ci90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(29.79816678535187,r[:number])
+  assert_in_epsilon(29.79816678535186,r[:number])
 end
 
 def test_costpercapita_cj90
   r = spreadsheet.costpercapita_cj90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(31.18664002174112,r[:number])
+  assert_in_epsilon(31.186640021741105,r[:number])
 end
 
 def test_costpercapita_ck90
   r = spreadsheet.costpercapita_ck90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(32.21989686795133,r[:number])
+  assert_in_epsilon(32.21989686795131,r[:number])
 end
 
 def test_costpercapita_cl90
@@ -84635,19 +87809,19 @@ end
 def test_costpercapita_cn90
   r = spreadsheet.costpercapita_cn90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(33.27046176990515,r[:number])
+  assert_in_epsilon(33.270461769905125,r[:number])
 end
 
 def test_costpercapita_cp90
   r = spreadsheet.costpercapita_cp90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.01119654823234,r[:number])
+  assert_in_epsilon(19.011196548232324,r[:number])
 end
 
 def test_costpercapita_cq90
   r = spreadsheet.costpercapita_cq90
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(399.3421170809344,r[:number])
+  assert_in_epsilon(399.342117080934,r[:number])
 end
 
 def test_costpercapita_cr90
@@ -84917,61 +88091,61 @@ end
 def test_costpercapita_ay91
   r = spreadsheet.costpercapita_ay91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5960947494985039,r[:number])
+  assert_in_epsilon(0.5960947494985038,r[:number])
 end
 
 def test_costpercapita_az91
   r = spreadsheet.costpercapita_az91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5941442449535462,r[:number])
+  assert_in_epsilon(0.5941442449535461,r[:number])
 end
 
 def test_costpercapita_ba91
   r = spreadsheet.costpercapita_ba91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6904689448976682,r[:number])
+  assert_in_epsilon(0.690468944897668,r[:number])
 end
 
 def test_costpercapita_bb91
   r = spreadsheet.costpercapita_bb91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6308700874450663,r[:number])
+  assert_in_epsilon(0.6308700874450662,r[:number])
 end
 
 def test_costpercapita_bc91
   r = spreadsheet.costpercapita_bc91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5599541247797594,r[:number])
+  assert_in_epsilon(0.5599541247797593,r[:number])
 end
 
 def test_costpercapita_bd91
   r = spreadsheet.costpercapita_bd91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5147279331693734,r[:number])
+  assert_in_epsilon(0.5147279331693733,r[:number])
 end
 
 def test_costpercapita_be91
   r = spreadsheet.costpercapita_be91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.4495060796041023,r[:number])
+  assert_in_epsilon(0.4495060796041022,r[:number])
 end
 
 def test_costpercapita_bf91
   r = spreadsheet.costpercapita_bf91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.4125880049681413,r[:number])
+  assert_in_epsilon(0.4125880049681412,r[:number])
 end
 
 def test_costpercapita_bg91
   r = spreadsheet.costpercapita_bg91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.48939975456200097,r[:number])
+  assert_in_epsilon(0.48939975456200085,r[:number])
 end
 
 def test_costpercapita_bi91
   r = spreadsheet.costpercapita_bi91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5960947494985039,r[:number])
+  assert_in_epsilon(0.5960947494985038,r[:number])
 end
 
 def test_costpercapita_bj91
@@ -84983,43 +88157,43 @@ end
 def test_costpercapita_bk91
   r = spreadsheet.costpercapita_bk91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.8227289602182197,r[:number])
+  assert_in_epsilon(1.8227289602182193,r[:number])
 end
 
 def test_costpercapita_bl91
   r = spreadsheet.costpercapita_bl91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.85685828178261,r[:number])
+  assert_in_epsilon(1.8568582817826098,r[:number])
 end
 
 def test_costpercapita_bm91
   r = spreadsheet.costpercapita_bm91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.8243987409582367,r[:number])
+  assert_in_epsilon(1.8243987409582363,r[:number])
 end
 
 def test_costpercapita_bn91
   r = spreadsheet.costpercapita_bn91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.6606719785344335,r[:number])
+  assert_in_epsilon(1.660671978534433,r[:number])
 end
 
 def test_costpercapita_bo91
   r = spreadsheet.costpercapita_bo91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.4883602412050712,r[:number])
+  assert_in_epsilon(1.4883602412050707,r[:number])
 end
 
 def test_costpercapita_bp91
   r = spreadsheet.costpercapita_bp91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.3468292369947383,r[:number])
+  assert_in_epsilon(1.3468292369947379,r[:number])
 end
 
 def test_costpercapita_bq91
   r = spreadsheet.costpercapita_bq91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.3266062882969063,r[:number])
+  assert_in_epsilon(1.326606288296906,r[:number])
 end
 
 def test_costpercapita_bs91
@@ -85103,55 +88277,55 @@ end
 def test_costpercapita_ch91
   r = spreadsheet.costpercapita_ch91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5649826055529383,r[:number])
+  assert_in_epsilon(0.5649826055529379,r[:number])
 end
 
 def test_costpercapita_ci91
   r = spreadsheet.costpercapita_ci91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.7076761808135399,r[:number])
+  assert_in_epsilon(0.7076761808135397,r[:number])
 end
 
 def test_costpercapita_cj91
   r = spreadsheet.costpercapita_cj91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.8043959378981959,r[:number])
+  assert_in_epsilon(0.8043959378981954,r[:number])
 end
 
 def test_costpercapita_ck91
   r = spreadsheet.costpercapita_ck91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.7230524282675894,r[:number])
+  assert_in_epsilon(0.7230524282675891,r[:number])
 end
 
 def test_costpercapita_cl91
   r = spreadsheet.costpercapita_cl91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6695476976434892,r[:number])
+  assert_in_epsilon(0.6695476976434889,r[:number])
 end
 
 def test_costpercapita_cm91
   r = spreadsheet.costpercapita_cm91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5952660232368632,r[:number])
+  assert_in_epsilon(0.5952660232368627,r[:number])
 end
 
 def test_costpercapita_cn91
   r = spreadsheet.costpercapita_cn91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.4351241125624611,r[:number])
+  assert_in_epsilon(0.43512411256246075,r[:number])
 end
 
 def test_costpercapita_cp91
   r = spreadsheet.costpercapita_cp91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.37496810598934477,r[:number])
+  assert_in_epsilon(0.3749681059893445,r[:number])
 end
 
 def test_costpercapita_cq91
   r = spreadsheet.costpercapita_cq91
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.508062061343812,r[:number])
+  assert_in_epsilon(9.508062061343805,r[:number])
 end
 
 def test_costpercapita_cr91
@@ -85427,49 +88601,49 @@ end
 def test_costpercapita_az92
   r = spreadsheet.costpercapita_az92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.400533602493365,r[:number])
+  assert_in_epsilon(4.400533602493363,r[:number])
 end
 
 def test_costpercapita_ba92
   r = spreadsheet.costpercapita_ba92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.9597675343395835,r[:number])
+  assert_in_epsilon(4.959767534339583,r[:number])
 end
 
 def test_costpercapita_bb92
   r = spreadsheet.costpercapita_bb92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.988600470366791,r[:number])
+  assert_in_epsilon(4.98860047036679,r[:number])
 end
 
 def test_costpercapita_bc92
   r = spreadsheet.costpercapita_bc92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.910605653076273,r[:number])
+  assert_in_epsilon(4.9106056530762725,r[:number])
 end
 
 def test_costpercapita_bd92
   r = spreadsheet.costpercapita_bd92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.891063198360035,r[:number])
+  assert_in_epsilon(4.891063198360034,r[:number])
 end
 
 def test_costpercapita_be92
   r = spreadsheet.costpercapita_be92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.718329338026901,r[:number])
+  assert_in_epsilon(4.7183293380269,r[:number])
 end
 
 def test_costpercapita_bf92
   r = spreadsheet.costpercapita_bf92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.633973555938017,r[:number])
+  assert_in_epsilon(4.633973555938016,r[:number])
 end
 
 def test_costpercapita_bg92
   r = spreadsheet.costpercapita_bg92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.523262836711725,r[:number])
+  assert_in_epsilon(4.523262836711723,r[:number])
 end
 
 def test_costpercapita_bi92
@@ -85481,7 +88655,7 @@ end
 def test_costpercapita_bj92
   r = spreadsheet.costpercapita_bj92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.234236039392305,r[:number])
+  assert_in_epsilon(7.234236039392303,r[:number])
 end
 
 def test_costpercapita_bk92
@@ -85493,7 +88667,7 @@ end
 def test_costpercapita_bl92
   r = spreadsheet.costpercapita_bl92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.919469591396853,r[:number])
+  assert_in_epsilon(13.919469591396851,r[:number])
 end
 
 def test_costpercapita_bm92
@@ -85505,25 +88679,25 @@ end
 def test_costpercapita_bn92
   r = spreadsheet.costpercapita_bn92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.42400769491924,r[:number])
+  assert_in_epsilon(14.424007694919236,r[:number])
 end
 
 def test_costpercapita_bo92
   r = spreadsheet.costpercapita_bo92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.197758161897736,r[:number])
+  assert_in_epsilon(14.197758161897733,r[:number])
 end
 
 def test_costpercapita_bp92
   r = spreadsheet.costpercapita_bp92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.949450686434588,r[:number])
+  assert_in_epsilon(13.949450686434584,r[:number])
 end
 
 def test_costpercapita_bq92
   r = spreadsheet.costpercapita_bq92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.608671107786778,r[:number])
+  assert_in_epsilon(13.608671107786774,r[:number])
 end
 
 def test_costpercapita_bs92
@@ -85547,7 +88721,7 @@ end
 def test_costpercapita_bv92
   r = spreadsheet.costpercapita_bv92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.178840359388474,r[:number])
+  assert_in_epsilon(19.17884035938847,r[:number])
 end
 
 def test_costpercapita_bw92
@@ -85559,7 +88733,7 @@ end
 def test_costpercapita_bx92
   r = spreadsheet.costpercapita_bx92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20.59702627058596,r[:number])
+  assert_in_epsilon(20.597026270585957,r[:number])
 end
 
 def test_costpercapita_by92
@@ -85601,7 +88775,7 @@ end
 def test_costpercapita_cg92
   r = spreadsheet.costpercapita_cg92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.7817002862282378,r[:number])
+  assert_in_epsilon(-0.7817002862282396,r[:number])
 end
 
 def test_costpercapita_ch92
@@ -85613,7 +88787,7 @@ end
 def test_costpercapita_ci92
   r = spreadsheet.costpercapita_ci92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.832320773407299,r[:number])
+  assert_in_epsilon(4.8323207734072975,r[:number])
 end
 
 def test_costpercapita_cj92
@@ -85625,37 +88799,37 @@ end
 def test_costpercapita_ck92
   r = spreadsheet.costpercapita_ck92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.514531094075781,r[:number])
+  assert_in_epsilon(5.514531094075778,r[:number])
 end
 
 def test_costpercapita_cl92
   r = spreadsheet.costpercapita_cl92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.602930590191221,r[:number])
+  assert_in_epsilon(5.602930590191218,r[:number])
 end
 
 def test_costpercapita_cm92
   r = spreadsheet.costpercapita_cm92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.508284156547931,r[:number])
+  assert_in_epsilon(5.508284156547928,r[:number])
 end
 
 def test_costpercapita_cn92
   r = spreadsheet.costpercapita_cn92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.369173319931491,r[:number])
+  assert_in_epsilon(5.369173319931488,r[:number])
 end
 
 def test_costpercapita_cp92
   r = spreadsheet.costpercapita_cp92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.166082656292214,r[:number])
+  assert_in_epsilon(3.166082656292213,r[:number])
 end
 
 def test_costpercapita_cq92
   r = spreadsheet.costpercapita_cq92
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(66.55597108673656,r[:number])
+  assert_in_epsilon(66.55597108673653,r[:number])
 end
 
 def test_costpercapita_cr92
@@ -85925,37 +89099,37 @@ end
 def test_costpercapita_ay93
   r = spreadsheet.costpercapita_ay93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.260809759049724,r[:number])
+  assert_in_epsilon(22.26080975904972,r[:number])
 end
 
 def test_costpercapita_az93
   r = spreadsheet.costpercapita_az93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(41.71584893846753,r[:number])
+  assert_in_epsilon(41.715848938467516,r[:number])
 end
 
 def test_costpercapita_ba93
   r = spreadsheet.costpercapita_ba93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(40.90935143916551,r[:number])
+  assert_in_epsilon(40.909351439165505,r[:number])
 end
 
 def test_costpercapita_bb93
   r = spreadsheet.costpercapita_bb93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(40.72751241407015,r[:number])
+  assert_in_epsilon(40.72751241407014,r[:number])
 end
 
 def test_costpercapita_bc93
   r = spreadsheet.costpercapita_bc93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(40.626907188921,r[:number])
+  assert_in_epsilon(40.62690718892099,r[:number])
 end
 
 def test_costpercapita_bd93
   r = spreadsheet.costpercapita_bd93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(40.61602328349755,r[:number])
+  assert_in_epsilon(40.61602328349753,r[:number])
 end
 
 def test_costpercapita_be93
@@ -85967,7 +89141,7 @@ end
 def test_costpercapita_bf93
   r = spreadsheet.costpercapita_bf93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(40.650617135419694,r[:number])
+  assert_in_epsilon(40.65061713541969,r[:number])
 end
 
 def test_costpercapita_bg93
@@ -85979,49 +89153,49 @@ end
 def test_costpercapita_bi93
   r = spreadsheet.costpercapita_bi93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.260809759049724,r[:number])
+  assert_in_epsilon(22.26080975904972,r[:number])
 end
 
 def test_costpercapita_bj93
   r = spreadsheet.costpercapita_bj93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(63.24260695412826,r[:number])
+  assert_in_epsilon(63.24260695412825,r[:number])
 end
 
 def test_costpercapita_bk93
   r = spreadsheet.costpercapita_bk93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(102.08151241215536,r[:number])
+  assert_in_epsilon(102.08151241215533,r[:number])
 end
 
 def test_costpercapita_bl93
   r = spreadsheet.costpercapita_bl93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(119.47093655674288,r[:number])
+  assert_in_epsilon(119.47093655674286,r[:number])
 end
 
 def test_costpercapita_bm93
   r = spreadsheet.costpercapita_bm93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(118.80135007262035,r[:number])
+  assert_in_epsilon(118.80135007262031,r[:number])
 end
 
 def test_costpercapita_bn93
   r = spreadsheet.costpercapita_bn93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(118.9676110464175,r[:number])
+  assert_in_epsilon(118.96761104641747,r[:number])
 end
 
 def test_costpercapita_bo93
   r = spreadsheet.costpercapita_bo93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(119.20826391138951,r[:number])
+  assert_in_epsilon(119.2082639113895,r[:number])
 end
 
 def test_costpercapita_bp93
   r = spreadsheet.costpercapita_bp93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(119.43148342773311,r[:number])
+  assert_in_epsilon(119.43148342773307,r[:number])
 end
 
 def test_costpercapita_bq93
@@ -86039,7 +89213,7 @@ end
 def test_costpercapita_bt93
   r = spreadsheet.costpercapita_bt93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(173.26949319885026,r[:number])
+  assert_in_epsilon(173.26949319885023,r[:number])
 end
 
 def test_costpercapita_bu93
@@ -86057,13 +89231,13 @@ end
 def test_costpercapita_bw93
   r = spreadsheet.costpercapita_bw93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(232.35301386749973,r[:number])
+  assert_in_epsilon(232.35301386749967,r[:number])
 end
 
 def test_costpercapita_bx93
   r = spreadsheet.costpercapita_bx93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(234.15374689120384,r[:number])
+  assert_in_epsilon(234.15374689120378,r[:number])
 end
 
 def test_costpercapita_by93
@@ -86075,7 +89249,7 @@ end
 def test_costpercapita_bz93
   r = spreadsheet.costpercapita_bz93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(238.17885691414017,r[:number])
+  assert_in_epsilon(238.1788569141401,r[:number])
 end
 
 def test_costpercapita_ca93
@@ -86087,7 +89261,7 @@ end
 def test_costpercapita_cc93
   r = spreadsheet.costpercapita_cc93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(213.9773687006174,r[:number])
+  assert_in_epsilon(213.97736870061738,r[:number])
 end
 
 def test_costpercapita_cd93
@@ -86105,43 +89279,43 @@ end
 def test_costpercapita_cg93
   r = spreadsheet.costpercapita_cg93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-12.746266002208909,r[:number])
+  assert_in_epsilon(-12.746266002208923,r[:number])
 end
 
 def test_costpercapita_ch93
   r = spreadsheet.costpercapita_ch93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.561741429613853,r[:number])
+  assert_in_epsilon(27.561741429613825,r[:number])
 end
 
 def test_costpercapita_ci93
   r = spreadsheet.costpercapita_ci93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(45.28240041486967,r[:number])
+  assert_in_epsilon(45.28240041486964,r[:number])
 end
 
 def test_costpercapita_cj93
   r = spreadsheet.costpercapita_cj93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(44.79607467857175,r[:number])
+  assert_in_epsilon(44.7960746785717,r[:number])
 end
 
 def test_costpercapita_ck93
   r = spreadsheet.costpercapita_ck93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(44.982161587296225,r[:number])
+  assert_in_epsilon(44.9821615872962,r[:number])
 end
 
 def test_costpercapita_cl93
   r = spreadsheet.costpercapita_cl93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(45.18908949923041,r[:number])
+  assert_in_epsilon(45.189089499230384,r[:number])
 end
 
 def test_costpercapita_cm93
   r = spreadsheet.costpercapita_cm93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(45.383018402929345,r[:number])
+  assert_in_epsilon(45.383018402929295,r[:number])
 end
 
 def test_costpercapita_cn93
@@ -86153,13 +89327,13 @@ end
 def test_costpercapita_cp93
   r = spreadsheet.costpercapita_cp93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(26.743348147924944,r[:number])
+  assert_in_epsilon(26.74334814792492,r[:number])
 end
 
 def test_costpercapita_cq93
   r = spreadsheet.costpercapita_cq93
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(552.2247237095884,r[:number])
+  assert_in_epsilon(552.2247237095879,r[:number])
 end
 
 def test_costpercapita_cr93
@@ -87941,109 +91115,109 @@ end
 def test_costpercapita_ay97
   r = spreadsheet.costpercapita_ay97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.4994533697606622,r[:number])
+  assert_in_epsilon(1.4994533697606618,r[:number])
 end
 
 def test_costpercapita_az97
   r = spreadsheet.costpercapita_az97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.276351288876631,r[:number])
+  assert_in_epsilon(2.2763512888766306,r[:number])
 end
 
 def test_costpercapita_ba97
   r = spreadsheet.costpercapita_ba97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.08648224537465,r[:number])
+  assert_in_epsilon(2.0864822453746497,r[:number])
 end
 
 def test_costpercapita_bb97
   r = spreadsheet.costpercapita_bb97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.9177689518223235,r[:number])
+  assert_in_epsilon(1.9177689518223227,r[:number])
 end
 
 def test_costpercapita_bc97
   r = spreadsheet.costpercapita_bc97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.7861215830875212,r[:number])
+  assert_in_epsilon(1.7861215830875206,r[:number])
 end
 
 def test_costpercapita_bd97
   r = spreadsheet.costpercapita_bd97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.684167852077093,r[:number])
+  assert_in_epsilon(1.6841678520770926,r[:number])
 end
 
 def test_costpercapita_be97
   r = spreadsheet.costpercapita_be97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.6029044736336295,r[:number])
+  assert_in_epsilon(1.602904473633629,r[:number])
 end
 
 def test_costpercapita_bf97
   r = spreadsheet.costpercapita_bf97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.5365417900539673,r[:number])
+  assert_in_epsilon(1.5365417900539668,r[:number])
 end
 
 def test_costpercapita_bg97
   r = spreadsheet.costpercapita_bg97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.4817549919258617,r[:number])
+  assert_in_epsilon(1.4817549919258615,r[:number])
 end
 
 def test_costpercapita_bi97
   r = spreadsheet.costpercapita_bi97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.4994533697606622,r[:number])
+  assert_in_epsilon(1.4994533697606618,r[:number])
 end
 
 def test_costpercapita_bj97
   r = spreadsheet.costpercapita_bj97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.726360079930724,r[:number])
+  assert_in_epsilon(3.726360079930723,r[:number])
 end
 
 def test_costpercapita_bk97
   r = spreadsheet.costpercapita_bk97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.690848188388101,r[:number])
+  assert_in_epsilon(5.6908481883881,r[:number])
 end
 
 def test_costpercapita_bl97
   r = spreadsheet.costpercapita_bl97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.073297976593124,r[:number])
+  assert_in_epsilon(6.073297976593122,r[:number])
 end
 
 def test_costpercapita_bm97
   r = spreadsheet.costpercapita_bm97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.618136295612384,r[:number])
+  assert_in_epsilon(5.618136295612382,r[:number])
 end
 
 def test_costpercapita_bn97
   r = spreadsheet.costpercapita_bn97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.249651097877796,r[:number])
+  assert_in_epsilon(5.249651097877794,r[:number])
 end
 
 def test_costpercapita_bo97
   r = spreadsheet.costpercapita_bo97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.958009111399691,r[:number])
+  assert_in_epsilon(4.958009111399689,r[:number])
 end
 
 def test_costpercapita_bp97
   r = spreadsheet.costpercapita_bp97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.722843102107811,r[:number])
+  assert_in_epsilon(4.722843102107809,r[:number])
 end
 
 def test_costpercapita_bq97
   r = spreadsheet.costpercapita_bq97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.531235823741631,r[:number])
+  assert_in_epsilon(4.53123582374163,r[:number])
 end
 
 def test_costpercapita_bs97
@@ -88073,25 +91247,25 @@ end
 def test_costpercapita_bw97
   r = spreadsheet.costpercapita_bw97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.52939014512137,r[:number])
+  assert_in_epsilon(14.529390145121367,r[:number])
 end
 
 def test_costpercapita_bx97
   r = spreadsheet.costpercapita_bx97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.711605489803889,r[:number])
+  assert_in_epsilon(13.711605489803887,r[:number])
 end
 
 def test_costpercapita_by97
   r = spreadsheet.costpercapita_by97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.05821658415058,r[:number])
+  assert_in_epsilon(13.058216584150578,r[:number])
 end
 
 def test_costpercapita_bz97
   r = spreadsheet.costpercapita_bz97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.523992306048214,r[:number])
+  assert_in_epsilon(12.523992306048212,r[:number])
 end
 
 def test_costpercapita_ca97
@@ -88109,7 +91283,7 @@ end
 def test_costpercapita_cd97
   r = spreadsheet.costpercapita_cd97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(303.1636695192746,r[:number])
+  assert_in_epsilon(303.16366951927455,r[:number])
 end
 
 def test_costpercapita_cf97
@@ -88121,61 +91295,61 @@ end
 def test_costpercapita_cg97
   r = spreadsheet.costpercapita_cg97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.42020227697082074,r[:number])
+  assert_in_epsilon(-0.42020227697082163,r[:number])
 end
 
 def test_costpercapita_ch97
   r = spreadsheet.costpercapita_ch97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.89014801557623,r[:number])
+  assert_in_epsilon(1.8901480155762285,r[:number])
 end
 
 def test_costpercapita_ci97
   r = spreadsheet.costpercapita_ci97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.5799230376199187,r[:number])
+  assert_in_epsilon(2.579923037619917,r[:number])
 end
 
 def test_costpercapita_cj97
   r = spreadsheet.costpercapita_cj97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.364567939326274,r[:number])
+  assert_in_epsilon(2.3645679393262724,r[:number])
 end
 
 def test_costpercapita_ck97
   r = spreadsheet.costpercapita_ck97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.181799904500287,r[:number])
+  assert_in_epsilon(2.1817999045002856,r[:number])
 end
 
 def test_costpercapita_cl97
   r = spreadsheet.costpercapita_cl97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.0381858905477235,r[:number])
+  assert_in_epsilon(2.038185890547722,r[:number])
 end
 
 def test_costpercapita_cm97
   r = spreadsheet.costpercapita_cm97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.9239050042942099,r[:number])
+  assert_in_epsilon(1.9239050042942083,r[:number])
 end
 
 def test_costpercapita_cn97
   r = spreadsheet.costpercapita_cn97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.8320964151212418,r[:number])
+  assert_in_epsilon(1.832096415121241,r[:number])
 end
 
 def test_costpercapita_cp97
   r = spreadsheet.costpercapita_cp97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.2597310945509608,r[:number])
+  assert_in_epsilon(1.2597310945509597,r[:number])
 end
 
 def test_costpercapita_cq97
   r = spreadsheet.costpercapita_cq97
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(29.151145613717038,r[:number])
+  assert_in_epsilon(29.151145613717016,r[:number])
 end
 
 def test_costpercapita_cr97
@@ -89957,103 +93131,103 @@ end
 def test_costpercapita_ay101
   r = spreadsheet.costpercapita_ay101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.016213002182708,r[:number])
+  assert_in_epsilon(8.016213002182706,r[:number])
 end
 
 def test_costpercapita_az101
   r = spreadsheet.costpercapita_az101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.245454116307949,r[:number])
+  assert_in_epsilon(9.245454116307945,r[:number])
 end
 
 def test_costpercapita_ba101
   r = spreadsheet.costpercapita_ba101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.979051085873186,r[:number])
+  assert_in_epsilon(11.979051085873182,r[:number])
 end
 
 def test_costpercapita_bb101
   r = spreadsheet.costpercapita_bb101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.037351520492706,r[:number])
+  assert_in_epsilon(16.037351520492702,r[:number])
 end
 
 def test_costpercapita_bc101
   r = spreadsheet.costpercapita_bc101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.088301374187775,r[:number])
+  assert_in_epsilon(18.08830137418777,r[:number])
 end
 
 def test_costpercapita_bd101
   r = spreadsheet.costpercapita_bd101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.80727165444206,r[:number])
+  assert_in_epsilon(18.807271654442054,r[:number])
 end
 
 def test_costpercapita_be101
   r = spreadsheet.costpercapita_be101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.833295888666125,r[:number])
+  assert_in_epsilon(19.83329588866612,r[:number])
 end
 
 def test_costpercapita_bf101
   r = spreadsheet.costpercapita_bf101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.94984248536138,r[:number])
+  assert_in_epsilon(21.949842485361376,r[:number])
 end
 
 def test_costpercapita_bg101
   r = spreadsheet.costpercapita_bg101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.929483229907643,r[:number])
+  assert_in_epsilon(22.92948322990764,r[:number])
 end
 
 def test_costpercapita_bi101
   r = spreadsheet.costpercapita_bi101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.016213002182708,r[:number])
+  assert_in_epsilon(8.016213002182706,r[:number])
 end
 
 def test_costpercapita_bj101
   r = spreadsheet.costpercapita_bj101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.997331939612558,r[:number])
+  assert_in_epsilon(16.997331939612554,r[:number])
 end
 
 def test_costpercapita_bk101
   r = spreadsheet.costpercapita_bk101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.419921815245434,r[:number])
+  assert_in_epsilon(28.419921815245424,r[:number])
 end
 
 def test_costpercapita_bl101
   r = spreadsheet.costpercapita_bl101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(36.3113652195887,r[:number])
+  assert_in_epsilon(36.31136521958869,r[:number])
 end
 
 def test_costpercapita_bm101
   r = spreadsheet.costpercapita_bm101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(44.978511927487844,r[:number])
+  assert_in_epsilon(44.97851192748783,r[:number])
 end
 
 def test_costpercapita_bn101
   r = spreadsheet.costpercapita_bn101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(51.70124891206005,r[:number])
+  assert_in_epsilon(51.701248912060045,r[:number])
 end
 
 def test_costpercapita_bo101
   r = spreadsheet.costpercapita_bo101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(55.52502395112889,r[:number])
+  assert_in_epsilon(55.52502395112886,r[:number])
 end
 
 def test_costpercapita_bp101
   r = spreadsheet.costpercapita_bp101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(59.426520667366205,r[:number])
+  assert_in_epsilon(59.426520667366184,r[:number])
 end
 
 def test_costpercapita_bq101
@@ -90065,49 +93239,49 @@ end
 def test_costpercapita_bs101
   r = spreadsheet.costpercapita_bs101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.07927343897588,r[:number])
+  assert_in_epsilon(8.079273438975878,r[:number])
 end
 
 def test_costpercapita_bt101
   r = spreadsheet.costpercapita_bt101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.063107817624097,r[:number])
+  assert_in_epsilon(17.063107817624093,r[:number])
 end
 
 def test_costpercapita_bu101
   r = spreadsheet.costpercapita_bu101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.490762260129717,r[:number])
+  assert_in_epsilon(28.490762260129706,r[:number])
 end
 
 def test_costpercapita_bv101
   r = spreadsheet.costpercapita_bv101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(36.39065365952098,r[:number])
+  assert_in_epsilon(36.390653659520964,r[:number])
 end
 
 def test_costpercapita_bw101
   r = spreadsheet.costpercapita_bw101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(45.06596095736795,r[:number])
+  assert_in_epsilon(45.065960957367935,r[:number])
 end
 
 def test_costpercapita_bx101
   r = spreadsheet.costpercapita_bx101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(51.7949461911032,r[:number])
+  assert_in_epsilon(51.79494619110319,r[:number])
 end
 
 def test_costpercapita_by101
   r = spreadsheet.costpercapita_by101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(55.62376233573985,r[:number])
+  assert_in_epsilon(55.623762335739826,r[:number])
 end
 
 def test_costpercapita_bz101
   r = spreadsheet.costpercapita_bz101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(59.530448510129645,r[:number])
+  assert_in_epsilon(59.530448510129624,r[:number])
 end
 
 def test_costpercapita_ca101
@@ -90119,13 +93293,13 @@ end
 def test_costpercapita_cc101
   r = spreadsheet.costpercapita_cc101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(40.632393089463285,r[:number])
+  assert_in_epsilon(40.63239308946328,r[:number])
 end
 
 def test_costpercapita_cd101
   r = spreadsheet.costpercapita_cd101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(787.2723791575552,r[:number])
+  assert_in_epsilon(787.2723791575551,r[:number])
 end
 
 def test_costpercapita_cf101
@@ -90137,43 +93311,43 @@ end
 def test_costpercapita_cg101
   r = spreadsheet.costpercapita_cg101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.15597173370953105,r[:number])
+  assert_in_epsilon(0.15597173370952752,r[:number])
 end
 
 def test_costpercapita_ch101
   r = spreadsheet.costpercapita_ch101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.5990883846569774,r[:number])
+  assert_in_epsilon(6.599088384656968,r[:number])
 end
 
 def test_costpercapita_ci101
   r = spreadsheet.costpercapita_ci101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.098001515917909,r[:number])
+  assert_in_epsilon(7.098001515917896,r[:number])
 end
 
 def test_costpercapita_cj101
   r = spreadsheet.costpercapita_cj101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.029173244567877,r[:number])
+  assert_in_epsilon(12.029173244567865,r[:number])
 end
 
 def test_costpercapita_ck101
   r = spreadsheet.costpercapita_ck101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.442246332183036,r[:number])
+  assert_in_epsilon(17.442246332183025,r[:number])
 end
 
 def test_costpercapita_cl101
   r = spreadsheet.costpercapita_cl101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.397033272757717,r[:number])
+  assert_in_epsilon(19.397033272757692,r[:number])
 end
 
 def test_costpercapita_cm101
   r = spreadsheet.costpercapita_cm101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.443065110893677,r[:number])
+  assert_in_epsilon(19.443065110893652,r[:number])
 end
 
 def test_costpercapita_cn101
@@ -90185,13 +93359,13 @@ end
 def test_costpercapita_cp101
   r = spreadsheet.costpercapita_cp101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.735608139059785,r[:number])
+  assert_in_epsilon(9.735608139059776,r[:number])
 end
 
 def test_costpercapita_cq101
   r = spreadsheet.costpercapita_cq101
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(189.33729292272534,r[:number])
+  assert_in_epsilon(189.3372929227252,r[:number])
 end
 
 def test_costpercapita_cr101
@@ -91973,49 +95147,49 @@ end
 def test_costpercapita_ay105
   r = spreadsheet.costpercapita_ay105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.23361601710050048,r[:number])
+  assert_in_epsilon(0.2336160171005004,r[:number])
 end
 
 def test_costpercapita_az105
   r = spreadsheet.costpercapita_az105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.25975658602453133,r[:number])
+  assert_in_epsilon(0.2597565860245313,r[:number])
 end
 
 def test_costpercapita_ba105
   r = spreadsheet.costpercapita_ba105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.26547699219463927,r[:number])
+  assert_in_epsilon(0.26547699219463916,r[:number])
 end
 
 def test_costpercapita_bb105
   r = spreadsheet.costpercapita_bb105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.3031045490915528,r[:number])
+  assert_in_epsilon(0.30310454909155277,r[:number])
 end
 
 def test_costpercapita_bc105
   r = spreadsheet.costpercapita_bc105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.3215189868500755,r[:number])
+  assert_in_epsilon(0.32151898685007546,r[:number])
 end
 
 def test_costpercapita_bd105
   r = spreadsheet.costpercapita_bd105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.3427894719794951,r[:number])
+  assert_in_epsilon(0.342789471979495,r[:number])
 end
 
 def test_costpercapita_be105
   r = spreadsheet.costpercapita_be105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.36675066017980396,r[:number])
+  assert_in_epsilon(0.36675066017980384,r[:number])
 end
 
 def test_costpercapita_bf105
   r = spreadsheet.costpercapita_bf105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.3934157807960944,r[:number])
+  assert_in_epsilon(0.39341578079609424,r[:number])
 end
 
 def test_costpercapita_bg105
@@ -92027,187 +95201,187 @@ end
 def test_costpercapita_bi105
   r = spreadsheet.costpercapita_bi105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.23361601710050048,r[:number])
+  assert_in_epsilon(0.2336160171005004,r[:number])
 end
 
 def test_costpercapita_bj105
   r = spreadsheet.costpercapita_bj105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.48566909878298964,r[:number])
+  assert_in_epsilon(0.48566909878298953,r[:number])
 end
 
 def test_costpercapita_bk105
   r = spreadsheet.costpercapita_bk105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.7352461829541076,r[:number])
+  assert_in_epsilon(0.7352461829541073,r[:number])
 end
 
 def test_costpercapita_bl105
   r = spreadsheet.costpercapita_bl105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.8038344323269108,r[:number])
+  assert_in_epsilon(0.8038344323269104,r[:number])
 end
 
 def test_costpercapita_bm105
   r = spreadsheet.costpercapita_bm105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.8665712773567756,r[:number])
+  assert_in_epsilon(0.8665712773567754,r[:number])
 end
 
 def test_costpercapita_bn105
   r = spreadsheet.costpercapita_bn105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.9446137647060749,r[:number])
+  assert_in_epsilon(0.9446137647060746,r[:number])
 end
 
 def test_costpercapita_bo105
   r = spreadsheet.costpercapita_bo105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.009479734360217,r[:number])
+  assert_in_epsilon(1.0094797343602169,r[:number])
 end
 
 def test_costpercapita_bp105
   r = spreadsheet.costpercapita_bp105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0816374271941853,r[:number])
+  assert_in_epsilon(1.0816374271941849,r[:number])
 end
 
 def test_costpercapita_bq105
   r = spreadsheet.costpercapita_bq105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1618747912817473,r[:number])
+  assert_in_epsilon(1.161874791281747,r[:number])
 end
 
 def test_costpercapita_bs105
   r = spreadsheet.costpercapita_bs105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.3469351022762306,r[:number])
+  assert_in_epsilon(0.3469351022762305,r[:number])
 end
 
 def test_costpercapita_bt105
   r = spreadsheet.costpercapita_bt105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6006461556728742,r[:number])
+  assert_in_epsilon(0.600646155672874,r[:number])
 end
 
 def test_costpercapita_bu105
   r = spreadsheet.costpercapita_bu105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.8521030330260835,r[:number])
+  assert_in_epsilon(0.8521030330260831,r[:number])
 end
 
 def test_costpercapita_bv105
   r = spreadsheet.costpercapita_bv105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.9258063972914097,r[:number])
+  assert_in_epsilon(0.9258063972914095,r[:number])
 end
 
 def test_costpercapita_bw105
   r = spreadsheet.costpercapita_bw105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.9947213436960127,r[:number])
+  assert_in_epsilon(0.9947213436960125,r[:number])
 end
 
 def test_costpercapita_bx105
   r = spreadsheet.costpercapita_bx105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0801109036639915,r[:number])
+  assert_in_epsilon(1.080110903663991,r[:number])
 end
 
 def test_costpercapita_by105
   r = spreadsheet.costpercapita_by105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1533892979654305,r[:number])
+  assert_in_epsilon(1.1533892979654303,r[:number])
 end
 
 def test_costpercapita_bz105
   r = spreadsheet.costpercapita_bz105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.2350017868341394,r[:number])
+  assert_in_epsilon(1.235001786834139,r[:number])
 end
 
 def test_costpercapita_ca105
   r = spreadsheet.costpercapita_ca105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.3258265812016659,r[:number])
+  assert_in_epsilon(1.3258265812016656,r[:number])
 end
 
 def test_costpercapita_cc105
   r = spreadsheet.costpercapita_cc105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.9460600668475377,r[:number])
+  assert_in_epsilon(0.9460600668475373,r[:number])
 end
 
 def test_costpercapita_cd105
   r = spreadsheet.costpercapita_cd105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.153564158434936,r[:number])
+  assert_in_epsilon(19.15356415843493,r[:number])
 end
 
 def test_costpercapita_cf105
   r = spreadsheet.costpercapita_cf105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.4756355142219881,r[:number])
+  assert_in_epsilon(-0.4756355142219882,r[:number])
 end
 
 def test_costpercapita_cg105
   r = spreadsheet.costpercapita_cg105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.012500969228556166,r[:number])
+  assert_in_epsilon(0.012500969228556055,r[:number])
 end
 
 def test_costpercapita_ch105
   r = spreadsheet.costpercapita_ch105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.2516578599053463,r[:number])
+  assert_in_epsilon(0.251657859905346,r[:number])
 end
 
 def test_costpercapita_ci105
   r = spreadsheet.costpercapita_ci105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.25170439879026146,r[:number])
+  assert_in_epsilon(0.25170439879026113,r[:number])
 end
 
 def test_costpercapita_cj105
   r = spreadsheet.costpercapita_cj105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.2808978207087145,r[:number])
+  assert_in_epsilon(0.2808978207087142,r[:number])
 end
 
 def test_costpercapita_ck105
   r = spreadsheet.costpercapita_ck105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.32019435817687264,r[:number])
+  assert_in_epsilon(0.32019435817687225,r[:number])
 end
 
 def test_costpercapita_cl105
   r = spreadsheet.costpercapita_cl105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.3414130395132849,r[:number])
+  assert_in_epsilon(0.34141303951328467,r[:number])
 end
 
 def test_costpercapita_cm105
   r = spreadsheet.costpercapita_cm105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.36499800724544573,r[:number])
+  assert_in_epsilon(0.36499800724544534,r[:number])
 end
 
 def test_costpercapita_cn105
   r = spreadsheet.costpercapita_cn105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.3912109023337669,r[:number])
+  assert_in_epsilon(0.39121090233376665,r[:number])
 end
 
 def test_costpercapita_cp105
   r = spreadsheet.costpercapita_cp105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.19321576018669562,r[:number])
+  assert_in_epsilon(0.19321576018669534,r[:number])
 end
 
 def test_costpercapita_cq105
   r = spreadsheet.costpercapita_cq105
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.291133194883749,r[:number])
+  assert_in_epsilon(4.291133194883743,r[:number])
 end
 
 def test_costpercapita_cr105
@@ -92483,13 +95657,13 @@ end
 def test_costpercapita_az106
   r = spreadsheet.costpercapita_az106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0964859969696743,r[:number])
+  assert_in_epsilon(1.096485996969674,r[:number])
 end
 
 def test_costpercapita_ba106
   r = spreadsheet.costpercapita_ba106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.4984348378729404,r[:number])
+  assert_in_epsilon(2.4984348378729395,r[:number])
 end
 
 def test_costpercapita_bb106
@@ -92501,31 +95675,31 @@ end
 def test_costpercapita_bc106
   r = spreadsheet.costpercapita_bc106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.257961634893102,r[:number])
+  assert_in_epsilon(2.2579616348931015,r[:number])
 end
 
 def test_costpercapita_bd106
   r = spreadsheet.costpercapita_bd106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.160315364984719,r[:number])
+  assert_in_epsilon(2.160315364984718,r[:number])
 end
 
 def test_costpercapita_be106
   r = spreadsheet.costpercapita_be106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.109453505201304,r[:number])
+  assert_in_epsilon(2.1094535052013037,r[:number])
 end
 
 def test_costpercapita_bf106
   r = spreadsheet.costpercapita_bf106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.0265751805699157,r[:number])
+  assert_in_epsilon(2.0265751805699153,r[:number])
 end
 
 def test_costpercapita_bg106
   r = spreadsheet.costpercapita_bg106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.9502783615019372,r[:number])
+  assert_in_epsilon(1.9502783615019366,r[:number])
 end
 
 def test_costpercapita_bi106
@@ -92537,31 +95711,31 @@ end
 def test_costpercapita_bj106
   r = spreadsheet.costpercapita_bj106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0964859969696743,r[:number])
+  assert_in_epsilon(1.096485996969674,r[:number])
 end
 
 def test_costpercapita_bk106
   r = spreadsheet.costpercapita_bk106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.5590239113105557,r[:number])
+  assert_in_epsilon(3.5590239113105544,r[:number])
 end
 
 def test_costpercapita_bl106
   r = spreadsheet.costpercapita_bl106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.81899730300039,r[:number])
+  assert_in_epsilon(5.818997303000389,r[:number])
 end
 
 def test_costpercapita_bm106
   r = spreadsheet.costpercapita_bm106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.918311765330575,r[:number])
+  assert_in_epsilon(6.918311765330572,r[:number])
 end
 
 def test_costpercapita_bn106
   r = spreadsheet.costpercapita_bn106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.6162030242339975,r[:number])
+  assert_in_epsilon(6.616203024233996,r[:number])
 end
 
 def test_costpercapita_bo106
@@ -92573,13 +95747,13 @@ end
 def test_costpercapita_bp106
   r = spreadsheet.costpercapita_bp106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.166018335319416,r[:number])
+  assert_in_epsilon(6.166018335319414,r[:number])
 end
 
 def test_costpercapita_bq106
   r = spreadsheet.costpercapita_bq106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.967827625244578,r[:number])
+  assert_in_epsilon(5.967827625244577,r[:number])
 end
 
 def test_costpercapita_bs106
@@ -92591,31 +95765,31 @@ end
 def test_costpercapita_bt106
   r = spreadsheet.costpercapita_bt106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1575475351409918,r[:number])
+  assert_in_epsilon(1.1575475351409916,r[:number])
 end
 
 def test_costpercapita_bu106
   r = spreadsheet.costpercapita_bu106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.698157721174931,r[:number])
+  assert_in_epsilon(3.6981577211749297,r[:number])
 end
 
 def test_costpercapita_bv106
   r = spreadsheet.costpercapita_bv106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.950988425533525,r[:number])
+  assert_in_epsilon(5.950988425533524,r[:number])
 end
 
 def test_costpercapita_bw106
   r = spreadsheet.costpercapita_bw106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.044054010046363,r[:number])
+  assert_in_epsilon(7.04405401004636,r[:number])
 end
 
 def test_costpercapita_bx106
   r = spreadsheet.costpercapita_bx106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.736507505536687,r[:number])
+  assert_in_epsilon(6.736507505536685,r[:number])
 end
 
 def test_costpercapita_by106
@@ -92627,7 +95801,7 @@ end
 def test_costpercapita_bz106
   r = spreadsheet.costpercapita_bz106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.278875041275906,r[:number])
+  assert_in_epsilon(6.278875041275904,r[:number])
 end
 
 def test_costpercapita_ca106
@@ -92639,13 +95813,13 @@ end
 def test_costpercapita_cc106
   r = spreadsheet.costpercapita_cc106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.826832095537668,r[:number])
+  assert_in_epsilon(4.826832095537667,r[:number])
 end
 
 def test_costpercapita_cd106
   r = spreadsheet.costpercapita_cd106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(96.97518739066042,r[:number])
+  assert_in_epsilon(96.97518739066041,r[:number])
 end
 
 def test_costpercapita_cf106
@@ -92657,31 +95831,31 @@ end
 def test_costpercapita_cg106
   r = spreadsheet.costpercapita_cg106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.900854036671558,r[:number])
+  assert_in_epsilon(-0.9008540366715582,r[:number])
 end
 
 def test_costpercapita_ch106
   r = spreadsheet.costpercapita_ch106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.9920820188325541,r[:number])
+  assert_in_epsilon(-0.9920820188325553,r[:number])
 end
 
 def test_costpercapita_ci106
   r = spreadsheet.costpercapita_ci106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.5015306780847435,r[:number])
+  assert_in_epsilon(1.5015306780847428,r[:number])
 end
 
 def test_costpercapita_cj106
   r = spreadsheet.costpercapita_cj106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.8052476858421698,r[:number])
+  assert_in_epsilon(2.8052476858421675,r[:number])
 end
 
 def test_costpercapita_ck106
   r = spreadsheet.costpercapita_ck106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.681009710594638,r[:number])
+  assert_in_epsilon(2.6810097105946364,r[:number])
 end
 
 def test_costpercapita_cl106
@@ -92693,25 +95867,25 @@ end
 def test_costpercapita_cm106
   r = spreadsheet.costpercapita_cm106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.4744438414155496,r[:number])
+  assert_in_epsilon(2.4744438414155483,r[:number])
 end
 
 def test_costpercapita_cn106
   r = spreadsheet.costpercapita_cn106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.4152341047276162,r[:number])
+  assert_in_epsilon(2.415234104727616,r[:number])
 end
 
 def test_costpercapita_cp106
   r = spreadsheet.costpercapita_cp106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.391492979007233,r[:number])
+  assert_in_epsilon(1.3914929790072321,r[:number])
 end
 
 def test_costpercapita_cq106
   r = spreadsheet.costpercapita_cq106
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.42023722138978,r[:number])
+  assert_in_epsilon(21.42023722138976,r[:number])
 end
 
 def test_costpercapita_cr106
@@ -92969,79 +96143,79 @@ end
 def test_costpercapita_ay107
   r = spreadsheet.costpercapita_ay107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(472.38865276400895,r[:number])
+  assert_in_epsilon(472.3886527640088,r[:number])
 end
 
 def test_costpercapita_az107
   r = spreadsheet.costpercapita_az107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(788.3616427121515,r[:number])
+  assert_in_epsilon(788.3616427121513,r[:number])
 end
 
 def test_costpercapita_ba107
   r = spreadsheet.costpercapita_ba107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(821.3516625364157,r[:number])
+  assert_in_epsilon(821.3516625364155,r[:number])
 end
 
 def test_costpercapita_bb107
   r = spreadsheet.costpercapita_bb107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(861.0880982557663,r[:number])
+  assert_in_epsilon(861.0880982557662,r[:number])
 end
 
 def test_costpercapita_bc107
   r = spreadsheet.costpercapita_bc107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(861.2486567405148,r[:number])
+  assert_in_epsilon(861.2486567405145,r[:number])
 end
 
 def test_costpercapita_bd107
   r = spreadsheet.costpercapita_bd107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(886.9121710126192,r[:number])
+  assert_in_epsilon(886.912171012619,r[:number])
 end
 
 def test_costpercapita_be107
   r = spreadsheet.costpercapita_be107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(912.8208883053321,r[:number])
+  assert_in_epsilon(912.8208883053319,r[:number])
 end
 
 def test_costpercapita_bf107
   r = spreadsheet.costpercapita_bf107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(926.2166545513803,r[:number])
+  assert_in_epsilon(926.2166545513799,r[:number])
 end
 
 def test_costpercapita_bg107
   r = spreadsheet.costpercapita_bg107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(938.7083799865654,r[:number])
+  assert_in_epsilon(938.708379986565,r[:number])
 end
 
 def test_costpercapita_bi107
   r = spreadsheet.costpercapita_bi107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(472.38865276400895,r[:number])
+  assert_in_epsilon(472.3886527640088,r[:number])
 end
 
 def test_costpercapita_bj107
   r = spreadsheet.costpercapita_bj107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1245.1732469378594,r[:number])
+  assert_in_epsilon(1245.1732469378592,r[:number])
 end
 
 def test_costpercapita_bk107
   r = spreadsheet.costpercapita_bk107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2025.7602403831745,r[:number])
+  assert_in_epsilon(2025.7602403831743,r[:number])
 end
 
 def test_costpercapita_bl107
   r = spreadsheet.costpercapita_bl107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2395.9487360193166,r[:number])
+  assert_in_epsilon(2395.948736019316,r[:number])
 end
 
 def test_costpercapita_bm107
@@ -93065,13 +96239,13 @@ end
 def test_costpercapita_bp107
   r = spreadsheet.costpercapita_bp107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2671.5114492449934,r[:number])
+  assert_in_epsilon(2671.511449244993,r[:number])
 end
 
 def test_costpercapita_bq107
   r = spreadsheet.costpercapita_bq107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2725.5572175454804,r[:number])
+  assert_in_epsilon(2725.55721754548,r[:number])
 end
 
 def test_costpercapita_bs107
@@ -93083,7 +96257,7 @@ end
 def test_costpercapita_bt107
   r = spreadsheet.costpercapita_bt107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3522.366477933327,r[:number])
+  assert_in_epsilon(3522.3664779333267,r[:number])
 end
 
 def test_costpercapita_bu107
@@ -93119,13 +96293,13 @@ end
 def test_costpercapita_bz107
   r = spreadsheet.costpercapita_bz107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5442.667594847409,r[:number])
+  assert_in_epsilon(5442.6675948474085,r[:number])
 end
 
 def test_costpercapita_ca107
   r = spreadsheet.costpercapita_ca107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5510.630743412228,r[:number])
+  assert_in_epsilon(5510.630743412227,r[:number])
 end
 
 def test_costpercapita_cc107
@@ -93137,31 +96311,31 @@ end
 def test_costpercapita_cd107
   r = spreadsheet.costpercapita_cd107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(97138.08402730903,r[:number])
+  assert_in_epsilon(97138.084027309,r[:number])
 end
 
 def test_costpercapita_cf107
   r = spreadsheet.costpercapita_cf107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-961.769756023977,r[:number])
+  assert_in_epsilon(-961.7697560239772,r[:number])
 end
 
 def test_costpercapita_cg107
   r = spreadsheet.costpercapita_cg107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-190.89276241191166,r[:number])
+  assert_in_epsilon(-190.8927624119119,r[:number])
 end
 
 def test_costpercapita_ch107
   r = spreadsheet.costpercapita_ch107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(529.600178316155,r[:number])
+  assert_in_epsilon(529.6001783161546,r[:number])
 end
 
 def test_costpercapita_ci107
   r = spreadsheet.costpercapita_ci107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(827.4054660720178,r[:number])
+  assert_in_epsilon(827.4054660720174,r[:number])
 end
 
 def test_costpercapita_cj107
@@ -93185,25 +96359,25 @@ end
 def test_costpercapita_cm107
   r = spreadsheet.costpercapita_cm107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(984.3311212942222,r[:number])
+  assert_in_epsilon(984.3311212942217,r[:number])
 end
 
 def test_costpercapita_cn107
   r = spreadsheet.costpercapita_cn107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1015.6221773868889,r[:number])
+  assert_in_epsilon(1015.6221773868882,r[:number])
 end
 
 def test_costpercapita_cp107
   r = spreadsheet.costpercapita_cp107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(553.2929985471998,r[:number])
+  assert_in_epsilon(553.2929985471995,r[:number])
 end
 
 def test_costpercapita_cq107
   r = spreadsheet.costpercapita_cq107
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11356.24484691689,r[:number])
+  assert_in_epsilon(11356.244846916878,r[:number])
 end
 
 def test_costpercapita_cr107
@@ -94133,109 +97307,109 @@ end
 def test_costpercapita_ay112
   r = spreadsheet.costpercapita_ay112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.826377470060789,r[:number])
+  assert_in_epsilon(2.8263774700607867,r[:number])
 end
 
 def test_costpercapita_az112
   r = spreadsheet.costpercapita_az112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.209690257872083,r[:number])
+  assert_in_epsilon(17.209690257872072,r[:number])
 end
 
 def test_costpercapita_ba112
   r = spreadsheet.costpercapita_ba112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(25.426573449476496,r[:number])
+  assert_in_epsilon(25.426573449476486,r[:number])
 end
 
 def test_costpercapita_bb112
   r = spreadsheet.costpercapita_bb112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(33.91713258155319,r[:number])
+  assert_in_epsilon(33.917132581553176,r[:number])
 end
 
 def test_costpercapita_bc112
   r = spreadsheet.costpercapita_bc112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(36.76508721655307,r[:number])
+  assert_in_epsilon(36.765087216553056,r[:number])
 end
 
 def test_costpercapita_bd112
   r = spreadsheet.costpercapita_bd112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(37.175191783993654,r[:number])
+  assert_in_epsilon(37.17519178399364,r[:number])
 end
 
 def test_costpercapita_be112
   r = spreadsheet.costpercapita_be112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(91.98915715553001,r[:number])
+  assert_in_epsilon(91.98915715552997,r[:number])
 end
 
 def test_costpercapita_bf112
   r = spreadsheet.costpercapita_bf112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(92.75279776076542,r[:number])
+  assert_in_epsilon(92.75279776076538,r[:number])
 end
 
 def test_costpercapita_bg112
   r = spreadsheet.costpercapita_bg112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(90.76159610233057,r[:number])
+  assert_in_epsilon(90.76159610233051,r[:number])
 end
 
 def test_costpercapita_bi112
   r = spreadsheet.costpercapita_bi112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.826377470060789,r[:number])
+  assert_in_epsilon(2.8263774700607867,r[:number])
 end
 
 def test_costpercapita_bj112
   r = spreadsheet.costpercapita_bj112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.942867735128026,r[:number])
+  assert_in_epsilon(19.942867735128015,r[:number])
 end
 
 def test_costpercapita_bk112
   r = spreadsheet.costpercapita_bk112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(44.716548580342966,r[:number])
+  assert_in_epsilon(44.71654858034294,r[:number])
 end
 
 def test_costpercapita_bl112
   r = spreadsheet.costpercapita_bl112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(74.68726122275476,r[:number])
+  assert_in_epsilon(74.68726122275473,r[:number])
 end
 
 def test_costpercapita_bm112
   r = spreadsheet.costpercapita_bm112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(93.72172807018907,r[:number])
+  assert_in_epsilon(93.72172807018903,r[:number])
 end
 
 def test_costpercapita_bn112
   r = spreadsheet.costpercapita_bn112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(105.28764866662904,r[:number])
+  assert_in_epsilon(105.28764866662898,r[:number])
 end
 
 def test_costpercapita_bo112
   r = spreadsheet.costpercapita_bo112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(163.50499922566772,r[:number])
+  assert_in_epsilon(163.50499922566766,r[:number])
 end
 
 def test_costpercapita_bp112
   r = spreadsheet.costpercapita_bp112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(218.56358837305405,r[:number])
+  assert_in_epsilon(218.56358837305393,r[:number])
 end
 
 def test_costpercapita_bq112
   r = spreadsheet.costpercapita_bq112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(270.2551968797408,r[:number])
+  assert_in_epsilon(270.2551968797407,r[:number])
 end
 
 def test_costpercapita_bs112
@@ -94259,7 +97433,7 @@ end
 def test_costpercapita_bv112
   r = spreadsheet.costpercapita_bv112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(149.88873337637096,r[:number])
+  assert_in_epsilon(149.8887333763709,r[:number])
 end
 
 def test_costpercapita_bw112
@@ -94271,103 +97445,103 @@ end
 def test_costpercapita_bx112
   r = spreadsheet.costpercapita_bx112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(182.8213261493012,r[:number])
+  assert_in_epsilon(182.82132614930111,r[:number])
 end
 
 def test_costpercapita_by112
   r = spreadsheet.costpercapita_by112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(245.0936928327295,r[:number])
+  assert_in_epsilon(245.0936928327294,r[:number])
 end
 
 def test_costpercapita_bz112
   r = spreadsheet.costpercapita_bz112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(304.0963635777757,r[:number])
+  assert_in_epsilon(304.0963635777756,r[:number])
 end
 
 def test_costpercapita_ca112
   r = spreadsheet.costpercapita_ca112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(358.15472666641705,r[:number])
+  assert_in_epsilon(358.1547266664169,r[:number])
 end
 
 def test_costpercapita_cc112
   r = spreadsheet.costpercapita_cc112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(192.44624131325511,r[:number])
+  assert_in_epsilon(192.4462413132551,r[:number])
 end
 
 def test_costpercapita_cd112
   r = spreadsheet.costpercapita_cd112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3606.511048810738,r[:number])
+  assert_in_epsilon(3606.511048810736,r[:number])
 end
 
 def test_costpercapita_cf112
   r = spreadsheet.costpercapita_cf112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-4.339506447312891,r[:number])
+  assert_in_epsilon(-4.339506447312893,r[:number])
 end
 
 def test_costpercapita_cg112
   r = spreadsheet.costpercapita_cg112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-6.23678674093508,r[:number])
+  assert_in_epsilon(-6.236786740935091,r[:number])
 end
 
 def test_costpercapita_ch112
   r = spreadsheet.costpercapita_ch112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.037240734401464,r[:number])
+  assert_in_epsilon(6.037240734401436,r[:number])
 end
 
 def test_costpercapita_ci112
   r = spreadsheet.costpercapita_ci112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(23.091979814495676,r[:number])
+  assert_in_epsilon(23.09197981449565,r[:number])
 end
 
 def test_costpercapita_cj112
   r = spreadsheet.costpercapita_cj112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(37.794092785096296,r[:number])
+  assert_in_epsilon(37.794092785096254,r[:number])
 end
 
 def test_costpercapita_ck112
   r = spreadsheet.costpercapita_ck112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(48.73615579236561,r[:number])
+  assert_in_epsilon(48.736155792365544,r[:number])
 end
 
 def test_costpercapita_cl112
   r = spreadsheet.costpercapita_cl112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(23.569630617016504,r[:number])
+  assert_in_epsilon(23.56963061701643,r[:number])
 end
 
 def test_costpercapita_cm112
   r = spreadsheet.costpercapita_cm112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(77.46655753286963,r[:number])
+  assert_in_epsilon(77.46655753286954,r[:number])
 end
 
 def test_costpercapita_cn112
   r = spreadsheet.costpercapita_cn112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(132.18721366498613,r[:number])
+  assert_in_epsilon(132.187213664986,r[:number])
 end
 
 def test_costpercapita_cp112
   r = spreadsheet.costpercapita_cp112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(37.58961975033148,r[:number])
+  assert_in_epsilon(37.58961975033143,r[:number])
 end
 
 def test_costpercapita_cq112
   r = spreadsheet.costpercapita_cq112
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(594.0463500499945,r[:number])
+  assert_in_epsilon(594.0463500499936,r[:number])
 end
 
 def test_costpercapita_cr112
@@ -94643,19 +97817,19 @@ end
 def test_costpercapita_az113
   r = spreadsheet.costpercapita_az113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.838715283591352,r[:number])
+  assert_in_epsilon(4.838715283591349,r[:number])
 end
 
 def test_costpercapita_ba113
   r = spreadsheet.costpercapita_ba113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.978458615090498,r[:number])
+  assert_in_epsilon(6.978458615090494,r[:number])
 end
 
 def test_costpercapita_bb113
   r = spreadsheet.costpercapita_bb113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-8.832648714332781e-16,r[:number])
+  assert_in_epsilon(-8.832648714332777e-16,r[:number])
 end
 
 def test_costpercapita_bc113
@@ -94697,31 +97871,31 @@ end
 def test_costpercapita_bj113
   r = spreadsheet.costpercapita_bj113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.838715283591352,r[:number])
+  assert_in_epsilon(4.838715283591349,r[:number])
 end
 
 def test_costpercapita_bk113
   r = spreadsheet.costpercapita_bk113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.658763309756392,r[:number])
+  assert_in_epsilon(11.658763309756385,r[:number])
 end
 
 def test_costpercapita_bl113
   r = spreadsheet.costpercapita_bl113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.29776748637779,r[:number])
+  assert_in_epsilon(11.297767486377785,r[:number])
 end
 
 def test_costpercapita_bm113
   r = spreadsheet.costpercapita_bm113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.577631995872667,r[:number])
+  assert_in_epsilon(6.577631995872663,r[:number])
 end
 
 def test_costpercapita_bn113
   r = spreadsheet.costpercapita_bn113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-8.388964421670584e-16,r[:number])
+  assert_in_epsilon(-8.38896442167058e-16,r[:number])
 end
 
 def test_costpercapita_bo113
@@ -94751,25 +97925,25 @@ end
 def test_costpercapita_bt113
   r = spreadsheet.costpercapita_bt113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.782170723429586,r[:number])
+  assert_in_epsilon(6.782170723429584,r[:number])
 end
 
 def test_costpercapita_bu113
   r = spreadsheet.costpercapita_bu113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.621364412832698,r[:number])
+  assert_in_epsilon(15.62136441283269,r[:number])
 end
 
 def test_costpercapita_bv113
   r = spreadsheet.costpercapita_bv113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.137672690247625,r[:number])
+  assert_in_epsilon(15.137672690247618,r[:number])
 end
 
 def test_costpercapita_bw113
   r = spreadsheet.costpercapita_bw113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.312630401697133,r[:number])
+  assert_in_epsilon(10.31263040169713,r[:number])
 end
 
 def test_costpercapita_bx113
@@ -94799,13 +97973,13 @@ end
 def test_costpercapita_cc113
   r = spreadsheet.costpercapita_cc113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.888988819243135,r[:number])
+  assert_in_epsilon(6.8889888192431314,r[:number])
 end
 
 def test_costpercapita_cd113
   r = spreadsheet.costpercapita_cd113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(179.0147692802754,r[:number])
+  assert_in_epsilon(179.01476928027537,r[:number])
 end
 
 def test_costpercapita_cf113
@@ -94817,31 +97991,31 @@ end
 def test_costpercapita_cg113
   r = spreadsheet.costpercapita_cg113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-2.5220153474856963,r[:number])
+  assert_in_epsilon(-2.522015347485699,r[:number])
 end
 
 def test_costpercapita_ch113
   r = spreadsheet.costpercapita_ch113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0430210981842167,r[:number])
+  assert_in_epsilon(1.04302109818421,r[:number])
 end
 
 def test_costpercapita_ci113
   r = spreadsheet.costpercapita_ci113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.297767486377792,r[:number])
+  assert_in_epsilon(11.297767486377785,r[:number])
 end
 
 def test_costpercapita_cj113
   r = spreadsheet.costpercapita_cj113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.577631995872667,r[:number])
+  assert_in_epsilon(6.577631995872663,r[:number])
 end
 
 def test_costpercapita_ck113
   r = spreadsheet.costpercapita_ck113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-8.388964421670584e-16,r[:number])
+  assert_in_epsilon(-8.38896442167058e-16,r[:number])
 end
 
 def test_costpercapita_cl113
@@ -94865,13 +98039,13 @@ end
 def test_costpercapita_cp113
   r = spreadsheet.costpercapita_cp113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.8218228036609976,r[:number])
+  assert_in_epsilon(1.8218228036609954,r[:number])
 end
 
 def test_costpercapita_cq113
   r = spreadsheet.costpercapita_cq113
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(43.325864480528665,r[:number])
+  assert_in_epsilon(43.325864480528615,r[:number])
 end
 
 def test_costpercapita_cr113
@@ -95645,25 +98819,25 @@ end
 def test_costpercapita_ay115
   r = spreadsheet.costpercapita_ay115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.223636646119195,r[:number])
+  assert_in_epsilon(7.223636646119193,r[:number])
 end
 
 def test_costpercapita_az115
   r = spreadsheet.costpercapita_az115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.440190761162961,r[:number])
+  assert_in_epsilon(10.440190761162956,r[:number])
 end
 
 def test_costpercapita_ba115
   r = spreadsheet.costpercapita_ba115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.098398225326372,r[:number])
+  assert_in_epsilon(10.098398225326367,r[:number])
 end
 
 def test_costpercapita_bb115
   r = spreadsheet.costpercapita_bb115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.785716726843075,r[:number])
+  assert_in_epsilon(9.785716726843072,r[:number])
 end
 
 def test_costpercapita_bc115
@@ -95699,37 +98873,37 @@ end
 def test_costpercapita_bi115
   r = spreadsheet.costpercapita_bi115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.223636646119195,r[:number])
+  assert_in_epsilon(7.223636646119193,r[:number])
 end
 
 def test_costpercapita_bj115
   r = spreadsheet.costpercapita_bj115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.425627488631996,r[:number])
+  assert_in_epsilon(17.42562748863199,r[:number])
 end
 
 def test_costpercapita_bk115
   r = spreadsheet.costpercapita_bk115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(26.953542899598386,r[:number])
+  assert_in_epsilon(26.95354289959837,r[:number])
 end
 
 def test_costpercapita_bl115
   r = spreadsheet.costpercapita_bl115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(29.357150180529228,r[:number])
+  assert_in_epsilon(29.357150180529214,r[:number])
 end
 
 def test_costpercapita_bm115
   r = spreadsheet.costpercapita_bm115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.03673889541555,r[:number])
+  assert_in_epsilon(19.03673889541554,r[:number])
 end
 
 def test_costpercapita_bn115
   r = spreadsheet.costpercapita_bn115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.294157632333114,r[:number])
+  assert_in_epsilon(9.29415763233311,r[:number])
 end
 
 def test_costpercapita_bo115
@@ -95753,37 +98927,37 @@ end
 def test_costpercapita_bs115
   r = spreadsheet.costpercapita_bs115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.952721120725553,r[:number])
+  assert_in_epsilon(11.952721120725549,r[:number])
 end
 
 def test_costpercapita_bt115
   r = spreadsheet.costpercapita_bt115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(25.20418938320405,r[:number])
+  assert_in_epsilon(25.204189383204042,r[:number])
 end
 
 def test_costpercapita_bu115
   r = spreadsheet.costpercapita_bu115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(37.5779288730608,r[:number])
+  assert_in_epsilon(37.577928873060785,r[:number])
 end
 
 def test_costpercapita_bv115
   r = spreadsheet.costpercapita_bv115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(41.389702904059206,r[:number])
+  assert_in_epsilon(41.38970290405919,r[:number])
 end
 
 def test_costpercapita_bw115
   r = spreadsheet.costpercapita_bw115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.839418844620702,r[:number])
+  assert_in_epsilon(27.839418844620695,r[:number])
 end
 
 def test_costpercapita_bx115
   r = spreadsheet.costpercapita_bx115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.03592801049539,r[:number])
+  assert_in_epsilon(15.035928010495386,r[:number])
 end
 
 def test_costpercapita_by115
@@ -95807,49 +98981,49 @@ end
 def test_costpercapita_cc115
   r = spreadsheet.costpercapita_cc115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.988041298767524,r[:number])
+  assert_in_epsilon(17.988041298767516,r[:number])
 end
 
 def test_costpercapita_cd115
   r = spreadsheet.costpercapita_cd115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(481.6804949718399,r[:number])
+  assert_in_epsilon(481.6804949718397,r[:number])
 end
 
 def test_costpercapita_cf115
   r = spreadsheet.costpercapita_cf115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-11.0908815722359,r[:number])
+  assert_in_epsilon(-11.090881572235903,r[:number])
 end
 
 def test_costpercapita_cg115
   r = spreadsheet.costpercapita_cg115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.543843290545689,r[:number])
+  assert_in_epsilon(1.5438432905456818,r[:number])
 end
 
 def test_costpercapita_ch115
   r = spreadsheet.costpercapita_ch115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.591698941959251,r[:number])
+  assert_in_epsilon(11.591698941959237,r[:number])
 end
 
 def test_costpercapita_ci115
   r = spreadsheet.costpercapita_ci115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.470962290413212,r[:number])
+  assert_in_epsilon(14.470962290413198,r[:number])
 end
 
 def test_costpercapita_cj115
   r = spreadsheet.costpercapita_cj115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.03673889541555,r[:number])
+  assert_in_epsilon(19.03673889541554,r[:number])
 end
 
 def test_costpercapita_ck115
   r = spreadsheet.costpercapita_ck115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.294157632333114,r[:number])
+  assert_in_epsilon(9.29415763233311,r[:number])
 end
 
 def test_costpercapita_cl115
@@ -95873,13 +99047,13 @@ end
 def test_costpercapita_cp115
   r = spreadsheet.costpercapita_cp115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.9829466087145455,r[:number])
+  assert_in_epsilon(4.98294660871454,r[:number])
 end
 
 def test_costpercapita_cq115
   r = spreadsheet.costpercapita_cq115
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(147.18431873027072,r[:number])
+  assert_in_epsilon(147.18431873027055,r[:number])
 end
 
 def test_costpercapita_cr115
@@ -96149,25 +99323,25 @@ end
 def test_costpercapita_ay116
   r = spreadsheet.costpercapita_ay116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.583287541496654,r[:number])
+  assert_in_epsilon(8.58328754149665,r[:number])
 end
 
 def test_costpercapita_az116
   r = spreadsheet.costpercapita_az116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.84277115898465,r[:number])
+  assert_in_epsilon(21.84277115898464,r[:number])
 end
 
 def test_costpercapita_ba116
   r = spreadsheet.costpercapita_ba116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.127679230597696,r[:number])
+  assert_in_epsilon(21.127679230597685,r[:number])
 end
 
 def test_costpercapita_bb116
   r = spreadsheet.costpercapita_bb116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.37879429454193,r[:number])
+  assert_in_epsilon(16.378794294541926,r[:number])
 end
 
 def test_costpercapita_bc116
@@ -96203,37 +99377,37 @@ end
 def test_costpercapita_bi116
   r = spreadsheet.costpercapita_bi116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.583287541496654,r[:number])
+  assert_in_epsilon(8.58328754149665,r[:number])
 end
 
 def test_costpercapita_bj116
   r = spreadsheet.costpercapita_bj116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(30.143024199398827,r[:number])
+  assert_in_epsilon(30.143024199398813,r[:number])
 end
 
 def test_costpercapita_bk116
   r = spreadsheet.costpercapita_bk116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.28387656882252,r[:number])
+  assert_in_epsilon(50.2838765688225,r[:number])
 end
 
 def test_costpercapita_bl116
   r = spreadsheet.costpercapita_bl116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(57.32578003089676,r[:number])
+  assert_in_epsilon(57.32578003089673,r[:number])
 end
 
 def test_costpercapita_bm116
   r = spreadsheet.costpercapita_bm116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(35.84547703548156,r[:number])
+  assert_in_epsilon(35.84547703548154,r[:number])
 end
 
 def test_costpercapita_bn116
   r = spreadsheet.costpercapita_bn116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.556049725357237,r[:number])
+  assert_in_epsilon(15.556049725357232,r[:number])
 end
 
 def test_costpercapita_bo116
@@ -96257,31 +99431,31 @@ end
 def test_costpercapita_bs116
   r = spreadsheet.costpercapita_bs116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.204986256668427,r[:number])
+  assert_in_epsilon(13.204986256668423,r[:number])
 end
 
 def test_costpercapita_bt116
   r = spreadsheet.costpercapita_bt116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(42.926985496521134,r[:number])
+  assert_in_epsilon(42.92698549652112,r[:number])
 end
 
 def test_costpercapita_bu116
   r = spreadsheet.costpercapita_bu116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(70.69177133296073,r[:number])
+  assert_in_epsilon(70.6917713329607,r[:number])
 end
 
 def test_costpercapita_bv116
   r = spreadsheet.costpercapita_bv116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(82.86891685004049,r[:number])
+  assert_in_epsilon(82.86891685004045,r[:number])
 end
 
 def test_costpercapita_bw116
   r = spreadsheet.costpercapita_bw116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(57.070923211221505,r[:number])
+  assert_in_epsilon(57.07092321122149,r[:number])
 end
 
 def test_costpercapita_bx116
@@ -96311,49 +99485,49 @@ end
 def test_costpercapita_cc116
   r = spreadsheet.costpercapita_cc116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(33.49315810579713,r[:number])
+  assert_in_epsilon(33.493158105797114,r[:number])
 end
 
 def test_costpercapita_cd116
   r = spreadsheet.costpercapita_cd116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(906.648520360428,r[:number])
+  assert_in_epsilon(906.6485203604276,r[:number])
 end
 
 def test_costpercapita_cf116
   r = spreadsheet.costpercapita_cf116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-13.178434947213212,r[:number])
+  assert_in_epsilon(-13.178434947213216,r[:number])
 end
 
 def test_costpercapita_cg116
   r = spreadsheet.costpercapita_cg116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-3.0845466152684766,r[:number])
+  assert_in_epsilon(-3.0845466152684904,r[:number])
 end
 
 def test_costpercapita_ch116
   r = spreadsheet.costpercapita_ch116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.14411496648133,r[:number])
+  assert_in_epsilon(18.144114966481308,r[:number])
 end
 
 def test_costpercapita_ci116
   r = spreadsheet.costpercapita_ci116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(32.41009770654561,r[:number])
+  assert_in_epsilon(32.410097706545585,r[:number])
 end
 
 def test_costpercapita_cj116
   r = spreadsheet.costpercapita_cj116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(35.84547703548156,r[:number])
+  assert_in_epsilon(35.84547703548154,r[:number])
 end
 
 def test_costpercapita_ck116
   r = spreadsheet.costpercapita_ck116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.556049725357237,r[:number])
+  assert_in_epsilon(15.556049725357232,r[:number])
 end
 
 def test_costpercapita_cl116
@@ -96377,13 +99551,13 @@ end
 def test_costpercapita_cp116
   r = spreadsheet.costpercapita_cp116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.521417541264896,r[:number])
+  assert_in_epsilon(9.521417541264883,r[:number])
 end
 
 def test_costpercapita_cq116
   r = spreadsheet.costpercapita_cq116
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(257.8620236580508,r[:number])
+  assert_in_epsilon(257.8620236580505,r[:number])
 end
 
 def test_costpercapita_cr116
@@ -96653,7 +99827,7 @@ end
 def test_costpercapita_ay117
   r = spreadsheet.costpercapita_ay117
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.167003987913362,r[:number])
+  assert_in_epsilon(6.167003987913359,r[:number])
 end
 
 def test_costpercapita_az117
@@ -96707,19 +99881,19 @@ end
 def test_costpercapita_bi117
   r = spreadsheet.costpercapita_bi117
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.167003987913362,r[:number])
+  assert_in_epsilon(6.167003987913359,r[:number])
 end
 
 def test_costpercapita_bj117
   r = spreadsheet.costpercapita_bj117
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.963646604340453,r[:number])
+  assert_in_epsilon(5.96364660434045,r[:number])
 end
 
 def test_costpercapita_bk117
   r = spreadsheet.costpercapita_bk117
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.768407844593525,r[:number])
+  assert_in_epsilon(5.768407844593522,r[:number])
 end
 
 def test_costpercapita_bl117
@@ -96761,19 +99935,19 @@ end
 def test_costpercapita_bs117
   r = spreadsheet.costpercapita_bs117
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.001275656913354,r[:number])
+  assert_in_epsilon(11.00127565691335,r[:number])
 end
 
 def test_costpercapita_bt117
   r = spreadsheet.costpercapita_bt117
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.638507830276808,r[:number])
+  assert_in_epsilon(10.638507830276804,r[:number])
 end
 
 def test_costpercapita_bu117
   r = spreadsheet.costpercapita_bu117
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.290222760395316,r[:number])
+  assert_in_epsilon(10.290222760395315,r[:number])
 end
 
 def test_costpercapita_bv117
@@ -96815,31 +99989,31 @@ end
 def test_costpercapita_cc117
   r = spreadsheet.costpercapita_cc117
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.30193755061116,r[:number])
+  assert_in_epsilon(6.301937550611158,r[:number])
 end
 
 def test_costpercapita_cd117
   r = spreadsheet.costpercapita_cd117
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(143.43653753548486,r[:number])
+  assert_in_epsilon(143.43653753548483,r[:number])
 end
 
 def test_costpercapita_cf117
   r = spreadsheet.costpercapita_cf117
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-9.468570228016562,r[:number])
+  assert_in_epsilon(-9.468570228016564,r[:number])
 end
 
 def test_costpercapita_cg117
   r = spreadsheet.costpercapita_cg117
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.963646604340453,r[:number])
+  assert_in_epsilon(5.96364660434045,r[:number])
 end
 
 def test_costpercapita_ch117
   r = spreadsheet.costpercapita_ch117
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.768407844593525,r[:number])
+  assert_in_epsilon(5.768407844593522,r[:number])
 end
 
 def test_costpercapita_ci117
@@ -96881,13 +100055,13 @@ end
 def test_costpercapita_cp117
   r = spreadsheet.costpercapita_cp117
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.2514982467686018,r[:number])
+  assert_in_epsilon(0.251498246768601,r[:number])
 end
 
 def test_costpercapita_cq117
   r = spreadsheet.costpercapita_cq117
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(36.08424609030844,r[:number])
+  assert_in_epsilon(36.084246090308426,r[:number])
 end
 
 def test_costpercapita_cr117
@@ -97157,25 +100331,25 @@ end
 def test_costpercapita_ay118
   r = spreadsheet.costpercapita_ay118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.01876047301800875,r[:number])
+  assert_in_epsilon(0.018760473018008744,r[:number])
 end
 
 def test_costpercapita_az118
   r = spreadsheet.costpercapita_az118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.07445413237682023,r[:number])
+  assert_in_epsilon(0.07445413237682019,r[:number])
 end
 
 def test_costpercapita_ba118
   r = spreadsheet.costpercapita_ba118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1083730847496234,r[:number])
+  assert_in_epsilon(1.108373084749623,r[:number])
 end
 
 def test_costpercapita_bb118
   r = spreadsheet.costpercapita_bb118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.7412679939465483,r[:number])
+  assert_in_epsilon(1.7412679939465472,r[:number])
 end
 
 def test_costpercapita_bc118
@@ -97193,205 +100367,205 @@ end
 def test_costpercapita_be118
   r = spreadsheet.costpercapita_be118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.0806736301933232,r[:number])
+  assert_in_epsilon(0.08067363019332317,r[:number])
 end
 
 def test_costpercapita_bf118
   r = spreadsheet.costpercapita_bf118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0574961239106164,r[:number])
+  assert_in_epsilon(1.0574961239106158,r[:number])
 end
 
 def test_costpercapita_bg118
   r = spreadsheet.costpercapita_bg118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.594403528105309,r[:number])
+  assert_in_epsilon(2.594403528105308,r[:number])
 end
 
 def test_costpercapita_bi118
   r = spreadsheet.costpercapita_bi118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.01876047301800875,r[:number])
+  assert_in_epsilon(0.018760473018008744,r[:number])
 end
 
 def test_costpercapita_bj118
   r = spreadsheet.costpercapita_bj118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.09259597749787779,r[:number])
+  assert_in_epsilon(0.09259597749787775,r[:number])
 end
 
 def test_costpercapita_bk118
   r = spreadsheet.costpercapita_bk118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1979376412053686,r[:number])
+  assert_in_epsilon(1.1979376412053684,r[:number])
 end
 
 def test_costpercapita_bl118
   r = spreadsheet.costpercapita_bl118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.8851087529908654,r[:number])
+  assert_in_epsilon(2.8851087529908637,r[:number])
 end
 
 def test_costpercapita_bm118
   r = spreadsheet.costpercapita_bm118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.738406968706278,r[:number])
+  assert_in_epsilon(2.7384069687062764,r[:number])
 end
 
 def test_costpercapita_bn118
   r = spreadsheet.costpercapita_bn118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.6538000912577615,r[:number])
+  assert_in_epsilon(1.6538000912577606,r[:number])
 end
 
 def test_costpercapita_bo118
   r = spreadsheet.costpercapita_bo118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.0806736301933232,r[:number])
+  assert_in_epsilon(0.08067363019332317,r[:number])
 end
 
 def test_costpercapita_bp118
   r = spreadsheet.costpercapita_bp118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1365604825498712,r[:number])
+  assert_in_epsilon(1.1365604825498705,r[:number])
 end
 
 def test_costpercapita_bq118
   r = spreadsheet.costpercapita_bq118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.709753819859834,r[:number])
+  assert_in_epsilon(3.7097538198598325,r[:number])
 end
 
 def test_costpercapita_bs118
   r = spreadsheet.costpercapita_bs118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.021283092890462645,r[:number])
+  assert_in_epsilon(0.021283092890462634,r[:number])
 end
 
 def test_costpercapita_bt118
   r = spreadsheet.costpercapita_bt118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.11094773728103365,r[:number])
+  assert_in_epsilon(0.1109477372810336,r[:number])
 end
 
 def test_costpercapita_bu118
   r = spreadsheet.costpercapita_bu118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.660257227468668,r[:number])
+  assert_in_epsilon(1.6602572274686676,r[:number])
 end
 
 def test_costpercapita_bv118
   r = spreadsheet.costpercapita_bv118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.0051201665578215,r[:number])
+  assert_in_epsilon(4.00512016655782,r[:number])
 end
 
 def test_costpercapita_bw118
   r = spreadsheet.costpercapita_bw118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.827819498984876,r[:number])
+  assert_in_epsilon(3.827819498984874,r[:number])
 end
 
 def test_costpercapita_bx118
   r = spreadsheet.costpercapita_bx118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.6538000912577615,r[:number])
+  assert_in_epsilon(1.6538000912577606,r[:number])
 end
 
 def test_costpercapita_by118
   r = spreadsheet.costpercapita_by118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.0806736301933232,r[:number])
+  assert_in_epsilon(0.08067363019332317,r[:number])
 end
 
 def test_costpercapita_bz118
   r = spreadsheet.costpercapita_bz118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1365604825498712,r[:number])
+  assert_in_epsilon(1.1365604825498705,r[:number])
 end
 
 def test_costpercapita_ca118
   r = spreadsheet.costpercapita_ca118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.709753819859834,r[:number])
+  assert_in_epsilon(3.7097538198598325,r[:number])
 end
 
 def test_costpercapita_cc118
   r = spreadsheet.costpercapita_cc118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.8006906385604056,r[:number])
+  assert_in_epsilon(1.800690638560405,r[:number])
 end
 
 def test_costpercapita_cd118
   r = spreadsheet.costpercapita_cd118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(38.25161414433202,r[:number])
+  assert_in_epsilon(38.25161414433201,r[:number])
 end
 
 def test_costpercapita_cf118
   r = spreadsheet.costpercapita_cf118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.0288040767656337,r[:number])
+  assert_in_epsilon(-0.028804076765633707,r[:number])
 end
 
 def test_costpercapita_cg118
   r = spreadsheet.costpercapita_cg118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.020664832588382646,r[:number])
+  assert_in_epsilon(-0.020664832588382687,r[:number])
 end
 
 def test_costpercapita_ch118
   r = spreadsheet.costpercapita_ch118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.4881371198462097,r[:number])
+  assert_in_epsilon(-0.48813711984621017,r[:number])
 end
 
 def test_costpercapita_ci118
   r = spreadsheet.costpercapita_ci118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.2362641922413627,r[:number])
+  assert_in_epsilon(0.23626419224136105,r[:number])
 end
 
 def test_costpercapita_cj118
   r = spreadsheet.costpercapita_cj118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.738406968706278,r[:number])
+  assert_in_epsilon(2.7384069687062764,r[:number])
 end
 
 def test_costpercapita_ck118
   r = spreadsheet.costpercapita_ck118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.6538000912577615,r[:number])
+  assert_in_epsilon(1.6538000912577606,r[:number])
 end
 
 def test_costpercapita_cl118
   r = spreadsheet.costpercapita_cl118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.042048378869263846,r[:number])
+  assert_in_epsilon(-0.04204837886926388,r[:number])
 end
 
 def test_costpercapita_cm118
   r = spreadsheet.costpercapita_cm118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.4721194366655424,r[:number])
+  assert_in_epsilon(-0.4721194366655432,r[:number])
 end
 
 def test_costpercapita_cn118
   r = spreadsheet.costpercapita_cn118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.236894081383347,r[:number])
+  assert_in_epsilon(-0.2368940813833485,r[:number])
 end
 
 def test_costpercapita_cp118
   r = spreadsheet.costpercapita_cp118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.37108925845411356,r[:number])
+  assert_in_epsilon(0.3710892584541129,r[:number])
 end
 
 def test_costpercapita_cq118
   r = spreadsheet.costpercapita_cq118
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.124830555914757,r[:number])
+  assert_in_epsilon(8.12483055591474,r[:number])
 end
 
 def test_costpercapita_cr118
@@ -98165,7 +101339,7 @@ end
 def test_costpercapita_ay120
   r = spreadsheet.costpercapita_ay120
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.1395402267836243,r[:number])
+  assert_in_epsilon(0.13954022678362424,r[:number])
 end
 
 def test_costpercapita_az120
@@ -98219,19 +101393,19 @@ end
 def test_costpercapita_bi120
   r = spreadsheet.costpercapita_bi120
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.1395402267836243,r[:number])
+  assert_in_epsilon(0.13954022678362424,r[:number])
 end
 
 def test_costpercapita_bj120
   r = spreadsheet.costpercapita_bj120
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.13493887814212785,r[:number])
+  assert_in_epsilon(0.1349388781421278,r[:number])
 end
 
 def test_costpercapita_bk120
   r = spreadsheet.costpercapita_bk120
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.13052122884833228,r[:number])
+  assert_in_epsilon(0.13052122884833223,r[:number])
 end
 
 def test_costpercapita_bl120
@@ -98273,19 +101447,19 @@ end
 def test_costpercapita_bs120
   r = spreadsheet.costpercapita_bs120
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.17719547452453846,r[:number])
+  assert_in_epsilon(0.17719547452453838,r[:number])
 end
 
 def test_costpercapita_bt120
   r = spreadsheet.costpercapita_bt120
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.1525939391549726,r[:number])
+  assert_in_epsilon(0.15259393915497255,r[:number])
 end
 
 def test_costpercapita_bu120
   r = spreadsheet.costpercapita_bu120
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.13052122884833228,r[:number])
+  assert_in_epsilon(0.13052122884833223,r[:number])
 end
 
 def test_costpercapita_bv120
@@ -98327,31 +101501,31 @@ end
 def test_costpercapita_cc120
   r = spreadsheet.costpercapita_cc120
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.05114562694753815,r[:number])
+  assert_in_epsilon(0.05114562694753813,r[:number])
 end
 
 def test_costpercapita_cd120
   r = spreadsheet.costpercapita_cd120
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.2822402590886919,r[:number])
+  assert_in_epsilon(1.2822402590886912,r[:number])
 end
 
 def test_costpercapita_cf120
   r = spreadsheet.costpercapita_cf120
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.21424445963122438,r[:number])
+  assert_in_epsilon(-0.21424445963122443,r[:number])
 end
 
 def test_costpercapita_cg120
   r = spreadsheet.costpercapita_cg120
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.13493887814212785,r[:number])
+  assert_in_epsilon(0.1349388781421278,r[:number])
 end
 
 def test_costpercapita_ch120
   r = spreadsheet.costpercapita_ch120
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.13052122884833228,r[:number])
+  assert_in_epsilon(0.13052122884833223,r[:number])
 end
 
 def test_costpercapita_ci120
@@ -98393,13 +101567,13 @@ end
 def test_costpercapita_cp120
   r = spreadsheet.costpercapita_cp120
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.005690627484359528,r[:number])
+  assert_in_epsilon(0.00569062748435951,r[:number])
 end
 
 def test_costpercapita_cq120
   r = spreadsheet.costpercapita_cq120
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.816474886772602,r[:number])
+  assert_in_epsilon(0.8164748867726016,r[:number])
 end
 
 def test_costpercapita_cr120
@@ -99677,241 +102851,241 @@ end
 def test_costpercapita_ay123
   r = spreadsheet.costpercapita_ay123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.181250787280272,r[:number])
+  assert_in_epsilon(8.181250787280268,r[:number])
 end
 
 def test_costpercapita_az123
   r = spreadsheet.costpercapita_az123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(34.362080708875894,r[:number])
+  assert_in_epsilon(34.36208070887588,r[:number])
 end
 
 def test_costpercapita_ba123
   r = spreadsheet.costpercapita_ba123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20.56572753902023,r[:number])
+  assert_in_epsilon(20.565727539020223,r[:number])
 end
 
 def test_costpercapita_bb123
   r = spreadsheet.costpercapita_bb123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.935084333169357,r[:number])
+  assert_in_epsilon(14.935084333169346,r[:number])
 end
 
 def test_costpercapita_bc123
   r = spreadsheet.costpercapita_bc123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.768912220715768,r[:number])
+  assert_in_epsilon(14.768912220715759,r[:number])
 end
 
 def test_costpercapita_bd123
   r = spreadsheet.costpercapita_bd123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.1997143185635,r[:number])
+  assert_in_epsilon(15.199714318563489,r[:number])
 end
 
 def test_costpercapita_be123
   r = spreadsheet.costpercapita_be123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.6913654545192,r[:number])
+  assert_in_epsilon(15.691365454519193,r[:number])
 end
 
 def test_costpercapita_bf123
   r = spreadsheet.costpercapita_bf123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.227327919705427,r[:number])
+  assert_in_epsilon(16.227327919705424,r[:number])
 end
 
 def test_costpercapita_bg123
   r = spreadsheet.costpercapita_bg123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.606864887509756,r[:number])
+  assert_in_epsilon(12.606864887509753,r[:number])
 end
 
 def test_costpercapita_bi123
   r = spreadsheet.costpercapita_bi123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.181250787280272,r[:number])
+  assert_in_epsilon(8.181250787280268,r[:number])
 end
 
 def test_costpercapita_bj123
   r = spreadsheet.costpercapita_bj123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(42.27355418488544,r[:number])
+  assert_in_epsilon(42.27355418488542,r[:number])
 end
 
 def test_costpercapita_bk123
   r = spreadsheet.costpercapita_bk123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(61.45532374706234,r[:number])
+  assert_in_epsilon(61.455323747062316,r[:number])
 end
 
 def test_costpercapita_bl123
   r = spreadsheet.costpercapita_bl123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(67.07201820017704,r[:number])
+  assert_in_epsilon(67.07201820017701,r[:number])
 end
 
 def test_costpercapita_bm123
   r = spreadsheet.costpercapita_bm123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(48.68044719364343,r[:number])
+  assert_in_epsilon(48.68044719364341,r[:number])
 end
 
 def test_costpercapita_bn123
   r = spreadsheet.costpercapita_bn123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(43.805595176688534,r[:number])
+  assert_in_epsilon(43.805595176688506,r[:number])
 end
 
 def test_costpercapita_bo123
   r = spreadsheet.costpercapita_bo123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(44.68039676399964,r[:number])
+  assert_in_epsilon(44.680396763999624,r[:number])
 end
 
 def test_costpercapita_bp123
   r = spreadsheet.costpercapita_bp123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(46.18450597973967,r[:number])
+  assert_in_epsilon(46.184505979739654,r[:number])
 end
 
 def test_costpercapita_bq123
   r = spreadsheet.costpercapita_bq123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(43.62273118343959,r[:number])
+  assert_in_epsilon(43.62273118343956,r[:number])
 end
 
 def test_costpercapita_bs123
   r = spreadsheet.costpercapita_bs123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(26.452973878697627,r[:number])
+  assert_in_epsilon(26.452973878697623,r[:number])
 end
 
 def test_costpercapita_bt123
   r = spreadsheet.costpercapita_bt123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(65.15612203871008,r[:number])
+  assert_in_epsilon(65.15612203871005,r[:number])
 end
 
 def test_costpercapita_bu123
   r = spreadsheet.costpercapita_bu123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(97.80567498370284,r[:number])
+  assert_in_epsilon(97.80567498370281,r[:number])
 end
 
 def test_costpercapita_bv123
   r = spreadsheet.costpercapita_bv123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(109.22524430020533,r[:number])
+  assert_in_epsilon(109.2252443002053,r[:number])
 end
 
 def test_costpercapita_bw123
   r = spreadsheet.costpercapita_bw123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(92.69529544765133,r[:number])
+  assert_in_epsilon(92.69529544765132,r[:number])
 end
 
 def test_costpercapita_bx123
   r = spreadsheet.costpercapita_bx123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(89.31935084767208,r[:number])
+  assert_in_epsilon(89.31935084767206,r[:number])
 end
 
 def test_costpercapita_by123
   r = spreadsheet.costpercapita_by123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(91.84873706670263,r[:number])
+  assert_in_epsilon(91.84873706670261,r[:number])
 end
 
 def test_costpercapita_bz123
   r = spreadsheet.costpercapita_bz123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(95.13354070355074,r[:number])
+  assert_in_epsilon(95.13354070355072,r[:number])
 end
 
 def test_costpercapita_ca123
   r = spreadsheet.costpercapita_ca123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(94.48008842872201,r[:number])
+  assert_in_epsilon(94.48008842872198,r[:number])
 end
 
 def test_costpercapita_cc123
   r = spreadsheet.costpercapita_cc123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(84.67966974395719,r[:number])
+  assert_in_epsilon(84.67966974395716,r[:number])
 end
 
 def test_costpercapita_cd123
   r = spreadsheet.costpercapita_cd123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1830.3546422659076,r[:number])
+  assert_in_epsilon(1830.3546422659067,r[:number])
 end
 
 def test_costpercapita_cf123
   r = spreadsheet.costpercapita_cf123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-12.561163862420273,r[:number])
+  assert_in_epsilon(-12.561163862420276,r[:number])
 end
 
 def test_costpercapita_cg123
   r = spreadsheet.costpercapita_cg123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-9.998589389893542,r[:number])
+  assert_in_epsilon(-9.998589389893564,r[:number])
 end
 
 def test_costpercapita_ch123
   r = spreadsheet.costpercapita_ch123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(30.170411993689676,r[:number])
+  assert_in_epsilon(30.170411993689655,r[:number])
 end
 
 def test_costpercapita_ci123
   r = spreadsheet.costpercapita_ci123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(44.35253042587574,r[:number])
+  assert_in_epsilon(44.35253042587571,r[:number])
 end
 
 def test_costpercapita_cj123
   r = spreadsheet.costpercapita_cj123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(26.213743079152767,r[:number])
+  assert_in_epsilon(26.21374307915275,r[:number])
 end
 
 def test_costpercapita_ck123
   r = spreadsheet.costpercapita_ck123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20.683548060655017,r[:number])
+  assert_in_epsilon(20.68354806065499,r[:number])
 end
 
 def test_costpercapita_cl123
   r = spreadsheet.costpercapita_cl123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20.81044212207694,r[:number])
+  assert_in_epsilon(20.81044212207692,r[:number])
 end
 
 def test_costpercapita_cm123
   r = spreadsheet.costpercapita_cm123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.499236713296273,r[:number])
+  assert_in_epsilon(21.499236713296263,r[:number])
 end
 
 def test_costpercapita_cn123
   r = spreadsheet.costpercapita_cn123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(24.444967851502298,r[:number])
+  assert_in_epsilon(24.444967851502273,r[:number])
 end
 
 def test_costpercapita_cp123
   r = spreadsheet.costpercapita_cp123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.401680777103877,r[:number])
+  assert_in_epsilon(18.40168077710386,r[:number])
 end
 
 def test_costpercapita_cq123
   r = spreadsheet.costpercapita_cq123
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(396.7982020394594,r[:number])
+  assert_in_epsilon(396.7982020394589,r[:number])
 end
 
 def test_costpercapita_cr123
@@ -101693,241 +104867,241 @@ end
 def test_costpercapita_ay127
   r = spreadsheet.costpercapita_ay127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1786384172964517,r[:number])
+  assert_in_epsilon(1.1786384172964512,r[:number])
 end
 
 def test_costpercapita_az127
   r = spreadsheet.costpercapita_az127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.0818976376277742,r[:number])
+  assert_in_epsilon(2.0818976376277734,r[:number])
 end
 
 def test_costpercapita_ba127
   r = spreadsheet.costpercapita_ba127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.1944525500183043,r[:number])
+  assert_in_epsilon(2.1944525500183034,r[:number])
 end
 
 def test_costpercapita_bb127
   r = spreadsheet.costpercapita_bb127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.5383277664546613,r[:number])
+  assert_in_epsilon(2.5383277664546604,r[:number])
 end
 
 def test_costpercapita_bc127
   r = spreadsheet.costpercapita_bc127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.9107192133898327,r[:number])
+  assert_in_epsilon(2.9107192133898314,r[:number])
 end
 
 def test_costpercapita_bd127
   r = spreadsheet.costpercapita_bd127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.0968595550779625,r[:number])
+  assert_in_epsilon(3.0968595550779616,r[:number])
 end
 
 def test_costpercapita_be127
   r = spreadsheet.costpercapita_be127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.290304047720123,r[:number])
+  assert_in_epsilon(3.2903040477201215,r[:number])
 end
 
 def test_costpercapita_bf127
   r = spreadsheet.costpercapita_bf127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.494773413151984,r[:number])
+  assert_in_epsilon(3.4947734131519828,r[:number])
 end
 
 def test_costpercapita_bg127
   r = spreadsheet.costpercapita_bg127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.7084845022659736,r[:number])
+  assert_in_epsilon(3.7084845022659714,r[:number])
 end
 
 def test_costpercapita_bi127
   r = spreadsheet.costpercapita_bi127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1786384172964517,r[:number])
+  assert_in_epsilon(1.1786384172964512,r[:number])
 end
 
 def test_costpercapita_bj127
   r = spreadsheet.costpercapita_bj127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.221670371491934,r[:number])
+  assert_in_epsilon(3.221670371491933,r[:number])
 end
 
 def test_costpercapita_bk127
   r = spreadsheet.costpercapita_bk127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.310651392196997,r[:number])
+  assert_in_epsilon(5.310651392196994,r[:number])
 end
 
 def test_costpercapita_bl127
   r = spreadsheet.costpercapita_bl127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.616220207310998,r[:number])
+  assert_in_epsilon(6.616220207310996,r[:number])
 end
 
 def test_costpercapita_bm127
   r = spreadsheet.costpercapita_bm127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.448107717297037,r[:number])
+  assert_in_epsilon(7.4481077172970345,r[:number])
 end
 
 def test_costpercapita_bn127
   r = spreadsheet.costpercapita_bn127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.349836467280397,r[:number])
+  assert_in_epsilon(8.349836467280392,r[:number])
 end
 
 def test_costpercapita_bo127
   r = spreadsheet.costpercapita_bo127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.10266107718782,r[:number])
+  assert_in_epsilon(9.102661077187815,r[:number])
 end
 
 def test_costpercapita_bp127
   r = spreadsheet.costpercapita_bp127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.689798987241746,r[:number])
+  assert_in_epsilon(9.68979898724174,r[:number])
 end
 
 def test_costpercapita_bq127
   r = spreadsheet.costpercapita_bq127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.30253076262304,r[:number])
+  assert_in_epsilon(10.302530762623034,r[:number])
 end
 
 def test_costpercapita_bs127
   r = spreadsheet.costpercapita_bs127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.166910921011874,r[:number])
+  assert_in_epsilon(4.1669109210118735,r[:number])
 end
 
 def test_costpercapita_bt127
   r = spreadsheet.costpercapita_bt127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.385422065662886,r[:number])
+  assert_in_epsilon(6.385422065662884,r[:number])
 end
 
 def test_costpercapita_bu127
   r = spreadsheet.costpercapita_bu127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.645133469259006,r[:number])
+  assert_in_epsilon(8.645133469259003,r[:number])
 end
 
 def test_costpercapita_bv127
   r = spreadsheet.costpercapita_bv127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.72108253733782,r[:number])
+  assert_in_epsilon(10.721082537337816,r[:number])
 end
 
 def test_costpercapita_bw127
   r = spreadsheet.costpercapita_bw127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.394400139995875,r[:number])
+  assert_in_epsilon(12.394400139995874,r[:number])
 end
 
 def test_costpercapita_bx127
   r = spreadsheet.costpercapita_bx127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.76295968885087,r[:number])
+  assert_in_epsilon(13.762959688850865,r[:number])
 end
 
 def test_costpercapita_by127
   r = spreadsheet.costpercapita_by127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.018187081117095,r[:number])
+  assert_in_epsilon(15.01818708111709,r[:number])
 end
 
 def test_costpercapita_bz127
   r = spreadsheet.costpercapita_bz127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.14086761754656,r[:number])
+  assert_in_epsilon(16.140867617546558,r[:number])
 end
 
 def test_costpercapita_ca127
   r = spreadsheet.costpercapita_ca127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.323670318237003,r[:number])
+  assert_in_epsilon(17.323670318237,r[:number])
 end
 
 def test_costpercapita_cc127
   r = spreadsheet.costpercapita_cc127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.617625982113221,r[:number])
+  assert_in_epsilon(11.617625982113218,r[:number])
 end
 
 def test_costpercapita_cd127
   r = spreadsheet.costpercapita_cd127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(228.4715027023491,r[:number])
+  assert_in_epsilon(228.47150270234903,r[:number])
 end
 
 def test_costpercapita_cf127
   r = spreadsheet.costpercapita_cf127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-1.8096340864189706,r[:number])
+  assert_in_epsilon(-1.809634086418971,r[:number])
 end
 
 def test_costpercapita_cg127
   r = spreadsheet.costpercapita_cg127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.054654580333453405,r[:number])
+  assert_in_epsilon(0.054654580333451636,r[:number])
 end
 
 def test_costpercapita_ch127
   r = spreadsheet.costpercapita_ch127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.9724152785449263,r[:number])
+  assert_in_epsilon(1.9724152785449236,r[:number])
 end
 
 def test_costpercapita_ci127
   r = spreadsheet.costpercapita_ci127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.754875646366142,r[:number])
+  assert_in_epsilon(2.7548756463661395,r[:number])
 end
 
 def test_costpercapita_cj127
   r = spreadsheet.costpercapita_cj127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.0202753657805563,r[:number])
+  assert_in_epsilon(3.0202753657805532,r[:number])
 end
 
 def test_costpercapita_ck127
   r = spreadsheet.costpercapita_ck127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.638844468121652,r[:number])
+  assert_in_epsilon(3.638844468121647,r[:number])
 end
 
 def test_costpercapita_cl127
   r = spreadsheet.costpercapita_cl127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.097398239810325,r[:number])
+  assert_in_epsilon(4.097398239810319,r[:number])
 end
 
 def test_costpercapita_cm127
   r = spreadsheet.costpercapita_cm127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.373494099848418,r[:number])
+  assert_in_epsilon(4.373494099848414,r[:number])
 end
 
 def test_costpercapita_cn127
   r = spreadsheet.costpercapita_cn127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.661125168193562,r[:number])
+  assert_in_epsilon(4.661125168193556,r[:number])
 end
 
 def test_costpercapita_cp127
   r = spreadsheet.costpercapita_cp127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.5292720845088965,r[:number])
+  assert_in_epsilon(2.5292720845088925,r[:number])
 end
 
 def test_costpercapita_cq127
   r = spreadsheet.costpercapita_cq127
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(49.11993679229151,r[:number])
+  assert_in_epsilon(49.11993679229143,r[:number])
 end
 
 def test_costpercapita_cr127
@@ -102197,115 +105371,115 @@ end
 def test_costpercapita_ay128
   r = spreadsheet.costpercapita_ay128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.56260168708007,r[:number])
+  assert_in_epsilon(19.56260168708006,r[:number])
 end
 
 def test_costpercapita_az128
   r = spreadsheet.costpercapita_az128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(32.2690859140289,r[:number])
+  assert_in_epsilon(32.269085914028885,r[:number])
 end
 
 def test_costpercapita_ba128
   r = spreadsheet.costpercapita_ba128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(35.18103924660402,r[:number])
+  assert_in_epsilon(35.18103924660401,r[:number])
 end
 
 def test_costpercapita_bb128
   r = spreadsheet.costpercapita_bb128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(34.12581398642902,r[:number])
+  assert_in_epsilon(34.125813986429016,r[:number])
 end
 
 def test_costpercapita_bc128
   r = spreadsheet.costpercapita_bc128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(36.23719946695932,r[:number])
+  assert_in_epsilon(36.2371994669593,r[:number])
 end
 
 def test_costpercapita_bd128
   r = spreadsheet.costpercapita_bd128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(40.764769429607355,r[:number])
+  assert_in_epsilon(40.76476942960735,r[:number])
 end
 
 def test_costpercapita_be128
   r = spreadsheet.costpercapita_be128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(39.59919951853172,r[:number])
+  assert_in_epsilon(39.599199518531705,r[:number])
 end
 
 def test_costpercapita_bf128
   r = spreadsheet.costpercapita_bf128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(41.380373288660714,r[:number])
+  assert_in_epsilon(41.3803732886607,r[:number])
 end
 
 def test_costpercapita_bg128
   r = spreadsheet.costpercapita_bg128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(45.70711046834083,r[:number])
+  assert_in_epsilon(45.7071104683408,r[:number])
 end
 
 def test_costpercapita_bi128
   r = spreadsheet.costpercapita_bi128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.56260168708007,r[:number])
+  assert_in_epsilon(19.56260168708006,r[:number])
 end
 
 def test_costpercapita_bj128
   r = spreadsheet.costpercapita_bj128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(51.186609455746904,r[:number])
+  assert_in_epsilon(51.18660945574688,r[:number])
 end
 
 def test_costpercapita_bk128
   r = spreadsheet.costpercapita_bk128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(84.69189378110578,r[:number])
+  assert_in_epsilon(84.69189378110575,r[:number])
 end
 
 def test_costpercapita_bl128
   r = spreadsheet.costpercapita_bl128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(98.46372945969676,r[:number])
+  assert_in_epsilon(98.46372945969671,r[:number])
 end
 
 def test_costpercapita_bm128
   r = spreadsheet.costpercapita_bm128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(102.59101222501788,r[:number])
+  assert_in_epsilon(102.59101222501782,r[:number])
 end
 
 def test_costpercapita_bn128
   r = spreadsheet.costpercapita_bn128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(108.55997218307373,r[:number])
+  assert_in_epsilon(108.55997218307368,r[:number])
 end
 
 def test_costpercapita_bo128
   r = spreadsheet.costpercapita_bo128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(114.1236062780502,r[:number])
+  assert_in_epsilon(114.12360627805016,r[:number])
 end
 
 def test_costpercapita_bp128
   r = spreadsheet.costpercapita_bp128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(119.28922459599964,r[:number])
+  assert_in_epsilon(119.2892245959996,r[:number])
 end
 
 def test_costpercapita_bq128
   r = spreadsheet.costpercapita_bq128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(124.4002833653492,r[:number])
+  assert_in_epsilon(124.40028336534913,r[:number])
 end
 
 def test_costpercapita_bs128
   r = spreadsheet.costpercapita_bs128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(140.23247219979555,r[:number])
+  assert_in_epsilon(140.23247219979552,r[:number])
 end
 
 def test_costpercapita_bt128
@@ -102317,19 +105491,19 @@ end
 def test_costpercapita_bu128
   r = spreadsheet.costpercapita_bu128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(202.76106278628336,r[:number])
+  assert_in_epsilon(202.76106278628333,r[:number])
 end
 
 def test_costpercapita_bv128
   r = spreadsheet.costpercapita_bv128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(224.1118387375866,r[:number])
+  assert_in_epsilon(224.11183873758654,r[:number])
 end
 
 def test_costpercapita_bw128
   r = spreadsheet.costpercapita_bw128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(235.9282285326897,r[:number])
+  assert_in_epsilon(235.92822853268962,r[:number])
 end
 
 def test_costpercapita_bx128
@@ -102347,19 +105521,19 @@ end
 def test_costpercapita_bz128
   r = spreadsheet.costpercapita_bz128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(270.81570982110304,r[:number])
+  assert_in_epsilon(270.815709821103,r[:number])
 end
 
 def test_costpercapita_ca128
   r = spreadsheet.costpercapita_ca128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(282.279563804052,r[:number])
+  assert_in_epsilon(282.2795638040519,r[:number])
 end
 
 def test_costpercapita_cc128
   r = spreadsheet.costpercapita_cc128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(225.9885397378415,r[:number])
+  assert_in_epsilon(225.98853973784148,r[:number])
 end
 
 def test_costpercapita_cd128
@@ -102371,67 +105545,67 @@ end
 def test_costpercapita_cf128
   r = spreadsheet.costpercapita_cf128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-30.035632906977636,r[:number])
+  assert_in_epsilon(-30.035632906977643,r[:number])
 end
 
 def test_costpercapita_cg128
   r = spreadsheet.costpercapita_cg128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.0983628441470907,r[:number])
+  assert_in_epsilon(2.0983628441470694,r[:number])
 end
 
 def test_costpercapita_ch128
   r = spreadsheet.costpercapita_ch128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(31.173937456260752,r[:number])
+  assert_in_epsilon(31.173937456260727,r[:number])
 end
 
 def test_costpercapita_ci128
   r = spreadsheet.costpercapita_ci128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(46.550998580042936,r[:number])
+  assert_in_epsilon(46.55099858004289,r[:number])
 end
 
 def test_costpercapita_cj128
   r = spreadsheet.costpercapita_cj128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(47.46640817868836,r[:number])
+  assert_in_epsilon(47.46640817868831,r[:number])
 end
 
 def test_costpercapita_ck128
   r = spreadsheet.costpercapita_ck128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(46.54795671548929,r[:number])
+  assert_in_epsilon(46.54795671548924,r[:number])
 end
 
 def test_costpercapita_cl128
   r = spreadsheet.costpercapita_cl128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(53.88467429322618,r[:number])
+  assert_in_epsilon(53.884674293226134,r[:number])
 end
 
 def test_costpercapita_cm128
   r = spreadsheet.costpercapita_cm128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(56.340742749145186,r[:number])
+  assert_in_epsilon(56.34074274914514,r[:number])
 end
 
 def test_costpercapita_cn128
   r = spreadsheet.costpercapita_cn128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(54.869900120185285,r[:number])
+  assert_in_epsilon(54.869900120185214,r[:number])
 end
 
 def test_costpercapita_cp128
   r = spreadsheet.costpercapita_cp128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(34.32192755891194,r[:number])
+  assert_in_epsilon(34.321927558911895,r[:number])
 end
 
 def test_costpercapita_cq128
   r = spreadsheet.costpercapita_cq128
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(701.2812775479338,r[:number])
+  assert_in_epsilon(701.2812775479329,r[:number])
 end
 
 def test_costpercapita_cr128
@@ -104213,241 +107387,241 @@ end
 def test_costpercapita_ay132
   r = spreadsheet.costpercapita_ay132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.85244844689984,r[:number])
+  assert_in_epsilon(50.85244844689982,r[:number])
 end
 
 def test_costpercapita_az132
   r = spreadsheet.costpercapita_az132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(75.67265647055373,r[:number])
+  assert_in_epsilon(75.67265647055369,r[:number])
 end
 
 def test_costpercapita_ba132
   r = spreadsheet.costpercapita_ba132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(97.81163366175444,r[:number])
+  assert_in_epsilon(97.81163366175439,r[:number])
 end
 
 def test_costpercapita_bb132
   r = spreadsheet.costpercapita_bb132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(101.0233516284278,r[:number])
+  assert_in_epsilon(101.02335162842776,r[:number])
 end
 
 def test_costpercapita_bc132
   r = spreadsheet.costpercapita_bc132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(86.87800439147135,r[:number])
+  assert_in_epsilon(86.87800439147134,r[:number])
 end
 
 def test_costpercapita_bd132
   r = spreadsheet.costpercapita_bd132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(88.84790319399615,r[:number])
+  assert_in_epsilon(88.84790319399612,r[:number])
 end
 
 def test_costpercapita_be132
   r = spreadsheet.costpercapita_be132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(90.83402115193046,r[:number])
+  assert_in_epsilon(90.83402115193041,r[:number])
 end
 
 def test_costpercapita_bf132
   r = spreadsheet.costpercapita_bf132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(92.82947428973935,r[:number])
+  assert_in_epsilon(92.8294742897393,r[:number])
 end
 
 def test_costpercapita_bg132
   r = spreadsheet.costpercapita_bg132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(103.63757503210178,r[:number])
+  assert_in_epsilon(103.63757503210174,r[:number])
 end
 
 def test_costpercapita_bi132
   r = spreadsheet.costpercapita_bi132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.85244844689984,r[:number])
+  assert_in_epsilon(50.85244844689982,r[:number])
 end
 
 def test_costpercapita_bj132
   r = spreadsheet.costpercapita_bj132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(124.84824190833189,r[:number])
+  assert_in_epsilon(124.84824190833183,r[:number])
 end
 
 def test_costpercapita_bk132
   r = spreadsheet.costpercapita_bk132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(218.57257504342093,r[:number])
+  assert_in_epsilon(218.57257504342078,r[:number])
 end
 
 def test_costpercapita_bl132
   r = spreadsheet.costpercapita_bl132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(266.73529089127885,r[:number])
+  assert_in_epsilon(266.73529089127874,r[:number])
 end
 
 def test_costpercapita_bm132
   r = spreadsheet.costpercapita_bm132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(277.3349408824638,r[:number])
+  assert_in_epsilon(277.3349408824637,r[:number])
 end
 
 def test_costpercapita_bn132
   r = spreadsheet.costpercapita_bn132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(269.6281516899175,r[:number])
+  assert_in_epsilon(269.6281516899174,r[:number])
 end
 
 def test_costpercapita_bo132
   r = spreadsheet.costpercapita_bo132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(260.80950216090383,r[:number])
+  assert_in_epsilon(260.80950216090366,r[:number])
 end
 
 def test_costpercapita_bp132
   r = spreadsheet.costpercapita_bp132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(267.0701097401776,r[:number])
+  assert_in_epsilon(267.07010974017743,r[:number])
 end
 
 def test_costpercapita_bq132
   r = spreadsheet.costpercapita_bq132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(282.095454812562,r[:number])
+  assert_in_epsilon(282.0954548125619,r[:number])
 end
 
 def test_costpercapita_bs132
   r = spreadsheet.costpercapita_bs132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(69.29965250486012,r[:number])
+  assert_in_epsilon(69.2996525048601,r[:number])
 end
 
 def test_costpercapita_bt132
   r = spreadsheet.costpercapita_bt132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(142.20786584920302,r[:number])
+  assert_in_epsilon(142.20786584920296,r[:number])
 end
 
 def test_costpercapita_bu132
   r = spreadsheet.costpercapita_bu132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(236.31102428200293,r[:number])
+  assert_in_epsilon(236.3110242820028,r[:number])
 end
 
 def test_costpercapita_bv132
   r = spreadsheet.costpercapita_bv132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(284.9411065889134,r[:number])
+  assert_in_epsilon(284.94110658891327,r[:number])
 end
 
 def test_costpercapita_bw132
   r = spreadsheet.costpercapita_bw132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(295.18611823391404,r[:number])
+  assert_in_epsilon(295.18611823391393,r[:number])
 end
 
 def test_costpercapita_bx132
   r = spreadsheet.costpercapita_bx132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(287.3746351631293,r[:number])
+  assert_in_epsilon(287.3746351631292,r[:number])
 end
 
 def test_costpercapita_by132
   r = spreadsheet.costpercapita_by132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(278.61345807823676,r[:number])
+  assert_in_epsilon(278.61345807823665,r[:number])
 end
 
 def test_costpercapita_bz132
   r = spreadsheet.costpercapita_bz132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(285.0396197578998,r[:number])
+  assert_in_epsilon(285.0396197578997,r[:number])
 end
 
 def test_costpercapita_ca132
   r = spreadsheet.costpercapita_ca132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(300.77250274640187,r[:number])
+  assert_in_epsilon(300.77250274640176,r[:number])
 end
 
 def test_costpercapita_cc132
   r = spreadsheet.costpercapita_cc132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(242.19399813384018,r[:number])
+  assert_in_epsilon(242.19399813384,r[:number])
 end
 
 def test_costpercapita_cd132
   r = spreadsheet.costpercapita_cd132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5038.761842676969,r[:number])
+  assert_in_epsilon(5038.761842676967,r[:number])
 end
 
 def test_costpercapita_cf132
   r = spreadsheet.costpercapita_cf132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-78.07680687895595,r[:number])
+  assert_in_epsilon(-78.07680687895596,r[:number])
 end
 
 def test_costpercapita_cg132
   r = spreadsheet.costpercapita_cg132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.733793594613578,r[:number])
+  assert_in_epsilon(9.733793594613521,r[:number])
 end
 
 def test_costpercapita_ch132
   r = spreadsheet.costpercapita_ch132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(69.7799625887786,r[:number])
+  assert_in_epsilon(69.77996258877846,r[:number])
 end
 
 def test_costpercapita_ci132
   r = spreadsheet.costpercapita_ci132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(113.0569619953652,r[:number])
+  assert_in_epsilon(113.0569619953651,r[:number])
 end
 
 def test_costpercapita_cj132
   r = spreadsheet.costpercapita_cj132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(145.17473913227613,r[:number])
+  assert_in_epsilon(145.17473913227602,r[:number])
 end
 
 def test_costpercapita_ck132
   r = spreadsheet.costpercapita_ck132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(134.47130855745283,r[:number])
+  assert_in_epsilon(134.47130855745272,r[:number])
 end
 
 def test_costpercapita_cl132
   r = spreadsheet.costpercapita_cl132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(122.63134480904813,r[:number])
+  assert_in_epsilon(122.63134480904799,r[:number])
 end
 
 def test_costpercapita_cm132
   r = spreadsheet.costpercapita_cm132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(125.85643734486449,r[:number])
+  assert_in_epsilon(125.85643734486435,r[:number])
 end
 
 def test_costpercapita_cn132
   r = spreadsheet.costpercapita_cn132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(124.44032770552909,r[:number])
+  assert_in_epsilon(124.44032770552899,r[:number])
 end
 
 def test_costpercapita_cp132
   r = spreadsheet.costpercapita_cp132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(85.22978542766357,r[:number])
+  assert_in_epsilon(85.22978542766346,r[:number])
 end
 
 def test_costpercapita_cq132
   r = spreadsheet.costpercapita_cq132
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1773.7606140637547,r[:number])
+  assert_in_epsilon(1773.7606140637527,r[:number])
 end
 
 def test_costpercapita_cr132
@@ -104723,7 +107897,7 @@ end
 def test_costpercapita_az133
   r = spreadsheet.costpercapita_az133
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.3998442213496234,r[:number])
+  assert_in_epsilon(2.3998442213496225,r[:number])
 end
 
 def test_costpercapita_ba133
@@ -104777,19 +107951,19 @@ end
 def test_costpercapita_bj133
   r = spreadsheet.costpercapita_bj133
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.3998442213496234,r[:number])
+  assert_in_epsilon(2.3998442213496225,r[:number])
 end
 
 def test_costpercapita_bk133
   r = spreadsheet.costpercapita_bk133
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.321277760181197,r[:number])
+  assert_in_epsilon(2.321277760181196,r[:number])
 end
 
 def test_costpercapita_bl133
   r = spreadsheet.costpercapita_bl133
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.249402934861962,r[:number])
+  assert_in_epsilon(2.249402934861961,r[:number])
 end
 
 def test_costpercapita_bm133
@@ -104831,19 +108005,19 @@ end
 def test_costpercapita_bt133
   r = spreadsheet.costpercapita_bt133
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.4149453005306327,r[:number])
+  assert_in_epsilon(3.414945300530632,r[:number])
 end
 
 def test_costpercapita_bu133
   r = spreadsheet.costpercapita_bu133
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.3031463075128467,r[:number])
+  assert_in_epsilon(3.3031463075128458,r[:number])
 end
 
 def test_costpercapita_bv133
   r = spreadsheet.costpercapita_bv133
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.200869420218743,r[:number])
+  assert_in_epsilon(3.200869420218742,r[:number])
 end
 
 def test_costpercapita_bw133
@@ -104879,13 +108053,13 @@ end
 def test_costpercapita_cc133
   r = spreadsheet.costpercapita_cc133
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.709511682462987,r[:number])
+  assert_in_epsilon(1.7095116824629868,r[:number])
 end
 
 def test_costpercapita_cd133
   r = spreadsheet.costpercapita_cd133
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(44.9456917768529,r[:number])
+  assert_in_epsilon(44.94569177685288,r[:number])
 end
 
 def test_costpercapita_cf133
@@ -104897,19 +108071,19 @@ end
 def test_costpercapita_cg133
   r = spreadsheet.costpercapita_cg133
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-1.2508369687183603,r[:number])
+  assert_in_epsilon(-1.2508369687183611,r[:number])
 end
 
 def test_costpercapita_ch133
   r = spreadsheet.costpercapita_ch133
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.321277760181197,r[:number])
+  assert_in_epsilon(2.321277760181196,r[:number])
 end
 
 def test_costpercapita_ci133
   r = spreadsheet.costpercapita_ci133
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.249402934861962,r[:number])
+  assert_in_epsilon(2.249402934861961,r[:number])
 end
 
 def test_costpercapita_cj133
@@ -104945,13 +108119,13 @@ end
 def test_costpercapita_cp133
   r = spreadsheet.costpercapita_cp133
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.36887152514719984,r[:number])
+  assert_in_epsilon(0.36887152514719956,r[:number])
 end
 
 def test_costpercapita_cq133
   r = spreadsheet.costpercapita_cq133
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.675369107946125,r[:number])
+  assert_in_epsilon(9.675369107946116,r[:number])
 end
 
 def test_costpercapita_cr133
@@ -105725,109 +108899,109 @@ end
 def test_costpercapita_ay135
   r = spreadsheet.costpercapita_ay135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(68.55279668806118,r[:number])
+  assert_in_epsilon(68.55279668806116,r[:number])
 end
 
 def test_costpercapita_az135
   r = spreadsheet.costpercapita_az135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(99.79629484789852,r[:number])
+  assert_in_epsilon(99.79629484789848,r[:number])
 end
 
 def test_costpercapita_ba135
   r = spreadsheet.costpercapita_ba135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(101.83609942052571,r[:number])
+  assert_in_epsilon(101.83609942052566,r[:number])
 end
 
 def test_costpercapita_bb135
   r = spreadsheet.costpercapita_bb135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(128.76661119673253,r[:number])
+  assert_in_epsilon(128.76661119673247,r[:number])
 end
 
 def test_costpercapita_bc135
   r = spreadsheet.costpercapita_bc135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(154.15244030051934,r[:number])
+  assert_in_epsilon(154.1524403005193,r[:number])
 end
 
 def test_costpercapita_bd135
   r = spreadsheet.costpercapita_bd135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(181.35656089107445,r[:number])
+  assert_in_epsilon(181.3565608910744,r[:number])
 end
 
 def test_costpercapita_be135
   r = spreadsheet.costpercapita_be135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(206.6329283057964,r[:number])
+  assert_in_epsilon(206.63292830579633,r[:number])
 end
 
 def test_costpercapita_bf135
   r = spreadsheet.costpercapita_bf135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(236.10107459364045,r[:number])
+  assert_in_epsilon(236.10107459364033,r[:number])
 end
 
 def test_costpercapita_bg135
   r = spreadsheet.costpercapita_bg135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(266.8679623055794,r[:number])
+  assert_in_epsilon(266.8679623055792,r[:number])
 end
 
 def test_costpercapita_bi135
   r = spreadsheet.costpercapita_bi135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(68.55279668806118,r[:number])
+  assert_in_epsilon(68.55279668806116,r[:number])
 end
 
 def test_costpercapita_bj135
   r = spreadsheet.costpercapita_bj135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(166.08855831781813,r[:number])
+  assert_in_epsilon(166.08855831781807,r[:number])
 end
 
 def test_costpercapita_bk135
   r = spreadsheet.costpercapita_bk135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(262.48722552857384,r[:number])
+  assert_in_epsilon(262.4872255285737,r[:number])
 end
 
 def test_costpercapita_bl135
   r = spreadsheet.costpercapita_bl135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(320.9897819975167,r[:number])
+  assert_in_epsilon(320.9897819975165,r[:number])
 end
 
 def test_costpercapita_bm135
   r = spreadsheet.costpercapita_bm135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(375.38799595894193,r[:number])
+  assert_in_epsilon(375.3879959589417,r[:number])
 end
 
 def test_costpercapita_bn135
   r = spreadsheet.costpercapita_bn135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(454.1762008757171,r[:number])
+  assert_in_epsilon(454.1762008757169,r[:number])
 end
 
 def test_costpercapita_bo135
   r = spreadsheet.costpercapita_bo135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(531.4330066426096,r[:number])
+  assert_in_epsilon(531.4330066426094,r[:number])
 end
 
 def test_costpercapita_bp135
   r = spreadsheet.costpercapita_bp135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(612.5604505424534,r[:number])
+  assert_in_epsilon(612.560450542453,r[:number])
 end
 
 def test_costpercapita_bq135
   r = spreadsheet.costpercapita_bq135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(697.2948040082299,r[:number])
+  assert_in_epsilon(697.2948040082297,r[:number])
 end
 
 def test_costpercapita_bs135
@@ -105839,127 +109013,127 @@ end
 def test_costpercapita_bt135
   r = spreadsheet.costpercapita_bt135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(253.1225834508191,r[:number])
+  assert_in_epsilon(253.12258345081904,r[:number])
 end
 
 def test_costpercapita_bu135
   r = spreadsheet.costpercapita_bu135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(350.2397664681618,r[:number])
+  assert_in_epsilon(350.23976646816163,r[:number])
 end
 
 def test_costpercapita_bv135
   r = spreadsheet.costpercapita_bv135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(409.08947547849647,r[:number])
+  assert_in_epsilon(409.0894754784963,r[:number])
 end
 
 def test_costpercapita_bw135
   r = spreadsheet.costpercapita_bw135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(463.6504238320919,r[:number])
+  assert_in_epsilon(463.65042383209175,r[:number])
 end
 
 def test_costpercapita_bx135
   r = spreadsheet.costpercapita_bx135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(543.7279783159673,r[:number])
+  assert_in_epsilon(543.7279783159671,r[:number])
 end
 
 def test_costpercapita_by135
   r = spreadsheet.costpercapita_by135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(622.4884145491545,r[:number])
+  assert_in_epsilon(622.4884145491544,r[:number])
 end
 
 def test_costpercapita_bz135
   r = spreadsheet.costpercapita_bz135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(705.2626429831342,r[:number])
+  assert_in_epsilon(705.2626429831339,r[:number])
 end
 
 def test_costpercapita_ca135
   r = spreadsheet.costpercapita_ca135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(791.7843839644853,r[:number])
+  assert_in_epsilon(791.7843839644851,r[:number])
 end
 
 def test_costpercapita_cc135
   r = spreadsheet.costpercapita_cc135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(477.2507134266182,r[:number])
+  assert_in_epsilon(477.25071342661795,r[:number])
 end
 
 def test_costpercapita_cd135
   r = spreadsheet.costpercapita_cd135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9241.489959251174,r[:number])
+  assert_in_epsilon(9241.489959251172,r[:number])
 end
 
 def test_costpercapita_cf135
   r = spreadsheet.costpercapita_cf135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-105.25321064166747,r[:number])
+  assert_in_epsilon(-105.25321064166748,r[:number])
 end
 
 def test_costpercapita_cg135
   r = spreadsheet.costpercapita_cg135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.276847708196568,r[:number])
+  assert_in_epsilon(14.276847708196511,r[:number])
 end
 
 def test_costpercapita_ch135
   r = spreadsheet.costpercapita_ch135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(107.57253176760557,r[:number])
+  assert_in_epsilon(107.57253176760541,r[:number])
 end
 
 def test_costpercapita_ci135
   r = spreadsheet.costpercapita_ci135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(125.10796549346782,r[:number])
+  assert_in_epsilon(125.10796549346766,r[:number])
 end
 
 def test_costpercapita_cj135
   r = spreadsheet.costpercapita_cj135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(140.88885255550124,r[:number])
+  assert_in_epsilon(140.88885255550102,r[:number])
 end
 
 def test_costpercapita_ck135
   r = spreadsheet.costpercapita_ck135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(178.2937166500839,r[:number])
+  assert_in_epsilon(178.2937166500837,r[:number])
 end
 
 def test_costpercapita_cl135
   r = spreadsheet.costpercapita_cl135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(217.0997103795689,r[:number])
+  assert_in_epsilon(217.0997103795687,r[:number])
 end
 
 def test_costpercapita_cm135
   r = spreadsheet.costpercapita_cm135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(253.3997415656393,r[:number])
+  assert_in_epsilon(253.3997415656389,r[:number])
 end
 
 def test_costpercapita_cn135
   r = spreadsheet.costpercapita_cn135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(291.3310162116821,r[:number])
+  assert_in_epsilon(291.3310162116818,r[:number])
 end
 
 def test_costpercapita_cp135
   r = spreadsheet.costpercapita_cp135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(135.85746352111977,r[:number])
+  assert_in_epsilon(135.85746352111957,r[:number])
 end
 
 def test_costpercapita_cq135
   r = spreadsheet.costpercapita_cq135
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2603.073076164572,r[:number])
+  assert_in_epsilon(2603.073076164568,r[:number])
 end
 
 def test_costpercapita_cr135
@@ -106229,241 +109403,241 @@ end
 def test_costpercapita_ay136
   r = spreadsheet.costpercapita_ay136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.007736521034653,r[:number])
+  assert_in_epsilon(14.007736521034648,r[:number])
 end
 
 def test_costpercapita_az136
   r = spreadsheet.costpercapita_az136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.137702931235491,r[:number])
+  assert_in_epsilon(13.13770293123549,r[:number])
 end
 
 def test_costpercapita_ba136
   r = spreadsheet.costpercapita_ba136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.621148055400854,r[:number])
+  assert_in_epsilon(6.621148055400853,r[:number])
 end
 
 def test_costpercapita_bb136
   r = spreadsheet.costpercapita_bb136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.416134304759664,r[:number])
+  assert_in_epsilon(6.416134304759662,r[:number])
 end
 
 def test_costpercapita_bc136
   r = spreadsheet.costpercapita_bc136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.240844533266602,r[:number])
+  assert_in_epsilon(6.240844533266599,r[:number])
 end
 
 def test_costpercapita_bd136
   r = spreadsheet.costpercapita_bd136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.09383709780593,r[:number])
+  assert_in_epsilon(6.0938370978059275,r[:number])
 end
 
 def test_costpercapita_be136
   r = spreadsheet.costpercapita_be136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.963877574055534,r[:number])
+  assert_in_epsilon(5.963877574055532,r[:number])
 end
 
 def test_costpercapita_bf136
   r = spreadsheet.costpercapita_bf136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.844910589318696,r[:number])
+  assert_in_epsilon(5.844910589318693,r[:number])
 end
 
 def test_costpercapita_bg136
   r = spreadsheet.costpercapita_bg136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.735834415472617,r[:number])
+  assert_in_epsilon(5.735834415472614,r[:number])
 end
 
 def test_costpercapita_bi136
   r = spreadsheet.costpercapita_bi136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.007736521034653,r[:number])
+  assert_in_epsilon(14.007736521034648,r[:number])
 end
 
 def test_costpercapita_bj136
   r = spreadsheet.costpercapita_bj136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(26.68353337043865,r[:number])
+  assert_in_epsilon(26.68353337043864,r[:number])
 end
 
 def test_costpercapita_bk136
   r = spreadsheet.costpercapita_bk136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(32.431111895894766,r[:number])
+  assert_in_epsilon(32.43111189589475,r[:number])
 end
 
 def test_costpercapita_bl136
   r = spreadsheet.costpercapita_bl136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(25.146396029942593,r[:number])
+  assert_in_epsilon(25.146396029942586,r[:number])
 end
 
 def test_costpercapita_bm136
   r = spreadsheet.costpercapita_bm136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.722533599799803,r[:number])
+  assert_in_epsilon(18.722533599799796,r[:number])
 end
 
 def test_costpercapita_bn136
   r = spreadsheet.costpercapita_bn136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.28151129341779,r[:number])
+  assert_in_epsilon(18.281511293417783,r[:number])
 end
 
 def test_costpercapita_bo136
   r = spreadsheet.costpercapita_bo136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.8916327221666,r[:number])
+  assert_in_epsilon(17.891632722166595,r[:number])
 end
 
 def test_costpercapita_bp136
   r = spreadsheet.costpercapita_bp136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.534731767956085,r[:number])
+  assert_in_epsilon(17.53473176795608,r[:number])
 end
 
 def test_costpercapita_bq136
   r = spreadsheet.costpercapita_bq136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.207503246417854,r[:number])
+  assert_in_epsilon(17.207503246417847,r[:number])
 end
 
 def test_costpercapita_bs136
   r = spreadsheet.costpercapita_bs136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.007736521034653,r[:number])
+  assert_in_epsilon(14.007736521034648,r[:number])
 end
 
 def test_costpercapita_bt136
   r = spreadsheet.costpercapita_bt136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(26.68353337043865,r[:number])
+  assert_in_epsilon(26.68353337043864,r[:number])
 end
 
 def test_costpercapita_bu136
   r = spreadsheet.costpercapita_bu136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(32.431111895894766,r[:number])
+  assert_in_epsilon(32.43111189589475,r[:number])
 end
 
 def test_costpercapita_bv136
   r = spreadsheet.costpercapita_bv136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(25.146396029942593,r[:number])
+  assert_in_epsilon(25.146396029942586,r[:number])
 end
 
 def test_costpercapita_bw136
   r = spreadsheet.costpercapita_bw136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.722533599799803,r[:number])
+  assert_in_epsilon(18.722533599799796,r[:number])
 end
 
 def test_costpercapita_bx136
   r = spreadsheet.costpercapita_bx136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.28151129341779,r[:number])
+  assert_in_epsilon(18.281511293417783,r[:number])
 end
 
 def test_costpercapita_by136
   r = spreadsheet.costpercapita_by136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.8916327221666,r[:number])
+  assert_in_epsilon(17.891632722166595,r[:number])
 end
 
 def test_costpercapita_bz136
   r = spreadsheet.costpercapita_bz136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.534731767956085,r[:number])
+  assert_in_epsilon(17.53473176795608,r[:number])
 end
 
 def test_costpercapita_ca136
   r = spreadsheet.costpercapita_ca136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.207503246417854,r[:number])
+  assert_in_epsilon(17.207503246417847,r[:number])
 end
 
 def test_costpercapita_cc136
   r = spreadsheet.costpercapita_cc136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20.87852116078542,r[:number])
+  assert_in_epsilon(20.878521160785414,r[:number])
 end
 
 def test_costpercapita_cd136
   r = spreadsheet.costpercapita_cd136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(483.6961652781164,r[:number])
+  assert_in_epsilon(483.69616527811615,r[:number])
 end
 
 def test_costpercapita_cf136
   r = spreadsheet.costpercapita_cf136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-21.506916039768306,r[:number])
+  assert_in_epsilon(-21.506916039768313,r[:number])
 end
 
 def test_costpercapita_cg136
   r = spreadsheet.costpercapita_cg136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.698250765391129,r[:number])
+  assert_in_epsilon(6.698250765391118,r[:number])
 end
 
 def test_costpercapita_ch136
   r = spreadsheet.costpercapita_ch136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.358916189411183,r[:number])
+  assert_in_epsilon(22.35891618941117,r[:number])
 end
 
 def test_costpercapita_ci136
   r = spreadsheet.costpercapita_ci136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.386070500911684,r[:number])
+  assert_in_epsilon(15.386070500911678,r[:number])
 end
 
 def test_costpercapita_cj136
   r = spreadsheet.costpercapita_cj136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.228861658492669,r[:number])
+  assert_in_epsilon(9.228861658492663,r[:number])
 end
 
 def test_costpercapita_ck136
   r = spreadsheet.costpercapita_ck136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.011469400537127,r[:number])
+  assert_in_epsilon(9.011469400537122,r[:number])
 end
 
 def test_costpercapita_cl136
   r = spreadsheet.costpercapita_cl136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.819287323335434,r[:number])
+  assert_in_epsilon(8.819287323335427,r[:number])
 end
 
 def test_costpercapita_cm136
   r = spreadsheet.costpercapita_cm136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.643360838031754,r[:number])
+  assert_in_epsilon(8.643360838031748,r[:number])
 end
 
 def test_costpercapita_cn136
   r = spreadsheet.costpercapita_cn136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.482060726596957,r[:number])
+  assert_in_epsilon(8.48206072659695,r[:number])
 end
 
 def test_costpercapita_cp136
   r = spreadsheet.costpercapita_cp136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.457929040326625,r[:number])
+  assert_in_epsilon(7.4579290403266185,r[:number])
 end
 
 def test_costpercapita_cq136
   r = spreadsheet.costpercapita_cq136
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(214.35609138169593,r[:number])
+  assert_in_epsilon(214.35609138169576,r[:number])
 end
 
 def test_costpercapita_cr136
@@ -106733,241 +109907,241 @@ end
 def test_costpercapita_ay137
   r = spreadsheet.costpercapita_ay137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(47.68788035096809,r[:number])
+  assert_in_epsilon(47.68788035096807,r[:number])
 end
 
 def test_costpercapita_az137
   r = spreadsheet.costpercapita_az137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(130.53780682031976,r[:number])
+  assert_in_epsilon(130.5378068203197,r[:number])
 end
 
 def test_costpercapita_ba137
   r = spreadsheet.costpercapita_ba137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(140.1139712070709,r[:number])
+  assert_in_epsilon(140.11397120707085,r[:number])
 end
 
 def test_costpercapita_bb137
   r = spreadsheet.costpercapita_bb137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(149.25923504246936,r[:number])
+  assert_in_epsilon(149.2592350424693,r[:number])
 end
 
 def test_costpercapita_bc137
   r = spreadsheet.costpercapita_bc137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(158.09232038095533,r[:number])
+  assert_in_epsilon(158.09232038095524,r[:number])
 end
 
 def test_costpercapita_bd137
   r = spreadsheet.costpercapita_bd137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(166.81528809216414,r[:number])
+  assert_in_epsilon(166.81528809216408,r[:number])
 end
 
 def test_costpercapita_be137
   r = spreadsheet.costpercapita_be137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(175.58729781185352,r[:number])
+  assert_in_epsilon(175.5872978118534,r[:number])
 end
 
 def test_costpercapita_bf137
   r = spreadsheet.costpercapita_bf137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(184.5153885910412,r[:number])
+  assert_in_epsilon(184.5153885910411,r[:number])
 end
 
 def test_costpercapita_bg137
   r = spreadsheet.costpercapita_bg137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(193.3268849777316,r[:number])
+  assert_in_epsilon(193.32688497773154,r[:number])
 end
 
 def test_costpercapita_bi137
   r = spreadsheet.costpercapita_bi137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(47.68788035096809,r[:number])
+  assert_in_epsilon(47.68788035096807,r[:number])
 end
 
 def test_costpercapita_bj137
   r = spreadsheet.costpercapita_bj137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(176.65317601427918,r[:number])
+  assert_in_epsilon(176.6531760142791,r[:number])
 end
 
 def test_costpercapita_bk137
   r = spreadsheet.costpercapita_bk137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(310.98384896801605,r[:number])
+  assert_in_epsilon(310.9838489680159,r[:number])
 end
 
 def test_costpercapita_bl137
   r = spreadsheet.costpercapita_bl137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(407.3894516797004,r[:number])
+  assert_in_epsilon(407.38945167970024,r[:number])
 end
 
 def test_costpercapita_bm137
   r = spreadsheet.costpercapita_bm137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(435.3399170971147,r[:number])
+  assert_in_epsilon(435.3399170971145,r[:number])
 end
 
 def test_costpercapita_bn137
   r = spreadsheet.costpercapita_bn137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(462.94523368169763,r[:number])
+  assert_in_epsilon(462.94523368169746,r[:number])
 end
 
 def test_costpercapita_bo137
   r = spreadsheet.costpercapita_bo137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(489.9212454392247,r[:number])
+  assert_in_epsilon(489.92124543922455,r[:number])
 end
 
 def test_costpercapita_bp137
   r = spreadsheet.costpercapita_bp137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(516.6011520849526,r[:number])
+  assert_in_epsilon(516.6011520849523,r[:number])
 end
 
 def test_costpercapita_bq137
   r = spreadsheet.costpercapita_bq137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(543.2721927173297,r[:number])
+  assert_in_epsilon(543.2721927173295,r[:number])
 end
 
 def test_costpercapita_bs137
   r = spreadsheet.costpercapita_bs137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(74.38411229526851,r[:number])
+  assert_in_epsilon(74.38411229526848,r[:number])
 end
 
 def test_costpercapita_bt137
   r = spreadsheet.costpercapita_bt137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(204.10212791761444,r[:number])
+  assert_in_epsilon(204.10212791761435,r[:number])
 end
 
 def test_costpercapita_bu137
   r = spreadsheet.costpercapita_bu137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(339.7267667650177,r[:number])
+  assert_in_epsilon(339.72676676501754,r[:number])
 end
 
 def test_costpercapita_bv137
   r = spreadsheet.costpercapita_bv137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(437.5711596758477,r[:number])
+  assert_in_epsilon(437.5711596758475,r[:number])
 end
 
 def test_costpercapita_bw137
   r = spreadsheet.costpercapita_bw137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(467.1798145305908,r[:number])
+  assert_in_epsilon(467.1798145305906,r[:number])
 end
 
 def test_costpercapita_bx137
   r = spreadsheet.costpercapita_bx137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(496.6922196553985,r[:number])
+  assert_in_epsilon(496.69221965539833,r[:number])
 end
 
 def test_costpercapita_by137
   r = spreadsheet.costpercapita_by137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(525.7985122085558,r[:number])
+  assert_in_epsilon(525.7985122085556,r[:number])
 end
 
 def test_costpercapita_bz137
   r = spreadsheet.costpercapita_bz137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(554.8236043825452,r[:number])
+  assert_in_epsilon(554.823604382545,r[:number])
 end
 
 def test_costpercapita_ca137
   r = spreadsheet.costpercapita_ca137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(584.0725874301422,r[:number])
+  assert_in_epsilon(584.072587430142,r[:number])
 end
 
 def test_costpercapita_cc137
   r = spreadsheet.costpercapita_cc137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(409.37232276233124,r[:number])
+  assert_in_epsilon(409.37232276233107,r[:number])
 end
 
 def test_costpercapita_cd137
   r = spreadsheet.costpercapita_cd137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8231.964575616656,r[:number])
+  assert_in_epsilon(8231.964575616652,r[:number])
 end
 
 def test_costpercapita_cf137
   r = spreadsheet.costpercapita_cf137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-73.21805612795978,r[:number])
+  assert_in_epsilon(-73.21805612795981,r[:number])
 end
 
 def test_costpercapita_cg137
   r = spreadsheet.costpercapita_cg137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-21.923011436615656,r[:number])
+  assert_in_epsilon(-21.92301143661574,r[:number])
 end
 
 def test_costpercapita_ch137
   r = spreadsheet.costpercapita_ch137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(97.8402479788996,r[:number])
+  assert_in_epsilon(97.84024797889943,r[:number])
 end
 
 def test_costpercapita_ci137
   r = spreadsheet.costpercapita_ci137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(180.3339299229426,r[:number])
+  assert_in_epsilon(180.33392992294242,r[:number])
 end
 
 def test_costpercapita_cj137
   r = spreadsheet.costpercapita_cj137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(194.8473654662507,r[:number])
+  assert_in_epsilon(194.8473654662505,r[:number])
 end
 
 def test_costpercapita_ck137
   r = spreadsheet.costpercapita_ck137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(209.1831648623506,r[:number])
+  assert_in_epsilon(209.1831648623504,r[:number])
 end
 
 def test_costpercapita_cl137
   r = spreadsheet.costpercapita_cl137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(222.81505594826433,r[:number])
+  assert_in_epsilon(222.81505594826413,r[:number])
 end
 
 def test_costpercapita_cm137
   r = spreadsheet.costpercapita_cm137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(235.9134089327841,r[:number])
+  assert_in_epsilon(235.9134089327839,r[:number])
 end
 
 def test_costpercapita_cn137
   r = spreadsheet.costpercapita_cn137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(249.18026114781807,r[:number])
+  assert_in_epsilon(249.1802611478178,r[:number])
 end
 
 def test_costpercapita_cp137
   r = spreadsheet.costpercapita_cp137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(143.88581852163716,r[:number])
+  assert_in_epsilon(143.885818521637,r[:number])
 end
 
 def test_costpercapita_cq137
   r = spreadsheet.costpercapita_cq137
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2741.415610036542,r[:number])
+  assert_in_epsilon(2741.415610036538,r[:number])
 end
 
 def test_costpercapita_cr137
@@ -107237,241 +110411,241 @@ end
 def test_costpercapita_ay138
   r = spreadsheet.costpercapita_ay138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.04100486602222,r[:number])
+  assert_in_epsilon(22.04100486602221,r[:number])
 end
 
 def test_costpercapita_az138
   r = spreadsheet.costpercapita_az138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(39.14580913936701,r[:number])
+  assert_in_epsilon(39.145809139366996,r[:number])
 end
 
 def test_costpercapita_ba138
   r = spreadsheet.costpercapita_ba138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(39.66496502921978,r[:number])
+  assert_in_epsilon(39.66496502921976,r[:number])
 end
 
 def test_costpercapita_bb138
   r = spreadsheet.costpercapita_bb138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(39.84694545659403,r[:number])
+  assert_in_epsilon(39.846945456594,r[:number])
 end
 
 def test_costpercapita_bc138
   r = spreadsheet.costpercapita_bc138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(39.96195245141621,r[:number])
+  assert_in_epsilon(39.96195245141619,r[:number])
 end
 
 def test_costpercapita_bd138
   r = spreadsheet.costpercapita_bd138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(41.66780092828392,r[:number])
+  assert_in_epsilon(41.667800928283896,r[:number])
 end
 
 def test_costpercapita_be138
   r = spreadsheet.costpercapita_be138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(42.85932518877873,r[:number])
+  assert_in_epsilon(42.85932518877871,r[:number])
 end
 
 def test_costpercapita_bf138
   r = spreadsheet.costpercapita_bf138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(44.14701561582094,r[:number])
+  assert_in_epsilon(44.14701561582093,r[:number])
 end
 
 def test_costpercapita_bg138
   r = spreadsheet.costpercapita_bg138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(45.5330720420279,r[:number])
+  assert_in_epsilon(45.53307204202788,r[:number])
 end
 
 def test_costpercapita_bi138
   r = spreadsheet.costpercapita_bi138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.04100486602222,r[:number])
+  assert_in_epsilon(22.04100486602221,r[:number])
 end
 
 def test_costpercapita_bj138
   r = spreadsheet.costpercapita_bj138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(60.46001034356954,r[:number])
+  assert_in_epsilon(60.460010343569515,r[:number])
 end
 
 def test_costpercapita_bk138
   r = spreadsheet.costpercapita_bk138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(98.1456264581213,r[:number])
+  assert_in_epsilon(98.14562645812124,r[:number])
 end
 
 def test_costpercapita_bl138
   r = spreadsheet.costpercapita_bl138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(114.9755844137717,r[:number])
+  assert_in_epsilon(114.97558441377163,r[:number])
 end
 
 def test_costpercapita_bm138
   r = spreadsheet.costpercapita_bm138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(116.10697388629858,r[:number])
+  assert_in_epsilon(116.10697388629849,r[:number])
 end
 
 def test_costpercapita_bn138
   r = spreadsheet.costpercapita_bn138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(118.53376337458403,r[:number])
+  assert_in_epsilon(118.53376337458397,r[:number])
 end
 
 def test_costpercapita_bo138
   r = spreadsheet.costpercapita_bo138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(121.82695452269245,r[:number])
+  assert_in_epsilon(121.82695452269239,r[:number])
 end
 
 def test_costpercapita_bp138
   r = spreadsheet.costpercapita_bp138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(126.11710351014403,r[:number])
+  assert_in_epsilon(126.11710351014398,r[:number])
 end
 
 def test_costpercapita_bq138
   r = spreadsheet.costpercapita_bq138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(130.07672386808727,r[:number])
+  assert_in_epsilon(130.0767238680872,r[:number])
 end
 
 def test_costpercapita_bs138
   r = spreadsheet.costpercapita_bs138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.04100486602222,r[:number])
+  assert_in_epsilon(22.04100486602221,r[:number])
 end
 
 def test_costpercapita_bt138
   r = spreadsheet.costpercapita_bt138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(60.46001034356954,r[:number])
+  assert_in_epsilon(60.460010343569515,r[:number])
 end
 
 def test_costpercapita_bu138
   r = spreadsheet.costpercapita_bu138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(98.1456264581213,r[:number])
+  assert_in_epsilon(98.14562645812124,r[:number])
 end
 
 def test_costpercapita_bv138
   r = spreadsheet.costpercapita_bv138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(114.9755844137717,r[:number])
+  assert_in_epsilon(114.97558441377163,r[:number])
 end
 
 def test_costpercapita_bw138
   r = spreadsheet.costpercapita_bw138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(116.10697388629858,r[:number])
+  assert_in_epsilon(116.10697388629849,r[:number])
 end
 
 def test_costpercapita_bx138
   r = spreadsheet.costpercapita_bx138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(118.53376337458403,r[:number])
+  assert_in_epsilon(118.53376337458397,r[:number])
 end
 
 def test_costpercapita_by138
   r = spreadsheet.costpercapita_by138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(121.82695452269245,r[:number])
+  assert_in_epsilon(121.82695452269239,r[:number])
 end
 
 def test_costpercapita_bz138
   r = spreadsheet.costpercapita_bz138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(126.11710351014403,r[:number])
+  assert_in_epsilon(126.11710351014398,r[:number])
 end
 
 def test_costpercapita_ca138
   r = spreadsheet.costpercapita_ca138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(130.07672386808727,r[:number])
+  assert_in_epsilon(130.0767238680872,r[:number])
 end
 
 def test_costpercapita_cc138
   r = spreadsheet.costpercapita_cc138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(100.92041613814345,r[:number])
+  assert_in_epsilon(100.9204161381434,r[:number])
 end
 
 def test_costpercapita_cd138
   r = spreadsheet.costpercapita_cd138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2093.3766274908244,r[:number])
+  assert_in_epsilon(2093.376627490823,r[:number])
 end
 
 def test_costpercapita_cf138
   r = spreadsheet.costpercapita_cf138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-33.84087360394262,r[:number])
+  assert_in_epsilon(-33.84087360394263,r[:number])
 end
 
 def test_costpercapita_cg138
   r = spreadsheet.costpercapita_cg138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.910783013009936,r[:number])
+  assert_in_epsilon(0.9107830130099077,r[:number])
 end
 
 def test_costpercapita_ch138
   r = spreadsheet.costpercapita_ch138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(37.806650932684015,r[:number])
+  assert_in_epsilon(37.80665093268396,r[:number])
 end
 
 def test_costpercapita_ci138
   r = spreadsheet.costpercapita_ci138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(54.359777368494306,r[:number])
+  assert_in_epsilon(54.35977736849424,r[:number])
 end
 
 def test_costpercapita_cj138
   r = spreadsheet.costpercapita_cj138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(55.31621637174137,r[:number])
+  assert_in_epsilon(55.31621637174129,r[:number])
 end
 
 def test_costpercapita_ck138
   r = spreadsheet.costpercapita_ck138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(55.14804203187265,r[:number])
+  assert_in_epsilon(55.1480420318726,r[:number])
 end
 
 def test_costpercapita_cl138
   r = spreadsheet.costpercapita_cl138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(56.628667528177296,r[:number])
+  assert_in_epsilon(56.628667528177246,r[:number])
 end
 
 def test_costpercapita_cm138
   r = spreadsheet.costpercapita_cm138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(58.95996136210984,r[:number])
+  assert_in_epsilon(58.95996136210979,r[:number])
 end
 
 def test_costpercapita_cn138
   r = spreadsheet.costpercapita_cn138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(60.811090644461125,r[:number])
+  assert_in_epsilon(60.81109064446108,r[:number])
 end
 
 def test_costpercapita_cp138
   r = spreadsheet.costpercapita_cp138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(38.455590627623096,r[:number])
+  assert_in_epsilon(38.45559062762305,r[:number])
 end
 
 def test_costpercapita_cq138
   r = spreadsheet.costpercapita_cq138
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(794.0005460331288,r[:number])
+  assert_in_epsilon(794.0005460331276,r[:number])
 end
 
 def test_costpercapita_cr138
@@ -108749,109 +111923,109 @@ end
 def test_costpercapita_ay141
   r = spreadsheet.costpercapita_ay141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(412.63104954252356,r[:number])
+  assert_in_epsilon(412.6310495425234,r[:number])
 end
 
 def test_costpercapita_az141
   r = spreadsheet.costpercapita_az141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(638.0706232901504,r[:number])
+  assert_in_epsilon(638.07062329015,r[:number])
 end
 
 def test_costpercapita_ba141
   r = spreadsheet.costpercapita_ba141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(675.3413449946266,r[:number])
+  assert_in_epsilon(675.3413449946263,r[:number])
 end
 
 def test_costpercapita_bb141
   r = spreadsheet.costpercapita_bb141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(629.1053530345744,r[:number])
+  assert_in_epsilon(629.1053530345741,r[:number])
 end
 
 def test_costpercapita_bc141
   r = spreadsheet.costpercapita_bc141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(602.9577482995862,r[:number])
+  assert_in_epsilon(602.957748299586,r[:number])
 end
 
 def test_costpercapita_bd141
   r = spreadsheet.costpercapita_bd141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(576.1359119666412,r[:number])
+  assert_in_epsilon(576.1359119666408,r[:number])
 end
 
 def test_costpercapita_be141
   r = spreadsheet.costpercapita_be141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(543.9058868526209,r[:number])
+  assert_in_epsilon(543.9058868526206,r[:number])
 end
 
 def test_costpercapita_bf141
   r = spreadsheet.costpercapita_bf141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(529.9146386963514,r[:number])
+  assert_in_epsilon(529.9146386963512,r[:number])
 end
 
 def test_costpercapita_bg141
   r = spreadsheet.costpercapita_bg141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(509.39210699895693,r[:number])
+  assert_in_epsilon(509.3921069989568,r[:number])
 end
 
 def test_costpercapita_bi141
   r = spreadsheet.costpercapita_bi141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(412.63104954252356,r[:number])
+  assert_in_epsilon(412.6310495425234,r[:number])
 end
 
 def test_costpercapita_bj141
   r = spreadsheet.costpercapita_bj141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1037.095135398878,r[:number])
+  assert_in_epsilon(1037.0951353988776,r[:number])
 end
 
 def test_costpercapita_bk141
   r = spreadsheet.costpercapita_bk141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1678.48390382274,r[:number])
+  assert_in_epsilon(1678.4839038227392,r[:number])
 end
 
 def test_costpercapita_bl141
   r = spreadsheet.costpercapita_bl141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1881.6070747682413,r[:number])
+  assert_in_epsilon(1881.6070747682404,r[:number])
 end
 
 def test_costpercapita_bm141
   r = spreadsheet.costpercapita_bm141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1851.427137538538,r[:number])
+  assert_in_epsilon(1851.4271375385376,r[:number])
 end
 
 def test_costpercapita_bn141
   r = spreadsheet.costpercapita_bn141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1762.394512841268,r[:number])
+  assert_in_epsilon(1762.3945128412674,r[:number])
 end
 
 def test_costpercapita_bo141
   r = spreadsheet.costpercapita_bo141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1683.953551543685,r[:number])
+  assert_in_epsilon(1683.9535515436842,r[:number])
 end
 
 def test_costpercapita_bp141
   r = spreadsheet.costpercapita_bp141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1615.5721284140957,r[:number])
+  assert_in_epsilon(1615.5721284140948,r[:number])
 end
 
 def test_costpercapita_bq141
   r = spreadsheet.costpercapita_bq141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1552.5259601650575,r[:number])
+  assert_in_epsilon(1552.5259601650569,r[:number])
 end
 
 def test_costpercapita_bs141
@@ -108863,25 +112037,25 @@ end
 def test_costpercapita_bt141
   r = spreadsheet.costpercapita_bt141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1928.9950285933087,r[:number])
+  assert_in_epsilon(1928.9950285933082,r[:number])
 end
 
 def test_costpercapita_bu141
   r = spreadsheet.costpercapita_bu141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2583.827156443775,r[:number])
+  assert_in_epsilon(2583.827156443774,r[:number])
 end
 
 def test_costpercapita_bv141
   r = spreadsheet.costpercapita_bv141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2767.9070877901536,r[:number])
+  assert_in_epsilon(2767.9070877901527,r[:number])
 end
 
 def test_costpercapita_bw141
   r = spreadsheet.costpercapita_bw141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2713.0440388797824,r[:number])
+  assert_in_epsilon(2713.0440388797815,r[:number])
 end
 
 def test_costpercapita_bx141
@@ -108893,97 +112067,97 @@ end
 def test_costpercapita_by141
   r = spreadsheet.costpercapita_by141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2482.907167126549,r[:number])
+  assert_in_epsilon(2482.9071671265483,r[:number])
 end
 
 def test_costpercapita_bz141
   r = spreadsheet.costpercapita_bz141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2386.8550575601694,r[:number])
+  assert_in_epsilon(2386.8550575601685,r[:number])
 end
 
 def test_costpercapita_ca141
   r = spreadsheet.costpercapita_ca141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2296.0702548287827,r[:number])
+  assert_in_epsilon(2296.070254828782,r[:number])
 end
 
 def test_costpercapita_cc141
   r = spreadsheet.costpercapita_cc141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2341.621860061486,r[:number])
+  assert_in_epsilon(2341.6218600614857,r[:number])
 end
 
 def test_costpercapita_cd141
   r = spreadsheet.costpercapita_cd141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50302.95573509334,r[:number])
+  assert_in_epsilon(50302.95573509333,r[:number])
 end
 
 def test_costpercapita_cf141
   r = spreadsheet.costpercapita_cf141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-633.5371403214427,r[:number])
+  assert_in_epsilon(-633.5371403214428,r[:number])
 end
 
 def test_costpercapita_cg141
   r = spreadsheet.costpercapita_cg141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(66.45195712195508,r[:number])
+  assert_in_epsilon(66.45195712195462,r[:number])
 end
 
 def test_costpercapita_ch141
   r = spreadsheet.costpercapita_ch141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(651.1439110374691,r[:number])
+  assert_in_epsilon(651.1439110374682,r[:number])
 end
 
 def test_costpercapita_ci141
   r = spreadsheet.costpercapita_ci141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(924.6020081632086,r[:number])
+  assert_in_epsilon(924.6020081632074,r[:number])
 end
 
 def test_costpercapita_cj141
   r = spreadsheet.costpercapita_cj141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(934.1982230362745,r[:number])
+  assert_in_epsilon(934.1982230362737,r[:number])
 end
 
 def test_costpercapita_ck141
   r = spreadsheet.costpercapita_ck141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(885.9674022697183,r[:number])
+  assert_in_epsilon(885.9674022697178,r[:number])
 end
 
 def test_costpercapita_cl141
   r = spreadsheet.costpercapita_cl141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(856.5552676736461,r[:number])
+  assert_in_epsilon(856.5552676736451,r[:number])
 end
 
 def test_costpercapita_cm141
   r = spreadsheet.costpercapita_cm141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(809.4575537178719,r[:number])
+  assert_in_epsilon(809.4575537178708,r[:number])
 end
 
 def test_costpercapita_cn141
   r = spreadsheet.costpercapita_cn141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(777.6305870210568,r[:number])
+  assert_in_epsilon(777.6305870210562,r[:number])
 end
 
 def test_costpercapita_cp141
   r = spreadsheet.costpercapita_cp141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(585.8299744133064,r[:number])
+  assert_in_epsilon(585.8299744133058,r[:number])
 end
 
 def test_costpercapita_cq141
   r = spreadsheet.costpercapita_cq141
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12736.11823588844,r[:number])
+  assert_in_epsilon(12736.118235888425,r[:number])
 end
 
 def test_costpercapita_cr141
@@ -109253,157 +112427,157 @@ end
 def test_costpercapita_ay142
   r = spreadsheet.costpercapita_ay142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5892642487022077,r[:number])
+  assert_in_epsilon(0.5892642487022075,r[:number])
 end
 
 def test_costpercapita_az142
   r = spreadsheet.costpercapita_az142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.61303923551118,r[:number])
+  assert_in_epsilon(13.613039235511174,r[:number])
 end
 
 def test_costpercapita_ba142
   r = spreadsheet.costpercapita_ba142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.953033144921623,r[:number])
+  assert_in_epsilon(19.95303314492161,r[:number])
 end
 
 def test_costpercapita_bb142
   r = spreadsheet.costpercapita_bb142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(115.6736661837131,r[:number])
+  assert_in_epsilon(115.67366618371304,r[:number])
 end
 
 def test_costpercapita_bc142
   r = spreadsheet.costpercapita_bc142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(162.57043295289412,r[:number])
+  assert_in_epsilon(162.57043295289407,r[:number])
 end
 
 def test_costpercapita_bd142
   r = spreadsheet.costpercapita_bd142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(221.90079660053925,r[:number])
+  assert_in_epsilon(221.90079660053917,r[:number])
 end
 
 def test_costpercapita_be142
   r = spreadsheet.costpercapita_be142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(272.71660357200597,r[:number])
+  assert_in_epsilon(272.7166035720059,r[:number])
 end
 
 def test_costpercapita_bf142
   r = spreadsheet.costpercapita_bf142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(308.6302913385743,r[:number])
+  assert_in_epsilon(308.63029133857424,r[:number])
 end
 
 def test_costpercapita_bg142
   r = spreadsheet.costpercapita_bg142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(354.48552003873965,r[:number])
+  assert_in_epsilon(354.4855200387395,r[:number])
 end
 
 def test_costpercapita_bi142
   r = spreadsheet.costpercapita_bi142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5892642487022077,r[:number])
+  assert_in_epsilon(0.5892642487022075,r[:number])
 end
 
 def test_costpercapita_bj142
   r = spreadsheet.costpercapita_bj142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.182872454805267,r[:number])
+  assert_in_epsilon(14.18287245480526,r[:number])
 end
 
 def test_costpercapita_bk142
   r = spreadsheet.costpercapita_bk142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(33.671584587527796,r[:number])
+  assert_in_epsilon(33.671584587527775,r[:number])
 end
 
 def test_costpercapita_bl142
   r = spreadsheet.costpercapita_bl142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(147.76854996241332,r[:number])
+  assert_in_epsilon(147.76854996241323,r[:number])
 end
 
 def test_costpercapita_bm142
   r = spreadsheet.costpercapita_bm142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(293.89085366079524,r[:number])
+  assert_in_epsilon(293.89085366079513,r[:number])
 end
 
 def test_costpercapita_bn142
   r = spreadsheet.costpercapita_bn142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(490.5048813404111,r[:number])
+  assert_in_epsilon(490.50488134041086,r[:number])
 end
 
 def test_costpercapita_bo142
   r = spreadsheet.costpercapita_bo142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(645.2406600470247,r[:number])
+  assert_in_epsilon(645.2406600470244,r[:number])
 end
 
 def test_costpercapita_bp142
   r = spreadsheet.costpercapita_bp142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(788.7431588353594,r[:number])
+  assert_in_epsilon(788.7431588353592,r[:number])
 end
 
 def test_costpercapita_bq142
   r = spreadsheet.costpercapita_bq142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(919.6448649413105,r[:number])
+  assert_in_epsilon(919.6448649413103,r[:number])
 end
 
 def test_costpercapita_bs142
   r = spreadsheet.costpercapita_bs142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0022810504145705,r[:number])
+  assert_in_epsilon(1.0022810504145703,r[:number])
 end
 
 def test_costpercapita_bt142
   r = spreadsheet.costpercapita_bt142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.964501591225567,r[:number])
+  assert_in_epsilon(21.96450159122556,r[:number])
 end
 
 def test_costpercapita_bu142
   r = spreadsheet.costpercapita_bu142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(49.23621233836962,r[:number])
+  assert_in_epsilon(49.2362123383696,r[:number])
 end
 
 def test_costpercapita_bv142
   r = spreadsheet.costpercapita_bv142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(217.20108578614685,r[:number])
+  assert_in_epsilon(217.2010857861468,r[:number])
 end
 
 def test_costpercapita_bw142
   r = spreadsheet.costpercapita_bw142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(418.3710450780419,r[:number])
+  assert_in_epsilon(418.3710450780418,r[:number])
 end
 
 def test_costpercapita_bx142
   r = spreadsheet.costpercapita_bx142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(677.3509831117378,r[:number])
+  assert_in_epsilon(677.3509831117376,r[:number])
 end
 
 def test_costpercapita_by142
   r = spreadsheet.costpercapita_by142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(894.34758904144,r[:number])
+  assert_in_epsilon(894.3475890414397,r[:number])
 end
 
 def test_costpercapita_bz142
   r = spreadsheet.costpercapita_bz142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1092.473008275772,r[:number])
+  assert_in_epsilon(1092.4730082757717,r[:number])
 end
 
 def test_costpercapita_ca142
@@ -109415,79 +112589,79 @@ end
 def test_costpercapita_cc142
   r = spreadsheet.costpercapita_cc142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(516.7530361151763,r[:number])
+  assert_in_epsilon(516.7530361151762,r[:number])
 end
 
 def test_costpercapita_cd142
   r = spreadsheet.costpercapita_cd142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8367.654577515415,r[:number])
+  assert_in_epsilon(8367.654577515412,r[:number])
 end
 
 def test_costpercapita_cf142
   r = spreadsheet.costpercapita_cf142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.9047326599158111,r[:number])
+  assert_in_epsilon(-0.9047326599158113,r[:number])
 end
 
 def test_costpercapita_cg142
   r = spreadsheet.costpercapita_cg142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-6.525499294753379,r[:number])
+  assert_in_epsilon(-6.525499294753386,r[:number])
 end
 
 def test_costpercapita_ch142
   r = spreadsheet.costpercapita_ch142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.3187132890718245,r[:number])
+  assert_in_epsilon(3.318713289071804,r[:number])
 end
 
 def test_costpercapita_ci142
   r = spreadsheet.costpercapita_ci142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-28.196070393485662,r[:number])
+  assert_in_epsilon(-28.19607039348574,r[:number])
 end
 
 def test_costpercapita_cj142
   r = spreadsheet.costpercapita_cj142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(46.58612597785811,r[:number])
+  assert_in_epsilon(46.586125977858,r[:number])
 end
 
 def test_costpercapita_ck142
   r = spreadsheet.costpercapita_ck142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(152.94586104903865,r[:number])
+  assert_in_epsilon(152.94586104903846,r[:number])
 end
 
 def test_costpercapita_cl142
   r = spreadsheet.costpercapita_cl142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(230.37982615521332,r[:number])
+  assert_in_epsilon(230.37982615521312,r[:number])
 end
 
 def test_costpercapita_cm142
   r = spreadsheet.costpercapita_cm142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(319.24985204009755,r[:number])
+  assert_in_epsilon(319.2498520400972,r[:number])
 end
 
 def test_costpercapita_cn142
   r = spreadsheet.costpercapita_cn142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(380.3958550913665,r[:number])
+  assert_in_epsilon(380.3958550913663,r[:number])
 end
 
 def test_costpercapita_cp142
   r = spreadsheet.costpercapita_cp142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(121.91665902827678,r[:number])
+  assert_in_epsilon(121.91665902827665,r[:number])
 end
 
 def test_costpercapita_cq142
   r = spreadsheet.costpercapita_cq142
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1745.0870733309791,r[:number])
+  assert_in_epsilon(1745.0870733309769,r[:number])
 end
 
 def test_costpercapita_cr142
@@ -109763,49 +112937,49 @@ end
 def test_costpercapita_az143
   r = spreadsheet.costpercapita_az143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.351938572235175,r[:number])
+  assert_in_epsilon(2.351938572235174,r[:number])
 end
 
 def test_costpercapita_ba143
   r = spreadsheet.costpercapita_ba143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.4699738143136325,r[:number])
+  assert_in_epsilon(3.469973814313631,r[:number])
 end
 
 def test_costpercapita_bb143
   r = spreadsheet.costpercapita_bb143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.468359049554042,r[:number])
+  assert_in_epsilon(22.46835904955403,r[:number])
 end
 
 def test_costpercapita_bc143
   r = spreadsheet.costpercapita_bc143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(31.701982384634853,r[:number])
+  assert_in_epsilon(31.70198238463485,r[:number])
 end
 
 def test_costpercapita_bd143
   r = spreadsheet.costpercapita_bd143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(43.42529257543976,r[:number])
+  assert_in_epsilon(43.42529257543974,r[:number])
 end
 
 def test_costpercapita_be143
   r = spreadsheet.costpercapita_be143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(53.439388986477866,r[:number])
+  assert_in_epsilon(53.439388986477844,r[:number])
 end
 
 def test_costpercapita_bf143
   r = spreadsheet.costpercapita_bf143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(52.09032749496791,r[:number])
+  assert_in_epsilon(52.09032749496788,r[:number])
 end
 
 def test_costpercapita_bg143
   r = spreadsheet.costpercapita_bg143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(57.40661683112127,r[:number])
+  assert_in_epsilon(57.406616831121234,r[:number])
 end
 
 def test_costpercapita_bi143
@@ -109817,49 +112991,49 @@ end
 def test_costpercapita_bj143
   r = spreadsheet.costpercapita_bj143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.351938572235175,r[:number])
+  assert_in_epsilon(2.351938572235174,r[:number])
 end
 
 def test_costpercapita_bk143
   r = spreadsheet.costpercapita_bk143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.744914267728362,r[:number])
+  assert_in_epsilon(5.744914267728359,r[:number])
 end
 
 def test_costpercapita_bl143
   r = spreadsheet.costpercapita_bl143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.035390809402465,r[:number])
+  assert_in_epsilon(28.03539080940245,r[:number])
 end
 
 def test_costpercapita_bm143
   r = spreadsheet.costpercapita_bm143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(56.827168921097446,r[:number])
+  assert_in_epsilon(56.827168921097424,r[:number])
 end
 
 def test_costpercapita_bn143
   r = spreadsheet.costpercapita_bn143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(95.72023432047402,r[:number])
+  assert_in_epsilon(95.72023432047398,r[:number])
 end
 
 def test_costpercapita_bo143
   r = spreadsheet.costpercapita_bo143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(126.23363414858062,r[:number])
+  assert_in_epsilon(126.23363414858058,r[:number])
 end
 
 def test_costpercapita_bp143
   r = spreadsheet.costpercapita_bp143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(146.11512892033068,r[:number])
+  assert_in_epsilon(146.11512892033062,r[:number])
 end
 
 def test_costpercapita_bq143
   r = spreadsheet.costpercapita_bq143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(159.92085424387426,r[:number])
+  assert_in_epsilon(159.92085424387415,r[:number])
 end
 
 def test_costpercapita_bs143
@@ -109871,61 +113045,61 @@ end
 def test_costpercapita_bt143
   r = spreadsheet.costpercapita_bt143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.049444807245726,r[:number])
+  assert_in_epsilon(3.049444807245725,r[:number])
 end
 
 def test_costpercapita_bu143
   r = spreadsheet.costpercapita_bu143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.174921028172718,r[:number])
+  assert_in_epsilon(7.174921028172714,r[:number])
 end
 
 def test_costpercapita_bv143
   r = spreadsheet.costpercapita_bv143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(34.932786938582595,r[:number])
+  assert_in_epsilon(34.93278693858258,r[:number])
 end
 
 def test_costpercapita_bw143
   r = spreadsheet.costpercapita_bw143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(69.30294073129961,r[:number])
+  assert_in_epsilon(69.30294073129959,r[:number])
 end
 
 def test_costpercapita_bx143
   r = spreadsheet.costpercapita_bx143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(114.52860142898163,r[:number])
+  assert_in_epsilon(114.52860142898157,r[:number])
 end
 
 def test_costpercapita_by143
   r = spreadsheet.costpercapita_by143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(151.35507386783775,r[:number])
+  assert_in_epsilon(151.3550738678377,r[:number])
 end
 
 def test_costpercapita_bz143
   r = spreadsheet.costpercapita_bz143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(174.50192793784734,r[:number])
+  assert_in_epsilon(174.50192793784726,r[:number])
 end
 
 def test_costpercapita_ca143
   r = spreadsheet.costpercapita_ca143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(191.62078860376366,r[:number])
+  assert_in_epsilon(191.62078860376351,r[:number])
 end
 
 def test_costpercapita_cc143
   r = spreadsheet.costpercapita_cc143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(82.9407205937479,r[:number])
+  assert_in_epsilon(82.94072059374786,r[:number])
 end
 
 def test_costpercapita_cd143
   r = spreadsheet.costpercapita_cd143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1350.7517349378231,r[:number])
+  assert_in_epsilon(1350.7517349378224,r[:number])
 end
 
 def test_costpercapita_cf143
@@ -109937,61 +113111,61 @@ end
 def test_costpercapita_cg143
   r = spreadsheet.costpercapita_cg143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-1.225867782639648,r[:number])
+  assert_in_epsilon(-1.225867782639649,r[:number])
 end
 
 def test_costpercapita_ch143
   r = spreadsheet.costpercapita_ch143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.4663349244328459,r[:number])
+  assert_in_epsilon(0.46633492443284336,r[:number])
 end
 
 def test_costpercapita_ci143
   r = spreadsheet.costpercapita_ci143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-6.14383425203574,r[:number])
+  assert_in_epsilon(-6.143834252035753,r[:number])
 end
 
 def test_costpercapita_cj143
   r = spreadsheet.costpercapita_cj143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.60160921607346,r[:number])
+  assert_in_epsilon(8.601609216073442,r[:number])
 end
 
 def test_costpercapita_ck143
   r = spreadsheet.costpercapita_ck143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(29.660988737774616,r[:number])
+  assert_in_epsilon(29.660988737774566,r[:number])
 end
 
 def test_costpercapita_cl143
   r = spreadsheet.costpercapita_cl143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(44.9407858686426,r[:number])
+  assert_in_epsilon(44.94078586864255,r[:number])
 end
 
 def test_costpercapita_cm143
   r = spreadsheet.costpercapita_cm143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(66.87449443305741,r[:number])
+  assert_in_epsilon(66.87449443305734,r[:number])
 end
 
 def test_costpercapita_cn143
   r = spreadsheet.costpercapita_cn143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(72.59299588273663,r[:number])
+  assert_in_epsilon(72.5929958827365,r[:number])
 end
 
 def test_costpercapita_cp143
   r = spreadsheet.costpercapita_cp143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(23.97416744756024,r[:number])
+  assert_in_epsilon(23.974167447560205,r[:number])
 end
 
 def test_costpercapita_cq143
   r = spreadsheet.costpercapita_cq143
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(341.56857422849356,r[:number])
+  assert_in_epsilon(341.56857422849293,r[:number])
 end
 
 def test_costpercapita_cr143
@@ -110765,241 +113939,241 @@ end
 def test_costpercapita_ay145
   r = spreadsheet.costpercapita_ay145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20.98511726876455,r[:number])
+  assert_in_epsilon(20.985117268764544,r[:number])
 end
 
 def test_costpercapita_az145
   r = spreadsheet.costpercapita_az145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(35.578405026425145,r[:number])
+  assert_in_epsilon(35.57840502642512,r[:number])
 end
 
 def test_costpercapita_ba145
   r = spreadsheet.costpercapita_ba145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(39.373501348970294,r[:number])
+  assert_in_epsilon(39.37350134897027,r[:number])
 end
 
 def test_costpercapita_bb145
   r = spreadsheet.costpercapita_bb145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(43.383714773617136,r[:number])
+  assert_in_epsilon(43.38371477361712,r[:number])
 end
 
 def test_costpercapita_bc145
   r = spreadsheet.costpercapita_bc145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(47.55600563059551,r[:number])
+  assert_in_epsilon(47.556005630595486,r[:number])
 end
 
 def test_costpercapita_bd145
   r = spreadsheet.costpercapita_bd145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(52.20328707607488,r[:number])
+  assert_in_epsilon(52.203287076074865,r[:number])
 end
 
 def test_costpercapita_be145
   r = spreadsheet.costpercapita_be145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(56.974267358398485,r[:number])
+  assert_in_epsilon(56.97426735839846,r[:number])
 end
 
 def test_costpercapita_bf145
   r = spreadsheet.costpercapita_bf145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(62.27261971891705,r[:number])
+  assert_in_epsilon(62.272619718917014,r[:number])
 end
 
 def test_costpercapita_bg145
   r = spreadsheet.costpercapita_bg145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(68.18859740831958,r[:number])
+  assert_in_epsilon(68.18859740831957,r[:number])
 end
 
 def test_costpercapita_bi145
   r = spreadsheet.costpercapita_bi145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20.98511726876455,r[:number])
+  assert_in_epsilon(20.985117268764544,r[:number])
 end
 
 def test_costpercapita_bj145
   r = spreadsheet.costpercapita_bj145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(55.8715366000109,r[:number])
+  assert_in_epsilon(55.87153660001087,r[:number])
 end
 
 def test_costpercapita_bk145
   r = spreadsheet.costpercapita_bk145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(93.41590717805288,r[:number])
+  assert_in_epsilon(93.41590717805283,r[:number])
 end
 
 def test_costpercapita_bl145
   r = spreadsheet.costpercapita_bl145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(114.88614387484617,r[:number])
+  assert_in_epsilon(114.88614387484613,r[:number])
 end
 
 def test_costpercapita_bm145
   r = spreadsheet.costpercapita_bm145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(126.86644862675578,r[:number])
+  assert_in_epsilon(126.86644862675573,r[:number])
 end
 
 def test_costpercapita_bn145
   r = spreadsheet.costpercapita_bn145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(139.8435287414411,r[:number])
+  assert_in_epsilon(139.84352874144105,r[:number])
 end
 
 def test_costpercapita_bo145
   r = spreadsheet.costpercapita_bo145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(153.50973018655037,r[:number])
+  assert_in_epsilon(153.50973018655029,r[:number])
 end
 
 def test_costpercapita_bp145
   r = spreadsheet.costpercapita_bp145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(168.18120915593667,r[:number])
+  assert_in_epsilon(168.1812091559366,r[:number])
 end
 
 def test_costpercapita_bq145
   r = spreadsheet.costpercapita_bq145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(184.09482162535187,r[:number])
+  assert_in_epsilon(184.09482162535178,r[:number])
 end
 
 def test_costpercapita_bs145
   r = spreadsheet.costpercapita_bs145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(46.31572005200784,r[:number])
+  assert_in_epsilon(46.31572005200783,r[:number])
 end
 
 def test_costpercapita_bt145
   r = spreadsheet.costpercapita_bt145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(82.93275433387397,r[:number])
+  assert_in_epsilon(82.93275433387394,r[:number])
 end
 
 def test_costpercapita_bu145
   r = spreadsheet.costpercapita_bu145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(123.36370534825363,r[:number])
+  assert_in_epsilon(123.3637053482536,r[:number])
 end
 
 def test_costpercapita_bv145
   r = spreadsheet.costpercapita_bv145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(147.88414225955984,r[:number])
+  assert_in_epsilon(147.8841422595598,r[:number])
 end
 
 def test_costpercapita_bw145
   r = spreadsheet.costpercapita_bw145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(163.03792460963152,r[:number])
+  assert_in_epsilon(163.0379246096315,r[:number])
 end
 
 def test_costpercapita_bx145
   r = spreadsheet.costpercapita_bx145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(179.54976394056763,r[:number])
+  assert_in_epsilon(179.5497639405676,r[:number])
 end
 
 def test_costpercapita_by145
   r = spreadsheet.costpercapita_by145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(196.84481092071516,r[:number])
+  assert_in_epsilon(196.8448109207151,r[:number])
 end
 
 def test_costpercapita_bz145
   r = spreadsheet.costpercapita_bz145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(215.54625882075555,r[:number])
+  assert_in_epsilon(215.5462588207555,r[:number])
 end
 
 def test_costpercapita_ca145
   r = spreadsheet.costpercapita_ca145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(235.95961095648497,r[:number])
+  assert_in_epsilon(235.9596109564849,r[:number])
 end
 
 def test_costpercapita_cc145
   r = spreadsheet.costpercapita_cc145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(154.6038545824278,r[:number])
+  assert_in_epsilon(154.60385458242774,r[:number])
 end
 
 def test_costpercapita_cd145
   r = spreadsheet.costpercapita_cd145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3058.290866025514,r[:number])
+  assert_in_epsilon(3058.290866025513,r[:number])
 end
 
 def test_costpercapita_cf145
   r = spreadsheet.costpercapita_cf145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-32.21970619637804,r[:number])
+  assert_in_epsilon(-32.21970619637805,r[:number])
 end
 
 def test_costpercapita_cg145
   r = spreadsheet.costpercapita_cg145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.7491011322847614,r[:number])
+  assert_in_epsilon(1.7491011322847332,r[:number])
 end
 
 def test_costpercapita_ch145
   r = spreadsheet.costpercapita_ch145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(33.52031083765135,r[:number])
+  assert_in_epsilon(33.52031083765131,r[:number])
 end
 
 def test_costpercapita_ci145
   r = spreadsheet.costpercapita_ci145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(48.89014710541883,r[:number])
+  assert_in_epsilon(48.89014710541879,r[:number])
 end
 
 def test_costpercapita_cj145
   r = spreadsheet.costpercapita_cj145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(54.52349666100426,r[:number])
+  assert_in_epsilon(54.52349666100421,r[:number])
 end
 
 def test_costpercapita_ck145
   r = spreadsheet.costpercapita_ck145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(60.43105834318803,r[:number])
+  assert_in_epsilon(60.43105834318798,r[:number])
 end
 
 def test_costpercapita_cl145
   r = spreadsheet.costpercapita_cl145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(66.83956871822073,r[:number])
+  assert_in_epsilon(66.83956871822066,r[:number])
 end
 
 def test_costpercapita_cm145
   r = spreadsheet.costpercapita_cm145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(73.45110982629888,r[:number])
+  assert_in_epsilon(73.45110982629883,r[:number])
 end
 
 def test_costpercapita_cn145
   r = spreadsheet.costpercapita_cn145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(80.36524296308563,r[:number])
+  assert_in_epsilon(80.36524296308556,r[:number])
 end
 
 def test_costpercapita_cp145
   r = spreadsheet.costpercapita_cp145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(43.06114771008605,r[:number])
+  assert_in_epsilon(43.061147710086,r[:number])
 end
 
 def test_costpercapita_cq145
   r = spreadsheet.costpercapita_cq145
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(843.1960616732176,r[:number])
+  assert_in_epsilon(843.1960616732168,r[:number])
 end
 
 def test_costpercapita_cr145
@@ -111269,109 +114443,109 @@ end
 def test_costpercapita_ay146
   r = spreadsheet.costpercapita_ay146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.48970644231974075,r[:number])
+  assert_in_epsilon(0.48970644231974053,r[:number])
 end
 
 def test_costpercapita_az146
   r = spreadsheet.costpercapita_az146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.7384590360603369,r[:number])
+  assert_in_epsilon(0.7384590360603365,r[:number])
 end
 
 def test_costpercapita_ba146
   r = spreadsheet.costpercapita_ba146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.8920332494358405,r[:number])
+  assert_in_epsilon(0.89203324943584,r[:number])
 end
 
 def test_costpercapita_bb146
   r = spreadsheet.costpercapita_bb146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.8485071879018276,r[:number])
+  assert_in_epsilon(0.8485071879018272,r[:number])
 end
 
 def test_costpercapita_bc146
   r = spreadsheet.costpercapita_bc146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.785379917739444,r[:number])
+  assert_in_epsilon(0.7853799177394438,r[:number])
 end
 
 def test_costpercapita_bd146
   r = spreadsheet.costpercapita_bd146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.7542478535037631,r[:number])
+  assert_in_epsilon(0.7542478535037628,r[:number])
 end
 
 def test_costpercapita_be146
   r = spreadsheet.costpercapita_be146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6895268385255221,r[:number])
+  assert_in_epsilon(0.6895268385255218,r[:number])
 end
 
 def test_costpercapita_bf146
   r = spreadsheet.costpercapita_bf146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6639956608642372,r[:number])
+  assert_in_epsilon(0.6639956608642369,r[:number])
 end
 
 def test_costpercapita_bg146
   r = spreadsheet.costpercapita_bg146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6393709221945397,r[:number])
+  assert_in_epsilon(0.6393709221945394,r[:number])
 end
 
 def test_costpercapita_bi146
   r = spreadsheet.costpercapita_bi146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.48970644231974075,r[:number])
+  assert_in_epsilon(0.48970644231974053,r[:number])
 end
 
 def test_costpercapita_bj146
   r = spreadsheet.costpercapita_bj146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.2120173745319016,r[:number])
+  assert_in_epsilon(1.212017374531901,r[:number])
 end
 
 def test_costpercapita_bk146
   r = spreadsheet.costpercapita_bk146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.0643714168156766,r[:number])
+  assert_in_epsilon(2.0643714168156757,r[:number])
 end
 
 def test_costpercapita_bl146
   r = spreadsheet.costpercapita_bl146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.4050865499086207,r[:number])
+  assert_in_epsilon(2.4050865499086194,r[:number])
 end
 
 def test_costpercapita_bm146
   r = spreadsheet.costpercapita_bm146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.451502669757108,r[:number])
+  assert_in_epsilon(2.4515026697571067,r[:number])
 end
 
 def test_costpercapita_bn146
   r = spreadsheet.costpercapita_bn146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.327012317951473,r[:number])
+  assert_in_epsilon(2.3270123179514726,r[:number])
 end
 
 def test_costpercapita_bo146
   r = spreadsheet.costpercapita_bo146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.178214284561755,r[:number])
+  assert_in_epsilon(2.1782142845617547,r[:number])
 end
 
 def test_costpercapita_bp146
   r = spreadsheet.costpercapita_bp146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.0632055320137916,r[:number])
+  assert_in_epsilon(2.0632055320137908,r[:number])
 end
 
 def test_costpercapita_bq146
   r = spreadsheet.costpercapita_bq146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.9541363984253626,r[:number])
+  assert_in_epsilon(1.954136398425362,r[:number])
 end
 
 def test_costpercapita_bs146
@@ -111425,7 +114599,7 @@ end
 def test_costpercapita_ca146
   r = spreadsheet.costpercapita_ca146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(116.8049232542393,r[:number])
+  assert_in_epsilon(116.80492325423927,r[:number])
 end
 
 def test_costpercapita_cc146
@@ -111443,67 +114617,67 @@ end
 def test_costpercapita_cf146
   r = spreadsheet.costpercapita_cf146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.7518756026920452,r[:number])
+  assert_in_epsilon(-0.7518756026920455,r[:number])
 end
 
 def test_costpercapita_cg146
   r = spreadsheet.costpercapita_cg146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.08866174644655042,r[:number])
+  assert_in_epsilon(0.08866174644654976,r[:number])
 end
 
 def test_costpercapita_ch146
   r = spreadsheet.costpercapita_ch146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.7073962533197565,r[:number])
+  assert_in_epsilon(0.7073962533197552,r[:number])
 end
 
 def test_costpercapita_ci146
   r = spreadsheet.costpercapita_ci146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1143239233375346,r[:number])
+  assert_in_epsilon(1.1143239233375333,r[:number])
 end
 
 def test_costpercapita_cj146
   r = spreadsheet.costpercapita_cj146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.2567702503602811,r[:number])
+  assert_in_epsilon(1.25677025036028,r[:number])
 end
 
 def test_costpercapita_ck146
   r = spreadsheet.costpercapita_ck146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1796384897090642,r[:number])
+  assert_in_epsilon(1.1796384897090635,r[:number])
 end
 
 def test_costpercapita_cl146
   r = spreadsheet.costpercapita_cl146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1292950934500414,r[:number])
+  assert_in_epsilon(1.1292950934500405,r[:number])
 end
 
 def test_costpercapita_cm146
   r = spreadsheet.costpercapita_cm146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0531247743383612,r[:number])
+  assert_in_epsilon(1.0531247743383605,r[:number])
 end
 
 def test_costpercapita_cn146
   r = spreadsheet.costpercapita_cn146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.9815151847786894,r[:number])
+  assert_in_epsilon(0.9815151847786886,r[:number])
 end
 
 def test_costpercapita_cp146
   r = spreadsheet.costpercapita_cp146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.7509833458942481,r[:number])
+  assert_in_epsilon(0.7509833458942473,r[:number])
 end
 
 def test_costpercapita_cq146
   r = spreadsheet.costpercapita_cq146
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.039326702903143,r[:number])
+  assert_in_epsilon(16.039326702903125,r[:number])
 end
 
 def test_costpercapita_cr146
@@ -111773,241 +114947,241 @@ end
 def test_costpercapita_ay147
   r = spreadsheet.costpercapita_ay147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.5089294270858313,r[:number])
+  assert_in_epsilon(3.5089294270858296,r[:number])
 end
 
 def test_costpercapita_az147
   r = spreadsheet.costpercapita_az147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.529057831663562,r[:number])
+  assert_in_epsilon(5.529057831663559,r[:number])
 end
 
 def test_costpercapita_ba147
   r = spreadsheet.costpercapita_ba147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.554664051811578,r[:number])
+  assert_in_epsilon(6.554664051811575,r[:number])
 end
 
 def test_costpercapita_bb147
   r = spreadsheet.costpercapita_bb147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.953110917607101,r[:number])
+  assert_in_epsilon(6.953110917607097,r[:number])
 end
 
 def test_costpercapita_bc147
   r = spreadsheet.costpercapita_bc147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.240126734216629,r[:number])
+  assert_in_epsilon(7.240126734216626,r[:number])
 end
 
 def test_costpercapita_bd147
   r = spreadsheet.costpercapita_bd147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.653838044736107,r[:number])
+  assert_in_epsilon(7.653838044736104,r[:number])
 end
 
 def test_costpercapita_be147
   r = spreadsheet.costpercapita_be147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.8662480995256505,r[:number])
+  assert_in_epsilon(7.866248099525649,r[:number])
 end
 
 def test_costpercapita_bf147
   r = spreadsheet.costpercapita_bf147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.266022142943367,r[:number])
+  assert_in_epsilon(8.266022142943362,r[:number])
 end
 
 def test_costpercapita_bg147
   r = spreadsheet.costpercapita_bg147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.67538392307314,r[:number])
+  assert_in_epsilon(8.675383923073134,r[:number])
 end
 
 def test_costpercapita_bi147
   r = spreadsheet.costpercapita_bi147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.5089294270858313,r[:number])
+  assert_in_epsilon(3.5089294270858296,r[:number])
 end
 
 def test_costpercapita_bj147
   r = spreadsheet.costpercapita_bj147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.92228006789421,r[:number])
+  assert_in_epsilon(8.922280067894206,r[:number])
 end
 
 def test_costpercapita_bk147
   r = spreadsheet.costpercapita_bk147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.18484517251087,r[:number])
+  assert_in_epsilon(15.184845172510862,r[:number])
 end
 
 def test_costpercapita_bl147
   r = spreadsheet.costpercapita_bl147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.487272389975896,r[:number])
+  assert_in_epsilon(18.487272389975885,r[:number])
 end
 
 def test_costpercapita_bm147
   r = spreadsheet.costpercapita_bm147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20.181456815053767,r[:number])
+  assert_in_epsilon(20.18145681505376,r[:number])
 end
 
 def test_costpercapita_bn147
   r = spreadsheet.costpercapita_bn147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.327258694291064,r[:number])
+  assert_in_epsilon(21.327258694291054,r[:number])
 end
 
 def test_costpercapita_bo147
   r = spreadsheet.costpercapita_bo147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.2756693442734,r[:number])
+  assert_in_epsilon(22.27566934427339,r[:number])
 end
 
 def test_costpercapita_bp147
   r = spreadsheet.costpercapita_bp147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(23.316542134676837,r[:number])
+  assert_in_epsilon(23.31654213467683,r[:number])
 end
 
 def test_costpercapita_bq147
   r = spreadsheet.costpercapita_bq147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(24.35261099200417,r[:number])
+  assert_in_epsilon(24.35261099200416,r[:number])
 end
 
 def test_costpercapita_bs147
   r = spreadsheet.costpercapita_bs147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.5049361310805285,r[:number])
+  assert_in_epsilon(7.504936131080527,r[:number])
 end
 
 def test_costpercapita_bt147
   r = spreadsheet.costpercapita_bt147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.246294895192667,r[:number])
+  assert_in_epsilon(13.246294895192664,r[:number])
 end
 
 def test_costpercapita_bu147
   r = spreadsheet.costpercapita_bu147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.978791548055487,r[:number])
+  assert_in_epsilon(19.97879154805548,r[:number])
 end
 
 def test_costpercapita_bv147
   r = spreadsheet.costpercapita_bv147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(23.74664315796752,r[:number])
+  assert_in_epsilon(23.746643157967508,r[:number])
 end
 
 def test_costpercapita_bw147
   r = spreadsheet.costpercapita_bw147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(25.889939522887737,r[:number])
+  assert_in_epsilon(25.889939522887726,r[:number])
 end
 
 def test_costpercapita_bx147
   r = spreadsheet.costpercapita_bx147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.500277269957785,r[:number])
+  assert_in_epsilon(27.500277269957774,r[:number])
 end
 
 def test_costpercapita_by147
   r = spreadsheet.costpercapita_by147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.880555758997602,r[:number])
+  assert_in_epsilon(28.880555758997595,r[:number])
 end
 
 def test_costpercapita_bz147
   r = spreadsheet.costpercapita_bz147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(30.361040963212407,r[:number])
+  assert_in_epsilon(30.361040963212393,r[:number])
 end
 
 def test_costpercapita_ca147
   r = spreadsheet.costpercapita_ca147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(31.845420810934836,r[:number])
+  assert_in_epsilon(31.84542081093483,r[:number])
 end
 
 def test_costpercapita_cc147
   r = spreadsheet.costpercapita_cc147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(23.217100006476286,r[:number])
+  assert_in_epsilon(23.21710000647628,r[:number])
 end
 
 def test_costpercapita_cd147
   r = spreadsheet.costpercapita_cd147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(468.5113629173281,r[:number])
+  assert_in_epsilon(468.51136291732803,r[:number])
 end
 
 def test_costpercapita_cf147
   r = spreadsheet.costpercapita_cf147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-5.387469307727464,r[:number])
+  assert_in_epsilon(-5.387469307727466,r[:number])
 end
 
 def test_costpercapita_cg147
   r = spreadsheet.costpercapita_cg147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5113893753722172,r[:number])
+  assert_in_epsilon(0.5113893753722136,r[:number])
 end
 
 def test_costpercapita_ch147
   r = spreadsheet.costpercapita_ch147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.213785989466834,r[:number])
+  assert_in_epsilon(5.2137859894668255,r[:number])
 end
 
 def test_costpercapita_ci147
   r = spreadsheet.costpercapita_ci147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.910089498875834,r[:number])
+  assert_in_epsilon(7.9100894988758235,r[:number])
 end
 
 def test_costpercapita_cj147
   r = spreadsheet.costpercapita_cj147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.16766089981369,r[:number])
+  assert_in_epsilon(9.167660899813681,r[:number])
 end
 
 def test_costpercapita_ck147
   r = spreadsheet.costpercapita_ck147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.68411855495695,r[:number])
+  assert_in_epsilon(9.68411855495694,r[:number])
 end
 
 def test_costpercapita_cl147
   r = spreadsheet.costpercapita_cl147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.309407652005566,r[:number])
+  assert_in_epsilon(10.309407652005557,r[:number])
 end
 
 def test_costpercapita_cm147
   r = spreadsheet.costpercapita_cm147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.742137810650302,r[:number])
+  assert_in_epsilon(10.742137810650293,r[:number])
 end
 
 def test_costpercapita_cn147
   r = spreadsheet.costpercapita_cn147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.15547901867544,r[:number])
+  assert_in_epsilon(11.15547901867543,r[:number])
 end
 
 def test_costpercapita_cp147
   r = spreadsheet.costpercapita_cp147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.5896221657877065,r[:number])
+  assert_in_epsilon(6.589622165787699,r[:number])
 end
 
 def test_costpercapita_cq147
   r = spreadsheet.costpercapita_cq147
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(132.03804040763373,r[:number])
+  assert_in_epsilon(132.0380404076336,r[:number])
 end
 
 def test_costpercapita_cr147
@@ -112277,109 +115451,109 @@ end
 def test_costpercapita_ay148
   r = spreadsheet.costpercapita_ay148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(26.764141842985104,r[:number])
+  assert_in_epsilon(26.764141842985097,r[:number])
 end
 
 def test_costpercapita_az148
   r = spreadsheet.costpercapita_az148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.826816157053834,r[:number])
+  assert_in_epsilon(50.82681615705381,r[:number])
 end
 
 def test_costpercapita_ba148
   r = spreadsheet.costpercapita_ba148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.52030203741865,r[:number])
+  assert_in_epsilon(50.520302037418624,r[:number])
 end
 
 def test_costpercapita_bb148
   r = spreadsheet.costpercapita_bb148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.9840848733836,r[:number])
+  assert_in_epsilon(50.98408487338358,r[:number])
 end
 
 def test_costpercapita_bc148
   r = spreadsheet.costpercapita_bc148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(51.563851702628924,r[:number])
+  assert_in_epsilon(51.563851702628895,r[:number])
 end
 
 def test_costpercapita_bd148
   r = spreadsheet.costpercapita_bd148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(52.27542175529976,r[:number])
+  assert_in_epsilon(52.27542175529973,r[:number])
 end
 
 def test_costpercapita_be148
   r = spreadsheet.costpercapita_be148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(53.045689653167365,r[:number])
+  assert_in_epsilon(53.045689653167344,r[:number])
 end
 
 def test_costpercapita_bf148
   r = spreadsheet.costpercapita_bf148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(53.83504782102609,r[:number])
+  assert_in_epsilon(53.83504782102606,r[:number])
 end
 
 def test_costpercapita_bg148
   r = spreadsheet.costpercapita_bg148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(54.6434243031879,r[:number])
+  assert_in_epsilon(54.64342430318788,r[:number])
 end
 
 def test_costpercapita_bi148
   r = spreadsheet.costpercapita_bi148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(26.764141842985104,r[:number])
+  assert_in_epsilon(26.764141842985097,r[:number])
 end
 
 def test_costpercapita_bj148
   r = spreadsheet.costpercapita_bj148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(76.70840856932173,r[:number])
+  assert_in_epsilon(76.7084085693217,r[:number])
 end
 
 def test_costpercapita_bk148
   r = spreadsheet.costpercapita_bk148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(124.7174191864314,r[:number])
+  assert_in_epsilon(124.71741918643134,r[:number])
 end
 
 def test_costpercapita_bl148
   r = spreadsheet.costpercapita_bl148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(147.58069065581583,r[:number])
+  assert_in_epsilon(147.58069065581577,r[:number])
 end
 
 def test_costpercapita_bm148
   r = spreadsheet.costpercapita_bm148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(148.77357560748962,r[:number])
+  assert_in_epsilon(148.77357560748953,r[:number])
 end
 
 def test_costpercapita_bn148
   r = spreadsheet.costpercapita_bn148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(151.04768789045895,r[:number])
+  assert_in_epsilon(151.04768789045886,r[:number])
 end
 
 def test_costpercapita_bo148
   r = spreadsheet.costpercapita_bo148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(153.48172775720093,r[:number])
+  assert_in_epsilon(153.48172775720084,r[:number])
 end
 
 def test_costpercapita_bp148
   r = spreadsheet.costpercapita_bp148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(155.96261458499754,r[:number])
+  assert_in_epsilon(155.96261458499748,r[:number])
 end
 
 def test_costpercapita_bq148
   r = spreadsheet.costpercapita_bq148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(158.49117723789638,r[:number])
+  assert_in_epsilon(158.4911772378963,r[:number])
 end
 
 def test_costpercapita_bs148
@@ -112391,61 +115565,61 @@ end
 def test_costpercapita_bt148
   r = spreadsheet.costpercapita_bt148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(186.73529481404373,r[:number])
+  assert_in_epsilon(186.7352948140437,r[:number])
 end
 
 def test_costpercapita_bu148
   r = spreadsheet.costpercapita_bu148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(235.82437743269693,r[:number])
+  assert_in_epsilon(235.8243774326969,r[:number])
 end
 
 def test_costpercapita_bv148
   r = spreadsheet.costpercapita_bv148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(259.78456456752724,r[:number])
+  assert_in_epsilon(259.7845645675272,r[:number])
 end
 
 def test_costpercapita_bw148
   r = spreadsheet.costpercapita_bw148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(262.325239402369,r[:number])
+  assert_in_epsilon(262.3252394023689,r[:number])
 end
 
 def test_costpercapita_bx148
   r = spreadsheet.costpercapita_bx148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(266.23382373524527,r[:number])
+  assert_in_epsilon(266.2338237352452,r[:number])
 end
 
 def test_costpercapita_by148
   r = spreadsheet.costpercapita_by148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(270.42871912493024,r[:number])
+  assert_in_epsilon(270.4287191249302,r[:number])
 end
 
 def test_costpercapita_bz148
   r = spreadsheet.costpercapita_bz148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(274.7099880714046,r[:number])
+  assert_in_epsilon(274.7099880714045,r[:number])
 end
 
 def test_costpercapita_ca148
   r = spreadsheet.costpercapita_ca148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(279.0786173748193,r[:number])
+  assert_in_epsilon(279.07861737481926,r[:number])
 end
 
 def test_costpercapita_cc148
   r = spreadsheet.costpercapita_cc148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(240.69142441986995,r[:number])
+  assert_in_epsilon(240.6914244198699,r[:number])
 end
 
 def test_costpercapita_cd148
   r = spreadsheet.costpercapita_cd148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5024.704321746481,r[:number])
+  assert_in_epsilon(5024.70432174648,r[:number])
 end
 
 def test_costpercapita_cf148
@@ -112457,61 +115631,61 @@ end
 def test_costpercapita_cg148
   r = spreadsheet.costpercapita_cg148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.610152379292257,r[:number])
+  assert_in_epsilon(-0.6101523792922853,r[:number])
 end
 
 def test_costpercapita_ch148
   r = spreadsheet.costpercapita_ch148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(47.86513239056769,r[:number])
+  assert_in_epsilon(47.86513239056763,r[:number])
 end
 
 def test_costpercapita_ci148
   r = spreadsheet.costpercapita_ci148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(70.02289003515,r[:number])
+  assert_in_epsilon(70.02289003514994,r[:number])
 end
 
 def test_costpercapita_cj148
   r = spreadsheet.costpercapita_cj148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(70.33382446715173,r[:number])
+  assert_in_epsilon(70.33382446715166,r[:number])
 end
 
 def test_costpercapita_ck148
   r = spreadsheet.costpercapita_ck148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(71.52548507113659,r[:number])
+  assert_in_epsilon(71.52548507113652,r[:number])
 end
 
 def test_costpercapita_cl148
   r = spreadsheet.costpercapita_cl148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(72.78778116341095,r[:number])
+  assert_in_epsilon(72.78778116341087,r[:number])
 end
 
 def test_costpercapita_cm148
   r = spreadsheet.costpercapita_cm148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(74.06788379447009,r[:number])
+  assert_in_epsilon(74.06788379447002,r[:number])
 end
 
 def test_costpercapita_cn148
   r = spreadsheet.costpercapita_cn148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(75.36673128849841,r[:number])
+  assert_in_epsilon(75.36673128849834,r[:number])
 end
 
 def test_costpercapita_cp148
   r = spreadsheet.costpercapita_cp148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(48.91855415727318,r[:number])
+  assert_in_epsilon(48.91855415727312,r[:number])
 end
 
 def test_costpercapita_cq148
   r = spreadsheet.costpercapita_cq148
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1006.4270298585312,r[:number])
+  assert_in_epsilon(1006.4270298585301,r[:number])
 end
 
 def test_costpercapita_cr148
@@ -114293,109 +117467,109 @@ end
 def test_costpercapita_ay152
   r = spreadsheet.costpercapita_ay152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.747595611976265,r[:number])
+  assert_in_epsilon(3.747595611976263,r[:number])
 end
 
 def test_costpercapita_az152
   r = spreadsheet.costpercapita_az152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.689302697603889,r[:number])
+  assert_in_epsilon(5.689302697603886,r[:number])
 end
 
 def test_costpercapita_ba152
   r = spreadsheet.costpercapita_ba152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.214761502373705,r[:number])
+  assert_in_epsilon(5.214761502373702,r[:number])
 end
 
 def test_costpercapita_bb152
   r = spreadsheet.costpercapita_bb152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.793095039548198,r[:number])
+  assert_in_epsilon(4.793095039548196,r[:number])
 end
 
 def test_costpercapita_bc152
   r = spreadsheet.costpercapita_bc152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.464067734432658,r[:number])
+  assert_in_epsilon(4.464067734432657,r[:number])
 end
 
 def test_costpercapita_bd152
   r = spreadsheet.costpercapita_bd152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.209253971854448,r[:number])
+  assert_in_epsilon(4.209253971854447,r[:number])
 end
 
 def test_costpercapita_be152
   r = spreadsheet.costpercapita_be152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.006151770338372,r[:number])
+  assert_in_epsilon(4.00615177033837,r[:number])
 end
 
 def test_costpercapita_bf152
   r = spreadsheet.costpercapita_bf152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.8402909928059508,r[:number])
+  assert_in_epsilon(3.8402909928059494,r[:number])
 end
 
 def test_costpercapita_bg152
   r = spreadsheet.costpercapita_bg152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.7033619169175234,r[:number])
+  assert_in_epsilon(3.7033619169175216,r[:number])
 end
 
 def test_costpercapita_bi152
   r = spreadsheet.costpercapita_bi152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.747595611976265,r[:number])
+  assert_in_epsilon(3.747595611976263,r[:number])
 end
 
 def test_costpercapita_bj152
   r = spreadsheet.costpercapita_bj152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.313321084750326,r[:number])
+  assert_in_epsilon(9.31332108475032,r[:number])
 end
 
 def test_costpercapita_bk152
   r = spreadsheet.costpercapita_bk152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.223181680288242,r[:number])
+  assert_in_epsilon(14.223181680288237,r[:number])
 end
 
 def test_costpercapita_bl152
   r = spreadsheet.costpercapita_bl152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.179041446909173,r[:number])
+  assert_in_epsilon(15.179041446909165,r[:number])
 end
 
 def test_costpercapita_bm152
   r = spreadsheet.costpercapita_bm152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.041452274225913,r[:number])
+  assert_in_epsilon(14.04145227422591,r[:number])
 end
 
 def test_costpercapita_bn152
   r = spreadsheet.costpercapita_bn152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.120494318508507,r[:number])
+  assert_in_epsilon(13.120494318508502,r[:number])
 end
 
 def test_costpercapita_bo152
   r = spreadsheet.costpercapita_bo152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.391591205657562,r[:number])
+  assert_in_epsilon(12.39159120565756,r[:number])
 end
 
 def test_costpercapita_bp152
   r = spreadsheet.costpercapita_bp152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.803838947213613,r[:number])
+  assert_in_epsilon(11.80383894721361,r[:number])
 end
 
 def test_costpercapita_bq152
   r = spreadsheet.costpercapita_bq152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.324953367902518,r[:number])
+  assert_in_epsilon(11.324953367902515,r[:number])
 end
 
 def test_costpercapita_bs152
@@ -114407,19 +117581,19 @@ end
 def test_costpercapita_bt152
   r = spreadsheet.costpercapita_bt152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.478705854465122,r[:number])
+  assert_in_epsilon(22.47870585446512,r[:number])
 end
 
 def test_costpercapita_bu152
   r = spreadsheet.costpercapita_bu152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(26.301850060156315,r[:number])
+  assert_in_epsilon(26.301850060156312,r[:number])
 end
 
 def test_costpercapita_bv152
   r = spreadsheet.costpercapita_bv152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(26.38641950508761,r[:number])
+  assert_in_epsilon(26.386419505087606,r[:number])
 end
 
 def test_costpercapita_bw152
@@ -114431,25 +117605,25 @@ end
 def test_costpercapita_bx152
   r = spreadsheet.costpercapita_bx152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(23.116642448995858,r[:number])
+  assert_in_epsilon(23.116642448995854,r[:number])
 end
 
 def test_costpercapita_by152
   r = spreadsheet.costpercapita_by152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.960405930368935,r[:number])
+  assert_in_epsilon(21.960405930368932,r[:number])
 end
 
 def test_costpercapita_bz152
   r = spreadsheet.costpercapita_bz152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.01937467558236,r[:number])
+  assert_in_epsilon(21.019374675582355,r[:number])
 end
 
 def test_costpercapita_ca152
   r = spreadsheet.costpercapita_ca152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20.24519350063296,r[:number])
+  assert_in_epsilon(20.245193500632958,r[:number])
 end
 
 def test_costpercapita_cc152
@@ -114461,73 +117635,73 @@ end
 def test_costpercapita_cd152
   r = spreadsheet.costpercapita_cd152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(493.62494620970085,r[:number])
+  assert_in_epsilon(493.6249462097008,r[:number])
 end
 
 def test_costpercapita_cf152
   r = spreadsheet.costpercapita_cf152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-5.753907782085006,r[:number])
+  assert_in_epsilon(-5.753907782085008,r[:number])
 end
 
 def test_costpercapita_cg152
   r = spreadsheet.costpercapita_cg152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6586633540643624,r[:number])
+  assert_in_epsilon(0.6586633540643572,r[:number])
 end
 
 def test_costpercapita_ch152
   r = spreadsheet.costpercapita_ch152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.2904035615901535,r[:number])
+  assert_in_epsilon(6.290403561590148,r[:number])
 end
 
 def test_costpercapita_ci152
   r = spreadsheet.costpercapita_ci152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.887709056490008,r[:number])
+  assert_in_epsilon(7.887709056490001,r[:number])
 end
 
 def test_costpercapita_cj152
   r = spreadsheet.costpercapita_cj152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.250641452297785,r[:number])
+  assert_in_epsilon(7.2506414522977805,r[:number])
 end
 
 def test_costpercapita_ck152
   r = spreadsheet.costpercapita_ck152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.7173102440746675,r[:number])
+  assert_in_epsilon(6.717310244074663,r[:number])
 end
 
 def test_costpercapita_cl152
   r = spreadsheet.costpercapita_cl152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.297369429751232,r[:number])
+  assert_in_epsilon(6.297369429751228,r[:number])
 end
 
 def test_costpercapita_cm152
   r = spreadsheet.costpercapita_cm152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.961927223485224,r[:number])
+  assert_in_epsilon(5.961927223485222,r[:number])
 end
 
 def test_costpercapita_cn152
   r = spreadsheet.costpercapita_cn152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.6913403317606726,r[:number])
+  assert_in_epsilon(5.691340331760669,r[:number])
 end
 
 def test_costpercapita_cp152
   r = spreadsheet.costpercapita_cp152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.555717430158789,r[:number])
+  assert_in_epsilon(4.555717430158785,r[:number])
 end
 
 def test_costpercapita_cq152
   r = spreadsheet.costpercapita_cq152
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(103.21152318463781,r[:number])
+  assert_in_epsilon(103.21152318463771,r[:number])
 end
 
 def test_costpercapita_cr152
@@ -116309,241 +119483,241 @@ end
 def test_costpercapita_ay156
   r = spreadsheet.costpercapita_ay156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.939463153040645,r[:number])
+  assert_in_epsilon(16.939463153040638,r[:number])
 end
 
 def test_costpercapita_az156
   r = spreadsheet.costpercapita_az156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.070986170953821,r[:number])
+  assert_in_epsilon(11.070986170953816,r[:number])
 end
 
 def test_costpercapita_ba156
   r = spreadsheet.costpercapita_ba156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.487743597412067,r[:number])
+  assert_in_epsilon(16.48774359741206,r[:number])
 end
 
 def test_costpercapita_bb156
   r = spreadsheet.costpercapita_bb156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(24.515688904506842,r[:number])
+  assert_in_epsilon(24.515688904506828,r[:number])
 end
 
 def test_costpercapita_bc156
   r = spreadsheet.costpercapita_bc156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(30.023582196131464,r[:number])
+  assert_in_epsilon(30.023582196131454,r[:number])
 end
 
 def test_costpercapita_bd156
   r = spreadsheet.costpercapita_bd156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(33.364151567190085,r[:number])
+  assert_in_epsilon(33.36415156719007,r[:number])
 end
 
 def test_costpercapita_be156
   r = spreadsheet.costpercapita_be156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(37.173000410900094,r[:number])
+  assert_in_epsilon(37.17300041090008,r[:number])
 end
 
 def test_costpercapita_bf156
   r = spreadsheet.costpercapita_bf156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(43.08832717227732,r[:number])
+  assert_in_epsilon(43.0883271722773,r[:number])
 end
 
 def test_costpercapita_bg156
   r = spreadsheet.costpercapita_bg156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(46.82580995471771,r[:number])
+  assert_in_epsilon(46.82580995471769,r[:number])
 end
 
 def test_costpercapita_bi156
   r = spreadsheet.costpercapita_bi156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.939463153040645,r[:number])
+  assert_in_epsilon(16.939463153040638,r[:number])
 end
 
 def test_costpercapita_bj156
   r = spreadsheet.costpercapita_bj156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.45186935344744,r[:number])
+  assert_in_epsilon(27.451869353447425,r[:number])
 end
 
 def test_costpercapita_bk156
   r = spreadsheet.costpercapita_bk156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(43.040889521909016,r[:number])
+  assert_in_epsilon(43.040889521909,r[:number])
 end
 
 def test_costpercapita_bl156
   r = spreadsheet.costpercapita_bl156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.86988354222904,r[:number])
+  assert_in_epsilon(50.86988354222901,r[:number])
 end
 
 def test_costpercapita_bm156
   r = spreadsheet.costpercapita_bm156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(69.41022423737286,r[:number])
+  assert_in_epsilon(69.41022423737284,r[:number])
 end
 
 def test_costpercapita_bn156
   r = spreadsheet.costpercapita_bn156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(85.96471676793094,r[:number])
+  assert_in_epsilon(85.96471676793088,r[:number])
 end
 
 def test_costpercapita_bo156
   r = spreadsheet.costpercapita_bo156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(98.51675909307956,r[:number])
+  assert_in_epsilon(98.51675909307953,r[:number])
 end
 
 def test_costpercapita_bp156
   r = spreadsheet.costpercapita_bp156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(111.52106620631649,r[:number])
+  assert_in_epsilon(111.52106620631645,r[:number])
 end
 
 def test_costpercapita_bq156
   r = spreadsheet.costpercapita_bq156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(124.8616357847117,r[:number])
+  assert_in_epsilon(124.86163578471165,r[:number])
 end
 
 def test_costpercapita_bs156
   r = spreadsheet.costpercapita_bs156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.002523589833817,r[:number])
+  assert_in_epsilon(17.00252358983381,r[:number])
 end
 
 def test_costpercapita_bt156
   r = spreadsheet.costpercapita_bt156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.567944432291334,r[:number])
+  assert_in_epsilon(27.56794443229132,r[:number])
 end
 
 def test_costpercapita_bu156
   r = spreadsheet.costpercapita_bu156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(43.16590207170481,r[:number])
+  assert_in_epsilon(43.16590207170479,r[:number])
 end
 
 def test_costpercapita_bv156
   r = spreadsheet.costpercapita_bv156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(51.009804318580116,r[:number])
+  assert_in_epsilon(51.00980431858009,r[:number])
 end
 
 def test_costpercapita_bw156
   r = spreadsheet.costpercapita_bw156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(69.56454605480835,r[:number])
+  assert_in_epsilon(69.56454605480833,r[:number])
 end
 
 def test_costpercapita_bx156
   r = spreadsheet.costpercapita_bx156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(86.13006490741884,r[:number])
+  assert_in_epsilon(86.1300649074188,r[:number])
 end
 
 def test_costpercapita_by156
   r = spreadsheet.costpercapita_by156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(98.69100330121655,r[:number])
+  assert_in_epsilon(98.69100330121653,r[:number])
 end
 
 def test_costpercapita_bz156
   r = spreadsheet.costpercapita_bz156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(111.70446828178137,r[:number])
+  assert_in_epsilon(111.70446828178133,r[:number])
 end
 
 def test_costpercapita_ca156
   r = spreadsheet.costpercapita_ca156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(125.05221837615655,r[:number])
+  assert_in_epsilon(125.0522183761565,r[:number])
 end
 
 def test_costpercapita_cc156
   r = spreadsheet.costpercapita_cc156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(69.9876083704213,r[:number])
+  assert_in_epsilon(69.98760837042127,r[:number])
 end
 
 def test_costpercapita_cd156
   r = spreadsheet.costpercapita_cd156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1308.5510743692785,r[:number])
+  assert_in_epsilon(1308.551074369278,r[:number])
 end
 
 def test_costpercapita_cf156
   r = spreadsheet.costpercapita_cf156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-26.008171359028722,r[:number])
+  assert_in_epsilon(-26.00817135902873,r[:number])
 end
 
 def test_costpercapita_cg156
   r = spreadsheet.costpercapita_cg156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.61050914754441,r[:number])
+  assert_in_epsilon(10.610509147544397,r[:number])
 end
 
 def test_costpercapita_ch156
   r = spreadsheet.costpercapita_ch156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.959471785600442,r[:number])
+  assert_in_epsilon(17.959471785600428,r[:number])
 end
 
 def test_costpercapita_ci156
   r = spreadsheet.costpercapita_ci156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.576227750308878,r[:number])
+  assert_in_epsilon(13.57622775030885,r[:number])
 end
 
 def test_costpercapita_cj156
   r = spreadsheet.costpercapita_cj156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(23.737873587780832,r[:number])
+  assert_in_epsilon(23.737873587780808,r[:number])
 end
 
 def test_costpercapita_ck156
   r = spreadsheet.costpercapita_ck156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(35.21063887181683,r[:number])
+  assert_in_epsilon(35.210638871816776,r[:number])
 end
 
 def test_costpercapita_cl156
   r = spreadsheet.costpercapita_cl156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(41.96859977041165,r[:number])
+  assert_in_epsilon(41.968599770411615,r[:number])
 end
 
 def test_costpercapita_cm156
   r = spreadsheet.costpercapita_cm156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(45.97441775308284,r[:number])
+  assert_in_epsilon(45.9744177530828,r[:number])
 end
 
 def test_costpercapita_cn156
   r = spreadsheet.costpercapita_cn156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(53.62946909213799,r[:number])
+  assert_in_epsilon(53.629469092137946,r[:number])
 end
 
 def test_costpercapita_cp156
   r = spreadsheet.costpercapita_cp156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(24.07322626662835,r[:number])
+  assert_in_epsilon(24.07322626662832,r[:number])
 end
 
 def test_costpercapita_cq156
   r = spreadsheet.costpercapita_cq156
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(473.4788642387502,r[:number])
+  assert_in_epsilon(473.4788642387497,r[:number])
 end
 
 def test_costpercapita_cr156
@@ -118325,241 +121499,241 @@ end
 def test_costpercapita_ay160
   r = spreadsheet.costpercapita_ay160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.4144354559383109,r[:number])
+  assert_in_epsilon(0.4144354559383107,r[:number])
 end
 
 def test_costpercapita_az160
   r = spreadsheet.costpercapita_az160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.46080889700188754,r[:number])
+  assert_in_epsilon(0.4608088970018873,r[:number])
 end
 
 def test_costpercapita_ba160
   r = spreadsheet.costpercapita_ba160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.4709569132581579,r[:number])
+  assert_in_epsilon(0.4709569132581577,r[:number])
 end
 
 def test_costpercapita_bb160
   r = spreadsheet.costpercapita_bb160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5377083025334427,r[:number])
+  assert_in_epsilon(0.5377083025334425,r[:number])
 end
 
 def test_costpercapita_bc160
   r = spreadsheet.costpercapita_bc160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5703755656903946,r[:number])
+  assert_in_epsilon(0.5703755656903943,r[:number])
 end
 
 def test_costpercapita_bd160
   r = spreadsheet.costpercapita_bd160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6081094647271535,r[:number])
+  assert_in_epsilon(0.6081094647271532,r[:number])
 end
 
 def test_costpercapita_be160
   r = spreadsheet.costpercapita_be160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6506166784014056,r[:number])
+  assert_in_epsilon(0.6506166784014052,r[:number])
 end
 
 def test_costpercapita_bf160
   r = spreadsheet.costpercapita_bf160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6979206756076773,r[:number])
+  assert_in_epsilon(0.697920675607677,r[:number])
 end
 
 def test_costpercapita_bg160
   r = spreadsheet.costpercapita_bg160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.7505340162274177,r[:number])
+  assert_in_epsilon(0.7505340162274172,r[:number])
 end
 
 def test_costpercapita_bi160
   r = spreadsheet.costpercapita_bi160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.4144354559383109,r[:number])
+  assert_in_epsilon(0.4144354559383107,r[:number])
 end
 
 def test_costpercapita_bj160
   r = spreadsheet.costpercapita_bj160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.8615783150805445,r[:number])
+  assert_in_epsilon(0.861578315080544,r[:number])
 end
 
 def test_costpercapita_bk160
   r = spreadsheet.costpercapita_bk160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.3043287478375365,r[:number])
+  assert_in_epsilon(1.3043287478375358,r[:number])
 end
 
 def test_costpercapita_bl160
   r = spreadsheet.costpercapita_bl160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.426004490595362,r[:number])
+  assert_in_epsilon(1.4260044905953613,r[:number])
 end
 
 def test_costpercapita_bm160
   r = spreadsheet.costpercapita_bm160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.5372998259785435,r[:number])
+  assert_in_epsilon(1.5372998259785426,r[:number])
 end
 
 def test_costpercapita_bn160
   r = spreadsheet.costpercapita_bn160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.6757474128717513,r[:number])
+  assert_in_epsilon(1.6757474128717504,r[:number])
 end
 
 def test_costpercapita_bo160
   r = spreadsheet.costpercapita_bo160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.7908198211858195,r[:number])
+  assert_in_epsilon(1.7908198211858186,r[:number])
 end
 
 def test_costpercapita_bp160
   r = spreadsheet.costpercapita_bp160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.9188277664468556,r[:number])
+  assert_in_epsilon(1.918827766446855,r[:number])
 end
 
 def test_costpercapita_bq160
   r = spreadsheet.costpercapita_bq160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.0611690707017423,r[:number])
+  assert_in_epsilon(2.061169070701741,r[:number])
 end
 
 def test_costpercapita_bs160
   r = spreadsheet.costpercapita_bs160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5823155821245778,r[:number])
+  assert_in_epsilon(0.5823155821245776,r[:number])
 end
 
 def test_costpercapita_bt160
   r = spreadsheet.costpercapita_bt160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.031914695658151,r[:number])
+  assert_in_epsilon(1.0319146956581506,r[:number])
 end
 
 def test_costpercapita_bu160
   r = spreadsheet.costpercapita_bu160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.4774500072034267,r[:number])
+  assert_in_epsilon(1.477450007203426,r[:number])
 end
 
 def test_costpercapita_bv160
   r = spreadsheet.costpercapita_bv160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.6067036979501752,r[:number])
+  assert_in_epsilon(1.6067036979501748,r[:number])
 end
 
 def test_costpercapita_bw160
   r = spreadsheet.costpercapita_bw160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.7271517761107464,r[:number])
+  assert_in_epsilon(1.7271517761107456,r[:number])
 end
 
 def test_costpercapita_bx160
   r = spreadsheet.costpercapita_bx160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.876483915031628,r[:number])
+  assert_in_epsilon(1.8764839150316268,r[:number])
 end
 
 def test_costpercapita_by160
   r = spreadsheet.costpercapita_by160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.0040191746750247,r[:number])
+  assert_in_epsilon(2.0040191746750238,r[:number])
 end
 
 def test_costpercapita_bz160
   r = spreadsheet.costpercapita_bz160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.1460342251727136,r[:number])
+  assert_in_epsilon(2.1460342251727127,r[:number])
 end
 
 def test_costpercapita_ca160
   r = spreadsheet.costpercapita_ca160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.304060611323844,r[:number])
+  assert_in_epsilon(2.3040606113238424,r[:number])
 end
 
 def test_costpercapita_cc160
   r = spreadsheet.costpercapita_cc160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.639570409472254,r[:number])
+  assert_in_epsilon(1.6395704094722534,r[:number])
 end
 
 def test_costpercapita_cd160
   r = spreadsheet.costpercapita_cd160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(33.1905314321122,r[:number])
+  assert_in_epsilon(33.190531432112195,r[:number])
 end
 
 def test_costpercapita_cf160
   r = spreadsheet.costpercapita_cf160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.6363075534283388,r[:number])
+  assert_in_epsilon(-0.636307553428339,r[:number])
 end
 
 def test_costpercapita_cg160
   r = spreadsheet.costpercapita_cg160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.16058849351842092,r[:number])
+  assert_in_epsilon(0.16058849351842047,r[:number])
 end
 
 def test_costpercapita_ch160
   r = spreadsheet.costpercapita_ch160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5879016025801124,r[:number])
+  assert_in_epsilon(0.5879016025801118,r[:number])
 end
 
 def test_costpercapita_ci160
   r = spreadsheet.costpercapita_ci160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6080340705410667,r[:number])
+  assert_in_epsilon(0.6080340705410661,r[:number])
 end
 
 def test_costpercapita_cj160
   r = spreadsheet.costpercapita_cj160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6696354457591936,r[:number])
+  assert_in_epsilon(0.6696354457591929,r[:number])
 end
 
 def test_costpercapita_ck160
   r = spreadsheet.costpercapita_ck160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.7506816254210813,r[:number])
+  assert_in_epsilon(0.7506816254210803,r[:number])
 end
 
 def test_costpercapita_cl160
   r = spreadsheet.costpercapita_cl160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.8010913843755496,r[:number])
+  assert_in_epsilon(0.8010913843755488,r[:number])
 end
 
 def test_costpercapita_cm160
   r = spreadsheet.costpercapita_cm160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.8571397368931675,r[:number])
+  assert_in_epsilon(0.8571397368931667,r[:number])
 end
 
 def test_costpercapita_cn160
   r = spreadsheet.costpercapita_cn160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.9194447907788084,r[:number])
+  assert_in_epsilon(0.9194447907788069,r[:number])
 end
 
 def test_costpercapita_cp160
   r = spreadsheet.costpercapita_cp160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.5242455107154513,r[:number])
+  assert_in_epsilon(0.5242455107154504,r[:number])
 end
 
 def test_costpercapita_cq160
   r = spreadsheet.costpercapita_cq160
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.172115189814148,r[:number])
+  assert_in_epsilon(11.172115189814132,r[:number])
 end
 
 def test_costpercapita_cr160
@@ -118835,49 +122009,49 @@ end
 def test_costpercapita_az161
   r = spreadsheet.costpercapita_az161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.6506149814073159,r[:number])
+  assert_in_epsilon(1.6506149814073152,r[:number])
 end
 
 def test_costpercapita_ba161
   r = spreadsheet.costpercapita_ba161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.761063966945571,r[:number])
+  assert_in_epsilon(3.76106396694557,r[:number])
 end
 
 def test_costpercapita_bb161
   r = spreadsheet.costpercapita_bb161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.56798290365211,r[:number])
+  assert_in_epsilon(3.567982903652108,r[:number])
 end
 
 def test_costpercapita_bc161
   r = spreadsheet.costpercapita_bc161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.399063291549348,r[:number])
+  assert_in_epsilon(3.399063291549347,r[:number])
 end
 
 def test_costpercapita_bd161
   r = spreadsheet.costpercapita_bd161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.2520697171354858,r[:number])
+  assert_in_epsilon(3.2520697171354844,r[:number])
 end
 
 def test_costpercapita_be161
   r = spreadsheet.costpercapita_be161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.175503898718505,r[:number])
+  assert_in_epsilon(3.1755038987185036,r[:number])
 end
 
 def test_costpercapita_bf161
   r = spreadsheet.costpercapita_bf161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.050741517211966,r[:number])
+  assert_in_epsilon(3.0507415172119647,r[:number])
 end
 
 def test_costpercapita_bg161
   r = spreadsheet.costpercapita_bg161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.935886723867248,r[:number])
+  assert_in_epsilon(2.9358867238672466,r[:number])
 end
 
 def test_costpercapita_bi161
@@ -118889,49 +122063,49 @@ end
 def test_costpercapita_bj161
   r = spreadsheet.costpercapita_bj161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.6506149814073159,r[:number])
+  assert_in_epsilon(1.6506149814073152,r[:number])
 end
 
 def test_costpercapita_bk161
   r = spreadsheet.costpercapita_bk161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.3576408667611455,r[:number])
+  assert_in_epsilon(5.357640866761144,r[:number])
 end
 
 def test_costpercapita_bl161
   r = spreadsheet.costpercapita_bl161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.7597325927062,r[:number])
+  assert_in_epsilon(8.759732592706198,r[:number])
 end
 
 def test_costpercapita_bm161
   r = spreadsheet.costpercapita_bm161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.414605455483047,r[:number])
+  assert_in_epsilon(10.414605455483043,r[:number])
 end
 
 def test_costpercapita_bn161
   r = spreadsheet.costpercapita_bn161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.95982061058192,r[:number])
+  assert_in_epsilon(9.959820610581916,r[:number])
 end
 
 def test_costpercapita_bo161
   r = spreadsheet.costpercapita_bo161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.606432521028493,r[:number])
+  assert_in_epsilon(9.60643252102849,r[:number])
 end
 
 def test_costpercapita_bp161
   r = spreadsheet.costpercapita_bp161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.282126965632294,r[:number])
+  assert_in_epsilon(9.28212696563229,r[:number])
 end
 
 def test_costpercapita_bq161
   r = spreadsheet.costpercapita_bq161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.983777003909685,r[:number])
+  assert_in_epsilon(8.983777003909681,r[:number])
 end
 
 def test_costpercapita_bs161
@@ -118943,61 +122117,61 @@ end
 def test_costpercapita_bt161
   r = spreadsheet.costpercapita_bt161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.7259432341046421,r[:number])
+  assert_in_epsilon(1.7259432341046415,r[:number])
 end
 
 def test_costpercapita_bu161
   r = spreadsheet.costpercapita_bu161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.529282576126542,r[:number])
+  assert_in_epsilon(5.5292825761265405,r[:number])
 end
 
 def test_costpercapita_bv161
   r = spreadsheet.costpercapita_bv161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.922562762560164,r[:number])
+  assert_in_epsilon(8.92256276256016,r[:number])
 end
 
 def test_costpercapita_bw161
   r = spreadsheet.costpercapita_bw161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.56972672933804,r[:number])
+  assert_in_epsilon(10.569726729338036,r[:number])
 end
 
 def test_costpercapita_bx161
   r = spreadsheet.costpercapita_bx161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.108233615553461,r[:number])
+  assert_in_epsilon(10.108233615553457,r[:number])
 end
 
 def test_costpercapita_by161
   r = spreadsheet.costpercapita_by161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.751351331785965,r[:number])
+  assert_in_epsilon(9.75135133178596,r[:number])
 end
 
 def test_costpercapita_bz161
   r = spreadsheet.costpercapita_bz161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.421352060830953,r[:number])
+  assert_in_epsilon(9.421352060830952,r[:number])
 end
 
 def test_costpercapita_ca161
   r = spreadsheet.costpercapita_ca161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.117760530969182,r[:number])
+  assert_in_epsilon(9.117760530969178,r[:number])
 end
 
 def test_costpercapita_cc161
   r = spreadsheet.costpercapita_cc161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.238468093474328,r[:number])
+  assert_in_epsilon(7.238468093474326,r[:number])
 end
 
 def test_costpercapita_cd161
   r = spreadsheet.costpercapita_cd161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(145.37433426563223,r[:number])
+  assert_in_epsilon(145.37433426563217,r[:number])
 end
 
 def test_costpercapita_cf161
@@ -119009,61 +122183,61 @@ end
 def test_costpercapita_cg161
   r = spreadsheet.costpercapita_cg161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.860326775170233,r[:number])
+  assert_in_epsilon(-0.8603267751702336,r[:number])
 end
 
 def test_costpercapita_ch161
   r = spreadsheet.costpercapita_ch161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.3637494454187634,r[:number])
+  assert_in_epsilon(-0.3637494454187651,r[:number])
 end
 
 def test_costpercapita_ci161
   r = spreadsheet.costpercapita_ci161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.332060264240818,r[:number])
+  assert_in_epsilon(3.332060264240815,r[:number])
 end
 
 def test_costpercapita_cj161
   r = spreadsheet.costpercapita_cj161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.2438963269833385,r[:number])
+  assert_in_epsilon(5.243896326983336,r[:number])
 end
 
 def test_costpercapita_ck161
   r = spreadsheet.costpercapita_ck161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.012720444863869,r[:number])
+  assert_in_epsilon(5.012720444863866,r[:number])
 end
 
 def test_costpercapita_cl161
   r = spreadsheet.costpercapita_cl161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.775805495779468,r[:number])
+  assert_in_epsilon(4.775805495779464,r[:number])
 end
 
 def test_costpercapita_cm161
   r = spreadsheet.costpercapita_cm161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.641290459010291,r[:number])
+  assert_in_epsilon(4.641290459010288,r[:number])
 end
 
 def test_costpercapita_cn161
   r = spreadsheet.costpercapita_cn161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.517659435259792,r[:number])
+  assert_in_epsilon(4.517659435259787,r[:number])
 end
 
 def test_costpercapita_cp161
   r = spreadsheet.costpercapita_cp161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.922150689505398,r[:number])
+  assert_in_epsilon(2.9221506895053952,r[:number])
 end
 
 def test_costpercapita_cq161
   r = spreadsheet.costpercapita_cq161
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.44363446881091,r[:number])
+  assert_in_epsilon(50.443634468810856,r[:number])
 end
 
 def test_costpercapita_cr161
@@ -119321,109 +122495,109 @@ end
 def test_costpercapita_ay162
   r = spreadsheet.costpercapita_ay162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(743.0926671033708,r[:number])
+  assert_in_epsilon(743.0926671033703,r[:number])
 end
 
 def test_costpercapita_az162
   r = spreadsheet.costpercapita_az162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1249.389052181311,r[:number])
+  assert_in_epsilon(1249.3890521813103,r[:number])
 end
 
 def test_costpercapita_ba162
   r = spreadsheet.costpercapita_ba162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1330.7678979363425,r[:number])
+  assert_in_epsilon(1330.7678979363418,r[:number])
 end
 
 def test_costpercapita_bb162
   r = spreadsheet.costpercapita_bb162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1441.5656864825132,r[:number])
+  assert_in_epsilon(1441.5656864825123,r[:number])
 end
 
 def test_costpercapita_bc162
   r = spreadsheet.costpercapita_bc162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1478.8400965853468,r[:number])
+  assert_in_epsilon(1478.8400965853461,r[:number])
 end
 
 def test_costpercapita_bd162
   r = spreadsheet.costpercapita_bd162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1576.8003058837091,r[:number])
+  assert_in_epsilon(1576.8003058837087,r[:number])
 end
 
 def test_costpercapita_be162
   r = spreadsheet.costpercapita_be162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1706.171033957989,r[:number])
+  assert_in_epsilon(1706.1710339579881,r[:number])
 end
 
 def test_costpercapita_bf162
   r = spreadsheet.costpercapita_bf162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1784.7008554173021,r[:number])
+  assert_in_epsilon(1784.7008554173012,r[:number])
 end
 
 def test_costpercapita_bg162
   r = spreadsheet.costpercapita_bg162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1878.1264012987886,r[:number])
+  assert_in_epsilon(1878.1264012987876,r[:number])
 end
 
 def test_costpercapita_bi162
   r = spreadsheet.costpercapita_bi162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(743.0926671033708,r[:number])
+  assert_in_epsilon(743.0926671033703,r[:number])
 end
 
 def test_costpercapita_bj162
   r = spreadsheet.costpercapita_bj162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1967.978187127005,r[:number])
+  assert_in_epsilon(1967.978187127004,r[:number])
 end
 
 def test_costpercapita_bk162
   r = spreadsheet.costpercapita_bk162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3234.318119096344,r[:number])
+  assert_in_epsilon(3234.318119096342,r[:number])
 end
 
 def test_costpercapita_bl162
   r = spreadsheet.costpercapita_bl162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3902.1958145708495,r[:number])
+  assert_in_epsilon(3902.1958145708477,r[:number])
 end
 
 def test_costpercapita_bm162
   r = spreadsheet.costpercapita_bm162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4135.353637158789,r[:number])
+  assert_in_epsilon(4135.353637158788,r[:number])
 end
 
 def test_costpercapita_bn162
   r = spreadsheet.costpercapita_bn162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4389.9578161141435,r[:number])
+  assert_in_epsilon(4389.957816114143,r[:number])
 end
 
 def test_costpercapita_bo162
   r = spreadsheet.costpercapita_bo162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4662.553468415525,r[:number])
+  assert_in_epsilon(4662.553468415523,r[:number])
 end
 
 def test_costpercapita_bp162
   r = spreadsheet.costpercapita_bp162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4969.227073527289,r[:number])
+  assert_in_epsilon(4969.227073527287,r[:number])
 end
 
 def test_costpercapita_bq162
   r = spreadsheet.costpercapita_bq162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5270.453135494786,r[:number])
+  assert_in_epsilon(5270.453135494784,r[:number])
 end
 
 def test_costpercapita_bs162
@@ -119441,121 +122615,121 @@ end
 def test_costpercapita_bu162
   r = spreadsheet.costpercapita_bu162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5999.9810239413555,r[:number])
+  assert_in_epsilon(5999.981023941355,r[:number])
 end
 
 def test_costpercapita_bv162
   r = spreadsheet.costpercapita_bv162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6925.546173032076,r[:number])
+  assert_in_epsilon(6925.546173032075,r[:number])
 end
 
 def test_costpercapita_bw162
   r = spreadsheet.costpercapita_bw162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7411.155287685135,r[:number])
+  assert_in_epsilon(7411.155287685133,r[:number])
 end
 
 def test_costpercapita_bx162
   r = spreadsheet.costpercapita_bx162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7757.819842607062,r[:number])
+  assert_in_epsilon(7757.819842607061,r[:number])
 end
 
 def test_costpercapita_by162
   r = spreadsheet.costpercapita_by162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8109.14481524666,r[:number])
+  assert_in_epsilon(8109.144815246658,r[:number])
 end
 
 def test_costpercapita_bz162
   r = spreadsheet.costpercapita_bz162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8499.163150506927,r[:number])
+  assert_in_epsilon(8499.163150506924,r[:number])
 end
 
 def test_costpercapita_ca162
   r = spreadsheet.costpercapita_ca162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8878.555968274808,r[:number])
+  assert_in_epsilon(8878.555968274806,r[:number])
 end
 
 def test_costpercapita_cc162
   r = spreadsheet.costpercapita_cc162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6796.5738153388575,r[:number])
+  assert_in_epsilon(6796.573815338856,r[:number])
 end
 
 def test_costpercapita_cd162
   r = spreadsheet.costpercapita_cd162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(138260.63986543514,r[:number])
+  assert_in_epsilon(138260.6398654351,r[:number])
 end
 
 def test_costpercapita_cf162
   r = spreadsheet.costpercapita_cf162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-1140.9146350776189,r[:number])
+  assert_in_epsilon(-1140.9146350776193,r[:number])
 end
 
 def test_costpercapita_cg162
   r = spreadsheet.costpercapita_cg162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(67.3876940865448,r[:number])
+  assert_in_epsilon(67.3876940865439,r[:number])
 end
 
 def test_costpercapita_ch162
   r = spreadsheet.costpercapita_ch162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1209.9328318670093,r[:number])
+  assert_in_epsilon(1209.932831867007,r[:number])
 end
 
 def test_costpercapita_ci162
   r = spreadsheet.costpercapita_ci162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1709.2631695804507,r[:number])
+  assert_in_epsilon(1709.2631695804491,r[:number])
 end
 
 def test_costpercapita_cj162
   r = spreadsheet.costpercapita_cj162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1885.7185668098125,r[:number])
+  assert_in_epsilon(1885.7185668098116,r[:number])
 end
 
 def test_costpercapita_ck162
   r = spreadsheet.costpercapita_ck162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1991.3041176895765,r[:number])
+  assert_in_epsilon(1991.3041176895756,r[:number])
 end
 
 def test_costpercapita_cl162
   r = spreadsheet.costpercapita_cl162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2067.0989612865624,r[:number])
+  assert_in_epsilon(2067.09896128656,r[:number])
 end
 
 def test_costpercapita_cm162
   r = spreadsheet.costpercapita_cm162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2254.3117532711804,r[:number])
+  assert_in_epsilon(2254.311753271178,r[:number])
 end
 
 def test_costpercapita_cn162
   r = spreadsheet.costpercapita_cn162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2413.4173892597073,r[:number])
+  assert_in_epsilon(2413.417389259706,r[:number])
 end
 
 def test_costpercapita_cp162
   r = spreadsheet.costpercapita_cp162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1384.1688720859138,r[:number])
+  assert_in_epsilon(1384.1688720859124,r[:number])
 end
 
 def test_costpercapita_cq162
   r = spreadsheet.costpercapita_cq162
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27829.705310791378,r[:number])
+  assert_in_epsilon(27829.705310791338,r[:number])
 end
 
 def test_costpercapita_cr162
@@ -125273,103 +128447,103 @@ end
 def test_costpercapita_ay178
   r = spreadsheet.costpercapita_ay178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.016213002182708,r[:number])
+  assert_in_epsilon(8.016213002182706,r[:number])
 end
 
 def test_costpercapita_az178
   r = spreadsheet.costpercapita_az178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.245454116307949,r[:number])
+  assert_in_epsilon(9.245454116307945,r[:number])
 end
 
 def test_costpercapita_ba178
   r = spreadsheet.costpercapita_ba178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.979051085873186,r[:number])
+  assert_in_epsilon(11.979051085873182,r[:number])
 end
 
 def test_costpercapita_bb178
   r = spreadsheet.costpercapita_bb178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.037351520492706,r[:number])
+  assert_in_epsilon(16.037351520492702,r[:number])
 end
 
 def test_costpercapita_bc178
   r = spreadsheet.costpercapita_bc178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.088301374187775,r[:number])
+  assert_in_epsilon(18.08830137418777,r[:number])
 end
 
 def test_costpercapita_bd178
   r = spreadsheet.costpercapita_bd178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.80727165444206,r[:number])
+  assert_in_epsilon(18.807271654442054,r[:number])
 end
 
 def test_costpercapita_be178
   r = spreadsheet.costpercapita_be178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.833295888666125,r[:number])
+  assert_in_epsilon(19.83329588866612,r[:number])
 end
 
 def test_costpercapita_bf178
   r = spreadsheet.costpercapita_bf178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.94984248536138,r[:number])
+  assert_in_epsilon(21.949842485361376,r[:number])
 end
 
 def test_costpercapita_bg178
   r = spreadsheet.costpercapita_bg178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.929483229907643,r[:number])
+  assert_in_epsilon(22.92948322990764,r[:number])
 end
 
 def test_costpercapita_bi178
   r = spreadsheet.costpercapita_bi178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.016213002182708,r[:number])
+  assert_in_epsilon(8.016213002182706,r[:number])
 end
 
 def test_costpercapita_bj178
   r = spreadsheet.costpercapita_bj178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.997331939612558,r[:number])
+  assert_in_epsilon(16.997331939612554,r[:number])
 end
 
 def test_costpercapita_bk178
   r = spreadsheet.costpercapita_bk178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.419921815245434,r[:number])
+  assert_in_epsilon(28.419921815245424,r[:number])
 end
 
 def test_costpercapita_bl178
   r = spreadsheet.costpercapita_bl178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(36.3113652195887,r[:number])
+  assert_in_epsilon(36.31136521958869,r[:number])
 end
 
 def test_costpercapita_bm178
   r = spreadsheet.costpercapita_bm178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(44.978511927487844,r[:number])
+  assert_in_epsilon(44.97851192748783,r[:number])
 end
 
 def test_costpercapita_bn178
   r = spreadsheet.costpercapita_bn178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(51.70124891206005,r[:number])
+  assert_in_epsilon(51.701248912060045,r[:number])
 end
 
 def test_costpercapita_bo178
   r = spreadsheet.costpercapita_bo178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(55.52502395112889,r[:number])
+  assert_in_epsilon(55.52502395112886,r[:number])
 end
 
 def test_costpercapita_bp178
   r = spreadsheet.costpercapita_bp178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(59.426520667366205,r[:number])
+  assert_in_epsilon(59.426520667366184,r[:number])
 end
 
 def test_costpercapita_bq178
@@ -125453,43 +128627,43 @@ end
 def test_costpercapita_cg178
   r = spreadsheet.costpercapita_cg178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.15597173370953105,r[:number])
+  assert_in_epsilon(0.15597173370952752,r[:number])
 end
 
 def test_costpercapita_ch178
   r = spreadsheet.costpercapita_ch178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.5990883846569774,r[:number])
+  assert_in_epsilon(6.599088384656968,r[:number])
 end
 
 def test_costpercapita_ci178
   r = spreadsheet.costpercapita_ci178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.098001515917909,r[:number])
+  assert_in_epsilon(7.098001515917896,r[:number])
 end
 
 def test_costpercapita_cj178
   r = spreadsheet.costpercapita_cj178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.029173244567877,r[:number])
+  assert_in_epsilon(12.029173244567865,r[:number])
 end
 
 def test_costpercapita_ck178
   r = spreadsheet.costpercapita_ck178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.442246332183036,r[:number])
+  assert_in_epsilon(17.442246332183025,r[:number])
 end
 
 def test_costpercapita_cl178
   r = spreadsheet.costpercapita_cl178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.397033272757717,r[:number])
+  assert_in_epsilon(19.397033272757692,r[:number])
 end
 
 def test_costpercapita_cm178
   r = spreadsheet.costpercapita_cm178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(19.443065110893677,r[:number])
+  assert_in_epsilon(19.443065110893652,r[:number])
 end
 
 def test_costpercapita_cn178
@@ -125501,13 +128675,13 @@ end
 def test_costpercapita_cp178
   r = spreadsheet.costpercapita_cp178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.735608139059785,r[:number])
+  assert_in_epsilon(9.735608139059776,r[:number])
 end
 
 def test_costpercapita_cq178
   r = spreadsheet.costpercapita_cq178
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(189.33729292272534,r[:number])
+  assert_in_epsilon(189.3372929227252,r[:number])
 end
 
 def test_costpercapita_cr178
@@ -125753,31 +128927,31 @@ end
 def test_costpercapita_ay179
   r = spreadsheet.costpercapita_ay179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.830271965354633,r[:number])
+  assert_in_epsilon(16.830271965354626,r[:number])
 end
 
 def test_costpercapita_az179
   r = spreadsheet.costpercapita_az179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(34.117655408429194,r[:number])
+  assert_in_epsilon(34.11765540842919,r[:number])
 end
 
 def test_costpercapita_ba179
   r = spreadsheet.costpercapita_ba179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(31.608346145627323,r[:number])
+  assert_in_epsilon(31.60834614562732,r[:number])
 end
 
 def test_costpercapita_bb179
   r = spreadsheet.costpercapita_bb179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(30.042400664176466,r[:number])
+  assert_in_epsilon(30.04240066417646,r[:number])
 end
 
 def test_costpercapita_bc179
   r = spreadsheet.costpercapita_bc179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(31.939636407874872,r[:number])
+  assert_in_epsilon(31.93963640787486,r[:number])
 end
 
 def test_costpercapita_bd179
@@ -125789,43 +128963,43 @@ end
 def test_costpercapita_be179
   r = spreadsheet.costpercapita_be179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(35.27806274181678,r[:number])
+  assert_in_epsilon(35.278062741816775,r[:number])
 end
 
 def test_costpercapita_bf179
   r = spreadsheet.costpercapita_bf179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(37.07319681008555,r[:number])
+  assert_in_epsilon(37.07319681008554,r[:number])
 end
 
 def test_costpercapita_bg179
   r = spreadsheet.costpercapita_bg179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(39.06651166048491,r[:number])
+  assert_in_epsilon(39.066511660484906,r[:number])
 end
 
 def test_costpercapita_bi179
   r = spreadsheet.costpercapita_bi179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.830271965354633,r[:number])
+  assert_in_epsilon(16.830271965354626,r[:number])
 end
 
 def test_costpercapita_bj179
   r = spreadsheet.costpercapita_bj179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.39294799021235,r[:number])
+  assert_in_epsilon(50.392947990212335,r[:number])
 end
 
 def test_costpercapita_bk179
   r = spreadsheet.costpercapita_bk179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(80.35152222305736,r[:number])
+  assert_in_epsilon(80.35152222305733,r[:number])
 end
 
 def test_costpercapita_bl179
   r = spreadsheet.costpercapita_bl179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(92.65093251307975,r[:number])
+  assert_in_epsilon(92.65093251307974,r[:number])
 end
 
 def test_costpercapita_bm179
@@ -125837,25 +129011,25 @@ end
 def test_costpercapita_bn179
   r = spreadsheet.costpercapita_bn179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(94.89101042762915,r[:number])
+  assert_in_epsilon(94.89101042762914,r[:number])
 end
 
 def test_costpercapita_bo179
   r = spreadsheet.costpercapita_bo179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(100.22060137094537,r[:number])
+  assert_in_epsilon(100.22060137094536,r[:number])
 end
 
 def test_costpercapita_bp179
   r = spreadsheet.costpercapita_bp179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(105.38129480451303,r[:number])
+  assert_in_epsilon(105.381294804513,r[:number])
 end
 
 def test_costpercapita_bq179
   r = spreadsheet.costpercapita_bq179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(109.37697971463518,r[:number])
+  assert_in_epsilon(109.37697971463516,r[:number])
 end
 
 def test_costpercapita_bs179
@@ -125867,7 +129041,7 @@ end
 def test_costpercapita_bt179
   r = spreadsheet.costpercapita_bt179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(149.65127047889402,r[:number])
+  assert_in_epsilon(149.651270478894,r[:number])
 end
 
 def test_costpercapita_bu179
@@ -125885,109 +129059,109 @@ end
 def test_costpercapita_bw179
   r = spreadsheet.costpercapita_bw179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(213.11645612533673,r[:number])
+  assert_in_epsilon(213.1164561253367,r[:number])
 end
 
 def test_costpercapita_bx179
   r = spreadsheet.costpercapita_bx179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(221.6560906999295,r[:number])
+  assert_in_epsilon(221.65609069992948,r[:number])
 end
 
 def test_costpercapita_by179
   r = spreadsheet.costpercapita_by179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(231.8588432554736,r[:number])
+  assert_in_epsilon(231.85884325547354,r[:number])
 end
 
 def test_costpercapita_bz179
   r = spreadsheet.costpercapita_bz179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(242.0751326682337,r[:number])
+  assert_in_epsilon(242.07513266823366,r[:number])
 end
 
 def test_costpercapita_ca179
   r = spreadsheet.costpercapita_ca179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(251.3267671743545,r[:number])
+  assert_in_epsilon(251.32676717435447,r[:number])
 end
 
 def test_costpercapita_cc179
   r = spreadsheet.costpercapita_cc179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(202.30790997073257,r[:number])
+  assert_in_epsilon(202.30790997073254,r[:number])
 end
 
 def test_costpercapita_cd179
   r = spreadsheet.costpercapita_cd179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4158.364410668981,r[:number])
+  assert_in_epsilon(4158.36441066898,r[:number])
 end
 
 def test_costpercapita_cf179
   r = spreadsheet.costpercapita_cf179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-34.26595128232846,r[:number])
+  assert_in_epsilon(-34.265951282328466,r[:number])
 end
 
 def test_costpercapita_cg179
   r = spreadsheet.costpercapita_cg179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-11.75518631297166,r[:number])
+  assert_in_epsilon(-11.755186312971677,r[:number])
 end
 
 def test_costpercapita_ch179
   r = spreadsheet.costpercapita_ch179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.774302515438002,r[:number])
+  assert_in_epsilon(22.774302515437977,r[:number])
 end
 
 def test_costpercapita_ci179
   r = spreadsheet.costpercapita_ci179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(37.92621216180912,r[:number])
+  assert_in_epsilon(37.926212161809104,r[:number])
 end
 
 def test_costpercapita_cj179
   r = spreadsheet.costpercapita_cj179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(32.773417146366945,r[:number])
+  assert_in_epsilon(32.77341714636694,r[:number])
 end
 
 def test_costpercapita_ck179
   r = spreadsheet.costpercapita_ck179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(30.825155100039513,r[:number])
+  assert_in_epsilon(30.82515510003948,r[:number])
 end
 
 def test_costpercapita_cl179
   r = spreadsheet.costpercapita_cl179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(35.958689027082926,r[:number])
+  assert_in_epsilon(35.95868902708291,r[:number])
 end
 
 def test_costpercapita_cm179
   r = spreadsheet.costpercapita_cm179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(37.84939711636386,r[:number])
+  assert_in_epsilon(37.84939711636382,r[:number])
 end
 
 def test_costpercapita_cn179
   r = spreadsheet.costpercapita_cn179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(38.21409397797711,r[:number])
+  assert_in_epsilon(38.21409397797709,r[:number])
 end
 
 def test_costpercapita_cp179
   r = spreadsheet.costpercapita_cp179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.144458827753038,r[:number])
+  assert_in_epsilon(21.14445882775302,r[:number])
 end
 
 def test_costpercapita_cq179
   r = spreadsheet.costpercapita_cq179
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(430.60406327100054,r[:number])
+  assert_in_epsilon(430.6040632710002,r[:number])
 end
 
 def test_costpercapita_cr179
@@ -126233,25 +129407,25 @@ end
 def test_costpercapita_ay180
   r = spreadsheet.costpercapita_ay180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.9322804249568,r[:number])
+  assert_in_epsilon(18.932280424956794,r[:number])
 end
 
 def test_costpercapita_az180
   r = spreadsheet.costpercapita_az180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(44.345564159474414,r[:number])
+  assert_in_epsilon(44.34556415947441,r[:number])
 end
 
 def test_costpercapita_ba180
   r = spreadsheet.costpercapita_ba180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(48.24319450625938,r[:number])
+  assert_in_epsilon(48.243194506259364,r[:number])
 end
 
 def test_costpercapita_bb180
   r = spreadsheet.costpercapita_bb180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(47.04018656189731,r[:number])
+  assert_in_epsilon(47.040186561897286,r[:number])
 end
 
 def test_costpercapita_bc180
@@ -126263,43 +129437,43 @@ end
 def test_costpercapita_bd180
   r = spreadsheet.costpercapita_bd180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.80649053334248,r[:number])
+  assert_in_epsilon(27.806490533342476,r[:number])
 end
 
 def test_costpercapita_be180
   r = spreadsheet.costpercapita_be180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(44.909169953120056,r[:number])
+  assert_in_epsilon(44.90916995312005,r[:number])
 end
 
 def test_costpercapita_bf180
   r = spreadsheet.costpercapita_bf180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(45.34912735763079,r[:number])
+  assert_in_epsilon(45.34912735763078,r[:number])
 end
 
 def test_costpercapita_bg180
   r = spreadsheet.costpercapita_bg180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(45.30699377576204,r[:number])
+  assert_in_epsilon(45.306993775762024,r[:number])
 end
 
 def test_costpercapita_bi180
   r = spreadsheet.costpercapita_bi180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(18.9322804249568,r[:number])
+  assert_in_epsilon(18.932280424956794,r[:number])
 end
 
 def test_costpercapita_bj180
   r = spreadsheet.costpercapita_bj180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(62.65355132633809,r[:number])
+  assert_in_epsilon(62.65355132633807,r[:number])
 end
 
 def test_costpercapita_bk180
   r = spreadsheet.costpercapita_bk180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(108.84558444322342,r[:number])
+  assert_in_epsilon(108.8455844432234,r[:number])
 end
 
 def test_costpercapita_bl180
@@ -126311,43 +129485,43 @@ end
 def test_costpercapita_bm180
   r = spreadsheet.costpercapita_bm180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(118.61248790016859,r[:number])
+  assert_in_epsilon(118.61248790016856,r[:number])
 end
 
 def test_costpercapita_bn180
   r = spreadsheet.costpercapita_bn180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(99.22389211840266,r[:number])
+  assert_in_epsilon(99.22389211840263,r[:number])
 end
 
 def test_costpercapita_bo180
   r = spreadsheet.costpercapita_bo180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(98.292529679956,r[:number])
+  assert_in_epsilon(98.29252967995598,r[:number])
 end
 
 def test_costpercapita_bp180
   r = spreadsheet.costpercapita_bp180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(116.03307867643512,r[:number])
+  assert_in_epsilon(116.0330786764351,r[:number])
 end
 
 def test_costpercapita_bq180
   r = spreadsheet.costpercapita_bq180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(133.00178788747303,r[:number])
+  assert_in_epsilon(133.001787887473,r[:number])
 end
 
 def test_costpercapita_bs180
   r = spreadsheet.costpercapita_bs180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(113.08119165777575,r[:number])
+  assert_in_epsilon(113.08119165777573,r[:number])
 end
 
 def test_costpercapita_bt180
   r = spreadsheet.costpercapita_bt180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(149.2448075905649,r[:number])
+  assert_in_epsilon(149.24480759056487,r[:number])
 end
 
 def test_costpercapita_bu180
@@ -126359,19 +129533,19 @@ end
 def test_costpercapita_bv180
   r = spreadsheet.costpercapita_bv180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(217.3346691448842,r[:number])
+  assert_in_epsilon(217.33466914488415,r[:number])
 end
 
 def test_costpercapita_bw180
   r = spreadsheet.costpercapita_bw180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(197.90672620167962,r[:number])
+  assert_in_epsilon(197.9067262016796,r[:number])
 end
 
 def test_costpercapita_bx180
   r = spreadsheet.costpercapita_bx180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(175.85424081237443,r[:number])
+  assert_in_epsilon(175.85424081237437,r[:number])
 end
 
 def test_costpercapita_by180
@@ -126383,7 +129557,7 @@ end
 def test_costpercapita_bz180
   r = spreadsheet.costpercapita_bz180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(193.53237908661984,r[:number])
+  assert_in_epsilon(193.5323790866198,r[:number])
 end
 
 def test_costpercapita_ca180
@@ -126395,13 +129569,13 @@ end
 def test_costpercapita_cc180
   r = spreadsheet.costpercapita_cc180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(180.8157579146607,r[:number])
+  assert_in_epsilon(180.81575791466068,r[:number])
 end
 
 def test_costpercapita_cd180
   r = spreadsheet.costpercapita_cd180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3834.6618624936796,r[:number])
+  assert_in_epsilon(3834.661862493679,r[:number])
 end
 
 def test_costpercapita_cf180
@@ -126413,61 +129587,61 @@ end
 def test_costpercapita_cg180
   r = spreadsheet.costpercapita_cg180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-18.125565648170564,r[:number])
+  assert_in_epsilon(-18.125565648170582,r[:number])
 end
 
 def test_costpercapita_ch180
   r = spreadsheet.costpercapita_ch180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20.96661106427055,r[:number])
+  assert_in_epsilon(20.966611064270523,r[:number])
 end
 
 def test_costpercapita_ci180
   r = spreadsheet.costpercapita_ci180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(49.66764150448694,r[:number])
+  assert_in_epsilon(49.66764150448692,r[:number])
 end
 
 def test_costpercapita_cj180
   r = spreadsheet.costpercapita_cj180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(68.72802372827633,r[:number])
+  assert_in_epsilon(68.7280237282763,r[:number])
 end
 
 def test_costpercapita_ck180
   r = spreadsheet.costpercapita_ck180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(48.572067206089685,r[:number])
+  assert_in_epsilon(48.572067206089656,r[:number])
 end
 
 def test_costpercapita_cl180
   r = spreadsheet.costpercapita_cl180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.48675808518621,r[:number])
+  assert_in_epsilon(16.48675808518618,r[:number])
 end
 
 def test_costpercapita_cm180
   r = spreadsheet.costpercapita_cm180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(33.42588824042638,r[:number])
+  assert_in_epsilon(33.425888240426346,r[:number])
 end
 
 def test_costpercapita_cn180
   r = spreadsheet.costpercapita_cn180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.471347259541844,r[:number])
+  assert_in_epsilon(50.4713472595418,r[:number])
 end
 
 def test_costpercapita_cp180
   r = spreadsheet.costpercapita_cp180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(25.738576798669435,r[:number])
+  assert_in_epsilon(25.738576798669406,r[:number])
 end
 
 def test_costpercapita_cq180
   r = spreadsheet.costpercapita_cq180
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(530.7985277757075,r[:number])
+  assert_in_epsilon(530.798527775707,r[:number])
 end
 
 def test_costpercapita_cr180
@@ -126713,37 +129887,37 @@ end
 def test_costpercapita_ay181
   r = spreadsheet.costpercapita_ay181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(100.69414684807123,r[:number])
+  assert_in_epsilon(100.69414684807118,r[:number])
 end
 
 def test_costpercapita_az181
   r = spreadsheet.costpercapita_az181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(183.35812263153917,r[:number])
+  assert_in_epsilon(183.35812263153912,r[:number])
 end
 
 def test_costpercapita_ba181
   r = spreadsheet.costpercapita_ba181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(189.10570267294963,r[:number])
+  assert_in_epsilon(189.1057026729496,r[:number])
 end
 
 def test_costpercapita_bb181
   r = spreadsheet.costpercapita_bb181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(208.3318808115625,r[:number])
+  assert_in_epsilon(208.33188081156246,r[:number])
 end
 
 def test_costpercapita_bc181
   r = spreadsheet.costpercapita_bc181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(226.53093848799273,r[:number])
+  assert_in_epsilon(226.53093848799264,r[:number])
 end
 
 def test_costpercapita_bd181
   r = spreadsheet.costpercapita_bd181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(247.28054335750005,r[:number])
+  assert_in_epsilon(247.28054335750002,r[:number])
 end
 
 def test_costpercapita_be181
@@ -126755,43 +129929,43 @@ end
 def test_costpercapita_bf181
   r = spreadsheet.costpercapita_bf181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(289.1966114076997,r[:number])
+  assert_in_epsilon(289.1966114076996,r[:number])
 end
 
 def test_costpercapita_bg181
   r = spreadsheet.costpercapita_bg181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(313.14475179943236,r[:number])
+  assert_in_epsilon(313.1447517994323,r[:number])
 end
 
 def test_costpercapita_bi181
   r = spreadsheet.costpercapita_bi181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(100.69414684807123,r[:number])
+  assert_in_epsilon(100.69414684807118,r[:number])
 end
 
 def test_costpercapita_bj181
   r = spreadsheet.costpercapita_bj181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(280.73187301412037,r[:number])
+  assert_in_epsilon(280.7318730141203,r[:number])
 end
 
 def test_costpercapita_bk181
   r = spreadsheet.costpercapita_bk181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(460.646933393005,r[:number])
+  assert_in_epsilon(460.6469333930048,r[:number])
 end
 
 def test_costpercapita_bl181
   r = spreadsheet.costpercapita_bl181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(563.4459937868198,r[:number])
+  assert_in_epsilon(563.4459937868197,r[:number])
 end
 
 def test_costpercapita_bm181
   r = spreadsheet.costpercapita_bm181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(607.4150662905934,r[:number])
+  assert_in_epsilon(607.4150662905932,r[:number])
 end
 
 def test_costpercapita_bn181
@@ -126803,19 +129977,19 @@ end
 def test_costpercapita_bo181
   r = spreadsheet.costpercapita_bo181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(725.0688513929879,r[:number])
+  assert_in_epsilon(725.0688513929877,r[:number])
 end
 
 def test_costpercapita_bp181
   r = spreadsheet.costpercapita_bp181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(787.6425637234339,r[:number])
+  assert_in_epsilon(787.6425637234336,r[:number])
 end
 
 def test_costpercapita_bq181
   r = spreadsheet.costpercapita_bq181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(853.3353112920507,r[:number])
+  assert_in_epsilon(853.3353112920505,r[:number])
 end
 
 def test_costpercapita_bs181
@@ -126827,7 +130001,7 @@ end
 def test_costpercapita_bt181
   r = spreadsheet.costpercapita_bt181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(376.804191091989,r[:number])
+  assert_in_epsilon(376.8041910919889,r[:number])
 end
 
 def test_costpercapita_bu181
@@ -126839,49 +130013,49 @@ end
 def test_costpercapita_bv181
   r = spreadsheet.costpercapita_bv181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(663.3408309444131,r[:number])
+  assert_in_epsilon(663.340830944413,r[:number])
 end
 
 def test_costpercapita_bw181
   r = spreadsheet.costpercapita_bw181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(709.0538869475444,r[:number])
+  assert_in_epsilon(709.0538869475441,r[:number])
 end
 
 def test_costpercapita_bx181
   r = spreadsheet.costpercapita_bx181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(770.9693853308991,r[:number])
+  assert_in_epsilon(770.969385330899,r[:number])
 end
 
 def test_costpercapita_by181
   r = spreadsheet.costpercapita_by181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(833.0497761060358,r[:number])
+  assert_in_epsilon(833.0497761060357,r[:number])
 end
 
 def test_costpercapita_bz181
   r = spreadsheet.costpercapita_bz181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(899.2750880823764,r[:number])
+  assert_in_epsilon(899.2750880823761,r[:number])
 end
 
 def test_costpercapita_ca181
   r = spreadsheet.costpercapita_ca181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(968.929320859749,r[:number])
+  assert_in_epsilon(968.9293208597487,r[:number])
 end
 
 def test_costpercapita_cc181
   r = spreadsheet.costpercapita_cc181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(663.9323601266088,r[:number])
+  assert_in_epsilon(663.9323601266086,r[:number])
 end
 
 def test_costpercapita_cd181
   r = spreadsheet.costpercapita_cd181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13304.870274526349,r[:number])
+  assert_in_epsilon(13304.870274526345,r[:number])
 end
 
 def test_costpercapita_cf181
@@ -126893,61 +130067,61 @@ end
 def test_costpercapita_cg181
   r = spreadsheet.costpercapita_cg181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-53.27012959914273,r[:number])
+  assert_in_epsilon(-53.2701295991428,r[:number])
 end
 
 def test_costpercapita_ch181
   r = spreadsheet.costpercapita_ch181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(116.17523782881219,r[:number])
+  assert_in_epsilon(116.1752378288121,r[:number])
 end
 
 def test_costpercapita_ci181
   r = spreadsheet.costpercapita_ci181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(183.95222279594802,r[:number])
+  assert_in_epsilon(183.95222279594785,r[:number])
 end
 
 def test_costpercapita_cj181
   r = spreadsheet.costpercapita_cj181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(194.77020484153192,r[:number])
+  assert_in_epsilon(194.77020484153172,r[:number])
 end
 
 def test_costpercapita_ck181
   r = spreadsheet.costpercapita_ck181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(215.90029366318709,r[:number])
+  assert_in_epsilon(215.90029366318697,r[:number])
 end
 
 def test_costpercapita_cl181
   r = spreadsheet.costpercapita_cl181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(239.46338349284156,r[:number])
+  assert_in_epsilon(239.4633834928414,r[:number])
 end
 
 def test_costpercapita_cm181
   r = spreadsheet.costpercapita_cm181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(260.8469902693747,r[:number])
+  assert_in_epsilon(260.8469902693745,r[:number])
 end
 
 def test_costpercapita_cn181
   r = spreadsheet.costpercapita_cn181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(282.9162171839552,r[:number])
+  assert_in_epsilon(282.916217183955,r[:number])
 end
 
 def test_costpercapita_cp181
   r = spreadsheet.costpercapita_cp181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(137.304891543099,r[:number])
+  assert_in_epsilon(137.30489154309885,r[:number])
 end
 
 def test_costpercapita_cq181
   r = spreadsheet.costpercapita_cq181
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2680.1516346528847,r[:number])
+  assert_in_epsilon(2680.1516346528824,r[:number])
 end
 
 def test_costpercapita_cr181
@@ -127193,31 +130367,31 @@ end
 def test_costpercapita_ay182
   r = spreadsheet.costpercapita_ay182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(326.41628715368296,r[:number])
+  assert_in_epsilon(326.41628715368284,r[:number])
 end
 
 def test_costpercapita_az182
   r = spreadsheet.costpercapita_az182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(513.9220091105544,r[:number])
+  assert_in_epsilon(513.9220091105542,r[:number])
 end
 
 def test_costpercapita_ba182
   r = spreadsheet.costpercapita_ba182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(535.8304510424584,r[:number])
+  assert_in_epsilon(535.8304510424583,r[:number])
 end
 
 def test_costpercapita_bb182
   r = spreadsheet.costpercapita_bb182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(555.3483366071063,r[:number])
+  assert_in_epsilon(555.3483366071061,r[:number])
 end
 
 def test_costpercapita_bc182
   r = spreadsheet.costpercapita_bc182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(553.2604671416601,r[:number])
+  assert_in_epsilon(553.26046714166,r[:number])
 end
 
 def test_costpercapita_bd182
@@ -127229,73 +130403,73 @@ end
 def test_costpercapita_be182
   r = spreadsheet.costpercapita_be182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(542.5036512386279,r[:number])
+  assert_in_epsilon(542.5036512386278,r[:number])
 end
 
 def test_costpercapita_bf182
   r = spreadsheet.costpercapita_bf182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(529.084759519979,r[:number])
+  assert_in_epsilon(529.0847595199789,r[:number])
 end
 
 def test_costpercapita_bg182
   r = spreadsheet.costpercapita_bg182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(514.8286061675509,r[:number])
+  assert_in_epsilon(514.8286061675507,r[:number])
 end
 
 def test_costpercapita_bi182
   r = spreadsheet.costpercapita_bi182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(326.41628715368296,r[:number])
+  assert_in_epsilon(326.41628715368284,r[:number])
 end
 
 def test_costpercapita_bj182
   r = spreadsheet.costpercapita_bj182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(829.5746965906759,r[:number])
+  assert_in_epsilon(829.5746965906756,r[:number])
 end
 
 def test_costpercapita_bk182
   r = spreadsheet.costpercapita_bk182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1338.246406408945,r[:number])
+  assert_in_epsilon(1338.2464064089445,r[:number])
 end
 
 def test_costpercapita_bl182
   r = spreadsheet.costpercapita_bl182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1556.2929129177378,r[:number])
+  assert_in_epsilon(1556.2929129177373,r[:number])
 end
 
 def test_costpercapita_bm182
   r = spreadsheet.costpercapita_bm182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1598.490183991644,r[:number])
+  assert_in_epsilon(1598.4901839916438,r[:number])
 end
 
 def test_costpercapita_bn182
   r = spreadsheet.costpercapita_bn182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1621.6828917170628,r[:number])
+  assert_in_epsilon(1621.6828917170626,r[:number])
 end
 
 def test_costpercapita_bo182
   r = spreadsheet.costpercapita_bo182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1613.398640083618,r[:number])
+  assert_in_epsilon(1613.3986400836177,r[:number])
 end
 
 def test_costpercapita_bp182
   r = spreadsheet.costpercapita_bp182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1592.139129935818,r[:number])
+  assert_in_epsilon(1592.1391299358174,r[:number])
 end
 
 def test_costpercapita_bq182
   r = spreadsheet.costpercapita_bq182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1555.7994493695758,r[:number])
+  assert_in_epsilon(1555.7994493695755,r[:number])
 end
 
 def test_costpercapita_bs182
@@ -127307,7 +130481,7 @@ end
 def test_costpercapita_bt182
   r = spreadsheet.costpercapita_bt182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1995.3194847497325,r[:number])
+  assert_in_epsilon(1995.319484749732,r[:number])
 end
 
 def test_costpercapita_bu182
@@ -127343,13 +130517,13 @@ end
 def test_costpercapita_bz182
   r = spreadsheet.costpercapita_bz182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2822.097712597648,r[:number])
+  assert_in_epsilon(2822.0977125976474,r[:number])
 end
 
 def test_costpercapita_ca182
   r = spreadsheet.costpercapita_ca182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2770.9009484738176,r[:number])
+  assert_in_epsilon(2770.9009484738167,r[:number])
 end
 
 def test_costpercapita_cc182
@@ -127361,73 +130535,73 @@ end
 def test_costpercapita_cd182
   r = spreadsheet.costpercapita_cd182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(53370.43811282676,r[:number])
+  assert_in_epsilon(53370.43811282675,r[:number])
 end
 
 def test_costpercapita_cf182
   r = spreadsheet.costpercapita_cf182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-664.5742039339029,r[:number])
+  assert_in_epsilon(-664.574203933903,r[:number])
 end
 
 def test_costpercapita_cg182
   r = spreadsheet.costpercapita_cg182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-106.57679627169374,r[:number])
+  assert_in_epsilon(-106.57679627169401,r[:number])
 end
 
 def test_costpercapita_ch182
   r = spreadsheet.costpercapita_ch182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(362.18687252623346,r[:number])
+  assert_in_epsilon(362.18687252623323,r[:number])
 end
 
 def test_costpercapita_ci182
   r = spreadsheet.costpercapita_ci182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(544.6799343781515,r[:number])
+  assert_in_epsilon(544.6799343781513,r[:number])
 end
 
 def test_costpercapita_cj182
   r = spreadsheet.costpercapita_cj182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(590.6804325610932,r[:number])
+  assert_in_epsilon(590.6804325610929,r[:number])
 end
 
 def test_costpercapita_ck182
   r = spreadsheet.costpercapita_ck182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(612.5206471176957,r[:number])
+  assert_in_epsilon(612.5206471176955,r[:number])
 end
 
 def test_costpercapita_cl182
   r = spreadsheet.costpercapita_cl182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(625.1833194957886,r[:number])
+  assert_in_epsilon(625.1833194957884,r[:number])
 end
 
 def test_costpercapita_cm182
   r = spreadsheet.costpercapita_cm182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(628.3674317114534,r[:number])
+  assert_in_epsilon(628.3674317114532,r[:number])
 end
 
 def test_costpercapita_cn182
   r = spreadsheet.costpercapita_cn182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(617.9965149007244,r[:number])
+  assert_in_epsilon(617.996514900724,r[:number])
 end
 
 def test_costpercapita_cp182
   r = spreadsheet.costpercapita_cp182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(356.7182391650605,r[:number])
+  assert_in_epsilon(356.7182391650601,r[:number])
 end
 
 def test_costpercapita_cq182
   r = spreadsheet.costpercapita_cq182
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7474.781945459463,r[:number])
+  assert_in_epsilon(7474.781945459457,r[:number])
 end
 
 def test_costpercapita_cr182
@@ -127673,109 +130847,109 @@ end
 def test_costpercapita_ay183
   r = spreadsheet.costpercapita_ay183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.4994533697606622,r[:number])
+  assert_in_epsilon(1.4994533697606618,r[:number])
 end
 
 def test_costpercapita_az183
   r = spreadsheet.costpercapita_az183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.276351288876631,r[:number])
+  assert_in_epsilon(2.2763512888766306,r[:number])
 end
 
 def test_costpercapita_ba183
   r = spreadsheet.costpercapita_ba183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.08648224537465,r[:number])
+  assert_in_epsilon(2.0864822453746497,r[:number])
 end
 
 def test_costpercapita_bb183
   r = spreadsheet.costpercapita_bb183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.9177689518223235,r[:number])
+  assert_in_epsilon(1.9177689518223227,r[:number])
 end
 
 def test_costpercapita_bc183
   r = spreadsheet.costpercapita_bc183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.7861215830875212,r[:number])
+  assert_in_epsilon(1.7861215830875206,r[:number])
 end
 
 def test_costpercapita_bd183
   r = spreadsheet.costpercapita_bd183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.684167852077093,r[:number])
+  assert_in_epsilon(1.6841678520770926,r[:number])
 end
 
 def test_costpercapita_be183
   r = spreadsheet.costpercapita_be183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.6029044736336295,r[:number])
+  assert_in_epsilon(1.602904473633629,r[:number])
 end
 
 def test_costpercapita_bf183
   r = spreadsheet.costpercapita_bf183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.5365417900539673,r[:number])
+  assert_in_epsilon(1.5365417900539668,r[:number])
 end
 
 def test_costpercapita_bg183
   r = spreadsheet.costpercapita_bg183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.4817549919258617,r[:number])
+  assert_in_epsilon(1.4817549919258615,r[:number])
 end
 
 def test_costpercapita_bi183
   r = spreadsheet.costpercapita_bi183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.4994533697606622,r[:number])
+  assert_in_epsilon(1.4994533697606618,r[:number])
 end
 
 def test_costpercapita_bj183
   r = spreadsheet.costpercapita_bj183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.726360079930724,r[:number])
+  assert_in_epsilon(3.726360079930723,r[:number])
 end
 
 def test_costpercapita_bk183
   r = spreadsheet.costpercapita_bk183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.690848188388101,r[:number])
+  assert_in_epsilon(5.6908481883881,r[:number])
 end
 
 def test_costpercapita_bl183
   r = spreadsheet.costpercapita_bl183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.073297976593124,r[:number])
+  assert_in_epsilon(6.073297976593122,r[:number])
 end
 
 def test_costpercapita_bm183
   r = spreadsheet.costpercapita_bm183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.618136295612384,r[:number])
+  assert_in_epsilon(5.618136295612382,r[:number])
 end
 
 def test_costpercapita_bn183
   r = spreadsheet.costpercapita_bn183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.249651097877796,r[:number])
+  assert_in_epsilon(5.249651097877794,r[:number])
 end
 
 def test_costpercapita_bo183
   r = spreadsheet.costpercapita_bo183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.958009111399691,r[:number])
+  assert_in_epsilon(4.958009111399689,r[:number])
 end
 
 def test_costpercapita_bp183
   r = spreadsheet.costpercapita_bp183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.722843102107811,r[:number])
+  assert_in_epsilon(4.722843102107809,r[:number])
 end
 
 def test_costpercapita_bq183
   r = spreadsheet.costpercapita_bq183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.531235823741631,r[:number])
+  assert_in_epsilon(4.53123582374163,r[:number])
 end
 
 def test_costpercapita_bs183
@@ -127805,25 +130979,25 @@ end
 def test_costpercapita_bw183
   r = spreadsheet.costpercapita_bw183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.52939014512137,r[:number])
+  assert_in_epsilon(14.529390145121367,r[:number])
 end
 
 def test_costpercapita_bx183
   r = spreadsheet.costpercapita_bx183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.711605489803889,r[:number])
+  assert_in_epsilon(13.711605489803887,r[:number])
 end
 
 def test_costpercapita_by183
   r = spreadsheet.costpercapita_by183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.05821658415058,r[:number])
+  assert_in_epsilon(13.058216584150578,r[:number])
 end
 
 def test_costpercapita_bz183
   r = spreadsheet.costpercapita_bz183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.523992306048214,r[:number])
+  assert_in_epsilon(12.523992306048212,r[:number])
 end
 
 def test_costpercapita_ca183
@@ -127841,7 +131015,7 @@ end
 def test_costpercapita_cd183
   r = spreadsheet.costpercapita_cd183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(303.1636695192746,r[:number])
+  assert_in_epsilon(303.16366951927455,r[:number])
 end
 
 def test_costpercapita_cf183
@@ -127853,61 +131027,61 @@ end
 def test_costpercapita_cg183
   r = spreadsheet.costpercapita_cg183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.42020227697082074,r[:number])
+  assert_in_epsilon(-0.42020227697082163,r[:number])
 end
 
 def test_costpercapita_ch183
   r = spreadsheet.costpercapita_ch183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.89014801557623,r[:number])
+  assert_in_epsilon(1.8901480155762285,r[:number])
 end
 
 def test_costpercapita_ci183
   r = spreadsheet.costpercapita_ci183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.5799230376199187,r[:number])
+  assert_in_epsilon(2.579923037619917,r[:number])
 end
 
 def test_costpercapita_cj183
   r = spreadsheet.costpercapita_cj183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.364567939326274,r[:number])
+  assert_in_epsilon(2.3645679393262724,r[:number])
 end
 
 def test_costpercapita_ck183
   r = spreadsheet.costpercapita_ck183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.181799904500287,r[:number])
+  assert_in_epsilon(2.1817999045002856,r[:number])
 end
 
 def test_costpercapita_cl183
   r = spreadsheet.costpercapita_cl183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.0381858905477235,r[:number])
+  assert_in_epsilon(2.038185890547722,r[:number])
 end
 
 def test_costpercapita_cm183
   r = spreadsheet.costpercapita_cm183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.9239050042942099,r[:number])
+  assert_in_epsilon(1.9239050042942083,r[:number])
 end
 
 def test_costpercapita_cn183
   r = spreadsheet.costpercapita_cn183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.8320964151212418,r[:number])
+  assert_in_epsilon(1.832096415121241,r[:number])
 end
 
 def test_costpercapita_cp183
   r = spreadsheet.costpercapita_cp183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.2597310945509608,r[:number])
+  assert_in_epsilon(1.2597310945509597,r[:number])
 end
 
 def test_costpercapita_cq183
   r = spreadsheet.costpercapita_cq183
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(29.151145613717038,r[:number])
+  assert_in_epsilon(29.151145613717016,r[:number])
 end
 
 def test_costpercapita_cr183
@@ -128159,13 +131333,13 @@ end
 def test_costpercapita_az184
   r = spreadsheet.costpercapita_az184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0964859969696743,r[:number])
+  assert_in_epsilon(1.096485996969674,r[:number])
 end
 
 def test_costpercapita_ba184
   r = spreadsheet.costpercapita_ba184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.4984348378729404,r[:number])
+  assert_in_epsilon(2.4984348378729395,r[:number])
 end
 
 def test_costpercapita_bb184
@@ -128177,31 +131351,31 @@ end
 def test_costpercapita_bc184
   r = spreadsheet.costpercapita_bc184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.257961634893102,r[:number])
+  assert_in_epsilon(2.2579616348931015,r[:number])
 end
 
 def test_costpercapita_bd184
   r = spreadsheet.costpercapita_bd184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.160315364984719,r[:number])
+  assert_in_epsilon(2.160315364984718,r[:number])
 end
 
 def test_costpercapita_be184
   r = spreadsheet.costpercapita_be184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.109453505201304,r[:number])
+  assert_in_epsilon(2.1094535052013037,r[:number])
 end
 
 def test_costpercapita_bf184
   r = spreadsheet.costpercapita_bf184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.0265751805699157,r[:number])
+  assert_in_epsilon(2.0265751805699153,r[:number])
 end
 
 def test_costpercapita_bg184
   r = spreadsheet.costpercapita_bg184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.9502783615019372,r[:number])
+  assert_in_epsilon(1.9502783615019366,r[:number])
 end
 
 def test_costpercapita_bi184
@@ -128213,31 +131387,31 @@ end
 def test_costpercapita_bj184
   r = spreadsheet.costpercapita_bj184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0964859969696743,r[:number])
+  assert_in_epsilon(1.096485996969674,r[:number])
 end
 
 def test_costpercapita_bk184
   r = spreadsheet.costpercapita_bk184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.5590239113105557,r[:number])
+  assert_in_epsilon(3.5590239113105544,r[:number])
 end
 
 def test_costpercapita_bl184
   r = spreadsheet.costpercapita_bl184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.81899730300039,r[:number])
+  assert_in_epsilon(5.818997303000389,r[:number])
 end
 
 def test_costpercapita_bm184
   r = spreadsheet.costpercapita_bm184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.918311765330575,r[:number])
+  assert_in_epsilon(6.918311765330572,r[:number])
 end
 
 def test_costpercapita_bn184
   r = spreadsheet.costpercapita_bn184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.6162030242339975,r[:number])
+  assert_in_epsilon(6.616203024233996,r[:number])
 end
 
 def test_costpercapita_bo184
@@ -128249,13 +131423,13 @@ end
 def test_costpercapita_bp184
   r = spreadsheet.costpercapita_bp184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.166018335319416,r[:number])
+  assert_in_epsilon(6.166018335319414,r[:number])
 end
 
 def test_costpercapita_bq184
   r = spreadsheet.costpercapita_bq184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.967827625244578,r[:number])
+  assert_in_epsilon(5.967827625244577,r[:number])
 end
 
 def test_costpercapita_bs184
@@ -128267,31 +131441,31 @@ end
 def test_costpercapita_bt184
   r = spreadsheet.costpercapita_bt184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1575475351409918,r[:number])
+  assert_in_epsilon(1.1575475351409916,r[:number])
 end
 
 def test_costpercapita_bu184
   r = spreadsheet.costpercapita_bu184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.698157721174931,r[:number])
+  assert_in_epsilon(3.6981577211749297,r[:number])
 end
 
 def test_costpercapita_bv184
   r = spreadsheet.costpercapita_bv184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.950988425533525,r[:number])
+  assert_in_epsilon(5.950988425533524,r[:number])
 end
 
 def test_costpercapita_bw184
   r = spreadsheet.costpercapita_bw184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.044054010046363,r[:number])
+  assert_in_epsilon(7.04405401004636,r[:number])
 end
 
 def test_costpercapita_bx184
   r = spreadsheet.costpercapita_bx184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.736507505536687,r[:number])
+  assert_in_epsilon(6.736507505536685,r[:number])
 end
 
 def test_costpercapita_by184
@@ -128303,7 +131477,7 @@ end
 def test_costpercapita_bz184
   r = spreadsheet.costpercapita_bz184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.278875041275906,r[:number])
+  assert_in_epsilon(6.278875041275904,r[:number])
 end
 
 def test_costpercapita_ca184
@@ -128315,13 +131489,13 @@ end
 def test_costpercapita_cc184
   r = spreadsheet.costpercapita_cc184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.826832095537668,r[:number])
+  assert_in_epsilon(4.826832095537667,r[:number])
 end
 
 def test_costpercapita_cd184
   r = spreadsheet.costpercapita_cd184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(96.97518739066042,r[:number])
+  assert_in_epsilon(96.97518739066041,r[:number])
 end
 
 def test_costpercapita_cf184
@@ -128333,31 +131507,31 @@ end
 def test_costpercapita_cg184
   r = spreadsheet.costpercapita_cg184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.900854036671558,r[:number])
+  assert_in_epsilon(-0.9008540366715582,r[:number])
 end
 
 def test_costpercapita_ch184
   r = spreadsheet.costpercapita_ch184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.9920820188325541,r[:number])
+  assert_in_epsilon(-0.9920820188325553,r[:number])
 end
 
 def test_costpercapita_ci184
   r = spreadsheet.costpercapita_ci184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.5015306780847435,r[:number])
+  assert_in_epsilon(1.5015306780847428,r[:number])
 end
 
 def test_costpercapita_cj184
   r = spreadsheet.costpercapita_cj184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.8052476858421698,r[:number])
+  assert_in_epsilon(2.8052476858421675,r[:number])
 end
 
 def test_costpercapita_ck184
   r = spreadsheet.costpercapita_ck184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.681009710594638,r[:number])
+  assert_in_epsilon(2.6810097105946364,r[:number])
 end
 
 def test_costpercapita_cl184
@@ -128369,25 +131543,25 @@ end
 def test_costpercapita_cm184
   r = spreadsheet.costpercapita_cm184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.4744438414155496,r[:number])
+  assert_in_epsilon(2.4744438414155483,r[:number])
 end
 
 def test_costpercapita_cn184
   r = spreadsheet.costpercapita_cn184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.4152341047276162,r[:number])
+  assert_in_epsilon(2.415234104727616,r[:number])
 end
 
 def test_costpercapita_cp184
   r = spreadsheet.costpercapita_cp184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.391492979007233,r[:number])
+  assert_in_epsilon(1.3914929790072321,r[:number])
 end
 
 def test_costpercapita_cq184
   r = spreadsheet.costpercapita_cq184
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.42023722138978,r[:number])
+  assert_in_epsilon(21.42023722138976,r[:number])
 end
 
 def test_costpercapita_cr184
@@ -128633,31 +131807,31 @@ end
 def test_costpercapita_ay185
   r = spreadsheet.costpercapita_ay185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(472.38865276400895,r[:number])
+  assert_in_epsilon(472.38865276400884,r[:number])
 end
 
 def test_costpercapita_az185
   r = spreadsheet.costpercapita_az185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(788.3616427121515,r[:number])
+  assert_in_epsilon(788.3616427121513,r[:number])
 end
 
 def test_costpercapita_ba185
   r = spreadsheet.costpercapita_ba185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(821.3516625364156,r[:number])
+  assert_in_epsilon(821.3516625364155,r[:number])
 end
 
 def test_costpercapita_bb185
   r = spreadsheet.costpercapita_bb185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(861.0880982557661,r[:number])
+  assert_in_epsilon(861.088098255766,r[:number])
 end
 
 def test_costpercapita_bc185
   r = spreadsheet.costpercapita_bc185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(861.2486567405147,r[:number])
+  assert_in_epsilon(861.2486567405144,r[:number])
 end
 
 def test_costpercapita_bd185
@@ -128669,73 +131843,73 @@ end
 def test_costpercapita_be185
   r = spreadsheet.costpercapita_be185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(912.820888305332,r[:number])
+  assert_in_epsilon(912.8208883053319,r[:number])
 end
 
 def test_costpercapita_bf185
   r = spreadsheet.costpercapita_bf185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(926.2166545513803,r[:number])
+  assert_in_epsilon(926.2166545513801,r[:number])
 end
 
 def test_costpercapita_bg185
   r = spreadsheet.costpercapita_bg185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(938.7083799865655,r[:number])
+  assert_in_epsilon(938.7083799865653,r[:number])
 end
 
 def test_costpercapita_bi185
   r = spreadsheet.costpercapita_bi185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(472.38865276400895,r[:number])
+  assert_in_epsilon(472.38865276400884,r[:number])
 end
 
 def test_costpercapita_bj185
   r = spreadsheet.costpercapita_bj185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1245.1732469378599,r[:number])
+  assert_in_epsilon(1245.1732469378594,r[:number])
 end
 
 def test_costpercapita_bk185
   r = spreadsheet.costpercapita_bk185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2025.7602403831747,r[:number])
+  assert_in_epsilon(2025.7602403831743,r[:number])
 end
 
 def test_costpercapita_bl185
   r = spreadsheet.costpercapita_bl185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2395.9487360193166,r[:number])
+  assert_in_epsilon(2395.948736019316,r[:number])
 end
 
 def test_costpercapita_bm185
   r = spreadsheet.costpercapita_bm185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2472.986807668679,r[:number])
+  assert_in_epsilon(2472.9868076686785,r[:number])
 end
 
 def test_costpercapita_bn185
   r = spreadsheet.costpercapita_bn185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2545.707175767808,r[:number])
+  assert_in_epsilon(2545.7071757678077,r[:number])
 end
 
 def test_costpercapita_bo185
   r = spreadsheet.costpercapita_bo185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2603.8451066605703,r[:number])
+  assert_in_epsilon(2603.84510666057,r[:number])
 end
 
 def test_costpercapita_bp185
   r = spreadsheet.costpercapita_bp185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2671.511449244993,r[:number])
+  assert_in_epsilon(2671.511449244992,r[:number])
 end
 
 def test_costpercapita_bq185
   r = spreadsheet.costpercapita_bq185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2725.55721754548,r[:number])
+  assert_in_epsilon(2725.5572175454795,r[:number])
 end
 
 def test_costpercapita_bs185
@@ -128747,7 +131921,7 @@ end
 def test_costpercapita_bt185
   r = spreadsheet.costpercapita_bt185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3522.3664779333276,r[:number])
+  assert_in_epsilon(3522.366477933327,r[:number])
 end
 
 def test_costpercapita_bu185
@@ -128765,7 +131939,7 @@ end
 def test_costpercapita_bw185
   r = spreadsheet.costpercapita_bw185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5134.536385378071,r[:number])
+  assert_in_epsilon(5134.53638537807,r[:number])
 end
 
 def test_costpercapita_bx185
@@ -128783,13 +131957,13 @@ end
 def test_costpercapita_bz185
   r = spreadsheet.costpercapita_bz185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5442.667594847408,r[:number])
+  assert_in_epsilon(5442.667594847407,r[:number])
 end
 
 def test_costpercapita_ca185
   r = spreadsheet.costpercapita_ca185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5510.630743412227,r[:number])
+  assert_in_epsilon(5510.630743412226,r[:number])
 end
 
 def test_costpercapita_cc185
@@ -128801,73 +131975,73 @@ end
 def test_costpercapita_cd185
   r = spreadsheet.costpercapita_cd185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(97138.08402730903,r[:number])
+  assert_in_epsilon(97138.08402730901,r[:number])
 end
 
 def test_costpercapita_cf185
   r = spreadsheet.costpercapita_cf185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-961.7697560239773,r[:number])
+  assert_in_epsilon(-961.7697560239774,r[:number])
 end
 
 def test_costpercapita_cg185
   r = spreadsheet.costpercapita_cg185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-190.89276241191152,r[:number])
+  assert_in_epsilon(-190.89276241191192,r[:number])
 end
 
 def test_costpercapita_ch185
   r = spreadsheet.costpercapita_ch185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(529.6001783161548,r[:number])
+  assert_in_epsilon(529.6001783161545,r[:number])
 end
 
 def test_costpercapita_ci185
   r = spreadsheet.costpercapita_ci185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(827.405466072018,r[:number])
+  assert_in_epsilon(827.4054660720176,r[:number])
 end
 
 def test_costpercapita_cj185
   r = spreadsheet.costpercapita_cj185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(904.1510671470047,r[:number])
+  assert_in_epsilon(904.1510671470041,r[:number])
 end
 
 def test_costpercapita_ck185
   r = spreadsheet.costpercapita_ck185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(930.12321903429,r[:number])
+  assert_in_epsilon(930.1232190342895,r[:number])
 end
 
 def test_costpercapita_cl185
   r = spreadsheet.costpercapita_cl185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(941.0662761101094,r[:number])
+  assert_in_epsilon(941.0662761101089,r[:number])
 end
 
 def test_costpercapita_cm185
   r = spreadsheet.costpercapita_cm185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(984.3311212942217,r[:number])
+  assert_in_epsilon(984.3311212942212,r[:number])
 end
 
 def test_costpercapita_cn185
   r = spreadsheet.costpercapita_cn185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1015.6221773868887,r[:number])
+  assert_in_epsilon(1015.622177386888,r[:number])
 end
 
 def test_costpercapita_cp185
   r = spreadsheet.costpercapita_cp185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(553.2929985471999,r[:number])
+  assert_in_epsilon(553.2929985471993,r[:number])
 end
 
 def test_costpercapita_cq185
   r = spreadsheet.costpercapita_cq185
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11356.244846916888,r[:number])
+  assert_in_epsilon(11356.24484691688,r[:number])
 end
 
 def test_costpercapita_cr185
@@ -129130,8 +132304,8 @@ end
 
 def test_costpercapita_bc186
   r = spreadsheet.costpercapita_bc186
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("ok",r[:string].force_encoding('utf-8'))
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(-1.1368683772161603e-13,r[:number])
 end
 
 def test_costpercapita_bd186
@@ -129154,8 +132328,8 @@ end
 
 def test_costpercapita_bg186
   r = spreadsheet.costpercapita_bg186
-  assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.1368683772161603e-13,r[:number])
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("ok",r[:string].force_encoding('utf-8'))
 end
 
 def test_costpercapita_bi186
@@ -129292,26 +132466,26 @@ end
 
 def test_costpercapita_ch186
   r = spreadsheet.costpercapita_ch186
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("ok",r[:string].force_encoding('utf-8'))
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(-1.1368683772161603e-13,r[:number])
 end
 
 def test_costpercapita_ci186
   r = spreadsheet.costpercapita_ci186
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("ok",r[:string].force_encoding('utf-8'))
-end
-
-def test_costpercapita_cj186
-  r = spreadsheet.costpercapita_cj186
   assert_equal(:ExcelNumber,r[:type])
   assert_in_epsilon(2.2737367544323206e-13,r[:number])
 end
 
-def test_costpercapita_ck186
-  r = spreadsheet.costpercapita_ck186
+def test_costpercapita_cj186
+  r = spreadsheet.costpercapita_cj186
   assert_equal(:ExcelString,r[:type])
   assert_equal("ok",r[:string].force_encoding('utf-8'))
+end
+
+def test_costpercapita_ck186
+  r = spreadsheet.costpercapita_ck186
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(-5.684341886080801e-13,r[:number])
 end
 
 def test_costpercapita_cl186
@@ -129322,8 +132496,8 @@ end
 
 def test_costpercapita_cm186
   r = spreadsheet.costpercapita_cm186
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("ok",r[:string].force_encoding('utf-8'))
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(-4.547473508864641e-13,r[:number])
 end
 
 def test_costpercapita_cn186
@@ -129334,8 +132508,8 @@ end
 
 def test_costpercapita_cp186
   r = spreadsheet.costpercapita_cp186
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("ok",r[:string].force_encoding('utf-8'))
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(553.294768182212,r[:number])
 end
 
 def test_costpercapita_cq186
@@ -129425,7 +132599,7 @@ end
 def test_costpercapita_ca188
   r = spreadsheet.costpercapita_ca188
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(931767.7879709161,r[:number])
+  assert_in_epsilon(931767.7879709163,r[:number])
 end
 
 def test_costpercapita_cc188
@@ -130169,109 +133343,109 @@ end
 def test_costpercapita_ay190
   r = spreadsheet.costpercapita_ay190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.939463153040645,r[:number])
+  assert_in_epsilon(16.939463153040638,r[:number])
 end
 
 def test_costpercapita_az190
   r = spreadsheet.costpercapita_az190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.070986170953821,r[:number])
+  assert_in_epsilon(11.070986170953816,r[:number])
 end
 
 def test_costpercapita_ba190
   r = spreadsheet.costpercapita_ba190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.487743597412067,r[:number])
+  assert_in_epsilon(16.48774359741206,r[:number])
 end
 
 def test_costpercapita_bb190
   r = spreadsheet.costpercapita_bb190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(24.515688904506842,r[:number])
+  assert_in_epsilon(24.515688904506828,r[:number])
 end
 
 def test_costpercapita_bc190
   r = spreadsheet.costpercapita_bc190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(30.023582196131464,r[:number])
+  assert_in_epsilon(30.023582196131454,r[:number])
 end
 
 def test_costpercapita_bd190
   r = spreadsheet.costpercapita_bd190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(33.364151567190085,r[:number])
+  assert_in_epsilon(33.36415156719007,r[:number])
 end
 
 def test_costpercapita_be190
   r = spreadsheet.costpercapita_be190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(37.173000410900094,r[:number])
+  assert_in_epsilon(37.17300041090008,r[:number])
 end
 
 def test_costpercapita_bf190
   r = spreadsheet.costpercapita_bf190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(43.08832717227732,r[:number])
+  assert_in_epsilon(43.0883271722773,r[:number])
 end
 
 def test_costpercapita_bg190
   r = spreadsheet.costpercapita_bg190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(46.82580995471771,r[:number])
+  assert_in_epsilon(46.82580995471769,r[:number])
 end
 
 def test_costpercapita_bi190
   r = spreadsheet.costpercapita_bi190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16.939463153040645,r[:number])
+  assert_in_epsilon(16.939463153040638,r[:number])
 end
 
 def test_costpercapita_bj190
   r = spreadsheet.costpercapita_bj190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27.45186935344744,r[:number])
+  assert_in_epsilon(27.451869353447425,r[:number])
 end
 
 def test_costpercapita_bk190
   r = spreadsheet.costpercapita_bk190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(43.040889521909016,r[:number])
+  assert_in_epsilon(43.040889521909,r[:number])
 end
 
 def test_costpercapita_bl190
   r = spreadsheet.costpercapita_bl190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.86988354222904,r[:number])
+  assert_in_epsilon(50.86988354222901,r[:number])
 end
 
 def test_costpercapita_bm190
   r = spreadsheet.costpercapita_bm190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(69.41022423737286,r[:number])
+  assert_in_epsilon(69.41022423737284,r[:number])
 end
 
 def test_costpercapita_bn190
   r = spreadsheet.costpercapita_bn190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(85.96471676793094,r[:number])
+  assert_in_epsilon(85.96471676793088,r[:number])
 end
 
 def test_costpercapita_bo190
   r = spreadsheet.costpercapita_bo190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(98.51675909307956,r[:number])
+  assert_in_epsilon(98.51675909307953,r[:number])
 end
 
 def test_costpercapita_bp190
   r = spreadsheet.costpercapita_bp190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(111.52106620631649,r[:number])
+  assert_in_epsilon(111.52106620631645,r[:number])
 end
 
 def test_costpercapita_bq190
   r = spreadsheet.costpercapita_bq190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(124.8616357847117,r[:number])
+  assert_in_epsilon(124.86163578471165,r[:number])
 end
 
 def test_costpercapita_bs190
@@ -130313,7 +133487,7 @@ end
 def test_costpercapita_by190
   r = spreadsheet.costpercapita_by190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1711.3150068516748,r[:number])
+  assert_in_epsilon(1711.3150068516745,r[:number])
 end
 
 def test_costpercapita_bz190
@@ -130343,67 +133517,67 @@ end
 def test_costpercapita_cf190
   r = spreadsheet.costpercapita_cf190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-26.008171359028722,r[:number])
+  assert_in_epsilon(-26.00817135902873,r[:number])
 end
 
 def test_costpercapita_cg190
   r = spreadsheet.costpercapita_cg190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.61050914754441,r[:number])
+  assert_in_epsilon(10.610509147544397,r[:number])
 end
 
 def test_costpercapita_ch190
   r = spreadsheet.costpercapita_ch190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(17.959471785600442,r[:number])
+  assert_in_epsilon(17.959471785600428,r[:number])
 end
 
 def test_costpercapita_ci190
   r = spreadsheet.costpercapita_ci190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.576227750308878,r[:number])
+  assert_in_epsilon(13.57622775030885,r[:number])
 end
 
 def test_costpercapita_cj190
   r = spreadsheet.costpercapita_cj190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(23.737873587780832,r[:number])
+  assert_in_epsilon(23.737873587780808,r[:number])
 end
 
 def test_costpercapita_ck190
   r = spreadsheet.costpercapita_ck190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(35.21063887181683,r[:number])
+  assert_in_epsilon(35.210638871816776,r[:number])
 end
 
 def test_costpercapita_cl190
   r = spreadsheet.costpercapita_cl190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(41.96859977041165,r[:number])
+  assert_in_epsilon(41.968599770411615,r[:number])
 end
 
 def test_costpercapita_cm190
   r = spreadsheet.costpercapita_cm190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(45.97441775308284,r[:number])
+  assert_in_epsilon(45.9744177530828,r[:number])
 end
 
 def test_costpercapita_cn190
   r = spreadsheet.costpercapita_cn190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(53.62946909213799,r[:number])
+  assert_in_epsilon(53.629469092137946,r[:number])
 end
 
 def test_costpercapita_cp190
   r = spreadsheet.costpercapita_cp190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(24.07322626662835,r[:number])
+  assert_in_epsilon(24.07322626662832,r[:number])
 end
 
 def test_costpercapita_cq190
   r = spreadsheet.costpercapita_cq190
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(473.4788642387502,r[:number])
+  assert_in_epsilon(473.4788642387497,r[:number])
 end
 
 def test_costpercapita_cr190
@@ -130649,145 +133823,145 @@ end
 def test_costpercapita_ay191
   r = spreadsheet.costpercapita_ay191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.922490891656793,r[:number])
+  assert_in_epsilon(28.92249089165678,r[:number])
 end
 
 def test_costpercapita_az191
   r = spreadsheet.costpercapita_az191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(68.71306426053258,r[:number])
+  assert_in_epsilon(68.71306426053255,r[:number])
 end
 
 def test_costpercapita_ba191
   r = spreadsheet.costpercapita_ba191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(57.94121933564256,r[:number])
+  assert_in_epsilon(57.941219335642536,r[:number])
 end
 
 def test_costpercapita_bb191
   r = spreadsheet.costpercapita_bb191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(51.59922608605304,r[:number])
+  assert_in_epsilon(51.59922608605302,r[:number])
 end
 
 def test_costpercapita_bc191
   r = spreadsheet.costpercapita_bc191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(53.91683090106492,r[:number])
+  assert_in_epsilon(53.916830901064884,r[:number])
 end
 
 def test_costpercapita_bd191
   r = spreadsheet.costpercapita_bd191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(59.06134330324882,r[:number])
+  assert_in_epsilon(59.0613433032488,r[:number])
 end
 
 def test_costpercapita_be191
   r = spreadsheet.costpercapita_be191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(58.58086902077105,r[:number])
+  assert_in_epsilon(58.58086902077102,r[:number])
 end
 
 def test_costpercapita_bf191
   r = spreadsheet.costpercapita_bf191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(61.10247462151813,r[:number])
+  assert_in_epsilon(61.102474621518105,r[:number])
 end
 
 def test_costpercapita_bg191
   r = spreadsheet.costpercapita_bg191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(62.02245985811656,r[:number])
+  assert_in_epsilon(62.02245985811653,r[:number])
 end
 
 def test_costpercapita_bi191
   r = spreadsheet.costpercapita_bi191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(28.922490891656793,r[:number])
+  assert_in_epsilon(28.92249089165678,r[:number])
 end
 
 def test_costpercapita_bj191
   r = spreadsheet.costpercapita_bj191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(96.68183401212428,r[:number])
+  assert_in_epsilon(96.68183401212423,r[:number])
 end
 
 def test_costpercapita_bk191
   r = spreadsheet.costpercapita_bk191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(151.45786892036512,r[:number])
+  assert_in_epsilon(151.45786892036506,r[:number])
 end
 
 def test_costpercapita_bl191
   r = spreadsheet.costpercapita_bl191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(172.1519678671848,r[:number])
+  assert_in_epsilon(172.15196786718474,r[:number])
 end
 
 def test_costpercapita_bm191
   r = spreadsheet.costpercapita_bm191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(158.71956713595836,r[:number])
+  assert_in_epsilon(158.71956713595827,r[:number])
 end
 
 def test_costpercapita_bn191
   r = spreadsheet.costpercapita_bn191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(160.71540382704265,r[:number])
+  assert_in_epsilon(160.71540382704256,r[:number])
 end
 
 def test_costpercapita_bo191
   r = spreadsheet.costpercapita_bo191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(167.90666411923766,r[:number])
+  assert_in_epsilon(167.9066641192376,r[:number])
 end
 
 def test_costpercapita_bp191
   r = spreadsheet.costpercapita_bp191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(175.16352956298107,r[:number])
+  assert_in_epsilon(175.163529562981,r[:number])
 end
 
 def test_costpercapita_bq191
   r = spreadsheet.costpercapita_bq191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(178.32554531141182,r[:number])
+  assert_in_epsilon(178.32554531141173,r[:number])
 end
 
 def test_costpercapita_bs191
   r = spreadsheet.costpercapita_bs191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(184.34695886862744,r[:number])
+  assert_in_epsilon(184.3469588686274,r[:number])
 end
 
 def test_costpercapita_bt191
   r = spreadsheet.costpercapita_bt191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(257.34170499360175,r[:number])
+  assert_in_epsilon(257.3417049936017,r[:number])
 end
 
 def test_costpercapita_bu191
   r = spreadsheet.costpercapita_bu191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(329.74913417100754,r[:number])
+  assert_in_epsilon(329.7491341710074,r[:number])
 end
 
 def test_costpercapita_bv191
   r = spreadsheet.costpercapita_bv191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(364.67678562873,r[:number])
+  assert_in_epsilon(364.67678562872993,r[:number])
 end
 
 def test_costpercapita_bw191
   r = spreadsheet.costpercapita_bw191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(361.81574862393654,r[:number])
+  assert_in_epsilon(361.81574862393643,r[:number])
 end
 
 def test_costpercapita_bx191
   r = spreadsheet.costpercapita_bx191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(371.93198990117577,r[:number])
+  assert_in_epsilon(371.9319899011757,r[:number])
 end
 
 def test_costpercapita_by191
@@ -130799,91 +133973,91 @@ end
 def test_costpercapita_bz191
   r = spreadsheet.costpercapita_bz191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(403.92325627234237,r[:number])
+  assert_in_epsilon(403.9232562723423,r[:number])
 end
 
 def test_costpercapita_ca191
   r = spreadsheet.costpercapita_ca191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(416.3730134741404,r[:number])
+  assert_in_epsilon(416.3730134741403,r[:number])
 end
 
 def test_costpercapita_cc191
   r = spreadsheet.costpercapita_cc191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(341.9871505627085,r[:number])
+  assert_in_epsilon(341.98715056270845,r[:number])
 end
 
 def test_costpercapita_cd191
   r = spreadsheet.costpercapita_cd191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7084.289380495961,r[:number])
+  assert_in_epsilon(7084.28938049596,r[:number])
 end
 
 def test_costpercapita_cf191
   r = spreadsheet.costpercapita_cf191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-44.40643085581688,r[:number])
+  assert_in_epsilon(-44.40643085581689,r[:number])
 end
 
 def test_costpercapita_cg191
   r = spreadsheet.costpercapita_cg191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-7.845571965412998,r[:number])
+  assert_in_epsilon(-7.8455719654130425,r[:number])
 end
 
 def test_costpercapita_ch191
   r = spreadsheet.costpercapita_ch191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(63.31676472849536,r[:number])
+  assert_in_epsilon(63.3167647284953,r[:number])
 end
 
 def test_costpercapita_ci191
   r = spreadsheet.costpercapita_ci191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(93.65840465228482,r[:number])
+  assert_in_epsilon(93.65840465228473,r[:number])
 end
 
 def test_costpercapita_cj191
   r = spreadsheet.costpercapita_cj191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(76.70042662362168,r[:number])
+  assert_in_epsilon(76.70042662362161,r[:number])
 end
 
 def test_costpercapita_ck191
   r = spreadsheet.costpercapita_ck191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(70.87034924426595,r[:number])
+  assert_in_epsilon(70.87034924426588,r[:number])
 end
 
 def test_costpercapita_cl191
   r = spreadsheet.costpercapita_cl191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(78.79251465511345,r[:number])
+  assert_in_epsilon(78.79251465511337,r[:number])
 end
 
 def test_costpercapita_cm191
   r = spreadsheet.costpercapita_cm191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(82.21347356228988,r[:number])
+  assert_in_epsilon(82.21347356228982,r[:number])
 end
 
 def test_costpercapita_cn191
   r = spreadsheet.costpercapita_cn191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(83.97599313988115,r[:number])
+  assert_in_epsilon(83.97599313988104,r[:number])
 end
 
 def test_costpercapita_cp191
   r = spreadsheet.costpercapita_cp191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(55.25288042052471,r[:number])
+  assert_in_epsilon(55.25288042052465,r[:number])
 end
 
 def test_costpercapita_cq191
   r = spreadsheet.costpercapita_cq191
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1147.1994163796846,r[:number])
+  assert_in_epsilon(1147.199416379683,r[:number])
 end
 
 def test_costpercapita_cr191
@@ -131129,109 +134303,109 @@ end
 def test_costpercapita_ay192
   r = spreadsheet.costpercapita_ay192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(75.81105479229147,r[:number])
+  assert_in_epsilon(75.81105479229144,r[:number])
 end
 
 def test_costpercapita_az192
   r = spreadsheet.costpercapita_az192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(132.4783222858912,r[:number])
+  assert_in_epsilon(132.47832228589112,r[:number])
 end
 
 def test_costpercapita_ba192
   r = spreadsheet.costpercapita_ba192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(162.55111626699514,r[:number])
+  assert_in_epsilon(162.55111626699505,r[:number])
 end
 
 def test_costpercapita_bb192
   r = spreadsheet.costpercapita_bb192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(162.84626322531255,r[:number])
+  assert_in_epsilon(162.8462632253125,r[:number])
 end
 
 def test_costpercapita_bc192
   r = spreadsheet.costpercapita_bc192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(123.64309160802442,r[:number])
+  assert_in_epsilon(123.64309160802439,r[:number])
 end
 
 def test_costpercapita_bd192
   r = spreadsheet.costpercapita_bd192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(126.0230949779898,r[:number])
+  assert_in_epsilon(126.02309497798976,r[:number])
 end
 
 def test_costpercapita_be192
   r = spreadsheet.costpercapita_be192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(182.90385193765377,r[:number])
+  assert_in_epsilon(182.9038519376537,r[:number])
 end
 
 def test_costpercapita_bf192
   r = spreadsheet.costpercapita_bf192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(186.6397681744154,r[:number])
+  assert_in_epsilon(186.63976817441528,r[:number])
 end
 
 def test_costpercapita_bg192
   r = spreadsheet.costpercapita_bg192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(196.99357466253764,r[:number])
+  assert_in_epsilon(196.99357466253755,r[:number])
 end
 
 def test_costpercapita_bi192
   r = spreadsheet.costpercapita_bi192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(75.81105479229147,r[:number])
+  assert_in_epsilon(75.81105479229144,r[:number])
 end
 
 def test_costpercapita_bj192
   r = spreadsheet.costpercapita_bj192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(205.78950229641214,r[:number])
+  assert_in_epsilon(205.78950229641205,r[:number])
 end
 
 def test_costpercapita_bk192
   r = spreadsheet.costpercapita_bk192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(361.6034508767696,r[:number])
+  assert_in_epsilon(361.6034508767694,r[:number])
 end
 
 def test_costpercapita_bl192
   r = spreadsheet.costpercapita_bl192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(444.53776149969025,r[:number])
+  assert_in_epsilon(444.53776149969,r[:number])
 end
 
 def test_costpercapita_bm192
   r = spreadsheet.costpercapita_bm192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(435.2549238481289,r[:number])
+  assert_in_epsilon(435.2549238481287,r[:number])
 end
 
 def test_costpercapita_bn192
   r = spreadsheet.costpercapita_bn192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(401.41980780549466,r[:number])
+  assert_in_epsilon(401.41980780549443,r[:number])
 end
 
 def test_costpercapita_bo192
   r = spreadsheet.costpercapita_bo192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(424.3951750167649,r[:number])
+  assert_in_epsilon(424.39517501676465,r[:number])
 end
 
 def test_costpercapita_bp192
   r = spreadsheet.costpercapita_bp192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(486.7702585957815,r[:number])
+  assert_in_epsilon(486.77025859578123,r[:number])
 end
 
 def test_costpercapita_bq192
   r = spreadsheet.costpercapita_bq192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(556.0604055121627,r[:number])
+  assert_in_epsilon(556.0604055121624,r[:number])
 end
 
 def test_costpercapita_bs192
@@ -131249,121 +134423,121 @@ end
 def test_costpercapita_bu192
   r = spreadsheet.costpercapita_bu192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(509.25903874956987,r[:number])
+  assert_in_epsilon(509.2590387495697,r[:number])
 end
 
 def test_costpercapita_bv192
   r = spreadsheet.costpercapita_bv192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(588.9647606018867,r[:number])
+  assert_in_epsilon(588.9647606018865,r[:number])
 end
 
 def test_costpercapita_bw192
   r = spreadsheet.costpercapita_bw192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(569.5946466257684,r[:number])
+  assert_in_epsilon(569.5946466257683,r[:number])
 end
 
 def test_costpercapita_bx192
   r = spreadsheet.costpercapita_bx192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(524.4776387761892,r[:number])
+  assert_in_epsilon(524.477638776189,r[:number])
 end
 
 def test_costpercapita_by192
   r = spreadsheet.costpercapita_by192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(540.9363017002441,r[:number])
+  assert_in_epsilon(540.9363017002439,r[:number])
 end
 
 def test_costpercapita_bz192
   r = spreadsheet.costpercapita_bz192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(598.6622802651613,r[:number])
+  assert_in_epsilon(598.662280265161,r[:number])
 end
 
 def test_costpercapita_ca192
   r = spreadsheet.costpercapita_ca192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(670.8701526394136,r[:number])
+  assert_in_epsilon(670.8701526394134,r[:number])
 end
 
 def test_costpercapita_cc192
   r = spreadsheet.costpercapita_cc192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(509.7453163351545,r[:number])
+  assert_in_epsilon(509.7453163351543,r[:number])
 end
 
 def test_costpercapita_cd192
   r = spreadsheet.costpercapita_cd192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10600.123734742347,r[:number])
+  assert_in_epsilon(10600.123734742343,r[:number])
 end
 
 def test_costpercapita_cf192
   r = spreadsheet.costpercapita_cf192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-116.39724861013137,r[:number])
+  assert_in_epsilon(-116.3972486101314,r[:number])
 end
 
 def test_costpercapita_cg192
   r = spreadsheet.costpercapita_cg192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.261371862645853,r[:number])
+  assert_in_epsilon(4.261371862645757,r[:number])
 end
 
 def test_costpercapita_ch192
   r = spreadsheet.costpercapita_ch192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(114.32810804358172,r[:number])
+  assert_in_epsilon(114.3281080435815,r[:number])
 end
 
 def test_costpercapita_ci192
   r = spreadsheet.costpercapita_ci192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(196.81343642030083,r[:number])
+  assert_in_epsilon(196.81343642030066,r[:number])
 end
 
 def test_costpercapita_cj192
   r = spreadsheet.costpercapita_cj192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(247.16708681284848,r[:number])
+  assert_in_epsilon(247.16708681284828,r[:number])
 end
 
 def test_costpercapita_ck192
   r = spreadsheet.costpercapita_ck192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(209.71147179876655,r[:number])
+  assert_in_epsilon(209.71147179876635,r[:number])
 end
 
 def test_costpercapita_cl192
   r = spreadsheet.costpercapita_cl192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(146.15892704719536,r[:number])
+  assert_in_epsilon(146.15892704719516,r[:number])
 end
 
 def test_costpercapita_cm192
   r = spreadsheet.costpercapita_cm192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(202.85087544106858,r[:number])
+  assert_in_epsilon(202.85087544106835,r[:number])
 end
 
 def test_costpercapita_cn192
   r = spreadsheet.costpercapita_cn192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(256.39064728913183,r[:number])
+  assert_in_epsilon(256.3906472891316,r[:number])
 end
 
 def test_costpercapita_cp192
   r = spreadsheet.costpercapita_cp192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(140.14274178948978,r[:number])
+  assert_in_epsilon(140.14274178948958,r[:number])
 end
 
 def test_costpercapita_cq192
   r = spreadsheet.costpercapita_cq192
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2870.8800916235414,r[:number])
+  assert_in_epsilon(2870.8800916235377,r[:number])
 end
 
 def test_costpercapita_cr192
@@ -131609,241 +134783,241 @@ end
 def test_costpercapita_ay193
   r = spreadsheet.costpercapita_ay193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(152.70385388202448,r[:number])
+  assert_in_epsilon(152.7038538820244,r[:number])
 end
 
 def test_costpercapita_az193
   r = spreadsheet.costpercapita_az193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(283.0784226358227,r[:number])
+  assert_in_epsilon(283.0784226358225,r[:number])
 end
 
 def test_costpercapita_ba193
   r = spreadsheet.costpercapita_ba193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(288.7071406254754,r[:number])
+  assert_in_epsilon(288.70714062547523,r[:number])
 end
 
 def test_costpercapita_bb193
   r = spreadsheet.costpercapita_bb193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(324.826634303089,r[:number])
+  assert_in_epsilon(324.82663430308884,r[:number])
 end
 
 def test_costpercapita_bc193
   r = spreadsheet.costpercapita_bc193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(359.01793323184785,r[:number])
+  assert_in_epsilon(359.0179332318477,r[:number])
 end
 
 def test_costpercapita_bd193
   r = spreadsheet.costpercapita_bd193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(396.54159647405555,r[:number])
+  assert_in_epsilon(396.54159647405544,r[:number])
 end
 
 def test_costpercapita_be193
   r = spreadsheet.costpercapita_be193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(431.6940455588856,r[:number])
+  assert_in_epsilon(431.69404555888536,r[:number])
 end
 
 def test_costpercapita_bf193
   r = spreadsheet.costpercapita_bf193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(471.30631006542893,r[:number])
+  assert_in_epsilon(471.3063100654287,r[:number])
 end
 
 def test_costpercapita_bg193
   r = spreadsheet.costpercapita_bg193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(512.214287757039,r[:number])
+  assert_in_epsilon(512.2142877570386,r[:number])
 end
 
 def test_costpercapita_bi193
   r = spreadsheet.costpercapita_bi193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(152.70385388202448,r[:number])
+  assert_in_epsilon(152.7038538820244,r[:number])
 end
 
 def test_costpercapita_bj193
   r = spreadsheet.costpercapita_bj193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(430.746856361186,r[:number])
+  assert_in_epsilon(430.74685636118585,r[:number])
 end
 
 def test_costpercapita_bk193
   r = spreadsheet.costpercapita_bk193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(705.3521415984436,r[:number])
+  assert_in_epsilon(705.352141598443,r[:number])
 end
 
 def test_costpercapita_bl193
   r = spreadsheet.costpercapita_bl193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(869.9272186115267,r[:number])
+  assert_in_epsilon(869.9272186115264,r[:number])
 end
 
 def test_costpercapita_bm193
   r = spreadsheet.costpercapita_bm193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(947.0947203681335,r[:number])
+  assert_in_epsilon(947.094720368133,r[:number])
 end
 
 def test_costpercapita_bn193
   r = spreadsheet.costpercapita_bn193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1055.6124566382882,r[:number])
+  assert_in_epsilon(1055.6124566382878,r[:number])
 end
 
 def test_costpercapita_bo193
   r = spreadsheet.costpercapita_bo193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1162.8636591478792,r[:number])
+  assert_in_epsilon(1162.8636591478787,r[:number])
 end
 
 def test_costpercapita_bp193
   r = spreadsheet.costpercapita_bp193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1274.732265671953,r[:number])
+  assert_in_epsilon(1274.7322656719523,r[:number])
 end
 
 def test_costpercapita_bq193
   r = spreadsheet.costpercapita_bq193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1389.9123929107666,r[:number])
+  assert_in_epsilon(1389.912392910766,r[:number])
 end
 
 def test_costpercapita_bs193
   r = spreadsheet.costpercapita_bs193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(266.90592106170226,r[:number])
+  assert_in_epsilon(266.9059210617022,r[:number])
 end
 
 def test_costpercapita_bt193
   r = spreadsheet.costpercapita_bt193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(545.4001697780999,r[:number])
+  assert_in_epsilon(545.4001697780997,r[:number])
 end
 
 def test_costpercapita_bu193
   r = spreadsheet.costpercapita_bu193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(822.0207215943991,r[:number])
+  assert_in_epsilon(822.0207215943985,r[:number])
 end
 
 def test_costpercapita_bv193
   r = spreadsheet.costpercapita_bv193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(988.3893192960086,r[:number])
+  assert_in_epsilon(988.3893192960082,r[:number])
 end
 
 def test_costpercapita_bw193
   r = spreadsheet.costpercapita_bw193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1067.3868976248918,r[:number])
+  assert_in_epsilon(1067.3868976248914,r[:number])
 end
 
 def test_costpercapita_bx193
   r = spreadsheet.costpercapita_bx193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1179.1119565543993,r[:number])
+  assert_in_epsilon(1179.1119565543988,r[:number])
 end
 
 def test_costpercapita_by193
   r = spreadsheet.costpercapita_by193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1290.0095331772445,r[:number])
+  assert_in_epsilon(1290.009533177244,r[:number])
 end
 
 def test_costpercapita_bz193
   r = spreadsheet.costpercapita_bz193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1405.8841168689523,r[:number])
+  assert_in_epsilon(1405.8841168689519,r[:number])
 end
 
 def test_costpercapita_ca193
   r = spreadsheet.costpercapita_ca193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1525.4452591204565,r[:number])
+  assert_in_epsilon(1525.4452591204558,r[:number])
 end
 
 def test_costpercapita_cc193
   r = spreadsheet.costpercapita_cc193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1010.0615438973506,r[:number])
+  assert_in_epsilon(1010.0615438973501,r[:number])
 end
 
 def test_costpercapita_cd193
   r = spreadsheet.costpercapita_cd193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20083.71785906888,r[:number])
+  assert_in_epsilon(20083.717859068875,r[:number])
 end
 
 def test_costpercapita_cf193
   r = spreadsheet.costpercapita_cf193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-234.4553639667665,r[:number])
+  assert_in_epsilon(-234.45536396676658,r[:number])
 end
 
 def test_costpercapita_cg193
   r = spreadsheet.costpercapita_cg193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.12345854350039681,r[:number])
+  assert_in_epsilon(0.12345854350021529,r[:number])
 end
 
 def test_costpercapita_ch193
   r = spreadsheet.costpercapita_ch193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(266.1662484711805,r[:number])
+  assert_in_epsilon(266.1662484711801,r[:number])
 end
 
 def test_costpercapita_ci193
   r = spreadsheet.costpercapita_ci193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(375.79577735635746,r[:number])
+  assert_in_epsilon(375.79577735635706,r[:number])
 end
 
 def test_costpercapita_cj193
   r = spreadsheet.costpercapita_cj193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(400.9509314977451,r[:number])
+  assert_in_epsilon(400.95093149774465,r[:number])
 end
 
 def test_costpercapita_ck193
   r = spreadsheet.costpercapita_ck193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(452.3870745702653,r[:number])
+  assert_in_epsilon(452.3870745702649,r[:number])
 end
 
 def test_costpercapita_cl193
   r = spreadsheet.costpercapita_cl193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(506.1638125637215,r[:number])
+  assert_in_epsilon(506.163812563721,r[:number])
 end
 
 def test_costpercapita_cm193
   r = spreadsheet.costpercapita_cm193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(557.7736124354582,r[:number])
+  assert_in_epsilon(557.7736124354575,r[:number])
 end
 
 def test_costpercapita_cn193
   r = spreadsheet.costpercapita_cn193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(610.723873521337,r[:number])
+  assert_in_epsilon(610.7238735213364,r[:number])
 end
 
 def test_costpercapita_cp193
   r = spreadsheet.costpercapita_cp193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(326.1810472214221,r[:number])
+  assert_in_epsilon(326.1810472214217,r[:number])
 end
 
 def test_costpercapita_cq193
   r = spreadsheet.costpercapita_cq193
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6364.017438805753,r[:number])
+  assert_in_epsilon(6364.017438805745,r[:number])
 end
 
 def test_costpercapita_cr193
@@ -132089,109 +135263,109 @@ end
 def test_costpercapita_ay194
   r = spreadsheet.costpercapita_ay194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(464.968208772381,r[:number])
+  assert_in_epsilon(464.9682087723808,r[:number])
 end
 
 def test_costpercapita_az194
   r = spreadsheet.costpercapita_az194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(746.7083391490996,r[:number])
+  assert_in_epsilon(746.7083391490993,r[:number])
 end
 
 def test_costpercapita_ba194
   r = spreadsheet.costpercapita_ba194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(796.1048526414983,r[:number])
+  assert_in_epsilon(796.1048526414979,r[:number])
 end
 
 def test_costpercapita_bb194
   r = spreadsheet.costpercapita_bb194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(869.4167960203512,r[:number])
+  assert_in_epsilon(869.416796020351,r[:number])
 end
 
 def test_costpercapita_bc194
   r = spreadsheet.costpercapita_bc194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(904.3755276222957,r[:number])
+  assert_in_epsilon(904.3755276222953,r[:number])
 end
 
 def test_costpercapita_bd194
   r = spreadsheet.costpercapita_bd194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(954.3487958722346,r[:number])
+  assert_in_epsilon(954.3487958722341,r[:number])
 end
 
 def test_costpercapita_be194
   r = spreadsheet.costpercapita_be194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(988.6376113607218,r[:number])
+  assert_in_epsilon(988.6376113607212,r[:number])
 end
 
 def test_costpercapita_bf194
   r = spreadsheet.costpercapita_bf194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1015.6729428736445,r[:number])
+  assert_in_epsilon(1015.6729428736439,r[:number])
 end
 
 def test_costpercapita_bg194
   r = spreadsheet.costpercapita_bg194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1053.431020425593,r[:number])
+  assert_in_epsilon(1053.4310204255926,r[:number])
 end
 
 def test_costpercapita_bi194
   r = spreadsheet.costpercapita_bi194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(464.968208772381,r[:number])
+  assert_in_epsilon(464.9682087723808,r[:number])
 end
 
 def test_costpercapita_bj194
   r = spreadsheet.costpercapita_bj194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1196.344189037677,r[:number])
+  assert_in_epsilon(1196.3441890376766,r[:number])
 end
 
 def test_costpercapita_bk194
   r = spreadsheet.costpercapita_bk194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1953.2829456318073,r[:number])
+  assert_in_epsilon(1953.282945631806,r[:number])
 end
 
 def test_costpercapita_bl194
   r = spreadsheet.costpercapita_bl194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2340.7702090106036,r[:number])
+  assert_in_epsilon(2340.7702090106027,r[:number])
 end
 
 def test_costpercapita_bm194
   r = spreadsheet.costpercapita_bm194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2500.418143839487,r[:number])
+  assert_in_epsilon(2500.4181438394867,r[:number])
 end
 
 def test_costpercapita_bn194
   r = spreadsheet.costpercapita_bn194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2663.165116146295,r[:number])
+  assert_in_epsilon(2663.1651161462946,r[:number])
 end
 
 def test_costpercapita_bo194
   r = spreadsheet.costpercapita_bo194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2786.873187311877,r[:number])
+  assert_in_epsilon(2786.873187311876,r[:number])
 end
 
 def test_costpercapita_bp194
   r = spreadsheet.costpercapita_bp194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2899.9539875774108,r[:number])
+  assert_in_epsilon(2899.9539875774094,r[:number])
 end
 
 def test_costpercapita_bq194
   r = spreadsheet.costpercapita_bq194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3000.98442560392,r[:number])
+  assert_in_epsilon(3000.984425603919,r[:number])
 end
 
 def test_costpercapita_bs194
@@ -132203,127 +135377,127 @@ end
 def test_costpercapita_bt194
   r = spreadsheet.costpercapita_bt194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2367.2141927225107,r[:number])
+  assert_in_epsilon(2367.2141927225102,r[:number])
 end
 
 def test_costpercapita_bu194
   r = spreadsheet.costpercapita_bu194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3149.977795114343,r[:number])
+  assert_in_epsilon(3149.977795114342,r[:number])
 end
 
 def test_costpercapita_bv194
   r = spreadsheet.costpercapita_bv194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3581.146416371451,r[:number])
+  assert_in_epsilon(3581.1464163714495,r[:number])
 end
 
 def test_costpercapita_bw194
   r = spreadsheet.costpercapita_bw194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3779.7131102910103,r[:number])
+  assert_in_epsilon(3779.7131102910093,r[:number])
 end
 
 def test_costpercapita_bx194
   r = spreadsheet.costpercapita_bx194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3986.563842184011,r[:number])
+  assert_in_epsilon(3986.5638421840104,r[:number])
 end
 
 def test_costpercapita_by194
   r = spreadsheet.costpercapita_by194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4147.446453124528,r[:number])
+  assert_in_epsilon(4147.446453124527,r[:number])
 end
 
 def test_costpercapita_bz194
   r = spreadsheet.costpercapita_bz194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4294.186215307212,r[:number])
+  assert_in_epsilon(4294.18621530721,r[:number])
 end
 
 def test_costpercapita_ca194
   r = spreadsheet.costpercapita_ca194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4430.210234592464,r[:number])
+  assert_in_epsilon(4430.210234592463,r[:number])
 end
 
 def test_costpercapita_cc194
   r = spreadsheet.costpercapita_cc194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3486.2031124520204,r[:number])
+  assert_in_epsilon(3486.2031124520195,r[:number])
 end
 
 def test_costpercapita_cd194
   r = spreadsheet.costpercapita_cd194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(71249.67775754567,r[:number])
+  assert_in_epsilon(71249.67775754565,r[:number])
 end
 
 def test_costpercapita_cf194
   r = spreadsheet.costpercapita_cf194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-713.8935125037907,r[:number])
+  assert_in_epsilon(-713.8935125037908,r[:number])
 end
 
 def test_costpercapita_cg194
   r = spreadsheet.costpercapita_cg194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(60.43958991937332,r[:number])
+  assert_in_epsilon(60.43958991937279,r[:number])
 end
 
 def test_costpercapita_ch194
   r = spreadsheet.costpercapita_ch194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(742.2355847219795,r[:number])
+  assert_in_epsilon(742.2355847219784,r[:number])
 end
 
 def test_costpercapita_ci194
   r = spreadsheet.costpercapita_ci194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1018.1995540804693,r[:number])
+  assert_in_epsilon(1018.199554080468,r[:number])
 end
 
 def test_costpercapita_cj194
   r = spreadsheet.costpercapita_cj194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1124.667710508536,r[:number])
+  assert_in_epsilon(1124.667710508535,r[:number])
 end
 
 def test_costpercapita_ck194
   r = spreadsheet.costpercapita_ck194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1211.3945525155223,r[:number])
+  assert_in_epsilon(1211.3945525155211,r[:number])
 end
 
 def test_costpercapita_cl194
   r = spreadsheet.costpercapita_cl194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1282.9419323245895,r[:number])
+  assert_in_epsilon(1282.941932324588,r[:number])
 end
 
 def test_costpercapita_cm194
   r = spreadsheet.costpercapita_cm194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1354.8961563967844,r[:number])
+  assert_in_epsilon(1354.8961563967828,r[:number])
 end
 
 def test_costpercapita_cn194
   r = spreadsheet.costpercapita_cn194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1398.4884064501982,r[:number])
+  assert_in_epsilon(1398.488406450197,r[:number])
 end
 
 def test_costpercapita_cp194
   r = spreadsheet.costpercapita_cp194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(831.0411082681846,r[:number])
+  assert_in_epsilon(831.0411082681835,r[:number])
 end
 
 def test_costpercapita_cq194
   r = spreadsheet.costpercapita_cq194
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(16820.474342090198,r[:number])
+  assert_in_epsilon(16820.47434209018,r[:number])
 end
 
 def test_costpercapita_cr194
@@ -132569,109 +135743,109 @@ end
 def test_costpercapita_ay195
   r = spreadsheet.costpercapita_ay195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.747595611976265,r[:number])
+  assert_in_epsilon(3.747595611976263,r[:number])
 end
 
 def test_costpercapita_az195
   r = spreadsheet.costpercapita_az195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.689302697603889,r[:number])
+  assert_in_epsilon(5.689302697603886,r[:number])
 end
 
 def test_costpercapita_ba195
   r = spreadsheet.costpercapita_ba195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.214761502373705,r[:number])
+  assert_in_epsilon(5.214761502373702,r[:number])
 end
 
 def test_costpercapita_bb195
   r = spreadsheet.costpercapita_bb195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.793095039548198,r[:number])
+  assert_in_epsilon(4.793095039548196,r[:number])
 end
 
 def test_costpercapita_bc195
   r = spreadsheet.costpercapita_bc195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.464067734432658,r[:number])
+  assert_in_epsilon(4.464067734432657,r[:number])
 end
 
 def test_costpercapita_bd195
   r = spreadsheet.costpercapita_bd195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.209253971854448,r[:number])
+  assert_in_epsilon(4.209253971854447,r[:number])
 end
 
 def test_costpercapita_be195
   r = spreadsheet.costpercapita_be195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.006151770338372,r[:number])
+  assert_in_epsilon(4.00615177033837,r[:number])
 end
 
 def test_costpercapita_bf195
   r = spreadsheet.costpercapita_bf195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.8402909928059508,r[:number])
+  assert_in_epsilon(3.8402909928059494,r[:number])
 end
 
 def test_costpercapita_bg195
   r = spreadsheet.costpercapita_bg195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.7033619169175234,r[:number])
+  assert_in_epsilon(3.7033619169175216,r[:number])
 end
 
 def test_costpercapita_bi195
   r = spreadsheet.costpercapita_bi195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.747595611976265,r[:number])
+  assert_in_epsilon(3.747595611976263,r[:number])
 end
 
 def test_costpercapita_bj195
   r = spreadsheet.costpercapita_bj195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.313321084750326,r[:number])
+  assert_in_epsilon(9.31332108475032,r[:number])
 end
 
 def test_costpercapita_bk195
   r = spreadsheet.costpercapita_bk195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.223181680288242,r[:number])
+  assert_in_epsilon(14.223181680288237,r[:number])
 end
 
 def test_costpercapita_bl195
   r = spreadsheet.costpercapita_bl195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(15.179041446909173,r[:number])
+  assert_in_epsilon(15.179041446909165,r[:number])
 end
 
 def test_costpercapita_bm195
   r = spreadsheet.costpercapita_bm195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(14.041452274225913,r[:number])
+  assert_in_epsilon(14.04145227422591,r[:number])
 end
 
 def test_costpercapita_bn195
   r = spreadsheet.costpercapita_bn195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(13.120494318508507,r[:number])
+  assert_in_epsilon(13.120494318508502,r[:number])
 end
 
 def test_costpercapita_bo195
   r = spreadsheet.costpercapita_bo195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(12.391591205657562,r[:number])
+  assert_in_epsilon(12.39159120565756,r[:number])
 end
 
 def test_costpercapita_bp195
   r = spreadsheet.costpercapita_bp195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.803838947213613,r[:number])
+  assert_in_epsilon(11.80383894721361,r[:number])
 end
 
 def test_costpercapita_bq195
   r = spreadsheet.costpercapita_bq195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(11.324953367902518,r[:number])
+  assert_in_epsilon(11.324953367902515,r[:number])
 end
 
 def test_costpercapita_bs195
@@ -132683,19 +135857,19 @@ end
 def test_costpercapita_bt195
   r = spreadsheet.costpercapita_bt195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(22.478705854465122,r[:number])
+  assert_in_epsilon(22.47870585446512,r[:number])
 end
 
 def test_costpercapita_bu195
   r = spreadsheet.costpercapita_bu195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(26.301850060156315,r[:number])
+  assert_in_epsilon(26.301850060156312,r[:number])
 end
 
 def test_costpercapita_bv195
   r = spreadsheet.costpercapita_bv195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(26.38641950508761,r[:number])
+  assert_in_epsilon(26.386419505087606,r[:number])
 end
 
 def test_costpercapita_bw195
@@ -132707,25 +135881,25 @@ end
 def test_costpercapita_bx195
   r = spreadsheet.costpercapita_bx195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(23.116642448995858,r[:number])
+  assert_in_epsilon(23.116642448995854,r[:number])
 end
 
 def test_costpercapita_by195
   r = spreadsheet.costpercapita_by195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.960405930368935,r[:number])
+  assert_in_epsilon(21.960405930368932,r[:number])
 end
 
 def test_costpercapita_bz195
   r = spreadsheet.costpercapita_bz195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(21.01937467558236,r[:number])
+  assert_in_epsilon(21.019374675582355,r[:number])
 end
 
 def test_costpercapita_ca195
   r = spreadsheet.costpercapita_ca195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(20.24519350063296,r[:number])
+  assert_in_epsilon(20.245193500632958,r[:number])
 end
 
 def test_costpercapita_cc195
@@ -132737,73 +135911,73 @@ end
 def test_costpercapita_cd195
   r = spreadsheet.costpercapita_cd195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(493.62494620970085,r[:number])
+  assert_in_epsilon(493.6249462097008,r[:number])
 end
 
 def test_costpercapita_cf195
   r = spreadsheet.costpercapita_cf195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-5.753907782085006,r[:number])
+  assert_in_epsilon(-5.753907782085008,r[:number])
 end
 
 def test_costpercapita_cg195
   r = spreadsheet.costpercapita_cg195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(0.6586633540643624,r[:number])
+  assert_in_epsilon(0.6586633540643572,r[:number])
 end
 
 def test_costpercapita_ch195
   r = spreadsheet.costpercapita_ch195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.2904035615901535,r[:number])
+  assert_in_epsilon(6.290403561590148,r[:number])
 end
 
 def test_costpercapita_ci195
   r = spreadsheet.costpercapita_ci195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.887709056490008,r[:number])
+  assert_in_epsilon(7.887709056490001,r[:number])
 end
 
 def test_costpercapita_cj195
   r = spreadsheet.costpercapita_cj195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.250641452297785,r[:number])
+  assert_in_epsilon(7.2506414522977805,r[:number])
 end
 
 def test_costpercapita_ck195
   r = spreadsheet.costpercapita_ck195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.7173102440746675,r[:number])
+  assert_in_epsilon(6.717310244074663,r[:number])
 end
 
 def test_costpercapita_cl195
   r = spreadsheet.costpercapita_cl195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6.297369429751232,r[:number])
+  assert_in_epsilon(6.297369429751228,r[:number])
 end
 
 def test_costpercapita_cm195
   r = spreadsheet.costpercapita_cm195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.961927223485224,r[:number])
+  assert_in_epsilon(5.961927223485222,r[:number])
 end
 
 def test_costpercapita_cn195
   r = spreadsheet.costpercapita_cn195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.6913403317606726,r[:number])
+  assert_in_epsilon(5.691340331760669,r[:number])
 end
 
 def test_costpercapita_cp195
   r = spreadsheet.costpercapita_cp195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.555717430158789,r[:number])
+  assert_in_epsilon(4.555717430158785,r[:number])
 end
 
 def test_costpercapita_cq195
   r = spreadsheet.costpercapita_cq195
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(103.21152318463781,r[:number])
+  assert_in_epsilon(103.21152318463771,r[:number])
 end
 
 def test_costpercapita_cr195
@@ -133055,49 +136229,49 @@ end
 def test_costpercapita_az196
   r = spreadsheet.costpercapita_az196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.6506149814073159,r[:number])
+  assert_in_epsilon(1.6506149814073152,r[:number])
 end
 
 def test_costpercapita_ba196
   r = spreadsheet.costpercapita_ba196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.761063966945571,r[:number])
+  assert_in_epsilon(3.76106396694557,r[:number])
 end
 
 def test_costpercapita_bb196
   r = spreadsheet.costpercapita_bb196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.56798290365211,r[:number])
+  assert_in_epsilon(3.567982903652108,r[:number])
 end
 
 def test_costpercapita_bc196
   r = spreadsheet.costpercapita_bc196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.399063291549348,r[:number])
+  assert_in_epsilon(3.399063291549347,r[:number])
 end
 
 def test_costpercapita_bd196
   r = spreadsheet.costpercapita_bd196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.2520697171354858,r[:number])
+  assert_in_epsilon(3.2520697171354844,r[:number])
 end
 
 def test_costpercapita_be196
   r = spreadsheet.costpercapita_be196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.175503898718505,r[:number])
+  assert_in_epsilon(3.1755038987185036,r[:number])
 end
 
 def test_costpercapita_bf196
   r = spreadsheet.costpercapita_bf196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.050741517211966,r[:number])
+  assert_in_epsilon(3.0507415172119647,r[:number])
 end
 
 def test_costpercapita_bg196
   r = spreadsheet.costpercapita_bg196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.935886723867248,r[:number])
+  assert_in_epsilon(2.9358867238672466,r[:number])
 end
 
 def test_costpercapita_bi196
@@ -133109,49 +136283,49 @@ end
 def test_costpercapita_bj196
   r = spreadsheet.costpercapita_bj196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.6506149814073159,r[:number])
+  assert_in_epsilon(1.6506149814073152,r[:number])
 end
 
 def test_costpercapita_bk196
   r = spreadsheet.costpercapita_bk196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.3576408667611455,r[:number])
+  assert_in_epsilon(5.357640866761144,r[:number])
 end
 
 def test_costpercapita_bl196
   r = spreadsheet.costpercapita_bl196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.7597325927062,r[:number])
+  assert_in_epsilon(8.759732592706198,r[:number])
 end
 
 def test_costpercapita_bm196
   r = spreadsheet.costpercapita_bm196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.414605455483047,r[:number])
+  assert_in_epsilon(10.414605455483043,r[:number])
 end
 
 def test_costpercapita_bn196
   r = spreadsheet.costpercapita_bn196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.95982061058192,r[:number])
+  assert_in_epsilon(9.959820610581916,r[:number])
 end
 
 def test_costpercapita_bo196
   r = spreadsheet.costpercapita_bo196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.606432521028493,r[:number])
+  assert_in_epsilon(9.60643252102849,r[:number])
 end
 
 def test_costpercapita_bp196
   r = spreadsheet.costpercapita_bp196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.282126965632294,r[:number])
+  assert_in_epsilon(9.28212696563229,r[:number])
 end
 
 def test_costpercapita_bq196
   r = spreadsheet.costpercapita_bq196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.983777003909685,r[:number])
+  assert_in_epsilon(8.983777003909681,r[:number])
 end
 
 def test_costpercapita_bs196
@@ -133163,61 +136337,61 @@ end
 def test_costpercapita_bt196
   r = spreadsheet.costpercapita_bt196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.7259432341046421,r[:number])
+  assert_in_epsilon(1.7259432341046415,r[:number])
 end
 
 def test_costpercapita_bu196
   r = spreadsheet.costpercapita_bu196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.529282576126542,r[:number])
+  assert_in_epsilon(5.5292825761265405,r[:number])
 end
 
 def test_costpercapita_bv196
   r = spreadsheet.costpercapita_bv196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8.922562762560164,r[:number])
+  assert_in_epsilon(8.92256276256016,r[:number])
 end
 
 def test_costpercapita_bw196
   r = spreadsheet.costpercapita_bw196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.56972672933804,r[:number])
+  assert_in_epsilon(10.569726729338036,r[:number])
 end
 
 def test_costpercapita_bx196
   r = spreadsheet.costpercapita_bx196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(10.108233615553461,r[:number])
+  assert_in_epsilon(10.108233615553457,r[:number])
 end
 
 def test_costpercapita_by196
   r = spreadsheet.costpercapita_by196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.751351331785965,r[:number])
+  assert_in_epsilon(9.75135133178596,r[:number])
 end
 
 def test_costpercapita_bz196
   r = spreadsheet.costpercapita_bz196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.421352060830953,r[:number])
+  assert_in_epsilon(9.421352060830952,r[:number])
 end
 
 def test_costpercapita_ca196
   r = spreadsheet.costpercapita_ca196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(9.117760530969182,r[:number])
+  assert_in_epsilon(9.117760530969178,r[:number])
 end
 
 def test_costpercapita_cc196
   r = spreadsheet.costpercapita_cc196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7.238468093474328,r[:number])
+  assert_in_epsilon(7.238468093474326,r[:number])
 end
 
 def test_costpercapita_cd196
   r = spreadsheet.costpercapita_cd196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(145.37433426563223,r[:number])
+  assert_in_epsilon(145.37433426563217,r[:number])
 end
 
 def test_costpercapita_cf196
@@ -133229,61 +136403,61 @@ end
 def test_costpercapita_cg196
   r = spreadsheet.costpercapita_cg196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.860326775170233,r[:number])
+  assert_in_epsilon(-0.8603267751702336,r[:number])
 end
 
 def test_costpercapita_ch196
   r = spreadsheet.costpercapita_ch196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-0.3637494454187634,r[:number])
+  assert_in_epsilon(-0.3637494454187651,r[:number])
 end
 
 def test_costpercapita_ci196
   r = spreadsheet.costpercapita_ci196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.332060264240818,r[:number])
+  assert_in_epsilon(3.332060264240815,r[:number])
 end
 
 def test_costpercapita_cj196
   r = spreadsheet.costpercapita_cj196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.2438963269833385,r[:number])
+  assert_in_epsilon(5.243896326983336,r[:number])
 end
 
 def test_costpercapita_ck196
   r = spreadsheet.costpercapita_ck196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5.012720444863869,r[:number])
+  assert_in_epsilon(5.012720444863866,r[:number])
 end
 
 def test_costpercapita_cl196
   r = spreadsheet.costpercapita_cl196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.775805495779468,r[:number])
+  assert_in_epsilon(4.775805495779464,r[:number])
 end
 
 def test_costpercapita_cm196
   r = spreadsheet.costpercapita_cm196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.641290459010291,r[:number])
+  assert_in_epsilon(4.641290459010288,r[:number])
 end
 
 def test_costpercapita_cn196
   r = spreadsheet.costpercapita_cn196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4.517659435259792,r[:number])
+  assert_in_epsilon(4.517659435259787,r[:number])
 end
 
 def test_costpercapita_cp196
   r = spreadsheet.costpercapita_cp196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.922150689505398,r[:number])
+  assert_in_epsilon(2.9221506895053952,r[:number])
 end
 
 def test_costpercapita_cq196
   r = spreadsheet.costpercapita_cq196
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(50.44363446881091,r[:number])
+  assert_in_epsilon(50.443634468810856,r[:number])
 end
 
 def test_costpercapita_cr196
@@ -133529,109 +136703,109 @@ end
 def test_costpercapita_ay197
   r = spreadsheet.costpercapita_ay197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(743.0926671033707,r[:number])
+  assert_in_epsilon(743.0926671033703,r[:number])
 end
 
 def test_costpercapita_az197
   r = spreadsheet.costpercapita_az197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1249.389052181311,r[:number])
+  assert_in_epsilon(1249.3890521813103,r[:number])
 end
 
 def test_costpercapita_ba197
   r = spreadsheet.costpercapita_ba197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1330.7678979363427,r[:number])
+  assert_in_epsilon(1330.767897936342,r[:number])
 end
 
 def test_costpercapita_bb197
   r = spreadsheet.costpercapita_bb197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1441.565686482513,r[:number])
+  assert_in_epsilon(1441.5656864825125,r[:number])
 end
 
 def test_costpercapita_bc197
   r = spreadsheet.costpercapita_bc197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1478.8400965853464,r[:number])
+  assert_in_epsilon(1478.8400965853455,r[:number])
 end
 
 def test_costpercapita_bd197
   r = spreadsheet.costpercapita_bd197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1576.800305883709,r[:number])
+  assert_in_epsilon(1576.800305883708,r[:number])
 end
 
 def test_costpercapita_be197
   r = spreadsheet.costpercapita_be197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1706.1710339579893,r[:number])
+  assert_in_epsilon(1706.1710339579881,r[:number])
 end
 
 def test_costpercapita_bf197
   r = spreadsheet.costpercapita_bf197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1784.7008554173021,r[:number])
+  assert_in_epsilon(1784.7008554173012,r[:number])
 end
 
 def test_costpercapita_bg197
   r = spreadsheet.costpercapita_bg197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1878.1264012987888,r[:number])
+  assert_in_epsilon(1878.1264012987879,r[:number])
 end
 
 def test_costpercapita_bi197
   r = spreadsheet.costpercapita_bi197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(743.0926671033707,r[:number])
+  assert_in_epsilon(743.0926671033703,r[:number])
 end
 
 def test_costpercapita_bj197
   r = spreadsheet.costpercapita_bj197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1967.9781871270045,r[:number])
+  assert_in_epsilon(1967.9781871270036,r[:number])
 end
 
 def test_costpercapita_bk197
   r = spreadsheet.costpercapita_bk197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3234.318119096344,r[:number])
+  assert_in_epsilon(3234.318119096342,r[:number])
 end
 
 def test_costpercapita_bl197
   r = spreadsheet.costpercapita_bl197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3902.19581457085,r[:number])
+  assert_in_epsilon(3902.195814570848,r[:number])
 end
 
 def test_costpercapita_bm197
   r = spreadsheet.costpercapita_bm197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4135.35363715879,r[:number])
+  assert_in_epsilon(4135.353637158789,r[:number])
 end
 
 def test_costpercapita_bn197
   r = spreadsheet.costpercapita_bn197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4389.957816114143,r[:number])
+  assert_in_epsilon(4389.957816114141,r[:number])
 end
 
 def test_costpercapita_bo197
   r = spreadsheet.costpercapita_bo197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4662.553468415524,r[:number])
+  assert_in_epsilon(4662.553468415522,r[:number])
 end
 
 def test_costpercapita_bp197
   r = spreadsheet.costpercapita_bp197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(4969.22707352729,r[:number])
+  assert_in_epsilon(4969.227073527287,r[:number])
 end
 
 def test_costpercapita_bq197
   r = spreadsheet.costpercapita_bq197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5270.453135494785,r[:number])
+  assert_in_epsilon(5270.453135494783,r[:number])
 end
 
 def test_costpercapita_bs197
@@ -133649,121 +136823,121 @@ end
 def test_costpercapita_bu197
   r = spreadsheet.costpercapita_bu197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(5999.981023941356,r[:number])
+  assert_in_epsilon(5999.981023941355,r[:number])
 end
 
 def test_costpercapita_bv197
   r = spreadsheet.costpercapita_bv197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6925.546173032076,r[:number])
+  assert_in_epsilon(6925.546173032074,r[:number])
 end
 
 def test_costpercapita_bw197
   r = spreadsheet.costpercapita_bw197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7411.155287685135,r[:number])
+  assert_in_epsilon(7411.155287685133,r[:number])
 end
 
 def test_costpercapita_bx197
   r = spreadsheet.costpercapita_bx197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(7757.819842607061,r[:number])
+  assert_in_epsilon(7757.819842607059,r[:number])
 end
 
 def test_costpercapita_by197
   r = spreadsheet.costpercapita_by197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8109.144815246662,r[:number])
+  assert_in_epsilon(8109.144815246659,r[:number])
 end
 
 def test_costpercapita_bz197
   r = spreadsheet.costpercapita_bz197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8499.163150506927,r[:number])
+  assert_in_epsilon(8499.163150506924,r[:number])
 end
 
 def test_costpercapita_ca197
   r = spreadsheet.costpercapita_ca197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(8878.55596827481,r[:number])
+  assert_in_epsilon(8878.555968274808,r[:number])
 end
 
 def test_costpercapita_cc197
   r = spreadsheet.costpercapita_cc197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(6796.573815338858,r[:number])
+  assert_in_epsilon(6796.573815338857,r[:number])
 end
 
 def test_costpercapita_cd197
   r = spreadsheet.costpercapita_cd197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(138260.6398654351,r[:number])
+  assert_in_epsilon(138260.63986543508,r[:number])
 end
 
 def test_costpercapita_cf197
   r = spreadsheet.costpercapita_cf197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-1140.914635077619,r[:number])
+  assert_in_epsilon(-1140.9146350776193,r[:number])
 end
 
 def test_costpercapita_cg197
   r = spreadsheet.costpercapita_cg197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(67.38769408654511,r[:number])
+  assert_in_epsilon(67.38769408654424,r[:number])
 end
 
 def test_costpercapita_ch197
   r = spreadsheet.costpercapita_ch197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1209.932831867009,r[:number])
+  assert_in_epsilon(1209.9328318670073,r[:number])
 end
 
 def test_costpercapita_ci197
   r = spreadsheet.costpercapita_ci197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1709.263169580452,r[:number])
+  assert_in_epsilon(1709.2631695804503,r[:number])
 end
 
 def test_costpercapita_cj197
   r = spreadsheet.costpercapita_cj197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1885.7185668098132,r[:number])
+  assert_in_epsilon(1885.7185668098114,r[:number])
 end
 
 def test_costpercapita_ck197
   r = spreadsheet.costpercapita_ck197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1991.3041176895756,r[:number])
+  assert_in_epsilon(1991.3041176895736,r[:number])
 end
 
 def test_costpercapita_cl197
   r = spreadsheet.costpercapita_cl197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2067.098961286562,r[:number])
+  assert_in_epsilon(2067.0989612865596,r[:number])
 end
 
 def test_costpercapita_cm197
   r = spreadsheet.costpercapita_cm197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2254.3117532711794,r[:number])
+  assert_in_epsilon(2254.3117532711767,r[:number])
 end
 
 def test_costpercapita_cn197
   r = spreadsheet.costpercapita_cn197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2413.417389259707,r[:number])
+  assert_in_epsilon(2413.4173892597046,r[:number])
 end
 
 def test_costpercapita_cp197
   r = spreadsheet.costpercapita_cp197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1384.1688720859138,r[:number])
+  assert_in_epsilon(1384.168872085912,r[:number])
 end
 
 def test_costpercapita_cq197
   r = spreadsheet.costpercapita_cq197
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(27829.705310791374,r[:number])
+  assert_in_epsilon(27829.70531079134,r[:number])
 end
 
 def test_costpercapita_cr197
@@ -134104,8 +137278,8 @@ end
 
 def test_costpercapita_bq198
   r = spreadsheet.costpercapita_bq198
-  assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(-9.094947017729282e-13,r[:number])
+  assert_equal(:ExcelString,r[:type])
+  assert_equal("ok",r[:string].force_encoding('utf-8'))
 end
 
 def test_costpercapita_bs198
@@ -134183,7 +137357,7 @@ end
 def test_costpercapita_cg198
   r = spreadsheet.costpercapita_cg198
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.126388037344441e-13,r[:number])
+  assert_in_epsilon(3.410605131648481e-13,r[:number])
 end
 
 def test_costpercapita_ch198
@@ -134206,8 +137380,8 @@ end
 
 def test_costpercapita_ck198
   r = spreadsheet.costpercapita_ck198
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("ok",r[:string].force_encoding('utf-8'))
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(-2.0463630789890885e-12,r[:number])
 end
 
 def test_costpercapita_cl198
@@ -134224,8 +137398,8 @@ end
 
 def test_costpercapita_cn198
   r = spreadsheet.costpercapita_cn198
-  assert_equal(:ExcelString,r[:type])
-  assert_equal("ok",r[:string].force_encoding('utf-8'))
+  assert_equal(:ExcelNumber,r[:type])
+  assert_in_epsilon(-1.3642420526593924e-12,r[:number])
 end
 
 def test_costpercapita_cp198
