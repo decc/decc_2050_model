@@ -1,4 +1,4 @@
-# 0.0.9
+# 0.0.8
 
 1. Updated to new version of excel_to_code that avoids memory leaks
 2. Added some useful utility scripts for deploying the model
