@@ -331,7 +331,7 @@ end
 def test_control_aa7
   r = spreadsheet.control_aa7
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0,r[:number])
+  assert_in_epsilon(1.7,r[:number])
 end
 
 def test_control_bo7
@@ -463,7 +463,7 @@ end
 def test_control_aa8
   r = spreadsheet.control_aa8
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0,r[:number])
+  assert_in_epsilon(4.0,r[:number])
 end
 
 def test_control_bo8
@@ -595,7 +595,7 @@ end
 def test_control_aa9
   r = spreadsheet.control_aa9
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.0,r[:number])
+  assert_in_epsilon(2.3,r[:number])
 end
 
 def test_control_bo9
@@ -727,7 +727,7 @@ end
 def test_control_aa10
   r = spreadsheet.control_aa10
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.0,r[:number])
+  assert_in_epsilon(2.3,r[:number])
 end
 
 def test_control_bo10
@@ -859,7 +859,7 @@ end
 def test_control_aa11
   r = spreadsheet.control_aa11
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.0,r[:number])
+  assert_in_epsilon(4.0,r[:number])
 end
 
 def test_control_bo11
@@ -991,7 +991,7 @@ end
 def test_control_aa12
   r = spreadsheet.control_aa12
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.0,r[:number])
+  assert_in_epsilon(4.0,r[:number])
 end
 
 def test_control_bo12
@@ -1387,7 +1387,7 @@ end
 def test_control_aa15
   r = spreadsheet.control_aa15
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.0,r[:number])
+  assert_in_epsilon(3.2,r[:number])
 end
 
 def test_control_bo15
@@ -1651,7 +1651,7 @@ end
 def test_control_aa17
   r = spreadsheet.control_aa17
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(2.0,r[:number])
+  assert_in_epsilon(3.0,r[:number])
 end
 
 def test_control_bo17
@@ -1783,7 +1783,7 @@ end
 def test_control_aa18
   r = spreadsheet.control_aa18
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(3.0,r[:number])
+  assert_in_epsilon(3.4,r[:number])
 end
 
 def test_control_bo18
@@ -5521,7 +5521,7 @@ end
 def test_control_aa55
   r = spreadsheet.control_aa55
   assert_equal(:ExcelNumber,r[:type])
-  assert_in_epsilon(1.0,r[:number])
+  assert_in_epsilon(4.0,r[:number])
 end
 
 def test_control_bo55
