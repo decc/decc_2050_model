@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/decc/decc_2050_model"
   s.platform = Gem::Platform::CURRENT
   s.summary = "A C version of DECC's 2050 Pathway Excel Spreadsheet (binary included version)"
-  s.description = File.read(File.join(File.dirname(__FILE__), 'README'))
+  s.description = File.read(File.join(File.dirname(__FILE__), 'README.markdown'))
   s.license = "MIT"
-  s.files = ["LICENSE", "README", "{lib}/**/*",'ext/**/*.{c,h,rb}','test/**/*'].map{|p| Dir[p]}.flatten
+  s.files = ["LICENSE", "README.markdown", "{lib}/**/*",'ext/**/*.{c,h,rb}','test/**/*'].map{|p| Dir[p]}.flatten
   s.has_rdoc = false
 end
