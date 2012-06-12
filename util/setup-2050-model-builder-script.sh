@@ -6,6 +6,8 @@ sudo apt-get install -y git build-essential libxml2-dev libxslt-dev zip unzip
 sudo apt-get install -y libcurl4-openssl-dev libssl-dev 
 
 # Ruby
+sudo apt-add-repository -y ppa:brightbox/ruby-ng-experimental
+sudo apt-get update 
 sudo apt-get install -y ruby1.9.3
 
 ## THE CODE
