@@ -1,4 +1,4 @@
-require_relative './decc_2050_model'
+require_relative '../decc_2050_model'
 
 class Decc2050ModelResult < Decc2050ModelUtilities  
   attr_accessor :excel, :pathway
@@ -241,7 +241,7 @@ end
 if __FILE__ == $0
   g = Decc2050ModelResult.new
 
-  tests = 10
+  tests = 100
   t = Time.now
   a = []
   tests.times do
