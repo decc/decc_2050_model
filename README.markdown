@@ -50,3 +50,4 @@ The final stage is to build and install the new gem:
 
 ... where <version> is the version number of the gem file that was created in the folder.
   
+Now follow the instructions in the twenty-fifty server directory in order to ensure that it is using this new version of the gem.
