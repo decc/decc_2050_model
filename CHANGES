@@ -4,3 +4,7 @@
 2. Added some useful utility scripts for deploying the model
 3. Updated the underlying excel model to version 2.1 (that includes new Markal and Friends of the Earth example pathways)
 
+# 3.4.0
+
+1. Changed version number system to correspond with the spreadsheet version number
+2. Updated the underlying Excel model to version 3.4.0 (that includes a new low cost pathway and a number of cost bug fixes) 
