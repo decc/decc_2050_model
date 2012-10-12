@@ -35,7 +35,7 @@ class ModelStructure < Decc2050ModelUtilities
   end
 
   def long_descriptions
-    @long_descriptions ||=  (5..56).to_a.map  { |row| [r("control_bo#{row}"),r("control_bp#{row}"),r("control_bq#{row}"),r("control_br#{row}")] }
+    @long_descriptions ||=  (5..56).to_a.map  { |row| [r("control_bp#{row}"),r("control_bq#{row}"),r("control_br#{row}"),r("control_bs#{row}")] }
   end
     
   def demand_choices
@@ -61,7 +61,7 @@ class ModelStructure < Decc2050ModelUtilities
   def generate_example_pathways
     pathways = {}
     rows = (5..57).to_a
-    ('m'..'z').to_a.push("aa").each do |column|
+    ('m'..'ab').to_a.push("ab").each do |column|
       name = r("control_#{column}4")
       next unless name.is_a?(String) && name.length > 0
       choices = rows.map { |row| r("control_#{column}#{row}") }
@@ -69,5 +69,4 @@ class ModelStructure < Decc2050ModelUtilities
     end
     pathways
   end
-  
-end
+
