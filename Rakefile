@@ -16,7 +16,7 @@ file 'ext/decc_2050_model.c' do
 
   command.cells_to_keep = {
     # The names, limits, 10 worders, example pathways, long descriptions
-    "Control" => (5.upto(56).to_a.map { |r| ["d#{r}","f#{r}","h#{r}","i#{r}","j#{r}","k#{r}","bo#{r}","bp#{r}","bq#{r}","br#{r}"] }).flatten, 
+    "Control" => (5.upto(56).to_a.map { |r| ["d#{r}","f#{r}","h#{r}","i#{r}","j#{r}","k#{r}","bp#{r}","bq#{r}","br#{r}","bs#{r}"] }).flatten, 
     "Intermediate output" => :all, 
     "CostPerCapita" => :all, 
     "Land Use" => :all, 
@@ -31,7 +31,7 @@ file 'ext/decc_2050_model.c' do
   
   # Add the example pathways
   rows = (4..57).to_a
-  ('m'..'z').to_a.push("aa").each do |column|
+  ('m'..'aa').to_a.push("ab").each do |column|
     rows.each do |row|
       command.cells_to_keep["Control"].push("#{column}#{row}")
     end
