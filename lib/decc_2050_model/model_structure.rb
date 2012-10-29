@@ -61,7 +61,7 @@ class ModelStructure < Decc2050ModelUtilities
   def generate_example_pathways
     pathways = {}
     rows = (5..57).to_a
-    ('m'..'ab').to_a.push("ab").each do |column|
+    ('m'..'aa').to_a.push("ab").each do |column|
       name = r("control_#{column}4")
       next unless name.is_a?(String) && name.length > 0
       choices = rows.map { |row| r("control_#{column}#{row}") }
