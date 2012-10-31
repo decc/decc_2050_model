@@ -69,4 +69,4 @@ class ModelStructure < Decc2050ModelUtilities
     end
     pathways
   end
-
+end
