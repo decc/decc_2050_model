@@ -37,47 +37,17 @@ class Decc2050ModelUtilities
   end
   
   def r(reference)
-    if excel.respond_to?(reference)
-      ruby_value(excel.send(reference))
-    else
-      0
-    end
+    excel.send(reference)
   end
-  
   
   def set_array(references, values)
     values.each_with_index do |v,i|
-      ref = "set_#{references[i]}"
-      if excel.respond_to?(ref)
-        excel.send(ref,excel_value(v))
-      end
+      ref = "#{references[i]}="
+      excel.send(ref,v)
     end
   end
   
   def reset
     excel.reset
   end
-
-  def ruby_value(excel_value)
-    case excel_value[:type]
-    when :ExcelNumber; excel_value[:number]
-    when :ExcelString; excel_value[:string].encode("utf-8","utf-8")
-    when :ExcelBoolean; excel_value[:number] == 1
-    when :ExcelEmpty; 0
-    when :ExcelError; [:value,:name,:div0,:ref,:na][excel_value[:number]]
-    else
-      raise Exception.new("ExcelValue type #{excel_value[:type].inspect} not recognised")
-    end
-  end
-  
-  def excel_value(ruby_value)
-    excel_value = excel::ExcelValue.new
-    case ruby_value
-    when Numeric
-      excel_value[:type] = :ExcelNumber
-      excel_value[:number] = ruby_value
-    end
-    excel_value
-  end
-  
 end

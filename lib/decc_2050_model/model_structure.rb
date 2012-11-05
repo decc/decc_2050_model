@@ -7,7 +7,7 @@ class ModelStructure < Decc2050ModelUtilities
   attr_accessor :excel, :choices
     
   def initialize
-    @excel = Decc2050Model
+    @excel = Decc2050ModelShim
     @choices = []
     types.each_with_index do |choice_type,i|
       case choice_type

@@ -1,4 +1,69 @@
 require 'ffi'
+require 'singleton'
+
+class Decc2050ModelShim
+
+  # WARNING: this is not thread safe
+  def initialize
+    reset
+  end
+
+  def reset
+    Decc2050Model.reset
+  end
+
+  def method_missing(name, *arguments)
+    if arguments.size == 0
+      get(name)
+    elsif arguments.size == 1
+      set(name, arguments.first)
+    else
+      super
+    end 
+  end
+
+  def get(name)
+    return 0 unless Decc2050Model.respond_to?(name)
+    excel_value = Decc2050Model.send(name)
+    case excel_value[:type]
+    when :ExcelNumber; excel_value[:number]
+    when :ExcelString; excel_value[:string].read_string.force_encoding("utf-8")
+    when :ExcelBoolean; excel_value[:number] == 1
+    when :ExcelEmpty; nil
+    when :ExcelError; [:value,:name,:div0,:ref,:na][excel_value[:number]]
+    else
+      raise Exception.new("ExcelValue type #{excel_value[:type].inspect} not recognised")
+    end
+  end
+
+  def set(name, ruby_value)
+    name = name.to_s
+    name = "set_#{name[0..-2]}" if name.end_with?('=')
+    return false unless Decc2050Model.respond_to?(name)
+    excel_value = Decc2050Model::ExcelValue.new
+    case ruby_value
+    when Numeric
+      excel_value[:type] = :ExcelNumber
+      excel_value[:number] = ruby_value
+    when String
+      excel_value[:type] = :ExcelString
+      excel_value[:string] = FFI::MemoryPointer.from_string(ruby_value.encode('utf-8'))
+    when Boolean
+      excel_value[:type] = :ExcelBoolean
+      excel_value[:number] = ruby_value ? 1 : 0
+    when nil
+      excel_value[:type] = :ExcelEmpty
+    when Symbol
+      excel_value[:type] = :ExcelError
+      excel_value[:number] = [:value, :name, :div0, :ref, :na].index(ruby_value)
+    else
+      raise Exception.new("Ruby value #{ruby_value.inspect} not translatable into excel")
+    end
+    Decc2050Model.send(name, excel_value)
+  end
+
+end
+    
 
 module Decc2050Model
   extend FFI::Library
@@ -8,7 +73,7 @@ module Decc2050Model
   class ExcelValue < FFI::Struct
     layout :type, ExcelType,
   	       :number, :double,
-  	       :string, :string,
+  	       :string, :pointer,
          	 :array, :pointer,
            :rows, :int,
            :columns, :int             

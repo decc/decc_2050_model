@@ -4,7 +4,7 @@ class Decc2050ModelResult < Decc2050ModelUtilities
   attr_accessor :excel, :pathway
   
   def initialize
-    @excel = Decc2050Model
+    @excel = Decc2050ModelShim.new
   end
   
   def self.calculate_pathway(code)
