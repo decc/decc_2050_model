@@ -40,13 +40,19 @@ file 'ext/decc_2050_model.c' do
   command.actually_compile_code = true
   command.actually_run_tests = true
 
-  # command.run_in_memory = true
+  command.run_in_memory = true
 
   command.go!
 end
 
 # Put things in their place
 task :put_generated_files_in_right_place do
+  require 'ffi'
+  libfile = FFI.map_library_name('decc_2050_model')
+  if File.exists?(File.join('ext',libfile))
+    mv File.join('ext',libfile), File.join('lib','decc_2050_model',libfile)
+  end
+
   mv 'ext/decc_2050_model.rb', 'lib/decc_2050_model/decc_2050_model.rb'
   mv 'ext/test_decc_2050_model.rb', 'test/test_decc_2050_model.rb'
   rm 'ext/Makefile'
