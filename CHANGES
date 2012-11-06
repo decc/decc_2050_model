@@ -1,3 +1,7 @@
+# 0.0.9
+
+1. Updated to a new version of excel_to_code that avoids an occasional bug in string joins
+
 # 0.0.8
 
 1. Updated to new version of excel_to_code that avoids memory leaks
