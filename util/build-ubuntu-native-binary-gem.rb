@@ -35,8 +35,7 @@ connection =  Fog::Compute.new({
 # As of 22/July/2012 this costs $0.744 per Hour
 puts "Bootstrapping a server"
 server = connection.servers.bootstrap(
-  # :image_id => 'ami-1de8d369', # Ubuntu 12.0.4
-  :image_id => 'ami-794a4b0d', # Untun 10.0.4, which is what Heroku uses
+  :image_id => 'ami-1de8d369', # Ubuntu 12.0.4
   :flavor_id=> 'c1.xlarge',
   :private_key_path => '~/.ssh/id_rsa', # Change this if you use something else
   :public_key_path => '~/.ssh/id_rsa.pub', # Change this if you use something else
