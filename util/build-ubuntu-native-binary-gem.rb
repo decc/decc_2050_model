@@ -3,6 +3,14 @@
 # an aws instance running ubuntu, building the gem there
 # and then downloading the resulting gem.
 
+# To use:
+# ruby build-ubuntu-native-binary-gem.rb [branch]
+# 
+# If you don't specify a branch it will compile the gem in 
+# the master branch of http://github.com/decc/decc_2050_model.git 
+
+branch = ARGV[0] || "master"
+
 require 'fog'
 require 'pry'
 
@@ -27,7 +35,8 @@ connection =  Fog::Compute.new({
 # As of 22/July/2012 this costs $0.744 per Hour
 puts "Bootstrapping a server"
 server = connection.servers.bootstrap(
-  :image_id => 'ami-1de8d369',
+  # :image_id => 'ami-1de8d369', # Ubuntu 12.0.4
+  :image_id => 'ami-794a4b0d', # Untun 10.0.4, which is what Heroku uses
   :flavor_id=> 'c1.xlarge',
   :private_key_path => '~/.ssh/id_rsa', # Change this if you use something else
   :public_key_path => '~/.ssh/id_rsa.pub', # Change this if you use something else
@@ -60,7 +69,10 @@ git clone http://github.com/decc/decc_2050_model.git
 
 # Bundler
 sudo gem install --no-ri --no-rdoc bundler
-cd decc_2050_model
+
+# Compile and build
+cd ~/decc_2050_model
+git checkout #{branch}
 bundle
 cd ext
 rake
