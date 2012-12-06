@@ -22752,9 +22752,6 @@ module Decc2050Model
   # end of VIII.a
 
   # start of IX.a
-  attach_function 'ix_a_f595', [], ExcelValue.by_value
-  attach_function 'ix_a_f596', [], ExcelValue.by_value
-  attach_function 'ix_a_f597', [], ExcelValue.by_value
   attach_function 'ix_a_f598', [], ExcelValue.by_value
   attach_function 'ix_a_f599', [], ExcelValue.by_value
   attach_function 'ix_a_f600', [], ExcelValue.by_value
@@ -22765,6 +22762,9 @@ module Decc2050Model
   attach_function 'ix_a_f605', [], ExcelValue.by_value
   attach_function 'ix_a_f606', [], ExcelValue.by_value
   attach_function 'ix_a_f607', [], ExcelValue.by_value
+  attach_function 'ix_a_f608', [], ExcelValue.by_value
+  attach_function 'ix_a_f609', [], ExcelValue.by_value
+  attach_function 'ix_a_f610', [], ExcelValue.by_value
   # end of IX.a
 
   # start of IX.c

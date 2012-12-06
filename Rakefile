@@ -22,7 +22,7 @@ file 'ext/decc_2050_model.c' do
     "Land Use" => :all, 
     "Flows" => :all, 
     "AQ Outputs" => :all, 
-    'IX.a' => (0.upto(12).to_a.map { |i| "f#{595+i}" }),
+    'IX.a' => (0.upto(12).to_a.map { |i| "f#{598+i}" }),
     'IX.c' => (0.upto(12).to_a.map { |i| "n#{317+i}" })
   }
   

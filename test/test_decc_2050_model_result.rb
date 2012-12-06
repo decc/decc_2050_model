@@ -15,6 +15,7 @@ class TestDecc2050ModelResult < Test::Unit::TestCase
       expected = IO.readlines(test)
       pathway = expected.shift
       expected = expected.join
+      puts "Testing #{pathway}"
       @model.reset
       result = @model.calculate_pathway(pathway).pretty_inspect
       if result != expected

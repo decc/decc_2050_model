@@ -16,10 +16,7 @@ http://github.com/decc/decc_2050_model
 This has ONLY been tested on OSX and on Ubuntu 64 bit EC2 ami.
 Grateful for reports from other platforms. 
 
-In the util folder are two example scripts than can be helpful:
-
-1. start-high-memory-instance.sh - is the script we use to setup an aws server to compile the model. You can't use it directly, because you won't have the right keys and certificates, but it can give clues.
-2. setup-2050-model-builder-script.sh - is the script we use to get all the dependencies on that aws server correct, download this code, and then compile the model. Again, it may not be quite right for you but can server as inspiration
+In the util folder there is an example script that creates a new EC2 EMI, installs all the dependencies and then compiles the gem. It may be useful if you are trying to figure out the complete set of dependencies.
 
 ## INSTALLATION
 
