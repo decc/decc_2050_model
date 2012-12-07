@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = "decc_2050_model"
   s.required_ruby_version = "~>1.9.1"
-  s.version = '3.4.1'
+  s.version = '3.4.1-older-libc'
   s.add_dependency('ffi','>= 1.0.11')
   s.add_development_dependency('excel_to_code')
   s.author = "Thomas Counsell, Department of Energy and Climate Change, Her Majesty's Government, UK"
