@@ -1,3 +1,12 @@
+# 3.4.4
+
+1. Updated the underlying Excel model to version 3.4.4, which shifts some references
+
+# 3.4.3
+
+1. Updated the underlying Excel model to version 3.4.3
+2. The utility script now builds against Ubuntu 11 so that it uses an older version of libc for greater compatibility
+
 # 3.4.1
 
 1. Updated the underlying Excel model to version 3.4.1 (that fixed a bug in emissions reductions)

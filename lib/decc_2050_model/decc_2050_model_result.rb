@@ -40,7 +40,7 @@ class Decc2050ModelResult < Decc2050ModelUtilities
     pathway[:ghg] = table 182, 192
     pathway[:final_energy_demand, ] = table 13, 18
     pathway[:primary_energy_supply] = table 283, 296
-    pathway[:ghg][:percent_reduction_from_1990] = (r("intermediate_output_q155") * 100).round
+    pathway[:ghg][:percent_reduction_from_1990] = (r("intermediate_output_bh155") * 100).round
   end
   
   def electricity_tables
@@ -49,48 +49,19 @@ class Decc2050ModelResult < Decc2050ModelUtilities
     e[:supply] = table 96, 111
     e[:emissions] = table 270, 273
     e[:capacity] = table 118, 132
-    e['automatically_built'] = r("intermediate_output_q120")
-    e['peaking'] = r("intermediate_output_q131")
+    e['automatically_built'] = r("intermediate_output_bh120")
+    e['peaking'] = r("intermediate_output_bh131")
     pathway['electricity'] = e
   end
   
   def heating_choice_table
-    h = {}
-    r = {}
-    [ 'Gas boiler (old)',
-      'Gas boiler (new)',
-      'Resistive heating',
-      'Oil-fired boiler',
-      'Solid-fuel boiler',
-      'Stirling engine in home CHP',
-      'Fuel-cell in home CHP',
-      'Air-source heat pump',
-      'Ground-source heat pump',
-      'Geothermal heat',
-      'Community scale gas CHP',
-      'Community scale solid-fuel CHP',
-      'District heating from power stations'].each_with_index do |name,i| 
-        r[name] = r("ix_a_f#{598+i}")
-      end
-    h['residential'] = r
-    
-    c = {}
-    ['Gas boiler (old)',
-      'Gas boiler (new)',
-      'Resistive heating',
-      'Oil-fired boiler',
-      'Solid-fuel boiler',
-      'Stirling engine in home CHP',
-      'Fuel-cell in home CHP',
-      'Air-source heat pump',
-      'Ground-source heat pump',
-      'Geothermal heat',
-      'Community scale gas CHP',
-      'Community scale solid-fuel CHP',
-      'District heating from power stations'].each_with_index do |name,i|
-        c[name] = r("ix_c_n#{317+i}")
-      end
-    h['commercial'] = c
+    h = {'residential' => {}, 'commercial' => {}}
+
+    (332..344).each do |row|
+      h['residential'][r("intermediate_output_d#{row}")] = r("intermediate_output_e#{row}")
+      h['commercial'][r("intermediate_output_d#{row}")] = r("intermediate_output_f#{row}")
+    end
+
     pathway[:heating] = h
   end
   
@@ -175,9 +146,9 @@ class Decc2050ModelResult < Decc2050ModelUtilities
       ["Electricity",110,111],
       ["Primary energy",297,296]
     ].each do |vector|
-      imported = r("intermediate_output_q#{vector[1]}").to_f
+      imported = r("intermediate_output_bh#{vector[1]}").to_f
       imported = imported > 0 ? imported.round : 0
-      total = r("intermediate_output_q#{vector[2]}").to_f
+      total = r("intermediate_output_bh#{vector[2]}").to_f
       proportion = total > 0 ? "#{((imported/total) * 100).round}%" : "0%"
       i[vector[0]] = { '2050' => {quantity: imported, proportion: proportion} }
       imported = r("intermediate_output_f#{vector[1]}").to_f
@@ -193,11 +164,11 @@ class Decc2050ModelResult < Decc2050ModelUtilities
   def energy_diversity
     d = {}
     total_2007 = r("intermediate_output_f296").to_f
-    total_2050 = r("intermediate_output_q296").to_f
+    total_2050 = r("intermediate_output_bh296").to_f
     (283..295).each do |row|
       d[r("intermediate_output_d#{row}")] = { 
-        '2007' => "#{((r("intermediate_output_h#{row}").to_f / total_2007)*100).round}%",
-        '2050' => "#{((r("intermediate_output_q#{row}").to_f / total_2050)*100).round}%"
+        '2007' => "#{((r("intermediate_output_f#{row}").to_f / total_2007)*100).round}%",
+        '2050' => "#{((r("intermediate_output_bh#{row}").to_f / total_2050)*100).round}%"
       }
     end
     pathway['diversity'] = d
@@ -224,7 +195,7 @@ class Decc2050ModelResult < Decc2050ModelUtilities
   end
   
   def annual_data(sheet,row)
-    ('i'..'q').to_a.map { |c| r("#{sheet}_#{c}#{row}") }
+    ['az','ba','bb','bc','bd','be','bf','bg','bh'].map { |c| r("#{sheet}_#{c}#{row}") }
   end
   
   def sum(hash_a,hash_b)

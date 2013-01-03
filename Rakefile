@@ -12,26 +12,24 @@ file 'ext/decc_2050_model.c' do
   command.output_directory = 'ext'
   command.output_name = 'decc_2050_model'
 
-  command.cells_that_can_be_set_at_runtime = { "Control" => (5.upto(56).to_a.map { |r| "e#{r}" }) }
+  command.cells_that_can_be_set_at_runtime = { "Control" => (5.upto(57).to_a.map { |r| "e#{r}" }) }
 
   command.cells_to_keep = {
-    # The names, limits, 10 worders, example pathways, long descriptions
-    "Control" => (5.upto(56).to_a.map { |r| ["d#{r}","f#{r}","h#{r}","i#{r}","j#{r}","k#{r}","bp#{r}","bq#{r}","br#{r}","bs#{r}"] }).flatten, 
+    # The names, limits, 10 worders, long descriptions
+    "Control" => (5.upto(57).to_a.map { |r| ["d#{r}","f#{r}","h#{r}","i#{r}","j#{r}","k#{r}","bo#{r}","bp#{r}","bq#{r}","br#{r}"] }).flatten, 
     "Intermediate output" => :all, 
     "CostPerCapita" => :all, 
     "Land Use" => :all, 
     "Flows" => :all, 
     "AQ Outputs" => :all, 
-    'IX.a' => (0.upto(12).to_a.map { |i| "f#{598+i}" }),
-    'IX.c' => (0.upto(12).to_a.map { |i| "n#{317+i}" })
   }
   
   # Add the version number
   command.cells_to_keep["Control"] << "m1"
   
   # Add the example pathways
-  rows = (4..57).to_a
-  ('m'..'aa').to_a.push("ab").each do |column|
+  rows = (4..60).to_a
+  ('m'..'ab').to_a.each do |column|
     rows.each do |row|
       command.cells_to_keep["Control"].push("#{column}#{row}")
     end
