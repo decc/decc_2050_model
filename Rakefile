@@ -29,7 +29,7 @@ file 'ext/decc_2050_model.c' do
   
   # Add the example pathways
   rows = (4..60).to_a
-  ('m'..'ab').to_a.each do |column|
+  ('m'..'z').to_a.push('aa','ab').each do |column|
     rows.each do |row|
       command.cells_to_keep["Control"].push("#{column}#{row}")
     end

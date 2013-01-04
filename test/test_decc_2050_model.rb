@@ -10,13 +10,39 @@ class TestDecc2050Model < Test::Unit::TestCase
   def init_spreadsheet; Decc2050ModelShim.new end
 
   # start of Control
-  def test_control_m1; assert_equal("Version 3.4.4", worksheet.control_m1); end
+  def test_control_m1; assert_equal("Version 3.4.5", worksheet.control_m1); end
+  def test_control_m4; assert_equal("Doesn't tackle climate change (All at level 1)", worksheet.control_m4); end
+  def test_control_n4; assert_equal("Maximium demand, no supply", worksheet.control_n4); end
+  def test_control_o4; assert_equal("Maximum supply, no demand", worksheet.control_o4); end
+  def test_control_p4; assert_equal("Analogous to MARKAL 3.26", worksheet.control_p4); end
+  def test_control_q4; assert_equal("Higher renewables, more energy efficiency", worksheet.control_q4); end
+  def test_control_r4; assert_equal("Higher nuclear, less energy efficiency", worksheet.control_r4); end
+  def test_control_s4; assert_equal("Higher CCS, more bioenergy", worksheet.control_s4); end
+  def test_control_t4; assert_equal("Low cost pathway", worksheet.control_t4); end
+  def test_control_u4; assert_equal("Friends of the Earth", worksheet.control_u4); end
+  def test_control_v4; assert_equal("Campaign to Protect Rural England", worksheet.control_v4); end
+  def test_control_w4; assert_equal("Mark Brinkley", worksheet.control_w4); end
+  def test_control_x4; assert_equal("National Grid", worksheet.control_x4); end
+  def test_control_y4; assert_equal("Atkins", worksheet.control_y4); end
   def test_control_d5; assert_equal("Nuclear power stations", worksheet.control_d5); end
   def test_control_f5; assert_in_epsilon(4, worksheet.control_f5, 0.001); end
   def test_control_h5; assert_equal("No new nuclear power installed; estimated closure of final plant in 2035", worksheet.control_h5); end
   def test_control_i5; assert_equal("~13 3GW power stations delivering ~280 TWh/yr", worksheet.control_i5); end
   def test_control_j5; assert_equal("~30 3GW power stations delivering ~630 TWh/yr", worksheet.control_j5); end
   def test_control_k5; assert_equal("~50 3GW power stations delivering ~1030 TWh/yr", worksheet.control_k5); end
+  def test_control_m5; assert_in_delta(1, worksheet.control_m5, 0.001); end
+  def test_control_n5; assert_in_delta(1, worksheet.control_n5, 0.001); end
+  def test_control_o5; assert_in_epsilon(4, worksheet.control_o5, 0.001); end
+  def test_control_p5; assert_in_epsilon(1.8, worksheet.control_p5, 0.001); end
+  def test_control_q5; assert_in_epsilon(1.4, worksheet.control_q5, 0.001); end
+  def test_control_r5; assert_in_epsilon(2.7, worksheet.control_r5, 0.001); end
+  def test_control_s5; assert_in_epsilon(1.5, worksheet.control_s5, 0.001); end
+  def test_control_t5; assert_in_epsilon(2.6, worksheet.control_t5, 0.001); end
+  def test_control_u5; assert_in_delta(1, worksheet.control_u5, 0.001); end
+  def test_control_v5; assert_in_delta(1, worksheet.control_v5, 0.001); end
+  def test_control_w5; assert_in_epsilon(2, worksheet.control_w5, 0.001); end
+  def test_control_x5; assert_in_epsilon(1.7, worksheet.control_x5, 0.001); end
+  def test_control_y5; assert_in_epsilon(1.6, worksheet.control_y5, 0.001); end
   def test_control_bo5; assert_equal("No new nuclear power installed. Final nuclear power station estimated to close in 2035", worksheet.control_bo5); end
   def test_control_bp5; assert_equal("~13 3GW nuclear power stations delivering ~280 TWh/yr", worksheet.control_bp5); end
   def test_control_bq5; assert_equal("~30 3GW nuclear power stations delivering ~630 TWh/yr", worksheet.control_bq5); end
@@ -28,6 +54,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i7; assert_equal("~240 TWh/yr from 25-40 CCS power stations; comparable to current gas & coal generation", worksheet.control_i7); end
   def test_control_j7; assert_equal("~340 TWh/yr from 35-60 CCS power stations; comparable to total current demand", worksheet.control_j7); end
   def test_control_k7; assert_equal("~510 TWh/yr  from 50-90 CCS power stations; build rate of gas plants in the 1990s", worksheet.control_k7); end
+  def test_control_m7; assert_in_delta(1, worksheet.control_m7, 0.001); end
+  def test_control_n7; assert_in_delta(1, worksheet.control_n7, 0.001); end
+  def test_control_o7; assert_in_epsilon(4, worksheet.control_o7, 0.001); end
+  def test_control_p7; assert_in_epsilon(1.6, worksheet.control_p7, 0.001); end
+  def test_control_q7; assert_in_epsilon(1.3, worksheet.control_q7, 0.001); end
+  def test_control_r7; assert_in_delta(1, worksheet.control_r7, 0.001); end
+  def test_control_s7; assert_in_epsilon(2, worksheet.control_s7, 0.001); end
+  def test_control_t7; assert_in_delta(1, worksheet.control_t7, 0.001); end
+  def test_control_u7; assert_in_epsilon(1.7, worksheet.control_u7, 0.001); end
+  def test_control_v7; assert_in_epsilon(1.7, worksheet.control_v7, 0.001); end
+  def test_control_w7; assert_in_epsilon(2, worksheet.control_w7, 0.001); end
+  def test_control_x7; assert_in_epsilon(1.7, worksheet.control_x7, 0.001); end
+  def test_control_y7; assert_in_epsilon(1.5, worksheet.control_y7, 0.001); end
   def test_control_bo7; assert_equal("CCS demonstration plants only", worksheet.control_bo7); end
   def test_control_bp7; assert_equal("~240 TWh/yr from 25-40 CCS power stations - comparable to current gas & coal generation", worksheet.control_bp7); end
   def test_control_bq7; assert_equal("~340 TWh/yr from 35-60 CCS power stations - comparable to total current demand", worksheet.control_bq7); end
@@ -38,6 +77,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i8; assert_equal("66% coal/biomass, 33% gas/biogas CCS after demonstration plants", worksheet.control_i8); end
   def test_control_j8; assert_equal("33% coal/biomass, 66% gas/biogas CCS after demonstration plants", worksheet.control_j8); end
   def test_control_k8; assert_equal("0% coal/biomas, 100% gas/biogas CCS after demonstration plants", worksheet.control_k8); end
+  def test_control_m8; assert_in_delta(1, worksheet.control_m8, 0.001); end
+  def test_control_n8; assert_in_delta(1, worksheet.control_n8, 0.001); end
+  def test_control_o8; assert_in_epsilon(4, worksheet.control_o8, 0.001); end
+  def test_control_p8; assert_in_epsilon(2, worksheet.control_p8, 0.001); end
+  def test_control_q8; assert_in_epsilon(3, worksheet.control_q8, 0.001); end
+  def test_control_r8; assert_in_epsilon(3, worksheet.control_r8, 0.001); end
+  def test_control_s8; assert_in_epsilon(3, worksheet.control_s8, 0.001); end
+  def test_control_t8; assert_in_delta(1, worksheet.control_t8, 0.001); end
+  def test_control_u8; assert_in_epsilon(4, worksheet.control_u8, 0.001); end
+  def test_control_v8; assert_in_epsilon(2, worksheet.control_v8, 0.001); end
+  def test_control_w8; assert_in_epsilon(2, worksheet.control_w8, 0.001); end
+  def test_control_x8; assert_in_epsilon(2, worksheet.control_x8, 0.001); end
+  def test_control_y8; assert_in_epsilon(2, worksheet.control_y8, 0.001); end
   def test_control_bo8; assert_equal("After demonstration plants, all CCS electricity is from solid fuel (coal or biomass)", worksheet.control_bo8); end
   def test_control_bp8; assert_equal("After demonstration plants, two thirds of CCS electricity is from solid fuel (coal or biomass), one third from gas (natural gas or biogas)", worksheet.control_bp8); end
   def test_control_bq8; assert_equal("After demonstration plants, one third of CCS electricity is from solid fuel (coal or biomass), two thirds from gas (natural gas or biogas)", worksheet.control_bq8); end
@@ -48,6 +100,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i9; assert_equal("~10,000 turbines in 2050, delivering ~180 TWh/yr", worksheet.control_i9); end
   def test_control_j9; assert_equal("~17,000 turbines in 2050, delivering ~310 TWh/yr", worksheet.control_j9); end
   def test_control_k9; assert_equal("~40,000 turbines in 2050, delivering ~430 TWh/yr", worksheet.control_k9); end
+  def test_control_m9; assert_in_delta(1, worksheet.control_m9, 0.001); end
+  def test_control_n9; assert_in_delta(1, worksheet.control_n9, 0.001); end
+  def test_control_o9; assert_in_epsilon(4, worksheet.control_o9, 0.001); end
+  def test_control_p9; assert_in_epsilon(1.3, worksheet.control_p9, 0.001); end
+  def test_control_q9; assert_in_epsilon(1.9, worksheet.control_q9, 0.001); end
+  def test_control_r9; assert_in_epsilon(1.2, worksheet.control_r9, 0.001); end
+  def test_control_s9; assert_in_epsilon(1.3, worksheet.control_s9, 0.001); end
+  def test_control_t9; assert_in_delta(1, worksheet.control_t9, 0.001); end
+  def test_control_u9; assert_in_epsilon(2.3, worksheet.control_u9, 0.001); end
+  def test_control_v9; assert_in_epsilon(2.5, worksheet.control_v9, 0.001); end
+  def test_control_w9; assert_in_epsilon(2, worksheet.control_w9, 0.001); end
+  def test_control_x9; assert_in_epsilon(1.6, worksheet.control_x9, 0.001); end
+  def test_control_y9; assert_in_epsilon(2.4, worksheet.control_y9, 0.001); end
   def test_control_bo9; assert_equal("~1,400 offshore wind turbines in 2025, reducing to zero as decommissioned sites are not replanted", worksheet.control_bo9); end
   def test_control_bp9; assert_equal("~10,000 offshore wind turbines in 2050, delivering ~180 TWh/yr", worksheet.control_bp9); end
   def test_control_bq9; assert_equal("~17,000 offshore wind turbines in 2050, delivering ~310 TWh/yr", worksheet.control_bq9); end
@@ -58,6 +123,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i10; assert_equal("~8,000 turbines in 2050, delivering ~50 TWh/yr. ", worksheet.control_i10); end
   def test_control_j10; assert_equal("~13,000 turbines in 2050, delivering ~80 TWh/yr", worksheet.control_j10); end
   def test_control_k10; assert_equal("~20,000 turbines in 2050, delivering ~130 TWh/yr", worksheet.control_k10); end
+  def test_control_m10; assert_in_delta(1, worksheet.control_m10, 0.001); end
+  def test_control_n10; assert_in_delta(1, worksheet.control_n10, 0.001); end
+  def test_control_o10; assert_in_epsilon(4, worksheet.control_o10, 0.001); end
+  def test_control_p10; assert_in_epsilon(1.3, worksheet.control_p10, 0.001); end
+  def test_control_q10; assert_in_epsilon(2.7, worksheet.control_q10, 0.001); end
+  def test_control_r10; assert_in_epsilon(1.4, worksheet.control_r10, 0.001); end
+  def test_control_s10; assert_in_epsilon(1.5, worksheet.control_s10, 0.001); end
+  def test_control_t10; assert_in_delta(1, worksheet.control_t10, 0.001); end
+  def test_control_u10; assert_in_epsilon(2.3, worksheet.control_u10, 0.001); end
+  def test_control_v10; assert_in_epsilon(1.3, worksheet.control_v10, 0.001); end
+  def test_control_w10; assert_in_delta(1, worksheet.control_w10, 0.001); end
+  def test_control_x10; assert_in_epsilon(1.6, worksheet.control_x10, 0.001); end
+  def test_control_y10; assert_in_epsilon(1.9, worksheet.control_y10, 0.001); end
   def test_control_bo10; assert_equal("~4,400 onshore wind turbines in 2025, reducing to zero as decommissioned sites are not replanted", worksheet.control_bo10); end
   def test_control_bp10; assert_equal("~8,000 onshore wind turbines in 2050, delivering ~50 TWh/yr. ", worksheet.control_bp10); end
   def test_control_bq10; assert_equal("~13,000 onshore wind turbines in 2050, delivering ~80 TWh/yr", worksheet.control_bq10); end
@@ -68,6 +146,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i11; assert_equal("~300km of wave farms", worksheet.control_i11); end
   def test_control_j11; assert_equal("~600km of wave farms", worksheet.control_j11); end
   def test_control_k11; assert_equal("~900km of wave farms", worksheet.control_k11); end
+  def test_control_m11; assert_in_delta(1, worksheet.control_m11, 0.001); end
+  def test_control_n11; assert_in_delta(1, worksheet.control_n11, 0.001); end
+  def test_control_o11; assert_in_epsilon(4, worksheet.control_o11, 0.001); end
+  def test_control_p11; assert_in_epsilon(2, worksheet.control_p11, 0.001); end
+  def test_control_q11; assert_in_epsilon(1.6, worksheet.control_q11, 0.001); end
+  def test_control_r11; assert_in_delta(1, worksheet.control_r11, 0.001); end
+  def test_control_s11; assert_in_delta(1, worksheet.control_s11, 0.001); end
+  def test_control_t11; assert_in_delta(1, worksheet.control_t11, 0.001); end
+  def test_control_u11; assert_in_epsilon(4, worksheet.control_u11, 0.001); end
+  def test_control_v11; assert_in_epsilon(2.5, worksheet.control_v11, 0.001); end
+  def test_control_w11; assert_in_epsilon(4, worksheet.control_w11, 0.001); end
+  def test_control_x11; assert_in_delta(1, worksheet.control_x11, 0.001); end
+  def test_control_y11; assert_in_delta(1, worksheet.control_y11, 0.001); end
   def test_control_bo11; assert_equal("None in 2050", worksheet.control_bo11); end
   def test_control_bp11; assert_equal("~300km of wave farms", worksheet.control_bp11); end
   def test_control_bq11; assert_equal("~600km of wave farms", worksheet.control_bq11); end
@@ -78,6 +169,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i12; assert_equal("1,000 tidal stream turbines", worksheet.control_i12); end
   def test_control_j12; assert_equal("4,700 tidal stream turbines", worksheet.control_j12); end
   def test_control_k12; assert_equal("10,600 tidal stream turbines", worksheet.control_k12); end
+  def test_control_m12; assert_in_delta(1, worksheet.control_m12, 0.001); end
+  def test_control_n12; assert_in_delta(1, worksheet.control_n12, 0.001); end
+  def test_control_o12; assert_in_epsilon(4, worksheet.control_o12, 0.001); end
+  def test_control_p12; assert_in_epsilon(2.5, worksheet.control_p12, 0.001); end
+  def test_control_q12; assert_in_epsilon(2, worksheet.control_q12, 0.001); end
+  def test_control_r12; assert_in_delta(1, worksheet.control_r12, 0.001); end
+  def test_control_s12; assert_in_delta(1, worksheet.control_s12, 0.001); end
+  def test_control_t12; assert_in_delta(1, worksheet.control_t12, 0.001); end
+  def test_control_u12; assert_in_epsilon(4, worksheet.control_u12, 0.001); end
+  def test_control_v12; assert_in_epsilon(2.5, worksheet.control_v12, 0.001); end
+  def test_control_w12; assert_in_epsilon(4, worksheet.control_w12, 0.001); end
+  def test_control_x12; assert_in_epsilon(2, worksheet.control_x12, 0.001); end
+  def test_control_y12; assert_in_delta(1, worksheet.control_y12, 0.001); end
   def test_control_bo12; assert_equal("None in 2050", worksheet.control_bo12); end
   def test_control_bp12; assert_equal("1,000 tidal stream turbines", worksheet.control_bp12); end
   def test_control_bq12; assert_equal("4,700 tidal stream turbines", worksheet.control_bq12); end
@@ -88,6 +192,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i13; assert_equal("3 small tidal range schemes", worksheet.control_i13); end
   def test_control_j13; assert_equal("4 tidal range schemes", worksheet.control_j13); end
   def test_control_k13; assert_equal("8 tidal range schemes", worksheet.control_k13); end
+  def test_control_m13; assert_in_delta(1, worksheet.control_m13, 0.001); end
+  def test_control_n13; assert_in_delta(1, worksheet.control_n13, 0.001); end
+  def test_control_o13; assert_in_epsilon(4, worksheet.control_o13, 0.001); end
+  def test_control_p13; assert_in_epsilon(2.5, worksheet.control_p13, 0.001); end
+  def test_control_q13; assert_in_epsilon(2, worksheet.control_q13, 0.001); end
+  def test_control_r13; assert_in_delta(1, worksheet.control_r13, 0.001); end
+  def test_control_s13; assert_in_delta(1, worksheet.control_s13, 0.001); end
+  def test_control_t13; assert_in_delta(1, worksheet.control_t13, 0.001); end
+  def test_control_u13; assert_in_epsilon(3, worksheet.control_u13, 0.001); end
+  def test_control_v13; assert_in_epsilon(2.5, worksheet.control_v13, 0.001); end
+  def test_control_w13; assert_in_epsilon(4, worksheet.control_w13, 0.001); end
+  def test_control_x13; assert_in_delta(1, worksheet.control_x13, 0.001); end
+  def test_control_y13; assert_in_epsilon(2.9, worksheet.control_y13, 0.001); end
   def test_control_bo13; assert_equal("None in  2050", worksheet.control_bo13); end
   def test_control_bp13; assert_equal("3 small tidal range schemes", worksheet.control_bp13); end
   def test_control_bq13; assert_equal("4 tidal range schemes", worksheet.control_bq13); end
@@ -98,6 +215,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i14; assert_equal("8GW power stations by 2050 delivering 62TWh/yr", worksheet.control_i14); end
   def test_control_j14; assert_equal("12GW power stations by 2050 delivering 100TWh/yr", worksheet.control_j14); end
   def test_control_k14; assert_equal("Over 20GW installed capacity by 2050 delivering 180TWh/yr", worksheet.control_k14); end
+  def test_control_m14; assert_in_delta(1, worksheet.control_m14, 0.001); end
+  def test_control_n14; assert_in_delta(1, worksheet.control_n14, 0.001); end
+  def test_control_o14; assert_in_epsilon(4, worksheet.control_o14, 0.001); end
+  def test_control_p14; assert_in_delta(1, worksheet.control_p14, 0.001); end
+  def test_control_q14; assert_in_delta(1, worksheet.control_q14, 0.001); end
+  def test_control_r14; assert_in_delta(1, worksheet.control_r14, 0.001); end
+  def test_control_s14; assert_in_delta(1, worksheet.control_s14, 0.001); end
+  def test_control_t14; assert_in_delta(1, worksheet.control_t14, 0.001); end
+  def test_control_u14; assert_in_delta(1, worksheet.control_u14, 0.001); end
+  def test_control_v14; assert_in_delta(1, worksheet.control_v14, 0.001); end
+  def test_control_w14; assert_in_delta(1, worksheet.control_w14, 0.001); end
+  def test_control_x14; assert_in_delta(1, worksheet.control_x14, 0.001); end
+  def test_control_y14; assert_in_delta(1, worksheet.control_y14, 0.001); end
   def test_control_bo14; assert_equal("Only existing biomass plants and those already under construction (0.6GW)", worksheet.control_bo14); end
   def test_control_bp14; assert_equal("8GW of biomass power stations by 2050 delivering 62TWh/yr", worksheet.control_bp14); end
   def test_control_bq14; assert_equal("12GW of biomass power stations by 2050 delivering 100TWh/yr", worksheet.control_bq14); end
@@ -108,6 +238,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i15; assert_equal("4m2 of photovoltaic panels per person in 2050, supplying ~60 TWh/yr of electricity", worksheet.control_i15); end
   def test_control_j15; assert_equal(" 5.4m2 of photovoltaic panels per person in 2050, supplying ~80 TWh/yr", worksheet.control_j15); end
   def test_control_k15; assert_equal("9.5m2 of photovoltaic panels per person – all suitable roof and facade space used", worksheet.control_k15); end
+  def test_control_m15; assert_in_delta(1, worksheet.control_m15, 0.001); end
+  def test_control_n15; assert_in_delta(1, worksheet.control_n15, 0.001); end
+  def test_control_o15; assert_in_epsilon(4, worksheet.control_o15, 0.001); end
+  def test_control_p15; assert_in_delta(1, worksheet.control_p15, 0.001); end
+  def test_control_q15; assert_in_epsilon(1.2, worksheet.control_q15, 0.001); end
+  def test_control_r15; assert_in_delta(1, worksheet.control_r15, 0.001); end
+  def test_control_s15; assert_in_delta(1, worksheet.control_s15, 0.001); end
+  def test_control_t15; assert_in_delta(1, worksheet.control_t15, 0.001); end
+  def test_control_u15; assert_in_epsilon(3.2, worksheet.control_u15, 0.001); end
+  def test_control_v15; assert_in_epsilon(2, worksheet.control_v15, 0.001); end
+  def test_control_w15; assert_in_delta(1, worksheet.control_w15, 0.001); end
+  def test_control_x15; assert_in_epsilon(1.2, worksheet.control_x15, 0.001); end
+  def test_control_y15; assert_in_epsilon(2.7, worksheet.control_y15, 0.001); end
   def test_control_bo15; assert_equal("No significant solar PV capacity is installed", worksheet.control_bo15); end
   def test_control_bp15; assert_equal("4m2 of photovoltaic panels per person in 2050, supplying ~60 TWh/yr of electricity", worksheet.control_bp15); end
   def test_control_bq15; assert_equal(" 5.4m2 of photovoltaic panels per person in 2050, supplying ~80 TWh/yr", worksheet.control_bq15); end
@@ -118,6 +261,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i16; assert_equal("~30% of suitable buildings get ~30% of their hot water from solar thermal", worksheet.control_i16); end
   def test_control_j16; assert_equal("All suitable buildings get ~30% of their hot water from solar thermal", worksheet.control_j16); end
   def test_control_k16; assert_equal("All suitable buildings get ~60% of their hot water from solar thermal", worksheet.control_k16); end
+  def test_control_m16; assert_in_delta(1, worksheet.control_m16, 0.001); end
+  def test_control_n16; assert_in_delta(1, worksheet.control_n16, 0.001); end
+  def test_control_o16; assert_in_epsilon(4, worksheet.control_o16, 0.001); end
+  def test_control_p16; assert_in_epsilon(2, worksheet.control_p16, 0.001); end
+  def test_control_q16; assert_in_epsilon(1.8, worksheet.control_q16, 0.001); end
+  def test_control_r16; assert_in_delta(1, worksheet.control_r16, 0.001); end
+  def test_control_s16; assert_in_delta(1, worksheet.control_s16, 0.001); end
+  def test_control_t16; assert_in_delta(1, worksheet.control_t16, 0.001); end
+  def test_control_u16; assert_in_epsilon(2, worksheet.control_u16, 0.001); end
+  def test_control_v16; assert_in_epsilon(3, worksheet.control_v16, 0.001); end
+  def test_control_w16; assert_in_epsilon(3, worksheet.control_w16, 0.001); end
+  def test_control_x16; assert_in_epsilon(1.9, worksheet.control_x16, 0.001); end
+  def test_control_y16; assert_in_epsilon(1.6, worksheet.control_y16, 0.001); end
   def test_control_bo16; assert_equal("As today, a negligible proportion of buildings have solar thermal in 2050", worksheet.control_bo16); end
   def test_control_bp16; assert_equal("~30% of suitable buildings get ~30% of their hot water from solar thermal", worksheet.control_bp16); end
   def test_control_bq16; assert_equal("All suitable buildings get ~30% of their hot water from solar thermal", worksheet.control_bq16); end
@@ -128,6 +284,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i17; assert_equal("Supply of geothermal electricity grows slowly to 7 TWh/yr in 2035 and is sustained", worksheet.control_i17); end
   def test_control_j17; assert_equal("Supply grows quickly reaching 21 TWh/yr by 2030 and is sustained", worksheet.control_j17); end
   def test_control_k17; assert_equal("Supply grows rapidly reaching 35 TWh/yr by 2030 and is sustained", worksheet.control_k17); end
+  def test_control_m17; assert_in_delta(1, worksheet.control_m17, 0.001); end
+  def test_control_n17; assert_in_delta(1, worksheet.control_n17, 0.001); end
+  def test_control_o17; assert_in_epsilon(4, worksheet.control_o17, 0.001); end
+  def test_control_p17; assert_in_delta(1, worksheet.control_p17, 0.001); end
+  def test_control_q17; assert_in_delta(1, worksheet.control_q17, 0.001); end
+  def test_control_r17; assert_in_delta(1, worksheet.control_r17, 0.001); end
+  def test_control_s17; assert_in_delta(1, worksheet.control_s17, 0.001); end
+  def test_control_t17; assert_in_delta(1, worksheet.control_t17, 0.001); end
+  def test_control_u17; assert_in_epsilon(3, worksheet.control_u17, 0.001); end
+  def test_control_v17; assert_in_epsilon(3, worksheet.control_v17, 0.001); end
+  def test_control_w17; assert_in_epsilon(4, worksheet.control_w17, 0.001); end
+  def test_control_x17; assert_in_delta(1, worksheet.control_x17, 0.001); end
+  def test_control_y17; assert_in_epsilon(2.6, worksheet.control_y17, 0.001); end
   def test_control_bo17; assert_equal("No deployment of geothermal electricity generation", worksheet.control_bo17); end
   def test_control_bp17; assert_equal("Supply of geothermal electricity grows slowly to 7 TWh/yr in 2035 and is sustained", worksheet.control_bp17); end
   def test_control_bq17; assert_equal("Supply of geothermal electricity grows quickly reaching 21 TWh/yr by 2030 and is sustained", worksheet.control_bq17); end
@@ -138,6 +307,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i18; assert_equal("Supply grows slowly, reaching 7 TWh/yr by 2050", worksheet.control_i18); end
   def test_control_j18; assert_equal("Supply grows more quickly, reaching 8 TWh/yr by 2030 and is sustained", worksheet.control_j18); end
   def test_control_k18; assert_equal("Supply grows rapidly reaching 13 TWh/yr by 2035 and is sustained", worksheet.control_k18); end
+  def test_control_m18; assert_in_delta(1, worksheet.control_m18, 0.001); end
+  def test_control_n18; assert_in_delta(1, worksheet.control_n18, 0.001); end
+  def test_control_o18; assert_in_epsilon(4, worksheet.control_o18, 0.001); end
+  def test_control_p18; assert_in_epsilon(1.5, worksheet.control_p18, 0.001); end
+  def test_control_q18; assert_in_epsilon(2, worksheet.control_q18, 0.001); end
+  def test_control_r18; assert_in_delta(1, worksheet.control_r18, 0.001); end
+  def test_control_s18; assert_in_delta(1, worksheet.control_s18, 0.001); end
+  def test_control_t18; assert_in_delta(1, worksheet.control_t18, 0.001); end
+  def test_control_u18; assert_in_epsilon(3.4, worksheet.control_u18, 0.001); end
+  def test_control_v18; assert_in_epsilon(2, worksheet.control_v18, 0.001); end
+  def test_control_w18; assert_in_delta(1, worksheet.control_w18, 0.001); end
+  def test_control_x18; assert_in_epsilon(1.9, worksheet.control_x18, 0.001); end
+  def test_control_y18; assert_in_epsilon(1.9, worksheet.control_y18, 0.001); end
   def test_control_bo18; assert_equal("Supply of hydroelectricity is maintained at current levels of 5 TWh/yr", worksheet.control_bo18); end
   def test_control_bp18; assert_equal("Supply of hydroelectricity grows slowly, reaching 7 TWh/yr by 2050", worksheet.control_bp18); end
   def test_control_bq18; assert_equal("Supply of hydroelectricity grows more quickly, reaching 8 TWh/yr by 2030 and is sustained", worksheet.control_bq18); end
@@ -148,6 +330,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i19; assert_equal("Supply increases to 1.3 TWh/yr by 2020 and is sustained", worksheet.control_i19); end
   def test_control_j19; assert_equal("Installed in all ~450,000 suitable domestic properties; supplies 3.5 TWh/year from 2020", worksheet.control_j19); end
   def test_control_k19; assert_equal("Installed in all suitable domestic and non-domestic sties; 8.9 TWh/year from 2020", worksheet.control_k19); end
+  def test_control_m19; assert_in_delta(1, worksheet.control_m19, 0.001); end
+  def test_control_n19; assert_in_delta(1, worksheet.control_n19, 0.001); end
+  def test_control_o19; assert_in_epsilon(4, worksheet.control_o19, 0.001); end
+  def test_control_p19; assert_in_delta(1, worksheet.control_p19, 0.001); end
+  def test_control_q19; assert_in_delta(1, worksheet.control_q19, 0.001); end
+  def test_control_r19; assert_in_delta(1, worksheet.control_r19, 0.001); end
+  def test_control_s19; assert_in_delta(1, worksheet.control_s19, 0.001); end
+  def test_control_t19; assert_in_delta(1, worksheet.control_t19, 0.001); end
+  def test_control_u19; assert_in_delta(1, worksheet.control_u19, 0.001); end
+  def test_control_v19; assert_in_delta(1, worksheet.control_v19, 0.001); end
+  def test_control_w19; assert_in_delta(1, worksheet.control_w19, 0.001); end
+  def test_control_x19; assert_in_delta(1, worksheet.control_x19, 0.001); end
+  def test_control_y19; assert_in_delta(1, worksheet.control_y19, 0.001); end
   def test_control_bo19; assert_equal("As today, no discernable supply of electricity from micro-wind turbines", worksheet.control_bo19); end
   def test_control_bp19; assert_equal("Supply of electricity from micro wind turbines increases to 1.3 TWh/yr by 2020 and is sustained", worksheet.control_bp19); end
   def test_control_bq19; assert_equal("Micro wind turbines installed in all ~450,000 suitable domestic properties, supplying 3.5 TWh/year from 2020", worksheet.control_bq19); end
@@ -158,6 +353,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i20; assert_equal("30 TWh/yr of electricity imported from Southern Europe", worksheet.control_i20); end
   def test_control_j20; assert_equal("70 TWh/yr imported from UK 10% share of international desert solar project ", worksheet.control_j20); end
   def test_control_k20; assert_equal("140 TWh/yr imported from UK 20% share of international desert solar project", worksheet.control_k20); end
+  def test_control_m20; assert_in_delta(1, worksheet.control_m20, 0.001); end
+  def test_control_n20; assert_in_delta(1, worksheet.control_n20, 0.001); end
+  def test_control_o20; assert_in_epsilon(4, worksheet.control_o20, 0.001); end
+  def test_control_p20; assert_in_epsilon(1.8, worksheet.control_p20, 0.001); end
+  def test_control_q20; assert_in_delta(1, worksheet.control_q20, 0.001); end
+  def test_control_r20; assert_in_delta(1, worksheet.control_r20, 0.001); end
+  def test_control_s20; assert_in_epsilon(1.5, worksheet.control_s20, 0.001); end
+  def test_control_t20; assert_in_delta(1, worksheet.control_t20, 0.001); end
+  def test_control_u20; assert_in_delta(1, worksheet.control_u20, 0.001); end
+  def test_control_v20; assert_in_epsilon(3, worksheet.control_v20, 0.001); end
+  def test_control_w20; assert_in_delta(1, worksheet.control_w20, 0.001); end
+  def test_control_x20; assert_in_delta(1, worksheet.control_x20, 0.001); end
+  def test_control_y20; assert_in_epsilon(1.9, worksheet.control_y20, 0.001); end
   def test_control_bo20; assert_equal("No electricity imports, other than for balancing", worksheet.control_bo20); end
   def test_control_bp20; assert_equal("30 TWh/yr of electricity imported from Southern Europe", worksheet.control_bp20); end
   def test_control_bq20; assert_equal("70 TWh/yr of electricity imported from a 10% share of an internationally coordinated desert solar project ", worksheet.control_bq20); end
@@ -169,6 +377,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i22; assert_equal("5% of land used for energy crops", worksheet.control_i22); end
   def test_control_j22; assert_equal("10% of land used for energy crops", worksheet.control_j22); end
   def test_control_k22; assert_equal("17% of land used for energy crops", worksheet.control_k22); end
+  def test_control_m22; assert_in_delta(1, worksheet.control_m22, 0.001); end
+  def test_control_n22; assert_in_delta(1, worksheet.control_n22, 0.001); end
+  def test_control_o22; assert_in_epsilon(4, worksheet.control_o22, 0.001); end
+  def test_control_p22; assert_in_epsilon(3, worksheet.control_p22, 0.001); end
+  def test_control_q22; assert_in_epsilon(2, worksheet.control_q22, 0.001); end
+  def test_control_r22; assert_in_epsilon(4, worksheet.control_r22, 0.001); end
+  def test_control_s22; assert_in_epsilon(3, worksheet.control_s22, 0.001); end
+  def test_control_t22; assert_in_epsilon(3, worksheet.control_t22, 0.001); end
+  def test_control_u22; assert_in_epsilon(2, worksheet.control_u22, 0.001); end
+  def test_control_v22; assert_in_epsilon(2, worksheet.control_v22, 0.001); end
+  def test_control_w22; assert_in_epsilon(3, worksheet.control_w22, 0.001); end
+  def test_control_x22; assert_in_epsilon(3, worksheet.control_x22, 0.001); end
+  def test_control_y22; assert_in_epsilon(3, worksheet.control_y22, 0.001); end
   def test_control_bo22; assert_equal("Energy crops and food production similar to today", worksheet.control_bo22); end
   def test_control_bp22; assert_equal("5% of UK land used for energy crops", worksheet.control_bp22); end
   def test_control_bq22; assert_equal("10% of UK land used for energy crops", worksheet.control_bq22); end
@@ -179,6 +400,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i23; assert_equal("Livestock numbers same as today", worksheet.control_i23); end
   def test_control_j23; assert_equal("Livestock numbers decrease by 10%", worksheet.control_j23); end
   def test_control_k23; assert_equal("Livestock numbers decrease by 20%", worksheet.control_k23); end
+  def test_control_m23; assert_in_delta(1, worksheet.control_m23, 0.001); end
+  def test_control_n23; assert_in_delta(1, worksheet.control_n23, 0.001); end
+  def test_control_o23; assert_in_epsilon(4, worksheet.control_o23, 0.001); end
+  def test_control_p23; assert_in_epsilon(2, worksheet.control_p23, 0.001); end
+  def test_control_q23; assert_in_epsilon(2, worksheet.control_q23, 0.001); end
+  def test_control_r23; assert_in_epsilon(2, worksheet.control_r23, 0.001); end
+  def test_control_s23; assert_in_epsilon(2, worksheet.control_s23, 0.001); end
+  def test_control_t23; assert_in_epsilon(2, worksheet.control_t23, 0.001); end
+  def test_control_u23; assert_in_epsilon(4, worksheet.control_u23, 0.001); end
+  def test_control_v23; assert_in_epsilon(3, worksheet.control_v23, 0.001); end
+  def test_control_w23; assert_in_epsilon(4, worksheet.control_w23, 0.001); end
+  def test_control_x23; assert_in_epsilon(2, worksheet.control_x23, 0.001); end
+  def test_control_y23; assert_in_epsilon(4, worksheet.control_y23, 0.001); end
   def test_control_bo23; assert_equal("Livestock numbers increase by 10%", worksheet.control_bo23); end
   def test_control_bp23; assert_equal("Livestock numbers same as today", worksheet.control_bp23); end
   def test_control_bq23; assert_equal("Livestock numbers decrease by 10%", worksheet.control_bq23); end
@@ -189,6 +423,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i24; assert_equal("Quantity of waste increases 20%; Increase in rates of recycling and EFW.", worksheet.control_i24); end
   def test_control_j24; assert_equal("Quantity of waste increases 33%; Significant increase in rates of recycling and EFW through innovation.", worksheet.control_j24); end
   def test_control_k24; assert_equal("Quantity of waste decreases 20%; Significant increase in rate of recycling.", worksheet.control_k24); end
+  def test_control_m24; assert_in_delta(1, worksheet.control_m24, 0.001); end
+  def test_control_n24; assert_in_delta(1, worksheet.control_n24, 0.001); end
+  def test_control_o24; assert_in_epsilon(3, worksheet.control_o24, 0.001); end
+  def test_control_p24; assert_in_epsilon(2, worksheet.control_p24, 0.001); end
+  def test_control_q24; assert_in_epsilon(2, worksheet.control_q24, 0.001); end
+  def test_control_r24; assert_in_epsilon(2, worksheet.control_r24, 0.001); end
+  def test_control_s24; assert_in_epsilon(2, worksheet.control_s24, 0.001); end
+  def test_control_t24; assert_in_epsilon(4, worksheet.control_t24, 0.001); end
+  def test_control_u24; assert_in_epsilon(4, worksheet.control_u24, 0.001); end
+  def test_control_v24; assert_in_epsilon(3, worksheet.control_v24, 0.001); end
+  def test_control_w24; assert_in_epsilon(3, worksheet.control_w24, 0.001); end
+  def test_control_x24; assert_in_epsilon(2, worksheet.control_x24, 0.001); end
+  def test_control_y24; assert_in_epsilon(3, worksheet.control_y24, 0.001); end
   def test_control_bo24; assert_equal("Overall quantity of waste increases 50% to 2050; 21% increase in recycling rate and 44% increase in rate of energy from waste. 24% of waste is sent to landfill", worksheet.control_bo24); end
   def test_control_bp24; assert_equal("Overall quantity of waste increases almost 20% by 2050; recycling and energy from waste rates increase by 36% and 89% respectively. 11% of waste is sent to landfill.", worksheet.control_bp24); end
   def test_control_bq24; assert_equal("Overall quantity of waste increases 33%; waste is handled through high-tech and industry-led approaches; by 2050, recycling and energy from waste rates increase by 36% and 89% respectively. Only 2% is sent to landfill.", worksheet.control_bq24); end
@@ -199,6 +446,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i25; assert_equal("Area same as half of natural reserve used, delivering ~4 TWh/yr", worksheet.control_i25); end
   def test_control_j25; assert_equal("Area same as all of natural reserve used, delivering ~9 TWh/yr", worksheet.control_j25); end
   def test_control_k25; assert_equal("Area same as four times natural reserve used, delivering ~46 TWh/yr", worksheet.control_k25); end
+  def test_control_m25; assert_in_delta(1, worksheet.control_m25, 0.001); end
+  def test_control_n25; assert_in_delta(1, worksheet.control_n25, 0.001); end
+  def test_control_o25; assert_in_epsilon(4, worksheet.control_o25, 0.001); end
+  def test_control_p25; assert_in_delta(1, worksheet.control_p25, 0.001); end
+  def test_control_q25; assert_in_delta(1, worksheet.control_q25, 0.001); end
+  def test_control_r25; assert_in_epsilon(3, worksheet.control_r25, 0.001); end
+  def test_control_s25; assert_in_delta(1, worksheet.control_s25, 0.001); end
+  def test_control_t25; assert_in_delta(1, worksheet.control_t25, 0.001); end
+  def test_control_u25; assert_in_delta(1, worksheet.control_u25, 0.001); end
+  def test_control_v25; assert_in_delta(1, worksheet.control_v25, 0.001); end
+  def test_control_w25; assert_in_epsilon(3, worksheet.control_w25, 0.001); end
+  def test_control_x25; assert_in_epsilon(2, worksheet.control_x25, 0.001); end
+  def test_control_y25; assert_in_delta(1, worksheet.control_y25, 0.001); end
   def test_control_bo25; assert_equal("No development of macro-algae cultivation", worksheet.control_bo25); end
   def test_control_bp25; assert_equal("Macro algae covering the same area as half of natural reserve used, delivering ~4 TWh/yr", worksheet.control_bp25); end
   def test_control_bq25; assert_equal("Macro algae covering the same area as all of natural reserve used, delivering ~9 TWh/yr", worksheet.control_bq25); end
@@ -209,6 +469,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i26; assert_equal("Biomass mainly converted to solid biofuel", worksheet.control_i26); end
   def test_control_j26; assert_equal("Biomass mainly converted to liquid biofuel", worksheet.control_j26); end
   def test_control_k26; assert_equal("Biomass mainly converted to biogas fuel", worksheet.control_k26); end
+  def test_control_m26; assert_in_delta(1, worksheet.control_m26, 0.001); end
+  def test_control_n26; assert_in_delta(1, worksheet.control_n26, 0.001); end
+  def test_control_o26; assert_in_epsilon(2, worksheet.control_o26, 0.001); end
+  def test_control_p26; assert_in_delta(1, worksheet.control_p26, 0.001); end
+  def test_control_q26; assert_in_delta(1, worksheet.control_q26, 0.001); end
+  def test_control_r26; assert_in_epsilon(3, worksheet.control_r26, 0.001); end
+  def test_control_s26; assert_in_epsilon(2, worksheet.control_s26, 0.001); end
+  def test_control_t26; assert_in_epsilon(3, worksheet.control_t26, 0.001); end
+  def test_control_u26; assert_in_delta(1, worksheet.control_u26, 0.001); end
+  def test_control_v26; assert_in_epsilon(2, worksheet.control_v26, 0.001); end
+  def test_control_w26; assert_in_epsilon(2, worksheet.control_w26, 0.001); end
+  def test_control_x26; assert_in_epsilon(2, worksheet.control_x26, 0.001); end
+  def test_control_y26; assert_in_delta(1, worksheet.control_y26, 0.001); end
   def test_control_bo26; assert_equal("Biomass converted to a mixture of solid, liquid and gas biofuels", worksheet.control_bo26); end
   def test_control_bp26; assert_equal("Biomass mainly converted to solid biofuel", worksheet.control_bp26); end
   def test_control_bq26; assert_equal("Biomass mainly converted to liquid biofuel", worksheet.control_bq26); end
@@ -219,6 +492,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i27; assert_equal("Up to 70 TWh/yr of imported bioenergy in 2050", worksheet.control_i27); end
   def test_control_j27; assert_equal("Up to 140 TWh/yr of imported bioenergy in 2050", worksheet.control_j27); end
   def test_control_k27; assert_equal("Up to 280 TWh/yr of imported bioenergy in 2050", worksheet.control_k27); end
+  def test_control_m27; assert_in_delta(1, worksheet.control_m27, 0.001); end
+  def test_control_n27; assert_in_delta(1, worksheet.control_n27, 0.001); end
+  def test_control_o27; assert_in_epsilon(4, worksheet.control_o27, 0.001); end
+  def test_control_p27; assert_in_epsilon(2.5, worksheet.control_p27, 0.001); end
+  def test_control_q27; assert_in_epsilon(2, worksheet.control_q27, 0.001); end
+  def test_control_r27; assert_in_epsilon(3.7, worksheet.control_r27, 0.001); end
+  def test_control_s27; assert_in_epsilon(3, worksheet.control_s27, 0.001); end
+  def test_control_t27; assert_in_epsilon(2.1, worksheet.control_t27, 0.001); end
+  def test_control_u27; assert_in_delta(1, worksheet.control_u27, 0.001); end
+  def test_control_v27; assert_in_epsilon(2, worksheet.control_v27, 0.001); end
+  def test_control_w27; assert_in_delta(1, worksheet.control_w27, 0.001); end
+  def test_control_x27; assert_in_epsilon(2, worksheet.control_x27, 0.001); end
+  def test_control_y27; assert_in_delta(1, worksheet.control_y27, 0.001); end
   def test_control_bo27; assert_equal("Imported biofuel declines from ~ 4 TWh/yr currently to zero", worksheet.control_bo27); end
   def test_control_bp27; assert_equal("Up to 70 TWh/yr of imported bioenergy in 2050", worksheet.control_bp27); end
   def test_control_bq27; assert_equal("Up to 140 TWh/yr of imported bioenergy in 2050", worksheet.control_bq27); end
@@ -230,6 +516,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i30; assert_equal("Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage", worksheet.control_i30); end
   def test_control_j30; assert_equal("Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage", worksheet.control_j30); end
   def test_control_k30; assert_equal("In 2050, individuals travel the same distance as today. Signficant shift to public transport.", worksheet.control_k30); end
+  def test_control_m30; assert_in_delta(1, worksheet.control_m30, 0.001); end
+  def test_control_n30; assert_in_epsilon(4, worksheet.control_n30, 0.001); end
+  def test_control_o30; assert_in_delta(1, worksheet.control_o30, 0.001); end
+  def test_control_p30; assert_in_epsilon(4, worksheet.control_p30, 0.001); end
+  def test_control_q30; assert_in_epsilon(4, worksheet.control_q30, 0.001); end
+  def test_control_r30; assert_in_epsilon(2, worksheet.control_r30, 0.001); end
+  def test_control_s30; assert_in_epsilon(3, worksheet.control_s30, 0.001); end
+  def test_control_t30; assert_in_epsilon(4, worksheet.control_t30, 0.001); end
+  def test_control_u30; assert_in_epsilon(4, worksheet.control_u30, 0.001); end
+  def test_control_v30; assert_in_epsilon(4, worksheet.control_v30, 0.001); end
+  def test_control_w30; assert_in_epsilon(3, worksheet.control_w30, 0.001); end
+  def test_control_x30; assert_in_epsilon(3, worksheet.control_x30, 0.001); end
+  def test_control_y30; assert_in_epsilon(3, worksheet.control_y30, 0.001); end
   def test_control_bo30; assert_equal("In 2050, individuals travel 9% further than today. No noticeable modal shift.", worksheet.control_bo30); end
   def test_control_bp30; assert_equal("Individuals travel 7% further than today, cars and vans are 80% of 2050 passenger mileage", worksheet.control_bp30); end
   def test_control_bq30; assert_equal("Individuals travel 7% further than today; cars and vans 74% of 2050 passenger mileage", worksheet.control_bq30); end
@@ -240,6 +539,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i31; assert_equal("By 2050, 54% plug-in hybrid vehicles; 11%  zero emission vehicles, all buses hybrids.", worksheet.control_i31); end
   def test_control_j31; assert_equal("By 2050, 32% plug-in hybrid vehicles; 48% zero emission vehicles; 22% buses electric.", worksheet.control_j31); end
   def test_control_k31; assert_equal("By 2050 100%  zero emission vehiclesl; all passenger trains electrified; 50% bus electrified ", worksheet.control_k31); end
+  def test_control_m31; assert_in_delta(1, worksheet.control_m31, 0.001); end
+  def test_control_n31; assert_in_epsilon(4, worksheet.control_n31, 0.001); end
+  def test_control_o31; assert_in_delta(1, worksheet.control_o31, 0.001); end
+  def test_control_p31; assert_in_epsilon(3, worksheet.control_p31, 0.001); end
+  def test_control_q31; assert_in_epsilon(4, worksheet.control_q31, 0.001); end
+  def test_control_r31; assert_in_epsilon(3, worksheet.control_r31, 0.001); end
+  def test_control_s31; assert_in_epsilon(2, worksheet.control_s31, 0.001); end
+  def test_control_t31; assert_in_epsilon(3, worksheet.control_t31, 0.001); end
+  def test_control_u31; assert_in_epsilon(4, worksheet.control_u31, 0.001); end
+  def test_control_v31; assert_in_epsilon(4, worksheet.control_v31, 0.001); end
+  def test_control_w31; assert_in_epsilon(4, worksheet.control_w31, 0.001); end
+  def test_control_x31; assert_in_epsilon(3, worksheet.control_x31, 0.001); end
+  def test_control_y31; assert_in_epsilon(3, worksheet.control_y31, 0.001); end
   def test_control_bo31; assert_equal("By 2050, 20% plug in hybrid electric cars; 2.5% zero emission cars.", worksheet.control_bo31); end
   def test_control_bp31; assert_equal("By 2050, 35% conventional petrol or diesel engine cars; 54% plug-in hybrid vehicles; 11%  zero emission vehicles; all buses hybrids; 73% of passenger railway is electrifi", worksheet.control_bp31); end
   def test_control_bq31; assert_equal("By 2050, 20% conventional combustion engine cars, with 32% in plug-in hybrid vehicles and 48% in zero emission vehicles: 22% of bus travel fully electric or fuel cell electric ", worksheet.control_bq31); end
@@ -250,6 +562,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i32; assert_equal("Among zero emission cars, 80% use batteries and 20% use fuel cells by 2050", worksheet.control_i32); end
   def test_control_j32; assert_equal("Among zero emission cars, 20% use batteries and 80% use fuel cells by 2050", worksheet.control_j32); end
   def test_control_k32; assert_equal("100% of zero emission cars use fuel cells by 2050", worksheet.control_k32); end
+  def test_control_m32; assert_in_delta(1, worksheet.control_m32, 0.001); end
+  def test_control_n32; assert_in_epsilon(2, worksheet.control_n32, 0.001); end
+  def test_control_o32; assert_in_epsilon(2, worksheet.control_o32, 0.001); end
+  def test_control_p32; assert_in_delta(1, worksheet.control_p32, 0.001); end
+  def test_control_q32; assert_in_epsilon(2, worksheet.control_q32, 0.001); end
+  def test_control_r32; assert_in_epsilon(2, worksheet.control_r32, 0.001); end
+  def test_control_s32; assert_in_epsilon(2, worksheet.control_s32, 0.001); end
+  def test_control_t32; assert_in_delta(1, worksheet.control_t32, 0.001); end
+  def test_control_u32; assert_in_epsilon(2, worksheet.control_u32, 0.001); end
+  def test_control_v32; assert_in_delta(1, worksheet.control_v32, 0.001); end
+  def test_control_w32; assert_in_epsilon(2, worksheet.control_w32, 0.001); end
+  def test_control_x32; assert_in_delta(1, worksheet.control_x32, 0.001); end
+  def test_control_y32; assert_in_epsilon(2, worksheet.control_y32, 0.001); end
   def test_control_bo32; assert_equal("By 2050, 100% electric", worksheet.control_bo32); end
   def test_control_bp32; assert_equal("by 2050, 80% electric,  20% hydrogen fuel cell", worksheet.control_bp32); end
   def test_control_bq32; assert_equal("By 2050, 20% electric, 80% hydrogen fuel cell", worksheet.control_bq32); end
@@ -260,6 +585,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i33; assert_equal("Some shift from road to rail and water, and more efficient engines", worksheet.control_i33); end
   def test_control_j33; assert_equal("Greater modal shift to rail and water; more efficient HGVs; more efficient logistics", worksheet.control_j33); end
   def test_control_k33; assert_equal("Road modal share falls to half; greater hybridisation. Rail freight is all electric ", worksheet.control_k33); end
+  def test_control_m33; assert_in_delta(1, worksheet.control_m33, 0.001); end
+  def test_control_n33; assert_in_epsilon(4, worksheet.control_n33, 0.001); end
+  def test_control_o33; assert_in_delta(1, worksheet.control_o33, 0.001); end
+  def test_control_p33; assert_in_epsilon(4, worksheet.control_p33, 0.001); end
+  def test_control_q33; assert_in_epsilon(3, worksheet.control_q33, 0.001); end
+  def test_control_r33; assert_in_epsilon(2, worksheet.control_r33, 0.001); end
+  def test_control_s33; assert_in_epsilon(3, worksheet.control_s33, 0.001); end
+  def test_control_t33; assert_in_epsilon(4, worksheet.control_t33, 0.001); end
+  def test_control_u33; assert_in_epsilon(4, worksheet.control_u33, 0.001); end
+  def test_control_v33; assert_in_epsilon(4, worksheet.control_v33, 0.001); end
+  def test_control_w33; assert_in_epsilon(2, worksheet.control_w33, 0.001); end
+  def test_control_x33; assert_in_epsilon(3, worksheet.control_x33, 0.001); end
+  def test_control_y33; assert_in_epsilon(4, worksheet.control_y33, 0.001); end
   def test_control_bo33; assert_equal("Road haulage makes up 73% of distance, using conventional engines. Rail all diesel", worksheet.control_bo33); end
   def test_control_bp33; assert_equal("Some shift from road to rail and water, and more efficient engines", worksheet.control_bp33); end
   def test_control_bq33; assert_equal("Greater modal shift to rail and water; more efficient HGVs; more efficient logistics", worksheet.control_bq33); end
@@ -270,6 +608,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i34; assert_equal("By 2050, 130% passengers increase; 45% more fuel use", worksheet.control_i34); end
   def test_control_j34; assert_equal("By 2050, 130% passengers increase; 31% more fuel use", worksheet.control_j34); end
   def test_control_k34; assert_equal("By 2050, 85% passengers increase; 5% more fuel use", worksheet.control_k34); end
+  def test_control_m34; assert_in_delta(1, worksheet.control_m34, 0.001); end
+  def test_control_n34; assert_in_epsilon(4, worksheet.control_n34, 0.001); end
+  def test_control_o34; assert_in_delta(1, worksheet.control_o34, 0.001); end
+  def test_control_p34; assert_in_delta(1, worksheet.control_p34, 0.001); end
+  def test_control_q34; assert_in_epsilon(2, worksheet.control_q34, 0.001); end
+  def test_control_r34; assert_in_epsilon(2, worksheet.control_r34, 0.001); end
+  def test_control_s34; assert_in_epsilon(2, worksheet.control_s34, 0.001); end
+  def test_control_t34; assert_in_delta(1, worksheet.control_t34, 0.001); end
+  def test_control_u34; assert_in_epsilon(4, worksheet.control_u34, 0.001); end
+  def test_control_v34; assert_in_epsilon(4, worksheet.control_v34, 0.001); end
+  def test_control_w34; assert_in_epsilon(4, worksheet.control_w34, 0.001); end
+  def test_control_x34; assert_in_epsilon(2, worksheet.control_x34, 0.001); end
+  def test_control_y34; assert_in_epsilon(2, worksheet.control_y34, 0.001); end
   def test_control_bo34; assert_equal("By 2050, international aviation has 130% more passengers but uses only 50% more fuel", worksheet.control_bo34); end
   def test_control_bp34; assert_equal("By 2050, international aviation has 130% more passengers but uses only 45% more fuel", worksheet.control_bp34); end
   def test_control_bq34; assert_equal("By 2050, international aviation has 130% more passengers but uses only 31% more fuel", worksheet.control_bq34); end
@@ -280,6 +631,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i35; assert_equal("1/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 78%", worksheet.control_i35); end
   def test_control_j35; assert_equal("2/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 16%", worksheet.control_j35); end
   def test_control_k35; assert_equal("maximum technical feasible reductions realised; between 2007 and 2050 emissions decrease by 46%", worksheet.control_k35); end
+  def test_control_m35; assert_in_delta(1, worksheet.control_m35, 0.001); end
+  def test_control_n35; assert_in_epsilon(4, worksheet.control_n35, 0.001); end
+  def test_control_o35; assert_in_delta(1, worksheet.control_o35, 0.001); end
+  def test_control_p35; assert_in_delta(1, worksheet.control_p35, 0.001); end
+  def test_control_q35; assert_in_epsilon(2, worksheet.control_q35, 0.001); end
+  def test_control_r35; assert_in_epsilon(2, worksheet.control_r35, 0.001); end
+  def test_control_s35; assert_in_epsilon(2, worksheet.control_s35, 0.001); end
+  def test_control_t35; assert_in_delta(1, worksheet.control_t35, 0.001); end
+  def test_control_u35; assert_in_epsilon(4, worksheet.control_u35, 0.001); end
+  def test_control_v35; assert_in_epsilon(3, worksheet.control_v35, 0.001); end
+  def test_control_w35; assert_in_epsilon(4, worksheet.control_w35, 0.001); end
+  def test_control_x35; assert_in_epsilon(3, worksheet.control_x35, 0.001); end
+  def test_control_y35; assert_in_epsilon(4, worksheet.control_y35, 0.001); end
   def test_control_bo35; assert_equal("no improvements from energy efficiency; between 2007 and 2050 emissions increase by 139%", worksheet.control_bo35); end
   def test_control_bp35; assert_equal("1/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 78%", worksheet.control_bp35); end
   def test_control_bq35; assert_equal("2/3 of technical feasible reductions realised; between 2007 and 2050 emissions increase by 16%", worksheet.control_bq35); end
@@ -291,6 +655,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i37; assert_equal("Average room temperature increases to 18°C (a 0.5°C increase on 2007)", worksheet.control_i37); end
   def test_control_j37; assert_equal("Average room temperature decreases to 17°C (a 0.5°C decrease on 2007)", worksheet.control_j37); end
   def test_control_k37; assert_equal("Average room temperature decreases to 16°C (a 1.5°C decrease on 2007)", worksheet.control_k37); end
+  def test_control_m37; assert_in_delta(1, worksheet.control_m37, 0.001); end
+  def test_control_n37; assert_in_epsilon(4, worksheet.control_n37, 0.001); end
+  def test_control_o37; assert_in_delta(1, worksheet.control_o37, 0.001); end
+  def test_control_p37; assert_in_epsilon(4, worksheet.control_p37, 0.001); end
+  def test_control_q37; assert_in_epsilon(4, worksheet.control_q37, 0.001); end
+  def test_control_r37; assert_in_epsilon(2, worksheet.control_r37, 0.001); end
+  def test_control_s37; assert_in_epsilon(3, worksheet.control_s37, 0.001); end
+  def test_control_t37; assert_in_epsilon(4, worksheet.control_t37, 0.001); end
+  def test_control_u37; assert_in_epsilon(3, worksheet.control_u37, 0.001); end
+  def test_control_v37; assert_in_epsilon(3, worksheet.control_v37, 0.001); end
+  def test_control_w37; assert_in_epsilon(4, worksheet.control_w37, 0.001); end
+  def test_control_x37; assert_in_epsilon(2, worksheet.control_x37, 0.001); end
+  def test_control_y37; assert_in_epsilon(2, worksheet.control_y37, 0.001); end
   def test_control_bo37; assert_equal("Average room temperature increases to 20°C (a 2.5°C increase on 2007)", worksheet.control_bo37); end
   def test_control_bp37; assert_equal("Average room temperature increases to 18°C (a 0.5°C increase on 2007)", worksheet.control_bp37); end
   def test_control_bq37; assert_equal("Average room temperature decreases to 17°C (a 0.5°C decrease on 2007)", worksheet.control_bq37); end
@@ -301,6 +678,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i38; assert_equal("Over 8m homes insulated, average thermal leakiness falls by 33%", worksheet.control_i38); end
   def test_control_j38; assert_equal("Over 18m homes insulated, average thermal leakiness falls by 42%", worksheet.control_j38); end
   def test_control_k38; assert_equal("Over 24m homes insulated, average thermal leakiness decreases by 50% ", worksheet.control_k38); end
+  def test_control_m38; assert_in_delta(1, worksheet.control_m38, 0.001); end
+  def test_control_n38; assert_in_epsilon(4, worksheet.control_n38, 0.001); end
+  def test_control_o38; assert_in_delta(1, worksheet.control_o38, 0.001); end
+  def test_control_p38; assert_in_epsilon(3, worksheet.control_p38, 0.001); end
+  def test_control_q38; assert_in_epsilon(4, worksheet.control_q38, 0.001); end
+  def test_control_r38; assert_in_epsilon(3, worksheet.control_r38, 0.001); end
+  def test_control_s38; assert_in_epsilon(3, worksheet.control_s38, 0.001); end
+  def test_control_t38; assert_in_epsilon(3, worksheet.control_t38, 0.001); end
+  def test_control_u38; assert_in_epsilon(4, worksheet.control_u38, 0.001); end
+  def test_control_v38; assert_in_epsilon(4, worksheet.control_v38, 0.001); end
+  def test_control_w38; assert_in_epsilon(2, worksheet.control_w38, 0.001); end
+  def test_control_x38; assert_in_epsilon(3, worksheet.control_x38, 0.001); end
+  def test_control_y38; assert_in_epsilon(4, worksheet.control_y38, 0.001); end
   def test_control_bo38; assert_equal("Over 7m homes insulated, average thermal leakiness falls by 25%", worksheet.control_bo38); end
   def test_control_bp38; assert_equal("Over 8m homes insulated, average thermal leakiness falls by 33%", worksheet.control_bp38); end
   def test_control_bq38; assert_equal("Over 18m homes insulated, average thermal leakiness falls by 42%", worksheet.control_bq38); end
@@ -311,6 +701,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i39; assert_equal("The proportion of new domestic heating systems using electricity is 20%", worksheet.control_i39); end
   def test_control_j39; assert_equal("The proportion of new domestic heating systems supplied using electricity is 30-60%", worksheet.control_j39); end
   def test_control_k39; assert_equal("The proportion of new domestic heating systems supplied using electricity is 80-100%", worksheet.control_k39); end
+  def test_control_m39; assert_in_delta(1, worksheet.control_m39, 0.001); end
+  def test_control_n39; assert_in_epsilon(4, worksheet.control_n39, 0.001); end
+  def test_control_o39; assert_in_delta(1, worksheet.control_o39, 0.001); end
+  def test_control_p39; assert_in_epsilon(3, worksheet.control_p39, 0.001); end
+  def test_control_q39; assert_in_epsilon(4, worksheet.control_q39, 0.001); end
+  def test_control_r39; assert_in_epsilon(3, worksheet.control_r39, 0.001); end
+  def test_control_s39; assert_in_epsilon(3, worksheet.control_s39, 0.001); end
+  def test_control_t39; assert_in_epsilon(4, worksheet.control_t39, 0.001); end
+  def test_control_u39; assert_in_epsilon(3, worksheet.control_u39, 0.001); end
+  def test_control_v39; assert_in_epsilon(3, worksheet.control_v39, 0.001); end
+  def test_control_w39; assert_in_epsilon(3, worksheet.control_w39, 0.001); end
+  def test_control_x39; assert_in_epsilon(4, worksheet.control_x39, 0.001); end
+  def test_control_y39; assert_in_epsilon(4, worksheet.control_y39, 0.001); end
   def test_control_bo39; assert_equal("The proportion of domestic heat supplied using electricity is 0-10%, as today", worksheet.control_bo39); end
   def test_control_bp39; assert_equal("The proportion of new domestic heating systems using electricity is 20%", worksheet.control_bp39); end
   def test_control_bq39; assert_equal("The proportion of new domestic heating systems supplied using electricity is 30-60%", worksheet.control_bq39); end
@@ -321,6 +724,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i40; assert_equal("The dominant non-electric heat source is coal or coal CHP (biomass if available)", worksheet.control_i40); end
   def test_control_j40; assert_equal("The dominant non-electric heat source is waste heat from power stations", worksheet.control_j40); end
   def test_control_k40; assert_equal("A mixture of gas/biogas; coal/biomass; and heat from power stations", worksheet.control_k40); end
+  def test_control_m40; assert_in_delta(1, worksheet.control_m40, 0.001); end
+  def test_control_n40; assert_in_epsilon(4, worksheet.control_n40, 0.001); end
+  def test_control_o40; assert_in_delta(1, worksheet.control_o40, 0.001); end
+  def test_control_p40; assert_in_epsilon(3, worksheet.control_p40, 0.001); end
+  def test_control_q40; assert_in_epsilon(4, worksheet.control_q40, 0.001); end
+  def test_control_r40; assert_in_epsilon(3, worksheet.control_r40, 0.001); end
+  def test_control_s40; assert_in_epsilon(2, worksheet.control_s40, 0.001); end
+  def test_control_t40; assert_in_delta(1, worksheet.control_t40, 0.001); end
+  def test_control_u40; assert_in_epsilon(3, worksheet.control_u40, 0.001); end
+  def test_control_v40; assert_in_epsilon(3, worksheet.control_v40, 0.001); end
+  def test_control_w40; assert_in_epsilon(4, worksheet.control_w40, 0.001); end
+  def test_control_x40; assert_in_delta(1, worksheet.control_x40, 0.001); end
+  def test_control_y40; assert_in_delta(1, worksheet.control_y40, 0.001); end
   def test_control_bo40; assert_equal("The dominant non-electric heat source is gas (biogas if available)", worksheet.control_bo40); end
   def test_control_bp40; assert_equal("The dominant non-electric heat source is coal (biomass if available)", worksheet.control_bp40); end
   def test_control_bq40; assert_equal("The dominant non-electric heat source is waste heat from power stations", worksheet.control_bq40); end
@@ -332,6 +748,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i42; assert_equal("Energy demand for domestic lights and appliances is stable", worksheet.control_i42); end
   def test_control_j42; assert_equal("Energy demand for domestic lights and appliances decreases by 40%", worksheet.control_j42); end
   def test_control_k42; assert_equal("Energy demand for domestic lights and appliances decreases by 60%", worksheet.control_k42); end
+  def test_control_m42; assert_in_delta(1, worksheet.control_m42, 0.001); end
+  def test_control_n42; assert_in_epsilon(4, worksheet.control_n42, 0.001); end
+  def test_control_o42; assert_in_delta(1, worksheet.control_o42, 0.001); end
+  def test_control_p42; assert_in_epsilon(4, worksheet.control_p42, 0.001); end
+  def test_control_q42; assert_in_epsilon(4, worksheet.control_q42, 0.001); end
+  def test_control_r42; assert_in_epsilon(2, worksheet.control_r42, 0.001); end
+  def test_control_s42; assert_in_epsilon(3, worksheet.control_s42, 0.001); end
+  def test_control_t42; assert_in_epsilon(4, worksheet.control_t42, 0.001); end
+  def test_control_u42; assert_in_epsilon(4, worksheet.control_u42, 0.001); end
+  def test_control_v42; assert_in_epsilon(4, worksheet.control_v42, 0.001); end
+  def test_control_w42; assert_in_epsilon(4, worksheet.control_w42, 0.001); end
+  def test_control_x42; assert_in_epsilon(2, worksheet.control_x42, 0.001); end
+  def test_control_y42; assert_in_epsilon(4, worksheet.control_y42, 0.001); end
   def test_control_bo42; assert_equal("Energy demand for domestic lights and appliances increases by 20% (relative to 2007)", worksheet.control_bo42); end
   def test_control_bp42; assert_equal("Energy demand for domestic lights and appliances is stable", worksheet.control_bp42); end
   def test_control_bq42; assert_equal("Energy demand for domestic lights and appliances decreases by 40%", worksheet.control_bq42); end
@@ -342,6 +771,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i43; assert_equal("Energy used for domestic cooking is entirely electric", worksheet.control_i43); end
   def test_control_j43; assert_equal("Same as B", worksheet.control_j43); end
   def test_control_k43; assert_equal("Same as B", worksheet.control_k43); end
+  def test_control_m43; assert_in_delta(1, worksheet.control_m43, 0.001); end
+  def test_control_n43; assert_in_epsilon(2, worksheet.control_n43, 0.001); end
+  def test_control_o43; assert_in_delta(1, worksheet.control_o43, 0.001); end
+  def test_control_p43; assert_in_epsilon(2, worksheet.control_p43, 0.001); end
+  def test_control_q43; assert_in_epsilon(2, worksheet.control_q43, 0.001); end
+  def test_control_r43; assert_in_epsilon(2, worksheet.control_r43, 0.001); end
+  def test_control_s43; assert_in_delta(1, worksheet.control_s43, 0.001); end
+  def test_control_t43; assert_in_delta(1, worksheet.control_t43, 0.001); end
+  def test_control_u43; assert_in_epsilon(2, worksheet.control_u43, 0.001); end
+  def test_control_v43; assert_in_delta(1, worksheet.control_v43, 0.001); end
+  def test_control_w43; assert_in_epsilon(2, worksheet.control_w43, 0.001); end
+  def test_control_x43; assert_in_delta(1, worksheet.control_x43, 0.001); end
+  def test_control_y43; assert_in_epsilon(2, worksheet.control_y43, 0.001); end
   def test_control_bo43; assert_equal("Energy used for domestic cooking remains at 63% electricity and 37% gas", worksheet.control_bo43); end
   def test_control_bp43; assert_equal("Energy used for domestic cooking is entirely electric", worksheet.control_bp43); end
   def test_control_bq43; assert_equal("Energy used for domestic cooking is entirely electric", worksheet.control_bq43); end
@@ -353,6 +795,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i45; assert_equal("UK industry grows in line with current trends", worksheet.control_i45); end
   def test_control_j45; assert_equal("UK industry output falls 30-40% by 2050", worksheet.control_j45); end
   def test_control_k45; assert_equal("Same as C", worksheet.control_k45); end
+  def test_control_m45; assert_in_delta(1, worksheet.control_m45, 0.001); end
+  def test_control_n45; assert_in_epsilon(4, worksheet.control_n45, 0.001); end
+  def test_control_o45; assert_in_epsilon(2, worksheet.control_o45, 0.001); end
+  def test_control_p45; assert_in_epsilon(2, worksheet.control_p45, 0.001); end
+  def test_control_q45; assert_in_epsilon(2, worksheet.control_q45, 0.001); end
+  def test_control_r45; assert_in_epsilon(2, worksheet.control_r45, 0.001); end
+  def test_control_s45; assert_in_epsilon(2, worksheet.control_s45, 0.001); end
+  def test_control_t45; assert_in_epsilon(3, worksheet.control_t45, 0.001); end
+  def test_control_u45; assert_in_epsilon(2, worksheet.control_u45, 0.001); end
+  def test_control_v45; assert_in_epsilon(2, worksheet.control_v45, 0.001); end
+  def test_control_w45; assert_in_epsilon(3, worksheet.control_w45, 0.001); end
+  def test_control_x45; assert_in_epsilon(2, worksheet.control_x45, 0.001); end
+  def test_control_y45; assert_in_delta(1, worksheet.control_y45, 0.001); end
   def test_control_bo45; assert_equal("UK industry output more than doubles by 2050", worksheet.control_bo45); end
   def test_control_bp45; assert_equal("UK industry grows in line with current trends", worksheet.control_bp45); end
   def test_control_bq45; assert_equal("UK industry output falls 30-40% by 2050", worksheet.control_bq45); end
@@ -363,6 +818,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i46; assert_equal("Some processes electrified; moderate improvements in process emissions and energy demand", worksheet.control_i46); end
   def test_control_j46; assert_equal("High electrification; CCS captures 48% of emissions; process emissions reduced", worksheet.control_j46); end
   def test_control_k46; assert_equal("Same as 3", worksheet.control_k46); end
+  def test_control_m46; assert_in_delta(1, worksheet.control_m46, 0.001); end
+  def test_control_n46; assert_in_epsilon(3, worksheet.control_n46, 0.001); end
+  def test_control_o46; assert_in_delta(1, worksheet.control_o46, 0.001); end
+  def test_control_p46; assert_in_epsilon(3, worksheet.control_p46, 0.001); end
+  def test_control_q46; assert_in_epsilon(3, worksheet.control_q46, 0.001); end
+  def test_control_r46; assert_in_delta(1, worksheet.control_r46, 0.001); end
+  def test_control_s46; assert_in_epsilon(3, worksheet.control_s46, 0.001); end
+  def test_control_t46; assert_in_epsilon(2, worksheet.control_t46, 0.001); end
+  def test_control_u46; assert_in_epsilon(3, worksheet.control_u46, 0.001); end
+  def test_control_v46; assert_in_epsilon(3, worksheet.control_v46, 0.001); end
+  def test_control_w46; assert_in_epsilon(2, worksheet.control_w46, 0.001); end
+  def test_control_x46; assert_in_epsilon(2, worksheet.control_x46, 0.001); end
+  def test_control_y46; assert_in_epsilon(3, worksheet.control_y46, 0.001); end
   def test_control_bo46; assert_equal("No electrification of industrial processes and little improvement in industrial energy intensity", worksheet.control_bo46); end
   def test_control_bp46; assert_equal("Some industrial processes electrified and moderate improvements in process emissions and energy demand", worksheet.control_bp46); end
   def test_control_bq46; assert_equal("Many industrial processes electrified, CCS captures 48% of emissions and  substantial improvements in process emissions and energy demand", worksheet.control_bq46); end
@@ -374,6 +842,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i48; assert_equal("Space heating demand increases by 30%, hot water demand by 50%, cooling demand by 60%", worksheet.control_i48); end
   def test_control_j48; assert_equal("Space heating demand stable, hot water demand increases by 25%, cooling demand stable", worksheet.control_j48); end
   def test_control_k48; assert_equal("Space heating demand drops by 25%, hot water demand by 10%, cooling demand by 60%", worksheet.control_k48); end
+  def test_control_m48; assert_in_delta(1, worksheet.control_m48, 0.001); end
+  def test_control_n48; assert_in_epsilon(4, worksheet.control_n48, 0.001); end
+  def test_control_o48; assert_in_delta(1, worksheet.control_o48, 0.001); end
+  def test_control_p48; assert_in_epsilon(4, worksheet.control_p48, 0.001); end
+  def test_control_q48; assert_in_epsilon(4, worksheet.control_q48, 0.001); end
+  def test_control_r48; assert_in_epsilon(2, worksheet.control_r48, 0.001); end
+  def test_control_s48; assert_in_epsilon(3, worksheet.control_s48, 0.001); end
+  def test_control_t48; assert_in_epsilon(4, worksheet.control_t48, 0.001); end
+  def test_control_u48; assert_in_epsilon(4, worksheet.control_u48, 0.001); end
+  def test_control_v48; assert_in_epsilon(4, worksheet.control_v48, 0.001); end
+  def test_control_w48; assert_in_epsilon(3, worksheet.control_w48, 0.001); end
+  def test_control_x48; assert_in_epsilon(3, worksheet.control_x48, 0.001); end
+  def test_control_y48; assert_in_epsilon(4, worksheet.control_y48, 0.001); end
   def test_control_bo48; assert_equal("Commercial space heating demand increases by 50%, hot water demand by 60%, cooling demand by 250%", worksheet.control_bo48); end
   def test_control_bp48; assert_equal("Commercial space heating demand increases by 30%, hot water demand by 50%, cooling demand by 60%", worksheet.control_bp48); end
   def test_control_bq48; assert_equal("Commercial space heating demand stable, hot water demand increases by 25%, cooling demand stable", worksheet.control_bq48); end
@@ -384,6 +865,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i49; assert_equal("The proportion of non-domestic heat supplied using electricity is 20%", worksheet.control_i49); end
   def test_control_j49; assert_equal("The proportion of non-domestic heat supplied using electricity is 30-60%", worksheet.control_j49); end
   def test_control_k49; assert_equal("The proportion of non-domestic heat supplied using electricity is 80-100%", worksheet.control_k49); end
+  def test_control_m49; assert_in_delta(1, worksheet.control_m49, 0.001); end
+  def test_control_n49; assert_in_epsilon(4, worksheet.control_n49, 0.001); end
+  def test_control_o49; assert_in_delta(1, worksheet.control_o49, 0.001); end
+  def test_control_p49; assert_in_epsilon(3, worksheet.control_p49, 0.001); end
+  def test_control_q49; assert_in_epsilon(4, worksheet.control_q49, 0.001); end
+  def test_control_r49; assert_in_epsilon(3, worksheet.control_r49, 0.001); end
+  def test_control_s49; assert_in_epsilon(4, worksheet.control_s49, 0.001); end
+  def test_control_t49; assert_in_epsilon(4, worksheet.control_t49, 0.001); end
+  def test_control_u49; assert_in_epsilon(4, worksheet.control_u49, 0.001); end
+  def test_control_v49; assert_in_epsilon(4, worksheet.control_v49, 0.001); end
+  def test_control_w49; assert_in_epsilon(3, worksheet.control_w49, 0.001); end
+  def test_control_x49; assert_in_epsilon(4, worksheet.control_x49, 0.001); end
+  def test_control_y49; assert_in_epsilon(4, worksheet.control_y49, 0.001); end
   def test_control_bo49; assert_equal("The proportion of non-domestic heat supplied using electricity is 0-10%, as today", worksheet.control_bo49); end
   def test_control_bp49; assert_equal("The proportion of non-domestic heat supplied using electricity is 20%", worksheet.control_bp49); end
   def test_control_bq49; assert_equal("The proportion of non-domestic heat supplied using electricity is 30-60%", worksheet.control_bq49); end
@@ -394,6 +888,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i50; assert_equal("The dominant non-electric heat source is coal or coal CHP (biomass if available)", worksheet.control_i50); end
   def test_control_j50; assert_equal("The dominant non-electric heat source is heat from power stations", worksheet.control_j50); end
   def test_control_k50; assert_equal("A mixture of gas/biogas, coal/biomass, and heat from power stations", worksheet.control_k50); end
+  def test_control_m50; assert_in_delta(1, worksheet.control_m50, 0.001); end
+  def test_control_n50; assert_in_epsilon(4, worksheet.control_n50, 0.001); end
+  def test_control_o50; assert_in_delta(1, worksheet.control_o50, 0.001); end
+  def test_control_p50; assert_in_epsilon(2, worksheet.control_p50, 0.001); end
+  def test_control_q50; assert_in_epsilon(4, worksheet.control_q50, 0.001); end
+  def test_control_r50; assert_in_epsilon(3, worksheet.control_r50, 0.001); end
+  def test_control_s50; assert_in_epsilon(3, worksheet.control_s50, 0.001); end
+  def test_control_t50; assert_in_epsilon(4, worksheet.control_t50, 0.001); end
+  def test_control_u50; assert_in_epsilon(3, worksheet.control_u50, 0.001); end
+  def test_control_v50; assert_in_epsilon(3, worksheet.control_v50, 0.001); end
+  def test_control_w50; assert_in_epsilon(4, worksheet.control_w50, 0.001); end
+  def test_control_x50; assert_in_epsilon(4, worksheet.control_x50, 0.001); end
+  def test_control_y50; assert_in_epsilon(3, worksheet.control_y50, 0.001); end
   def test_control_bo50; assert_equal("The dominant non-electric heat source is gas (biogas if available)", worksheet.control_bo50); end
   def test_control_bp50; assert_equal("The dominant non-electric heating fuel is coal (biomass if available)", worksheet.control_bp50); end
   def test_control_bq50; assert_equal("The dominant non-electric heat source is heat from power stations", worksheet.control_bq50); end
@@ -405,6 +912,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i52; assert_equal("Energy demand for lights & appliances increases by 15%; decreases by 5% for cooking", worksheet.control_i52); end
   def test_control_j52; assert_equal("Energy demand for lights & appliances decreases by 5%; decreases by 20% for cooking", worksheet.control_j52); end
   def test_control_k52; assert_equal("Energy demand for lights & appliances decreases by 30%; decreases by 25% for cooking", worksheet.control_k52); end
+  def test_control_m52; assert_in_delta(1, worksheet.control_m52, 0.001); end
+  def test_control_n52; assert_in_epsilon(4, worksheet.control_n52, 0.001); end
+  def test_control_o52; assert_in_delta(1, worksheet.control_o52, 0.001); end
+  def test_control_p52; assert_in_epsilon(4, worksheet.control_p52, 0.001); end
+  def test_control_q52; assert_in_epsilon(4, worksheet.control_q52, 0.001); end
+  def test_control_r52; assert_in_epsilon(2, worksheet.control_r52, 0.001); end
+  def test_control_s52; assert_in_epsilon(3, worksheet.control_s52, 0.001); end
+  def test_control_t52; assert_in_epsilon(4, worksheet.control_t52, 0.001); end
+  def test_control_u52; assert_in_epsilon(4, worksheet.control_u52, 0.001); end
+  def test_control_v52; assert_in_epsilon(4, worksheet.control_v52, 0.001); end
+  def test_control_w52; assert_in_epsilon(4, worksheet.control_w52, 0.001); end
+  def test_control_x52; assert_in_epsilon(3, worksheet.control_x52, 0.001); end
+  def test_control_y52; assert_in_epsilon(4, worksheet.control_y52, 0.001); end
   def test_control_bo52; assert_equal("Energy demand for commercial lights & appliances increases by 33%. Energy for cooking is stable", worksheet.control_bo52); end
   def test_control_bp52; assert_equal("Energy demand for commercial lights & appliances increases by 15%; decreases by 5% for cooking", worksheet.control_bp52); end
   def test_control_bq52; assert_equal("Energy demand for commercial lights & appliances decreases by 5%; decreases by 20% for cooking", worksheet.control_bq52); end
@@ -415,6 +935,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i53; assert_equal("100% electric", worksheet.control_i53); end
   def test_control_j53; assert_equal("Same as B", worksheet.control_j53); end
   def test_control_k53; assert_equal("Same as B", worksheet.control_k53); end
+  def test_control_m53; assert_in_delta(1, worksheet.control_m53, 0.001); end
+  def test_control_n53; assert_in_epsilon(2, worksheet.control_n53, 0.001); end
+  def test_control_o53; assert_in_delta(1, worksheet.control_o53, 0.001); end
+  def test_control_p53; assert_in_epsilon(2, worksheet.control_p53, 0.001); end
+  def test_control_q53; assert_in_epsilon(2, worksheet.control_q53, 0.001); end
+  def test_control_r53; assert_in_epsilon(2, worksheet.control_r53, 0.001); end
+  def test_control_s53; assert_in_delta(1, worksheet.control_s53, 0.001); end
+  def test_control_t53; assert_in_delta(1, worksheet.control_t53, 0.001); end
+  def test_control_u53; assert_in_epsilon(2, worksheet.control_u53, 0.001); end
+  def test_control_v53; assert_in_delta(1, worksheet.control_v53, 0.001); end
+  def test_control_w53; assert_in_epsilon(2, worksheet.control_w53, 0.001); end
+  def test_control_x53; assert_in_epsilon(2, worksheet.control_x53, 0.001); end
+  def test_control_y53; assert_in_epsilon(2, worksheet.control_y53, 0.001); end
   def test_control_bo53; assert_equal("Energy used for commercial cooking is 60% electricity and 40% gas (no change from 2007)", worksheet.control_bo53); end
   def test_control_bp53; assert_equal("Energy used for commercial cooking is 100% electric", worksheet.control_bp53); end
   def test_control_bq53; assert_equal("Energy used for commercial cooking is 100% electric", worksheet.control_bq53); end
@@ -425,6 +958,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i55; assert_equal("Carbon dioxide sequestration rate of 1 million tonnes per annum by 2050", worksheet.control_i55); end
   def test_control_j55; assert_equal("Carbon dioxide sequestration rate of ~30 million tonnes per annum by 2050", worksheet.control_j55); end
   def test_control_k55; assert_equal("Carbon dioxide sequestration rate of ~110 million tonnes per annum by 2050", worksheet.control_k55); end
+  def test_control_m55; assert_in_delta(1, worksheet.control_m55, 0.001); end
+  def test_control_n55; assert_in_delta(1, worksheet.control_n55, 0.001); end
+  def test_control_o55; assert_in_delta(1, worksheet.control_o55, 0.001); end
+  def test_control_p55; assert_in_delta(1, worksheet.control_p55, 0.001); end
+  def test_control_q55; assert_in_delta(1, worksheet.control_q55, 0.001); end
+  def test_control_r55; assert_in_delta(1, worksheet.control_r55, 0.001); end
+  def test_control_s55; assert_in_epsilon(2, worksheet.control_s55, 0.001); end
+  def test_control_t55; assert_in_delta(1, worksheet.control_t55, 0.001); end
+  def test_control_u55; assert_in_epsilon(4, worksheet.control_u55, 0.001); end
+  def test_control_v55; assert_in_epsilon(2, worksheet.control_v55, 0.001); end
+  def test_control_w55; assert_in_delta(1, worksheet.control_w55, 0.001); end
+  def test_control_x55; assert_in_delta(1, worksheet.control_x55, 0.001); end
+  def test_control_y55; assert_in_epsilon(2, worksheet.control_y55, 0.001); end
   def test_control_bo55; assert_equal("No geosequestration", worksheet.control_bo55); end
   def test_control_bp55; assert_equal("Carbon dioxide sequestred at a rate of 1 million tonnes per annum by 2050", worksheet.control_bp55); end
   def test_control_bq55; assert_equal("Carbon dioxide  sequestred at a rate of ~30 million tonnes per annum by 2050", worksheet.control_bq55); end
@@ -435,6 +981,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_i56; assert_equal("4 GW storage & 10 GW interconnection with Europe for balancing", worksheet.control_i56); end
   def test_control_j56; assert_equal("7 GW storage with 2 more pumped storage, 15 GW interconnection & some demand shifting", worksheet.control_j56); end
   def test_control_k56; assert_equal("20 GW storage with large lagoons, 30 GW interconnection & substantial demand shifting", worksheet.control_k56); end
+  def test_control_m56; assert_in_delta(1, worksheet.control_m56, 0.001); end
+  def test_control_n56; assert_in_delta(1, worksheet.control_n56, 0.001); end
+  def test_control_o56; assert_in_delta(1, worksheet.control_o56, 0.001); end
+  def test_control_p56; assert_in_epsilon(2, worksheet.control_p56, 0.001); end
+  def test_control_q56; assert_in_epsilon(4, worksheet.control_q56, 0.001); end
+  def test_control_r56; assert_in_epsilon(2, worksheet.control_r56, 0.001); end
+  def test_control_s56; assert_in_epsilon(2, worksheet.control_s56, 0.001); end
+  def test_control_t56; assert_in_delta(1, worksheet.control_t56, 0.001); end
+  def test_control_u56; assert_in_epsilon(4, worksheet.control_u56, 0.001); end
+  def test_control_v56; assert_in_epsilon(3, worksheet.control_v56, 0.001); end
+  def test_control_w56; assert_in_epsilon(4, worksheet.control_w56, 0.001); end
+  def test_control_x56; assert_in_epsilon(2, worksheet.control_x56, 0.001); end
+  def test_control_y56; assert_in_epsilon(3, worksheet.control_y56, 0.001); end
   def test_control_bo56; assert_equal("Today’s 3.5 GW of pumped storage and 4 GW interconnection with Europe available for balancing electricity supply and demand", worksheet.control_bo56); end
   def test_control_bp56; assert_equal("4 GW of pumped storage and 10 GW interconnection with Europe available for balancing electricity supply and demand", worksheet.control_bp56); end
   def test_control_bq56; assert_equal("7 GW of pumped storage (includign 2 more sites), 15 GW of interconnection with Europe and some demand shifting available for balancing electricity supply and demand", worksheet.control_bq56); end
@@ -444,6 +1003,58 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_control_h57; assert_equal("Central case", worksheet.control_h57); end
   def test_control_i57; assert_equal("Low production case", worksheet.control_i57); end
   def test_control_j57; assert_equal("Very low production case", worksheet.control_j57); end
+  def test_control_m57; assert_in_delta(1, worksheet.control_m57, 0.001); end
+  def test_control_n57; assert_in_delta(1, worksheet.control_n57, 0.001); end
+  def test_control_o57; assert_in_delta(1, worksheet.control_o57, 0.001); end
+  def test_control_p57; assert_in_delta(1, worksheet.control_p57, 0.001); end
+  def test_control_q57; assert_in_delta(1, worksheet.control_q57, 0.001); end
+  def test_control_r57; assert_in_delta(1, worksheet.control_r57, 0.001); end
+  def test_control_s57; assert_in_delta(1, worksheet.control_s57, 0.001); end
+  def test_control_t57; assert_in_delta(1, worksheet.control_t57, 0.001); end
+  def test_control_u57; assert_in_delta(1, worksheet.control_u57, 0.001); end
+  def test_control_v57; assert_in_delta(1, worksheet.control_v57, 0.001); end
+  def test_control_w57; assert_in_delta(1, worksheet.control_w57, 0.001); end
+  def test_control_x57; assert_in_delta(1, worksheet.control_x57, 0.001); end
+  def test_control_y57; assert_in_delta(1, worksheet.control_y57, 0.001); end
+  def test_control_m58; assert_equal("Imported natural gas for electricity and heat\\nImported oil for vehicles.", worksheet.control_m58); end
+  def test_control_n58; assert_equal("Maximum demand", worksheet.control_n58); end
+  def test_control_o58; assert_equal("Maximum supply", worksheet.control_o58); end
+  def test_control_p58; assert_equal("Cost-optimising model based. Mix of supplysources. Ambitious demand reduction.", worksheet.control_p58); end
+  def test_control_q58; assert_equal("Renewables largest supply component. Veryambitious demand reduction. Lots of storage.", worksheet.control_q58); end
+  def test_control_r58; assert_equal("Lots of nuclear. Moderate energy demandreduction. Minimal renewables.", worksheet.control_r58); end
+  def test_control_s58; assert_equal("Lots of CCS and biomass co-firing.Ambitious demand reduction", worksheet.control_s58); end
+  def test_control_t58; assert_equal("A low cost pathway", worksheet.control_t58); end
+  def test_control_u58; assert_equal("Generation from wind, marine renewables andhydro. Ambitious demand reduction", worksheet.control_u58); end
+  def test_control_v58; assert_equal("Offshore renewables, solar, geothermal andelectricity imports. Ambitious demand reduction.", worksheet.control_v58); end
+  def test_control_w58; assert_equal("Marine renewable, geothermal and algaesupply. Some nuclear and CCS.", worksheet.control_w58); end
+  def test_control_x58; assert_equal("Wide range of generation sources. Moderatedemand reduction. Considerable bioenergy.", worksheet.control_x58); end
+  def test_control_y58; assert_equal("Energy from a range of sources. Emphasison UK self-reliance.", worksheet.control_y58); end
+  def test_control_m59; assert_in_epsilon(75, worksheet.control_m59, 0.001); end
+  def test_control_n59; assert_equal("No", worksheet.control_n59); end
+  def test_control_o59; assert_equal("No", worksheet.control_o59); end
+  def test_control_p59; assert_in_epsilon(112, worksheet.control_p59, 0.001); end
+  def test_control_q59; assert_in_epsilon(109, worksheet.control_q59, 0.001); end
+  def test_control_r59; assert_in_epsilon(110, worksheet.control_r59, 0.001); end
+  def test_control_s59; assert_in_epsilon(111, worksheet.control_s59, 0.001); end
+  def test_control_t59; assert_in_epsilon(170, worksheet.control_t59, 0.001); end
+  def test_control_u59; assert_in_epsilon(95, worksheet.control_u59, 0.001); end
+  def test_control_v59; assert_in_epsilon(96, worksheet.control_v59, 0.001); end
+  def test_control_w59; assert_in_epsilon(94, worksheet.control_w59, 0.001); end
+  def test_control_x59; assert_in_epsilon(97, worksheet.control_x59, 0.001); end
+  def test_control_y59; assert_in_epsilon(92, worksheet.control_y59, 0.001); end
+  def test_control_m60; assert_in_epsilon(10, worksheet.control_m60, 0.001); end
+  def test_control_n60; assert_equal("No", worksheet.control_n60); end
+  def test_control_o60; assert_equal("No", worksheet.control_o60); end
+  def test_control_p60; assert_in_delta(0, (worksheet.control_p60||0), 0.001); end
+  def test_control_q60; assert_in_delta(1, worksheet.control_q60, 0.001); end
+  def test_control_r60; assert_in_epsilon(2, worksheet.control_r60, 0.001); end
+  def test_control_s60; assert_in_epsilon(3, worksheet.control_s60, 0.001); end
+  def test_control_t60; assert_in_epsilon(4, worksheet.control_t60, 0.001); end
+  def test_control_u60; assert_in_epsilon(5, worksheet.control_u60, 0.001); end
+  def test_control_v60; assert_in_epsilon(6, worksheet.control_v60, 0.001); end
+  def test_control_w60; assert_in_epsilon(7, worksheet.control_w60, 0.001); end
+  def test_control_x60; assert_in_epsilon(8, worksheet.control_x60, 0.001); end
+  def test_control_y60; assert_in_epsilon(9, worksheet.control_y60, 0.001); end
 
   # start of Preferences
 
@@ -12641,21 +13252,21 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av57; assert_in_delta(0.07, worksheet.costpercapita_av57, 0.001); end
   def test_costpercapita_aw57; assert_in_epsilon(20, worksheet.costpercapita_aw57, 0.001); end
   def test_costpercapita_ay57; assert_in_delta(0, (worksheet.costpercapita_ay57||0), 0.001); end
-  def test_costpercapita_az57; assert_in_epsilon(2.994275842295862, worksheet.costpercapita_az57, 0.001); end
-  def test_costpercapita_ba57; assert_in_epsilon(4.268704847648799, worksheet.costpercapita_ba57, 0.001); end
-  def test_costpercapita_bb57; assert_in_epsilon(4.470159168773682, worksheet.costpercapita_bb57, 0.001); end
-  def test_costpercapita_bc57; assert_in_delta(0.4400815483472192, worksheet.costpercapita_bc57, 0.001); end
+  def test_costpercapita_az57; assert_in_epsilon(2.9942758422958615, worksheet.costpercapita_az57, 0.001); end
+  def test_costpercapita_ba57; assert_in_epsilon(4.268704847648798, worksheet.costpercapita_ba57, 0.001); end
+  def test_costpercapita_bb57; assert_in_epsilon(4.470159168773683, worksheet.costpercapita_bb57, 0.001); end
+  def test_costpercapita_bc57; assert_in_delta(0.4400815483472191, worksheet.costpercapita_bc57, 0.001); end
   def test_costpercapita_bd57; assert_in_delta(0, (worksheet.costpercapita_bd57||0), 0.001); end
   def test_costpercapita_be57; assert_in_epsilon(14.608230836699843, worksheet.costpercapita_be57, 0.001); end
   def test_costpercapita_bf57; assert_in_epsilon(13.826457972062563, worksheet.costpercapita_bf57, 0.001); end
-  def test_costpercapita_bg57; assert_in_epsilon(13.087214443881587, worksheet.costpercapita_bg57, 0.001); end
+  def test_costpercapita_bg57; assert_in_epsilon(13.087214443881585, worksheet.costpercapita_bg57, 0.001); end
   def test_costpercapita_bi57; assert_in_delta(0, (worksheet.costpercapita_bi57||0), 0.001); end
-  def test_costpercapita_bj57; assert_in_epsilon(2.994275842295862, worksheet.costpercapita_bj57, 0.001); end
-  def test_costpercapita_bk57; assert_in_epsilon(7.164953636939114, worksheet.costpercapita_bk57, 0.001); end
+  def test_costpercapita_bj57; assert_in_epsilon(2.9942758422958615, worksheet.costpercapita_bj57, 0.001); end
+  def test_costpercapita_bk57; assert_in_epsilon(7.164953636939112, worksheet.costpercapita_bk57, 0.001); end
   def test_costpercapita_bl57; assert_in_epsilon(11.41326094467777, worksheet.costpercapita_bl57, 0.001); end
   def test_costpercapita_bm57; assert_in_epsilon(11.54153045668729, worksheet.costpercapita_bm57, 0.001); end
   def test_costpercapita_bn57; assert_in_epsilon(8.604071332907202, worksheet.costpercapita_bn57, 0.001); end
-  def test_costpercapita_bo57; assert_in_epsilon(19.18385088517305, worksheet.costpercapita_bo57, 0.001); end
+  def test_costpercapita_bo57; assert_in_epsilon(19.183850885173054, worksheet.costpercapita_bo57, 0.001); end
   def test_costpercapita_bp57; assert_in_epsilon(28.967608377553056, worksheet.costpercapita_bp57, 0.001); end
   def test_costpercapita_bq57; assert_in_epsilon(40.705296822762726, worksheet.costpercapita_bq57, 0.001); end
   def test_costpercapita_bs57; assert_in_epsilon(51.67206452184387, worksheet.costpercapita_bs57, 0.001); end
@@ -12670,12 +13281,12 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cc57; assert_in_epsilon(37.733694607548244, worksheet.costpercapita_cc57, 0.001); end
   def test_costpercapita_cd57; assert_in_epsilon(783.0446235900242, worksheet.costpercapita_cd57, 0.001); end
   def test_costpercapita_cf57; assert_in_delta(0, (worksheet.costpercapita_cf57||0), 0.001); end
-  def test_costpercapita_cg57; assert_in_epsilon(-3.350004343361591, worksheet.costpercapita_cg57, 0.001); end
-  def test_costpercapita_ch57; assert_in_epsilon(-1.8795903562399385, worksheet.costpercapita_ch57, 0.001); end
+  def test_costpercapita_cg57; assert_in_epsilon(-3.3500043433615914, worksheet.costpercapita_cg57, 0.001); end
+  def test_costpercapita_ch57; assert_in_epsilon(-1.87959035623994, worksheet.costpercapita_ch57, 0.001); end
   def test_costpercapita_ci57; assert_in_epsilon(1.941874961935155, worksheet.costpercapita_ci57, 0.001); end
   def test_costpercapita_cj57; assert_in_epsilon(10.609084418211442, worksheet.costpercapita_cj57, 0.001); end
   def test_costpercapita_ck57; assert_in_epsilon(8.604071332907202, worksheet.costpercapita_ck57, 0.001); end
-  def test_costpercapita_cl57; assert_in_epsilon(-11.768110231984272, worksheet.costpercapita_cl57, 0.001); end
+  def test_costpercapita_cl57; assert_in_epsilon(-11.768110231984268, worksheet.costpercapita_cl57, 0.001); end
   def test_costpercapita_cm57; assert_in_delta(-0.3279301666591951, worksheet.costpercapita_cm57, 0.001); end
   def test_costpercapita_cn57; assert_in_epsilon(12.976069572241451, worksheet.costpercapita_cn57, 0.001); end
   def test_costpercapita_cp57; assert_in_epsilon(1.8672739096722504, worksheet.costpercapita_cp57, 0.001); end
@@ -12725,45 +13336,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av58; assert_in_delta(0.07, worksheet.costpercapita_av58, 0.001); end
   def test_costpercapita_aw58; assert_in_epsilon(30, worksheet.costpercapita_aw58, 0.001); end
   def test_costpercapita_ay58; assert_in_delta(0, (worksheet.costpercapita_ay58||0), 0.001); end
-  def test_costpercapita_az58; assert_in_epsilon(1.886165805186153, worksheet.costpercapita_az58, 0.001); end
-  def test_costpercapita_ba58; assert_in_epsilon(1.084986291198755, worksheet.costpercapita_ba58, 0.001); end
+  def test_costpercapita_az58; assert_in_epsilon(1.8861658051861525, worksheet.costpercapita_az58, 0.001); end
+  def test_costpercapita_ba58; assert_in_epsilon(1.0849862911987547, worksheet.costpercapita_ba58, 0.001); end
   def test_costpercapita_bb58; assert_in_epsilon(1.7223374964049334, worksheet.costpercapita_bb58, 0.001); end
   def test_costpercapita_bc58; assert_in_epsilon(3.400962303411176, worksheet.costpercapita_bc58, 0.001); end
-  def test_costpercapita_bd58; assert_in_epsilon(4.369539828829324, worksheet.costpercapita_bd58, 0.001); end
+  def test_costpercapita_bd58; assert_in_epsilon(4.369539828829323, worksheet.costpercapita_bd58, 0.001); end
   def test_costpercapita_be58; assert_in_epsilon(4.276353334663359, worksheet.costpercapita_be58, 0.001); end
   def test_costpercapita_bf58; assert_in_epsilon(4.191048957506557, worksheet.costpercapita_bf58, 0.001); end
   def test_costpercapita_bg58; assert_in_epsilon(4.112836711536223, worksheet.costpercapita_bg58, 0.001); end
   def test_costpercapita_bi58; assert_in_delta(0, (worksheet.costpercapita_bi58||0), 0.001); end
-  def test_costpercapita_bj58; assert_in_epsilon(1.886165805186153, worksheet.costpercapita_bj58, 0.001); end
-  def test_costpercapita_bk58; assert_in_epsilon(2.909402516486329, worksheet.costpercapita_bk58, 0.001); end
+  def test_costpercapita_bj58; assert_in_epsilon(1.8861658051861525, worksheet.costpercapita_bj58, 0.001); end
+  def test_costpercapita_bk58; assert_in_epsilon(2.909402516486328, worksheet.costpercapita_bk58, 0.001); end
   def test_costpercapita_bl58; assert_in_epsilon(4.541654801529277, worksheet.costpercapita_bl58, 0.001); end
   def test_costpercapita_bm58; assert_in_epsilon(7.818538400451699, worksheet.costpercapita_bm58, 0.001); end
   def test_costpercapita_bn58; assert_in_epsilon(12.003907116994146, worksheet.costpercapita_bn58, 0.001); end
-  def test_costpercapita_bo58; assert_in_epsilon(16.0242604918571, worksheet.costpercapita_bo58, 0.001); end
+  def test_costpercapita_bo58; assert_in_epsilon(16.024260491857095, worksheet.costpercapita_bo58, 0.001); end
   def test_costpercapita_bp58; assert_in_epsilon(21.470327092320172, worksheet.costpercapita_bp58, 0.001); end
   def test_costpercapita_bq58; assert_in_epsilon(24.24257745930299, worksheet.costpercapita_bq58, 0.001); end
   def test_costpercapita_bs58; assert_in_delta(0, (worksheet.costpercapita_bs58||0), 0.001); end
   def test_costpercapita_bt58; assert_in_epsilon(2.8071116440810617, worksheet.costpercapita_bt58, 0.001); end
-  def test_costpercapita_bu58; assert_in_epsilon(4.597568258107719, worksheet.costpercapita_bu58, 0.001); end
-  def test_costpercapita_bv58; assert_in_epsilon(7.055098871883486, worksheet.costpercapita_bv58, 0.001); end
+  def test_costpercapita_bu58; assert_in_epsilon(4.597568258107718, worksheet.costpercapita_bu58, 0.001); end
+  def test_costpercapita_bv58; assert_in_epsilon(7.0550988718834855, worksheet.costpercapita_bv58, 0.001); end
   def test_costpercapita_bw58; assert_in_epsilon(12.065977359247945, worksheet.costpercapita_bw58, 0.001); end
   def test_costpercapita_bx58; assert_in_epsilon(18.46683725874385, worksheet.costpercapita_bx58, 0.001); end
-  def test_costpercapita_by58; assert_in_epsilon(24.619513207233773, worksheet.costpercapita_by58, 0.001); end
+  def test_costpercapita_by58; assert_in_epsilon(24.61951320723377, worksheet.costpercapita_by58, 0.001); end
   def test_costpercapita_bz58; assert_in_epsilon(32.12369633521958, worksheet.costpercapita_bz58, 0.001); end
   def test_costpercapita_ca58; assert_in_epsilon(36.89251873850441, worksheet.costpercapita_ca58, 0.001); end
-  def test_costpercapita_cc58; assert_in_epsilon(15.403146852557983, worksheet.costpercapita_cc58, 0.001); end
-  def test_costpercapita_cd58; assert_in_epsilon(260.6819500373454, worksheet.costpercapita_cd58, 0.001); end
+  def test_costpercapita_cc58; assert_in_epsilon(15.40314685255798, worksheet.costpercapita_cc58, 0.001); end
+  def test_costpercapita_cd58; assert_in_epsilon(260.68195003734536, worksheet.costpercapita_cd58, 0.001); end
   def test_costpercapita_cf58; assert_in_delta(0, (worksheet.costpercapita_cf58||0), 0.001); end
   def test_costpercapita_cg58; assert_in_epsilon(-2.7949360259089384, worksheet.costpercapita_cg58, 0.001); end
-  def test_costpercapita_ch58; assert_in_delta(0.2166746022814032, worksheet.costpercapita_ch58, 0.001); end
-  def test_costpercapita_ci58; assert_in_delta(0.267143416572239, worksheet.costpercapita_ci58, 0.001); end
+  def test_costpercapita_ch58; assert_in_delta(0.21667460228140234, worksheet.costpercapita_ch58, 0.001); end
+  def test_costpercapita_ci58; assert_in_delta(0.26714341657223817, worksheet.costpercapita_ci58, 0.001); end
   def test_costpercapita_cj58; assert_in_delta(-0.6219978568643478, worksheet.costpercapita_cj58, 0.001); end
   def test_costpercapita_ck58; assert_in_epsilon(1.1595471792117014, worksheet.costpercapita_ck58, 0.001); end
-  def test_costpercapita_cl58; assert_in_epsilon(5.411171562845053, worksheet.costpercapita_cl58, 0.001); end
+  def test_costpercapita_cl58; assert_in_epsilon(5.411171562845049, worksheet.costpercapita_cl58, 0.001); end
   def test_costpercapita_cm58; assert_in_epsilon(11.06894726916254, worksheet.costpercapita_cm58, 0.001); end
   def test_costpercapita_cn58; assert_in_epsilon(14.03530543240543, worksheet.costpercapita_cn58, 0.001); end
-  def test_costpercapita_cp58; assert_in_epsilon(3.1935395088561203, worksheet.costpercapita_cp58, 0.001); end
-  def test_costpercapita_cq58; assert_in_epsilon(35.94188899492508, worksheet.costpercapita_cq58, 0.001); end
+  def test_costpercapita_cp58; assert_in_epsilon(3.1935395088561194, worksheet.costpercapita_cp58, 0.001); end
+  def test_costpercapita_cq58; assert_in_epsilon(35.94188899492507, worksheet.costpercapita_cq58, 0.001); end
   def test_costpercapita_cr58; assert_equal("ok", worksheet.costpercapita_cr58); end
   def test_costpercapita_a59; assert_equal("II.a", worksheet.costpercapita_a59); end
   def test_costpercapita_b59; assert_equal("Nuclear power", worksheet.costpercapita_b59); end
@@ -12810,28 +13421,28 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aw59; assert_in_epsilon(30, worksheet.costpercapita_aw59, 0.001); end
   def test_costpercapita_ay59; assert_in_delta(0, (worksheet.costpercapita_ay59||0), 0.001); end
   def test_costpercapita_az59; assert_in_delta(0, (worksheet.costpercapita_az59||0), 0.001); end
-  def test_costpercapita_ba59; assert_in_epsilon(4.650263345310182, worksheet.costpercapita_ba59, 0.001); end
+  def test_costpercapita_ba59; assert_in_epsilon(4.650263345310181, worksheet.costpercapita_ba59, 0.001); end
   def test_costpercapita_bb59; assert_in_epsilon(8.269718089730569, worksheet.costpercapita_bb59, 0.001); end
-  def test_costpercapita_bc59; assert_in_epsilon(7.869145795006421, worksheet.costpercapita_bc59, 0.001); end
+  def test_costpercapita_bc59; assert_in_epsilon(7.869145795006419, worksheet.costpercapita_bc59, 0.001); end
   def test_costpercapita_bd59; assert_in_epsilon(7.513254081491332, worksheet.costpercapita_bd59, 0.001); end
   def test_costpercapita_be59; assert_in_epsilon(7.1861317708952, worksheet.costpercapita_be59, 0.001); end
   def test_costpercapita_bf59; assert_in_epsilon(7.042783350662012, worksheet.costpercapita_bf59, 0.001); end
   def test_costpercapita_bg59; assert_in_epsilon(6.911352792507553, worksheet.costpercapita_bg59, 0.001); end
   def test_costpercapita_bi59; assert_in_delta(0, (worksheet.costpercapita_bi59||0), 0.001); end
   def test_costpercapita_bj59; assert_in_delta(0, (worksheet.costpercapita_bj59||0), 0.001); end
-  def test_costpercapita_bk59; assert_in_epsilon(4.650263345310182, worksheet.costpercapita_bk59, 0.001); end
-  def test_costpercapita_bl59; assert_in_epsilon(12.77599312335912, worksheet.costpercapita_bl59, 0.001); end
+  def test_costpercapita_bk59; assert_in_epsilon(4.650263345310181, worksheet.costpercapita_bk59, 0.001); end
+  def test_costpercapita_bl59; assert_in_epsilon(12.775993123359118, worksheet.costpercapita_bl59, 0.001); end
   def test_costpercapita_bm59; assert_in_epsilon(20.296096830276884, worksheet.costpercapita_bm59, 0.001); end
-  def test_costpercapita_bn59; assert_in_epsilon(27.331262228581817, worksheet.costpercapita_bn59, 0.001); end
+  def test_costpercapita_bn59; assert_in_epsilon(27.331262228581814, worksheet.costpercapita_bn59, 0.001); end
   def test_costpercapita_bo59; assert_in_epsilon(33.93451694423008, worksheet.costpercapita_bo59, 0.001); end
   def test_costpercapita_bp59; assert_in_epsilon(47.67028564978398, worksheet.costpercapita_bp59, 0.001); end
   def test_costpercapita_bq59; assert_in_epsilon(49.663551513121845, worksheet.costpercapita_bq59, 0.001); end
   def test_costpercapita_bs59; assert_in_epsilon(14.590759141006375, worksheet.costpercapita_bs59, 0.001); end
   def test_costpercapita_bt59; assert_in_epsilon(10.81824674354496, worksheet.costpercapita_bt59, 0.001); end
-  def test_costpercapita_bu59; assert_in_epsilon(12.75374841954812, worksheet.costpercapita_bu59, 0.001); end
+  def test_costpercapita_bu59; assert_in_epsilon(12.753748419548119, worksheet.costpercapita_bu59, 0.001); end
   def test_costpercapita_bv59; assert_in_epsilon(20.62856614209948, worksheet.costpercapita_bv59, 0.001); end
   def test_costpercapita_bw59; assert_in_epsilon(31.690549231453375, worksheet.costpercapita_bw59, 0.001); end
-  def test_costpercapita_bx59; assert_in_epsilon(40.291274355185955, worksheet.costpercapita_bx59, 0.001); end
+  def test_costpercapita_bx59; assert_in_epsilon(40.29127435518595, worksheet.costpercapita_bx59, 0.001); end
   def test_costpercapita_by59; assert_in_epsilon(50.20784315819915, worksheet.costpercapita_by59, 0.001); end
   def test_costpercapita_bz59; assert_in_epsilon(67.1370899251932, worksheet.costpercapita_bz59, 0.001); end
   def test_costpercapita_ca59; assert_in_epsilon(72.21951480195402, worksheet.costpercapita_ca59, 0.001); end
@@ -12839,15 +13450,15 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cd59; assert_in_epsilon(620.1188924862674, worksheet.costpercapita_cd59, 0.001); end
   def test_costpercapita_cf59; assert_in_delta(0, (worksheet.costpercapita_cf59||0), 0.001); end
   def test_costpercapita_cg59; assert_in_delta(0, (worksheet.costpercapita_cg59||0), 0.001); end
-  def test_costpercapita_ch59; assert_in_epsilon(-6.890798527910173, worksheet.costpercapita_ch59, 0.001); end
-  def test_costpercapita_ci59; assert_in_epsilon(-7.747861346930887, worksheet.costpercapita_ci59, 0.001); end
+  def test_costpercapita_ch59; assert_in_epsilon(-6.8907985279101736, worksheet.costpercapita_ch59, 0.001); end
+  def test_costpercapita_ci59; assert_in_epsilon(-7.747861346930888, worksheet.costpercapita_ci59, 0.001); end
   def test_costpercapita_cj59; assert_in_delta(0.7663859804275607, worksheet.costpercapita_cj59, 0.001); end
-  def test_costpercapita_ck59; assert_in_epsilon(8.684806364707931, worksheet.costpercapita_ck59, 0.001); end
+  def test_costpercapita_ck59; assert_in_epsilon(8.684806364707928, worksheet.costpercapita_ck59, 0.001); end
   def test_costpercapita_cl59; assert_in_epsilon(16.099915925202396, worksheet.costpercapita_cl59, 0.001); end
   def test_costpercapita_cm59; assert_in_epsilon(30.19144792080912, worksheet.costpercapita_cm59, 0.001); end
   def test_costpercapita_cn59; assert_in_epsilon(32.51089922592895, worksheet.costpercapita_cn59, 0.001); end
   def test_costpercapita_cp59; assert_in_epsilon(8.179421726914988, worksheet.costpercapita_cp59, 0.001); end
-  def test_costpercapita_cq59; assert_in_epsilon(90.92006012476989, worksheet.costpercapita_cq59, 0.001); end
+  def test_costpercapita_cq59; assert_in_epsilon(90.92006012476988, worksheet.costpercapita_cq59, 0.001); end
   def test_costpercapita_cr59; assert_equal("ok", worksheet.costpercapita_cr59); end
   def test_costpercapita_a60; assert_equal("III.a.1", worksheet.costpercapita_a60); end
   def test_costpercapita_b60; assert_equal("Onshore wind", worksheet.costpercapita_b60); end
@@ -12892,43 +13503,43 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at60; assert_in_epsilon(701.4582174188145, worksheet.costpercapita_at60, 0.001); end
   def test_costpercapita_av60; assert_in_delta(0.07, worksheet.costpercapita_av60, 0.001); end
   def test_costpercapita_aw60; assert_in_epsilon(20, worksheet.costpercapita_aw60, 0.001); end
-  def test_costpercapita_ay60; assert_in_epsilon(5.435415920189893, worksheet.costpercapita_ay60, 0.001); end
-  def test_costpercapita_az60; assert_in_epsilon(14.771898485025062, worksheet.costpercapita_az60, 0.001); end
+  def test_costpercapita_ay60; assert_in_epsilon(5.435415920189892, worksheet.costpercapita_ay60, 0.001); end
+  def test_costpercapita_az60; assert_in_epsilon(14.771898485025064, worksheet.costpercapita_az60, 0.001); end
   def test_costpercapita_ba60; assert_in_epsilon(15.26056699614987, worksheet.costpercapita_ba60, 0.001); end
-  def test_costpercapita_bb60; assert_in_epsilon(14.544635185344669, worksheet.costpercapita_bb60, 0.001); end
+  def test_costpercapita_bb60; assert_in_epsilon(14.544635185344667, worksheet.costpercapita_bb60, 0.001); end
   def test_costpercapita_bc60; assert_in_epsilon(13.91051193842267, worksheet.costpercapita_bc60, 0.001); end
   def test_costpercapita_bd60; assert_in_epsilon(13.35165564755153, worksheet.costpercapita_bd60, 0.001); end
   def test_costpercapita_be60; assert_in_epsilon(12.840658909011447, worksheet.costpercapita_be60, 0.001); end
-  def test_costpercapita_bf60; assert_in_epsilon(12.362773531809626, worksheet.costpercapita_bf60, 0.001); end
+  def test_costpercapita_bf60; assert_in_epsilon(12.362773531809625, worksheet.costpercapita_bf60, 0.001); end
   def test_costpercapita_bg60; assert_in_epsilon(11.914459923277798, worksheet.costpercapita_bg60, 0.001); end
-  def test_costpercapita_bi60; assert_in_epsilon(5.435415920189893, worksheet.costpercapita_bi60, 0.001); end
+  def test_costpercapita_bi60; assert_in_epsilon(5.435415920189892, worksheet.costpercapita_bi60, 0.001); end
   def test_costpercapita_bj60; assert_in_epsilon(20.028081188838467, worksheet.costpercapita_bj60, 0.001); end
-  def test_costpercapita_bk60; assert_in_epsilon(34.632965849859076, worksheet.costpercapita_bk60, 0.001); end
+  def test_costpercapita_bk60; assert_in_epsilon(34.63296584985908, worksheet.costpercapita_bk60, 0.001); end
   def test_costpercapita_bl60; assert_in_epsilon(48.10524407153244, worksheet.costpercapita_bl60, 0.001); end
   def test_costpercapita_bm60; assert_in_epsilon(55.90942767644327, worksheet.costpercapita_bm60, 0.001); end
-  def test_costpercapita_bn60; assert_in_epsilon(54.79372960823374, worksheet.costpercapita_bn60, 0.001); end
+  def test_costpercapita_bn60; assert_in_epsilon(54.79372960823373, worksheet.costpercapita_bn60, 0.001); end
   def test_costpercapita_bo60; assert_in_epsilon(52.72016067402365, worksheet.costpercapita_bo60, 0.001); end
-  def test_costpercapita_bp60; assert_in_epsilon(63.80953550380566, worksheet.costpercapita_bp60, 0.001); end
+  def test_costpercapita_bp60; assert_in_epsilon(63.80953550380565, worksheet.costpercapita_bp60, 0.001); end
   def test_costpercapita_bq60; assert_in_epsilon(48.963456506335646, worksheet.costpercapita_bq60, 0.001); end
-  def test_costpercapita_bs60; assert_in_epsilon(6.404942514643801, worksheet.costpercapita_bs60, 0.001); end
+  def test_costpercapita_bs60; assert_in_epsilon(6.4049425146438, worksheet.costpercapita_bs60, 0.001); end
   def test_costpercapita_bt60; assert_in_epsilon(22.3676631807173, worksheet.costpercapita_bt60, 0.001); end
-  def test_costpercapita_bu60; assert_in_epsilon(38.3682010037281, worksheet.costpercapita_bu60, 0.001); end
+  def test_costpercapita_bu60; assert_in_epsilon(38.36820100372811, worksheet.costpercapita_bu60, 0.001); end
   def test_costpercapita_bv60; assert_in_epsilon(52.918395984699444, worksheet.costpercapita_bv60, 0.001); end
   def test_costpercapita_bw60; assert_in_epsilon(61.35724162419214, worksheet.costpercapita_bw60, 0.001); end
-  def test_costpercapita_bx60; assert_in_epsilon(60.220089464196576, worksheet.costpercapita_bx60, 0.001); end
+  def test_costpercapita_bx60; assert_in_epsilon(60.22008946419656, worksheet.costpercapita_bx60, 0.001); end
   def test_costpercapita_by60; assert_in_epsilon(58.03079588371508, worksheet.costpercapita_by60, 0.001); end
-  def test_costpercapita_bz60; assert_in_epsilon(69.01423455869023, worksheet.costpercapita_bz60, 0.001); end
+  def test_costpercapita_bz60; assert_in_epsilon(69.01423455869022, worksheet.costpercapita_bz60, 0.001); end
   def test_costpercapita_ca60; assert_in_epsilon(54.07102684551932, worksheet.costpercapita_ca60, 0.001); end
-  def test_costpercapita_cc60; assert_in_epsilon(46.97251011778911, worksheet.costpercapita_cc60, 0.001); end
+  def test_costpercapita_cc60; assert_in_epsilon(46.972510117789106, worksheet.costpercapita_cc60, 0.001); end
   def test_costpercapita_cd60; assert_in_epsilon(957.1903285501063, worksheet.costpercapita_cd60, 0.001); end
-  def test_costpercapita_cf60; assert_in_epsilon(-13.758875309409127, worksheet.costpercapita_cf60, 0.001); end
+  def test_costpercapita_cf60; assert_in_epsilon(-13.75887530940913, worksheet.costpercapita_cf60, 0.001); end
   def test_costpercapita_cg60; assert_in_epsilon(-11.27065940789636, worksheet.costpercapita_cg60, 0.001); end
-  def test_costpercapita_ch60; assert_in_epsilon(2.2988330194859787, worksheet.costpercapita_ch60, 0.001); end
+  def test_costpercapita_ch60; assert_in_epsilon(2.298833019485986, worksheet.costpercapita_ch60, 0.001); end
   def test_costpercapita_ci60; assert_in_epsilon(17.288029601657033, worksheet.costpercapita_ci60, 0.001); end
   def test_costpercapita_cj60; assert_in_epsilon(26.43579534882879, worksheet.costpercapita_cj60, 0.001); end
-  def test_costpercapita_ck60; assert_in_epsilon(26.504203581956293, worksheet.costpercapita_ck60, 0.001); end
+  def test_costpercapita_ck60; assert_in_epsilon(26.50420358195629, worksheet.costpercapita_ck60, 0.001); end
   def test_costpercapita_cl60; assert_in_epsilon(25.513335993247406, worksheet.costpercapita_cl60, 0.001); end
-  def test_costpercapita_cm60; assert_in_epsilon(37.6152557217894, worksheet.costpercapita_cm60, 0.001); end
+  def test_costpercapita_cm60; assert_in_epsilon(37.61525572178939, worksheet.costpercapita_cm60, 0.001); end
   def test_costpercapita_cn60; assert_in_epsilon(23.719064875368367, worksheet.costpercapita_cn60, 0.001); end
   def test_costpercapita_cp60; assert_in_epsilon(14.927220380558643, worksheet.costpercapita_cp60, 0.001); end
   def test_costpercapita_cq60; assert_in_epsilon(255.73211113129184, worksheet.costpercapita_cq60, 0.001); end
@@ -12976,31 +13587,31 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at61; assert_in_epsilon(1979.9368464012825, worksheet.costpercapita_at61, 0.001); end
   def test_costpercapita_av61; assert_in_delta(0.07, worksheet.costpercapita_av61, 0.001); end
   def test_costpercapita_aw61; assert_in_epsilon(20, worksheet.costpercapita_aw61, 0.001); end
-  def test_costpercapita_ay61; assert_in_epsilon(3.314699092367326, worksheet.costpercapita_ay61, 0.001); end
+  def test_costpercapita_ay61; assert_in_epsilon(3.3146990923673254, worksheet.costpercapita_ay61, 0.001); end
   def test_costpercapita_az61; assert_in_epsilon(18.2659826349043, worksheet.costpercapita_az61, 0.001); end
   def test_costpercapita_ba61; assert_in_epsilon(25.76884924234003, worksheet.costpercapita_ba61, 0.001); end
-  def test_costpercapita_bb61; assert_in_epsilon(41.14572697767406, worksheet.costpercapita_bb61, 0.001); end
+  def test_costpercapita_bb61; assert_in_epsilon(41.14572697767405, worksheet.costpercapita_bb61, 0.001); end
   def test_costpercapita_bc61; assert_in_epsilon(38.740321939267226, worksheet.costpercapita_bc61, 0.001); end
-  def test_costpercapita_bd61; assert_in_epsilon(37.14714570785315, worksheet.costpercapita_bd61, 0.001); end
+  def test_costpercapita_bd61; assert_in_epsilon(37.14714570785314, worksheet.costpercapita_bd61, 0.001); end
   def test_costpercapita_be61; assert_in_epsilon(35.68882552422233, worksheet.costpercapita_be61, 0.001); end
   def test_costpercapita_bf61; assert_in_epsilon(34.32408911935293, worksheet.costpercapita_bf61, 0.001); end
   def test_costpercapita_bg61; assert_in_epsilon(32.658525011124475, worksheet.costpercapita_bg61, 0.001); end
-  def test_costpercapita_bi61; assert_in_epsilon(3.314699092367326, worksheet.costpercapita_bi61, 0.001); end
+  def test_costpercapita_bi61; assert_in_epsilon(3.3146990923673254, worksheet.costpercapita_bi61, 0.001); end
   def test_costpercapita_bj61; assert_in_epsilon(21.47137929515444, worksheet.costpercapita_bj61, 0.001); end
   def test_costpercapita_bk61; assert_in_epsilon(46.53729529182046, worksheet.costpercapita_bk61, 0.001); end
-  def test_costpercapita_bl61; assert_in_epsilon(86.24206590171019, worksheet.costpercapita_bl61, 0.001); end
-  def test_costpercapita_bm61; assert_in_epsilon(119.70386666892632, worksheet.costpercapita_bm61, 0.001); end
-  def test_costpercapita_bn61; assert_in_epsilon(137.77040220958406, worksheet.costpercapita_bn61, 0.001); end
-  def test_costpercapita_bo61; assert_in_epsilon(147.3102649754291, worksheet.costpercapita_bo61, 0.001); end
+  def test_costpercapita_bl61; assert_in_epsilon(86.24206590171016, worksheet.costpercapita_bl61, 0.001); end
+  def test_costpercapita_bm61; assert_in_epsilon(119.7038666689263, worksheet.costpercapita_bm61, 0.001); end
+  def test_costpercapita_bn61; assert_in_epsilon(137.77040220958403, worksheet.costpercapita_bn61, 0.001); end
+  def test_costpercapita_bo61; assert_in_epsilon(147.31026497542908, worksheet.costpercapita_bo61, 0.001); end
   def test_costpercapita_bp61; assert_in_epsilon(177.49581098910116, worksheet.costpercapita_bp61, 0.001); end
   def test_costpercapita_bq61; assert_in_epsilon(135.63105813964873, worksheet.costpercapita_bq61, 0.001); end
-  def test_costpercapita_bs61; assert_in_epsilon(4.89792171177727, worksheet.costpercapita_bs61, 0.001); end
+  def test_costpercapita_bs61; assert_in_epsilon(4.897921711777269, worksheet.costpercapita_bs61, 0.001); end
   def test_costpercapita_bt61; assert_in_epsilon(29.275480830005247, worksheet.costpercapita_bt61, 0.001); end
   def test_costpercapita_bu61; assert_in_epsilon(63.089400133161774, worksheet.costpercapita_bu61, 0.001); end
-  def test_costpercapita_bv61; assert_in_epsilon(116.75165972192555, worksheet.costpercapita_bv61, 0.001); end
-  def test_costpercapita_bw61; assert_in_epsilon(162.16264889974167, worksheet.costpercapita_bw61, 0.001); end
-  def test_costpercapita_bx61; assert_in_epsilon(187.33698271727022, worksheet.costpercapita_bx61, 0.001); end
-  def test_costpercapita_by61; assert_in_epsilon(201.11045204456948, worksheet.costpercapita_by61, 0.001); end
+  def test_costpercapita_bv61; assert_in_epsilon(116.75165972192552, worksheet.costpercapita_bv61, 0.001); end
+  def test_costpercapita_bw61; assert_in_epsilon(162.16264889974164, worksheet.costpercapita_bw61, 0.001); end
+  def test_costpercapita_bx61; assert_in_epsilon(187.3369827172702, worksheet.costpercapita_bx61, 0.001); end
+  def test_costpercapita_by61; assert_in_epsilon(201.11045204456946, worksheet.costpercapita_by61, 0.001); end
   def test_costpercapita_bz61; assert_in_epsilon(230.02823142180983, worksheet.costpercapita_bz61, 0.001); end
   def test_costpercapita_ca61; assert_in_epsilon(187.1831324513843, worksheet.costpercapita_ca61, 0.001); end
   def test_costpercapita_cc61; assert_in_epsilon(131.31510110351616, worksheet.costpercapita_cc61, 0.001); end
@@ -13008,14 +13619,14 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cf61; assert_in_epsilon(-8.390624042345651, worksheet.costpercapita_cf61, 0.001); end
   def test_costpercapita_cg61; assert_in_epsilon(-17.23063675335096, worksheet.costpercapita_cg61, 0.001); end
   def test_costpercapita_ch61; assert_in_epsilon(-8.06181590096126, worksheet.costpercapita_ch61, 0.001); end
-  def test_costpercapita_ci61; assert_in_delta(-0.9376176470093139, worksheet.costpercapita_ci61, 0.001); end
-  def test_costpercapita_cj61; assert_in_epsilon(37.620762168830474, worksheet.costpercapita_cj61, 0.001); end
-  def test_costpercapita_ck61; assert_in_epsilon(59.06292404773192, worksheet.costpercapita_ck61, 0.001); end
-  def test_costpercapita_cl61; assert_in_epsilon(71.69267977355868, worksheet.costpercapita_cl61, 0.001); end
+  def test_costpercapita_ci61; assert_in_delta(-0.9376176470093404, worksheet.costpercapita_ci61, 0.001); end
+  def test_costpercapita_cj61; assert_in_epsilon(37.62076216883045, worksheet.costpercapita_cj61, 0.001); end
+  def test_costpercapita_ck61; assert_in_epsilon(59.0629240477319, worksheet.costpercapita_ck61, 0.001); end
+  def test_costpercapita_cl61; assert_in_epsilon(71.69267977355865, worksheet.costpercapita_cl61, 0.001); end
   def test_costpercapita_cm61; assert_in_epsilon(104.76983317014295, worksheet.costpercapita_cm61, 0.001); end
   def test_costpercapita_cn61; assert_in_epsilon(66.43408229856902, worksheet.costpercapita_cn61, 0.001); end
-  def test_costpercapita_cp61; assert_in_epsilon(33.88439856835176, worksheet.costpercapita_cp61, 0.001); end
-  def test_costpercapita_cq61; assert_in_epsilon(483.95927089795924, worksheet.costpercapita_cq61, 0.001); end
+  def test_costpercapita_cp61; assert_in_epsilon(33.88439856835175, worksheet.costpercapita_cp61, 0.001); end
+  def test_costpercapita_cq61; assert_in_epsilon(483.95927089795913, worksheet.costpercapita_cq61, 0.001); end
   def test_costpercapita_cr61; assert_equal("ok", worksheet.costpercapita_cr61); end
   def test_costpercapita_a62; assert_equal("III.b", worksheet.costpercapita_a62); end
   def test_costpercapita_b62; assert_equal("Hydroelectric", worksheet.costpercapita_b62); end
@@ -13060,7 +13671,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at62; assert_in_epsilon(64.39816851742012, worksheet.costpercapita_at62, 0.001); end
   def test_costpercapita_av62; assert_in_delta(0.07, worksheet.costpercapita_av62, 0.001); end
   def test_costpercapita_aw62; assert_in_epsilon(30, worksheet.costpercapita_aw62, 0.001); end
-  def test_costpercapita_ay62; assert_in_delta(0.41198466849397897, worksheet.costpercapita_ay62, 0.001); end
+  def test_costpercapita_ay62; assert_in_delta(0.4119846684939789, worksheet.costpercapita_ay62, 0.001); end
   def test_costpercapita_az62; assert_in_delta(0.1297718063583131, worksheet.costpercapita_az62, 0.001); end
   def test_costpercapita_ba62; assert_in_delta(0.12552331743794762, worksheet.costpercapita_ba62, 0.001); end
   def test_costpercapita_bb62; assert_in_delta(0.06081833968384914, worksheet.costpercapita_bb62, 0.001); end
@@ -13069,11 +13680,11 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_be62; assert_in_delta(0.056531412047084034, worksheet.costpercapita_be62, 0.001); end
   def test_costpercapita_bf62; assert_in_delta(0.055403727658756376, worksheet.costpercapita_bf62, 0.001); end
   def test_costpercapita_bg62; assert_in_delta(0.05436979796257483, worksheet.costpercapita_bg62, 0.001); end
-  def test_costpercapita_bi62; assert_in_delta(0.41198466849397897, worksheet.costpercapita_bi62, 0.001); end
-  def test_costpercapita_bj62; assert_in_delta(0.5281712518783346, worksheet.costpercapita_bj62, 0.001); end
-  def test_costpercapita_bk62; assert_in_delta(0.6364032194103947, worksheet.costpercapita_bk62, 0.001); end
+  def test_costpercapita_bi62; assert_in_delta(0.4119846684939789, worksheet.costpercapita_bi62, 0.001); end
+  def test_costpercapita_bj62; assert_in_delta(0.5281712518783345, worksheet.costpercapita_bj62, 0.001); end
+  def test_costpercapita_bk62; assert_in_delta(0.6364032194103946, worksheet.costpercapita_bk62, 0.001); end
   def test_costpercapita_bl62; assert_in_delta(0.6775163040780796, worksheet.costpercapita_bl62, 0.001); end
-  def test_costpercapita_bm62; assert_in_delta(0.7181632282579806, worksheet.costpercapita_bm62, 0.001); end
+  def test_costpercapita_bm62; assert_in_delta(0.7181632282579805, worksheet.costpercapita_bm62, 0.001); end
   def test_costpercapita_bn62; assert_in_delta(0.7590096880814259, worksheet.costpercapita_bn62, 0.001); end
   def test_costpercapita_bo62; assert_in_delta(0.4522512963766723, worksheet.costpercapita_bo62, 0.001); end
   def test_costpercapita_bp62; assert_in_delta(0.4432298212700535, worksheet.costpercapita_bp62, 0.001); end
@@ -13090,15 +13701,15 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cc62; assert_in_epsilon(3.3387565725655715, worksheet.costpercapita_cc62, 0.001); end
   def test_costpercapita_cd62; assert_in_epsilon(70.78618938487726, worksheet.costpercapita_cd62, 0.001); end
   def test_costpercapita_cf62; assert_in_epsilon(-1.2921269042776187, worksheet.costpercapita_cf62, 0.001); end
-  def test_costpercapita_cg62; assert_in_delta(0.20610251396668366, worksheet.costpercapita_cg62, 0.001); end
-  def test_costpercapita_ch62; assert_in_delta(0.3248784162948405, worksheet.costpercapita_ch62, 0.001); end
+  def test_costpercapita_cg62; assert_in_delta(0.20610251396668355, worksheet.costpercapita_cg62, 0.001); end
+  def test_costpercapita_ch62; assert_in_delta(0.3248784162948404, worksheet.costpercapita_ch62, 0.001); end
   def test_costpercapita_ci62; assert_in_delta(0.5265768477082131, worksheet.costpercapita_ci62, 0.001); end
-  def test_costpercapita_cj62; assert_in_delta(0.5713474609444265, worksheet.costpercapita_cj62, 0.001); end
+  def test_costpercapita_cj62; assert_in_delta(0.5713474609444263, worksheet.costpercapita_cj62, 0.001); end
   def test_costpercapita_ck62; assert_in_delta(0.6156522683237028, worksheet.costpercapita_ck62, 0.001); end
   def test_costpercapita_cl62; assert_in_delta(0.3119511723258713, worksheet.costpercapita_cl62, 0.001); end
   def test_costpercapita_cm62; assert_in_delta(0.3057283936226034, worksheet.costpercapita_cm62, 0.001); end
   def test_costpercapita_cn62; assert_in_delta(0.24565317332672396, worksheet.costpercapita_cn62, 0.001); end
-  def test_costpercapita_cp62; assert_in_delta(0.20175148247060515, worksheet.costpercapita_cp62, 0.001); end
+  def test_costpercapita_cp62; assert_in_delta(0.20175148247060512, worksheet.costpercapita_cp62, 0.001); end
   def test_costpercapita_cq62; assert_in_epsilon(6.388020867457134, worksheet.costpercapita_cq62, 0.001); end
   def test_costpercapita_cr62; assert_equal("ok", worksheet.costpercapita_cr62); end
   def test_costpercapita_a63; assert_equal("III.c", worksheet.costpercapita_a63); end
@@ -13145,45 +13756,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av63; assert_in_delta(0.07, worksheet.costpercapita_av63, 0.001); end
   def test_costpercapita_aw63; assert_in_epsilon(30, worksheet.costpercapita_aw63, 0.001); end
   def test_costpercapita_ay63; assert_in_delta(0.008934545526508228, worksheet.costpercapita_ay63, 0.001); end
-  def test_costpercapita_az63; assert_in_delta(0.09021995899711666, worksheet.costpercapita_az63, 0.001); end
-  def test_costpercapita_ba63; assert_in_epsilon(1.7359415420331512, worksheet.costpercapita_ba63, 0.001); end
+  def test_costpercapita_az63; assert_in_delta(0.09021995899711664, worksheet.costpercapita_az63, 0.001); end
+  def test_costpercapita_ba63; assert_in_epsilon(1.735941542033151, worksheet.costpercapita_ba63, 0.001); end
   def test_costpercapita_bb63; assert_in_delta(0.8242817242986911, worksheet.costpercapita_bb63, 0.001); end
-  def test_costpercapita_bc63; assert_in_epsilon(2.407627507449998, worksheet.costpercapita_bc63, 0.001); end
+  def test_costpercapita_bc63; assert_in_epsilon(2.4076275074499986, worksheet.costpercapita_bc63, 0.001); end
   def test_costpercapita_bd63; assert_in_epsilon(4.363565487417957, worksheet.costpercapita_bd63, 0.001); end
   def test_costpercapita_be63; assert_in_epsilon(11.44730936834658, worksheet.costpercapita_be63, 0.001); end
   def test_costpercapita_bf63; assert_in_epsilon(15.007246338173552, worksheet.costpercapita_bf63, 0.001); end
   def test_costpercapita_bg63; assert_in_epsilon(6.411797760392401, worksheet.costpercapita_bg63, 0.001); end
   def test_costpercapita_bi63; assert_in_delta(0.008934545526508228, worksheet.costpercapita_bi63, 0.001); end
-  def test_costpercapita_bj63; assert_in_delta(0.09885988726616167, worksheet.costpercapita_bj63, 0.001); end
-  def test_costpercapita_bk63; assert_in_epsilon(1.8315649394367983, worksheet.costpercapita_bk63, 0.001); end
-  def test_costpercapita_bl63; assert_in_epsilon(2.5991350489769958, worksheet.costpercapita_bl63, 0.001); end
+  def test_costpercapita_bj63; assert_in_delta(0.09885988726616166, worksheet.costpercapita_bj63, 0.001); end
+  def test_costpercapita_bk63; assert_in_epsilon(1.831564939436798, worksheet.costpercapita_bk63, 0.001); end
+  def test_costpercapita_bl63; assert_in_epsilon(2.5991350489769953, worksheet.costpercapita_bl63, 0.001); end
   def test_costpercapita_bm63; assert_in_epsilon(4.935753788970738, worksheet.costpercapita_bm63, 0.001); end
   def test_costpercapita_bn63; assert_in_epsilon(9.183054161512954, worksheet.costpercapita_bn63, 0.001); end
-  def test_costpercapita_bo63; assert_in_epsilon(20.426994689667747, worksheet.costpercapita_bo63, 0.001); end
+  def test_costpercapita_bo63; assert_in_epsilon(20.426994689667744, worksheet.costpercapita_bo63, 0.001); end
   def test_costpercapita_bp63; assert_in_epsilon(37.204611221590284, worksheet.costpercapita_bp63, 0.001); end
   def test_costpercapita_bq63; assert_in_epsilon(41.418277562226024, worksheet.costpercapita_bq63, 0.001); end
   def test_costpercapita_bs63; assert_in_delta(0.010547493384349961, worksheet.costpercapita_bs63, 0.001); end
-  def test_costpercapita_bt63; assert_in_delta(0.14627779805530397, worksheet.costpercapita_bt63, 0.001); end
+  def test_costpercapita_bt63; assert_in_delta(0.14627779805530394, worksheet.costpercapita_bt63, 0.001); end
   def test_costpercapita_bu63; assert_in_epsilon(2.3186912711596435, worksheet.costpercapita_bu63, 0.001); end
   def test_costpercapita_bv63; assert_in_epsilon(3.5705504027376542, worksheet.costpercapita_bv63, 0.001); end
   def test_costpercapita_bw63; assert_in_epsilon(6.561016137145557, worksheet.costpercapita_bw63, 0.001); end
-  def test_costpercapita_bx63; assert_in_epsilon(13.396763900877387, worksheet.costpercapita_bx63, 0.001); end
+  def test_costpercapita_bx63; assert_in_epsilon(13.396763900877389, worksheet.costpercapita_bx63, 0.001); end
   def test_costpercapita_by63; assert_in_epsilon(29.77031021956346, worksheet.costpercapita_by63, 0.001); end
   def test_costpercapita_bz63; assert_in_epsilon(55.9134725471181, worksheet.costpercapita_bz63, 0.001); end
   def test_costpercapita_ca63; assert_in_epsilon(64.18913791874452, worksheet.costpercapita_ca63, 0.001); end
-  def test_costpercapita_cc63; assert_in_epsilon(19.541863076531772, worksheet.costpercapita_cc63, 0.001); end
+  def test_costpercapita_cc63; assert_in_epsilon(19.541863076531776, worksheet.costpercapita_cc63, 0.001); end
   def test_costpercapita_cd63; assert_in_epsilon(288.3679310470054, worksheet.costpercapita_cd63, 0.001); end
   def test_costpercapita_cf63; assert_in_delta(-0.028021835604941318, worksheet.costpercapita_cf63, 0.001); end
   def test_costpercapita_cg63; assert_in_delta(-0.1250487500877244, worksheet.costpercapita_cg63, 0.001); end
-  def test_costpercapita_ch63; assert_in_epsilon(-2.476709078012809, worksheet.costpercapita_ch63, 0.001); end
-  def test_costpercapita_ci63; assert_in_delta(0.5534258762502602, worksheet.costpercapita_ci63, 0.001); end
+  def test_costpercapita_ch63; assert_in_epsilon(-2.4767090780128096, worksheet.costpercapita_ch63, 0.001); end
+  def test_costpercapita_ci63; assert_in_delta(0.5534258762502599, worksheet.costpercapita_ci63, 0.001); end
   def test_costpercapita_cj63; assert_in_epsilon(-1.03951598992698, worksheet.costpercapita_cj63, 0.001); end
-  def test_costpercapita_ck63; assert_in_epsilon(-1.6464786065458943, worksheet.costpercapita_ck63, 0.001); end
-  def test_costpercapita_cl63; assert_in_epsilon(-7.983031988761279, worksheet.costpercapita_cl63, 0.001); end
+  def test_costpercapita_ck63; assert_in_epsilon(-1.6464786065458927, worksheet.costpercapita_ck63, 0.001); end
+  def test_costpercapita_cl63; assert_in_epsilon(-7.983031988761282, worksheet.costpercapita_cl63, 0.001); end
   def test_costpercapita_cm63; assert_in_delta(-0.04049635069233359, worksheet.costpercapita_cm63, 0.001); end
   def test_costpercapita_cn63; assert_in_epsilon(25.505425068422042, worksheet.costpercapita_cn63, 0.001); end
-  def test_costpercapita_cp63; assert_in_epsilon(1.4132831494489269, worksheet.costpercapita_cp63, 0.001); end
-  def test_costpercapita_cq63; assert_in_epsilon(5.747535251891002, worksheet.costpercapita_cq63, 0.001); end
+  def test_costpercapita_cp63; assert_in_epsilon(1.4132831494489266, worksheet.costpercapita_cp63, 0.001); end
+  def test_costpercapita_cq63; assert_in_epsilon(5.7475352518909935, worksheet.costpercapita_cq63, 0.001); end
   def test_costpercapita_cr63; assert_equal("ok", worksheet.costpercapita_cr63); end
   def test_costpercapita_a64; assert_equal("III.d", worksheet.costpercapita_a64); end
   def test_costpercapita_b64; assert_equal("Geothermal", worksheet.costpercapita_b64); end
@@ -13313,45 +13924,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av65; assert_in_delta(0.07, worksheet.costpercapita_av65, 0.001); end
   def test_costpercapita_aw65; assert_in_epsilon(25, worksheet.costpercapita_aw65, 0.001); end
   def test_costpercapita_ay65; assert_in_delta(0.07355156059550892, worksheet.costpercapita_ay65, 0.001); end
-  def test_costpercapita_az65; assert_in_delta(0.0774970928316865, worksheet.costpercapita_az65, 0.001); end
+  def test_costpercapita_az65; assert_in_delta(0.07749709283168649, worksheet.costpercapita_az65, 0.001); end
   def test_costpercapita_ba65; assert_in_delta(0.4852387369801243, worksheet.costpercapita_ba65, 0.001); end
   def test_costpercapita_bb65; assert_in_delta(0.9826177693276255, worksheet.costpercapita_bb65, 0.001); end
-  def test_costpercapita_bc65; assert_in_epsilon(2.289164410393773, worksheet.costpercapita_bc65, 0.001); end
+  def test_costpercapita_bc65; assert_in_epsilon(2.2891644103937727, worksheet.costpercapita_bc65, 0.001); end
   def test_costpercapita_bd65; assert_in_epsilon(3.10937302325245, worksheet.costpercapita_bd65, 0.001); end
-  def test_costpercapita_be65; assert_in_epsilon(5.2788005343034445, worksheet.costpercapita_be65, 0.001); end
+  def test_costpercapita_be65; assert_in_epsilon(5.278800534303444, worksheet.costpercapita_be65, 0.001); end
   def test_costpercapita_bf65; assert_in_epsilon(9.18588054854795, worksheet.costpercapita_bf65, 0.001); end
   def test_costpercapita_bg65; assert_in_epsilon(15.8539931278126, worksheet.costpercapita_bg65, 0.001); end
   def test_costpercapita_bi65; assert_in_delta(0.07355156059550892, worksheet.costpercapita_bi65, 0.001); end
-  def test_costpercapita_bj65; assert_in_delta(0.14862328562303614, worksheet.costpercapita_bj65, 0.001); end
+  def test_costpercapita_bj65; assert_in_delta(0.14862328562303612, worksheet.costpercapita_bj65, 0.001); end
   def test_costpercapita_bk65; assert_in_delta(0.6289963711184738, worksheet.costpercapita_bk65, 0.001); end
   def test_costpercapita_bl65; assert_in_epsilon(1.5921382271900126, worksheet.costpercapita_bl65, 0.001); end
   def test_costpercapita_bm65; assert_in_epsilon(3.8378051774663318, worksheet.costpercapita_bm65, 0.001); end
-  def test_costpercapita_bn65; assert_in_epsilon(6.793457449964087, worksheet.costpercapita_bn65, 0.001); end
+  def test_costpercapita_bn65; assert_in_epsilon(6.7934574499640865, worksheet.costpercapita_bn65, 0.001); end
   def test_costpercapita_bo65; assert_in_epsilon(11.859859259408069, worksheet.costpercapita_bo65, 0.001); end
   def test_costpercapita_bp65; assert_in_epsilon(22.524743376391775, worksheet.costpercapita_bp65, 0.001); end
   def test_costpercapita_bq65; assert_in_epsilon(37.07995446643276, worksheet.costpercapita_bq65, 0.001); end
   def test_costpercapita_bs65; assert_in_delta(0.07355156059550892, worksheet.costpercapita_bs65, 0.001); end
-  def test_costpercapita_bt65; assert_in_delta(0.14862328562303614, worksheet.costpercapita_bt65, 0.001); end
+  def test_costpercapita_bt65; assert_in_delta(0.14862328562303612, worksheet.costpercapita_bt65, 0.001); end
   def test_costpercapita_bu65; assert_in_delta(0.6289963711184738, worksheet.costpercapita_bu65, 0.001); end
   def test_costpercapita_bv65; assert_in_epsilon(1.5921382271900126, worksheet.costpercapita_bv65, 0.001); end
   def test_costpercapita_bw65; assert_in_epsilon(3.8378051774663318, worksheet.costpercapita_bw65, 0.001); end
-  def test_costpercapita_bx65; assert_in_epsilon(6.793457449964087, worksheet.costpercapita_bx65, 0.001); end
+  def test_costpercapita_bx65; assert_in_epsilon(6.7934574499640865, worksheet.costpercapita_bx65, 0.001); end
   def test_costpercapita_by65; assert_in_epsilon(11.859859259408069, worksheet.costpercapita_by65, 0.001); end
   def test_costpercapita_bz65; assert_in_epsilon(22.524743376391775, worksheet.costpercapita_bz65, 0.001); end
   def test_costpercapita_ca65; assert_in_epsilon(37.07995446643276, worksheet.costpercapita_ca65, 0.001); end
-  def test_costpercapita_cc65; assert_in_epsilon(9.393236574910008, worksheet.costpercapita_cc65, 0.001); end
+  def test_costpercapita_cc65; assert_in_epsilon(9.393236574910006, worksheet.costpercapita_cc65, 0.001); end
   def test_costpercapita_cd65; assert_in_epsilon(136.58725196328135, worksheet.costpercapita_cd65, 0.001); end
   def test_costpercapita_cf65; assert_in_delta(-0.21216151583453507, worksheet.costpercapita_cf65, 0.001); end
-  def test_costpercapita_cg65; assert_in_delta(-0.03200047785434558, worksheet.costpercapita_cg65, 0.001); end
+  def test_costpercapita_cg65; assert_in_delta(-0.03200047785434561, worksheet.costpercapita_cg65, 0.001); end
   def test_costpercapita_ch65; assert_in_delta(-0.5019576254232576, worksheet.costpercapita_ch65, 0.001); end
   def test_costpercapita_ci65; assert_in_delta(-0.6980653542679094, worksheet.costpercapita_ci65, 0.001); end
   def test_costpercapita_cj65; assert_in_epsilon(-1.4975883955780607, worksheet.costpercapita_cj65, 0.001); end
-  def test_costpercapita_ck65; assert_in_delta(-0.4536099817740455, worksheet.costpercapita_ck65, 0.001); end
+  def test_costpercapita_ck65; assert_in_delta(-0.45360998177404627, worksheet.costpercapita_ck65, 0.001); end
   def test_costpercapita_cl65; assert_in_delta(-0.44352896217500154, worksheet.costpercapita_cl65, 0.001); end
   def test_costpercapita_cm65; assert_in_epsilon(1.1150587687904896, worksheet.costpercapita_cm65, 0.001); end
   def test_costpercapita_cn65; assert_in_delta(0.12878894194736726, worksheet.costpercapita_cn65, 0.001); end
-  def test_costpercapita_cp65; assert_in_delta(-0.2883405113521442, worksheet.costpercapita_cp65, 0.001); end
-  def test_costpercapita_cq65; assert_in_epsilon(-7.838298650449388, worksheet.costpercapita_cq65, 0.001); end
+  def test_costpercapita_cp65; assert_in_delta(-0.28834051135214434, worksheet.costpercapita_cp65, 0.001); end
+  def test_costpercapita_cq65; assert_in_epsilon(-7.838298650449389, worksheet.costpercapita_cq65, 0.001); end
   def test_costpercapita_cr65; assert_equal("ok", worksheet.costpercapita_cr65); end
   def test_costpercapita_a66; assert_equal("IV.b", worksheet.costpercapita_a66); end
   def test_costpercapita_b66; assert_equal("Distributed solar thermal", worksheet.costpercapita_b66); end
@@ -13396,46 +14007,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at66; assert_in_epsilon(438.4841802964246, worksheet.costpercapita_at66, 0.001); end
   def test_costpercapita_av66; assert_in_delta(0.07, worksheet.costpercapita_av66, 0.001); end
   def test_costpercapita_aw66; assert_in_epsilon(20, worksheet.costpercapita_aw66, 0.001); end
-  def test_costpercapita_ay66; assert_in_delta(0.649787139120287, worksheet.costpercapita_ay66, 0.001); end
+  def test_costpercapita_ay66; assert_in_delta(0.6497871391202871, worksheet.costpercapita_ay66, 0.001); end
   def test_costpercapita_az66; assert_in_epsilon(2.953693097353335, worksheet.costpercapita_az66, 0.001); end
   def test_costpercapita_ba66; assert_in_epsilon(4.893068729694561, worksheet.costpercapita_ba66, 0.001); end
   def test_costpercapita_bb66; assert_in_epsilon(6.878133185071073, worksheet.costpercapita_bb66, 0.001); end
   def test_costpercapita_bc66; assert_in_epsilon(9.859666015722992, worksheet.costpercapita_bc66, 0.001); end
-  def test_costpercapita_bd66; assert_in_epsilon(13.754769595963056, worksheet.costpercapita_bd66, 0.001); end
+  def test_costpercapita_bd66; assert_in_epsilon(13.754769595963058, worksheet.costpercapita_bd66, 0.001); end
   def test_costpercapita_be66; assert_in_epsilon(17.894258313751116, worksheet.costpercapita_be66, 0.001); end
-  def test_costpercapita_bf66; assert_in_epsilon(22.26277071960595, worksheet.costpercapita_bf66, 0.001); end
-  def test_costpercapita_bg66; assert_in_epsilon(26.85447737278953, worksheet.costpercapita_bg66, 0.001); end
-  def test_costpercapita_bi66; assert_in_delta(0.649787139120287, worksheet.costpercapita_bi66, 0.001); end
-  def test_costpercapita_bj66; assert_in_epsilon(3.5820534605626926, worksheet.costpercapita_bj66, 0.001); end
+  def test_costpercapita_bf66; assert_in_epsilon(22.262770719605946, worksheet.costpercapita_bf66, 0.001); end
+  def test_costpercapita_bg66; assert_in_epsilon(26.854477372789525, worksheet.costpercapita_bg66, 0.001); end
+  def test_costpercapita_bi66; assert_in_delta(0.6497871391202871, worksheet.costpercapita_bi66, 0.001); end
+  def test_costpercapita_bj66; assert_in_epsilon(3.582053460562693, worksheet.costpercapita_bj66, 0.001); end
   def test_costpercapita_bk66; assert_in_epsilon(8.35785238515538, worksheet.costpercapita_bk66, 0.001); end
   def test_costpercapita_bl66; assert_in_epsilon(14.977197418919605, worksheet.costpercapita_bl66, 0.001); end
   def test_costpercapita_bm66; assert_in_epsilon(23.85480510434671, worksheet.costpercapita_bm66, 0.001); end
-  def test_costpercapita_bn66; assert_in_epsilon(34.41819574941537, worksheet.costpercapita_bn66, 0.001); end
+  def test_costpercapita_bn66; assert_in_epsilon(34.418195749415375, worksheet.costpercapita_bn66, 0.001); end
   def test_costpercapita_bo66; assert_in_epsilon(47.17109648445617, worksheet.costpercapita_bo66, 0.001); end
-  def test_costpercapita_bp66; assert_in_epsilon(71.4612691169334, worksheet.costpercapita_bp66, 0.001); end
+  def test_costpercapita_bp66; assert_in_epsilon(71.46126911693338, worksheet.costpercapita_bp66, 0.001); end
   def test_costpercapita_bq66; assert_in_epsilon(78.85851461370252, worksheet.costpercapita_bq66, 0.001); end
-  def test_costpercapita_bs66; assert_in_delta(0.649787139120287, worksheet.costpercapita_bs66, 0.001); end
-  def test_costpercapita_bt66; assert_in_epsilon(3.5820534605626926, worksheet.costpercapita_bt66, 0.001); end
+  def test_costpercapita_bs66; assert_in_delta(0.6497871391202871, worksheet.costpercapita_bs66, 0.001); end
+  def test_costpercapita_bt66; assert_in_epsilon(3.582053460562693, worksheet.costpercapita_bt66, 0.001); end
   def test_costpercapita_bu66; assert_in_epsilon(8.35785238515538, worksheet.costpercapita_bu66, 0.001); end
   def test_costpercapita_bv66; assert_in_epsilon(14.977197418919605, worksheet.costpercapita_bv66, 0.001); end
   def test_costpercapita_bw66; assert_in_epsilon(23.85480510434671, worksheet.costpercapita_bw66, 0.001); end
-  def test_costpercapita_bx66; assert_in_epsilon(34.41819574941537, worksheet.costpercapita_bx66, 0.001); end
+  def test_costpercapita_bx66; assert_in_epsilon(34.418195749415375, worksheet.costpercapita_bx66, 0.001); end
   def test_costpercapita_by66; assert_in_epsilon(47.17109648445617, worksheet.costpercapita_by66, 0.001); end
-  def test_costpercapita_bz66; assert_in_epsilon(71.4612691169334, worksheet.costpercapita_bz66, 0.001); end
+  def test_costpercapita_bz66; assert_in_epsilon(71.46126911693338, worksheet.costpercapita_bz66, 0.001); end
   def test_costpercapita_ca66; assert_in_epsilon(78.85851461370252, worksheet.costpercapita_ca66, 0.001); end
   def test_costpercapita_cc66; assert_in_epsilon(31.481196830290237, worksheet.costpercapita_cc66, 0.001); end
   def test_costpercapita_cd66; assert_in_epsilon(521.1860760516195, worksheet.costpercapita_cd66, 0.001); end
-  def test_costpercapita_cf66; assert_in_epsilon(-1.6448309303442168, worksheet.costpercapita_cf66, 0.001); end
-  def test_costpercapita_cg66; assert_in_epsilon(-2.676239889486104, worksheet.costpercapita_cg66, 0.001); end
+  def test_costpercapita_cf66; assert_in_epsilon(-1.6448309303442166, worksheet.costpercapita_cf66, 0.001); end
+  def test_costpercapita_cg66; assert_in_epsilon(-2.6762398894861037, worksheet.costpercapita_cg66, 0.001); end
   def test_costpercapita_ch66; assert_in_epsilon(-2.009595580179388, worksheet.costpercapita_ch66, 0.001); end
   def test_costpercapita_ci66; assert_in_delta(0.4037892298795247, worksheet.costpercapita_ci66, 0.001); end
   def test_costpercapita_cj66; assert_in_epsilon(2.964116659026521, worksheet.costpercapita_cj66, 0.001); end
-  def test_costpercapita_ck66; assert_in_epsilon(5.274550740730331, worksheet.costpercapita_ck66, 0.001); end
+  def test_costpercapita_ck66; assert_in_epsilon(5.274550740730337, worksheet.costpercapita_ck66, 0.001); end
   def test_costpercapita_cl66; assert_in_epsilon(9.256690986691108, worksheet.costpercapita_cl66, 0.001); end
-  def test_costpercapita_cm66; assert_in_epsilon(24.290847087300303, worksheet.costpercapita_cm66, 0.001); end
+  def test_costpercapita_cm66; assert_in_epsilon(24.29084708730028, worksheet.costpercapita_cm66, 0.001); end
   def test_costpercapita_cn66; assert_in_epsilon(21.959171445057798, worksheet.costpercapita_cn66, 0.001); end
-  def test_costpercapita_cp66; assert_in_epsilon(6.424277749852875, worksheet.costpercapita_cp66, 0.001); end
-  def test_costpercapita_cq66; assert_in_epsilon(82.70189575519505, worksheet.costpercapita_cq66, 0.001); end
+  def test_costpercapita_cp66; assert_in_epsilon(6.424277749852873, worksheet.costpercapita_cp66, 0.001); end
+  def test_costpercapita_cq66; assert_in_epsilon(82.70189575519503, worksheet.costpercapita_cq66, 0.001); end
   def test_costpercapita_cr66; assert_equal("ok", worksheet.costpercapita_cr66); end
   def test_costpercapita_a67; assert_equal("IV.c", worksheet.costpercapita_a67); end
   def test_costpercapita_b67; assert_equal("Micro wind", worksheet.costpercapita_b67); end
@@ -13564,16 +14175,16 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at68; assert_in_epsilon(598.9965289124212, worksheet.costpercapita_at68, 0.001); end
   def test_costpercapita_av68; assert_in_delta(0.07, worksheet.costpercapita_av68, 0.001); end
   def test_costpercapita_aw68; assert_in_epsilon(30, worksheet.costpercapita_aw68, 0.001); end
-  def test_costpercapita_ay68; assert_in_epsilon(2.097319703211269, worksheet.costpercapita_ay68, 0.001); end
+  def test_costpercapita_ay68; assert_in_epsilon(2.0973197032112685, worksheet.costpercapita_ay68, 0.001); end
   def test_costpercapita_az68; assert_in_epsilon(7.784814605315947, worksheet.costpercapita_az68, 0.001); end
   def test_costpercapita_ba68; assert_in_epsilon(4.773084619771284, worksheet.costpercapita_ba68, 0.001); end
-  def test_costpercapita_bb68; assert_in_epsilon(3.419051910532406, worksheet.costpercapita_bb68, 0.001); end
+  def test_costpercapita_bb68; assert_in_epsilon(3.4190519105324055, worksheet.costpercapita_bb68, 0.001); end
   def test_costpercapita_bc68; assert_in_epsilon(3.43333802759947, worksheet.costpercapita_bc68, 0.001); end
   def test_costpercapita_bd68; assert_in_epsilon(3.496230297165662, worksheet.costpercapita_bd68, 0.001); end
   def test_costpercapita_be68; assert_in_epsilon(3.567964885876515, worksheet.costpercapita_be68, 0.001); end
-  def test_costpercapita_bf68; assert_in_epsilon(3.6446361172693194, worksheet.costpercapita_bf68, 0.001); end
-  def test_costpercapita_bg68; assert_in_epsilon(2.868429403528781, worksheet.costpercapita_bg68, 0.001); end
-  def test_costpercapita_bi68; assert_in_epsilon(2.097319703211269, worksheet.costpercapita_bi68, 0.001); end
+  def test_costpercapita_bf68; assert_in_epsilon(3.644636117269319, worksheet.costpercapita_bf68, 0.001); end
+  def test_costpercapita_bg68; assert_in_epsilon(2.8684294035287805, worksheet.costpercapita_bg68, 0.001); end
+  def test_costpercapita_bi68; assert_in_epsilon(2.0973197032112685, worksheet.costpercapita_bi68, 0.001); end
   def test_costpercapita_bj68; assert_in_epsilon(9.812975046072244, worksheet.costpercapita_bj68, 0.001); end
   def test_costpercapita_bk68; assert_in_epsilon(14.264801012450436, worksheet.costpercapita_bk68, 0.001); end
   def test_costpercapita_bl68; assert_in_epsilon(17.24216511699469, worksheet.costpercapita_bl68, 0.001); end
@@ -13585,7 +14196,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_bs68; assert_in_epsilon(10.21700933588699, worksheet.costpercapita_bs68, 0.001); end
   def test_costpercapita_bt68; assert_in_epsilon(20.3869418980544, worksheet.costpercapita_bt68, 0.001); end
   def test_costpercapita_bu68; assert_in_epsilon(30.299445331821897, worksheet.costpercapita_bu68, 0.001); end
-  def test_costpercapita_bv68; assert_in_epsilon(35.64837292335413, worksheet.costpercapita_bv68, 0.001); end
+  def test_costpercapita_bv68; assert_in_epsilon(35.648372923354124, worksheet.costpercapita_bv68, 0.001); end
   def test_costpercapita_bw68; assert_in_epsilon(39.37546019027528, worksheet.costpercapita_bw68, 0.001); end
   def test_costpercapita_bx68; assert_in_epsilon(43.596165209842766, worksheet.costpercapita_bx68, 0.001); end
   def test_costpercapita_by68; assert_in_epsilon(46.281113775014205, worksheet.costpercapita_by68, 0.001); end
@@ -13596,14 +14207,14 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cf68; assert_in_epsilon(-6.577922487497704, worksheet.costpercapita_cf68, 0.001); end
   def test_costpercapita_cg68; assert_in_epsilon(-9.507441962592454, worksheet.costpercapita_cg68, 0.001); end
   def test_costpercapita_ch68; assert_in_epsilon(2.418920288630384, worksheet.costpercapita_ch68, 0.001); end
-  def test_costpercapita_ci68; assert_in_epsilon(8.756733923726491, worksheet.costpercapita_ci68, 0.001); end
+  def test_costpercapita_ci68; assert_in_epsilon(8.756733923726488, worksheet.costpercapita_ci68, 0.001); end
   def test_costpercapita_cj68; assert_in_epsilon(11.683557957608834, worksheet.costpercapita_cj68, 0.001); end
   def test_costpercapita_ck68; assert_in_epsilon(14.547771952097433, worksheet.costpercapita_ck68, 0.001); end
   def test_costpercapita_cl68; assert_in_epsilon(15.675384151010265, worksheet.costpercapita_cl68, 0.001); end
   def test_costpercapita_cm68; assert_in_epsilon(15.208753711647818, worksheet.costpercapita_cm68, 0.001); end
   def test_costpercapita_cn68; assert_in_epsilon(15.416081304060091, worksheet.costpercapita_cn68, 0.001); end
   def test_costpercapita_cp68; assert_in_epsilon(7.513537648743461, worksheet.costpercapita_cp68, 0.001); end
-  def test_costpercapita_cq68; assert_in_epsilon(119.97201389340968, worksheet.costpercapita_cq68, 0.001); end
+  def test_costpercapita_cq68; assert_in_epsilon(119.97201389340967, worksheet.costpercapita_cq68, 0.001); end
   def test_costpercapita_cr68; assert_equal("ok", worksheet.costpercapita_cr68); end
   def test_costpercapita_a69; assert_equal("V.b", worksheet.costpercapita_a69); end
   def test_costpercapita_b69; assert_equal("Bioenergy imports", worksheet.costpercapita_b69); end
@@ -13900,46 +14511,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at72; assert_in_epsilon(230.96989163664938, worksheet.costpercapita_at72, 0.001); end
   def test_costpercapita_av72; assert_in_delta(0.07, worksheet.costpercapita_av72, 0.001); end
   def test_costpercapita_aw72; assert_in_epsilon(15, worksheet.costpercapita_aw72, 0.001); end
-  def test_costpercapita_ay72; assert_in_delta(0.9842887741493158, worksheet.costpercapita_ay72, 0.001); end
-  def test_costpercapita_az72; assert_in_epsilon(2.1752604212378053, worksheet.costpercapita_az72, 0.001); end
-  def test_costpercapita_ba72; assert_in_epsilon(2.7377304989712488, worksheet.costpercapita_ba72, 0.001); end
-  def test_costpercapita_bb72; assert_in_epsilon(3.0748009610049247, worksheet.costpercapita_bb72, 0.001); end
-  def test_costpercapita_bc72; assert_in_epsilon(3.4315984225795626, worksheet.costpercapita_bc72, 0.001); end
-  def test_costpercapita_bd72; assert_in_epsilon(3.675944759159962, worksheet.costpercapita_bd72, 0.001); end
-  def test_costpercapita_be72; assert_in_epsilon(3.9291541648004897, worksheet.costpercapita_be72, 0.001); end
-  def test_costpercapita_bf72; assert_in_epsilon(4.189085579686202, worksheet.costpercapita_bf72, 0.001); end
-  def test_costpercapita_bg72; assert_in_epsilon(4.45620249173134, worksheet.costpercapita_bg72, 0.001); end
-  def test_costpercapita_bi72; assert_in_delta(0.9842887741493158, worksheet.costpercapita_bi72, 0.001); end
-  def test_costpercapita_bj72; assert_in_epsilon(3.1270922048965217, worksheet.costpercapita_bj72, 0.001); end
-  def test_costpercapita_bk72; assert_in_epsilon(5.76244748880155, worksheet.costpercapita_bk72, 0.001); end
-  def test_costpercapita_bl72; assert_in_epsilon(7.76665964094978, worksheet.costpercapita_bl72, 0.001); end
-  def test_costpercapita_bm72; assert_in_epsilon(9.00287690380309, worksheet.costpercapita_bm72, 0.001); end
-  def test_costpercapita_bn72; assert_in_epsilon(9.947056118460189, worksheet.costpercapita_bn72, 0.001); end
-  def test_costpercapita_bo72; assert_in_epsilon(10.806009337150996, worksheet.costpercapita_bo72, 0.001); end
-  def test_costpercapita_bp72; assert_in_epsilon(11.56564775009597, worksheet.costpercapita_bp72, 0.001); end
-  def test_costpercapita_bq72; assert_in_epsilon(12.34602599989382, worksheet.costpercapita_bq72, 0.001); end
+  def test_costpercapita_ay72; assert_in_delta(0.9842887741493159, worksheet.costpercapita_ay72, 0.001); end
+  def test_costpercapita_az72; assert_in_epsilon(2.1752604212378057, worksheet.costpercapita_az72, 0.001); end
+  def test_costpercapita_ba72; assert_in_epsilon(2.737730498971249, worksheet.costpercapita_ba72, 0.001); end
+  def test_costpercapita_bb72; assert_in_epsilon(3.074800961004925, worksheet.costpercapita_bb72, 0.001); end
+  def test_costpercapita_bc72; assert_in_epsilon(3.4315984225795635, worksheet.costpercapita_bc72, 0.001); end
+  def test_costpercapita_bd72; assert_in_epsilon(3.6759447591599623, worksheet.costpercapita_bd72, 0.001); end
+  def test_costpercapita_be72; assert_in_epsilon(3.929154164800491, worksheet.costpercapita_be72, 0.001); end
+  def test_costpercapita_bf72; assert_in_epsilon(4.1890855796862025, worksheet.costpercapita_bf72, 0.001); end
+  def test_costpercapita_bg72; assert_in_epsilon(4.456202491731341, worksheet.costpercapita_bg72, 0.001); end
+  def test_costpercapita_bi72; assert_in_delta(0.9842887741493159, worksheet.costpercapita_bi72, 0.001); end
+  def test_costpercapita_bj72; assert_in_epsilon(3.127092204896522, worksheet.costpercapita_bj72, 0.001); end
+  def test_costpercapita_bk72; assert_in_epsilon(5.762447488801552, worksheet.costpercapita_bk72, 0.001); end
+  def test_costpercapita_bl72; assert_in_epsilon(7.766659640949782, worksheet.costpercapita_bl72, 0.001); end
+  def test_costpercapita_bm72; assert_in_epsilon(9.002876903803092, worksheet.costpercapita_bm72, 0.001); end
+  def test_costpercapita_bn72; assert_in_epsilon(9.947056118460193, worksheet.costpercapita_bn72, 0.001); end
+  def test_costpercapita_bo72; assert_in_epsilon(10.806009337150998, worksheet.costpercapita_bo72, 0.001); end
+  def test_costpercapita_bp72; assert_in_epsilon(11.565647750095973, worksheet.costpercapita_bp72, 0.001); end
+  def test_costpercapita_bq72; assert_in_epsilon(12.346025999893827, worksheet.costpercapita_bq72, 0.001); end
   def test_costpercapita_bs72; assert_in_epsilon(3.972561277864738, worksheet.costpercapita_bs72, 0.001); end
-  def test_costpercapita_bt72; assert_in_epsilon(6.987086517811916, worksheet.costpercapita_bt72, 0.001); end
-  def test_costpercapita_bu72; assert_in_epsilon(10.531718165666572, worksheet.costpercapita_bu72, 0.001); end
-  def test_costpercapita_bv72; assert_in_epsilon(13.04192537666566, worksheet.costpercapita_bv72, 0.001); end
-  def test_costpercapita_bw72; assert_in_epsilon(14.81293366533712, worksheet.costpercapita_bw72, 0.001); end
-  def test_costpercapita_bx72; assert_in_epsilon(16.133355464180717, worksheet.costpercapita_bx72, 0.001); end
+  def test_costpercapita_bt72; assert_in_epsilon(6.987086517811917, worksheet.costpercapita_bt72, 0.001); end
+  def test_costpercapita_bu72; assert_in_epsilon(10.531718165666573, worksheet.costpercapita_bu72, 0.001); end
+  def test_costpercapita_bv72; assert_in_epsilon(13.041925376665661, worksheet.costpercapita_bv72, 0.001); end
+  def test_costpercapita_bw72; assert_in_epsilon(14.812933665337123, worksheet.costpercapita_bw72, 0.001); end
+  def test_costpercapita_bx72; assert_in_epsilon(16.133355464180724, worksheet.costpercapita_bx72, 0.001); end
   def test_costpercapita_by72; assert_in_epsilon(17.381971319921025, worksheet.costpercapita_by72, 0.001); end
   def test_costpercapita_bz72; assert_in_epsilon(18.540970410365126, worksheet.costpercapita_bz72, 0.001); end
-  def test_costpercapita_ca72; assert_in_epsilon(19.731096876604767, worksheet.costpercapita_ca72, 0.001); end
-  def test_costpercapita_cc72; assert_in_epsilon(13.459291008268625, worksheet.costpercapita_cc72, 0.001); end
-  def test_costpercapita_cd72; assert_in_epsilon(266.6062248707028, worksheet.costpercapita_cd72, 0.001); end
+  def test_costpercapita_ca72; assert_in_epsilon(19.73109687660477, worksheet.costpercapita_ca72, 0.001); end
+  def test_costpercapita_cc72; assert_in_epsilon(13.459291008268629, worksheet.costpercapita_cc72, 0.001); end
+  def test_costpercapita_cd72; assert_in_epsilon(266.60622487070293, worksheet.costpercapita_cd72, 0.001); end
   def test_costpercapita_cf72; assert_in_epsilon(-2.0039837295661065, worksheet.costpercapita_cf72, 0.001); end
-  def test_costpercapita_cg72; assert_in_delta(-0.8353247661737639, worksheet.costpercapita_cg72, 0.001); end
-  def test_costpercapita_ch72; assert_in_delta(0.7754446980426126, worksheet.costpercapita_ch72, 0.001); end
-  def test_costpercapita_ci72; assert_in_epsilon(2.1656550938178163, worksheet.costpercapita_ci72, 0.001); end
-  def test_costpercapita_cj72; assert_in_epsilon(2.751936237218519, worksheet.costpercapita_cj72, 0.001); end
-  def test_costpercapita_ck72; assert_in_epsilon(3.2510183676680717, worksheet.costpercapita_ck72, 0.001); end
-  def test_costpercapita_cl72; assert_in_epsilon(3.648729687987133, worksheet.costpercapita_cl72, 0.001); end
-  def test_costpercapita_cm72; assert_in_epsilon(3.9348815061310236, worksheet.costpercapita_cm72, 0.001); end
-  def test_costpercapita_cn72; assert_in_epsilon(4.228684183085391, worksheet.costpercapita_cn72, 0.001); end
-  def test_costpercapita_cp72; assert_in_epsilon(1.990782364245633, worksheet.costpercapita_cp72, 0.001); end
-  def test_costpercapita_cq72; assert_in_epsilon(35.63633323405351, worksheet.costpercapita_cq72, 0.001); end
+  def test_costpercapita_cg72; assert_in_delta(-0.8353247661737635, worksheet.costpercapita_cg72, 0.001); end
+  def test_costpercapita_ch72; assert_in_delta(0.7754446980426143, worksheet.costpercapita_ch72, 0.001); end
+  def test_costpercapita_ci72; assert_in_epsilon(2.165655093817818, worksheet.costpercapita_ci72, 0.001); end
+  def test_costpercapita_cj72; assert_in_epsilon(2.751936237218521, worksheet.costpercapita_cj72, 0.001); end
+  def test_costpercapita_ck72; assert_in_epsilon(3.251018367668075, worksheet.costpercapita_ck72, 0.001); end
+  def test_costpercapita_cl72; assert_in_epsilon(3.6487296879871343, worksheet.costpercapita_cl72, 0.001); end
+  def test_costpercapita_cm72; assert_in_epsilon(3.9348815061310267, worksheet.costpercapita_cm72, 0.001); end
+  def test_costpercapita_cn72; assert_in_epsilon(4.228684183085397, worksheet.costpercapita_cn72, 0.001); end
+  def test_costpercapita_cp72; assert_in_epsilon(1.9907823642456353, worksheet.costpercapita_cp72, 0.001); end
+  def test_costpercapita_cq72; assert_in_epsilon(35.636333234053545, worksheet.costpercapita_cq72, 0.001); end
   def test_costpercapita_cr72; assert_equal("ok", worksheet.costpercapita_cr72); end
   def test_costpercapita_a73; assert_equal("VI.b.Waste", worksheet.costpercapita_a73); end
   def test_costpercapita_b73; assert_equal("Waste arising", worksheet.costpercapita_b73); end
@@ -13984,46 +14595,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at73; assert_in_epsilon(2689.8597876031995, worksheet.costpercapita_at73, 0.001); end
   def test_costpercapita_av73; assert_in_delta(0.07, worksheet.costpercapita_av73, 0.001); end
   def test_costpercapita_aw73; assert_in_epsilon(15, worksheet.costpercapita_aw73, 0.001); end
-  def test_costpercapita_ay73; assert_in_epsilon(13.264501267803894, worksheet.costpercapita_ay73, 0.001); end
-  def test_costpercapita_az73; assert_in_epsilon(23.241459109292133, worksheet.costpercapita_az73, 0.001); end
-  def test_costpercapita_ba73; assert_in_epsilon(25.77075854381026, worksheet.costpercapita_ba73, 0.001); end
-  def test_costpercapita_bb73; assert_in_epsilon(24.841327622372592, worksheet.costpercapita_bb73, 0.001); end
-  def test_costpercapita_bc73; assert_in_epsilon(25.39573910607426, worksheet.costpercapita_bc73, 0.001); end
-  def test_costpercapita_bd73; assert_in_epsilon(26.489165607382546, worksheet.costpercapita_bd73, 0.001); end
-  def test_costpercapita_be73; assert_in_epsilon(25.829437681208702, worksheet.costpercapita_be73, 0.001); end
-  def test_costpercapita_bf73; assert_in_epsilon(26.096639474625256, worksheet.costpercapita_bf73, 0.001); end
-  def test_costpercapita_bg73; assert_in_epsilon(26.921341433361032, worksheet.costpercapita_bg73, 0.001); end
-  def test_costpercapita_bi73; assert_in_epsilon(13.264501267803894, worksheet.costpercapita_bi73, 0.001); end
+  def test_costpercapita_ay73; assert_in_epsilon(13.264501267803897, worksheet.costpercapita_ay73, 0.001); end
+  def test_costpercapita_az73; assert_in_epsilon(23.241459109292137, worksheet.costpercapita_az73, 0.001); end
+  def test_costpercapita_ba73; assert_in_epsilon(25.770758543810267, worksheet.costpercapita_ba73, 0.001); end
+  def test_costpercapita_bb73; assert_in_epsilon(24.8413276223726, worksheet.costpercapita_bb73, 0.001); end
+  def test_costpercapita_bc73; assert_in_epsilon(25.395739106074267, worksheet.costpercapita_bc73, 0.001); end
+  def test_costpercapita_bd73; assert_in_epsilon(26.489165607382553, worksheet.costpercapita_bd73, 0.001); end
+  def test_costpercapita_be73; assert_in_epsilon(25.82943768120871, worksheet.costpercapita_be73, 0.001); end
+  def test_costpercapita_bf73; assert_in_epsilon(26.096639474625263, worksheet.costpercapita_bf73, 0.001); end
+  def test_costpercapita_bg73; assert_in_epsilon(26.92134143336104, worksheet.costpercapita_bg73, 0.001); end
+  def test_costpercapita_bi73; assert_in_epsilon(13.264501267803897, worksheet.costpercapita_bi73, 0.001); end
   def test_costpercapita_bj73; assert_in_epsilon(36.06856252920963, worksheet.costpercapita_bj73, 0.001); end
-  def test_costpercapita_bk73; assert_in_epsilon(60.6585030465238, worksheet.costpercapita_bk73, 0.001); end
-  def test_costpercapita_bl73; assert_in_epsilon(71.59863388922659, worksheet.costpercapita_bl73, 0.001); end
-  def test_costpercapita_bm73; assert_in_epsilon(73.84894327529199, worksheet.costpercapita_bm73, 0.001); end
-  def test_costpercapita_bn73; assert_in_epsilon(74.88018091707443, worksheet.costpercapita_bn73, 0.001); end
-  def test_costpercapita_bo73; assert_in_epsilon(76.02236831964545, worksheet.costpercapita_bo73, 0.001); end
-  def test_costpercapita_bp73; assert_in_epsilon(76.81794593778898, worksheet.costpercapita_bp73, 0.001); end
-  def test_costpercapita_bq73; assert_in_epsilon(77.37275953222726, worksheet.costpercapita_bq73, 0.001); end
+  def test_costpercapita_bk73; assert_in_epsilon(60.658503046523805, worksheet.costpercapita_bk73, 0.001); end
+  def test_costpercapita_bl73; assert_in_epsilon(71.5986338892266, worksheet.costpercapita_bl73, 0.001); end
+  def test_costpercapita_bm73; assert_in_epsilon(73.848943275292, worksheet.costpercapita_bm73, 0.001); end
+  def test_costpercapita_bn73; assert_in_epsilon(74.88018091707445, worksheet.costpercapita_bn73, 0.001); end
+  def test_costpercapita_bo73; assert_in_epsilon(76.02236831964547, worksheet.costpercapita_bo73, 0.001); end
+  def test_costpercapita_bp73; assert_in_epsilon(76.81794593778899, worksheet.costpercapita_bp73, 0.001); end
+  def test_costpercapita_bq73; assert_in_epsilon(77.37275953222728, worksheet.costpercapita_bq73, 0.001); end
   def test_costpercapita_bs73; assert_in_epsilon(90.11130672306733, worksheet.costpercapita_bs73, 0.001); end
   def test_costpercapita_bt73; assert_in_epsilon(115.55995559884597, worksheet.costpercapita_bt73, 0.001); end
   def test_costpercapita_bu73; assert_in_epsilon(142.7162665224417, worksheet.costpercapita_bu73, 0.001); end
-  def test_costpercapita_bv73; assert_in_epsilon(154.37270896395106, worksheet.costpercapita_bv73, 0.001); end
-  def test_costpercapita_bw73; assert_in_epsilon(157.59330974234027, worksheet.costpercapita_bw73, 0.001); end
+  def test_costpercapita_bv73; assert_in_epsilon(154.37270896395108, worksheet.costpercapita_bv73, 0.001); end
+  def test_costpercapita_bw73; assert_in_epsilon(157.5933097423403, worksheet.costpercapita_bw73, 0.001); end
   def test_costpercapita_bx73; assert_in_epsilon(158.744457558568, worksheet.costpercapita_bx73, 0.001); end
-  def test_costpercapita_by73; assert_in_epsilon(160.17168776587215, worksheet.costpercapita_by73, 0.001); end
-  def test_costpercapita_bz73; assert_in_epsilon(161.3459759846298, worksheet.costpercapita_bz73, 0.001); end
-  def test_costpercapita_ca73; assert_in_epsilon(162.36691657714445, worksheet.costpercapita_ca73, 0.001); end
-  def test_costpercapita_cc73; assert_in_epsilon(144.77584282631787, worksheet.costpercapita_cc73, 0.001); end
+  def test_costpercapita_by73; assert_in_epsilon(160.17168776587218, worksheet.costpercapita_by73, 0.001); end
+  def test_costpercapita_bz73; assert_in_epsilon(161.34597598462983, worksheet.costpercapita_bz73, 0.001); end
+  def test_costpercapita_ca73; assert_in_epsilon(162.3669165771445, worksheet.costpercapita_ca73, 0.001); end
+  def test_costpercapita_cc73; assert_in_epsilon(144.7758428263179, worksheet.costpercapita_cc73, 0.001); end
   def test_costpercapita_cd73; assert_in_epsilon(3023.539905771749, worksheet.costpercapita_cd73, 0.001); end
-  def test_costpercapita_cf73; assert_in_epsilon(-27.006144354802483, worksheet.costpercapita_cf73, 0.001); end
+  def test_costpercapita_cf73; assert_in_epsilon(-27.00614435480248, worksheet.costpercapita_cf73, 0.001); end
   def test_costpercapita_cg73; assert_in_epsilon(-6.267679654929045, worksheet.costpercapita_cg73, 0.001); end
-  def test_costpercapita_ch73; assert_in_epsilon(13.714932513832656, worksheet.costpercapita_ch73, 0.001); end
-  def test_costpercapita_ci73; assert_in_epsilon(26.34809873776418, worksheet.costpercapita_ci73, 0.001); end
-  def test_costpercapita_cj73; assert_in_epsilon(27.588501700429628, worksheet.costpercapita_cj73, 0.001); end
-  def test_costpercapita_ck73; assert_in_epsilon(26.627972433247415, worksheet.costpercapita_ck73, 0.001); end
-  def test_costpercapita_cl73; assert_in_epsilon(28.971908879490524, worksheet.costpercapita_cl73, 0.001); end
-  def test_costpercapita_cm73; assert_in_epsilon(29.28075630634425, worksheet.costpercapita_cm73, 0.001); end
-  def test_costpercapita_cn73; assert_in_epsilon(28.333306996780436, worksheet.costpercapita_cn73, 0.001); end
-  def test_costpercapita_cp73; assert_in_epsilon(16.39907261757306, worksheet.costpercapita_cp73, 0.001); end
-  def test_costpercapita_cq73; assert_in_epsilon(333.68011816854874, worksheet.costpercapita_cq73, 0.001); end
+  def test_costpercapita_ch73; assert_in_epsilon(13.714932513832663, worksheet.costpercapita_ch73, 0.001); end
+  def test_costpercapita_ci73; assert_in_epsilon(26.348098737764193, worksheet.costpercapita_ci73, 0.001); end
+  def test_costpercapita_cj73; assert_in_epsilon(27.58850170042964, worksheet.costpercapita_cj73, 0.001); end
+  def test_costpercapita_ck73; assert_in_epsilon(26.62797243324744, worksheet.costpercapita_ck73, 0.001); end
+  def test_costpercapita_cl73; assert_in_epsilon(28.971908879490535, worksheet.costpercapita_cl73, 0.001); end
+  def test_costpercapita_cm73; assert_in_epsilon(29.280756306344276, worksheet.costpercapita_cm73, 0.001); end
+  def test_costpercapita_cn73; assert_in_epsilon(28.33330699678046, worksheet.costpercapita_cn73, 0.001); end
+  def test_costpercapita_cp73; assert_in_epsilon(16.399072617573076, worksheet.costpercapita_cp73, 0.001); end
+  def test_costpercapita_cq73; assert_in_epsilon(333.6801181685489, worksheet.costpercapita_cq73, 0.001); end
   def test_costpercapita_cr73; assert_equal("ok", worksheet.costpercapita_cr73); end
   def test_costpercapita_a74; assert_equal("VI.c", worksheet.costpercapita_a74); end
   def test_costpercapita_b74; assert_equal("Marine algae", worksheet.costpercapita_b74); end
@@ -14321,45 +14932,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av77; assert_in_delta(0.07, worksheet.costpercapita_av77, 0.001); end
   def test_costpercapita_aw77; assert_in_epsilon(20, worksheet.costpercapita_aw77, 0.001); end
   def test_costpercapita_ay77; assert_in_epsilon(4.566998382805209, worksheet.costpercapita_ay77, 0.001); end
-  def test_costpercapita_az77; assert_in_epsilon(7.463561872684379, worksheet.costpercapita_az77, 0.001); end
-  def test_costpercapita_ba77; assert_in_epsilon(11.191285499552206, worksheet.costpercapita_ba77, 0.001); end
+  def test_costpercapita_az77; assert_in_epsilon(7.463561872684378, worksheet.costpercapita_az77, 0.001); end
+  def test_costpercapita_ba77; assert_in_epsilon(11.191285499552208, worksheet.costpercapita_ba77, 0.001); end
   def test_costpercapita_bb77; assert_in_epsilon(16.11568286687303, worksheet.costpercapita_bb77, 0.001); end
-  def test_costpercapita_bc77; assert_in_epsilon(14.83242993486026, worksheet.costpercapita_bc77, 0.001); end
+  def test_costpercapita_bc77; assert_in_epsilon(14.832429934860256, worksheet.costpercapita_bc77, 0.001); end
   def test_costpercapita_bd77; assert_in_epsilon(14.484728964869586, worksheet.costpercapita_bd77, 0.001); end
-  def test_costpercapita_be77; assert_in_epsilon(17.029540094110732, worksheet.costpercapita_be77, 0.001); end
+  def test_costpercapita_be77; assert_in_epsilon(17.02954009411073, worksheet.costpercapita_be77, 0.001); end
   def test_costpercapita_bf77; assert_in_epsilon(17.346110012020247, worksheet.costpercapita_bf77, 0.001); end
-  def test_costpercapita_bg77; assert_in_epsilon(19.042752964824157, worksheet.costpercapita_bg77, 0.001); end
+  def test_costpercapita_bg77; assert_in_epsilon(19.04275296482416, worksheet.costpercapita_bg77, 0.001); end
   def test_costpercapita_bi77; assert_in_epsilon(4.566998382805209, worksheet.costpercapita_bi77, 0.001); end
-  def test_costpercapita_bj77; assert_in_epsilon(11.87996316754718, worksheet.costpercapita_bj77, 0.001); end
-  def test_costpercapita_bk77; assert_in_epsilon(22.682320645612837, worksheet.costpercapita_bk77, 0.001); end
+  def test_costpercapita_bj77; assert_in_epsilon(11.879963167547178, worksheet.costpercapita_bj77, 0.001); end
+  def test_costpercapita_bk77; assert_in_epsilon(22.68232064561284, worksheet.costpercapita_bk77, 0.001); end
   def test_costpercapita_bl77; assert_in_epsilon(38.095680049863695, worksheet.costpercapita_bl77, 0.001); end
-  def test_costpercapita_bm77; assert_in_epsilon(47.86087700650115, worksheet.costpercapita_bm77, 0.001); end
+  def test_costpercapita_bm77; assert_in_epsilon(47.86087700650114, worksheet.costpercapita_bm77, 0.001); end
   def test_costpercapita_bn77; assert_in_epsilon(54.57393259681033, worksheet.costpercapita_bn77, 0.001); end
-  def test_costpercapita_bo77; assert_in_epsilon(60.359262936575, worksheet.costpercapita_bo77, 0.001); end
-  def test_costpercapita_bp77; assert_in_epsilon(75.71184087952875, worksheet.costpercapita_bp77, 0.001); end
-  def test_costpercapita_bq77; assert_in_epsilon(66.0773047567498, worksheet.costpercapita_bq77, 0.001); end
+  def test_costpercapita_bo77; assert_in_epsilon(60.35926293657497, worksheet.costpercapita_bo77, 0.001); end
+  def test_costpercapita_bp77; assert_in_epsilon(75.71184087952874, worksheet.costpercapita_bp77, 0.001); end
+  def test_costpercapita_bq77; assert_in_epsilon(66.07730475674978, worksheet.costpercapita_bq77, 0.001); end
   def test_costpercapita_bs77; assert_in_epsilon(22.58143711001749, worksheet.costpercapita_bs77, 0.001); end
   def test_costpercapita_bt77; assert_in_epsilon(28.892318407555532, worksheet.costpercapita_bt77, 0.001); end
   def test_costpercapita_bu77; assert_in_epsilon(40.94229669205567, worksheet.costpercapita_bu77, 0.001); end
   def test_costpercapita_bv77; assert_in_epsilon(59.88927154871104, worksheet.costpercapita_bv77, 0.001); end
   def test_costpercapita_bw77; assert_in_epsilon(71.6035327883681, worksheet.costpercapita_bw77, 0.001); end
   def test_costpercapita_bx77; assert_in_epsilon(79.62160474307433, worksheet.costpercapita_bx77, 0.001); end
-  def test_costpercapita_by77; assert_in_epsilon(87.75032478803911, worksheet.costpercapita_by77, 0.001); end
-  def test_costpercapita_bz77; assert_in_epsilon(105.01869665700107, worksheet.costpercapita_bz77, 0.001); end
+  def test_costpercapita_by77; assert_in_epsilon(87.75032478803908, worksheet.costpercapita_by77, 0.001); end
+  def test_costpercapita_bz77; assert_in_epsilon(105.01869665700106, worksheet.costpercapita_bz77, 0.001); end
   def test_costpercapita_ca77; assert_in_epsilon(97.71787098044726, worksheet.costpercapita_ca77, 0.001); end
-  def test_costpercapita_cc77; assert_in_epsilon(66.00192819058552, worksheet.costpercapita_cc77, 0.001); end
+  def test_costpercapita_cc77; assert_in_epsilon(66.0019281905855, worksheet.costpercapita_cc77, 0.001); end
   def test_costpercapita_cd77; assert_in_epsilon(1263.6818515722837, worksheet.costpercapita_cd77, 0.001); end
   def test_costpercapita_cf77; assert_in_epsilon(-11.560616926090672, worksheet.costpercapita_cf77, 0.001); end
-  def test_costpercapita_cg77; assert_in_epsilon(-3.9338529927547388, worksheet.costpercapita_cg77, 0.001); end
-  def test_costpercapita_ch77; assert_in_epsilon(-1.0298069559660672, worksheet.costpercapita_ch77, 0.001); end
+  def test_costpercapita_cg77; assert_in_epsilon(-3.9338529927547405, worksheet.costpercapita_cg77, 0.001); end
+  def test_costpercapita_ch77; assert_in_epsilon(-1.0298069559660636, worksheet.costpercapita_ch77, 0.001); end
   def test_costpercapita_ci77; assert_in_epsilon(3.9497252762889716, worksheet.costpercapita_ci77, 0.001); end
-  def test_costpercapita_cj77; assert_in_epsilon(16.433882201395164, worksheet.costpercapita_cj77, 0.001); end
+  def test_costpercapita_cj77; assert_in_epsilon(16.43388220139516, worksheet.costpercapita_cj77, 0.001); end
   def test_costpercapita_ck77; assert_in_epsilon(23.88364759755654, worksheet.costpercapita_ck77, 0.001); end
-  def test_costpercapita_cl77; assert_in_epsilon(24.27702486625546, worksheet.costpercapita_cl77, 0.001); end
-  def test_costpercapita_cm77; assert_in_epsilon(38.958853565202155, worksheet.costpercapita_cm77, 0.001); end
-  def test_costpercapita_cn77; assert_in_epsilon(25.729465520111358, worksheet.costpercapita_cn77, 0.001); end
-  def test_costpercapita_cp77; assert_in_epsilon(12.967591350222019, worksheet.costpercapita_cp77, 0.001); end
-  def test_costpercapita_cq77; assert_in_epsilon(209.06072514768013, worksheet.costpercapita_cq77, 0.001); end
+  def test_costpercapita_cl77; assert_in_epsilon(24.277024866255434, worksheet.costpercapita_cl77, 0.001); end
+  def test_costpercapita_cm77; assert_in_epsilon(38.95885356520214, worksheet.costpercapita_cm77, 0.001); end
+  def test_costpercapita_cn77; assert_in_epsilon(25.729465520111344, worksheet.costpercapita_cn77, 0.001); end
+  def test_costpercapita_cp77; assert_in_epsilon(12.967591350222014, worksheet.costpercapita_cp77, 0.001); end
+  def test_costpercapita_cq77; assert_in_epsilon(209.06072514768005, worksheet.costpercapita_cq77, 0.001); end
   def test_costpercapita_cr77; assert_equal("ok", worksheet.costpercapita_cr77); end
   def test_costpercapita_a78; assert_equal("VII.c", worksheet.costpercapita_a78); end
   def test_costpercapita_b78; assert_equal("Storage, demand shifting, backup", worksheet.costpercapita_b78); end
@@ -14405,45 +15016,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av78; assert_in_delta(0.07, worksheet.costpercapita_av78, 0.001); end
   def test_costpercapita_aw78; assert_in_epsilon(15, worksheet.costpercapita_aw78, 0.001); end
   def test_costpercapita_ay78; assert_in_delta(0, (worksheet.costpercapita_ay78||0), 0.001); end
-  def test_costpercapita_az78; assert_in_epsilon(1.1356713183051914, worksheet.costpercapita_az78, 0.001); end
-  def test_costpercapita_ba78; assert_in_epsilon(4.961267644889488, worksheet.costpercapita_ba78, 0.001); end
-  def test_costpercapita_bb78; assert_in_epsilon(20.8273968753821, worksheet.costpercapita_bb78, 0.001); end
-  def test_costpercapita_bc78; assert_in_epsilon(18.52077419680929, worksheet.costpercapita_bc78, 0.001); end
-  def test_costpercapita_bd78; assert_in_epsilon(22.159595873464404, worksheet.costpercapita_bd78, 0.001); end
-  def test_costpercapita_be78; assert_in_epsilon(4.361217404023122, worksheet.costpercapita_be78, 0.001); end
-  def test_costpercapita_bf78; assert_in_epsilon(17.818635516351755, worksheet.costpercapita_bf78, 0.001); end
-  def test_costpercapita_bg78; assert_in_epsilon(2.567053072856682, worksheet.costpercapita_bg78, 0.001); end
+  def test_costpercapita_az78; assert_in_epsilon(1.1356713183051916, worksheet.costpercapita_az78, 0.001); end
+  def test_costpercapita_ba78; assert_in_epsilon(4.961267644889489, worksheet.costpercapita_ba78, 0.001); end
+  def test_costpercapita_bb78; assert_in_epsilon(20.827396875382107, worksheet.costpercapita_bb78, 0.001); end
+  def test_costpercapita_bc78; assert_in_epsilon(18.520774196809295, worksheet.costpercapita_bc78, 0.001); end
+  def test_costpercapita_bd78; assert_in_epsilon(22.159595873464408, worksheet.costpercapita_bd78, 0.001); end
+  def test_costpercapita_be78; assert_in_epsilon(4.361217404023123, worksheet.costpercapita_be78, 0.001); end
+  def test_costpercapita_bf78; assert_in_epsilon(17.818635516351762, worksheet.costpercapita_bf78, 0.001); end
+  def test_costpercapita_bg78; assert_in_epsilon(2.5670530728566825, worksheet.costpercapita_bg78, 0.001); end
   def test_costpercapita_bi78; assert_in_delta(0, (worksheet.costpercapita_bi78||0), 0.001); end
-  def test_costpercapita_bj78; assert_in_epsilon(1.1356713183051914, worksheet.costpercapita_bj78, 0.001); end
-  def test_costpercapita_bk78; assert_in_epsilon(6.059759184717416, worksheet.costpercapita_bk78, 0.001); end
-  def test_costpercapita_bl78; assert_in_epsilon(26.699524859581658, worksheet.costpercapita_bl78, 0.001); end
-  def test_costpercapita_bm78; assert_in_epsilon(43.455467238389275, worksheet.costpercapita_bm78, 0.001); end
+  def test_costpercapita_bj78; assert_in_epsilon(1.1356713183051916, worksheet.costpercapita_bj78, 0.001); end
+  def test_costpercapita_bk78; assert_in_epsilon(6.059759184717417, worksheet.costpercapita_bk78, 0.001); end
+  def test_costpercapita_bl78; assert_in_epsilon(26.699524859581672, worksheet.costpercapita_bl78, 0.001); end
+  def test_costpercapita_bm78; assert_in_epsilon(43.45546723838929, worksheet.costpercapita_bm78, 0.001); end
   def test_costpercapita_bn78; assert_in_epsilon(60.0252890973485, worksheet.costpercapita_bn78, 0.001); end
-  def test_costpercapita_bo78; assert_in_epsilon(43.74705652237235, worksheet.costpercapita_bo78, 0.001); end
-  def test_costpercapita_bp78; assert_in_epsilon(43.34725656136735, worksheet.costpercapita_bp78, 0.001); end
-  def test_costpercapita_bq78; assert_in_epsilon(24.247617730813715, worksheet.costpercapita_bq78, 0.001); end
+  def test_costpercapita_bo78; assert_in_epsilon(43.747056522372354, worksheet.costpercapita_bo78, 0.001); end
+  def test_costpercapita_bp78; assert_in_epsilon(43.34725656136736, worksheet.costpercapita_bp78, 0.001); end
+  def test_costpercapita_bq78; assert_in_epsilon(24.247617730813722, worksheet.costpercapita_bq78, 0.001); end
   def test_costpercapita_bs78; assert_in_epsilon(1.2737786045972503, worksheet.costpercapita_bs78, 0.001); end
   def test_costpercapita_bt78; assert_in_epsilon(2.375095111265945, worksheet.costpercapita_bt78, 0.001); end
-  def test_costpercapita_bu78; assert_in_epsilon(7.528295437376762, worksheet.costpercapita_bu78, 0.001); end
-  def test_costpercapita_bv78; assert_in_epsilon(31.42149186082984, worksheet.costpercapita_bv78, 0.001); end
-  def test_costpercapita_bw78; assert_in_epsilon(49.805535785768825, worksheet.costpercapita_bw78, 0.001); end
+  def test_costpercapita_bu78; assert_in_epsilon(7.528295437376763, worksheet.costpercapita_bu78, 0.001); end
+  def test_costpercapita_bv78; assert_in_epsilon(31.421491860829853, worksheet.costpercapita_bv78, 0.001); end
+  def test_costpercapita_bw78; assert_in_epsilon(49.80553578576884, worksheet.costpercapita_bw78, 0.001); end
   def test_costpercapita_bx78; assert_in_epsilon(69.0538880406964, worksheet.costpercapita_bx78, 0.001); end
-  def test_costpercapita_by78; assert_in_epsilon(54.59489593683396, worksheet.costpercapita_by78, 0.001); end
+  def test_costpercapita_by78; assert_in_epsilon(54.59489593683397, worksheet.costpercapita_by78, 0.001); end
   def test_costpercapita_bz78; assert_in_epsilon(56.73028114741525, worksheet.costpercapita_bz78, 0.001); end
   def test_costpercapita_ca78; assert_in_epsilon(38.73460307893239, worksheet.costpercapita_ca78, 0.001); end
   def test_costpercapita_cc78; assert_in_epsilon(34.61309611152407, worksheet.costpercapita_cc78, 0.001); end
-  def test_costpercapita_cd78; assert_in_epsilon(638.758661359293, worksheet.costpercapita_cd78, 0.001); end
+  def test_costpercapita_cd78; assert_in_epsilon(638.7586613592931, worksheet.costpercapita_cd78, 0.001); end
   def test_costpercapita_cf78; assert_in_delta(0, (worksheet.costpercapita_cf78||0), 0.001); end
-  def test_costpercapita_cg78; assert_in_delta(-0.9330480227333326, worksheet.costpercapita_cg78, 0.001); end
-  def test_costpercapita_ch78; assert_in_epsilon(-2.9776006284793524, worksheet.costpercapita_ch78, 0.001); end
-  def test_costpercapita_ci78; assert_in_epsilon(-11.239303078670169, worksheet.costpercapita_ci78, 0.001); end
-  def test_costpercapita_cj78; assert_in_epsilon(9.718343499872587, worksheet.costpercapita_cj78, 0.001); end
+  def test_costpercapita_cg78; assert_in_delta(-0.9330480227333324, worksheet.costpercapita_cg78, 0.001); end
+  def test_costpercapita_ch78; assert_in_epsilon(-2.9776006284793515, worksheet.costpercapita_ch78, 0.001); end
+  def test_costpercapita_ci78; assert_in_epsilon(-11.239303078670156, worksheet.costpercapita_ci78, 0.001); end
+  def test_costpercapita_cj78; assert_in_epsilon(9.7183434998726, worksheet.costpercapita_cj78, 0.001); end
   def test_costpercapita_ck78; assert_in_epsilon(19.659750376651434, worksheet.costpercapita_ck78, 0.001); end
-  def test_costpercapita_cl78; assert_in_epsilon(35.802737907686755, worksheet.costpercapita_cl78, 0.001); end
-  def test_costpercapita_cm78; assert_in_epsilon(10.889136567104268, worksheet.costpercapita_cm78, 0.001); end
-  def test_costpercapita_cn78; assert_in_epsilon(19.571518003987748, worksheet.costpercapita_cn78, 0.001); end
-  def test_costpercapita_cp78; assert_in_epsilon(8.943503847268882, worksheet.costpercapita_cp78, 0.001); end
-  def test_costpercapita_cq78; assert_in_epsilon(124.44373590641979, worksheet.costpercapita_cq78, 0.001); end
+  def test_costpercapita_cl78; assert_in_epsilon(35.80273790768676, worksheet.costpercapita_cl78, 0.001); end
+  def test_costpercapita_cm78; assert_in_epsilon(10.889136567104273, worksheet.costpercapita_cm78, 0.001); end
+  def test_costpercapita_cn78; assert_in_epsilon(19.57151800398775, worksheet.costpercapita_cn78, 0.001); end
+  def test_costpercapita_cp78; assert_in_epsilon(8.943503847268886, worksheet.costpercapita_cp78, 0.001); end
+  def test_costpercapita_cq78; assert_in_epsilon(124.44373590641986, worksheet.costpercapita_cq78, 0.001); end
   def test_costpercapita_cr78; assert_equal("ok", worksheet.costpercapita_cr78); end
   def test_costpercapita_a79; assert_equal("VIII.a", worksheet.costpercapita_a79); end
   def test_costpercapita_b79; assert_equal("H2 Production", worksheet.costpercapita_b79); end
@@ -14489,28 +15100,28 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av79; assert_in_delta(0.07, worksheet.costpercapita_av79, 0.001); end
   def test_costpercapita_aw79; assert_in_epsilon(25, worksheet.costpercapita_aw79, 0.001); end
   def test_costpercapita_ay79; assert_in_delta(0, (worksheet.costpercapita_ay79||0), 0.001); end
-  def test_costpercapita_az79; assert_in_delta(0.06718328955983484, worksheet.costpercapita_az79, 0.001); end
+  def test_costpercapita_az79; assert_in_delta(0.06718328955983482, worksheet.costpercapita_az79, 0.001); end
   def test_costpercapita_ba79; assert_in_delta(0.0985330945721339, worksheet.costpercapita_ba79, 0.001); end
   def test_costpercapita_bb79; assert_in_delta(0.6259165462227757, worksheet.costpercapita_bb79, 0.001); end
-  def test_costpercapita_bc79; assert_in_delta(0.7372551718874106, worksheet.costpercapita_bc79, 0.001); end
-  def test_costpercapita_bd79; assert_in_epsilon(1.0201920349388414, worksheet.costpercapita_bd79, 0.001); end
+  def test_costpercapita_bc79; assert_in_delta(0.7372551718874107, worksheet.costpercapita_bc79, 0.001); end
+  def test_costpercapita_bd79; assert_in_epsilon(1.0201920349388411, worksheet.costpercapita_bd79, 0.001); end
   def test_costpercapita_be79; assert_in_epsilon(1.0568942239106058, worksheet.costpercapita_be79, 0.001); end
   def test_costpercapita_bf79; assert_in_epsilon(1.3643751521733343, worksheet.costpercapita_bf79, 0.001); end
-  def test_costpercapita_bg79; assert_in_epsilon(1.4237810787551002, worksheet.costpercapita_bg79, 0.001); end
+  def test_costpercapita_bg79; assert_in_epsilon(1.4237810787551, worksheet.costpercapita_bg79, 0.001); end
   def test_costpercapita_bi79; assert_in_delta(0, (worksheet.costpercapita_bi79||0), 0.001); end
-  def test_costpercapita_bj79; assert_in_delta(0.06718328955983484, worksheet.costpercapita_bj79, 0.001); end
+  def test_costpercapita_bj79; assert_in_delta(0.06718328955983482, worksheet.costpercapita_bj79, 0.001); end
   def test_costpercapita_bk79; assert_in_delta(0.16351692749081997, worksheet.costpercapita_bk79, 0.001); end
   def test_costpercapita_bl79; assert_in_delta(0.7843704214577453, worksheet.costpercapita_bl79, 0.001); end
-  def test_costpercapita_bm79; assert_in_epsilon(1.5001964733466469, worksheet.costpercapita_bm79, 0.001); end
+  def test_costpercapita_bm79; assert_in_epsilon(1.500196473346647, worksheet.costpercapita_bm79, 0.001); end
   def test_costpercapita_bn79; assert_in_epsilon(2.485050336495075, worksheet.costpercapita_bn79, 0.001); end
   def test_costpercapita_bo79; assert_in_epsilon(3.430414422387676, worksheet.costpercapita_bo79, 0.001); end
   def test_costpercapita_bp79; assert_in_epsilon(5.329860422546239, worksheet.costpercapita_bp79, 0.001); end
   def test_costpercapita_bq79; assert_in_epsilon(6.094626166291068, worksheet.costpercapita_bq79, 0.001); end
   def test_costpercapita_bs79; assert_in_delta(0, (worksheet.costpercapita_bs79||0), 0.001); end
-  def test_costpercapita_bt79; assert_in_delta(0.15394088837470696, worksheet.costpercapita_bt79, 0.001); end
+  def test_costpercapita_bt79; assert_in_delta(0.15394088837470693, worksheet.costpercapita_bt79, 0.001); end
   def test_costpercapita_bu79; assert_in_delta(0.32077120382739344, worksheet.costpercapita_bu79, 0.001); end
   def test_costpercapita_bv79; assert_in_epsilon(1.4671994316700139, worksheet.costpercapita_bv79, 0.001); end
-  def test_costpercapita_bw79; assert_in_epsilon(2.5436489070530564, worksheet.costpercapita_bw79, 0.001); end
+  def test_costpercapita_bw79; assert_in_epsilon(2.543648907053057, worksheet.costpercapita_bw79, 0.001); end
   def test_costpercapita_bx79; assert_in_epsilon(3.8645546145342293, worksheet.costpercapita_bx79, 0.001); end
   def test_costpercapita_by79; assert_in_epsilon(4.897581203488443, worksheet.costpercapita_by79, 0.001); end
   def test_costpercapita_bz79; assert_in_epsilon(6.806023784586806, worksheet.costpercapita_bz79, 0.001); end
@@ -14518,10 +15129,10 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cc79; assert_in_epsilon(3.0287581083127177, worksheet.costpercapita_cc79, 0.001); end
   def test_costpercapita_cd79; assert_in_epsilon(49.46547150524263, worksheet.costpercapita_cd79, 0.001); end
   def test_costpercapita_cf79; assert_in_delta(0, (worksheet.costpercapita_cf79||0), 0.001); end
-  def test_costpercapita_cg79; assert_in_delta(-0.08940192105501314, worksheet.costpercapita_cg79, 0.001); end
+  def test_costpercapita_cg79; assert_in_delta(-0.08940192105501316, worksheet.costpercapita_cg79, 0.001); end
   def test_costpercapita_ch79; assert_in_delta(-0.06613579519060052, worksheet.costpercapita_ch79, 0.001); end
   def test_costpercapita_ci79; assert_in_delta(-0.6744636853527358, worksheet.costpercapita_ci79, 0.001); end
-  def test_costpercapita_cj79; assert_in_delta(-0.21813642049088974, worksheet.costpercapita_cj79, 0.001); end
+  def test_costpercapita_cj79; assert_in_delta(-0.21813642049088955, worksheet.costpercapita_cj79, 0.001); end
   def test_costpercapita_ck79; assert_in_delta(0.10727178910473312, worksheet.costpercapita_ck79, 0.001); end
   def test_costpercapita_cl79; assert_in_delta(0.9670934725960451, worksheet.costpercapita_cl79, 0.001); end
   def test_costpercapita_cm79; assert_in_epsilon(2.1498885581073335, worksheet.costpercapita_cm79, 0.001); end
@@ -14572,46 +15183,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at80; assert_in_epsilon(5648.209018628094, worksheet.costpercapita_at80, 0.001); end
   def test_costpercapita_av80; assert_in_delta(0.07, worksheet.costpercapita_av80, 0.001); end
   def test_costpercapita_aw80; assert_in_epsilon(15, worksheet.costpercapita_aw80, 0.001); end
-  def test_costpercapita_ay80; assert_in_epsilon(49.089027785161186, worksheet.costpercapita_ay80, 0.001); end
-  def test_costpercapita_az80; assert_in_epsilon(50.711296932981, worksheet.costpercapita_az80, 0.001); end
-  def test_costpercapita_ba80; assert_in_epsilon(93.67945361235061, worksheet.costpercapita_ba80, 0.001); end
-  def test_costpercapita_bb80; assert_in_epsilon(107.12189980583491, worksheet.costpercapita_bb80, 0.001); end
-  def test_costpercapita_bc80; assert_in_epsilon(119.2892151157589, worksheet.costpercapita_bc80, 0.001); end
-  def test_costpercapita_bd80; assert_in_epsilon(134.51902877182835, worksheet.costpercapita_bd80, 0.001); end
-  def test_costpercapita_be80; assert_in_epsilon(148.20410415404504, worksheet.costpercapita_be80, 0.001); end
-  def test_costpercapita_bf80; assert_in_epsilon(167.48694349849293, worksheet.costpercapita_bf80, 0.001); end
-  def test_costpercapita_bg80; assert_in_epsilon(188.68876746960805, worksheet.costpercapita_bg80, 0.001); end
-  def test_costpercapita_bi80; assert_in_epsilon(49.089027785161186, worksheet.costpercapita_bi80, 0.001); end
-  def test_costpercapita_bj80; assert_in_epsilon(98.18161062746005, worksheet.costpercapita_bj80, 0.001); end
-  def test_costpercapita_bk80; assert_in_epsilon(188.64677989993885, worksheet.costpercapita_bk80, 0.001); end
-  def test_costpercapita_bl80; assert_in_epsilon(245.43302230101932, worksheet.costpercapita_bl80, 0.001); end
-  def test_costpercapita_bm80; assert_in_epsilon(311.7832493869452, worksheet.costpercapita_bm80, 0.001); end
-  def test_costpercapita_bn80; assert_in_epsilon(352.73922342443944, worksheet.costpercapita_bn80, 0.001); end
-  def test_costpercapita_bo80; assert_in_epsilon(393.84952080696866, worksheet.costpercapita_bo80, 0.001); end
-  def test_costpercapita_bp80; assert_in_epsilon(441.75875840616635, worksheet.costpercapita_bp80, 0.001); end
-  def test_costpercapita_bq80; assert_in_epsilon(495.5872788584606, worksheet.costpercapita_bq80, 0.001); end
+  def test_costpercapita_ay80; assert_in_epsilon(49.0890277851612, worksheet.costpercapita_ay80, 0.001); end
+  def test_costpercapita_az80; assert_in_epsilon(50.711296932981014, worksheet.costpercapita_az80, 0.001); end
+  def test_costpercapita_ba80; assert_in_epsilon(93.67945361235064, worksheet.costpercapita_ba80, 0.001); end
+  def test_costpercapita_bb80; assert_in_epsilon(107.12189980583494, worksheet.costpercapita_bb80, 0.001); end
+  def test_costpercapita_bc80; assert_in_epsilon(119.28921511575894, worksheet.costpercapita_bc80, 0.001); end
+  def test_costpercapita_bd80; assert_in_epsilon(134.5190287718284, worksheet.costpercapita_bd80, 0.001); end
+  def test_costpercapita_be80; assert_in_epsilon(148.2041041540451, worksheet.costpercapita_be80, 0.001); end
+  def test_costpercapita_bf80; assert_in_epsilon(167.48694349849302, worksheet.costpercapita_bf80, 0.001); end
+  def test_costpercapita_bg80; assert_in_epsilon(188.68876746960808, worksheet.costpercapita_bg80, 0.001); end
+  def test_costpercapita_bi80; assert_in_epsilon(49.0890277851612, worksheet.costpercapita_bi80, 0.001); end
+  def test_costpercapita_bj80; assert_in_epsilon(98.18161062746007, worksheet.costpercapita_bj80, 0.001); end
+  def test_costpercapita_bk80; assert_in_epsilon(188.64677989993893, worksheet.costpercapita_bk80, 0.001); end
+  def test_costpercapita_bl80; assert_in_epsilon(245.43302230101938, worksheet.costpercapita_bl80, 0.001); end
+  def test_costpercapita_bm80; assert_in_epsilon(311.78324938694533, worksheet.costpercapita_bm80, 0.001); end
+  def test_costpercapita_bn80; assert_in_epsilon(352.73922342443956, worksheet.costpercapita_bn80, 0.001); end
+  def test_costpercapita_bo80; assert_in_epsilon(393.84952080696877, worksheet.costpercapita_bo80, 0.001); end
+  def test_costpercapita_bp80; assert_in_epsilon(441.7587584061665, worksheet.costpercapita_bp80, 0.001); end
+  def test_costpercapita_bq80; assert_in_epsilon(495.58727885846076, worksheet.costpercapita_bq80, 0.001); end
   def test_costpercapita_bs80; assert_in_epsilon(129.6944129548725, worksheet.costpercapita_bs80, 0.001); end
-  def test_costpercapita_bt80; assert_in_epsilon(179.95550721474964, worksheet.costpercapita_bt80, 0.001); end
-  def test_costpercapita_bu80; assert_in_epsilon(265.8096612220957, worksheet.costpercapita_bu80, 0.001); end
-  def test_costpercapita_bv80; assert_in_epsilon(317.4750616450005, worksheet.costpercapita_bv80, 0.001); end
-  def test_costpercapita_bw80; assert_in_epsilon(378.39887298200614, worksheet.costpercapita_bw80, 0.001); end
-  def test_costpercapita_bx80; assert_in_epsilon(414.5577977862962, worksheet.costpercapita_bx80, 0.001); end
-  def test_costpercapita_by80; assert_in_epsilon(450.7027675343143, worksheet.costpercapita_by80, 0.001); end
-  def test_costpercapita_bz80; assert_in_epsilon(493.3847650530303, worksheet.costpercapita_bz80, 0.001); end
-  def test_costpercapita_ca80; assert_in_epsilon(541.6810375968814, worksheet.costpercapita_ca80, 0.001); end
-  def test_costpercapita_cc80; assert_in_epsilon(352.40665377658297, worksheet.costpercapita_cc80, 0.001); end
-  def test_costpercapita_cd80; assert_in_epsilon(6883.951921985781, worksheet.costpercapita_cd80, 0.001); end
+  def test_costpercapita_bt80; assert_in_epsilon(179.95550721474967, worksheet.costpercapita_bt80, 0.001); end
+  def test_costpercapita_bu80; assert_in_epsilon(265.8096612220958, worksheet.costpercapita_bu80, 0.001); end
+  def test_costpercapita_bv80; assert_in_epsilon(317.4750616450006, worksheet.costpercapita_bv80, 0.001); end
+  def test_costpercapita_bw80; assert_in_epsilon(378.39887298200625, worksheet.costpercapita_bw80, 0.001); end
+  def test_costpercapita_bx80; assert_in_epsilon(414.5577977862963, worksheet.costpercapita_bx80, 0.001); end
+  def test_costpercapita_by80; assert_in_epsilon(450.7027675343145, worksheet.costpercapita_by80, 0.001); end
+  def test_costpercapita_bz80; assert_in_epsilon(493.38476505303055, worksheet.costpercapita_bz80, 0.001); end
+  def test_costpercapita_ca80; assert_in_epsilon(541.6810375968815, worksheet.costpercapita_ca80, 0.001); end
+  def test_costpercapita_cc80; assert_in_epsilon(352.4066537765831, worksheet.costpercapita_cc80, 0.001); end
+  def test_costpercapita_cd80; assert_in_epsilon(6883.951921985784, worksheet.costpercapita_cd80, 0.001); end
   def test_costpercapita_cf80; assert_in_epsilon(-99.9438534353927, worksheet.costpercapita_cf80, 0.001); end
-  def test_costpercapita_cg80; assert_in_epsilon(5.80678431683082, worksheet.costpercapita_cg80, 0.001); end
-  def test_costpercapita_ch80; assert_in_epsilon(18.001898390558683, worksheet.costpercapita_ch80, 0.001); end
-  def test_costpercapita_ci80; assert_in_epsilon(50.3016120019268, worksheet.costpercapita_ci80, 0.001); end
-  def test_costpercapita_cj80; assert_in_epsilon(94.48806678468553, worksheet.costpercapita_cj80, 0.001); end
-  def test_costpercapita_ck80; assert_in_epsilon(107.70167420351632, worksheet.costpercapita_ck80, 0.001); end
-  def test_costpercapita_cl80; assert_in_epsilon(123.88347363911235, worksheet.costpercapita_cl80, 0.001); end
-  def test_costpercapita_cm80; assert_in_epsilon(136.6674227335966, worksheet.costpercapita_cm80, 0.001); end
-  def test_costpercapita_cn80; assert_in_epsilon(151.87506528981535, worksheet.costpercapita_cn80, 0.001); end
-  def test_costpercapita_cp80; assert_in_epsilon(65.42023821384997, worksheet.costpercapita_cp80, 0.001); end
-  def test_costpercapita_cq80; assert_in_epsilon(1235.742903357687, worksheet.costpercapita_cq80, 0.001); end
+  def test_costpercapita_cg80; assert_in_epsilon(5.806784316830848, worksheet.costpercapita_cg80, 0.001); end
+  def test_costpercapita_ch80; assert_in_epsilon(18.001898390558768, worksheet.costpercapita_ch80, 0.001); end
+  def test_costpercapita_ci80; assert_in_epsilon(50.30161200192685, worksheet.costpercapita_ci80, 0.001); end
+  def test_costpercapita_cj80; assert_in_epsilon(94.48806678468563, worksheet.costpercapita_cj80, 0.001); end
+  def test_costpercapita_ck80; assert_in_epsilon(107.70167420351642, worksheet.costpercapita_ck80, 0.001); end
+  def test_costpercapita_cl80; assert_in_epsilon(123.88347363911245, worksheet.costpercapita_cl80, 0.001); end
+  def test_costpercapita_cm80; assert_in_epsilon(136.6674227335968, worksheet.costpercapita_cm80, 0.001); end
+  def test_costpercapita_cn80; assert_in_epsilon(151.87506528981552, worksheet.costpercapita_cn80, 0.001); end
+  def test_costpercapita_cp80; assert_in_epsilon(65.42023821385007, worksheet.costpercapita_cp80, 0.001); end
+  def test_costpercapita_cq80; assert_in_epsilon(1235.742903357689, worksheet.costpercapita_cq80, 0.001); end
   def test_costpercapita_cr80; assert_equal("ok", worksheet.costpercapita_cr80); end
   def test_costpercapita_a81; assert_equal("IX.a.Insulation", worksheet.costpercapita_a81); end
   def test_costpercapita_b81; assert_equal("Domestic insulation", worksheet.costpercapita_b81); end
@@ -14658,7 +15269,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aw81; assert_in_epsilon(30, worksheet.costpercapita_aw81, 0.001); end
   def test_costpercapita_ay81; assert_in_epsilon(91.97665213649066, worksheet.costpercapita_ay81, 0.001); end
   def test_costpercapita_az81; assert_in_epsilon(155.06955496065, worksheet.costpercapita_az81, 0.001); end
-  def test_costpercapita_ba81; assert_in_epsilon(148.1893044709021, worksheet.costpercapita_ba81, 0.001); end
+  def test_costpercapita_ba81; assert_in_epsilon(148.18930447090207, worksheet.costpercapita_ba81, 0.001); end
   def test_costpercapita_bb81; assert_in_epsilon(127.55889029934005, worksheet.costpercapita_bb81, 0.001); end
   def test_costpercapita_bc81; assert_in_epsilon(116.2063275030641, worksheet.costpercapita_bc81, 0.001); end
   def test_costpercapita_bd81; assert_in_epsilon(138.44340570424214, worksheet.costpercapita_bd81, 0.001); end
@@ -14668,8 +15279,8 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_bi81; assert_in_epsilon(91.97665213649066, worksheet.costpercapita_bi81, 0.001); end
   def test_costpercapita_bj81; assert_in_epsilon(244.01327062346067, worksheet.costpercapita_bj81, 0.001); end
   def test_costpercapita_bk81; assert_in_epsilon(384.2140319295746, worksheet.costpercapita_bk81, 0.001); end
-  def test_costpercapita_bl81; assert_in_epsilon(499.8763207519844, worksheet.costpercapita_bl81, 0.001); end
-  def test_costpercapita_bm81; assert_in_epsilon(602.4259506428419, worksheet.costpercapita_bm81, 0.001); end
+  def test_costpercapita_bl81; assert_in_epsilon(499.8763207519843, worksheet.costpercapita_bl81, 0.001); end
+  def test_costpercapita_bm81; assert_in_epsilon(602.4259506428417, worksheet.costpercapita_bm81, 0.001); end
   def test_costpercapita_bn81; assert_in_epsilon(726.6787939020672, worksheet.costpercapita_bn81, 0.001); end
   def test_costpercapita_bo81; assert_in_epsilon(775.4135747218005, worksheet.costpercapita_bo81, 0.001); end
   def test_costpercapita_bp81; assert_in_epsilon(876.9576360461994, worksheet.costpercapita_bp81, 0.001); end
@@ -14677,8 +15288,8 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_bs81; assert_in_epsilon(91.97665213649066, worksheet.costpercapita_bs81, 0.001); end
   def test_costpercapita_bt81; assert_in_epsilon(244.01327062346067, worksheet.costpercapita_bt81, 0.001); end
   def test_costpercapita_bu81; assert_in_epsilon(384.2140319295746, worksheet.costpercapita_bu81, 0.001); end
-  def test_costpercapita_bv81; assert_in_epsilon(499.8763207519844, worksheet.costpercapita_bv81, 0.001); end
-  def test_costpercapita_bw81; assert_in_epsilon(602.4259506428419, worksheet.costpercapita_bw81, 0.001); end
+  def test_costpercapita_bv81; assert_in_epsilon(499.8763207519843, worksheet.costpercapita_bv81, 0.001); end
+  def test_costpercapita_bw81; assert_in_epsilon(602.4259506428417, worksheet.costpercapita_bw81, 0.001); end
   def test_costpercapita_bx81; assert_in_epsilon(726.6787939020672, worksheet.costpercapita_bx81, 0.001); end
   def test_costpercapita_by81; assert_in_epsilon(775.4135747218005, worksheet.costpercapita_by81, 0.001); end
   def test_costpercapita_bz81; assert_in_epsilon(876.9576360461994, worksheet.costpercapita_bz81, 0.001); end
@@ -14688,14 +15299,14 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cf81; assert_in_epsilon(-288.47070262441093, worksheet.costpercapita_cf81, 0.001); end
   def test_costpercapita_cg81; assert_in_epsilon(-140.83962813946556, worksheet.costpercapita_cg81, 0.001); end
   def test_costpercapita_ch81; assert_in_epsilon(16.43659550267207, worksheet.costpercapita_ch81, 0.001); end
-  def test_costpercapita_ci81; assert_in_epsilon(183.2996161426211, worksheet.costpercapita_ci81, 0.001); end
-  def test_costpercapita_cj81; assert_in_epsilon(314.02412988894355, worksheet.costpercapita_cj81, 0.001); end
+  def test_costpercapita_ci81; assert_in_epsilon(183.29961614262098, worksheet.costpercapita_ci81, 0.001); end
+  def test_costpercapita_cj81; assert_in_epsilon(314.0241298889434, worksheet.costpercapita_cj81, 0.001); end
   def test_costpercapita_ck81; assert_in_epsilon(383.0888093083172, worksheet.costpercapita_ck81, 0.001); end
   def test_costpercapita_cl81; assert_in_epsilon(423.682194178276, worksheet.costpercapita_cl81, 0.001); end
   def test_costpercapita_cm81; assert_in_epsilon(528.0493519095997, worksheet.costpercapita_cm81, 0.001); end
   def test_costpercapita_cn81; assert_in_epsilon(517.970671772821, worksheet.costpercapita_cn81, 0.001); end
-  def test_costpercapita_cp81; assert_in_epsilon(215.24900421548602, worksheet.costpercapita_cp81, 0.001); end
-  def test_costpercapita_cq81; assert_in_epsilon(3576.277201039404, worksheet.costpercapita_cq81, 0.001); end
+  def test_costpercapita_cp81; assert_in_epsilon(215.24900421548597, worksheet.costpercapita_cp81, 0.001); end
+  def test_costpercapita_cq81; assert_in_epsilon(3576.2772010394033, worksheet.costpercapita_cq81, 0.001); end
   def test_costpercapita_cr81; assert_equal("ok", worksheet.costpercapita_cr81); end
   def test_costpercapita_a82; assert_equal("IX.c", worksheet.costpercapita_a82); end
   def test_costpercapita_b82; assert_equal("Commercial heating and cooling", worksheet.costpercapita_b82); end
@@ -14740,46 +15351,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at82; assert_in_epsilon(1039.0490657976718, worksheet.costpercapita_at82, 0.001); end
   def test_costpercapita_av82; assert_in_delta(0.07, worksheet.costpercapita_av82, 0.001); end
   def test_costpercapita_aw82; assert_in_epsilon(15, worksheet.costpercapita_aw82, 0.001); end
-  def test_costpercapita_ay82; assert_in_epsilon(10.2009408808548, worksheet.costpercapita_ay82, 0.001); end
-  def test_costpercapita_az82; assert_in_epsilon(23.955670708592802, worksheet.costpercapita_az82, 0.001); end
-  def test_costpercapita_ba82; assert_in_epsilon(25.336636001764386, worksheet.costpercapita_ba82, 0.001); end
-  def test_costpercapita_bb82; assert_in_epsilon(23.838475727878667, worksheet.costpercapita_bb82, 0.001); end
-  def test_costpercapita_bc82; assert_in_epsilon(22.622860832969213, worksheet.costpercapita_bc82, 0.001); end
-  def test_costpercapita_bd82; assert_in_epsilon(21.73193031168144, worksheet.costpercapita_bd82, 0.001); end
-  def test_costpercapita_be82; assert_in_epsilon(21.225960833628083, worksheet.costpercapita_be82, 0.001); end
+  def test_costpercapita_ay82; assert_in_epsilon(10.200940880854802, worksheet.costpercapita_ay82, 0.001); end
+  def test_costpercapita_az82; assert_in_epsilon(23.95567070859281, worksheet.costpercapita_az82, 0.001); end
+  def test_costpercapita_ba82; assert_in_epsilon(25.336636001764397, worksheet.costpercapita_ba82, 0.001); end
+  def test_costpercapita_bb82; assert_in_epsilon(23.838475727878674, worksheet.costpercapita_bb82, 0.001); end
+  def test_costpercapita_bc82; assert_in_epsilon(22.622860832969216, worksheet.costpercapita_bc82, 0.001); end
+  def test_costpercapita_bd82; assert_in_epsilon(21.731930311681445, worksheet.costpercapita_bd82, 0.001); end
+  def test_costpercapita_be82; assert_in_epsilon(21.225960833628086, worksheet.costpercapita_be82, 0.001); end
   def test_costpercapita_bf82; assert_in_epsilon(20.88321384683194, worksheet.costpercapita_bf82, 0.001); end
-  def test_costpercapita_bg82; assert_in_epsilon(20.697745918415453, worksheet.costpercapita_bg82, 0.001); end
-  def test_costpercapita_bi82; assert_in_epsilon(10.2009408808548, worksheet.costpercapita_bi82, 0.001); end
-  def test_costpercapita_bj82; assert_in_epsilon(33.820234857475604, worksheet.costpercapita_bj82, 0.001); end
-  def test_costpercapita_bk82; assert_in_epsilon(58.04965892231577, worksheet.costpercapita_bk82, 0.001); end
-  def test_costpercapita_bl82; assert_in_epsilon(70.84454054168418, worksheet.costpercapita_bl82, 0.001); end
-  def test_costpercapita_bm82; assert_in_epsilon(69.69142363369538, worksheet.costpercapita_bm82, 0.001); end
-  def test_costpercapita_bn82; assert_in_epsilon(66.4629080918372, worksheet.costpercapita_bn82, 0.001); end
-  def test_costpercapita_bo82; assert_in_epsilon(64.11329211372484, worksheet.costpercapita_bo82, 0.001); end
-  def test_costpercapita_bp82; assert_in_epsilon(62.52996578182481, worksheet.costpercapita_bp82, 0.001); end
-  def test_costpercapita_bq82; assert_in_epsilon(61.605578085586515, worksheet.costpercapita_bq82, 0.001); end
+  def test_costpercapita_bg82; assert_in_epsilon(20.697745918415457, worksheet.costpercapita_bg82, 0.001); end
+  def test_costpercapita_bi82; assert_in_epsilon(10.200940880854802, worksheet.costpercapita_bi82, 0.001); end
+  def test_costpercapita_bj82; assert_in_epsilon(33.82023485747562, worksheet.costpercapita_bj82, 0.001); end
+  def test_costpercapita_bk82; assert_in_epsilon(58.049658922315786, worksheet.costpercapita_bk82, 0.001); end
+  def test_costpercapita_bl82; assert_in_epsilon(70.8445405416842, worksheet.costpercapita_bl82, 0.001); end
+  def test_costpercapita_bm82; assert_in_epsilon(69.6914236336954, worksheet.costpercapita_bm82, 0.001); end
+  def test_costpercapita_bn82; assert_in_epsilon(66.46290809183722, worksheet.costpercapita_bn82, 0.001); end
+  def test_costpercapita_bo82; assert_in_epsilon(64.11329211372487, worksheet.costpercapita_bo82, 0.001); end
+  def test_costpercapita_bp82; assert_in_epsilon(62.52996578182482, worksheet.costpercapita_bp82, 0.001); end
+  def test_costpercapita_bq82; assert_in_epsilon(61.60557808558653, worksheet.costpercapita_bq82, 0.001); end
   def test_costpercapita_bs82; assert_in_epsilon(23.34007033342415, worksheet.costpercapita_bs82, 0.001); end
-  def test_costpercapita_bt82; assert_in_epsilon(46.2671958045602, worksheet.costpercapita_bt82, 0.001); end
-  def test_costpercapita_bu82; assert_in_epsilon(68.32319277559016, worksheet.costpercapita_bu82, 0.001); end
-  def test_costpercapita_bv82; assert_in_epsilon(79.19361733563436, worksheet.costpercapita_bv82, 0.001); end
-  def test_costpercapita_bw82; assert_in_epsilon(76.33868595707398, worksheet.costpercapita_bw82, 0.001); end
-  def test_costpercapita_bx82; assert_in_epsilon(71.58878422221713, worksheet.costpercapita_bx82, 0.001); end
-  def test_costpercapita_by82; assert_in_epsilon(67.85496774538568, worksheet.costpercapita_by82, 0.001); end
-  def test_costpercapita_bz82; assert_in_epsilon(64.99587980748402, worksheet.costpercapita_bz82, 0.001); end
-  def test_costpercapita_ca82; assert_in_epsilon(62.88332523744898, worksheet.costpercapita_ca82, 0.001); end
-  def test_costpercapita_cc82; assert_in_epsilon(62.30952435764651, worksheet.costpercapita_cc82, 0.001); end
-  def test_costpercapita_cd82; assert_in_epsilon(1344.0405162150537, worksheet.costpercapita_cd82, 0.001); end
-  def test_costpercapita_cf82; assert_in_epsilon(-20.76882322382116, worksheet.costpercapita_cf82, 0.001); end
-  def test_costpercapita_cg82; assert_in_epsilon(-9.81700289223947, worksheet.costpercapita_cg82, 0.001); end
-  def test_costpercapita_ch82; assert_in_epsilon(11.89687854575127, worksheet.costpercapita_ch82, 0.001); end
-  def test_costpercapita_ci82; assert_in_epsilon(27.42078315320406, worksheet.costpercapita_ci82, 0.001); end
-  def test_costpercapita_cj82; assert_in_epsilon(28.48200943044828, worksheet.costpercapita_cj82, 0.001); end
-  def test_costpercapita_ck82; assert_in_epsilon(26.87639760307332, worksheet.costpercapita_ck82, 0.001); end
-  def test_costpercapita_cl82; assert_in_epsilon(25.448446924024957, worksheet.costpercapita_cl82, 0.001); end
-  def test_costpercapita_cm82; assert_in_epsilon(24.489462608374833, worksheet.costpercapita_cm82, 0.001); end
-  def test_costpercapita_cn82; assert_in_epsilon(23.902920100681165, worksheet.costpercapita_cn82, 0.001); end
-  def test_costpercapita_cp82; assert_in_epsilon(15.325674694388583, worksheet.costpercapita_cp82, 0.001); end
-  def test_costpercapita_cq82; assert_in_epsilon(304.9914504173819, worksheet.costpercapita_cq82, 0.001); end
+  def test_costpercapita_bt82; assert_in_epsilon(46.26719580456022, worksheet.costpercapita_bt82, 0.001); end
+  def test_costpercapita_bu82; assert_in_epsilon(68.32319277559017, worksheet.costpercapita_bu82, 0.001); end
+  def test_costpercapita_bv82; assert_in_epsilon(79.19361733563437, worksheet.costpercapita_bv82, 0.001); end
+  def test_costpercapita_bw82; assert_in_epsilon(76.33868595707399, worksheet.costpercapita_bw82, 0.001); end
+  def test_costpercapita_bx82; assert_in_epsilon(71.58878422221716, worksheet.costpercapita_bx82, 0.001); end
+  def test_costpercapita_by82; assert_in_epsilon(67.85496774538571, worksheet.costpercapita_by82, 0.001); end
+  def test_costpercapita_bz82; assert_in_epsilon(64.99587980748403, worksheet.costpercapita_bz82, 0.001); end
+  def test_costpercapita_ca82; assert_in_epsilon(62.88332523744899, worksheet.costpercapita_ca82, 0.001); end
+  def test_costpercapita_cc82; assert_in_epsilon(62.309524357646524, worksheet.costpercapita_cc82, 0.001); end
+  def test_costpercapita_cd82; assert_in_epsilon(1344.0405162150541, worksheet.costpercapita_cd82, 0.001); end
+  def test_costpercapita_cf82; assert_in_epsilon(-20.768823223821155, worksheet.costpercapita_cf82, 0.001); end
+  def test_costpercapita_cg82; assert_in_epsilon(-9.817002892239456, worksheet.costpercapita_cg82, 0.001); end
+  def test_costpercapita_ch82; assert_in_epsilon(11.896878545751283, worksheet.costpercapita_ch82, 0.001); end
+  def test_costpercapita_ci82; assert_in_epsilon(27.420783153204088, worksheet.costpercapita_ci82, 0.001); end
+  def test_costpercapita_cj82; assert_in_epsilon(28.482009430448294, worksheet.costpercapita_cj82, 0.001); end
+  def test_costpercapita_ck82; assert_in_epsilon(26.876397603073343, worksheet.costpercapita_ck82, 0.001); end
+  def test_costpercapita_cl82; assert_in_epsilon(25.44844692402498, worksheet.costpercapita_cl82, 0.001); end
+  def test_costpercapita_cm82; assert_in_epsilon(24.489462608374843, worksheet.costpercapita_cm82, 0.001); end
+  def test_costpercapita_cn82; assert_in_epsilon(23.902920100681175, worksheet.costpercapita_cn82, 0.001); end
+  def test_costpercapita_cp82; assert_in_epsilon(15.3256746943886, worksheet.costpercapita_cp82, 0.001); end
+  def test_costpercapita_cq82; assert_in_epsilon(304.9914504173822, worksheet.costpercapita_cq82, 0.001); end
   def test_costpercapita_cr82; assert_equal("ok", worksheet.costpercapita_cr82); end
   def test_costpercapita_a83; assert_equal("X.a", worksheet.costpercapita_a83); end
   def test_costpercapita_b83; assert_equal("Domestic lighting, appliances, and cooking", worksheet.costpercapita_b83); end
@@ -14824,46 +15435,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at83; assert_in_epsilon(1006.7107095310698, worksheet.costpercapita_at83, 0.001); end
   def test_costpercapita_av83; assert_in_delta(0.07, worksheet.costpercapita_av83, 0.001); end
   def test_costpercapita_aw83; assert_in_epsilon(15, worksheet.costpercapita_aw83, 0.001); end
-  def test_costpercapita_ay83; assert_in_epsilon(14.348707060060937, worksheet.costpercapita_ay83, 0.001); end
-  def test_costpercapita_az83; assert_in_epsilon(25.236661466334393, worksheet.costpercapita_az83, 0.001); end
-  def test_costpercapita_ba83; assert_in_epsilon(25.521772828121577, worksheet.costpercapita_ba83, 0.001); end
-  def test_costpercapita_bb83; assert_in_epsilon(25.5884497216896, worksheet.costpercapita_bb83, 0.001); end
-  def test_costpercapita_bc83; assert_in_epsilon(25.61176629938396, worksheet.costpercapita_bc83, 0.001); end
-  def test_costpercapita_bd83; assert_in_epsilon(26.656083189076302, worksheet.costpercapita_bd83, 0.001); end
-  def test_costpercapita_be83; assert_in_epsilon(27.365639442277494, worksheet.costpercapita_be83, 0.001); end
-  def test_costpercapita_bf83; assert_in_epsilon(29.099098996297762, worksheet.costpercapita_bf83, 0.001); end
-  def test_costpercapita_bg83; assert_in_epsilon(31.269689156181016, worksheet.costpercapita_bg83, 0.001); end
-  def test_costpercapita_bi83; assert_in_epsilon(14.348707060060937, worksheet.costpercapita_bi83, 0.001); end
-  def test_costpercapita_bj83; assert_in_epsilon(39.11221891742687, worksheet.costpercapita_bj83, 0.001); end
-  def test_costpercapita_bk83; assert_in_epsilon(63.35353003830527, worksheet.costpercapita_bk83, 0.001); end
-  def test_costpercapita_bl83; assert_in_epsilon(73.9746069705558, worksheet.costpercapita_bl83, 0.001); end
-  def test_costpercapita_bm83; assert_in_epsilon(74.55699652918038, worksheet.costpercapita_bm83, 0.001); end
-  def test_costpercapita_bn83; assert_in_epsilon(75.9676294563501, worksheet.costpercapita_bn83, 0.001); end
-  def test_costpercapita_bo83; assert_in_epsilon(77.9283678796365, worksheet.costpercapita_bo83, 0.001); end
-  def test_costpercapita_bp83; assert_in_epsilon(81.48606236546898, worksheet.costpercapita_bp83, 0.001); end
-  def test_costpercapita_bq83; assert_in_epsilon(86.14499707549145, worksheet.costpercapita_bq83, 0.001); end
-  def test_costpercapita_bs83; assert_in_epsilon(14.348707060060937, worksheet.costpercapita_bs83, 0.001); end
-  def test_costpercapita_bt83; assert_in_epsilon(39.11221891742687, worksheet.costpercapita_bt83, 0.001); end
-  def test_costpercapita_bu83; assert_in_epsilon(63.35353003830527, worksheet.costpercapita_bu83, 0.001); end
-  def test_costpercapita_bv83; assert_in_epsilon(73.9746069705558, worksheet.costpercapita_bv83, 0.001); end
-  def test_costpercapita_bw83; assert_in_epsilon(74.55699652918038, worksheet.costpercapita_bw83, 0.001); end
-  def test_costpercapita_bx83; assert_in_epsilon(75.9676294563501, worksheet.costpercapita_bx83, 0.001); end
-  def test_costpercapita_by83; assert_in_epsilon(77.9283678796365, worksheet.costpercapita_by83, 0.001); end
-  def test_costpercapita_bz83; assert_in_epsilon(81.48606236546898, worksheet.costpercapita_bz83, 0.001); end
-  def test_costpercapita_ca83; assert_in_epsilon(86.14499707549145, worksheet.costpercapita_ca83, 0.001); end
-  def test_costpercapita_cc83; assert_in_epsilon(65.20812403249735, worksheet.costpercapita_cc83, 0.001); end
-  def test_costpercapita_cd83; assert_in_epsilon(1350.6418286909438, worksheet.costpercapita_cd83, 0.001); end
-  def test_costpercapita_cf83; assert_in_epsilon(-29.213556269118232, worksheet.costpercapita_cf83, 0.001); end
-  def test_costpercapita_cg83; assert_in_epsilon(-6.858449564858199, worksheet.costpercapita_cg83, 0.001); end
-  def test_costpercapita_ch83; assert_in_epsilon(16.863507603012753, worksheet.costpercapita_ch83, 0.001); end
-  def test_costpercapita_ci83; assert_in_epsilon(27.36312705271421, worksheet.costpercapita_ci83, 0.001); end
-  def test_costpercapita_cj83; assert_in_epsilon(27.903043534432054, worksheet.costpercapita_cj83, 0.001); end
-  def test_costpercapita_ck83; assert_in_epsilon(27.41136677652159, worksheet.costpercapita_ck83, 0.001); end
-  def test_costpercapita_cl83; assert_in_epsilon(28.079589732619198, worksheet.costpercapita_cl83, 0.001); end
-  def test_costpercapita_cm83; assert_in_epsilon(28.479644108581397, worksheet.costpercapita_cm83, 0.001); end
-  def test_costpercapita_cn83; assert_in_epsilon(29.184669115293314, worksheet.costpercapita_cn83, 0.001); end
-  def test_costpercapita_cp83; assert_in_epsilon(16.579215787688675, worksheet.costpercapita_cp83, 0.001); end
-  def test_costpercapita_cq83; assert_in_epsilon(343.931119159874, worksheet.costpercapita_cq83, 0.001); end
+  def test_costpercapita_ay83; assert_in_epsilon(14.34870706006094, worksheet.costpercapita_ay83, 0.001); end
+  def test_costpercapita_az83; assert_in_epsilon(25.2366614663344, worksheet.costpercapita_az83, 0.001); end
+  def test_costpercapita_ba83; assert_in_epsilon(25.521772828121584, worksheet.costpercapita_ba83, 0.001); end
+  def test_costpercapita_bb83; assert_in_epsilon(25.588449721689603, worksheet.costpercapita_bb83, 0.001); end
+  def test_costpercapita_bc83; assert_in_epsilon(25.611766299383966, worksheet.costpercapita_bc83, 0.001); end
+  def test_costpercapita_bd83; assert_in_epsilon(26.656083189076305, worksheet.costpercapita_bd83, 0.001); end
+  def test_costpercapita_be83; assert_in_epsilon(27.365639442277498, worksheet.costpercapita_be83, 0.001); end
+  def test_costpercapita_bf83; assert_in_epsilon(29.099098996297766, worksheet.costpercapita_bf83, 0.001); end
+  def test_costpercapita_bg83; assert_in_epsilon(31.26968915618102, worksheet.costpercapita_bg83, 0.001); end
+  def test_costpercapita_bi83; assert_in_epsilon(14.34870706006094, worksheet.costpercapita_bi83, 0.001); end
+  def test_costpercapita_bj83; assert_in_epsilon(39.11221891742688, worksheet.costpercapita_bj83, 0.001); end
+  def test_costpercapita_bk83; assert_in_epsilon(63.35353003830529, worksheet.costpercapita_bk83, 0.001); end
+  def test_costpercapita_bl83; assert_in_epsilon(73.97460697055581, worksheet.costpercapita_bl83, 0.001); end
+  def test_costpercapita_bm83; assert_in_epsilon(74.5569965291804, worksheet.costpercapita_bm83, 0.001); end
+  def test_costpercapita_bn83; assert_in_epsilon(75.96762945635011, worksheet.costpercapita_bn83, 0.001); end
+  def test_costpercapita_bo83; assert_in_epsilon(77.92836787963651, worksheet.costpercapita_bo83, 0.001); end
+  def test_costpercapita_bp83; assert_in_epsilon(81.486062365469, worksheet.costpercapita_bp83, 0.001); end
+  def test_costpercapita_bq83; assert_in_epsilon(86.14499707549146, worksheet.costpercapita_bq83, 0.001); end
+  def test_costpercapita_bs83; assert_in_epsilon(14.34870706006094, worksheet.costpercapita_bs83, 0.001); end
+  def test_costpercapita_bt83; assert_in_epsilon(39.11221891742688, worksheet.costpercapita_bt83, 0.001); end
+  def test_costpercapita_bu83; assert_in_epsilon(63.35353003830529, worksheet.costpercapita_bu83, 0.001); end
+  def test_costpercapita_bv83; assert_in_epsilon(73.97460697055581, worksheet.costpercapita_bv83, 0.001); end
+  def test_costpercapita_bw83; assert_in_epsilon(74.5569965291804, worksheet.costpercapita_bw83, 0.001); end
+  def test_costpercapita_bx83; assert_in_epsilon(75.96762945635011, worksheet.costpercapita_bx83, 0.001); end
+  def test_costpercapita_by83; assert_in_epsilon(77.92836787963651, worksheet.costpercapita_by83, 0.001); end
+  def test_costpercapita_bz83; assert_in_epsilon(81.486062365469, worksheet.costpercapita_bz83, 0.001); end
+  def test_costpercapita_ca83; assert_in_epsilon(86.14499707549146, worksheet.costpercapita_ca83, 0.001); end
+  def test_costpercapita_cc83; assert_in_epsilon(65.20812403249738, worksheet.costpercapita_cc83, 0.001); end
+  def test_costpercapita_cd83; assert_in_epsilon(1350.641828690944, worksheet.costpercapita_cd83, 0.001); end
+  def test_costpercapita_cf83; assert_in_epsilon(-29.213556269118225, worksheet.costpercapita_cf83, 0.001); end
+  def test_costpercapita_cg83; assert_in_epsilon(-6.858449564858192, worksheet.costpercapita_cg83, 0.001); end
+  def test_costpercapita_ch83; assert_in_epsilon(16.863507603012767, worksheet.costpercapita_ch83, 0.001); end
+  def test_costpercapita_ci83; assert_in_epsilon(27.363127052714223, worksheet.costpercapita_ci83, 0.001); end
+  def test_costpercapita_cj83; assert_in_epsilon(27.90304353443207, worksheet.costpercapita_cj83, 0.001); end
+  def test_costpercapita_ck83; assert_in_epsilon(27.411366776521604, worksheet.costpercapita_ck83, 0.001); end
+  def test_costpercapita_cl83; assert_in_epsilon(28.079589732619223, worksheet.costpercapita_cl83, 0.001); end
+  def test_costpercapita_cm83; assert_in_epsilon(28.47964410858141, worksheet.costpercapita_cm83, 0.001); end
+  def test_costpercapita_cn83; assert_in_epsilon(29.184669115293328, worksheet.costpercapita_cn83, 0.001); end
+  def test_costpercapita_cp83; assert_in_epsilon(16.57921578768869, worksheet.costpercapita_cp83, 0.001); end
+  def test_costpercapita_cq83; assert_in_epsilon(343.9311191598743, worksheet.costpercapita_cq83, 0.001); end
   def test_costpercapita_cr83; assert_equal("ok", worksheet.costpercapita_cr83); end
   def test_costpercapita_a84; assert_equal("X.b", worksheet.costpercapita_a84); end
   def test_costpercapita_b84; assert_equal("Commercial lighting, appliances, and catering", worksheet.costpercapita_b84); end
@@ -14908,46 +15519,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at84; assert_in_epsilon(126.41577359766565, worksheet.costpercapita_at84, 0.001); end
   def test_costpercapita_av84; assert_in_delta(0, (worksheet.costpercapita_av84||0), 0.001); end
   def test_costpercapita_aw84; assert_in_epsilon(5, worksheet.costpercapita_aw84, 0.001); end
-  def test_costpercapita_ay84; assert_in_delta(0.9206942277489174, worksheet.costpercapita_ay84, 0.001); end
-  def test_costpercapita_az84; assert_in_epsilon(4.259481904848926, worksheet.costpercapita_az84, 0.001); end
-  def test_costpercapita_ba84; assert_in_epsilon(3.836620593128636, worksheet.costpercapita_ba84, 0.001); end
-  def test_costpercapita_bb84; assert_in_epsilon(3.4752088571803896, worksheet.costpercapita_bb84, 0.001); end
-  def test_costpercapita_bc84; assert_in_epsilon(3.172245753928035, worksheet.costpercapita_bc84, 0.001); end
-  def test_costpercapita_bd84; assert_in_epsilon(2.9189514330538144, worksheet.costpercapita_bd84, 0.001); end
-  def test_costpercapita_be84; assert_in_epsilon(2.703563026027373, worksheet.costpercapita_be84, 0.001); end
-  def test_costpercapita_bf84; assert_in_epsilon(2.51864698535543, worksheet.costpercapita_bf84, 0.001); end
-  def test_costpercapita_bg84; assert_in_epsilon(2.3600144266588248, worksheet.costpercapita_bg84, 0.001); end
-  def test_costpercapita_bi84; assert_in_delta(0.9206942277489174, worksheet.costpercapita_bi84, 0.001); end
-  def test_costpercapita_bj84; assert_in_epsilon(5.149816176678786, worksheet.costpercapita_bj84, 0.001); end
-  def test_costpercapita_bk84; assert_in_epsilon(8.817841313039802, worksheet.costpercapita_bk84, 0.001); end
-  def test_costpercapita_bl84; assert_in_epsilon(11.185498111431425, worksheet.costpercapita_bl84, 0.001); end
-  def test_costpercapita_bm84; assert_in_epsilon(10.168765299824484, worksheet.costpercapita_bm84, 0.001); end
-  def test_costpercapita_bn84; assert_in_epsilon(9.317113841406675, worksheet.costpercapita_bn84, 0.001); end
-  def test_costpercapita_bo84; assert_in_epsilon(8.591726135595971, worksheet.costpercapita_bo84, 0.001); end
-  def test_costpercapita_bp84; assert_in_epsilon(7.967995031938755, worksheet.costpercapita_bp84, 0.001); end
-  def test_costpercapita_bq84; assert_in_epsilon(7.431844900259074, worksheet.costpercapita_bq84, 0.001); end
-  def test_costpercapita_bs84; assert_in_delta(0.9206942277489174, worksheet.costpercapita_bs84, 0.001); end
-  def test_costpercapita_bt84; assert_in_epsilon(5.149816176678786, worksheet.costpercapita_bt84, 0.001); end
-  def test_costpercapita_bu84; assert_in_epsilon(8.817841313039802, worksheet.costpercapita_bu84, 0.001); end
-  def test_costpercapita_bv84; assert_in_epsilon(11.185498111431425, worksheet.costpercapita_bv84, 0.001); end
-  def test_costpercapita_bw84; assert_in_epsilon(10.168765299824484, worksheet.costpercapita_bw84, 0.001); end
-  def test_costpercapita_bx84; assert_in_epsilon(9.317113841406675, worksheet.costpercapita_bx84, 0.001); end
-  def test_costpercapita_by84; assert_in_epsilon(8.591726135595971, worksheet.costpercapita_by84, 0.001); end
-  def test_costpercapita_bz84; assert_in_epsilon(7.967995031938755, worksheet.costpercapita_bz84, 0.001); end
-  def test_costpercapita_ca84; assert_in_epsilon(7.431844900259074, worksheet.costpercapita_ca84, 0.001); end
-  def test_costpercapita_cc84; assert_in_epsilon(7.727921670880432, worksheet.costpercapita_cc84, 0.001); end
-  def test_costpercapita_cd84; assert_in_epsilon(169.90419696033086, worksheet.costpercapita_cd84, 0.001); end
-  def test_costpercapita_cf84; assert_in_epsilon(-1.8745070560302546, worksheet.costpercapita_cf84, 0.001); end
-  def test_costpercapita_cg84; assert_in_epsilon(-2.6091828024577173, worksheet.costpercapita_cg84, 0.001); end
-  def test_costpercapita_ch84; assert_in_epsilon(1.8291192265505085, worksheet.costpercapita_ch84, 0.001); end
-  def test_costpercapita_ci84; assert_in_epsilon(4.8551174272329, worksheet.costpercapita_ci84, 0.001); end
-  def test_costpercapita_cj84; assert_in_epsilon(4.390256993854648, worksheet.costpercapita_cj84, 0.001); end
-  def test_costpercapita_ck84; assert_in_epsilon(4.000002113937824, worksheet.costpercapita_ck84, 0.001); end
-  def test_costpercapita_cl84; assert_in_epsilon(3.666962225905976, worksheet.costpercapita_cl84, 0.001); end
-  def test_costpercapita_cm84; assert_in_epsilon(3.3800710015698243, worksheet.costpercapita_cm84, 0.001); end
-  def test_costpercapita_cn84; assert_in_epsilon(3.132883210493966, worksheet.costpercapita_cn84, 0.001); end
-  def test_costpercapita_cp84; assert_in_epsilon(2.307858037895297, worksheet.costpercapita_cp84, 0.001); end
-  def test_costpercapita_cq84; assert_in_epsilon(43.48842336266522, worksheet.costpercapita_cq84, 0.001); end
+  def test_costpercapita_ay84; assert_in_delta(0.9206942277489177, worksheet.costpercapita_ay84, 0.001); end
+  def test_costpercapita_az84; assert_in_epsilon(4.2594819048489265, worksheet.costpercapita_az84, 0.001); end
+  def test_costpercapita_ba84; assert_in_epsilon(3.8366205931286372, worksheet.costpercapita_ba84, 0.001); end
+  def test_costpercapita_bb84; assert_in_epsilon(3.4752088571803905, worksheet.costpercapita_bb84, 0.001); end
+  def test_costpercapita_bc84; assert_in_epsilon(3.1722457539280358, worksheet.costpercapita_bc84, 0.001); end
+  def test_costpercapita_bd84; assert_in_epsilon(2.9189514330538153, worksheet.costpercapita_bd84, 0.001); end
+  def test_costpercapita_be84; assert_in_epsilon(2.703563026027374, worksheet.costpercapita_be84, 0.001); end
+  def test_costpercapita_bf84; assert_in_epsilon(2.518646985355431, worksheet.costpercapita_bf84, 0.001); end
+  def test_costpercapita_bg84; assert_in_epsilon(2.360014426658825, worksheet.costpercapita_bg84, 0.001); end
+  def test_costpercapita_bi84; assert_in_delta(0.9206942277489177, worksheet.costpercapita_bi84, 0.001); end
+  def test_costpercapita_bj84; assert_in_epsilon(5.1498161766787875, worksheet.costpercapita_bj84, 0.001); end
+  def test_costpercapita_bk84; assert_in_epsilon(8.817841313039805, worksheet.costpercapita_bk84, 0.001); end
+  def test_costpercapita_bl84; assert_in_epsilon(11.18549811143143, worksheet.costpercapita_bl84, 0.001); end
+  def test_costpercapita_bm84; assert_in_epsilon(10.168765299824486, worksheet.costpercapita_bm84, 0.001); end
+  def test_costpercapita_bn84; assert_in_epsilon(9.317113841406677, worksheet.costpercapita_bn84, 0.001); end
+  def test_costpercapita_bo84; assert_in_epsilon(8.591726135595973, worksheet.costpercapita_bo84, 0.001); end
+  def test_costpercapita_bp84; assert_in_epsilon(7.9679950319387585, worksheet.costpercapita_bp84, 0.001); end
+  def test_costpercapita_bq84; assert_in_epsilon(7.431844900259076, worksheet.costpercapita_bq84, 0.001); end
+  def test_costpercapita_bs84; assert_in_delta(0.9206942277489177, worksheet.costpercapita_bs84, 0.001); end
+  def test_costpercapita_bt84; assert_in_epsilon(5.1498161766787875, worksheet.costpercapita_bt84, 0.001); end
+  def test_costpercapita_bu84; assert_in_epsilon(8.817841313039805, worksheet.costpercapita_bu84, 0.001); end
+  def test_costpercapita_bv84; assert_in_epsilon(11.18549811143143, worksheet.costpercapita_bv84, 0.001); end
+  def test_costpercapita_bw84; assert_in_epsilon(10.168765299824486, worksheet.costpercapita_bw84, 0.001); end
+  def test_costpercapita_bx84; assert_in_epsilon(9.317113841406677, worksheet.costpercapita_bx84, 0.001); end
+  def test_costpercapita_by84; assert_in_epsilon(8.591726135595973, worksheet.costpercapita_by84, 0.001); end
+  def test_costpercapita_bz84; assert_in_epsilon(7.9679950319387585, worksheet.costpercapita_bz84, 0.001); end
+  def test_costpercapita_ca84; assert_in_epsilon(7.431844900259076, worksheet.costpercapita_ca84, 0.001); end
+  def test_costpercapita_cc84; assert_in_epsilon(7.727921670880436, worksheet.costpercapita_cc84, 0.001); end
+  def test_costpercapita_cd84; assert_in_epsilon(169.90419696033095, worksheet.costpercapita_cd84, 0.001); end
+  def test_costpercapita_cf84; assert_in_epsilon(-1.8745070560302544, worksheet.costpercapita_cf84, 0.001); end
+  def test_costpercapita_cg84; assert_in_epsilon(-2.6091828024577155, worksheet.costpercapita_cg84, 0.001); end
+  def test_costpercapita_ch84; assert_in_epsilon(1.8291192265505118, worksheet.costpercapita_ch84, 0.001); end
+  def test_costpercapita_ci84; assert_in_epsilon(4.855117427232904, worksheet.costpercapita_ci84, 0.001); end
+  def test_costpercapita_cj84; assert_in_epsilon(4.39025699385465, worksheet.costpercapita_cj84, 0.001); end
+  def test_costpercapita_ck84; assert_in_epsilon(4.000002113937826, worksheet.costpercapita_ck84, 0.001); end
+  def test_costpercapita_cl84; assert_in_epsilon(3.6669622259059773, worksheet.costpercapita_cl84, 0.001); end
+  def test_costpercapita_cm84; assert_in_epsilon(3.380071001569827, worksheet.costpercapita_cm84, 0.001); end
+  def test_costpercapita_cn84; assert_in_epsilon(3.1328832104939672, worksheet.costpercapita_cn84, 0.001); end
+  def test_costpercapita_cp84; assert_in_epsilon(2.3078580378952993, worksheet.costpercapita_cp84, 0.001); end
+  def test_costpercapita_cq84; assert_in_epsilon(43.488423362665266, worksheet.costpercapita_cq84, 0.001); end
   def test_costpercapita_cr84; assert_equal("ok", worksheet.costpercapita_cr84); end
   def test_costpercapita_a85; assert_equal("XI.a", worksheet.costpercapita_a85); end
   def test_costpercapita_b85; assert_equal("Industrial processes", worksheet.costpercapita_b85); end
@@ -14992,24 +15603,24 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at85; assert_in_epsilon(2729.239885025956, worksheet.costpercapita_at85, 0.001); end
   def test_costpercapita_av85; assert_in_delta(0, (worksheet.costpercapita_av85||0), 0.001); end
   def test_costpercapita_aw85; assert_in_epsilon(5, worksheet.costpercapita_aw85, 0.001); end
-  def test_costpercapita_ay85; assert_in_delta(0.3790370299184899, worksheet.costpercapita_ay85, 0.001); end
+  def test_costpercapita_ay85; assert_in_delta(0.37903702991849003, worksheet.costpercapita_ay85, 0.001); end
   def test_costpercapita_az85; assert_in_delta(0.6208194168896348, worksheet.costpercapita_az85, 0.001); end
-  def test_costpercapita_ba85; assert_in_delta(0.8178595216205524, worksheet.costpercapita_ba85, 0.001); end
-  def test_costpercapita_bb85; assert_in_delta(0.952382573348901, worksheet.costpercapita_bb85, 0.001); end
-  def test_costpercapita_bc85; assert_in_epsilon(1.1907140310968238, worksheet.costpercapita_bc85, 0.001); end
-  def test_costpercapita_bd85; assert_in_epsilon(1.6060592165100889, worksheet.costpercapita_bd85, 0.001); end
-  def test_costpercapita_be85; assert_in_epsilon(2.285063774067657, worksheet.costpercapita_be85, 0.001); end
-  def test_costpercapita_bf85; assert_in_epsilon(3.4234696146551147, worksheet.costpercapita_bf85, 0.001); end
-  def test_costpercapita_bg85; assert_in_epsilon(5.329794708890948, worksheet.costpercapita_bg85, 0.001); end
-  def test_costpercapita_bi85; assert_in_delta(0.3790370299184899, worksheet.costpercapita_bi85, 0.001); end
-  def test_costpercapita_bj85; assert_in_delta(0.9873576744978525, worksheet.costpercapita_bj85, 0.001); end
-  def test_costpercapita_bk85; assert_in_epsilon(1.7728929320254807, worksheet.costpercapita_bk85, 0.001); end
+  def test_costpercapita_ba85; assert_in_delta(0.8178595216205528, worksheet.costpercapita_ba85, 0.001); end
+  def test_costpercapita_bb85; assert_in_delta(0.9523825733489011, worksheet.costpercapita_bb85, 0.001); end
+  def test_costpercapita_bc85; assert_in_epsilon(1.190714031096824, worksheet.costpercapita_bc85, 0.001); end
+  def test_costpercapita_bd85; assert_in_epsilon(1.6060592165100893, worksheet.costpercapita_bd85, 0.001); end
+  def test_costpercapita_be85; assert_in_epsilon(2.2850637740676576, worksheet.costpercapita_be85, 0.001); end
+  def test_costpercapita_bf85; assert_in_epsilon(3.423469614655116, worksheet.costpercapita_bf85, 0.001); end
+  def test_costpercapita_bg85; assert_in_epsilon(5.32979470889095, worksheet.costpercapita_bg85, 0.001); end
+  def test_costpercapita_bi85; assert_in_delta(0.37903702991849003, worksheet.costpercapita_bi85, 0.001); end
+  def test_costpercapita_bj85; assert_in_delta(0.9873576744978526, worksheet.costpercapita_bj85, 0.001); end
+  def test_costpercapita_bk85; assert_in_epsilon(1.7728929320254811, worksheet.costpercapita_bk85, 0.001); end
   def test_costpercapita_bl85; assert_in_epsilon(2.326819849906861, worksheet.costpercapita_bl85, 0.001); end
-  def test_costpercapita_bm85; assert_in_epsilon(2.887960917711557, worksheet.costpercapita_bm85, 0.001); end
-  def test_costpercapita_bn85; assert_in_epsilon(3.673267352775791, worksheet.costpercapita_bn85, 0.001); end
-  def test_costpercapita_bo85; assert_in_epsilon(4.994742022157001, worksheet.costpercapita_bo85, 0.001); end
-  def test_costpercapita_bp85; assert_in_epsilon(7.203404580174453, worksheet.costpercapita_bp85, 0.001); end
-  def test_costpercapita_bq85; assert_in_epsilon(10.887065321826158, worksheet.costpercapita_bq85, 0.001); end
+  def test_costpercapita_bm85; assert_in_epsilon(2.887960917711558, worksheet.costpercapita_bm85, 0.001); end
+  def test_costpercapita_bn85; assert_in_epsilon(3.673267352775792, worksheet.costpercapita_bn85, 0.001); end
+  def test_costpercapita_bo85; assert_in_epsilon(4.994742022157002, worksheet.costpercapita_bo85, 0.001); end
+  def test_costpercapita_bp85; assert_in_epsilon(7.203404580174457, worksheet.costpercapita_bp85, 0.001); end
+  def test_costpercapita_bq85; assert_in_epsilon(10.887065321826162, worksheet.costpercapita_bq85, 0.001); end
   def test_costpercapita_bs85; assert_in_epsilon(123.34176432488337, worksheet.costpercapita_bs85, 0.001); end
   def test_costpercapita_bt85; assert_in_epsilon(124.53107888152206, worksheet.costpercapita_bt85, 0.001); end
   def test_costpercapita_bu85; assert_in_epsilon(126.01597054477602, worksheet.costpercapita_bu85, 0.001); end
@@ -15022,16 +15633,16 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cc85; assert_in_epsilon(132.23229219838672, worksheet.costpercapita_cc85, 0.001); end
   def test_costpercapita_cd85; assert_in_epsilon(2738.553787408014, worksheet.costpercapita_cd85, 0.001); end
   def test_costpercapita_cf85; assert_in_delta(-0.771708527831373, worksheet.costpercapita_cf85, 0.001); end
-  def test_costpercapita_cg85; assert_in_delta(-0.1435162978487074, worksheet.costpercapita_cg85, 0.001); end
-  def test_costpercapita_ch85; assert_in_delta(0.28309409378954103, worksheet.costpercapita_ch85, 0.001); end
+  def test_costpercapita_cg85; assert_in_delta(-0.14351629784870729, worksheet.costpercapita_cg85, 0.001); end
+  def test_costpercapita_ch85; assert_in_delta(0.2830940937895415, worksheet.costpercapita_ch85, 0.001); end
   def test_costpercapita_ci85; assert_in_delta(0.5919761343015919, worksheet.costpercapita_ci85, 0.001); end
-  def test_costpercapita_cj85; assert_in_delta(0.7189767177302112, worksheet.costpercapita_cj85, 0.001); end
-  def test_costpercapita_ck85; assert_in_delta(0.747697506558418, worksheet.costpercapita_ck85, 0.001); end
-  def test_costpercapita_cl85; assert_in_delta(0.8323091520773258, worksheet.costpercapita_cl85, 0.001); end
-  def test_costpercapita_cm85; assert_in_delta(0.9672712102978658, worksheet.costpercapita_cm85, 0.001); end
-  def test_costpercapita_cn85; assert_in_epsilon(1.1784029471332587, worksheet.costpercapita_cn85, 0.001); end
-  def test_costpercapita_cp85; assert_in_delta(0.48938921513423694, worksheet.costpercapita_cp85, 0.001); end
-  def test_costpercapita_cq85; assert_in_epsilon(9.313902382057105, worksheet.costpercapita_cq85, 0.001); end
+  def test_costpercapita_cj85; assert_in_delta(0.718976717730212, worksheet.costpercapita_cj85, 0.001); end
+  def test_costpercapita_ck85; assert_in_delta(0.7476975065584196, worksheet.costpercapita_ck85, 0.001); end
+  def test_costpercapita_cl85; assert_in_delta(0.8323091520773266, worksheet.costpercapita_cl85, 0.001); end
+  def test_costpercapita_cm85; assert_in_delta(0.9672712102978689, worksheet.costpercapita_cm85, 0.001); end
+  def test_costpercapita_cn85; assert_in_epsilon(1.1784029471332615, worksheet.costpercapita_cn85, 0.001); end
+  def test_costpercapita_cp85; assert_in_delta(0.489389215134238, worksheet.costpercapita_cp85, 0.001); end
+  def test_costpercapita_cq85; assert_in_epsilon(9.313902382057124, worksheet.costpercapita_cq85, 0.001); end
   def test_costpercapita_cr85; assert_equal("ok", worksheet.costpercapita_cr85); end
   def test_costpercapita_a86; assert_equal("XII.a.ICE", worksheet.costpercapita_a86); end
   def test_costpercapita_b86; assert_equal("Conventional cars and buses", worksheet.costpercapita_b86); end
@@ -15076,46 +15687,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at86; assert_in_epsilon(16506.044417507655, worksheet.costpercapita_at86, 0.001); end
   def test_costpercapita_av86; assert_in_delta(0.07, worksheet.costpercapita_av86, 0.001); end
   def test_costpercapita_aw86; assert_in_epsilon(15, worksheet.costpercapita_aw86, 0.001); end
-  def test_costpercapita_ay86; assert_in_epsilon(251.75501407318362, worksheet.costpercapita_ay86, 0.001); end
-  def test_costpercapita_az86; assert_in_epsilon(371.08440506077943, worksheet.costpercapita_az86, 0.001); end
-  def test_costpercapita_ba86; assert_in_epsilon(351.32481537262436, worksheet.costpercapita_ba86, 0.001); end
-  def test_costpercapita_bb86; assert_in_epsilon(80.832338933836, worksheet.costpercapita_bb86, 0.001); end
+  def test_costpercapita_ay86; assert_in_epsilon(251.75501407318367, worksheet.costpercapita_ay86, 0.001); end
+  def test_costpercapita_az86; assert_in_epsilon(371.0844050607795, worksheet.costpercapita_az86, 0.001); end
+  def test_costpercapita_ba86; assert_in_epsilon(351.3248153726244, worksheet.costpercapita_ba86, 0.001); end
+  def test_costpercapita_bb86; assert_in_epsilon(80.83233893383603, worksheet.costpercapita_bb86, 0.001); end
   def test_costpercapita_bc86; assert_in_delta(0, (worksheet.costpercapita_bc86||0), 0.001); end
-  def test_costpercapita_bd86; assert_in_epsilon(44.07214031122101, worksheet.costpercapita_bd86, 0.001); end
-  def test_costpercapita_be86; assert_in_epsilon(17.041790050689, worksheet.costpercapita_be86, 0.001); end
+  def test_costpercapita_bd86; assert_in_epsilon(44.07214031122103, worksheet.costpercapita_bd86, 0.001); end
+  def test_costpercapita_be86; assert_in_epsilon(17.041790050689002, worksheet.costpercapita_be86, 0.001); end
   def test_costpercapita_bf86; assert_in_delta(0, (worksheet.costpercapita_bf86||0), 0.001); end
   def test_costpercapita_bg86; assert_in_delta(0, (worksheet.costpercapita_bg86||0), 0.001); end
-  def test_costpercapita_bi86; assert_in_epsilon(251.75501407318362, worksheet.costpercapita_bi86, 0.001); end
+  def test_costpercapita_bi86; assert_in_epsilon(251.75501407318367, worksheet.costpercapita_bi86, 0.001); end
   def test_costpercapita_bj86; assert_in_epsilon(614.5377801106023, worksheet.costpercapita_bj86, 0.001); end
-  def test_costpercapita_bk86; assert_in_epsilon(945.7437651824674, worksheet.costpercapita_bk86, 0.001); end
-  def test_costpercapita_bl86; assert_in_epsilon(769.1008060266747, worksheet.costpercapita_bl86, 0.001); end
-  def test_costpercapita_bm86; assert_in_epsilon(409.7695127402798, worksheet.costpercapita_bm86, 0.001); end
-  def test_costpercapita_bn86; assert_in_epsilon(120.84408464724027, worksheet.costpercapita_bn86, 0.001); end
-  def test_costpercapita_bo86; assert_in_epsilon(60.174030874349185, worksheet.costpercapita_bo86, 0.001); end
-  def test_costpercapita_bp86; assert_in_epsilon(58.97368379752033, worksheet.costpercapita_bp86, 0.001); end
-  def test_costpercapita_bq86; assert_in_epsilon(16.3901563471448, worksheet.costpercapita_bq86, 0.001); end
+  def test_costpercapita_bk86; assert_in_epsilon(945.7437651824675, worksheet.costpercapita_bk86, 0.001); end
+  def test_costpercapita_bl86; assert_in_epsilon(769.1008060266748, worksheet.costpercapita_bl86, 0.001); end
+  def test_costpercapita_bm86; assert_in_epsilon(409.7695127402799, worksheet.costpercapita_bm86, 0.001); end
+  def test_costpercapita_bn86; assert_in_epsilon(120.8440846472403, worksheet.costpercapita_bn86, 0.001); end
+  def test_costpercapita_bo86; assert_in_epsilon(60.174030874349214, worksheet.costpercapita_bo86, 0.001); end
+  def test_costpercapita_bp86; assert_in_epsilon(58.97368379752035, worksheet.costpercapita_bp86, 0.001); end
+  def test_costpercapita_bq86; assert_in_epsilon(16.390156347144803, worksheet.costpercapita_bq86, 0.001); end
   def test_costpercapita_bs86; assert_in_epsilon(1131.938218178748, worksheet.costpercapita_bs86, 0.001); end
   def test_costpercapita_bt86; assert_in_epsilon(1439.5319307583059, worksheet.costpercapita_bt86, 0.001); end
-  def test_costpercapita_bu86; assert_in_epsilon(1725.9556838227536, worksheet.costpercapita_bu86, 0.001); end
-  def test_costpercapita_bv86; assert_in_epsilon(1282.1998118659035, worksheet.costpercapita_bv86, 0.001); end
+  def test_costpercapita_bu86; assert_in_epsilon(1725.9556838227538, worksheet.costpercapita_bu86, 0.001); end
+  def test_costpercapita_bv86; assert_in_epsilon(1282.1998118659037, worksheet.costpercapita_bv86, 0.001); end
   def test_costpercapita_bw86; assert_in_epsilon(658.253823898548, worksheet.costpercapita_bw86, 0.001); end
   def test_costpercapita_bx86; assert_in_epsilon(303.3944367371944, worksheet.costpercapita_bx86, 0.001); end
-  def test_costpercapita_by86; assert_in_epsilon(180.47509996933843, worksheet.costpercapita_by86, 0.001); end
-  def test_costpercapita_bz86; assert_in_epsilon(116.1888097838161, worksheet.costpercapita_bz86, 0.001); end
-  def test_costpercapita_ca86; assert_in_epsilon(16.3901563471448, worksheet.costpercapita_ca86, 0.001); end
-  def test_costpercapita_cc86; assert_in_epsilon(761.5919968179725, worksheet.costpercapita_cc86, 0.001); end
-  def test_costpercapita_cd86; assert_in_epsilon(19954.397098726, worksheet.costpercapita_cd86, 0.001); end
-  def test_costpercapita_cf86; assert_in_epsilon(-512.565992104683, worksheet.costpercapita_cf86, 0.001); end
+  def test_costpercapita_by86; assert_in_epsilon(180.47509996933846, worksheet.costpercapita_by86, 0.001); end
+  def test_costpercapita_bz86; assert_in_epsilon(116.18880978381614, worksheet.costpercapita_bz86, 0.001); end
+  def test_costpercapita_ca86; assert_in_epsilon(16.390156347144803, worksheet.costpercapita_ca86, 0.001); end
+  def test_costpercapita_cc86; assert_in_epsilon(761.5919968179726, worksheet.costpercapita_cc86, 0.001); end
+  def test_costpercapita_cd86; assert_in_epsilon(19954.397098726004, worksheet.costpercapita_cd86, 0.001); end
+  def test_costpercapita_cf86; assert_in_epsilon(-512.5659921046829, worksheet.costpercapita_cf86, 0.001); end
   def test_costpercapita_cg86; assert_in_epsilon(-61.423189875531506, worksheet.costpercapita_cg86, 0.001); end
-  def test_costpercapita_ch86; assert_in_epsilon(305.77652392752526, worksheet.costpercapita_ch86, 0.001); end
-  def test_costpercapita_ci86; assert_in_epsilon(621.8580076584318, worksheet.costpercapita_ci86, 0.001); end
-  def test_costpercapita_cj86; assert_in_epsilon(409.7695127402798, worksheet.costpercapita_cj86, 0.001); end
-  def test_costpercapita_ck86; assert_in_epsilon(40.56303185209921, worksheet.costpercapita_ck86, 0.001); end
-  def test_costpercapita_cl86; assert_in_epsilon(29.130999219389174, worksheet.costpercapita_cl86, 0.001); end
-  def test_costpercapita_cm86; assert_in_epsilon(58.97368379752033, worksheet.costpercapita_cm86, 0.001); end
-  def test_costpercapita_cn86; assert_in_epsilon(16.3901563471448, worksheet.costpercapita_cn86, 0.001); end
-  def test_costpercapita_cp86; assert_in_epsilon(100.94141484024178, worksheet.costpercapita_cp86, 0.001); end
-  def test_costpercapita_cq86; assert_in_epsilon(3448.352681218347, worksheet.costpercapita_cq86, 0.001); end
+  def test_costpercapita_ch86; assert_in_epsilon(305.7765239275254, worksheet.costpercapita_ch86, 0.001); end
+  def test_costpercapita_ci86; assert_in_epsilon(621.8580076584319, worksheet.costpercapita_ci86, 0.001); end
+  def test_costpercapita_cj86; assert_in_epsilon(409.7695127402799, worksheet.costpercapita_cj86, 0.001); end
+  def test_costpercapita_ck86; assert_in_epsilon(40.56303185209923, worksheet.costpercapita_ck86, 0.001); end
+  def test_costpercapita_cl86; assert_in_epsilon(29.1309992193892, worksheet.costpercapita_cl86, 0.001); end
+  def test_costpercapita_cm86; assert_in_epsilon(58.97368379752035, worksheet.costpercapita_cm86, 0.001); end
+  def test_costpercapita_cn86; assert_in_epsilon(16.390156347144803, worksheet.costpercapita_cn86, 0.001); end
+  def test_costpercapita_cp86; assert_in_epsilon(100.94141484024183, worksheet.costpercapita_cp86, 0.001); end
+  def test_costpercapita_cq86; assert_in_epsilon(3448.3526812183472, worksheet.costpercapita_cq86, 0.001); end
   def test_costpercapita_cr86; assert_equal("ok", worksheet.costpercapita_cr86); end
   def test_costpercapita_a87; assert_equal("XII.a.HEV", worksheet.costpercapita_a87); end
   def test_costpercapita_b87; assert_equal("Hybrid cars and buses", worksheet.costpercapita_b87); end
@@ -15160,46 +15771,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at87; assert_in_epsilon(8889.888518082818, worksheet.costpercapita_at87, 0.001); end
   def test_costpercapita_av87; assert_in_delta(0.07, worksheet.costpercapita_av87, 0.001); end
   def test_costpercapita_aw87; assert_in_epsilon(15, worksheet.costpercapita_aw87, 0.001); end
-  def test_costpercapita_ay87; assert_in_delta(0.5152061344187447, worksheet.costpercapita_ay87, 0.001); end
-  def test_costpercapita_az87; assert_in_epsilon(29.603586373278397, worksheet.costpercapita_az87, 0.001); end
-  def test_costpercapita_ba87; assert_in_epsilon(25.294269464191924, worksheet.costpercapita_ba87, 0.001); end
-  def test_costpercapita_bb87; assert_in_epsilon(330.3578447702942, worksheet.costpercapita_bb87, 0.001); end
-  def test_costpercapita_bc87; assert_in_epsilon(405.2940617475044, worksheet.costpercapita_bc87, 0.001); end
+  def test_costpercapita_ay87; assert_in_delta(0.5152061344187449, worksheet.costpercapita_ay87, 0.001); end
+  def test_costpercapita_az87; assert_in_epsilon(29.603586373278404, worksheet.costpercapita_az87, 0.001); end
+  def test_costpercapita_ba87; assert_in_epsilon(25.29426946419193, worksheet.costpercapita_ba87, 0.001); end
+  def test_costpercapita_bb87; assert_in_epsilon(330.3578447702943, worksheet.costpercapita_bb87, 0.001); end
+  def test_costpercapita_bc87; assert_in_epsilon(405.29406174750443, worksheet.costpercapita_bc87, 0.001); end
   def test_costpercapita_bd87; assert_in_epsilon(143.15978938407463, worksheet.costpercapita_bd87, 0.001); end
-  def test_costpercapita_be87; assert_in_epsilon(97.4137971216893, worksheet.costpercapita_be87, 0.001); end
-  def test_costpercapita_bf87; assert_in_epsilon(7.657498169046214, worksheet.costpercapita_bf87, 0.001); end
-  def test_costpercapita_bg87; assert_in_epsilon(5.947843147439337, worksheet.costpercapita_bg87, 0.001); end
-  def test_costpercapita_bi87; assert_in_delta(0.5152061344187447, worksheet.costpercapita_bi87, 0.001); end
-  def test_costpercapita_bj87; assert_in_epsilon(30.101803549736122, worksheet.costpercapita_bj87, 0.001); end
-  def test_costpercapita_bk87; assert_in_epsilon(54.41059564058423, worksheet.costpercapita_bk87, 0.001); end
-  def test_costpercapita_bl87; assert_in_epsilon(382.61671433769413, worksheet.costpercapita_bl87, 0.001); end
-  def test_costpercapita_bm87; assert_in_epsilon(750.4679044003411, worksheet.costpercapita_bm87, 0.001); end
-  def test_costpercapita_bn87; assert_in_epsilon(852.670076680314, worksheet.costpercapita_bn87, 0.001); end
-  def test_costpercapita_bo87; assert_in_epsilon(624.8277286045577, worksheet.costpercapita_bo87, 0.001); end
-  def test_costpercapita_bp87; assert_in_epsilon(240.43996239225183, worksheet.costpercapita_bp87, 0.001); end
-  def test_costpercapita_bq87; assert_in_epsilon(107.1513861336527, worksheet.costpercapita_bq87, 0.001); end
-  def test_costpercapita_bs87; assert_in_delta(0.9476171137897068, worksheet.costpercapita_bs87, 0.001); end
-  def test_costpercapita_bt87; assert_in_epsilon(55.492482181002224, worksheet.costpercapita_bt87, 0.001); end
-  def test_costpercapita_bu87; assert_in_epsilon(91.69686375067063, worksheet.costpercapita_bu87, 0.001); end
+  def test_costpercapita_be87; assert_in_epsilon(97.41379712168933, worksheet.costpercapita_be87, 0.001); end
+  def test_costpercapita_bf87; assert_in_epsilon(7.657498169046216, worksheet.costpercapita_bf87, 0.001); end
+  def test_costpercapita_bg87; assert_in_epsilon(5.947843147439339, worksheet.costpercapita_bg87, 0.001); end
+  def test_costpercapita_bi87; assert_in_delta(0.5152061344187449, worksheet.costpercapita_bi87, 0.001); end
+  def test_costpercapita_bj87; assert_in_epsilon(30.10180354973613, worksheet.costpercapita_bj87, 0.001); end
+  def test_costpercapita_bk87; assert_in_epsilon(54.41059564058425, worksheet.costpercapita_bk87, 0.001); end
+  def test_costpercapita_bl87; assert_in_epsilon(382.61671433769425, worksheet.costpercapita_bl87, 0.001); end
+  def test_costpercapita_bm87; assert_in_epsilon(750.4679044003414, worksheet.costpercapita_bm87, 0.001); end
+  def test_costpercapita_bn87; assert_in_epsilon(852.6700766803141, worksheet.costpercapita_bn87, 0.001); end
+  def test_costpercapita_bo87; assert_in_epsilon(624.8277286045579, worksheet.costpercapita_bo87, 0.001); end
+  def test_costpercapita_bp87; assert_in_epsilon(240.43996239225186, worksheet.costpercapita_bp87, 0.001); end
+  def test_costpercapita_bq87; assert_in_epsilon(107.15138613365271, worksheet.costpercapita_bq87, 0.001); end
+  def test_costpercapita_bs87; assert_in_delta(0.9476171137897069, worksheet.costpercapita_bs87, 0.001); end
+  def test_costpercapita_bt87; assert_in_epsilon(55.49248218100223, worksheet.costpercapita_bt87, 0.001); end
+  def test_costpercapita_bu87; assert_in_epsilon(91.69686375067064, worksheet.costpercapita_bu87, 0.001); end
   def test_costpercapita_bv87; assert_in_epsilon(678.8843237733145, worksheet.costpercapita_bv87, 0.001); end
-  def test_costpercapita_bw87; assert_in_epsilon(1245.1309284940037, worksheet.costpercapita_bw87, 0.001); end
-  def test_costpercapita_bx87; assert_in_epsilon(1236.256210142537, worksheet.costpercapita_bx87, 0.001); end
-  def test_costpercapita_by87; assert_in_epsilon(911.3979827609086, worksheet.costpercapita_by87, 0.001); end
+  def test_costpercapita_bw87; assert_in_epsilon(1245.1309284940041, worksheet.costpercapita_bw87, 0.001); end
+  def test_costpercapita_bx87; assert_in_epsilon(1236.2562101425372, worksheet.costpercapita_bx87, 0.001); end
+  def test_costpercapita_by87; assert_in_epsilon(911.3979827609087, worksheet.costpercapita_by87, 0.001); end
   def test_costpercapita_bz87; assert_in_epsilon(380.9662997024, worksheet.costpercapita_bz87, 0.001); end
   def test_costpercapita_ca87; assert_in_epsilon(136.221341661383, worksheet.costpercapita_ca87, 0.001); end
-  def test_costpercapita_cc87; assert_in_epsilon(526.3326721755566, worksheet.costpercapita_cc87, 0.001); end
-  def test_costpercapita_cd87; assert_in_epsilon(10719.613586227802, worksheet.costpercapita_cd87, 0.001); end
+  def test_costpercapita_cc87; assert_in_epsilon(526.3326721755567, worksheet.costpercapita_cc87, 0.001); end
+  def test_costpercapita_cd87; assert_in_epsilon(10719.613586227806, worksheet.costpercapita_cd87, 0.001); end
   def test_costpercapita_cf87; assert_in_epsilon(-1.0489449213114654, worksheet.costpercapita_cf87, 0.001); end
-  def test_costpercapita_cg87; assert_in_epsilon(-23.823580236392004, worksheet.costpercapita_cg87, 0.001); end
-  def test_costpercapita_ch87; assert_in_epsilon(8.334989420200577, worksheet.costpercapita_ch87, 0.001); end
-  def test_costpercapita_ci87; assert_in_epsilon(-219.15745387851314, worksheet.costpercapita_ci87, 0.001); end
-  def test_costpercapita_cj87; assert_in_epsilon(12.191212164807839, worksheet.costpercapita_cj87, 0.001); end
-  def test_costpercapita_ck87; assert_in_epsilon(591.8926665403761, worksheet.costpercapita_ck87, 0.001); end
-  def test_costpercapita_cl87; assert_in_epsilon(447.3804311854587, worksheet.costpercapita_cl87, 0.001); end
-  def test_costpercapita_cm87; assert_in_epsilon(226.4911954286611, worksheet.costpercapita_cm87, 0.001); end
-  def test_costpercapita_cn87; assert_in_epsilon(96.31689735310165, worksheet.costpercapita_cn87, 0.001); end
-  def test_costpercapita_cp87; assert_in_epsilon(126.50860145070993, worksheet.costpercapita_cp87, 0.001); end
-  def test_costpercapita_cq87; assert_in_epsilon(1829.7250681449837, worksheet.costpercapita_cq87, 0.001); end
+  def test_costpercapita_cg87; assert_in_epsilon(-23.823580236391997, worksheet.costpercapita_cg87, 0.001); end
+  def test_costpercapita_ch87; assert_in_epsilon(8.33498942020059, worksheet.costpercapita_ch87, 0.001); end
+  def test_costpercapita_ci87; assert_in_epsilon(-219.15745387851302, worksheet.costpercapita_ci87, 0.001); end
+  def test_costpercapita_cj87; assert_in_epsilon(12.191212164808045, worksheet.costpercapita_cj87, 0.001); end
+  def test_costpercapita_ck87; assert_in_epsilon(591.8926665403762, worksheet.costpercapita_ck87, 0.001); end
+  def test_costpercapita_cl87; assert_in_epsilon(447.3804311854589, worksheet.costpercapita_cl87, 0.001); end
+  def test_costpercapita_cm87; assert_in_epsilon(226.49119542866111, worksheet.costpercapita_cm87, 0.001); end
+  def test_costpercapita_cn87; assert_in_epsilon(96.31689735310167, worksheet.costpercapita_cn87, 0.001); end
+  def test_costpercapita_cp87; assert_in_epsilon(126.50860145071, worksheet.costpercapita_cp87, 0.001); end
+  def test_costpercapita_cq87; assert_in_epsilon(1829.725068144985, worksheet.costpercapita_cq87, 0.001); end
   def test_costpercapita_cr87; assert_equal("ok", worksheet.costpercapita_cr87); end
   def test_costpercapita_a88; assert_equal("XII.a.EV", worksheet.costpercapita_a88); end
   def test_costpercapita_b88; assert_equal("Electric cars and buses", worksheet.costpercapita_b88); end
@@ -15245,45 +15856,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av88; assert_in_delta(0.07, worksheet.costpercapita_av88, 0.001); end
   def test_costpercapita_aw88; assert_in_epsilon(15, worksheet.costpercapita_aw88, 0.001); end
   def test_costpercapita_ay88; assert_in_delta(0, (worksheet.costpercapita_ay88||0), 0.001); end
-  def test_costpercapita_az88; assert_in_epsilon(17.230182933076502, worksheet.costpercapita_az88, 0.001); end
-  def test_costpercapita_ba88; assert_in_epsilon(22.847345584070407, worksheet.costpercapita_ba88, 0.001); end
-  def test_costpercapita_bb88; assert_in_epsilon(151.47350075775807, worksheet.costpercapita_bb88, 0.001); end
-  def test_costpercapita_bc88; assert_in_epsilon(189.06367116346496, worksheet.costpercapita_bc88, 0.001); end
-  def test_costpercapita_bd88; assert_in_epsilon(268.9009530308299, worksheet.costpercapita_bd88, 0.001); end
-  def test_costpercapita_be88; assert_in_epsilon(297.91265776154574, worksheet.costpercapita_be88, 0.001); end
-  def test_costpercapita_bf88; assert_in_epsilon(413.396084141115, worksheet.costpercapita_bf88, 0.001); end
-  def test_costpercapita_bg88; assert_in_epsilon(443.61942943420075, worksheet.costpercapita_bg88, 0.001); end
+  def test_costpercapita_az88; assert_in_epsilon(17.230182933076506, worksheet.costpercapita_az88, 0.001); end
+  def test_costpercapita_ba88; assert_in_epsilon(22.84734558407041, worksheet.costpercapita_ba88, 0.001); end
+  def test_costpercapita_bb88; assert_in_epsilon(151.47350075775813, worksheet.costpercapita_bb88, 0.001); end
+  def test_costpercapita_bc88; assert_in_epsilon(189.063671163465, worksheet.costpercapita_bc88, 0.001); end
+  def test_costpercapita_bd88; assert_in_epsilon(268.90095303083, worksheet.costpercapita_bd88, 0.001); end
+  def test_costpercapita_be88; assert_in_epsilon(297.91265776154586, worksheet.costpercapita_be88, 0.001); end
+  def test_costpercapita_bf88; assert_in_epsilon(413.3960841411151, worksheet.costpercapita_bf88, 0.001); end
+  def test_costpercapita_bg88; assert_in_epsilon(443.619429434201, worksheet.costpercapita_bg88, 0.001); end
   def test_costpercapita_bi88; assert_in_delta(0, (worksheet.costpercapita_bi88||0), 0.001); end
-  def test_costpercapita_bj88; assert_in_epsilon(17.230182933076502, worksheet.costpercapita_bj88, 0.001); end
-  def test_costpercapita_bk88; assert_in_epsilon(39.51344419605079, worksheet.costpercapita_bk88, 0.001); end
-  def test_costpercapita_bl88; assert_in_epsilon(189.76347142208866, worksheet.costpercapita_bl88, 0.001); end
-  def test_costpercapita_bm88; assert_in_epsilon(357.9339392707559, worksheet.costpercapita_bm88, 0.001); end
-  def test_costpercapita_bn88; assert_in_epsilon(597.3757357322429, worksheet.costpercapita_bn88, 0.001); end
-  def test_costpercapita_bo88; assert_in_epsilon(741.7520027819751, worksheet.costpercapita_bo88, 0.001); end
-  def test_costpercapita_bp88; assert_in_epsilon(963.2826488194519, worksheet.costpercapita_bp88, 0.001); end
-  def test_costpercapita_bq88; assert_in_epsilon(1135.8220782983722, worksheet.costpercapita_bq88, 0.001); end
+  def test_costpercapita_bj88; assert_in_epsilon(17.230182933076506, worksheet.costpercapita_bj88, 0.001); end
+  def test_costpercapita_bk88; assert_in_epsilon(39.513444196050806, worksheet.costpercapita_bk88, 0.001); end
+  def test_costpercapita_bl88; assert_in_epsilon(189.7634714220887, worksheet.costpercapita_bl88, 0.001); end
+  def test_costpercapita_bm88; assert_in_epsilon(357.93393927075596, worksheet.costpercapita_bm88, 0.001); end
+  def test_costpercapita_bn88; assert_in_epsilon(597.375735732243, worksheet.costpercapita_bn88, 0.001); end
+  def test_costpercapita_bo88; assert_in_epsilon(741.7520027819753, worksheet.costpercapita_bo88, 0.001); end
+  def test_costpercapita_bp88; assert_in_epsilon(963.2826488194522, worksheet.costpercapita_bp88, 0.001); end
+  def test_costpercapita_bq88; assert_in_epsilon(1135.8220782983726, worksheet.costpercapita_bq88, 0.001); end
   def test_costpercapita_bs88; assert_in_delta(0, (worksheet.costpercapita_bs88||0), 0.001); end
-  def test_costpercapita_bt88; assert_in_epsilon(26.264029368251258, worksheet.costpercapita_bt88, 0.001); end
-  def test_costpercapita_bu88; assert_in_epsilon(56.27464612935087, worksheet.costpercapita_bu88, 0.001); end
-  def test_costpercapita_bv88; assert_in_epsilon(275.5237086254546, worksheet.costpercapita_bv88, 0.001); end
+  def test_costpercapita_bt88; assert_in_epsilon(26.264029368251265, worksheet.costpercapita_bt88, 0.001); end
+  def test_costpercapita_bu88; assert_in_epsilon(56.27464612935088, worksheet.costpercapita_bu88, 0.001); end
+  def test_costpercapita_bv88; assert_in_epsilon(275.5237086254547, worksheet.costpercapita_bv88, 0.001); end
   def test_costpercapita_bw88; assert_in_epsilon(498.3838866515848, worksheet.costpercapita_bw88, 0.001); end
-  def test_costpercapita_bx88; assert_in_epsilon(804.6609558269117, worksheet.costpercapita_bx88, 0.001); end
-  def test_costpercapita_by88; assert_in_epsilon(996.1288437059522, worksheet.costpercapita_by88, 0.001); end
-  def test_costpercapita_bz88; assert_in_epsilon(1293.1907018389206, worksheet.costpercapita_bz88, 0.001); end
-  def test_costpercapita_ca88; assert_in_epsilon(1514.2127953903723, worksheet.costpercapita_ca88, 0.001); end
-  def test_costpercapita_cc88; assert_in_epsilon(607.1821741707554, worksheet.costpercapita_cc88, 0.001); end
-  def test_costpercapita_cd88; assert_in_epsilon(9855.92356557717, worksheet.costpercapita_cd88, 0.001); end
+  def test_costpercapita_bx88; assert_in_epsilon(804.6609558269118, worksheet.costpercapita_bx88, 0.001); end
+  def test_costpercapita_by88; assert_in_epsilon(996.1288437059524, worksheet.costpercapita_by88, 0.001); end
+  def test_costpercapita_bz88; assert_in_epsilon(1293.1907018389209, worksheet.costpercapita_bz88, 0.001); end
+  def test_costpercapita_ca88; assert_in_epsilon(1514.2127953903728, worksheet.costpercapita_ca88, 0.001); end
+  def test_costpercapita_cc88; assert_in_epsilon(607.1821741707555, worksheet.costpercapita_cc88, 0.001); end
+  def test_costpercapita_cd88; assert_in_epsilon(9855.923565577174, worksheet.costpercapita_cd88, 0.001); end
   def test_costpercapita_cf88; assert_in_delta(0, (worksheet.costpercapita_cf88||0), 0.001); end
-  def test_costpercapita_cg88; assert_in_epsilon(-14.156021956275513, worksheet.costpercapita_cg88, 0.001); end
-  def test_costpercapita_ch88; assert_in_epsilon(-2.104887568893908, worksheet.costpercapita_ch88, 0.001); end
-  def test_costpercapita_ci88; assert_in_epsilon(-86.15805236881049, worksheet.costpercapita_ci88, 0.001); end
-  def test_costpercapita_cj88; assert_in_epsilon(13.538807581341288, worksheet.costpercapita_cj88, 0.001); end
-  def test_costpercapita_ck88; assert_in_epsilon(107.55038451290433, worksheet.costpercapita_ck88, 0.001); end
-  def test_costpercapita_cl88; assert_in_epsilon(199.0794291968409, worksheet.costpercapita_cl88, 0.001); end
-  def test_costpercapita_cm88; assert_in_epsilon(210.2474519382237, worksheet.costpercapita_cm88, 0.001); end
-  def test_costpercapita_cn88; assert_in_epsilon(327.73255544191494, worksheet.costpercapita_cn88, 0.001); end
-  def test_costpercapita_cp88; assert_in_epsilon(83.96996297524947, worksheet.costpercapita_cp88, 0.001); end
-  def test_costpercapita_cq88; assert_in_epsilon(1049.50935543775, worksheet.costpercapita_cq88, 0.001); end
+  def test_costpercapita_cg88; assert_in_epsilon(-14.15602195627551, worksheet.costpercapita_cg88, 0.001); end
+  def test_costpercapita_ch88; assert_in_epsilon(-2.1048875688938944, worksheet.costpercapita_ch88, 0.001); end
+  def test_costpercapita_ci88; assert_in_epsilon(-86.15805236881043, worksheet.costpercapita_ci88, 0.001); end
+  def test_costpercapita_cj88; assert_in_epsilon(13.538807581341391, worksheet.costpercapita_cj88, 0.001); end
+  def test_costpercapita_ck88; assert_in_epsilon(107.55038451290443, worksheet.costpercapita_ck88, 0.001); end
+  def test_costpercapita_cl88; assert_in_epsilon(199.07942919684106, worksheet.costpercapita_cl88, 0.001); end
+  def test_costpercapita_cm88; assert_in_epsilon(210.24745193822406, worksheet.costpercapita_cm88, 0.001); end
+  def test_costpercapita_cn88; assert_in_epsilon(327.73255544191534, worksheet.costpercapita_cn88, 0.001); end
+  def test_costpercapita_cp88; assert_in_epsilon(83.9699629752496, worksheet.costpercapita_cp88, 0.001); end
+  def test_costpercapita_cq88; assert_in_epsilon(1049.5093554377522, worksheet.costpercapita_cq88, 0.001); end
   def test_costpercapita_cr88; assert_equal("ok", worksheet.costpercapita_cr88); end
   def test_costpercapita_a89; assert_equal("XII.a.FCV", worksheet.costpercapita_a89); end
   def test_costpercapita_b89; assert_equal("Fuel cell cars and buses", worksheet.costpercapita_b89); end
@@ -15329,45 +15940,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av89; assert_in_delta(0.07, worksheet.costpercapita_av89, 0.001); end
   def test_costpercapita_aw89; assert_in_epsilon(15, worksheet.costpercapita_aw89, 0.001); end
   def test_costpercapita_ay89; assert_in_delta(0, (worksheet.costpercapita_ay89||0), 0.001); end
-  def test_costpercapita_az89; assert_in_epsilon(11.866574333359234, worksheet.costpercapita_az89, 0.001); end
-  def test_costpercapita_ba89; assert_in_epsilon(14.68403738833931, worksheet.costpercapita_ba89, 0.001); end
-  def test_costpercapita_bb89; assert_in_epsilon(89.59220761344137, worksheet.costpercapita_bb89, 0.001); end
-  def test_costpercapita_bc89; assert_in_epsilon(100.72210029500638, worksheet.costpercapita_bc89, 0.001); end
-  def test_costpercapita_bd89; assert_in_epsilon(125.26683354771063, worksheet.costpercapita_bd89, 0.001); end
-  def test_costpercapita_be89; assert_in_epsilon(116.2821719023256, worksheet.costpercapita_be89, 0.001); end
-  def test_costpercapita_bf89; assert_in_epsilon(124.69861082699522, worksheet.costpercapita_bf89, 0.001); end
-  def test_costpercapita_bg89; assert_in_epsilon(89.19949676505841, worksheet.costpercapita_bg89, 0.001); end
+  def test_costpercapita_az89; assert_in_epsilon(11.866574333359237, worksheet.costpercapita_az89, 0.001); end
+  def test_costpercapita_ba89; assert_in_epsilon(14.684037388339313, worksheet.costpercapita_ba89, 0.001); end
+  def test_costpercapita_bb89; assert_in_epsilon(89.5922076134414, worksheet.costpercapita_bb89, 0.001); end
+  def test_costpercapita_bc89; assert_in_epsilon(100.72210029500641, worksheet.costpercapita_bc89, 0.001); end
+  def test_costpercapita_bd89; assert_in_epsilon(125.26683354771066, worksheet.costpercapita_bd89, 0.001); end
+  def test_costpercapita_be89; assert_in_epsilon(116.28217190232563, worksheet.costpercapita_be89, 0.001); end
+  def test_costpercapita_bf89; assert_in_epsilon(124.69861082699524, worksheet.costpercapita_bf89, 0.001); end
+  def test_costpercapita_bg89; assert_in_epsilon(89.19949676505844, worksheet.costpercapita_bg89, 0.001); end
   def test_costpercapita_bi89; assert_in_delta(0, (worksheet.costpercapita_bi89||0), 0.001); end
-  def test_costpercapita_bj89; assert_in_epsilon(11.866574333359234, worksheet.costpercapita_bj89, 0.001); end
-  def test_costpercapita_bk89; assert_in_epsilon(26.162122025879956, worksheet.costpercapita_bk89, 0.001); end
-  def test_costpercapita_bl89; assert_in_epsilon(114.94425943452005, worksheet.costpercapita_bl89, 0.001); end
-  def test_costpercapita_bm89; assert_in_epsilon(201.70725511988917, worksheet.costpercapita_bm89, 0.001); end
-  def test_costpercapita_bn89; assert_in_epsilon(308.7081393179875, worksheet.costpercapita_bn89, 0.001); end
-  def test_costpercapita_bo89; assert_in_epsilon(335.1295978345594, worksheet.costpercapita_bo89, 0.001); end
-  def test_costpercapita_bp89; assert_in_epsilon(358.81101652718206, worksheet.costpercapita_bp89, 0.001); end
+  def test_costpercapita_bj89; assert_in_epsilon(11.866574333359237, worksheet.costpercapita_bj89, 0.001); end
+  def test_costpercapita_bk89; assert_in_epsilon(26.162122025879963, worksheet.costpercapita_bk89, 0.001); end
+  def test_costpercapita_bl89; assert_in_epsilon(114.94425943452009, worksheet.costpercapita_bl89, 0.001); end
+  def test_costpercapita_bm89; assert_in_epsilon(201.70725511988925, worksheet.costpercapita_bm89, 0.001); end
+  def test_costpercapita_bn89; assert_in_epsilon(308.7081393179876, worksheet.costpercapita_bn89, 0.001); end
+  def test_costpercapita_bo89; assert_in_epsilon(335.12959783455943, worksheet.costpercapita_bo89, 0.001); end
+  def test_costpercapita_bp89; assert_in_epsilon(358.8110165271821, worksheet.costpercapita_bp89, 0.001); end
   def test_costpercapita_bq89; assert_in_epsilon(323.40685938442596, worksheet.costpercapita_bq89, 0.001); end
   def test_costpercapita_bs89; assert_in_delta(0, (worksheet.costpercapita_bs89||0), 0.001); end
-  def test_costpercapita_bt89; assert_in_epsilon(31.240655265004293, worksheet.costpercapita_bt89, 0.001); end
-  def test_costpercapita_bu89; assert_in_epsilon(59.16854039330912, worksheet.costpercapita_bu89, 0.001); end
-  def test_costpercapita_bv89; assert_in_epsilon(273.1078562124924, worksheet.costpercapita_bv89, 0.001); end
-  def test_costpercapita_bw89; assert_in_epsilon(430.50418146571445, worksheet.costpercapita_bw89, 0.001); end
-  def test_costpercapita_bx89; assert_in_epsilon(595.3385086267792, worksheet.costpercapita_bx89, 0.001); end
-  def test_costpercapita_by89; assert_in_epsilon(612.1419041276405, worksheet.costpercapita_by89, 0.001); end
+  def test_costpercapita_bt89; assert_in_epsilon(31.240655265004296, worksheet.costpercapita_bt89, 0.001); end
+  def test_costpercapita_bu89; assert_in_epsilon(59.16854039330913, worksheet.costpercapita_bu89, 0.001); end
+  def test_costpercapita_bv89; assert_in_epsilon(273.10785621249244, worksheet.costpercapita_bv89, 0.001); end
+  def test_costpercapita_bw89; assert_in_epsilon(430.50418146571457, worksheet.costpercapita_bw89, 0.001); end
+  def test_costpercapita_bx89; assert_in_epsilon(595.3385086267795, worksheet.costpercapita_bx89, 0.001); end
+  def test_costpercapita_by89; assert_in_epsilon(612.1419041276406, worksheet.costpercapita_by89, 0.001); end
   def test_costpercapita_bz89; assert_in_epsilon(603.8500769330469, worksheet.costpercapita_bz89, 0.001); end
-  def test_costpercapita_ca89; assert_in_epsilon(444.26616192588267, worksheet.costpercapita_ca89, 0.001); end
-  def test_costpercapita_cc89; assert_in_epsilon(338.8464316610966, worksheet.costpercapita_cc89, 0.001); end
-  def test_costpercapita_cd89; assert_in_epsilon(6104.939664425763, worksheet.costpercapita_cd89, 0.001); end
+  def test_costpercapita_ca89; assert_in_epsilon(444.2661619258827, worksheet.costpercapita_ca89, 0.001); end
+  def test_costpercapita_cc89; assert_in_epsilon(338.84643166109674, worksheet.costpercapita_cc89, 0.001); end
+  def test_costpercapita_cd89; assert_in_epsilon(6104.939664425764, worksheet.costpercapita_cd89, 0.001); end
   def test_costpercapita_cf89; assert_in_delta(0, (worksheet.costpercapita_cf89||0), 0.001); end
-  def test_costpercapita_cg89; assert_in_epsilon(-9.749373379335028, worksheet.costpercapita_cg89, 0.001); end
-  def test_costpercapita_ch89; assert_in_delta(-0.5860679302804329, worksheet.costpercapita_ch89, 0.001); end
-  def test_costpercapita_ci89; assert_in_epsilon(-48.25536505970176, worksheet.costpercapita_ci89, 0.001); end
-  def test_costpercapita_cj89; assert_in_epsilon(18.233609539709768, worksheet.costpercapita_cj89, 0.001); end
-  def test_costpercapita_ck89; assert_in_epsilon(80.52422978901346, worksheet.costpercapita_ck89, 0.001); end
-  def test_costpercapita_cl89; assert_in_epsilon(123.31199343181922, worksheet.costpercapita_cl89, 0.001); end
-  def test_costpercapita_cm89; assert_in_epsilon(131.6621717334131, worksheet.costpercapita_cm89, 0.001); end
-  def test_costpercapita_cn89; assert_in_epsilon(160.9225902173932, worksheet.costpercapita_cn89, 0.001); end
-  def test_costpercapita_cp89; assert_in_epsilon(50.67375426022573, worksheet.costpercapita_cp89, 0.001); end
-  def test_costpercapita_cq89; assert_in_epsilon(664.3406180286621, worksheet.costpercapita_cq89, 0.001); end
+  def test_costpercapita_cg89; assert_in_epsilon(-9.749373379335024, worksheet.costpercapita_cg89, 0.001); end
+  def test_costpercapita_ch89; assert_in_delta(-0.5860679302804261, worksheet.costpercapita_ch89, 0.001); end
+  def test_costpercapita_ci89; assert_in_epsilon(-48.255365059701724, worksheet.costpercapita_ci89, 0.001); end
+  def test_costpercapita_cj89; assert_in_epsilon(18.233609539709846, worksheet.costpercapita_cj89, 0.001); end
+  def test_costpercapita_ck89; assert_in_epsilon(80.52422978901356, worksheet.costpercapita_ck89, 0.001); end
+  def test_costpercapita_cl89; assert_in_epsilon(123.31199343181927, worksheet.costpercapita_cl89, 0.001); end
+  def test_costpercapita_cm89; assert_in_epsilon(131.66217173341315, worksheet.costpercapita_cm89, 0.001); end
+  def test_costpercapita_cn89; assert_in_epsilon(160.92259021739326, worksheet.costpercapita_cn89, 0.001); end
+  def test_costpercapita_cp89; assert_in_epsilon(50.67375426022576, worksheet.costpercapita_cp89, 0.001); end
+  def test_costpercapita_cq89; assert_in_epsilon(664.3406180286629, worksheet.costpercapita_cq89, 0.001); end
   def test_costpercapita_cr89; assert_equal("ok", worksheet.costpercapita_cr89); end
   def test_costpercapita_a90; assert_equal("XII.a.Bike", worksheet.costpercapita_a90); end
   def test_costpercapita_b90; assert_equal("Bikes", worksheet.costpercapita_b90); end
@@ -15412,46 +16023,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at90; assert_in_epsilon(2212.4315021785274, worksheet.costpercapita_at90, 0.001); end
   def test_costpercapita_av90; assert_in_delta(0.07, worksheet.costpercapita_av90, 0.001); end
   def test_costpercapita_aw90; assert_in_epsilon(5, worksheet.costpercapita_aw90, 0.001); end
-  def test_costpercapita_ay90; assert_in_epsilon(50.312786239989954, worksheet.costpercapita_ay90, 0.001); end
-  def test_costpercapita_az90; assert_in_epsilon(81.25912598749115, worksheet.costpercapita_az90, 0.001); end
-  def test_costpercapita_ba90; assert_in_epsilon(84.48321448715062, worksheet.costpercapita_ba90, 0.001); end
-  def test_costpercapita_bb90; assert_in_epsilon(83.83150462055175, worksheet.costpercapita_bb90, 0.001); end
-  def test_costpercapita_bc90; assert_in_epsilon(80.23029597557262, worksheet.costpercapita_bc90, 0.001); end
-  def test_costpercapita_bd90; assert_in_epsilon(75.46905911873013, worksheet.costpercapita_bd90, 0.001); end
-  def test_costpercapita_be90; assert_in_epsilon(69.27662957344606, worksheet.costpercapita_be90, 0.001); end
-  def test_costpercapita_bf90; assert_in_epsilon(62.60372724191552, worksheet.costpercapita_bf90, 0.001); end
-  def test_costpercapita_bg90; assert_in_epsilon(55.63041675278193, worksheet.costpercapita_bg90, 0.001); end
-  def test_costpercapita_bi90; assert_in_epsilon(50.312786239989954, worksheet.costpercapita_bi90, 0.001); end
-  def test_costpercapita_bj90; assert_in_epsilon(81.25912598749115, worksheet.costpercapita_bj90, 0.001); end
-  def test_costpercapita_bk90; assert_in_epsilon(84.48321448715062, worksheet.costpercapita_bk90, 0.001); end
-  def test_costpercapita_bl90; assert_in_epsilon(83.83150462055175, worksheet.costpercapita_bl90, 0.001); end
-  def test_costpercapita_bm90; assert_in_epsilon(80.23029597557262, worksheet.costpercapita_bm90, 0.001); end
-  def test_costpercapita_bn90; assert_in_epsilon(75.46905911873013, worksheet.costpercapita_bn90, 0.001); end
-  def test_costpercapita_bo90; assert_in_epsilon(69.27662957344606, worksheet.costpercapita_bo90, 0.001); end
-  def test_costpercapita_bp90; assert_in_epsilon(62.60372724191552, worksheet.costpercapita_bp90, 0.001); end
-  def test_costpercapita_bq90; assert_in_epsilon(55.63041675278193, worksheet.costpercapita_bq90, 0.001); end
-  def test_costpercapita_bs90; assert_in_epsilon(80.3111776973491, worksheet.costpercapita_bs90, 0.001); end
-  def test_costpercapita_bt90; assert_in_epsilon(116.89318588281242, worksheet.costpercapita_bt90, 0.001); end
-  def test_costpercapita_bu90; assert_in_epsilon(124.29906039759034, worksheet.costpercapita_bu90, 0.001); end
-  def test_costpercapita_bv90; assert_in_epsilon(126.53035186239214, worksheet.costpercapita_bv90, 0.001); end
-  def test_costpercapita_bw90; assert_in_epsilon(124.68435730589144, worksheet.costpercapita_bw90, 0.001); end
-  def test_costpercapita_bx90; assert_in_epsilon(121.31173211013673, worksheet.costpercapita_bx90, 0.001); end
-  def test_costpercapita_by90; assert_in_epsilon(115.84185235182878, worksheet.costpercapita_by90, 0.001); end
-  def test_costpercapita_bz90; assert_in_epsilon(109.70237713513833, worksheet.costpercapita_bz90, 0.001); end
-  def test_costpercapita_ca90; assert_in_epsilon(103.1503526132929, worksheet.costpercapita_ca90, 0.001); end
-  def test_costpercapita_cc90; assert_in_epsilon(113.63604970627023, worksheet.costpercapita_cc90, 0.001); end
-  def test_costpercapita_cd90; assert_in_epsilon(2472.2648777680715, worksheet.costpercapita_cd90, 0.001); end
-  def test_costpercapita_cf90; assert_in_epsilon(-18.45133280553879, worksheet.costpercapita_cf90, 0.001); end
-  def test_costpercapita_cg90; assert_in_epsilon(14.623433983240394, worksheet.costpercapita_cg90, 0.001); end
-  def test_costpercapita_ch90; assert_in_epsilon(15.203642602985495, worksheet.costpercapita_ch90, 0.001); end
-  def test_costpercapita_ci90; assert_in_epsilon(15.086360561188703, worksheet.costpercapita_ci90, 0.001); end
-  def test_costpercapita_cj90; assert_in_epsilon(14.438285206700723, worksheet.costpercapita_cj90, 0.001); end
-  def test_costpercapita_ck90; assert_in_epsilon(13.581450580331182, worksheet.costpercapita_ck90, 0.001); end
-  def test_costpercapita_cl90; assert_in_epsilon(12.4670577838191, worksheet.costpercapita_cl90, 0.001); end
-  def test_costpercapita_cm90; assert_in_epsilon(11.266198858302602, worksheet.costpercapita_cm90, 0.001); end
-  def test_costpercapita_cn90; assert_in_epsilon(10.01127832669141, worksheet.costpercapita_cn90, 0.001); end
-  def test_costpercapita_cp90; assert_in_epsilon(9.802930566413425, worksheet.costpercapita_cp90, 0.001); end
-  def test_costpercapita_cq90; assert_in_epsilon(259.8333755895444, worksheet.costpercapita_cq90, 0.001); end
+  def test_costpercapita_ay90; assert_in_epsilon(50.31278623998997, worksheet.costpercapita_ay90, 0.001); end
+  def test_costpercapita_az90; assert_in_epsilon(81.25912598749119, worksheet.costpercapita_az90, 0.001); end
+  def test_costpercapita_ba90; assert_in_epsilon(84.48321448715063, worksheet.costpercapita_ba90, 0.001); end
+  def test_costpercapita_bb90; assert_in_epsilon(83.83150462055177, worksheet.costpercapita_bb90, 0.001); end
+  def test_costpercapita_bc90; assert_in_epsilon(80.23029597557266, worksheet.costpercapita_bc90, 0.001); end
+  def test_costpercapita_bd90; assert_in_epsilon(75.46905911873016, worksheet.costpercapita_bd90, 0.001); end
+  def test_costpercapita_be90; assert_in_epsilon(69.27662957344609, worksheet.costpercapita_be90, 0.001); end
+  def test_costpercapita_bf90; assert_in_epsilon(62.60372724191554, worksheet.costpercapita_bf90, 0.001); end
+  def test_costpercapita_bg90; assert_in_epsilon(55.63041675278196, worksheet.costpercapita_bg90, 0.001); end
+  def test_costpercapita_bi90; assert_in_epsilon(50.31278623998997, worksheet.costpercapita_bi90, 0.001); end
+  def test_costpercapita_bj90; assert_in_epsilon(81.25912598749119, worksheet.costpercapita_bj90, 0.001); end
+  def test_costpercapita_bk90; assert_in_epsilon(84.48321448715063, worksheet.costpercapita_bk90, 0.001); end
+  def test_costpercapita_bl90; assert_in_epsilon(83.83150462055177, worksheet.costpercapita_bl90, 0.001); end
+  def test_costpercapita_bm90; assert_in_epsilon(80.23029597557266, worksheet.costpercapita_bm90, 0.001); end
+  def test_costpercapita_bn90; assert_in_epsilon(75.46905911873016, worksheet.costpercapita_bn90, 0.001); end
+  def test_costpercapita_bo90; assert_in_epsilon(69.27662957344609, worksheet.costpercapita_bo90, 0.001); end
+  def test_costpercapita_bp90; assert_in_epsilon(62.60372724191554, worksheet.costpercapita_bp90, 0.001); end
+  def test_costpercapita_bq90; assert_in_epsilon(55.63041675278196, worksheet.costpercapita_bq90, 0.001); end
+  def test_costpercapita_bs90; assert_in_epsilon(80.31117769734911, worksheet.costpercapita_bs90, 0.001); end
+  def test_costpercapita_bt90; assert_in_epsilon(116.89318588281246, worksheet.costpercapita_bt90, 0.001); end
+  def test_costpercapita_bu90; assert_in_epsilon(124.29906039759035, worksheet.costpercapita_bu90, 0.001); end
+  def test_costpercapita_bv90; assert_in_epsilon(126.53035186239217, worksheet.costpercapita_bv90, 0.001); end
+  def test_costpercapita_bw90; assert_in_epsilon(124.68435730589148, worksheet.costpercapita_bw90, 0.001); end
+  def test_costpercapita_bx90; assert_in_epsilon(121.31173211013676, worksheet.costpercapita_bx90, 0.001); end
+  def test_costpercapita_by90; assert_in_epsilon(115.84185235182882, worksheet.costpercapita_by90, 0.001); end
+  def test_costpercapita_bz90; assert_in_epsilon(109.70237713513836, worksheet.costpercapita_bz90, 0.001); end
+  def test_costpercapita_ca90; assert_in_epsilon(103.15035261329292, worksheet.costpercapita_ca90, 0.001); end
+  def test_costpercapita_cc90; assert_in_epsilon(113.63604970627028, worksheet.costpercapita_cc90, 0.001); end
+  def test_costpercapita_cd90; assert_in_epsilon(2472.2648777680724, worksheet.costpercapita_cd90, 0.001); end
+  def test_costpercapita_cf90; assert_in_epsilon(-18.451332805538776, worksheet.costpercapita_cf90, 0.001); end
+  def test_costpercapita_cg90; assert_in_epsilon(14.623433983240435, worksheet.costpercapita_cg90, 0.001); end
+  def test_costpercapita_ch90; assert_in_epsilon(15.203642602985521, worksheet.costpercapita_ch90, 0.001); end
+  def test_costpercapita_ci90; assert_in_epsilon(15.08636056118873, worksheet.costpercapita_ci90, 0.001); end
+  def test_costpercapita_cj90; assert_in_epsilon(14.438285206700762, worksheet.costpercapita_cj90, 0.001); end
+  def test_costpercapita_ck90; assert_in_epsilon(13.581450580331207, worksheet.costpercapita_ck90, 0.001); end
+  def test_costpercapita_cl90; assert_in_epsilon(12.467057783819126, worksheet.costpercapita_cl90, 0.001); end
+  def test_costpercapita_cm90; assert_in_epsilon(11.266198858302625, worksheet.costpercapita_cm90, 0.001); end
+  def test_costpercapita_cn90; assert_in_epsilon(10.011278326691434, worksheet.costpercapita_cn90, 0.001); end
+  def test_costpercapita_cp90; assert_in_epsilon(9.802930566413453, worksheet.costpercapita_cp90, 0.001); end
+  def test_costpercapita_cq90; assert_in_epsilon(259.83337558954514, worksheet.costpercapita_cq90, 0.001); end
   def test_costpercapita_cr90; assert_equal("ok", worksheet.costpercapita_cr90); end
   def test_costpercapita_a91; assert_equal("XII.a.Rail", worksheet.costpercapita_a91); end
   def test_costpercapita_b91; assert_equal("Rail", worksheet.costpercapita_b91); end
@@ -15499,21 +16110,21 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_ay91; assert_in_delta(0.5899413792936555, worksheet.costpercapita_ay91, 0.001); end
   def test_costpercapita_az91; assert_in_delta(0.7131307534570612, worksheet.costpercapita_az91, 0.001); end
   def test_costpercapita_ba91; assert_in_epsilon(1.009546834453062, worksheet.costpercapita_ba91, 0.001); end
-  def test_costpercapita_bb91; assert_in_delta(0.9157933758892599, worksheet.costpercapita_bb91, 0.001); end
+  def test_costpercapita_bb91; assert_in_delta(0.9157933758892598, worksheet.costpercapita_bb91, 0.001); end
   def test_costpercapita_bc91; assert_in_delta(0.9670623897337239, worksheet.costpercapita_bc91, 0.001); end
   def test_costpercapita_bd91; assert_in_epsilon(1.0005076819068122, worksheet.costpercapita_bd91, 0.001); end
-  def test_costpercapita_be91; assert_in_delta(0.992051834416259, worksheet.costpercapita_be91, 0.001); end
+  def test_costpercapita_be91; assert_in_delta(0.9920518344162588, worksheet.costpercapita_be91, 0.001); end
   def test_costpercapita_bf91; assert_in_epsilon(1.0105967352634972, worksheet.costpercapita_bf91, 0.001); end
   def test_costpercapita_bg91; assert_in_epsilon(1.0264645904913672, worksheet.costpercapita_bg91, 0.001); end
   def test_costpercapita_bi91; assert_in_delta(0.5899413792936555, worksheet.costpercapita_bi91, 0.001); end
   def test_costpercapita_bj91; assert_in_epsilon(1.2836187749144519, worksheet.costpercapita_bj91, 0.001); end
   def test_costpercapita_bk91; assert_in_epsilon(2.2511423047974928, worksheet.costpercapita_bk91, 0.001); end
-  def test_costpercapita_bl91; assert_in_epsilon(3.097232492769496, worksheet.costpercapita_bl91, 0.001); end
+  def test_costpercapita_bl91; assert_in_epsilon(3.0972324927694954, worksheet.costpercapita_bl91, 0.001); end
   def test_costpercapita_bm91; assert_in_epsilon(3.9796780166256296, worksheet.costpercapita_bm91, 0.001); end
   def test_costpercapita_bn91; assert_in_epsilon(4.886441613727125, worksheet.costpercapita_bn91, 0.001); end
   def test_costpercapita_bo91; assert_in_epsilon(5.277249408445321, worksheet.costpercapita_bo91, 0.001); end
   def test_costpercapita_bp91; assert_in_epsilon(6.479369053041267, worksheet.costpercapita_bp91, 0.001); end
-  def test_costpercapita_bq91; assert_in_epsilon(6.510357036456881, worksheet.costpercapita_bq91, 0.001); end
+  def test_costpercapita_bq91; assert_in_epsilon(6.510357036456879, worksheet.costpercapita_bq91, 0.001); end
   def test_costpercapita_bs91; assert_in_epsilon(138.4386892824095, worksheet.costpercapita_bs91, 0.001); end
   def test_costpercapita_bt91; assert_in_epsilon(138.7817537978042, worksheet.costpercapita_bt91, 0.001); end
   def test_costpercapita_bu91; assert_in_epsilon(142.2501009570168, worksheet.costpercapita_bu91, 0.001); end
@@ -15528,12 +16139,12 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cf91; assert_in_epsilon(-1.8502609112094184, worksheet.costpercapita_cf91, 0.001); end
   def test_costpercapita_cg91; assert_in_delta(-0.4862350028601949, worksheet.costpercapita_cg91, 0.001); end
   def test_costpercapita_ch91; assert_in_delta(-0.2543593442837106, worksheet.costpercapita_ch91, 0.001); end
-  def test_costpercapita_ci91; assert_in_delta(0.8244089493711588, worksheet.costpercapita_ci91, 0.001); end
+  def test_costpercapita_ci91; assert_in_delta(0.8244089493711585, worksheet.costpercapita_ci91, 0.001); end
   def test_costpercapita_cj91; assert_in_epsilon(1.5796146123805543, worksheet.costpercapita_cj91, 0.001); end
   def test_costpercapita_ck91; assert_in_epsilon(2.4033734078880027, worksheet.costpercapita_ck91, 0.001); end
   def test_costpercapita_cl91; assert_in_epsilon(2.8151669945565434, worksheet.costpercapita_cl91, 0.001); end
   def test_costpercapita_cm91; assert_in_epsilon(3.971261751481006, worksheet.costpercapita_cm91, 0.001); end
-  def test_costpercapita_cn91; assert_in_epsilon(3.9628687610933104, worksheet.costpercapita_cn91, 0.001); end
+  def test_costpercapita_cn91; assert_in_epsilon(3.9628687610933087, worksheet.costpercapita_cn91, 0.001); end
   def test_costpercapita_cp91; assert_in_epsilon(1.4406488020463613, worksheet.costpercapita_cp91, 0.001); end
   def test_costpercapita_cq91; assert_in_epsilon(23.08597437249351, worksheet.costpercapita_cq91, 0.001); end
   def test_costpercapita_cr91; assert_equal("ok", worksheet.costpercapita_cr91); end
@@ -15580,29 +16191,29 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at92; assert_in_epsilon(281.7017408896846, worksheet.costpercapita_at92, 0.001); end
   def test_costpercapita_av92; assert_in_delta(0.07, worksheet.costpercapita_av92, 0.001); end
   def test_costpercapita_aw92; assert_in_epsilon(30, worksheet.costpercapita_aw92, 0.001); end
-  def test_costpercapita_ay92; assert_in_epsilon(2.00439053106066, worksheet.costpercapita_ay92, 0.001); end
+  def test_costpercapita_ay92; assert_in_epsilon(2.0043905310606593, worksheet.costpercapita_ay92, 0.001); end
   def test_costpercapita_az92; assert_in_epsilon(3.1925934878433693, worksheet.costpercapita_az92, 0.001); end
-  def test_costpercapita_ba92; assert_in_epsilon(3.499014194721783, worksheet.costpercapita_ba92, 0.001); end
+  def test_costpercapita_ba92; assert_in_epsilon(3.4990141947217825, worksheet.costpercapita_ba92, 0.001); end
   def test_costpercapita_bb92; assert_in_epsilon(3.495694044459894, worksheet.costpercapita_bb92, 0.001); end
   def test_costpercapita_bc92; assert_in_epsilon(3.3432702746016254, worksheet.costpercapita_bc92, 0.001); end
-  def test_costpercapita_bd92; assert_in_epsilon(3.2965101749635624, worksheet.costpercapita_bd92, 0.001); end
+  def test_costpercapita_bd92; assert_in_epsilon(3.296510174963562, worksheet.costpercapita_bd92, 0.001); end
   def test_costpercapita_be92; assert_in_epsilon(3.1183006890951726, worksheet.costpercapita_be92, 0.001); end
   def test_costpercapita_bf92; assert_in_epsilon(3.0233379027842777, worksheet.costpercapita_bf92, 0.001); end
   def test_costpercapita_bg92; assert_in_epsilon(2.918137100060462, worksheet.costpercapita_bg92, 0.001); end
-  def test_costpercapita_bi92; assert_in_epsilon(2.00439053106066, worksheet.costpercapita_bi92, 0.001); end
-  def test_costpercapita_bj92; assert_in_epsilon(5.130889102336167, worksheet.costpercapita_bj92, 0.001); end
+  def test_costpercapita_bi92; assert_in_epsilon(2.0043905310606593, worksheet.costpercapita_bi92, 0.001); end
+  def test_costpercapita_bj92; assert_in_epsilon(5.130889102336166, worksheet.costpercapita_bj92, 0.001); end
   def test_costpercapita_bk92; assert_in_epsilon(8.461927477697685, worksheet.costpercapita_bk92, 0.001); end
   def test_costpercapita_bl92; assert_in_epsilon(11.695610844350508, worksheet.costpercapita_bl92, 0.001); end
-  def test_costpercapita_bm92; assert_in_epsilon(14.719355240128627, worksheet.costpercapita_bm92, 0.001); end
+  def test_costpercapita_bm92; assert_in_epsilon(14.719355240128623, worksheet.costpercapita_bm92, 0.001); end
   def test_costpercapita_bn92; assert_in_epsilon(17.669140760447842, worksheet.costpercapita_bn92, 0.001); end
   def test_costpercapita_bo92; assert_in_epsilon(18.721895352596103, worksheet.costpercapita_bo92, 0.001); end
   def test_costpercapita_bp92; assert_in_epsilon(21.77689538735234, worksheet.costpercapita_bp92, 0.001); end
-  def test_costpercapita_bq92; assert_in_epsilon(21.25747678969827, worksheet.costpercapita_bq92, 0.001); end
+  def test_costpercapita_bq92; assert_in_epsilon(21.257476789698266, worksheet.costpercapita_bq92, 0.001); end
   def test_costpercapita_bs92; assert_in_epsilon(5.95271553787847, worksheet.costpercapita_bs92, 0.001); end
   def test_costpercapita_bt92; assert_in_epsilon(9.40373759532166, worksheet.costpercapita_bt92, 0.001); end
   def test_costpercapita_bu92; assert_in_epsilon(13.163829551168007, worksheet.costpercapita_bu92, 0.001); end
   def test_costpercapita_bv92; assert_in_epsilon(16.817793094727147, worksheet.costpercapita_bv92, 0.001); end
-  def test_costpercapita_bw92; assert_in_epsilon(20.211974182533805, worksheet.costpercapita_bw92, 0.001); end
+  def test_costpercapita_bw92; assert_in_epsilon(20.2119741825338, worksheet.costpercapita_bw92, 0.001); end
   def test_costpercapita_bx92; assert_in_epsilon(23.54162648436352, worksheet.costpercapita_bx92, 0.001); end
   def test_costpercapita_by92; assert_in_epsilon(24.925309988811794, worksheet.costpercapita_by92, 0.001); end
   def test_costpercapita_bz92; assert_in_epsilon(28.310166983477465, worksheet.costpercapita_bz92, 0.001); end
@@ -15610,16 +16221,16 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cc92; assert_in_epsilon(18.93886079032934, worksheet.costpercapita_cc92, 0.001); end
   def test_costpercapita_cd92; assert_in_epsilon(368.17217519852056, worksheet.costpercapita_cd92, 0.001); end
   def test_costpercapita_cf92; assert_in_epsilon(-6.286464351526308, worksheet.costpercapita_cf92, 0.001); end
-  def test_costpercapita_cg92; assert_in_epsilon(-2.7925157122320288, worksheet.costpercapita_cg92, 0.001); end
+  def test_costpercapita_cg92; assert_in_epsilon(-2.7925157122320297, worksheet.costpercapita_cg92, 0.001); end
   def test_costpercapita_ch92; assert_in_delta(-0.2219547710971523, worksheet.costpercapita_ch92, 0.001); end
   def test_costpercapita_ci92; assert_in_epsilon(3.0199685718227114, worksheet.costpercapita_ci92, 0.001); end
-  def test_costpercapita_cj92; assert_in_epsilon(6.421999535104123, worksheet.costpercapita_cj92, 0.001); end
+  def test_costpercapita_cj92; assert_in_epsilon(6.421999535104121, worksheet.costpercapita_cj92, 0.001); end
   def test_costpercapita_ck92; assert_in_epsilon(9.487834655854053, worksheet.costpercapita_ck92, 0.001); end
   def test_costpercapita_cl92; assert_in_epsilon(10.982871017888762, worksheet.costpercapita_cl92, 0.001); end
   def test_costpercapita_cm92; assert_in_epsilon(14.273550477891474, worksheet.costpercapita_cm92, 0.001); end
-  def test_costpercapita_cn92; assert_in_epsilon(14.015220098944942, worksheet.costpercapita_cn92, 0.001); end
-  def test_costpercapita_cp92; assert_in_epsilon(5.433389946961175, worksheet.costpercapita_cp92, 0.001); end
-  def test_costpercapita_cq92; assert_in_epsilon(86.47043430883602, worksheet.costpercapita_cq92, 0.001); end
+  def test_costpercapita_cn92; assert_in_epsilon(14.015220098944939, worksheet.costpercapita_cn92, 0.001); end
+  def test_costpercapita_cp92; assert_in_epsilon(5.433389946961174, worksheet.costpercapita_cp92, 0.001); end
+  def test_costpercapita_cq92; assert_in_epsilon(86.470434308836, worksheet.costpercapita_cq92, 0.001); end
   def test_costpercapita_cr92; assert_equal("ok", worksheet.costpercapita_cr92); end
   def test_costpercapita_a93; assert_equal("XII.b", worksheet.costpercapita_a93); end
   def test_costpercapita_b93; assert_equal("Domestic freight", worksheet.costpercapita_b93); end
@@ -15664,46 +16275,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at93; assert_in_epsilon(3281.8001283417025, worksheet.costpercapita_at93, 0.001); end
   def test_costpercapita_av93; assert_in_delta(0.07, worksheet.costpercapita_av93, 0.001); end
   def test_costpercapita_aw93; assert_in_epsilon(10, worksheet.costpercapita_aw93, 0.001); end
-  def test_costpercapita_ay93; assert_in_epsilon(29.001630227802437, worksheet.costpercapita_ay93, 0.001); end
-  def test_costpercapita_az93; assert_in_epsilon(52.278536588909496, worksheet.costpercapita_az93, 0.001); end
-  def test_costpercapita_ba93; assert_in_epsilon(47.37226782954385, worksheet.costpercapita_ba93, 0.001); end
-  def test_costpercapita_bb93; assert_in_epsilon(44.23473439593689, worksheet.costpercapita_bb93, 0.001); end
-  def test_costpercapita_bc93; assert_in_epsilon(41.492736084996324, worksheet.costpercapita_bc93, 0.001); end
-  def test_costpercapita_bd93; assert_in_epsilon(39.043041313731884, worksheet.costpercapita_bd93, 0.001); end
+  def test_costpercapita_ay93; assert_in_epsilon(29.00163022780244, worksheet.costpercapita_ay93, 0.001); end
+  def test_costpercapita_az93; assert_in_epsilon(52.27853658890951, worksheet.costpercapita_az93, 0.001); end
+  def test_costpercapita_ba93; assert_in_epsilon(47.37226782954386, worksheet.costpercapita_ba93, 0.001); end
+  def test_costpercapita_bb93; assert_in_epsilon(44.2347343959369, worksheet.costpercapita_bb93, 0.001); end
+  def test_costpercapita_bc93; assert_in_epsilon(41.49273608499633, worksheet.costpercapita_bc93, 0.001); end
+  def test_costpercapita_bd93; assert_in_epsilon(39.04304131373189, worksheet.costpercapita_bd93, 0.001); end
   def test_costpercapita_be93; assert_in_epsilon(36.794628951291614, worksheet.costpercapita_be93, 0.001); end
-  def test_costpercapita_bf93; assert_in_epsilon(34.69832660767178, worksheet.costpercapita_bf93, 0.001); end
-  def test_costpercapita_bg93; assert_in_epsilon(32.739138242999054, worksheet.costpercapita_bg93, 0.001); end
-  def test_costpercapita_bi93; assert_in_epsilon(29.001630227802437, worksheet.costpercapita_bi93, 0.001); end
-  def test_costpercapita_bj93; assert_in_epsilon(80.32383605155697, worksheet.costpercapita_bj93, 0.001); end
-  def test_costpercapita_bk93; assert_in_epsilon(97.93930182244533, worksheet.costpercapita_bk93, 0.001); end
-  def test_costpercapita_bl93; assert_in_epsilon(90.14019220660619, worksheet.costpercapita_bl93, 0.001); end
-  def test_costpercapita_bm93; assert_in_epsilon(84.51897076505787, worksheet.costpercapita_bm93, 0.001); end
-  def test_costpercapita_bn93; assert_in_epsilon(79.55838712893582, worksheet.costpercapita_bn93, 0.001); end
-  def test_costpercapita_bo93; assert_in_epsilon(75.00502328522047, worksheet.costpercapita_bo93, 0.001); end
+  def test_costpercapita_bf93; assert_in_epsilon(34.69832660767179, worksheet.costpercapita_bf93, 0.001); end
+  def test_costpercapita_bg93; assert_in_epsilon(32.73913824299906, worksheet.costpercapita_bg93, 0.001); end
+  def test_costpercapita_bi93; assert_in_epsilon(29.00163022780244, worksheet.costpercapita_bi93, 0.001); end
+  def test_costpercapita_bj93; assert_in_epsilon(80.32383605155698, worksheet.costpercapita_bj93, 0.001); end
+  def test_costpercapita_bk93; assert_in_epsilon(97.93930182244536, worksheet.costpercapita_bk93, 0.001); end
+  def test_costpercapita_bl93; assert_in_epsilon(90.1401922066062, worksheet.costpercapita_bl93, 0.001); end
+  def test_costpercapita_bm93; assert_in_epsilon(84.51897076505789, worksheet.costpercapita_bm93, 0.001); end
+  def test_costpercapita_bn93; assert_in_epsilon(79.55838712893583, worksheet.costpercapita_bn93, 0.001); end
+  def test_costpercapita_bo93; assert_in_epsilon(75.0050232852205, worksheet.costpercapita_bo93, 0.001); end
   def test_costpercapita_bp93; assert_in_epsilon(70.75897904678807, worksheet.costpercapita_bp93, 0.001); end
-  def test_costpercapita_bq93; assert_in_epsilon(66.78993386668232, worksheet.costpercapita_bq93, 0.001); end
-  def test_costpercapita_bs93; assert_in_epsilon(133.45809722672334, worksheet.costpercapita_bs93, 0.001); end
+  def test_costpercapita_bq93; assert_in_epsilon(66.78993386668235, worksheet.costpercapita_bq93, 0.001); end
+  def test_costpercapita_bs93; assert_in_epsilon(133.45809722672337, worksheet.costpercapita_bs93, 0.001); end
   def test_costpercapita_bt93; assert_in_epsilon(187.53979548394778, worksheet.costpercapita_bt93, 0.001); end
   def test_costpercapita_bu93; assert_in_epsilon(199.50599669990038, worksheet.costpercapita_bu93, 0.001); end
   def test_costpercapita_bv93; assert_in_epsilon(186.478240794336, worksheet.costpercapita_bv93, 0.001); end
-  def test_costpercapita_bw93; assert_in_epsilon(176.1956932873015, worksheet.costpercapita_bw93, 0.001); end
+  def test_costpercapita_bw93; assert_in_epsilon(176.19569328730154, worksheet.costpercapita_bw93, 0.001); end
   def test_costpercapita_bx93; assert_in_epsilon(167.09196905092713, worksheet.costpercapita_bx93, 0.001); end
-  def test_costpercapita_by93; assert_in_epsilon(158.72881957840983, worksheet.costpercapita_by93, 0.001); end
+  def test_costpercapita_by93; assert_in_epsilon(158.72881957840985, worksheet.costpercapita_by93, 0.001); end
   def test_costpercapita_bz93; assert_in_epsilon(150.90710310913371, worksheet.costpercapita_bz93, 0.001); end
   def test_costpercapita_ca93; assert_in_epsilon(143.5714175886797, worksheet.costpercapita_ca93, 0.001); end
   def test_costpercapita_cc93; assert_in_epsilon(167.0530147577066, worksheet.costpercapita_cc93, 0.001); end
-  def test_costpercapita_cd93; assert_in_epsilon(3687.9068821852234, worksheet.costpercapita_cd93, 0.001); end
+  def test_costpercapita_cd93; assert_in_epsilon(3687.906882185224, worksheet.costpercapita_cd93, 0.001); end
   def test_costpercapita_cf93; assert_in_epsilon(-38.89680801384629, worksheet.costpercapita_cf93, 0.001); end
-  def test_costpercapita_cg93; assert_in_epsilon(6.887323136990092, worksheet.costpercapita_cg93, 0.001); end
-  def test_costpercapita_ch93; assert_in_epsilon(31.39470464650541, worksheet.costpercapita_ch93, 0.001); end
-  def test_costpercapita_ci93; assert_in_epsilon(28.002939412334413, worksheet.costpercapita_ci93, 0.001); end
-  def test_costpercapita_cj93; assert_in_epsilon(26.233447715184212, worksheet.costpercapita_cj93, 0.001); end
-  def test_costpercapita_ck93; assert_in_epsilon(24.713990274336574, worksheet.costpercapita_ck93, 0.001); end
-  def test_costpercapita_cl93; assert_in_epsilon(23.31900794366926, worksheet.costpercapita_cl93, 0.001); end
+  def test_costpercapita_cg93; assert_in_epsilon(6.887323136990106, worksheet.costpercapita_cg93, 0.001); end
+  def test_costpercapita_ch93; assert_in_epsilon(31.39470464650544, worksheet.costpercapita_ch93, 0.001); end
+  def test_costpercapita_ci93; assert_in_epsilon(28.002939412334428, worksheet.costpercapita_ci93, 0.001); end
+  def test_costpercapita_cj93; assert_in_epsilon(26.23344771518424, worksheet.costpercapita_cj93, 0.001); end
+  def test_costpercapita_ck93; assert_in_epsilon(24.713990274336588, worksheet.costpercapita_ck93, 0.001); end
+  def test_costpercapita_cl93; assert_in_epsilon(23.319007943669284, worksheet.costpercapita_cl93, 0.001); end
   def test_costpercapita_cm93; assert_in_epsilon(22.01767379420925, worksheet.costpercapita_cm93, 0.001); end
-  def test_costpercapita_cn93; assert_in_epsilon(20.800732460768565, worksheet.costpercapita_cn93, 0.001); end
-  def test_costpercapita_cp93; assert_in_epsilon(16.05255681890572, worksheet.costpercapita_cp93, 0.001); end
-  def test_costpercapita_cq93; assert_in_epsilon(406.1067538435217, worksheet.costpercapita_cq93, 0.001); end
+  def test_costpercapita_cn93; assert_in_epsilon(20.80073246076859, worksheet.costpercapita_cn93, 0.001); end
+  def test_costpercapita_cp93; assert_in_epsilon(16.052556818905735, worksheet.costpercapita_cp93, 0.001); end
+  def test_costpercapita_cq93; assert_in_epsilon(406.106753843522, worksheet.costpercapita_cq93, 0.001); end
   def test_costpercapita_cr93; assert_equal("ok", worksheet.costpercapita_cr93); end
   def test_costpercapita_a94; assert_equal("XII.c", worksheet.costpercapita_a94); end
   def test_costpercapita_b94; assert_equal("International aviation", worksheet.costpercapita_b94); end
@@ -16000,46 +16611,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at97; assert_in_epsilon(314.7528385973844, worksheet.costpercapita_at97, 0.001); end
   def test_costpercapita_av97; assert_in_delta(0.07, worksheet.costpercapita_av97, 0.001); end
   def test_costpercapita_aw97; assert_in_epsilon(15, worksheet.costpercapita_aw97, 0.001); end
-  def test_costpercapita_ay97; assert_in_epsilon(2.0700193895530417, worksheet.costpercapita_ay97, 0.001); end
-  def test_costpercapita_az97; assert_in_epsilon(3.1425394083183877, worksheet.costpercapita_az97, 0.001); end
-  def test_costpercapita_ba97; assert_in_epsilon(2.880422153156445, worksheet.costpercapita_ba97, 0.001); end
-  def test_costpercapita_bb97; assert_in_epsilon(2.647510749593148, worksheet.costpercapita_bb97, 0.001); end
-  def test_costpercapita_bc97; assert_in_epsilon(2.4657694488228703, worksheet.costpercapita_bc97, 0.001); end
-  def test_costpercapita_bd97; assert_in_epsilon(2.3250206904519795, worksheet.costpercapita_bd97, 0.001); end
-  def test_costpercapita_be97; assert_in_epsilon(2.2128352951399486, worksheet.costpercapita_be97, 0.001); end
-  def test_costpercapita_bf97; assert_in_epsilon(2.1212205477106227, worksheet.costpercapita_bf97, 0.001); end
+  def test_costpercapita_ay97; assert_in_epsilon(2.070019389553042, worksheet.costpercapita_ay97, 0.001); end
+  def test_costpercapita_az97; assert_in_epsilon(3.142539408318388, worksheet.costpercapita_az97, 0.001); end
+  def test_costpercapita_ba97; assert_in_epsilon(2.8804221531564456, worksheet.costpercapita_ba97, 0.001); end
+  def test_costpercapita_bb97; assert_in_epsilon(2.647510749593149, worksheet.costpercapita_bb97, 0.001); end
+  def test_costpercapita_bc97; assert_in_epsilon(2.4657694488228707, worksheet.costpercapita_bc97, 0.001); end
+  def test_costpercapita_bd97; assert_in_epsilon(2.32502069045198, worksheet.costpercapita_bd97, 0.001); end
+  def test_costpercapita_be97; assert_in_epsilon(2.212835295139949, worksheet.costpercapita_be97, 0.001); end
+  def test_costpercapita_bf97; assert_in_epsilon(2.121220547710623, worksheet.costpercapita_bf97, 0.001); end
   def test_costpercapita_bg97; assert_in_epsilon(2.0455864955261207, worksheet.costpercapita_bg97, 0.001); end
-  def test_costpercapita_bi97; assert_in_epsilon(2.0700193895530417, worksheet.costpercapita_bi97, 0.001); end
+  def test_costpercapita_bi97; assert_in_epsilon(2.070019389553042, worksheet.costpercapita_bi97, 0.001); end
   def test_costpercapita_bj97; assert_in_epsilon(5.144299765149913, worksheet.costpercapita_bj97, 0.001); end
-  def test_costpercapita_bk97; assert_in_epsilon(7.856307058649302, worksheet.costpercapita_bk97, 0.001); end
-  def test_costpercapita_bl97; assert_in_epsilon(8.38428511590707, worksheet.costpercapita_bl97, 0.001); end
-  def test_costpercapita_bm97; assert_in_epsilon(7.755927126247094, worksheet.costpercapita_bm97, 0.001); end
-  def test_costpercapita_bn97; assert_in_epsilon(7.247227409765991, worksheet.costpercapita_bn97, 0.001); end
-  def test_costpercapita_bo97; assert_in_epsilon(6.844610977009696, worksheet.costpercapita_bo97, 0.001); end
-  def test_costpercapita_bp97; assert_in_epsilon(6.519960535178548, worksheet.costpercapita_bp97, 0.001); end
+  def test_costpercapita_bk97; assert_in_epsilon(7.856307058649303, worksheet.costpercapita_bk97, 0.001); end
+  def test_costpercapita_bl97; assert_in_epsilon(8.384285115907073, worksheet.costpercapita_bl97, 0.001); end
+  def test_costpercapita_bm97; assert_in_epsilon(7.755927126247096, worksheet.costpercapita_bm97, 0.001); end
+  def test_costpercapita_bn97; assert_in_epsilon(7.247227409765992, worksheet.costpercapita_bn97, 0.001); end
+  def test_costpercapita_bo97; assert_in_epsilon(6.8446109770096975, worksheet.costpercapita_bo97, 0.001); end
+  def test_costpercapita_bp97; assert_in_epsilon(6.519960535178551, worksheet.costpercapita_bp97, 0.001); end
   def test_costpercapita_bq97; assert_in_epsilon(6.255443618950079, worksheet.costpercapita_bq97, 0.001); end
   def test_costpercapita_bs97; assert_in_epsilon(15.00370644377627, worksheet.costpercapita_bs97, 0.001); end
   def test_costpercapita_bt97; assert_in_epsilon(16.996292326160027, worksheet.costpercapita_bt97, 0.001); end
   def test_costpercapita_bu97; assert_in_epsilon(18.729995164933616, worksheet.costpercapita_bu97, 0.001); end
   def test_costpercapita_bv97; assert_in_epsilon(18.473603711404248, worksheet.costpercapita_bv97, 0.001); end
   def test_costpercapita_bw97; assert_in_epsilon(17.232659850836278, worksheet.costpercapita_bw97, 0.001); end
-  def test_costpercapita_bx97; assert_in_epsilon(16.246149610188525, worksheet.costpercapita_bx97, 0.001); end
+  def test_costpercapita_bx97; assert_in_epsilon(16.246149610188528, worksheet.costpercapita_bx97, 0.001); end
   def test_costpercapita_by97; assert_in_epsilon(15.458830987946754, worksheet.costpercapita_by97, 0.001); end
-  def test_costpercapita_bz97; assert_in_epsilon(14.816145022668872, worksheet.costpercapita_bz97, 0.001); end
+  def test_costpercapita_bz97; assert_in_epsilon(14.816145022668875, worksheet.costpercapita_bz97, 0.001); end
   def test_costpercapita_ca97; assert_in_epsilon(14.285791500520983, worksheet.costpercapita_ca97, 0.001); end
   def test_costpercapita_cc97; assert_in_epsilon(16.36035273538173, worksheet.costpercapita_cc97, 0.001); end
   def test_costpercapita_cd97; assert_in_epsilon(354.9964619504135, worksheet.costpercapita_cd97, 0.001); end
   def test_costpercapita_cf97; assert_in_epsilon(-4.214500140099503, worksheet.costpercapita_cf97, 0.001); end
   def test_costpercapita_cg97; assert_in_delta(-0.5800959725761775, worksheet.costpercapita_cg97, 0.001); end
-  def test_costpercapita_ch97; assert_in_epsilon(2.6093796047772555, worksheet.costpercapita_ch97, 0.001); end
-  def test_costpercapita_ci97; assert_in_epsilon(3.561625068927781, worksheet.costpercapita_ci97, 0.001); end
-  def test_costpercapita_cj97; assert_in_epsilon(3.2643239069862786, worksheet.costpercapita_cj97, 0.001); end
-  def test_costpercapita_ck97; assert_in_epsilon(3.012009708018766, worksheet.costpercapita_ck97, 0.001); end
-  def test_costpercapita_cl97; assert_in_epsilon(2.8137482618887013, worksheet.costpercapita_cl97, 0.001); end
-  def test_costpercapita_cm97; assert_in_epsilon(2.655981668294772, worksheet.costpercapita_cm97, 0.001); end
+  def test_costpercapita_ch97; assert_in_epsilon(2.6093796047772573, worksheet.costpercapita_ch97, 0.001); end
+  def test_costpercapita_ci97; assert_in_epsilon(3.561625068927783, worksheet.costpercapita_ci97, 0.001); end
+  def test_costpercapita_cj97; assert_in_epsilon(3.2643239069862804, worksheet.costpercapita_cj97, 0.001); end
+  def test_costpercapita_ck97; assert_in_epsilon(3.012009708018768, worksheet.costpercapita_ck97, 0.001); end
+  def test_costpercapita_cl97; assert_in_epsilon(2.813748261888703, worksheet.costpercapita_cl97, 0.001); end
+  def test_costpercapita_cm97; assert_in_epsilon(2.6559816682947743, worksheet.costpercapita_cm97, 0.001); end
   def test_costpercapita_cn97; assert_in_epsilon(2.5292384406971804, worksheet.costpercapita_cn97, 0.001); end
-  def test_costpercapita_cp97; assert_in_epsilon(1.7390789496572283, worksheet.costpercapita_cp97, 0.001); end
-  def test_costpercapita_cq97; assert_in_epsilon(40.2436233530291, worksheet.costpercapita_cq97, 0.001); end
+  def test_costpercapita_cp97; assert_in_epsilon(1.7390789496572294, worksheet.costpercapita_cp97, 0.001); end
+  def test_costpercapita_cq97; assert_in_epsilon(40.24362335302912, worksheet.costpercapita_cq97, 0.001); end
   def test_costpercapita_cr97; assert_equal("ok", worksheet.costpercapita_cr97); end
   def test_costpercapita_a98; assert_equal("XV.b.Coal", worksheet.costpercapita_a98); end
   def test_costpercapita_b98; assert_equal("Indigenous fossil-fuel production - Coal", worksheet.costpercapita_b98); end
@@ -16336,46 +16947,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at101; assert_in_epsilon(180.7473547980069, worksheet.costpercapita_at101, 0.001); end
   def test_costpercapita_av101; assert_in_delta(0.07, worksheet.costpercapita_av101, 0.001); end
   def test_costpercapita_aw101; assert_in_epsilon(15, worksheet.costpercapita_aw101, 0.001); end
-  def test_costpercapita_ay101; assert_in_epsilon(6.4730202085243915, worksheet.costpercapita_ay101, 0.001); end
-  def test_costpercapita_az101; assert_in_epsilon(5.798324322039211, worksheet.costpercapita_az101, 0.001); end
-  def test_costpercapita_ba101; assert_in_epsilon(5.451379175434548, worksheet.costpercapita_ba101, 0.001); end
-  def test_costpercapita_bb101; assert_in_epsilon(4.865519092769343, worksheet.costpercapita_bb101, 0.001); end
-  def test_costpercapita_bc101; assert_in_epsilon(4.582395209808406, worksheet.costpercapita_bc101, 0.001); end
-  def test_costpercapita_bd101; assert_in_epsilon(3.8492661316277132, worksheet.costpercapita_bd101, 0.001); end
-  def test_costpercapita_be101; assert_in_epsilon(2.9133774061703765, worksheet.costpercapita_be101, 0.001); end
-  def test_costpercapita_bf101; assert_in_epsilon(1.9997656922987552, worksheet.costpercapita_bf101, 0.001); end
-  def test_costpercapita_bg101; assert_in_epsilon(1.4235295949511249, worksheet.costpercapita_bg101, 0.001); end
-  def test_costpercapita_bi101; assert_in_epsilon(6.4730202085243915, worksheet.costpercapita_bi101, 0.001); end
+  def test_costpercapita_ay101; assert_in_epsilon(6.473020208524392, worksheet.costpercapita_ay101, 0.001); end
+  def test_costpercapita_az101; assert_in_epsilon(5.798324322039212, worksheet.costpercapita_az101, 0.001); end
+  def test_costpercapita_ba101; assert_in_epsilon(5.45137917543455, worksheet.costpercapita_ba101, 0.001); end
+  def test_costpercapita_bb101; assert_in_epsilon(4.865519092769345, worksheet.costpercapita_bb101, 0.001); end
+  def test_costpercapita_bc101; assert_in_epsilon(4.582395209808409, worksheet.costpercapita_bc101, 0.001); end
+  def test_costpercapita_bd101; assert_in_epsilon(3.8492661316277146, worksheet.costpercapita_bd101, 0.001); end
+  def test_costpercapita_be101; assert_in_epsilon(2.9133774061703774, worksheet.costpercapita_be101, 0.001); end
+  def test_costpercapita_bf101; assert_in_epsilon(1.9997656922987557, worksheet.costpercapita_bf101, 0.001); end
+  def test_costpercapita_bg101; assert_in_epsilon(1.4235295949511253, worksheet.costpercapita_bg101, 0.001); end
+  def test_costpercapita_bi101; assert_in_epsilon(6.473020208524392, worksheet.costpercapita_bi101, 0.001); end
   def test_costpercapita_bj101; assert_in_epsilon(12.057896240924103, worksheet.costpercapita_bj101, 0.001); end
-  def test_costpercapita_bk101; assert_in_epsilon(17.114522195146353, worksheet.costpercapita_bk101, 0.001); end
-  def test_costpercapita_bl101; assert_in_epsilon(15.582943951414414, worksheet.costpercapita_bl101, 0.001); end
-  def test_costpercapita_bm101; assert_in_epsilon(14.453252064510513, worksheet.costpercapita_bm101, 0.001); end
-  def test_costpercapita_bn101; assert_in_epsilon(12.944832693825708, worksheet.costpercapita_bn101, 0.001); end
-  def test_costpercapita_bo101; assert_in_epsilon(11.059582375644588, worksheet.costpercapita_bo101, 0.001); end
-  def test_costpercapita_bp101; assert_in_epsilon(8.547055129063189, worksheet.costpercapita_bp101, 0.001); end
-  def test_costpercapita_bq101; assert_in_epsilon(6.1879536250482765, worksheet.costpercapita_bq101, 0.001); end
-  def test_costpercapita_bs101; assert_in_epsilon(6.5312267758741624, worksheet.costpercapita_bs101, 0.001); end
+  def test_costpercapita_bk101; assert_in_epsilon(17.114522195146357, worksheet.costpercapita_bk101, 0.001); end
+  def test_costpercapita_bl101; assert_in_epsilon(15.582943951414421, worksheet.costpercapita_bl101, 0.001); end
+  def test_costpercapita_bm101; assert_in_epsilon(14.453252064510519, worksheet.costpercapita_bm101, 0.001); end
+  def test_costpercapita_bn101; assert_in_epsilon(12.944832693825715, worksheet.costpercapita_bn101, 0.001); end
+  def test_costpercapita_bo101; assert_in_epsilon(11.059582375644592, worksheet.costpercapita_bo101, 0.001); end
+  def test_costpercapita_bp101; assert_in_epsilon(8.547055129063192, worksheet.costpercapita_bp101, 0.001); end
+  def test_costpercapita_bq101; assert_in_epsilon(6.187953625048278, worksheet.costpercapita_bq101, 0.001); end
+  def test_costpercapita_bs101; assert_in_epsilon(6.531226775874163, worksheet.costpercapita_bs101, 0.001); end
   def test_costpercapita_bt101; assert_in_epsilon(12.108204608083991, worksheet.costpercapita_bt101, 0.001); end
-  def test_costpercapita_bu101; assert_in_epsilon(17.15600406484843, worksheet.costpercapita_bu101, 0.001); end
-  def test_costpercapita_bv101; assert_in_epsilon(15.619168117233173, worksheet.costpercapita_bv101, 0.001); end
-  def test_costpercapita_bw101; assert_in_epsilon(14.481598852073288, worksheet.costpercapita_bw101, 0.001); end
-  def test_costpercapita_bx101; assert_in_epsilon(12.964935568750047, worksheet.costpercapita_bx101, 0.001); end
-  def test_costpercapita_by101; assert_in_epsilon(11.072571123101964, worksheet.costpercapita_by101, 0.001); end
-  def test_costpercapita_bz101; assert_in_epsilon(8.555787962950332, worksheet.costpercapita_bz101, 0.001); end
-  def test_costpercapita_ca101; assert_in_epsilon(6.193082666177834, worksheet.costpercapita_ca101, 0.001); end
-  def test_costpercapita_cc101; assert_in_epsilon(11.631397748788137, worksheet.costpercapita_cc101, 0.001); end
-  def test_costpercapita_cd101; assert_in_epsilon(269.83191103706974, worksheet.costpercapita_cd101, 0.001); end
+  def test_costpercapita_bu101; assert_in_epsilon(17.156004064848435, worksheet.costpercapita_bu101, 0.001); end
+  def test_costpercapita_bv101; assert_in_epsilon(15.61916811723318, worksheet.costpercapita_bv101, 0.001); end
+  def test_costpercapita_bw101; assert_in_epsilon(14.481598852073294, worksheet.costpercapita_bw101, 0.001); end
+  def test_costpercapita_bx101; assert_in_epsilon(12.964935568750052, worksheet.costpercapita_bx101, 0.001); end
+  def test_costpercapita_by101; assert_in_epsilon(11.072571123101968, worksheet.costpercapita_by101, 0.001); end
+  def test_costpercapita_bz101; assert_in_epsilon(8.555787962950333, worksheet.costpercapita_bz101, 0.001); end
+  def test_costpercapita_ca101; assert_in_epsilon(6.193082666177836, worksheet.costpercapita_ca101, 0.001); end
+  def test_costpercapita_cc101; assert_in_epsilon(11.631397748788139, worksheet.costpercapita_cc101, 0.001); end
+  def test_costpercapita_cd101; assert_in_epsilon(269.8319110370698, worksheet.costpercapita_cd101, 0.001); end
   def test_costpercapita_cf101; assert_in_epsilon(-13.178883595666887, worksheet.costpercapita_cf101, 0.001); end
   def test_costpercapita_cg101; assert_in_epsilon(1.495768381150916, worksheet.costpercapita_cg101, 0.001); end
-  def test_costpercapita_ch101; assert_in_epsilon(7.184383647326218, worksheet.costpercapita_ch101, 0.001); end
-  def test_costpercapita_ci101; assert_in_epsilon(6.719998053982442, worksheet.costpercapita_ci101, 0.001); end
-  def test_costpercapita_cj101; assert_in_epsilon(6.1060397628387015, worksheet.costpercapita_cj101, 0.001); end
-  def test_costpercapita_ck101; assert_in_epsilon(5.933075711896835, worksheet.costpercapita_ck101, 0.001); end
-  def test_costpercapita_cl101; assert_in_epsilon(5.75262419967904, worksheet.costpercapita_cl101, 0.001); end
-  def test_costpercapita_cm101; assert_in_epsilon(4.9043163378982655, worksheet.costpercapita_cm101, 0.001); end
-  def test_costpercapita_cn101; assert_in_epsilon(3.594876598139736, worksheet.costpercapita_cn101, 0.001); end
-  def test_costpercapita_cp101; assert_in_epsilon(3.1680221219161404, worksheet.costpercapita_cp101, 0.001); end
-  def test_costpercapita_cq101; assert_in_epsilon(89.08455623906276, worksheet.costpercapita_cq101, 0.001); end
+  def test_costpercapita_ch101; assert_in_epsilon(7.1843836473262215, worksheet.costpercapita_ch101, 0.001); end
+  def test_costpercapita_ci101; assert_in_epsilon(6.719998053982448, worksheet.costpercapita_ci101, 0.001); end
+  def test_costpercapita_cj101; assert_in_epsilon(6.106039762838708, worksheet.costpercapita_cj101, 0.001); end
+  def test_costpercapita_ck101; assert_in_epsilon(5.933075711896842, worksheet.costpercapita_ck101, 0.001); end
+  def test_costpercapita_cl101; assert_in_epsilon(5.752624199679046, worksheet.costpercapita_cl101, 0.001); end
+  def test_costpercapita_cm101; assert_in_epsilon(4.904316337898268, worksheet.costpercapita_cm101, 0.001); end
+  def test_costpercapita_cn101; assert_in_epsilon(3.594876598139738, worksheet.costpercapita_cn101, 0.001); end
+  def test_costpercapita_cp101; assert_in_epsilon(3.1680221219161444, worksheet.costpercapita_cp101, 0.001); end
+  def test_costpercapita_cq101; assert_in_epsilon(89.08455623906283, worksheet.costpercapita_cq101, 0.001); end
   def test_costpercapita_cr101; assert_equal("ok", worksheet.costpercapita_cr101); end
   def test_costpercapita_a102; assert_equal("XVI.b.Coal", worksheet.costpercapita_a102); end
   def test_costpercapita_b102; assert_equal("Balancing imports - Coal", worksheet.costpercapita_b102); end
@@ -16672,46 +17283,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at105; assert_in_epsilon(8.296402813619702, worksheet.costpercapita_at105, 0.001); end
   def test_costpercapita_av105; assert_in_delta(0.07, worksheet.costpercapita_av105, 0.001); end
   def test_costpercapita_aw105; assert_in_epsilon(15, worksheet.costpercapita_aw105, 0.001); end
-  def test_costpercapita_ay105; assert_in_delta(0.2021133251465135, worksheet.costpercapita_ay105, 0.001); end
-  def test_costpercapita_az105; assert_in_delta(0.1902830102324339, worksheet.costpercapita_az105, 0.001); end
-  def test_costpercapita_ba105; assert_in_delta(0.17686690687592713, worksheet.costpercapita_ba105, 0.001); end
-  def test_costpercapita_bb105; assert_in_delta(0.1648470549453206, worksheet.costpercapita_bb105, 0.001); end
-  def test_costpercapita_bc105; assert_in_delta(0.15446995931195726, worksheet.costpercapita_bc105, 0.001); end
-  def test_costpercapita_bd105; assert_in_delta(0.14552330916058523, worksheet.costpercapita_bd105, 0.001); end
-  def test_costpercapita_be105; assert_in_delta(0.1375934793877438, worksheet.costpercapita_be105, 0.001); end
-  def test_costpercapita_bf105; assert_in_delta(0.13043919469295648, worksheet.costpercapita_bf105, 0.001); end
-  def test_costpercapita_bg105; assert_in_delta(0.12395856597122858, worksheet.costpercapita_bg105, 0.001); end
-  def test_costpercapita_bi105; assert_in_delta(0.2021133251465135, worksheet.costpercapita_bi105, 0.001); end
+  def test_costpercapita_ay105; assert_in_delta(0.20211332514651353, worksheet.costpercapita_ay105, 0.001); end
+  def test_costpercapita_az105; assert_in_delta(0.19028301023243394, worksheet.costpercapita_az105, 0.001); end
+  def test_costpercapita_ba105; assert_in_delta(0.17686690687592718, worksheet.costpercapita_ba105, 0.001); end
+  def test_costpercapita_bb105; assert_in_delta(0.16484705494532062, worksheet.costpercapita_bb105, 0.001); end
+  def test_costpercapita_bc105; assert_in_delta(0.15446995931195728, worksheet.costpercapita_bc105, 0.001); end
+  def test_costpercapita_bd105; assert_in_delta(0.14552330916058526, worksheet.costpercapita_bd105, 0.001); end
+  def test_costpercapita_be105; assert_in_delta(0.13759347938774383, worksheet.costpercapita_be105, 0.001); end
+  def test_costpercapita_bf105; assert_in_delta(0.13043919469295653, worksheet.costpercapita_bf105, 0.001); end
+  def test_costpercapita_bg105; assert_in_delta(0.12395856597122862, worksheet.costpercapita_bg105, 0.001); end
+  def test_costpercapita_bi105; assert_in_delta(0.20211332514651353, worksheet.costpercapita_bi105, 0.001); end
   def test_costpercapita_bj105; assert_in_delta(0.3857316344856823, worksheet.costpercapita_bj105, 0.001); end
   def test_costpercapita_bk105; assert_in_delta(0.5499704010795666, worksheet.costpercapita_bk105, 0.001); end
-  def test_costpercapita_bl105; assert_in_delta(0.514592108442415, worksheet.costpercapita_bl105, 0.001); end
-  def test_costpercapita_bm105; assert_in_delta(0.481521445844644, worksheet.costpercapita_bm105, 0.001); end
-  def test_costpercapita_bn105; assert_in_delta(0.4529210287161238, worksheet.costpercapita_bn105, 0.001); end
-  def test_costpercapita_bo105; assert_in_delta(0.4276279273666862, worksheet.costpercapita_bo105, 0.001); end
-  def test_costpercapita_bp105; assert_in_delta(0.40486681248575684, worksheet.costpercapita_bp105, 0.001); end
-  def test_costpercapita_bq105; assert_in_delta(0.38429580174617095, worksheet.costpercapita_bq105, 0.001); end
-  def test_costpercapita_bs105; assert_in_delta(0.3096440353933352, worksheet.costpercapita_bs105, 0.001); end
+  def test_costpercapita_bl105; assert_in_delta(0.5145921084424151, worksheet.costpercapita_bl105, 0.001); end
+  def test_costpercapita_bm105; assert_in_delta(0.48152144584464407, worksheet.costpercapita_bm105, 0.001); end
+  def test_costpercapita_bn105; assert_in_delta(0.4529210287161239, worksheet.costpercapita_bn105, 0.001); end
+  def test_costpercapita_bo105; assert_in_delta(0.4276279273666863, worksheet.costpercapita_bo105, 0.001); end
+  def test_costpercapita_bp105; assert_in_delta(0.404866812485757, worksheet.costpercapita_bp105, 0.001); end
+  def test_costpercapita_bq105; assert_in_delta(0.38429580174617106, worksheet.costpercapita_bq105, 0.001); end
+  def test_costpercapita_bs105; assert_in_delta(0.30964403539333524, worksheet.costpercapita_bs105, 0.001); end
   def test_costpercapita_bt105; assert_in_delta(0.48565629783844816, worksheet.costpercapita_bt105, 0.001); end
   def test_costpercapita_bu105; assert_in_delta(0.6429336338154775, worksheet.costpercapita_bu105, 0.001); end
-  def test_costpercapita_bv105; assert_in_delta(0.6013770321928981, worksheet.costpercapita_bv105, 0.001); end
-  def test_costpercapita_bw105; assert_in_delta(0.5629647261153711, worksheet.costpercapita_bw105, 0.001); end
-  def test_costpercapita_bx105; assert_in_delta(0.5297509070534574, worksheet.costpercapita_bx105, 0.001); end
-  def test_costpercapita_by105; assert_in_delta(0.5003605299849087, worksheet.costpercapita_by105, 0.001); end
-  def test_costpercapita_bz105; assert_in_delta(0.4738952402720284, worksheet.costpercapita_bz105, 0.001); end
-  def test_costpercapita_ca105; assert_in_delta(0.44996265325905677, worksheet.costpercapita_ca105, 0.001); end
+  def test_costpercapita_bv105; assert_in_delta(0.6013770321928982, worksheet.costpercapita_bv105, 0.001); end
+  def test_costpercapita_bw105; assert_in_delta(0.5629647261153712, worksheet.costpercapita_bw105, 0.001); end
+  def test_costpercapita_bx105; assert_in_delta(0.5297509070534575, worksheet.costpercapita_bx105, 0.001); end
+  def test_costpercapita_by105; assert_in_delta(0.5003605299849088, worksheet.costpercapita_by105, 0.001); end
+  def test_costpercapita_bz105; assert_in_delta(0.47389524027202856, worksheet.costpercapita_bz105, 0.001); end
+  def test_costpercapita_ca105; assert_in_delta(0.4499626532590569, worksheet.costpercapita_ca105, 0.001); end
   def test_costpercapita_cc105; assert_in_delta(0.5062827839916646, worksheet.costpercapita_cc105, 0.001); end
   def test_costpercapita_cd105; assert_in_epsilon(11.179341608723773, worksheet.costpercapita_cd105, 0.001); end
   def test_costpercapita_cf105; assert_in_delta(-0.4114969364271895, worksheet.costpercapita_cf105, 0.001); end
   def test_costpercapita_cg105; assert_in_delta(0.03911537571961993, worksheet.costpercapita_cg105, 0.001); end
   def test_costpercapita_ch105; assert_in_delta(0.22779268544444817, worksheet.costpercapita_ch105, 0.001); end
-  def test_costpercapita_ci105; assert_in_delta(0.21430954835491853, worksheet.costpercapita_ci105, 0.001); end
-  def test_costpercapita_cj105; assert_in_delta(0.2001416246874409, worksheet.costpercapita_cj105, 0.001); end
-  def test_costpercapita_ck105; assert_in_delta(0.18783827160141933, worksheet.costpercapita_ck105, 0.001); end
-  def test_costpercapita_cl105; assert_in_delta(0.1769900117812205, worksheet.costpercapita_cl105, 0.001); end
-  def test_costpercapita_cm105; assert_in_delta(0.1672610188539294, worksheet.costpercapita_cm105, 0.001); end
-  def test_costpercapita_cn105; assert_in_delta(0.15849500993365112, worksheet.costpercapita_cn105, 0.001); end
-  def test_costpercapita_cp105; assert_in_delta(0.10671628999438426, worksheet.costpercapita_cp105, 0.001); end
-  def test_costpercapita_cq105; assert_in_epsilon(2.8829387951040686, worksheet.costpercapita_cq105, 0.001); end
+  def test_costpercapita_ci105; assert_in_delta(0.21430954835491864, worksheet.costpercapita_ci105, 0.001); end
+  def test_costpercapita_cj105; assert_in_delta(0.200141624687441, worksheet.costpercapita_cj105, 0.001); end
+  def test_costpercapita_ck105; assert_in_delta(0.18783827160141942, worksheet.costpercapita_ck105, 0.001); end
+  def test_costpercapita_cl105; assert_in_delta(0.1769900117812206, worksheet.costpercapita_cl105, 0.001); end
+  def test_costpercapita_cm105; assert_in_delta(0.16726101885392955, worksheet.costpercapita_cm105, 0.001); end
+  def test_costpercapita_cn105; assert_in_delta(0.15849500993365126, worksheet.costpercapita_cn105, 0.001); end
+  def test_costpercapita_cp105; assert_in_delta(0.10671628999438434, worksheet.costpercapita_cp105, 0.001); end
+  def test_costpercapita_cq105; assert_in_epsilon(2.8829387951040704, worksheet.costpercapita_cq105, 0.001); end
   def test_costpercapita_cr105; assert_equal("ok", worksheet.costpercapita_cr105); end
   def test_costpercapita_a106; assert_equal("XVIII.a", worksheet.costpercapita_a106); end
   def test_costpercapita_b106; assert_equal("Storage of captured CO2", worksheet.costpercapita_b106); end
@@ -16757,45 +17368,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av106; assert_in_delta(0.07, worksheet.costpercapita_av106, 0.001); end
   def test_costpercapita_aw106; assert_in_epsilon(15, worksheet.costpercapita_aw106, 0.001); end
   def test_costpercapita_ay106; assert_in_delta(0, (worksheet.costpercapita_ay106||0), 0.001); end
-  def test_costpercapita_az106; assert_in_delta(0.94067074200182, worksheet.costpercapita_az106, 0.001); end
-  def test_costpercapita_ba106; assert_in_epsilon(2.0999675164629608, worksheet.costpercapita_ba106, 0.001); end
-  def test_costpercapita_bb106; assert_in_epsilon(2.54659189519617, worksheet.costpercapita_bb106, 0.001); end
-  def test_costpercapita_bc106; assert_in_epsilon(3.517003850068319, worksheet.costpercapita_bc106, 0.001); end
-  def test_costpercapita_bd106; assert_in_epsilon(4.609167478354845, worksheet.costpercapita_bd106, 0.001); end
-  def test_costpercapita_be106; assert_in_epsilon(5.520027540057464, worksheet.costpercapita_be106, 0.001); end
+  def test_costpercapita_az106; assert_in_delta(0.9406707420018201, worksheet.costpercapita_az106, 0.001); end
+  def test_costpercapita_ba106; assert_in_epsilon(2.0999675164629616, worksheet.costpercapita_ba106, 0.001); end
+  def test_costpercapita_bb106; assert_in_epsilon(2.546591895196171, worksheet.costpercapita_bb106, 0.001); end
+  def test_costpercapita_bc106; assert_in_epsilon(3.5170038500683205, worksheet.costpercapita_bc106, 0.001); end
+  def test_costpercapita_bd106; assert_in_epsilon(4.609167478354846, worksheet.costpercapita_bd106, 0.001); end
+  def test_costpercapita_be106; assert_in_epsilon(5.520027540057465, worksheet.costpercapita_be106, 0.001); end
   def test_costpercapita_bf106; assert_in_epsilon(6.195248711886684, worksheet.costpercapita_bf106, 0.001); end
-  def test_costpercapita_bg106; assert_in_epsilon(6.760066125071614, worksheet.costpercapita_bg106, 0.001); end
+  def test_costpercapita_bg106; assert_in_epsilon(6.760066125071615, worksheet.costpercapita_bg106, 0.001); end
   def test_costpercapita_bi106; assert_in_delta(0, (worksheet.costpercapita_bi106||0), 0.001); end
-  def test_costpercapita_bj106; assert_in_delta(0.94067074200182, worksheet.costpercapita_bj106, 0.001); end
-  def test_costpercapita_bk106; assert_in_epsilon(3.0098424381918307, worksheet.costpercapita_bk106, 0.001); end
-  def test_costpercapita_bl106; assert_in_epsilon(5.463239153046218, worksheet.costpercapita_bl106, 0.001); end
-  def test_costpercapita_bm106; assert_in_epsilon(7.9733726750034695, worksheet.costpercapita_bm106, 0.001); end
-  def test_costpercapita_bn106; assert_in_epsilon(10.461996573273023, worksheet.costpercapita_bn106, 0.001); end
-  def test_costpercapita_bo106; assert_in_epsilon(13.391818321598086, worksheet.costpercapita_bo106, 0.001); end
+  def test_costpercapita_bj106; assert_in_delta(0.9406707420018201, worksheet.costpercapita_bj106, 0.001); end
+  def test_costpercapita_bk106; assert_in_epsilon(3.0098424381918316, worksheet.costpercapita_bk106, 0.001); end
+  def test_costpercapita_bl106; assert_in_epsilon(5.463239153046219, worksheet.costpercapita_bl106, 0.001); end
+  def test_costpercapita_bm106; assert_in_epsilon(7.973372675003471, worksheet.costpercapita_bm106, 0.001); end
+  def test_costpercapita_bn106; assert_in_epsilon(10.461996573273025, worksheet.costpercapita_bn106, 0.001); end
+  def test_costpercapita_bo106; assert_in_epsilon(13.39181832159809, worksheet.costpercapita_bo106, 0.001); end
   def test_costpercapita_bp106; assert_in_epsilon(16.026051237025047, worksheet.costpercapita_bp106, 0.001); end
-  def test_costpercapita_bq106; assert_in_epsilon(18.148656797568712, worksheet.costpercapita_bq106, 0.001); end
+  def test_costpercapita_bq106; assert_in_epsilon(18.148656797568716, worksheet.costpercapita_bq106, 0.001); end
   def test_costpercapita_bs106; assert_in_delta(0, (worksheet.costpercapita_bs106||0), 0.001); end
   def test_costpercapita_bt106; assert_in_epsilon(1.0009891551775423, worksheet.costpercapita_bt106, 0.001); end
-  def test_costpercapita_bu106; assert_in_epsilon(3.1635595146672735, worksheet.costpercapita_bu106, 0.001); end
-  def test_costpercapita_bv106; assert_in_epsilon(5.676263066189435, worksheet.costpercapita_bv106, 0.001); end
-  def test_costpercapita_bw106; assert_in_epsilon(8.310346588338106, worksheet.costpercapita_bw106, 0.001); end
+  def test_costpercapita_bu106; assert_in_epsilon(3.1635595146672744, worksheet.costpercapita_bu106, 0.001); end
+  def test_costpercapita_bv106; assert_in_epsilon(5.676263066189437, worksheet.costpercapita_bv106, 0.001); end
+  def test_costpercapita_bw106; assert_in_epsilon(8.310346588338108, worksheet.costpercapita_bw106, 0.001); end
   def test_costpercapita_bx106; assert_in_epsilon(10.969669391030815, worksheet.costpercapita_bx106, 0.001); end
-  def test_costpercapita_by106; assert_in_epsilon(14.094417542168262, worksheet.costpercapita_by106, 0.001); end
+  def test_costpercapita_by106; assert_in_epsilon(14.094417542168266, worksheet.costpercapita_by106, 0.001); end
   def test_costpercapita_bz106; assert_in_epsilon(16.94381281814277, worksheet.costpercapita_bz106, 0.001); end
-  def test_costpercapita_ca106; assert_in_epsilon(19.325423068065152, worksheet.costpercapita_ca106, 0.001); end
+  def test_costpercapita_ca106; assert_in_epsilon(19.325423068065156, worksheet.costpercapita_ca106, 0.001); end
   def test_costpercapita_cc106; assert_in_epsilon(8.831609015975484, worksheet.costpercapita_cc106, 0.001); end
-  def test_costpercapita_cd106; assert_in_epsilon(153.2200930499525, worksheet.costpercapita_cd106, 0.001); end
+  def test_costpercapita_cd106; assert_in_epsilon(153.22009304995254, worksheet.costpercapita_cd106, 0.001); end
   def test_costpercapita_cf106; assert_in_delta(0, (worksheet.costpercapita_cf106||0), 0.001); end
-  def test_costpercapita_cg106; assert_in_delta(-0.7728389030531378, worksheet.costpercapita_cg106, 0.001); end
-  def test_costpercapita_ch106; assert_in_delta(-0.8154222725016248, worksheet.costpercapita_ch106, 0.001); end
-  def test_costpercapita_ci106; assert_in_delta(0.8244111555352887, worksheet.costpercapita_ci106, 0.001); end
-  def test_costpercapita_cj106; assert_in_epsilon(1.5668589505914625, worksheet.costpercapita_cj106, 0.001); end
-  def test_costpercapita_ck106; assert_in_epsilon(2.066016367672682, worksheet.costpercapita_ck106, 0.001); end
-  def test_costpercapita_cl106; assert_in_epsilon(3.336631093462571, worksheet.costpercapita_cl106, 0.001); end
+  def test_costpercapita_cg106; assert_in_delta(-0.7728389030531377, worksheet.costpercapita_cg106, 0.001); end
+  def test_costpercapita_ch106; assert_in_delta(-0.815422272501624, worksheet.costpercapita_ch106, 0.001); end
+  def test_costpercapita_ci106; assert_in_delta(0.8244111555352903, worksheet.costpercapita_ci106, 0.001); end
+  def test_costpercapita_cj106; assert_in_epsilon(1.566858950591464, worksheet.costpercapita_cj106, 0.001); end
+  def test_costpercapita_ck106; assert_in_epsilon(2.0660163676726837, worksheet.costpercapita_ck106, 0.001); end
+  def test_costpercapita_cl106; assert_in_epsilon(3.3366310934625742, worksheet.costpercapita_cl106, 0.001); end
   def test_costpercapita_cm106; assert_in_epsilon(4.740892735399622, worksheet.costpercapita_cm106, 0.001); end
-  def test_costpercapita_cn106; assert_in_epsilon(5.834636610367977, worksheet.costpercapita_cn106, 0.001); end
-  def test_costpercapita_cp106; assert_in_epsilon(1.86457619305276, worksheet.costpercapita_cp106, 0.001); end
-  def test_costpercapita_cq106; assert_in_epsilon(25.58777917029671, worksheet.costpercapita_cq106, 0.001); end
+  def test_costpercapita_cn106; assert_in_epsilon(5.83463661036798, worksheet.costpercapita_cn106, 0.001); end
+  def test_costpercapita_cp106; assert_in_epsilon(1.8645761930527616, worksheet.costpercapita_cp106, 0.001); end
+  def test_costpercapita_cq106; assert_in_epsilon(25.587779170296734, worksheet.costpercapita_cq106, 0.001); end
   def test_costpercapita_cr106; assert_equal("ok", worksheet.costpercapita_cr106); end
   def test_costpercapita_a107; assert_equal("Total", worksheet.costpercapita_a107); end
   def test_costpercapita_b107; assert_equal("Total", worksheet.costpercapita_b107); end
@@ -16838,46 +17449,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq107; assert_in_epsilon(3970.143190682134, worksheet.costpercapita_aq107, 0.001); end
   def test_costpercapita_as107; assert_in_epsilon(4284.850570180741, worksheet.costpercapita_as107, 0.001); end
   def test_costpercapita_at107; assert_in_epsilon(90359.46178423465, worksheet.costpercapita_at107, 0.001); end
-  def test_costpercapita_ay107; assert_in_epsilon(540.6466616834712, worksheet.costpercapita_ay107, 0.001); end
-  def test_costpercapita_az107; assert_in_epsilon(920.1908937304304, worksheet.costpercapita_az107, 0.001); end
-  def test_costpercapita_ba107; assert_in_epsilon(966.3105968852732, worksheet.costpercapita_ba107, 0.001); end
-  def test_costpercapita_bb107; assert_in_epsilon(1231.295999008641, worksheet.costpercapita_bb107, 0.001); end
-  def test_costpercapita_bc107; assert_in_epsilon(1265.253739026257, worksheet.costpercapita_bc107, 0.001); end
+  def test_costpercapita_ay107; assert_in_epsilon(540.6466616834713, worksheet.costpercapita_ay107, 0.001); end
+  def test_costpercapita_az107; assert_in_epsilon(920.1908937304307, worksheet.costpercapita_az107, 0.001); end
+  def test_costpercapita_ba107; assert_in_epsilon(966.3105968852733, worksheet.costpercapita_ba107, 0.001); end
+  def test_costpercapita_bb107; assert_in_epsilon(1231.2959990086415, worksheet.costpercapita_bb107, 0.001); end
+  def test_costpercapita_bc107; assert_in_epsilon(1265.2537390262573, worksheet.costpercapita_bc107, 0.001); end
   def test_costpercapita_bd107; assert_in_epsilon(1192.00619500287, worksheet.costpercapita_bd107, 0.001); end
   def test_costpercapita_be107; assert_in_epsilon(1158.1753360931739, worksheet.costpercapita_be107, 0.001); end
-  def test_costpercapita_bf107; assert_in_epsilon(1210.250483699527, worksheet.costpercapita_bf107, 0.001); end
+  def test_costpercapita_bf107; assert_in_epsilon(1210.2504836995272, worksheet.costpercapita_bf107, 0.001); end
   def test_costpercapita_bg107; assert_in_epsilon(1209.5031631844024, worksheet.costpercapita_bg107, 0.001); end
-  def test_costpercapita_bi107; assert_in_epsilon(540.6466616834712, worksheet.costpercapita_bi107, 0.001); end
+  def test_costpercapita_bi107; assert_in_epsilon(540.6466616834713, worksheet.costpercapita_bi107, 0.001); end
   def test_costpercapita_bj107; assert_in_epsilon(1394.3559756750303, worksheet.costpercapita_bj107, 0.001); end
-  def test_costpercapita_bk107; assert_in_epsilon(2209.2919361264726, worksheet.costpercapita_bk107, 0.001); end
+  def test_costpercapita_bk107; assert_in_epsilon(2209.291936126473, worksheet.costpercapita_bk107, 0.001); end
   def test_costpercapita_bl107; assert_in_epsilon(2923.8869000606956, worksheet.costpercapita_bl107, 0.001); end
   def test_costpercapita_bm107; assert_in_epsilon(3449.9941240335, worksheet.costpercapita_bm107, 0.001); end
   def test_costpercapita_bn107; assert_in_epsilon(3839.9203224865532, worksheet.costpercapita_bn107, 0.001); end
   def test_costpercapita_bo107; assert_in_epsilon(3854.757777028445, worksheet.costpercapita_bo107, 0.001); end
-  def test_costpercapita_bp107; assert_in_epsilon(4000.6020525383706, worksheet.costpercapita_bp107, 0.001); end
+  def test_costpercapita_bp107; assert_in_epsilon(4000.602052538371, worksheet.costpercapita_bp107, 0.001); end
   def test_costpercapita_bq107; assert_in_epsilon(3968.01002965411, worksheet.costpercapita_bq107, 0.001); end
-  def test_costpercapita_bs107; assert_in_epsilon(2823.5062580920494, worksheet.costpercapita_bs107, 0.001); end
+  def test_costpercapita_bs107; assert_in_epsilon(2823.50625809205, worksheet.costpercapita_bs107, 0.001); end
   def test_costpercapita_bt107; assert_in_epsilon(3699.4256313742853, worksheet.costpercapita_bt107, 0.001); end
   def test_costpercapita_bu107; assert_in_epsilon(4509.540667111166, worksheet.costpercapita_bu107, 0.001); end
-  def test_costpercapita_bv107; assert_in_epsilon(5367.557712496794, worksheet.costpercapita_bv107, 0.001); end
+  def test_costpercapita_bv107; assert_in_epsilon(5367.557712496795, worksheet.costpercapita_bv107, 0.001); end
   def test_costpercapita_bw107; assert_in_epsilon(5887.177219861941, worksheet.costpercapita_bw107, 0.001); end
-  def test_costpercapita_bx107; assert_in_epsilon(6166.788788517143, worksheet.costpercapita_bx107, 0.001); end
-  def test_costpercapita_by107; assert_in_epsilon(6012.10455573219, worksheet.costpercapita_by107, 0.001); end
-  def test_costpercapita_bz107; assert_in_epsilon(5961.492674166753, worksheet.costpercapita_bz107, 0.001); end
+  def test_costpercapita_bx107; assert_in_epsilon(6166.788788517146, worksheet.costpercapita_bx107, 0.001); end
+  def test_costpercapita_by107; assert_in_epsilon(6012.104555732191, worksheet.costpercapita_by107, 0.001); end
+  def test_costpercapita_bz107; assert_in_epsilon(5961.492674166754, worksheet.costpercapita_bz107, 0.001); end
   def test_costpercapita_ca107; assert_in_epsilon(5653.227060746367, worksheet.costpercapita_ca107, 0.001); end
-  def test_costpercapita_cc107; assert_in_epsilon(5120.091174233187, worksheet.costpercapita_cc107, 0.001); end
-  def test_costpercapita_cd107; assert_in_epsilon(105606.16205411415, worksheet.costpercapita_cd107, 0.001); end
+  def test_costpercapita_cc107; assert_in_epsilon(5120.091174233188, worksheet.costpercapita_cc107, 0.001); end
+  def test_costpercapita_cd107; assert_in_epsilon(105606.16205411417, worksheet.costpercapita_cd107, 0.001); end
   def test_costpercapita_cf107; assert_in_epsilon(-1110.4231429526867, worksheet.costpercapita_cf107, 0.001); end
   def test_costpercapita_cg107; assert_in_epsilon(-304.03937799541075, worksheet.costpercapita_cg107, 0.001); end
-  def test_costpercapita_ch107; assert_in_epsilon(425.9154911002471, worksheet.costpercapita_ch107, 0.001); end
+  def test_costpercapita_ch107; assert_in_epsilon(425.91549110024755, worksheet.costpercapita_ch107, 0.001); end
   def test_costpercapita_ci107; assert_in_epsilon(661.2771314382936, worksheet.costpercapita_ci107, 0.001); end
   def test_costpercapita_cj107; assert_in_epsilon(1127.316811660641, worksheet.costpercapita_cj107, 0.001); end
   def test_costpercapita_ck107; assert_in_epsilon(1627.6249486274917, worksheet.costpercapita_ck107, 0.001); end
   def test_costpercapita_cl107; assert_in_epsilon(1683.593879388246, worksheet.costpercapita_cl107, 0.001); end
-  def test_costpercapita_cm107; assert_in_epsilon(1722.8158251409716, worksheet.costpercapita_cm107, 0.001); end
+  def test_costpercapita_cm107; assert_in_epsilon(1722.8158251409725, worksheet.costpercapita_cm107, 0.001); end
   def test_costpercapita_cn107; assert_in_epsilon(1683.0838700642337, worksheet.costpercapita_cn107, 0.001); end
-  def test_costpercapita_cp107; assert_in_epsilon(835.2406040524475, worksheet.costpercapita_cp107, 0.001); end
-  def test_costpercapita_cq107; assert_in_epsilon(15246.700269879506, worksheet.costpercapita_cq107, 0.001); end
+  def test_costpercapita_cp107; assert_in_epsilon(835.2406040524476, worksheet.costpercapita_cp107, 0.001); end
+  def test_costpercapita_cq107; assert_in_epsilon(15246.700269879511, worksheet.costpercapita_cq107, 0.001); end
   def test_costpercapita_cr107; assert_equal("ok", worksheet.costpercapita_cr107); end
   def test_costpercapita_cf108; assert_equal("ok", worksheet.costpercapita_cf108); end
   def test_costpercapita_cg108; assert_equal("ok", worksheet.costpercapita_cg108); end
@@ -17034,44 +17645,44 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aw112; assert_in_epsilon(20, worksheet.costpercapita_aw112, 0.001); end
   def test_costpercapita_ay112; assert_in_delta(0, (worksheet.costpercapita_ay112||0), 0.001); end
   def test_costpercapita_az112; assert_in_epsilon(4.616550219570895, worksheet.costpercapita_az112, 0.001); end
-  def test_costpercapita_ba112; assert_in_epsilon(7.314034194160401, worksheet.costpercapita_ba112, 0.001); end
-  def test_costpercapita_bb112; assert_in_epsilon(8.618534050893162, worksheet.costpercapita_bb112, 0.001); end
-  def test_costpercapita_bc112; assert_in_delta(0.969974483979947, worksheet.costpercapita_bc112, 0.001); end
+  def test_costpercapita_ba112; assert_in_epsilon(7.314034194160402, worksheet.costpercapita_ba112, 0.001); end
+  def test_costpercapita_bb112; assert_in_epsilon(8.618534050893166, worksheet.costpercapita_bb112, 0.001); end
+  def test_costpercapita_bc112; assert_in_delta(0.9699744839799472, worksheet.costpercapita_bc112, 0.001); end
   def test_costpercapita_bd112; assert_in_delta(0, (worksheet.costpercapita_bd112||0), 0.001); end
-  def test_costpercapita_be112; assert_in_epsilon(49.24021400869121, worksheet.costpercapita_be112, 0.001); end
+  def test_costpercapita_be112; assert_in_epsilon(49.24021400869122, worksheet.costpercapita_be112, 0.001); end
   def test_costpercapita_bf112; assert_in_epsilon(48.25797389465965, worksheet.costpercapita_bf112, 0.001); end
-  def test_costpercapita_bg112; assert_in_epsilon(47.35739636322355, worksheet.costpercapita_bg112, 0.001); end
+  def test_costpercapita_bg112; assert_in_epsilon(47.35739636322356, worksheet.costpercapita_bg112, 0.001); end
   def test_costpercapita_bi112; assert_in_delta(0, (worksheet.costpercapita_bi112||0), 0.001); end
   def test_costpercapita_bj112; assert_in_epsilon(4.616550219570895, worksheet.costpercapita_bj112, 0.001); end
   def test_costpercapita_bk112; assert_in_epsilon(11.779447098095854, worksheet.costpercapita_bk112, 0.001); end
-  def test_costpercapita_bl112; assert_in_epsilon(20.03324853617722, worksheet.costpercapita_bl112, 0.001); end
-  def test_costpercapita_bm112; assert_in_epsilon(20.45591160313068, worksheet.costpercapita_bm112, 0.001); end
-  def test_costpercapita_bn112; assert_in_epsilon(15.864272790274077, worksheet.costpercapita_bn112, 0.001); end
-  def test_costpercapita_bo112; assert_in_epsilon(58.178177144689194, worksheet.costpercapita_bo112, 0.001); end
-  def test_costpercapita_bp112; assert_in_epsilon(98.33282180454678, worksheet.costpercapita_bp112, 0.001); end
-  def test_costpercapita_bq112; assert_in_epsilon(142.07218908967064, worksheet.costpercapita_bq112, 0.001); end
+  def test_costpercapita_bl112; assert_in_epsilon(20.033248536177222, worksheet.costpercapita_bl112, 0.001); end
+  def test_costpercapita_bm112; assert_in_epsilon(20.455911603130687, worksheet.costpercapita_bm112, 0.001); end
+  def test_costpercapita_bn112; assert_in_epsilon(15.864272790274079, worksheet.costpercapita_bn112, 0.001); end
+  def test_costpercapita_bo112; assert_in_epsilon(58.17817714468921, worksheet.costpercapita_bo112, 0.001); end
+  def test_costpercapita_bp112; assert_in_epsilon(98.3328218045468, worksheet.costpercapita_bp112, 0.001); end
+  def test_costpercapita_bq112; assert_in_epsilon(142.07218908967067, worksheet.costpercapita_bq112, 0.001); end
   def test_costpercapita_bs112; assert_in_epsilon(92.10647437280433, worksheet.costpercapita_bs112, 0.001); end
   def test_costpercapita_bt112; assert_in_epsilon(80.75052812851146, worksheet.costpercapita_bt112, 0.001); end
   def test_costpercapita_bu112; assert_in_epsilon(76.14690312242011, worksheet.costpercapita_bu112, 0.001); end
   def test_costpercapita_bv112; assert_in_epsilon(71.60576061365342, worksheet.costpercapita_bv112, 0.001); end
-  def test_costpercapita_bw112; assert_in_epsilon(57.71477274410245, worksheet.costpercapita_bw112, 0.001); end
+  def test_costpercapita_bw112; assert_in_epsilon(57.71477274410246, worksheet.costpercapita_bw112, 0.001); end
   def test_costpercapita_bx112; assert_in_epsilon(45.06661034470981, worksheet.costpercapita_bx112, 0.001); end
   def test_costpercapita_by112; assert_in_epsilon(82.19230640357675, worksheet.costpercapita_by112, 0.001); end
-  def test_costpercapita_bz112; assert_in_epsilon(120.00617357200852, worksheet.costpercapita_bz112, 0.001); end
-  def test_costpercapita_ca112; assert_in_epsilon(161.91865686703542, worksheet.costpercapita_ca112, 0.001); end
+  def test_costpercapita_bz112; assert_in_epsilon(120.00617357200855, worksheet.costpercapita_bz112, 0.001); end
+  def test_costpercapita_ca112; assert_in_epsilon(161.91865686703545, worksheet.costpercapita_ca112, 0.001); end
   def test_costpercapita_cc112; assert_in_epsilon(87.5009095743136, worksheet.costpercapita_cc112, 0.001); end
-  def test_costpercapita_cd112; assert_in_epsilon(1701.4960818872162, worksheet.costpercapita_cd112, 0.001); end
+  def test_costpercapita_cd112; assert_in_epsilon(1701.4960818872164, worksheet.costpercapita_cd112, 0.001); end
   def test_costpercapita_cf112; assert_in_delta(0, (worksheet.costpercapita_cf112||0), 0.001); end
   def test_costpercapita_cg112; assert_in_epsilon(-3.2441086723855457, worksheet.costpercapita_cg112, 0.001); end
   def test_costpercapita_ch112; assert_in_delta(-0.6742521339996563, worksheet.costpercapita_ch112, 0.001); end
-  def test_costpercapita_ci112; assert_in_epsilon(5.3583607735396495, worksheet.costpercapita_ci112, 0.001); end
-  def test_costpercapita_cj112; assert_in_epsilon(18.80432368795004, worksheet.costpercapita_cj112, 0.001); end
-  def test_costpercapita_ck112; assert_in_epsilon(15.864272790274077, worksheet.costpercapita_ck112, 0.001); end
-  def test_costpercapita_cl112; assert_in_epsilon(-25.66376276281899, worksheet.costpercapita_cl112, 0.001); end
-  def test_costpercapita_cm112; assert_in_epsilon(16.163354656820736, worksheet.costpercapita_cm112, 0.001); end
-  def test_costpercapita_cn112; assert_in_epsilon(61.43614678163741, worksheet.costpercapita_cn112, 0.001); end
-  def test_costpercapita_cp112; assert_in_epsilon(9.782703902335303, worksheet.costpercapita_cp112, 0.001); end
-  def test_costpercapita_cq112; assert_in_epsilon(141.31634886942098, worksheet.costpercapita_cq112, 0.001); end
+  def test_costpercapita_ci112; assert_in_epsilon(5.358360773539653, worksheet.costpercapita_ci112, 0.001); end
+  def test_costpercapita_cj112; assert_in_epsilon(18.804323687950045, worksheet.costpercapita_cj112, 0.001); end
+  def test_costpercapita_ck112; assert_in_epsilon(15.864272790274079, worksheet.costpercapita_ck112, 0.001); end
+  def test_costpercapita_cl112; assert_in_epsilon(-25.663762762818976, worksheet.costpercapita_cl112, 0.001); end
+  def test_costpercapita_cm112; assert_in_epsilon(16.16335465682075, worksheet.costpercapita_cm112, 0.001); end
+  def test_costpercapita_cn112; assert_in_epsilon(61.43614678163743, worksheet.costpercapita_cn112, 0.001); end
+  def test_costpercapita_cp112; assert_in_epsilon(9.782703902335308, worksheet.costpercapita_cp112, 0.001); end
+  def test_costpercapita_cq112; assert_in_epsilon(141.3163488694211, worksheet.costpercapita_cq112, 0.001); end
   def test_costpercapita_cr112; assert_equal("ok", worksheet.costpercapita_cr112); end
   def test_costpercapita_a113; assert_equal("I.b", worksheet.costpercapita_a113); end
   def test_costpercapita_b113; assert_equal("Combustion + CCS", worksheet.costpercapita_b113); end
@@ -17117,45 +17728,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av113; assert_in_delta(0.1, worksheet.costpercapita_av113, 0.001); end
   def test_costpercapita_aw113; assert_in_epsilon(30, worksheet.costpercapita_aw113, 0.001); end
   def test_costpercapita_ay113; assert_in_delta(0, (worksheet.costpercapita_ay113||0), 0.001); end
-  def test_costpercapita_az113; assert_in_epsilon(3.9041038596739437, worksheet.costpercapita_az113, 0.001); end
-  def test_costpercapita_ba113; assert_in_epsilon(5.630549767236648, worksheet.costpercapita_ba113, 0.001); end
-  def test_costpercapita_bb113; assert_in_epsilon(3.0432535037703112, worksheet.costpercapita_bb113, 0.001); end
-  def test_costpercapita_bc113; assert_in_epsilon(6.2491239656208, worksheet.costpercapita_bc113, 0.001); end
-  def test_costpercapita_bd113; assert_in_epsilon(8.028844082065872, worksheet.costpercapita_bd113, 0.001); end
-  def test_costpercapita_be113; assert_in_epsilon(7.857617851954281, worksheet.costpercapita_be113, 0.001); end
-  def test_costpercapita_bf113; assert_in_epsilon(7.700874677492086, worksheet.costpercapita_bf113, 0.001); end
-  def test_costpercapita_bg113; assert_in_epsilon(7.5571629932408335, worksheet.costpercapita_bg113, 0.001); end
+  def test_costpercapita_az113; assert_in_epsilon(3.9041038596739446, worksheet.costpercapita_az113, 0.001); end
+  def test_costpercapita_ba113; assert_in_epsilon(5.63054976723665, worksheet.costpercapita_ba113, 0.001); end
+  def test_costpercapita_bb113; assert_in_epsilon(3.0432535037703126, worksheet.costpercapita_bb113, 0.001); end
+  def test_costpercapita_bc113; assert_in_epsilon(6.249123965620802, worksheet.costpercapita_bc113, 0.001); end
+  def test_costpercapita_bd113; assert_in_epsilon(8.028844082065874, worksheet.costpercapita_bd113, 0.001); end
+  def test_costpercapita_be113; assert_in_epsilon(7.8576178519542825, worksheet.costpercapita_be113, 0.001); end
+  def test_costpercapita_bf113; assert_in_epsilon(7.700874677492088, worksheet.costpercapita_bf113, 0.001); end
+  def test_costpercapita_bg113; assert_in_epsilon(7.557162993240834, worksheet.costpercapita_bg113, 0.001); end
   def test_costpercapita_bi113; assert_in_delta(0, (worksheet.costpercapita_bi113||0), 0.001); end
-  def test_costpercapita_bj113; assert_in_epsilon(3.9041038596739437, worksheet.costpercapita_bj113, 0.001); end
-  def test_costpercapita_bk113; assert_in_epsilon(9.406840487391028, worksheet.costpercapita_bk113, 0.001); end
-  def test_costpercapita_bl113; assert_in_epsilon(12.158825523236002, worksheet.costpercapita_bl113, 0.001); end
+  def test_costpercapita_bj113; assert_in_epsilon(3.9041038596739446, worksheet.costpercapita_bj113, 0.001); end
+  def test_costpercapita_bk113; assert_in_epsilon(9.40684048739103, worksheet.costpercapita_bk113, 0.001); end
+  def test_costpercapita_bl113; assert_in_epsilon(12.158825523236004, worksheet.costpercapita_bl113, 0.001); end
   def test_costpercapita_bm113; assert_in_epsilon(18.075768514089646, worksheet.costpercapita_bm113, 0.001); end
-  def test_costpercapita_bn113; assert_in_epsilon(25.678825291396908, worksheet.costpercapita_bn113, 0.001); end
-  def test_costpercapita_bo113; assert_in_epsilon(32.98880659649615, worksheet.costpercapita_bo113, 0.001); end
-  def test_costpercapita_bp113; assert_in_epsilon(42.550714590911134, worksheet.costpercapita_bp113, 0.001); end
-  def test_costpercapita_bq113; assert_in_epsilon(44.4361184002561, worksheet.costpercapita_bq113, 0.001); end
+  def test_costpercapita_bn113; assert_in_epsilon(25.678825291396915, worksheet.costpercapita_bn113, 0.001); end
+  def test_costpercapita_bo113; assert_in_epsilon(32.98880659649616, worksheet.costpercapita_bo113, 0.001); end
+  def test_costpercapita_bp113; assert_in_epsilon(42.55071459091114, worksheet.costpercapita_bp113, 0.001); end
+  def test_costpercapita_bq113; assert_in_epsilon(44.43611840025611, worksheet.costpercapita_bq113, 0.001); end
   def test_costpercapita_bs113; assert_in_delta(0, (worksheet.costpercapita_bs113||0), 0.001); end
-  def test_costpercapita_bt113; assert_in_epsilon(5.847559299512178, worksheet.costpercapita_bt113, 0.001); end
-  def test_costpercapita_bu113; assert_in_epsilon(13.369441590467334, worksheet.costpercapita_bu113, 0.001); end
-  def test_costpercapita_bv113; assert_in_epsilon(17.68604803298173, worksheet.costpercapita_bv113, 0.001); end
-  def test_costpercapita_bw113; assert_in_epsilon(26.916783262714194, worksheet.costpercapita_bw113, 0.001); end
+  def test_costpercapita_bt113; assert_in_epsilon(5.847559299512179, worksheet.costpercapita_bt113, 0.001); end
+  def test_costpercapita_bu113; assert_in_epsilon(13.369441590467336, worksheet.costpercapita_bu113, 0.001); end
+  def test_costpercapita_bv113; assert_in_epsilon(17.686048032981734, worksheet.costpercapita_bv113, 0.001); end
+  def test_costpercapita_bw113; assert_in_epsilon(26.916783262714198, worksheet.costpercapita_bw113, 0.001); end
   def test_costpercapita_bx113; assert_in_epsilon(38.76313787071713, worksheet.costpercapita_bx113, 0.001); end
-  def test_costpercapita_by113; assert_in_epsilon(50.15069659476068, worksheet.costpercapita_by113, 0.001); end
-  def test_costpercapita_bz113; assert_in_epsilon(63.6399735101666, worksheet.costpercapita_bz113, 0.001); end
+  def test_costpercapita_by113; assert_in_epsilon(50.150696594760696, worksheet.costpercapita_by113, 0.001); end
+  def test_costpercapita_bz113; assert_in_epsilon(63.63997351016661, worksheet.costpercapita_bz113, 0.001); end
   def test_costpercapita_ca113; assert_in_epsilon(69.32184792131565, worksheet.costpercapita_ca113, 0.001); end
   def test_costpercapita_cc113; assert_in_epsilon(31.743943120292833, worksheet.costpercapita_cc113, 0.001); end
   def test_costpercapita_cd113; assert_in_epsilon(553.457440883319, worksheet.costpercapita_cd113, 0.001); end
   def test_costpercapita_cf113; assert_in_delta(0, (worksheet.costpercapita_cf113||0), 0.001); end
-  def test_costpercapita_cg113; assert_in_epsilon(-3.4566267714031045, worksheet.costpercapita_cg113, 0.001); end
-  def test_costpercapita_ch113; assert_in_epsilon(-1.2089017241811462, worksheet.costpercapita_ch113, 0.001); end
-  def test_costpercapita_ci113; assert_in_epsilon(6.4211274269549525, worksheet.costpercapita_ci113, 0.001); end
-  def test_costpercapita_cj113; assert_in_epsilon(6.293777090586817, worksheet.costpercapita_cj113, 0.001); end
-  def test_costpercapita_ck113; assert_in_epsilon(10.541380005312842, worksheet.costpercapita_ck113, 0.001); end
-  def test_costpercapita_cl113; assert_in_epsilon(18.174188315565445, worksheet.costpercapita_cl113, 0.001); end
-  def test_costpercapita_cm113; assert_in_epsilon(28.0316172097683, worksheet.costpercapita_cm113, 0.001); end
-  def test_costpercapita_cn113; assert_in_epsilon(30.187972570181948, worksheet.costpercapita_cn113, 0.001); end
-  def test_costpercapita_cp113; assert_in_epsilon(10.553837124754004, worksheet.costpercapita_cp113, 0.001); end
-  def test_costpercapita_cq113; assert_in_epsilon(153.9093418347541, worksheet.costpercapita_cq113, 0.001); end
+  def test_costpercapita_cg113; assert_in_epsilon(-3.4566267714031036, worksheet.costpercapita_cg113, 0.001); end
+  def test_costpercapita_ch113; assert_in_epsilon(-1.2089017241811444, worksheet.costpercapita_ch113, 0.001); end
+  def test_costpercapita_ci113; assert_in_epsilon(6.421127426954956, worksheet.costpercapita_ci113, 0.001); end
+  def test_costpercapita_cj113; assert_in_epsilon(6.29377709058682, worksheet.costpercapita_cj113, 0.001); end
+  def test_costpercapita_ck113; assert_in_epsilon(10.541380005312847, worksheet.costpercapita_ck113, 0.001); end
+  def test_costpercapita_cl113; assert_in_epsilon(18.17418831556546, worksheet.costpercapita_cl113, 0.001); end
+  def test_costpercapita_cm113; assert_in_epsilon(28.03161720976831, worksheet.costpercapita_cm113, 0.001); end
+  def test_costpercapita_cn113; assert_in_epsilon(30.187972570181962, worksheet.costpercapita_cn113, 0.001); end
+  def test_costpercapita_cp113; assert_in_epsilon(10.553837124754011, worksheet.costpercapita_cp113, 0.001); end
+  def test_costpercapita_cq113; assert_in_epsilon(153.90934183475417, worksheet.costpercapita_cq113, 0.001); end
   def test_costpercapita_cr113; assert_equal("ok", worksheet.costpercapita_cr113); end
   def test_costpercapita_a114; assert_equal("II.a", worksheet.costpercapita_a114); end
   def test_costpercapita_b114; assert_equal("Nuclear power", worksheet.costpercapita_b114); end
@@ -17202,44 +17813,44 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aw114; assert_in_epsilon(30, worksheet.costpercapita_aw114, 0.001); end
   def test_costpercapita_ay114; assert_in_delta(0, (worksheet.costpercapita_ay114||0), 0.001); end
   def test_costpercapita_az114; assert_in_delta(0, (worksheet.costpercapita_az114||0), 0.001); end
-  def test_costpercapita_ba114; assert_in_epsilon(9.283159431584608, worksheet.costpercapita_ba114, 0.001); end
-  def test_costpercapita_bb114; assert_in_epsilon(16.86697604795251, worksheet.costpercapita_bb114, 0.001); end
-  def test_costpercapita_bc114; assert_in_epsilon(16.40616768004923, worksheet.costpercapita_bc114, 0.001); end
-  def test_costpercapita_bd114; assert_in_epsilon(16.019708984671443, worksheet.costpercapita_bd114, 0.001); end
-  def test_costpercapita_be114; assert_in_epsilon(15.67806648309925, worksheet.costpercapita_be114, 0.001); end
-  def test_costpercapita_bf114; assert_in_epsilon(15.365321583017465, worksheet.costpercapita_bf114, 0.001); end
-  def test_costpercapita_bg114; assert_in_epsilon(15.078578019950328, worksheet.costpercapita_bg114, 0.001); end
+  def test_costpercapita_ba114; assert_in_epsilon(9.28315943158461, worksheet.costpercapita_ba114, 0.001); end
+  def test_costpercapita_bb114; assert_in_epsilon(16.866976047952516, worksheet.costpercapita_bb114, 0.001); end
+  def test_costpercapita_bc114; assert_in_epsilon(16.406167680049236, worksheet.costpercapita_bc114, 0.001); end
+  def test_costpercapita_bd114; assert_in_epsilon(16.01970898467145, worksheet.costpercapita_bd114, 0.001); end
+  def test_costpercapita_be114; assert_in_epsilon(15.678066483099258, worksheet.costpercapita_be114, 0.001); end
+  def test_costpercapita_bf114; assert_in_epsilon(15.36532158301747, worksheet.costpercapita_bf114, 0.001); end
+  def test_costpercapita_bg114; assert_in_epsilon(15.078578019950333, worksheet.costpercapita_bg114, 0.001); end
   def test_costpercapita_bi114; assert_in_delta(0, (worksheet.costpercapita_bi114||0), 0.001); end
   def test_costpercapita_bj114; assert_in_delta(0, (worksheet.costpercapita_bj114||0), 0.001); end
-  def test_costpercapita_bk114; assert_in_epsilon(9.283159431584608, worksheet.costpercapita_bk114, 0.001); end
-  def test_costpercapita_bl114; assert_in_epsilon(25.862696606860514, worksheet.costpercapita_bl114, 0.001); end
-  def test_costpercapita_bm114; assert_in_epsilon(41.562291456124704, worksheet.costpercapita_bm114, 0.001); end
-  def test_costpercapita_bn114; assert_in_epsilon(56.60297174583909, worksheet.costpercapita_bn114, 0.001); end
-  def test_costpercapita_bo114; assert_in_epsilon(71.07390139004993, worksheet.costpercapita_bo114, 0.001); end
-  def test_costpercapita_bp114; assert_in_epsilon(100.38676767571408, worksheet.costpercapita_bp114, 0.001); end
-  def test_costpercapita_bq114; assert_in_epsilon(105.55004613965228, worksheet.costpercapita_bq114, 0.001); end
+  def test_costpercapita_bk114; assert_in_epsilon(9.28315943158461, worksheet.costpercapita_bk114, 0.001); end
+  def test_costpercapita_bl114; assert_in_epsilon(25.862696606860524, worksheet.costpercapita_bl114, 0.001); end
+  def test_costpercapita_bm114; assert_in_epsilon(41.562291456124726, worksheet.costpercapita_bm114, 0.001); end
+  def test_costpercapita_bn114; assert_in_epsilon(56.60297174583911, worksheet.costpercapita_bn114, 0.001); end
+  def test_costpercapita_bo114; assert_in_epsilon(71.07390139004997, worksheet.costpercapita_bo114, 0.001); end
+  def test_costpercapita_bp114; assert_in_epsilon(100.38676767571415, worksheet.costpercapita_bp114, 0.001); end
+  def test_costpercapita_bq114; assert_in_epsilon(105.55004613965234, worksheet.costpercapita_bq114, 0.001); end
   def test_costpercapita_bs114; assert_in_epsilon(26.547614568930147, worksheet.costpercapita_bs114, 0.001); end
   def test_costpercapita_bt114; assert_in_epsilon(19.326686837157055, worksheet.costpercapita_bt114, 0.001); end
   def test_costpercapita_bu114; assert_in_epsilon(22.50597868095395, worksheet.costpercapita_bu114, 0.001); end
-  def test_costpercapita_bv114; assert_in_epsilon(38.67609142625468, worksheet.costpercapita_bv114, 0.001); end
-  def test_costpercapita_bw114; assert_in_epsilon(60.155129372898195, worksheet.costpercapita_bw114, 0.001); end
-  def test_costpercapita_bx114; assert_in_epsilon(77.75040352979126, worksheet.costpercapita_bx114, 0.001); end
-  def test_costpercapita_by114; assert_in_epsilon(97.62781605047431, worksheet.costpercapita_by114, 0.001); end
-  def test_costpercapita_bz114; assert_in_epsilon(132.15162340611022, worksheet.costpercapita_bz114, 0.001); end
-  def test_costpercapita_ca114; assert_in_epsilon(142.35562088079988, worksheet.costpercapita_ca114, 0.001); end
-  def test_costpercapita_cc114; assert_in_epsilon(68.56632941704108, worksheet.costpercapita_cc114, 0.001); end
-  def test_costpercapita_cd114; assert_in_epsilon(1184.4498571177896, worksheet.costpercapita_cd114, 0.001); end
+  def test_costpercapita_bv114; assert_in_epsilon(38.67609142625469, worksheet.costpercapita_bv114, 0.001); end
+  def test_costpercapita_bw114; assert_in_epsilon(60.15512937289822, worksheet.costpercapita_bw114, 0.001); end
+  def test_costpercapita_bx114; assert_in_epsilon(77.75040352979127, worksheet.costpercapita_bx114, 0.001); end
+  def test_costpercapita_by114; assert_in_epsilon(97.62781605047434, worksheet.costpercapita_by114, 0.001); end
+  def test_costpercapita_bz114; assert_in_epsilon(132.15162340611028, worksheet.costpercapita_bz114, 0.001); end
+  def test_costpercapita_ca114; assert_in_epsilon(142.3556208807999, worksheet.costpercapita_ca114, 0.001); end
+  def test_costpercapita_cc114; assert_in_epsilon(68.56632941704109, worksheet.costpercapita_cc114, 0.001); end
+  def test_costpercapita_cd114; assert_in_epsilon(1184.44985711779, worksheet.costpercapita_cd114, 0.001); end
   def test_costpercapita_cf114; assert_in_delta(0, (worksheet.costpercapita_cf114||0), 0.001); end
   def test_costpercapita_cg114; assert_in_delta(0, (worksheet.costpercapita_cg114||0), 0.001); end
-  def test_costpercapita_ch114; assert_in_epsilon(-8.219150557408197, worksheet.costpercapita_ch114, 0.001); end
-  def test_costpercapita_ci114; assert_in_epsilon(-5.938011497297289, worksheet.costpercapita_ci114, 0.001); end
-  def test_costpercapita_cj114; assert_in_epsilon(10.630383565946248, worksheet.costpercapita_cj114, 0.001); end
-  def test_costpercapita_ck114; assert_in_epsilon(26.39968646893069, worksheet.costpercapita_ck114, 0.001); end
-  def test_costpercapita_cl114; assert_in_epsilon(41.51474304126332, worksheet.costpercapita_cl114, 0.001); end
-  def test_costpercapita_cm114; assert_in_epsilon(71.41725321153905, worksheet.costpercapita_cm114, 0.001); end
-  def test_costpercapita_cn114; assert_in_epsilon(77.1211530840759, worksheet.costpercapita_cn114, 0.001); end
-  def test_costpercapita_cp114; assert_in_epsilon(23.658450813005526, worksheet.costpercapita_cp114, 0.001); end
-  def test_costpercapita_cq114; assert_in_epsilon(321.63462983688544, worksheet.costpercapita_cq114, 0.001); end
+  def test_costpercapita_ch114; assert_in_epsilon(-8.219150557408195, worksheet.costpercapita_ch114, 0.001); end
+  def test_costpercapita_ci114; assert_in_epsilon(-5.938011497297279, worksheet.costpercapita_ci114, 0.001); end
+  def test_costpercapita_cj114; assert_in_epsilon(10.630383565946268, worksheet.costpercapita_cj114, 0.001); end
+  def test_costpercapita_ck114; assert_in_epsilon(26.399686468930714, worksheet.costpercapita_ck114, 0.001); end
+  def test_costpercapita_cl114; assert_in_epsilon(41.51474304126336, worksheet.costpercapita_cl114, 0.001); end
+  def test_costpercapita_cm114; assert_in_epsilon(71.41725321153909, worksheet.costpercapita_cm114, 0.001); end
+  def test_costpercapita_cn114; assert_in_epsilon(77.12115308407597, worksheet.costpercapita_cn114, 0.001); end
+  def test_costpercapita_cp114; assert_in_epsilon(23.658450813005548, worksheet.costpercapita_cp114, 0.001); end
+  def test_costpercapita_cq114; assert_in_epsilon(321.63462983688584, worksheet.costpercapita_cq114, 0.001); end
   def test_costpercapita_cr114; assert_equal("ok", worksheet.costpercapita_cr114); end
   def test_costpercapita_a115; assert_equal("III.a.1", worksheet.costpercapita_a115); end
   def test_costpercapita_b115; assert_equal("Onshore wind", worksheet.costpercapita_b115); end
@@ -17284,46 +17895,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at115; assert_in_epsilon(1248.74025199027, worksheet.costpercapita_at115, 0.001); end
   def test_costpercapita_av115; assert_in_delta(0.1, worksheet.costpercapita_av115, 0.001); end
   def test_costpercapita_aw115; assert_in_epsilon(20, worksheet.costpercapita_aw115, 0.001); end
-  def test_costpercapita_ay115; assert_in_epsilon(8.031987460765908, worksheet.costpercapita_ay115, 0.001); end
-  def test_costpercapita_az115; assert_in_epsilon(22.18211530649545, worksheet.costpercapita_az115, 0.001); end
-  def test_costpercapita_ba115; assert_in_epsilon(23.29311751319766, worksheet.costpercapita_ba115, 0.001); end
-  def test_costpercapita_bb115; assert_in_epsilon(22.57188165718756, worksheet.costpercapita_bb115, 0.001); end
-  def test_costpercapita_bc115; assert_in_epsilon(21.955214394639498, worksheet.costpercapita_bc115, 0.001); end
-  def test_costpercapita_bd115; assert_in_epsilon(21.438044042783964, worksheet.costpercapita_bd115, 0.001); end
-  def test_costpercapita_be115; assert_in_epsilon(20.98084803487897, worksheet.costpercapita_be115, 0.001); end
-  def test_costpercapita_bf115; assert_in_epsilon(20.5623236441722, worksheet.costpercapita_bf115, 0.001); end
-  def test_costpercapita_bg115; assert_in_epsilon(20.178595004663197, worksheet.costpercapita_bg115, 0.001); end
-  def test_costpercapita_bi115; assert_in_epsilon(8.031987460765908, worksheet.costpercapita_bi115, 0.001); end
-  def test_costpercapita_bj115; assert_in_epsilon(29.949247424519086, worksheet.costpercapita_bj115, 0.001); end
-  def test_costpercapita_bk115; assert_in_epsilon(52.26188196975193, worksheet.costpercapita_bk115, 0.001); end
-  def test_costpercapita_bl115; assert_in_epsilon(73.21555416408866, worksheet.costpercapita_bl115, 0.001); end
-  def test_costpercapita_bm115; assert_in_epsilon(86.08917869672727, worksheet.costpercapita_bm115, 0.001); end
-  def test_costpercapita_bn115; assert_in_epsilon(85.75217617113586, worksheet.costpercapita_bn115, 0.001); end
-  def test_costpercapita_bo115; assert_in_epsilon(83.92339213951588, worksheet.costpercapita_bo115, 0.001); end
-  def test_costpercapita_bp115; assert_in_epsilon(102.81161822086099, worksheet.costpercapita_bp115, 0.001); end
-  def test_costpercapita_bq115; assert_in_epsilon(80.71438001865279, worksheet.costpercapita_bq115, 0.001); end
+  def test_costpercapita_ay115; assert_in_epsilon(8.03198746076591, worksheet.costpercapita_ay115, 0.001); end
+  def test_costpercapita_az115; assert_in_epsilon(22.182115306495454, worksheet.costpercapita_az115, 0.001); end
+  def test_costpercapita_ba115; assert_in_epsilon(23.293117513197668, worksheet.costpercapita_ba115, 0.001); end
+  def test_costpercapita_bb115; assert_in_epsilon(22.571881657187568, worksheet.costpercapita_bb115, 0.001); end
+  def test_costpercapita_bc115; assert_in_epsilon(21.955214394639505, worksheet.costpercapita_bc115, 0.001); end
+  def test_costpercapita_bd115; assert_in_epsilon(21.43804404278397, worksheet.costpercapita_bd115, 0.001); end
+  def test_costpercapita_be115; assert_in_epsilon(20.980848034878978, worksheet.costpercapita_be115, 0.001); end
+  def test_costpercapita_bf115; assert_in_epsilon(20.562323644172206, worksheet.costpercapita_bf115, 0.001); end
+  def test_costpercapita_bg115; assert_in_epsilon(20.178595004663205, worksheet.costpercapita_bg115, 0.001); end
+  def test_costpercapita_bi115; assert_in_epsilon(8.03198746076591, worksheet.costpercapita_bi115, 0.001); end
+  def test_costpercapita_bj115; assert_in_epsilon(29.94924742451909, worksheet.costpercapita_bj115, 0.001); end
+  def test_costpercapita_bk115; assert_in_epsilon(52.26188196975195, worksheet.costpercapita_bk115, 0.001); end
+  def test_costpercapita_bl115; assert_in_epsilon(73.21555416408869, worksheet.costpercapita_bl115, 0.001); end
+  def test_costpercapita_bm115; assert_in_epsilon(86.0891786967273, worksheet.costpercapita_bm115, 0.001); end
+  def test_costpercapita_bn115; assert_in_epsilon(85.75217617113589, worksheet.costpercapita_bn115, 0.001); end
+  def test_costpercapita_bo115; assert_in_epsilon(83.92339213951591, worksheet.costpercapita_bo115, 0.001); end
+  def test_costpercapita_bp115; assert_in_epsilon(102.81161822086104, worksheet.costpercapita_bp115, 0.001); end
+  def test_costpercapita_bq115; assert_in_epsilon(80.71438001865282, worksheet.costpercapita_bq115, 0.001); end
   def test_costpercapita_bs115; assert_in_epsilon(13.303481073765715, worksheet.costpercapita_bs115, 0.001); end
   def test_costpercapita_bt115; assert_in_epsilon(42.669983088531836, worksheet.costpercapita_bt115, 0.001); end
-  def test_costpercapita_bu115; assert_in_epsilon(72.57103941763359, worksheet.costpercapita_bu115, 0.001); end
-  def test_costpercapita_bv115; assert_in_epsilon(99.3855423973139, worksheet.costpercapita_bv115, 0.001); end
-  def test_costpercapita_bw115; assert_in_epsilon(115.70994061769873, worksheet.costpercapita_bw115, 0.001); end
-  def test_costpercapita_bx115; assert_in_epsilon(115.25628826685266, worksheet.costpercapita_bx115, 0.001); end
-  def test_costpercapita_by115; assert_in_epsilon(112.79828814443528, worksheet.costpercapita_by115, 0.001); end
-  def test_costpercapita_bz115; assert_in_epsilon(131.11051995533478, worksheet.costpercapita_bz115, 0.001); end
-  def test_costpercapita_ca115; assert_in_epsilon(108.48517514172975, worksheet.costpercapita_ca115, 0.001); end
-  def test_costpercapita_cc115; assert_in_epsilon(90.14336201147735, worksheet.costpercapita_cc115, 0.001); end
+  def test_costpercapita_bu115; assert_in_epsilon(72.5710394176336, worksheet.costpercapita_bu115, 0.001); end
+  def test_costpercapita_bv115; assert_in_epsilon(99.38554239731393, worksheet.costpercapita_bv115, 0.001); end
+  def test_costpercapita_bw115; assert_in_epsilon(115.70994061769876, worksheet.costpercapita_bw115, 0.001); end
+  def test_costpercapita_bx115; assert_in_epsilon(115.25628826685268, worksheet.costpercapita_bx115, 0.001); end
+  def test_costpercapita_by115; assert_in_epsilon(112.7982881444353, worksheet.costpercapita_by115, 0.001); end
+  def test_costpercapita_bz115; assert_in_epsilon(131.1105199553348, worksheet.costpercapita_bz115, 0.001); end
+  def test_costpercapita_ca115; assert_in_epsilon(108.48517514172978, worksheet.costpercapita_ca115, 0.001); end
+  def test_costpercapita_cc115; assert_in_epsilon(90.14336201147736, worksheet.costpercapita_cc115, 0.001); end
   def test_costpercapita_cd115; assert_in_epsilon(1827.6036685124461, worksheet.costpercapita_cd115, 0.001); end
-  def test_costpercapita_cf115; assert_in_epsilon(-14.76162488707821, worksheet.costpercapita_cf115, 0.001); end
-  def test_costpercapita_cg115; assert_in_epsilon(-7.820522995657077, worksheet.costpercapita_cg115, 0.001); end
-  def test_costpercapita_ch115; assert_in_epsilon(12.600393933665442, worksheet.costpercapita_ch115, 0.001); end
-  def test_costpercapita_ci115; assert_in_epsilon(34.78212361142549, worksheet.costpercapita_ci115, 0.001); end
-  def test_costpercapita_cj115; assert_in_epsilon(48.70575535078251, worksheet.costpercapita_cj115, 0.001); end
-  def test_costpercapita_ck115; assert_in_epsilon(49.2493453740895, worksheet.costpercapita_ck115, 0.001); end
-  def test_costpercapita_cl115; assert_in_epsilon(48.19903481161321, worksheet.costpercapita_cl115, 0.001); end
-  def test_costpercapita_cm115; assert_in_epsilon(67.79988770666935, worksheet.costpercapita_cm115, 0.001); end
-  def test_costpercapita_cn115; assert_in_epsilon(46.35602914917239, worksheet.costpercapita_cn115, 0.001); end
-  def test_costpercapita_cp115; assert_in_epsilon(31.67893578385362, worksheet.costpercapita_cp115, 0.001); end
-  def test_costpercapita_cq115; assert_in_epsilon(578.8634165221763, worksheet.costpercapita_cq115, 0.001); end
+  def test_costpercapita_cf115; assert_in_epsilon(-14.761624887078208, worksheet.costpercapita_cf115, 0.001); end
+  def test_costpercapita_cg115; assert_in_epsilon(-7.820522995657074, worksheet.costpercapita_cg115, 0.001); end
+  def test_costpercapita_ch115; assert_in_epsilon(12.600393933665456, worksheet.costpercapita_ch115, 0.001); end
+  def test_costpercapita_ci115; assert_in_epsilon(34.78212361142551, worksheet.costpercapita_ci115, 0.001); end
+  def test_costpercapita_cj115; assert_in_epsilon(48.70575535078253, worksheet.costpercapita_cj115, 0.001); end
+  def test_costpercapita_ck115; assert_in_epsilon(49.24934537408953, worksheet.costpercapita_ck115, 0.001); end
+  def test_costpercapita_cl115; assert_in_epsilon(48.19903481161324, worksheet.costpercapita_cl115, 0.001); end
+  def test_costpercapita_cm115; assert_in_epsilon(67.79988770666941, worksheet.costpercapita_cm115, 0.001); end
+  def test_costpercapita_cn115; assert_in_epsilon(46.356029149172414, worksheet.costpercapita_cn115, 0.001); end
+  def test_costpercapita_cp115; assert_in_epsilon(31.678935783853646, worksheet.costpercapita_cp115, 0.001); end
+  def test_costpercapita_cq115; assert_in_epsilon(578.8634165221766, worksheet.costpercapita_cq115, 0.001); end
   def test_costpercapita_cr115; assert_equal("ok", worksheet.costpercapita_cr115); end
   def test_costpercapita_a116; assert_equal("III.a.2", worksheet.costpercapita_a116); end
   def test_costpercapita_b116; assert_equal("Offshore wind", worksheet.costpercapita_b116); end
@@ -17368,46 +17979,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at116; assert_in_epsilon(4543.7950187579445, worksheet.costpercapita_at116, 0.001); end
   def test_costpercapita_av116; assert_in_delta(0.1, worksheet.costpercapita_av116, 0.001); end
   def test_costpercapita_aw116; assert_in_epsilon(20, worksheet.costpercapita_aw116, 0.001); end
-  def test_costpercapita_ay116; assert_in_epsilon(7.668371273784394, worksheet.costpercapita_ay116, 0.001); end
-  def test_costpercapita_az116; assert_in_epsilon(42.97871277593408, worksheet.costpercapita_az116, 0.001); end
-  def test_costpercapita_ba116; assert_in_epsilon(61.685531684391755, worksheet.costpercapita_ba116, 0.001); end
+  def test_costpercapita_ay116; assert_in_epsilon(7.668371273784396, worksheet.costpercapita_ay116, 0.001); end
+  def test_costpercapita_az116; assert_in_epsilon(42.978712775934085, worksheet.costpercapita_az116, 0.001); end
+  def test_costpercapita_ba116; assert_in_epsilon(61.68553168439177, worksheet.costpercapita_ba116, 0.001); end
   def test_costpercapita_bb116; assert_in_epsilon(100.23559436438059, worksheet.costpercapita_bb116, 0.001); end
-  def test_costpercapita_bc116; assert_in_epsilon(96.0738266305553, worksheet.costpercapita_bc116, 0.001); end
-  def test_costpercapita_bd116; assert_in_epsilon(93.81074079456533, worksheet.costpercapita_bd116, 0.001); end
-  def test_costpercapita_be116; assert_in_epsilon(91.81009670108881, worksheet.costpercapita_be116, 0.001); end
-  def test_costpercapita_bf116; assert_in_epsilon(89.97867574428692, worksheet.costpercapita_bf116, 0.001); end
-  def test_costpercapita_bg116; assert_in_epsilon(88.29951752142904, worksheet.costpercapita_bg116, 0.001); end
-  def test_costpercapita_bi116; assert_in_epsilon(7.668371273784394, worksheet.costpercapita_bi116, 0.001); end
-  def test_costpercapita_bj116; assert_in_epsilon(50.39421897592271, worksheet.costpercapita_bj116, 0.001); end
-  def test_costpercapita_bk116; assert_in_epsilon(110.42993713781074, worksheet.costpercapita_bk116, 0.001); end
-  def test_costpercapita_bl116; assert_in_epsilon(207.24623693178427, worksheet.costpercapita_bl116, 0.001); end
-  def test_costpercapita_bm116; assert_in_epsilon(290.89731387782064, worksheet.costpercapita_bm116, 0.001); end
+  def test_costpercapita_bc116; assert_in_epsilon(96.07382663055532, worksheet.costpercapita_bc116, 0.001); end
+  def test_costpercapita_bd116; assert_in_epsilon(93.81074079456535, worksheet.costpercapita_bd116, 0.001); end
+  def test_costpercapita_be116; assert_in_epsilon(91.81009670108882, worksheet.costpercapita_be116, 0.001); end
+  def test_costpercapita_bf116; assert_in_epsilon(89.97867574428693, worksheet.costpercapita_bf116, 0.001); end
+  def test_costpercapita_bg116; assert_in_epsilon(88.29951752142905, worksheet.costpercapita_bg116, 0.001); end
+  def test_costpercapita_bi116; assert_in_epsilon(7.668371273784396, worksheet.costpercapita_bi116, 0.001); end
+  def test_costpercapita_bj116; assert_in_epsilon(50.394218975922726, worksheet.costpercapita_bj116, 0.001); end
+  def test_costpercapita_bk116; assert_in_epsilon(110.42993713781077, worksheet.costpercapita_bk116, 0.001); end
+  def test_costpercapita_bl116; assert_in_epsilon(207.2462369317843, worksheet.costpercapita_bl116, 0.001); end
+  def test_costpercapita_bm116; assert_in_epsilon(290.8973138778207, worksheet.costpercapita_bm116, 0.001); end
   def test_costpercapita_bn116; assert_in_epsilon(339.59488167632657, worksheet.costpercapita_bn116, 0.001); end
-  def test_costpercapita_bo116; assert_in_epsilon(368.6005363851121, worksheet.costpercapita_bo116, 0.001); end
+  def test_costpercapita_bo116; assert_in_epsilon(368.6005363851122, worksheet.costpercapita_bo116, 0.001); end
   def test_costpercapita_bp116; assert_in_epsilon(449.89337872143466, worksheet.costpercapita_bp116, 0.001); end
-  def test_costpercapita_bq116; assert_in_epsilon(353.19807008571615, worksheet.costpercapita_bq116, 0.001); end
-  def test_costpercapita_bs116; assert_in_epsilon(12.290069988956166, worksheet.costpercapita_bs116, 0.001); end
-  def test_costpercapita_bt116; assert_in_epsilon(73.1757315658151, worksheet.costpercapita_bt116, 0.001); end
-  def test_costpercapita_bu116; assert_in_epsilon(158.74837368663052, worksheet.costpercapita_bu116, 0.001); end
+  def test_costpercapita_bq116; assert_in_epsilon(353.1980700857162, worksheet.costpercapita_bq116, 0.001); end
+  def test_costpercapita_bs116; assert_in_epsilon(12.290069988956168, worksheet.costpercapita_bs116, 0.001); end
+  def test_costpercapita_bt116; assert_in_epsilon(73.17573156581511, worksheet.costpercapita_bt116, 0.001); end
+  def test_costpercapita_bu116; assert_in_epsilon(158.74837368663054, worksheet.costpercapita_bu116, 0.001); end
   def test_costpercapita_bv116; assert_in_epsilon(296.30898074974084, worksheet.costpercapita_bv116, 0.001); end
-  def test_costpercapita_bw116; assert_in_epsilon(414.84179071775577, worksheet.costpercapita_bw116, 0.001); end
+  def test_costpercapita_bw116; assert_in_epsilon(414.8417907177559, worksheet.costpercapita_bw116, 0.001); end
   def test_costpercapita_bx116; assert_in_epsilon(484.2882423189433, worksheet.costpercapita_bx116, 0.001); end
-  def test_costpercapita_by116; assert_in_epsilon(525.6525216240019, worksheet.costpercapita_by116, 0.001); end
+  def test_costpercapita_by116; assert_in_epsilon(525.6525216240021, worksheet.costpercapita_by116, 0.001); end
   def test_costpercapita_bz116; assert_in_epsilon(603.2445354331792, worksheet.costpercapita_bz116, 0.001); end
   def test_costpercapita_ca116; assert_in_epsilon(503.68742811408055, worksheet.costpercapita_ca116, 0.001); end
   def test_costpercapita_cc116; assert_in_epsilon(341.35974157767816, worksheet.costpercapita_cc116, 0.001); end
-  def test_costpercapita_cd116; assert_in_epsilon(6365.435941791888, worksheet.costpercapita_cd116, 0.001); end
+  def test_costpercapita_cd116; assert_in_epsilon(6365.4359417918895, worksheet.costpercapita_cd116, 0.001); end
   def test_costpercapita_cf116; assert_in_epsilon(-14.09335121492547, worksheet.costpercapita_cf116, 0.001); end
-  def test_costpercapita_cg116; assert_in_epsilon(-22.786182986300545, worksheet.costpercapita_cg116, 0.001); end
-  def test_costpercapita_ch116; assert_in_epsilon(5.397196221359732, worksheet.costpercapita_ch116, 0.001); end
-  def test_costpercapita_ci116; assert_in_epsilon(36.57381300997894, worksheet.costpercapita_ci116, 0.001); end
-  def test_costpercapita_cj116; assert_in_epsilon(127.31118491376668, worksheet.costpercapita_cj116, 0.001); end
+  def test_costpercapita_cg116; assert_in_epsilon(-22.78618298630053, worksheet.costpercapita_cg116, 0.001); end
+  def test_costpercapita_ch116; assert_in_epsilon(5.397196221359759, worksheet.costpercapita_ch116, 0.001); end
+  def test_costpercapita_ci116; assert_in_epsilon(36.57381300997897, worksheet.costpercapita_ci116, 0.001); end
+  def test_costpercapita_cj116; assert_in_epsilon(127.31118491376674, worksheet.costpercapita_cj116, 0.001); end
   def test_costpercapita_ck116; assert_in_epsilon(179.86213780586934, worksheet.costpercapita_ck116, 0.001); end
-  def test_costpercapita_cl116; assert_in_epsilon(212.27431470872907, worksheet.costpercapita_cl116, 0.001); end
+  def test_costpercapita_cl116; assert_in_epsilon(212.27431470872915, worksheet.costpercapita_cl116, 0.001); end
   def test_costpercapita_cm116; assert_in_epsilon(296.6855408477384, worksheet.costpercapita_cm116, 0.001); end
-  def test_costpercapita_cn116; assert_in_epsilon(202.84935631719136, worksheet.costpercapita_cn116, 0.001); end
-  def test_costpercapita_cp116; assert_in_epsilon(113.78600106926751, worksheet.costpercapita_cp116, 0.001); end
-  def test_costpercapita_cq116; assert_in_epsilon(1821.640923033944, worksheet.costpercapita_cq116, 0.001); end
+  def test_costpercapita_cn116; assert_in_epsilon(202.84935631719142, worksheet.costpercapita_cn116, 0.001); end
+  def test_costpercapita_cp116; assert_in_epsilon(113.78600106926754, worksheet.costpercapita_cp116, 0.001); end
+  def test_costpercapita_cq116; assert_in_epsilon(1821.640923033945, worksheet.costpercapita_cq116, 0.001); end
   def test_costpercapita_cr116; assert_equal("ok", worksheet.costpercapita_cr116); end
   def test_costpercapita_a117; assert_equal("III.b", worksheet.costpercapita_a117); end
   def test_costpercapita_b117; assert_equal("Hydroelectric", worksheet.costpercapita_b117); end
@@ -17452,46 +18063,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at117; assert_in_epsilon(160.47074271413388, worksheet.costpercapita_at117, 0.001); end
   def test_costpercapita_av117; assert_in_delta(0.1, worksheet.costpercapita_av117, 0.001); end
   def test_costpercapita_aw117; assert_in_epsilon(30, worksheet.costpercapita_aw117, 0.001); end
-  def test_costpercapita_ay117; assert_in_epsilon(4.975829876472336, worksheet.costpercapita_ay117, 0.001); end
-  def test_costpercapita_az117; assert_in_epsilon(1.5673457790600138, worksheet.costpercapita_az117, 0.001); end
-  def test_costpercapita_ba117; assert_in_epsilon(1.5160337771423376, worksheet.costpercapita_ba117, 0.001); end
-  def test_costpercapita_bb117; assert_in_delta(0.7345460517804739, worksheet.costpercapita_bb117, 0.001); end
-  def test_costpercapita_bc117; assert_in_delta(0.7144781411894741, worksheet.costpercapita_bc117, 0.001); end
-  def test_costpercapita_bd117; assert_in_delta(0.6976481114284326, worksheet.costpercapita_bd117, 0.001); end
-  def test_costpercapita_be117; assert_in_delta(0.682769798330881, worksheet.costpercapita_be117, 0.001); end
-  def test_costpercapita_bf117; assert_in_delta(0.6691499573518855, worksheet.costpercapita_bf117, 0.001); end
-  def test_costpercapita_bg117; assert_in_delta(0.6566624580203242, worksheet.costpercapita_bg117, 0.001); end
-  def test_costpercapita_bi117; assert_in_epsilon(4.975829876472336, worksheet.costpercapita_bi117, 0.001); end
-  def test_costpercapita_bj117; assert_in_epsilon(6.379097320774259, worksheet.costpercapita_bj117, 0.001); end
-  def test_costpercapita_bk117; assert_in_epsilon(7.686291250111656, worksheet.costpercapita_bk117, 0.001); end
-  def test_costpercapita_bl117; assert_in_epsilon(8.182843016834482, worksheet.costpercapita_bl117, 0.001); end
-  def test_costpercapita_bm117; assert_in_epsilon(8.673764634040277, worksheet.costpercapita_bm117, 0.001); end
-  def test_costpercapita_bn117; assert_in_epsilon(9.16709618416954, worksheet.costpercapita_bn117, 0.001); end
-  def test_costpercapita_bo117; assert_in_epsilon(5.462158386647048, worksheet.costpercapita_bo117, 0.001); end
+  def test_costpercapita_ay117; assert_in_epsilon(4.975829876472337, worksheet.costpercapita_ay117, 0.001); end
+  def test_costpercapita_az117; assert_in_epsilon(1.567345779060014, worksheet.costpercapita_az117, 0.001); end
+  def test_costpercapita_ba117; assert_in_epsilon(1.5160337771423378, worksheet.costpercapita_ba117, 0.001); end
+  def test_costpercapita_bb117; assert_in_delta(0.734546051780474, worksheet.costpercapita_bb117, 0.001); end
+  def test_costpercapita_bc117; assert_in_delta(0.7144781411894742, worksheet.costpercapita_bc117, 0.001); end
+  def test_costpercapita_bd117; assert_in_delta(0.6976481114284329, worksheet.costpercapita_bd117, 0.001); end
+  def test_costpercapita_be117; assert_in_delta(0.6827697983308811, worksheet.costpercapita_be117, 0.001); end
+  def test_costpercapita_bf117; assert_in_delta(0.6691499573518858, worksheet.costpercapita_bf117, 0.001); end
+  def test_costpercapita_bg117; assert_in_delta(0.6566624580203244, worksheet.costpercapita_bg117, 0.001); end
+  def test_costpercapita_bi117; assert_in_epsilon(4.975829876472337, worksheet.costpercapita_bi117, 0.001); end
+  def test_costpercapita_bj117; assert_in_epsilon(6.379097320774261, worksheet.costpercapita_bj117, 0.001); end
+  def test_costpercapita_bk117; assert_in_epsilon(7.686291250111657, worksheet.costpercapita_bk117, 0.001); end
+  def test_costpercapita_bl117; assert_in_epsilon(8.182843016834484, worksheet.costpercapita_bl117, 0.001); end
+  def test_costpercapita_bm117; assert_in_epsilon(8.673764634040278, worksheet.costpercapita_bm117, 0.001); end
+  def test_costpercapita_bn117; assert_in_epsilon(9.167096184169544, worksheet.costpercapita_bn117, 0.001); end
+  def test_costpercapita_bo117; assert_in_epsilon(5.462158386647049, worksheet.costpercapita_bo117, 0.001); end
   def test_costpercapita_bp117; assert_in_epsilon(5.353199658815114, worksheet.costpercapita_bp117, 0.001); end
-  def test_costpercapita_bq117; assert_in_epsilon(4.596637206142232, worksheet.costpercapita_bq117, 0.001); end
-  def test_costpercapita_bs117; assert_in_epsilon(9.810101545472326, worksheet.costpercapita_bs117, 0.001); end
-  def test_costpercapita_bt117; assert_in_epsilon(11.346137373331636, worksheet.costpercapita_bt117, 0.001); end
-  def test_costpercapita_bu117; assert_in_epsilon(12.773333030388672, worksheet.costpercapita_bu117, 0.001); end
-  def test_costpercapita_bv117; assert_in_epsilon(13.249303676568653, worksheet.costpercapita_bv117, 0.001); end
-  def test_costpercapita_bw117; assert_in_epsilon(13.734999196105903, worksheet.costpercapita_bw117, 0.001); end
-  def test_costpercapita_bx117; assert_in_epsilon(14.239162835497334, worksheet.costpercapita_bx117, 0.001); end
+  def test_costpercapita_bq117; assert_in_epsilon(4.5966372061422325, worksheet.costpercapita_bq117, 0.001); end
+  def test_costpercapita_bs117; assert_in_epsilon(9.810101545472328, worksheet.costpercapita_bs117, 0.001); end
+  def test_costpercapita_bt117; assert_in_epsilon(11.346137373331638, worksheet.costpercapita_bt117, 0.001); end
+  def test_costpercapita_bu117; assert_in_epsilon(12.773333030388674, worksheet.costpercapita_bu117, 0.001); end
+  def test_costpercapita_bv117; assert_in_epsilon(13.249303676568656, worksheet.costpercapita_bv117, 0.001); end
+  def test_costpercapita_bw117; assert_in_epsilon(13.734999196105905, worksheet.costpercapita_bw117, 0.001); end
+  def test_costpercapita_bx117; assert_in_epsilon(14.239162835497337, worksheet.costpercapita_bx117, 0.001); end
   def test_costpercapita_by117; assert_in_epsilon(10.553335616172742, worksheet.costpercapita_by117, 0.001); end
   def test_costpercapita_bz117; assert_in_epsilon(10.467558935096385, worksheet.costpercapita_bz117, 0.001); end
   def test_costpercapita_ca117; assert_in_epsilon(9.73796626027846, worksheet.costpercapita_ca117, 0.001); end
   def test_costpercapita_cc117; assert_in_epsilon(11.767988718768013, worksheet.costpercapita_cc117, 0.001); end
-  def test_costpercapita_cd117; assert_in_epsilon(254.82647045968554, worksheet.costpercapita_cd117, 0.001); end
-  def test_costpercapita_cf117; assert_in_epsilon(-10.659744339457589, worksheet.costpercapita_cf117, 0.001); end
-  def test_costpercapita_cg117; assert_in_epsilon(3.424050400895475, worksheet.costpercapita_cg117, 0.001); end
-  def test_costpercapita_ch117; assert_in_epsilon(4.827987100874445, worksheet.costpercapita_ch117, 0.001); end
-  def test_costpercapita_ci117; assert_in_epsilon(6.797942456394782, worksheet.costpercapita_ci117, 0.001); end
-  def test_costpercapita_cj117; assert_in_epsilon(7.326699768935081, worksheet.costpercapita_cj117, 0.001); end
-  def test_costpercapita_ck117; assert_in_epsilon(7.851762369271187, worksheet.costpercapita_ck117, 0.001); end
-  def test_costpercapita_cl117; assert_in_epsilon(4.174875888745432, worksheet.costpercapita_cl117, 0.001); end
+  def test_costpercapita_cd117; assert_in_epsilon(254.82647045968557, worksheet.costpercapita_cd117, 0.001); end
+  def test_costpercapita_cf117; assert_in_epsilon(-10.659744339457585, worksheet.costpercapita_cf117, 0.001); end
+  def test_costpercapita_cg117; assert_in_epsilon(3.4240504008954766, worksheet.costpercapita_cg117, 0.001); end
+  def test_costpercapita_ch117; assert_in_epsilon(4.827987100874447, worksheet.costpercapita_ch117, 0.001); end
+  def test_costpercapita_ci117; assert_in_epsilon(6.797942456394784, worksheet.costpercapita_ci117, 0.001); end
+  def test_costpercapita_cj117; assert_in_epsilon(7.326699768935082, worksheet.costpercapita_cj117, 0.001); end
+  def test_costpercapita_ck117; assert_in_epsilon(7.8517623692711895, worksheet.costpercapita_ck117, 0.001); end
+  def test_costpercapita_cl117; assert_in_epsilon(4.174875888745433, worksheet.costpercapita_cl117, 0.001); end
   def test_costpercapita_cm117; assert_in_epsilon(4.091595776106092, worksheet.costpercapita_cm117, 0.001); end
-  def test_costpercapita_cn117; assert_in_epsilon(3.3585770410542506, worksheet.costpercapita_cn117, 0.001); end
-  def test_costpercapita_cp117; assert_in_epsilon(3.4659718292021284, worksheet.costpercapita_cp117, 0.001); end
-  def test_costpercapita_cq117; assert_in_epsilon(94.35572774555165, worksheet.costpercapita_cq117, 0.001); end
+  def test_costpercapita_cn117; assert_in_epsilon(3.3585770410542515, worksheet.costpercapita_cn117, 0.001); end
+  def test_costpercapita_cp117; assert_in_epsilon(3.46597182920213, worksheet.costpercapita_cp117, 0.001); end
+  def test_costpercapita_cq117; assert_in_epsilon(94.3557277455517, worksheet.costpercapita_cq117, 0.001); end
   def test_costpercapita_cr117; assert_equal("ok", worksheet.costpercapita_cr117); end
   def test_costpercapita_a118; assert_equal("III.c", worksheet.costpercapita_a118); end
   def test_costpercapita_b118; assert_equal("Wave and Tidal", worksheet.costpercapita_b118); end
@@ -17536,46 +18147,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at118; assert_in_epsilon(587.131175895363, worksheet.costpercapita_at118, 0.001); end
   def test_costpercapita_av118; assert_in_delta(0.1, worksheet.costpercapita_av118, 0.001); end
   def test_costpercapita_aw118; assert_in_epsilon(30, worksheet.costpercapita_aw118, 0.001); end
-  def test_costpercapita_ay118; assert_in_delta(0.019145393336508148, worksheet.costpercapita_ay118, 0.001); end
-  def test_costpercapita_az118; assert_in_delta(0.19365516125800225, worksheet.costpercapita_az118, 0.001); end
-  def test_costpercapita_ba118; assert_in_epsilon(3.064209433961376, worksheet.costpercapita_ba118, 0.001); end
-  def test_costpercapita_bb118; assert_in_epsilon(1.8616324388868315, worksheet.costpercapita_bb118, 0.001); end
-  def test_costpercapita_bc118; assert_in_epsilon(4.478849165468018, worksheet.costpercapita_bc118, 0.001); end
-  def test_costpercapita_bd118; assert_in_epsilon(10.600169449269094, worksheet.costpercapita_bd118, 0.001); end
-  def test_costpercapita_be118; assert_in_epsilon(25.222172121064407, worksheet.costpercapita_be118, 0.001); end
-  def test_costpercapita_bf118; assert_in_epsilon(38.951739136469385, worksheet.costpercapita_bf118, 0.001); end
-  def test_costpercapita_bg118; assert_in_epsilon(20.239781019247502, worksheet.costpercapita_bg118, 0.001); end
-  def test_costpercapita_bi118; assert_in_delta(0.019145393336508148, worksheet.costpercapita_bi118, 0.001); end
-  def test_costpercapita_bj118; assert_in_delta(0.2121692339234006, worksheet.costpercapita_bj118, 0.001); end
-  def test_costpercapita_bk118; assert_in_epsilon(3.269432639584322, worksheet.costpercapita_bk118, 0.001); end
+  def test_costpercapita_ay118; assert_in_delta(0.01914539333650815, worksheet.costpercapita_ay118, 0.001); end
+  def test_costpercapita_az118; assert_in_delta(0.19365516125800228, worksheet.costpercapita_az118, 0.001); end
+  def test_costpercapita_ba118; assert_in_epsilon(3.0642094339613766, worksheet.costpercapita_ba118, 0.001); end
+  def test_costpercapita_bb118; assert_in_epsilon(1.8616324388868317, worksheet.costpercapita_bb118, 0.001); end
+  def test_costpercapita_bc118; assert_in_epsilon(4.47884916546802, worksheet.costpercapita_bc118, 0.001); end
+  def test_costpercapita_bd118; assert_in_epsilon(10.600169449269098, worksheet.costpercapita_bd118, 0.001); end
+  def test_costpercapita_be118; assert_in_epsilon(25.22217212106441, worksheet.costpercapita_be118, 0.001); end
+  def test_costpercapita_bf118; assert_in_epsilon(38.95173913646939, worksheet.costpercapita_bf118, 0.001); end
+  def test_costpercapita_bg118; assert_in_epsilon(20.23978101924751, worksheet.costpercapita_bg118, 0.001); end
+  def test_costpercapita_bi118; assert_in_delta(0.01914539333650815, worksheet.costpercapita_bi118, 0.001); end
+  def test_costpercapita_bj118; assert_in_delta(0.21216923392340062, worksheet.costpercapita_bj118, 0.001); end
+  def test_costpercapita_bk118; assert_in_epsilon(3.2694326395843225, worksheet.costpercapita_bk118, 0.001); end
   def test_costpercapita_bl118; assert_in_epsilon(5.029832083482745, worksheet.costpercapita_bl118, 0.001); end
   def test_costpercapita_bm118; assert_in_epsilon(9.371265466380859, worksheet.costpercapita_bm118, 0.001); end
-  def test_costpercapita_bn118; assert_in_epsilon(19.750688236912755, worksheet.costpercapita_bn118, 0.001); end
-  def test_costpercapita_bo118; assert_in_epsilon(44.535519288942, worksheet.costpercapita_bo118, 0.001); end
-  def test_costpercapita_bp118; assert_in_epsilon(86.62821244407725, worksheet.costpercapita_bp118, 0.001); end
-  def test_costpercapita_bq118; assert_in_epsilon(102.59686667811519, worksheet.costpercapita_bq118, 0.001); end
+  def test_costpercapita_bn118; assert_in_epsilon(19.750688236912758, worksheet.costpercapita_bn118, 0.001); end
+  def test_costpercapita_bo118; assert_in_epsilon(44.535519288942005, worksheet.costpercapita_bo118, 0.001); end
+  def test_costpercapita_bp118; assert_in_epsilon(86.62821244407726, worksheet.costpercapita_bp118, 0.001); end
+  def test_costpercapita_bq118; assert_in_epsilon(102.59686667811522, worksheet.costpercapita_bq118, 0.001); end
   def test_costpercapita_bs118; assert_in_delta(0.02271273457028133, worksheet.costpercapita_bs118, 0.001); end
-  def test_costpercapita_bt118; assert_in_delta(0.33799880837038915, worksheet.costpercapita_bt118, 0.001); end
+  def test_costpercapita_bt118; assert_in_delta(0.3379988083703892, worksheet.costpercapita_bt118, 0.001); end
   def test_costpercapita_bu118; assert_in_epsilon(4.385830491436028, worksheet.costpercapita_bu118, 0.001); end
   def test_costpercapita_bv118; assert_in_epsilon(7.459088366307698, worksheet.costpercapita_bv118, 0.001); end
   def test_costpercapita_bw118; assert_in_epsilon(13.314261730134247, worksheet.costpercapita_bw118, 0.001); end
   def test_costpercapita_bx118; assert_in_epsilon(30.64106545345554, worksheet.costpercapita_bx118, 0.001); end
-  def test_costpercapita_by118; assert_in_epsilon(68.60160444566604, worksheet.costpercapita_by118, 0.001); end
+  def test_costpercapita_by118; assert_in_epsilon(68.60160444566606, worksheet.costpercapita_by118, 0.001); end
   def test_costpercapita_bz118; assert_in_epsilon(135.85542676420079, worksheet.costpercapita_bz118, 0.001); end
   def test_costpercapita_ca118; assert_in_epsilon(162.74668088462877, worksheet.costpercapita_ca118, 0.001); end
   def test_costpercapita_cc118; assert_in_epsilon(47.040518853196644, worksheet.costpercapita_cc118, 0.001); end
   def test_costpercapita_cd118; assert_in_epsilon(684.2300768279164, worksheet.costpercapita_cd118, 0.001); end
   def test_costpercapita_cf118; assert_in_delta(-0.04101526847019532, worksheet.costpercapita_cf118, 0.001); end
-  def test_costpercapita_cg118; assert_in_delta(-0.1529448943306029, worksheet.costpercapita_cg118, 0.001); end
-  def test_costpercapita_ch118; assert_in_epsilon(-2.507775408994195, worksheet.costpercapita_ch118, 0.001); end
+  def test_costpercapita_cg118; assert_in_delta(-0.15294489433060288, worksheet.costpercapita_cg118, 0.001); end
+  def test_costpercapita_ch118; assert_in_epsilon(-2.5077754089941946, worksheet.costpercapita_ch118, 0.001); end
   def test_costpercapita_ci118; assert_in_epsilon(1.5199421294113409, worksheet.costpercapita_ci118, 0.001); end
-  def test_costpercapita_cj118; assert_in_delta(0.9269198676990524, worksheet.costpercapita_cj118, 0.001); end
-  def test_costpercapita_ck118; assert_in_delta(-0.23468990985573435, worksheet.costpercapita_ck118, 0.001); end
-  def test_costpercapita_cl118; assert_in_epsilon(-3.0179325624443045, worksheet.costpercapita_cl118, 0.001); end
-  def test_costpercapita_cm118; assert_in_epsilon(13.189269808089572, worksheet.costpercapita_cm118, 0.001); end
-  def test_costpercapita_cn118; assert_in_epsilon(64.43712977831122, worksheet.costpercapita_cn118, 0.001); end
-  def test_costpercapita_cp118; assert_in_epsilon(8.235433726601794, worksheet.costpercapita_cp118, 0.001); end
-  def test_costpercapita_cq118; assert_in_epsilon(97.0989009325535, worksheet.costpercapita_cq118, 0.001); end
+  def test_costpercapita_cj118; assert_in_delta(0.9269198676990541, worksheet.costpercapita_cj118, 0.001); end
+  def test_costpercapita_ck118; assert_in_delta(-0.2346899098557312, worksheet.costpercapita_ck118, 0.001); end
+  def test_costpercapita_cl118; assert_in_epsilon(-3.0179325624442983, worksheet.costpercapita_cl118, 0.001); end
+  def test_costpercapita_cm118; assert_in_epsilon(13.189269808089584, worksheet.costpercapita_cm118, 0.001); end
+  def test_costpercapita_cn118; assert_in_epsilon(64.43712977831123, worksheet.costpercapita_cn118, 0.001); end
+  def test_costpercapita_cp118; assert_in_epsilon(8.235433726601798, worksheet.costpercapita_cp118, 0.001); end
+  def test_costpercapita_cq118; assert_in_epsilon(97.09890093255358, worksheet.costpercapita_cq118, 0.001); end
   def test_costpercapita_cr118; assert_equal("ok", worksheet.costpercapita_cr118); end
   def test_costpercapita_a119; assert_equal("III.d", worksheet.costpercapita_a119); end
   def test_costpercapita_b119; assert_equal("Geothermal", worksheet.costpercapita_b119); end
@@ -17705,45 +18316,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av120; assert_in_delta(0.1, worksheet.costpercapita_av120, 0.001); end
   def test_costpercapita_aw120; assert_in_epsilon(25, worksheet.costpercapita_aw120, 0.001); end
   def test_costpercapita_ay120; assert_in_delta(0.14413016827636665, worksheet.costpercapita_ay120, 0.001); end
-  def test_costpercapita_az120; assert_in_delta(0.15966511242410447, worksheet.costpercapita_az120, 0.001); end
-  def test_costpercapita_ba120; assert_in_epsilon(1.0538769855986718, worksheet.costpercapita_ba120, 0.001); end
-  def test_costpercapita_bb120; assert_in_epsilon(2.256342772083311, worksheet.costpercapita_bb120, 0.001); end
-  def test_costpercapita_bc120; assert_in_epsilon(5.575839041552185, worksheet.costpercapita_bc120, 0.001); end
+  def test_costpercapita_az120; assert_in_delta(0.1596651124241045, worksheet.costpercapita_az120, 0.001); end
+  def test_costpercapita_ba120; assert_in_epsilon(1.053876985598672, worksheet.costpercapita_ba120, 0.001); end
+  def test_costpercapita_bb120; assert_in_epsilon(2.2563427720833116, worksheet.costpercapita_bb120, 0.001); end
+  def test_costpercapita_bc120; assert_in_epsilon(5.575839041552186, worksheet.costpercapita_bc120, 0.001); end
   def test_costpercapita_bd120; assert_in_epsilon(8.06351823010956, worksheet.costpercapita_bd120, 0.001); end
-  def test_costpercapita_be120; assert_in_epsilon(14.636124717195603, worksheet.costpercapita_be120, 0.001); end
+  def test_costpercapita_be120; assert_in_epsilon(14.636124717195607, worksheet.costpercapita_be120, 0.001); end
   def test_costpercapita_bf120; assert_in_epsilon(27.36103189818346, worksheet.costpercapita_bf120, 0.001); end
   def test_costpercapita_bg120; assert_in_epsilon(51.01226090607843, worksheet.costpercapita_bg120, 0.001); end
   def test_costpercapita_bi120; assert_in_delta(0.14413016827636665, worksheet.costpercapita_bi120, 0.001); end
-  def test_costpercapita_bj120; assert_in_delta(0.2990425784203932, worksheet.costpercapita_bj120, 0.001); end
-  def test_costpercapita_bk120; assert_in_epsilon(1.3431294630966146, worksheet.costpercapita_bk120, 0.001); end
-  def test_costpercapita_bl120; assert_in_epsilon(3.5578842799609647, worksheet.costpercapita_bl120, 0.001); end
+  def test_costpercapita_bj120; assert_in_delta(0.2990425784203933, worksheet.costpercapita_bj120, 0.001); end
+  def test_costpercapita_bk120; assert_in_epsilon(1.3431294630966149, worksheet.costpercapita_bk120, 0.001); end
+  def test_costpercapita_bl120; assert_in_epsilon(3.557884279960965, worksheet.costpercapita_bl120, 0.001); end
   def test_costpercapita_bm120; assert_in_epsilon(9.03652137828536, worksheet.costpercapita_bm120, 0.001); end
   def test_costpercapita_bn120; assert_in_epsilon(16.763100236763254, worksheet.costpercapita_bn120, 0.001); end
-  def test_costpercapita_bo120; assert_in_epsilon(30.90262143500782, worksheet.costpercapita_bo120, 0.001); end
+  def test_costpercapita_bo120; assert_in_epsilon(30.902621435007823, worksheet.costpercapita_bo120, 0.001); end
   def test_costpercapita_bp120; assert_in_epsilon(61.938980191354744, worksheet.costpercapita_bp120, 0.001); end
   def test_costpercapita_bq120; assert_in_epsilon(109.77824850529782, worksheet.costpercapita_bq120, 0.001); end
   def test_costpercapita_bs120; assert_in_delta(0.18523648067641973, worksheet.costpercapita_bs120, 0.001); end
-  def test_costpercapita_bt120; assert_in_delta(0.3590491848153516, worksheet.costpercapita_bt120, 0.001); end
-  def test_costpercapita_bu120; assert_in_epsilon(1.5348707637214767, worksheet.costpercapita_bu120, 0.001); end
-  def test_costpercapita_bv120; assert_in_epsilon(4.029937593474118, worksheet.costpercapita_bv120, 0.001); end
-  def test_costpercapita_bw120; assert_in_epsilon(10.203052158868164, worksheet.costpercapita_bw120, 0.001); end
+  def test_costpercapita_bt120; assert_in_delta(0.35904918481535164, worksheet.costpercapita_bt120, 0.001); end
+  def test_costpercapita_bu120; assert_in_epsilon(1.534870763721477, worksheet.costpercapita_bu120, 0.001); end
+  def test_costpercapita_bv120; assert_in_epsilon(4.029937593474119, worksheet.costpercapita_bv120, 0.001); end
+  def test_costpercapita_bw120; assert_in_epsilon(10.203052158868166, worksheet.costpercapita_bw120, 0.001); end
   def test_costpercapita_bx120; assert_in_epsilon(18.889736565343373, worksheet.costpercapita_bx120, 0.001); end
-  def test_costpercapita_by120; assert_in_epsilon(34.788423342932205, worksheet.costpercapita_by120, 0.001); end
+  def test_costpercapita_by120; assert_in_epsilon(34.78842334293221, worksheet.costpercapita_by120, 0.001); end
   def test_costpercapita_bz120; assert_in_epsilon(69.04913994697769, worksheet.costpercapita_bz120, 0.001); end
   def test_costpercapita_ca120; assert_in_epsilon(122.80534534383669, worksheet.costpercapita_ca120, 0.001); end
   def test_costpercapita_cc120; assert_in_epsilon(29.093865708960607, worksheet.costpercapita_cc120, 0.001); end
   def test_costpercapita_cd120; assert_in_epsilon(415.625749886462, worksheet.costpercapita_cd120, 0.001); end
   def test_costpercapita_cf120; assert_in_delta(-0.29196160014987055, worksheet.costpercapita_cf120, 0.001); end
-  def test_costpercapita_cg120; assert_in_delta(0.009185255422656054, worksheet.costpercapita_cg120, 0.001); end
-  def test_costpercapita_ch120; assert_in_delta(-0.5700872514173996, worksheet.costpercapita_ch120, 0.001); end
-  def test_costpercapita_ci120; assert_in_delta(-0.538298447447592, worksheet.costpercapita_ci120, 0.001); end
-  def test_costpercapita_cj120; assert_in_epsilon(-1.0859014447896025, worksheet.costpercapita_cj120, 0.001); end
+  def test_costpercapita_cg120; assert_in_delta(0.00918525542265611, worksheet.costpercapita_cg120, 0.001); end
+  def test_costpercapita_ch120; assert_in_delta(-0.5700872514173994, worksheet.costpercapita_ch120, 0.001); end
+  def test_costpercapita_ci120; assert_in_delta(-0.5382984474475916, worksheet.costpercapita_ci120, 0.001); end
+  def test_costpercapita_cj120; assert_in_epsilon(-1.085901444789601, worksheet.costpercapita_cj120, 0.001); end
   def test_costpercapita_ck120; assert_in_epsilon(2.1245247042779676, worksheet.costpercapita_ck120, 0.001); end
-  def test_costpercapita_cl120; assert_in_epsilon(4.3320834810517495, worksheet.costpercapita_cl120, 0.001); end
+  def test_costpercapita_cl120; assert_in_epsilon(4.332083481051756, worksheet.costpercapita_cl120, 0.001); end
   def test_costpercapita_cm120; assert_in_epsilon(12.267543895382499, worksheet.costpercapita_cm120, 0.001); end
   def test_costpercapita_cn120; assert_in_epsilon(17.170181772331656, worksheet.costpercapita_cn120, 0.001); end
-  def test_costpercapita_cp120; assert_in_epsilon(3.7130300405180066, worksheet.costpercapita_cp120, 0.001); end
-  def test_costpercapita_cq120; assert_in_epsilon(47.21316154644621, worksheet.costpercapita_cq120, 0.001); end
+  def test_costpercapita_cp120; assert_in_epsilon(3.7130300405180083, worksheet.costpercapita_cp120, 0.001); end
+  def test_costpercapita_cq120; assert_in_epsilon(47.21316154644622, worksheet.costpercapita_cq120, 0.001); end
   def test_costpercapita_cr120; assert_equal("ok", worksheet.costpercapita_cr120); end
   def test_costpercapita_a121; assert_equal("IV.b", worksheet.costpercapita_a121); end
   def test_costpercapita_b121; assert_equal("Distributed solar thermal", worksheet.costpercapita_b121); end
@@ -17788,46 +18399,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at121; assert_in_epsilon(839.969116720392, worksheet.costpercapita_at121, 0.001); end
   def test_costpercapita_av121; assert_in_delta(0.1, worksheet.costpercapita_av121, 0.001); end
   def test_costpercapita_aw121; assert_in_epsilon(20, worksheet.costpercapita_aw121, 0.001); end
-  def test_costpercapita_ay121; assert_in_epsilon(1.5489224063519578, worksheet.costpercapita_ay121, 0.001); end
-  def test_costpercapita_az121; assert_in_epsilon(7.040830980698702, worksheet.costpercapita_az121, 0.001); end
-  def test_costpercapita_ba121; assert_in_epsilon(11.663794702838851, worksheet.costpercapita_ba121, 0.001); end
-  def test_costpercapita_bb121; assert_in_epsilon(16.395668616422643, worksheet.costpercapita_bb121, 0.001); end
-  def test_costpercapita_bc121; assert_in_epsilon(23.502862232047324, worksheet.costpercapita_bc121, 0.001); end
-  def test_costpercapita_bd121; assert_in_epsilon(32.78776931510167, worksheet.costpercapita_bd121, 0.001); end
-  def test_costpercapita_be121; assert_in_epsilon(42.6552265788813, worksheet.costpercapita_be121, 0.001); end
-  def test_costpercapita_bf121; assert_in_epsilon(53.06861634990052, worksheet.costpercapita_bf121, 0.001); end
-  def test_costpercapita_bg121; assert_in_epsilon(64.01404276775827, worksheet.costpercapita_bg121, 0.001); end
-  def test_costpercapita_bi121; assert_in_epsilon(1.5489224063519578, worksheet.costpercapita_bi121, 0.001); end
-  def test_costpercapita_bj121; assert_in_epsilon(8.53867756343671, worksheet.costpercapita_bj121, 0.001); end
-  def test_costpercapita_bk121; assert_in_epsilon(19.9229317555835, worksheet.costpercapita_bk121, 0.001); end
-  def test_costpercapita_bl121; assert_in_epsilon(35.701717177610725, worksheet.costpercapita_bl121, 0.001); end
-  def test_costpercapita_bm121; assert_in_epsilon(56.86360948187635, worksheet.costpercapita_bm121, 0.001); end
-  def test_costpercapita_bn121; assert_in_epsilon(82.04396697455775, worksheet.costpercapita_bn121, 0.001); end
-  def test_costpercapita_bo121; assert_in_epsilon(112.44354324384177, worksheet.costpercapita_bo121, 0.001); end
+  def test_costpercapita_ay121; assert_in_epsilon(1.548922406351958, worksheet.costpercapita_ay121, 0.001); end
+  def test_costpercapita_az121; assert_in_epsilon(7.040830980698705, worksheet.costpercapita_az121, 0.001); end
+  def test_costpercapita_ba121; assert_in_epsilon(11.663794702838853, worksheet.costpercapita_ba121, 0.001); end
+  def test_costpercapita_bb121; assert_in_epsilon(16.395668616422647, worksheet.costpercapita_bb121, 0.001); end
+  def test_costpercapita_bc121; assert_in_epsilon(23.50286223204733, worksheet.costpercapita_bc121, 0.001); end
+  def test_costpercapita_bd121; assert_in_epsilon(32.78776931510168, worksheet.costpercapita_bd121, 0.001); end
+  def test_costpercapita_be121; assert_in_epsilon(42.655226578881305, worksheet.costpercapita_be121, 0.001); end
+  def test_costpercapita_bf121; assert_in_epsilon(53.06861634990054, worksheet.costpercapita_bf121, 0.001); end
+  def test_costpercapita_bg121; assert_in_epsilon(64.01404276775828, worksheet.costpercapita_bg121, 0.001); end
+  def test_costpercapita_bi121; assert_in_epsilon(1.548922406351958, worksheet.costpercapita_bi121, 0.001); end
+  def test_costpercapita_bj121; assert_in_epsilon(8.538677563436714, worksheet.costpercapita_bj121, 0.001); end
+  def test_costpercapita_bk121; assert_in_epsilon(19.922931755583505, worksheet.costpercapita_bk121, 0.001); end
+  def test_costpercapita_bl121; assert_in_epsilon(35.70171717761073, worksheet.costpercapita_bl121, 0.001); end
+  def test_costpercapita_bm121; assert_in_epsilon(56.86360948187637, worksheet.costpercapita_bm121, 0.001); end
+  def test_costpercapita_bn121; assert_in_epsilon(82.04396697455776, worksheet.costpercapita_bn121, 0.001); end
+  def test_costpercapita_bo121; assert_in_epsilon(112.4435432438418, worksheet.costpercapita_bo121, 0.001); end
   def test_costpercapita_bp121; assert_in_epsilon(170.3449549208068, worksheet.costpercapita_bp121, 0.001); end
-  def test_costpercapita_bq121; assert_in_epsilon(187.9780513695052, worksheet.costpercapita_bq121, 0.001); end
-  def test_costpercapita_bs121; assert_in_epsilon(1.5489224063519578, worksheet.costpercapita_bs121, 0.001); end
-  def test_costpercapita_bt121; assert_in_epsilon(8.53867756343671, worksheet.costpercapita_bt121, 0.001); end
-  def test_costpercapita_bu121; assert_in_epsilon(19.9229317555835, worksheet.costpercapita_bu121, 0.001); end
-  def test_costpercapita_bv121; assert_in_epsilon(35.701717177610725, worksheet.costpercapita_bv121, 0.001); end
-  def test_costpercapita_bw121; assert_in_epsilon(56.86360948187635, worksheet.costpercapita_bw121, 0.001); end
-  def test_costpercapita_bx121; assert_in_epsilon(82.04396697455775, worksheet.costpercapita_bx121, 0.001); end
-  def test_costpercapita_by121; assert_in_epsilon(112.44354324384177, worksheet.costpercapita_by121, 0.001); end
+  def test_costpercapita_bq121; assert_in_epsilon(187.97805136950524, worksheet.costpercapita_bq121, 0.001); end
+  def test_costpercapita_bs121; assert_in_epsilon(1.548922406351958, worksheet.costpercapita_bs121, 0.001); end
+  def test_costpercapita_bt121; assert_in_epsilon(8.538677563436714, worksheet.costpercapita_bt121, 0.001); end
+  def test_costpercapita_bu121; assert_in_epsilon(19.922931755583505, worksheet.costpercapita_bu121, 0.001); end
+  def test_costpercapita_bv121; assert_in_epsilon(35.70171717761073, worksheet.costpercapita_bv121, 0.001); end
+  def test_costpercapita_bw121; assert_in_epsilon(56.86360948187637, worksheet.costpercapita_bw121, 0.001); end
+  def test_costpercapita_bx121; assert_in_epsilon(82.04396697455776, worksheet.costpercapita_bx121, 0.001); end
+  def test_costpercapita_by121; assert_in_epsilon(112.4435432438418, worksheet.costpercapita_by121, 0.001); end
   def test_costpercapita_bz121; assert_in_epsilon(170.3449549208068, worksheet.costpercapita_bz121, 0.001); end
-  def test_costpercapita_ca121; assert_in_epsilon(187.9780513695052, worksheet.costpercapita_ca121, 0.001); end
-  def test_costpercapita_cc121; assert_in_epsilon(75.04293054373008, worksheet.costpercapita_cc121, 0.001); end
-  def test_costpercapita_cd121; assert_in_epsilon(1242.3711435223836, worksheet.costpercapita_cd121, 0.001); end
-  def test_costpercapita_cf121; assert_in_epsilon(-2.846694128127762, worksheet.costpercapita_cf121, 0.001); end
-  def test_costpercapita_cg121; assert_in_epsilon(-3.4498350754090077, worksheet.costpercapita_cg121, 0.001); end
-  def test_costpercapita_ch121; assert_in_delta(0.0628398722233026, worksheet.costpercapita_ch121, 0.001); end
-  def test_costpercapita_ci121; assert_in_epsilon(7.784603278818747, worksheet.costpercapita_ci121, 0.001); end
-  def test_costpercapita_cj121; assert_in_epsilon(16.844986440027974, worksheet.costpercapita_cj121, 0.001); end
-  def test_costpercapita_ck121; assert_in_epsilon(26.215814315985217, worksheet.costpercapita_ck121, 0.001); end
-  def test_costpercapita_cl121; assert_in_epsilon(39.813945351832764, worksheet.costpercapita_cl121, 0.001); end
+  def test_costpercapita_ca121; assert_in_epsilon(187.97805136950524, worksheet.costpercapita_ca121, 0.001); end
+  def test_costpercapita_cc121; assert_in_epsilon(75.0429305437301, worksheet.costpercapita_cc121, 0.001); end
+  def test_costpercapita_cd121; assert_in_epsilon(1242.3711435223838, worksheet.costpercapita_cd121, 0.001); end
+  def test_costpercapita_cf121; assert_in_epsilon(-2.8466941281277616, worksheet.costpercapita_cf121, 0.001); end
+  def test_costpercapita_cg121; assert_in_epsilon(-3.449835075409004, worksheet.costpercapita_cg121, 0.001); end
+  def test_costpercapita_ch121; assert_in_delta(0.06283987222330602, worksheet.costpercapita_ch121, 0.001); end
+  def test_costpercapita_ci121; assert_in_epsilon(7.7846032788187545, worksheet.costpercapita_ci121, 0.001); end
+  def test_costpercapita_cj121; assert_in_epsilon(16.844986440027988, worksheet.costpercapita_cj121, 0.001); end
+  def test_costpercapita_ck121; assert_in_epsilon(26.21581431598523, worksheet.costpercapita_ck121, 0.001); end
+  def test_costpercapita_cl121; assert_in_epsilon(39.813945351832785, worksheet.costpercapita_cl121, 0.001); end
   def test_costpercapita_cm121; assert_in_epsilon(79.98434555794695, worksheet.costpercapita_cm121, 0.001); end
-  def test_costpercapita_cn121; assert_in_epsilon(78.98052495697323, worksheet.costpercapita_cn121, 0.001); end
-  def test_costpercapita_cp121; assert_in_epsilon(27.043392285585714, worksheet.costpercapita_cp121, 0.001); end
-  def test_costpercapita_cq121; assert_in_epsilon(402.4020268019916, worksheet.costpercapita_cq121, 0.001); end
+  def test_costpercapita_cn121; assert_in_epsilon(78.98052495697324, worksheet.costpercapita_cn121, 0.001); end
+  def test_costpercapita_cp121; assert_in_epsilon(27.04339228558572, worksheet.costpercapita_cp121, 0.001); end
+  def test_costpercapita_cq121; assert_in_epsilon(402.4020268019917, worksheet.costpercapita_cq121, 0.001); end
   def test_costpercapita_cr121; assert_equal("ok", worksheet.costpercapita_cr121); end
   def test_costpercapita_a122; assert_equal("IV.c", worksheet.costpercapita_a122); end
   def test_costpercapita_b122; assert_equal("Micro wind", worksheet.costpercapita_b122); end
@@ -17956,46 +18567,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at123; assert_in_epsilon(1598.332304814198, worksheet.costpercapita_at123, 0.001); end
   def test_costpercapita_av123; assert_in_delta(0.1, worksheet.costpercapita_av123, 0.001); end
   def test_costpercapita_aw123; assert_in_epsilon(30, worksheet.costpercapita_aw123, 0.001); end
-  def test_costpercapita_ay123; assert_in_epsilon(7.339098102512057, worksheet.costpercapita_ay123, 0.001); end
-  def test_costpercapita_az123; assert_in_epsilon(27.9609047662511, worksheet.costpercapita_az123, 0.001); end
-  def test_costpercapita_ba123; assert_in_epsilon(16.998634462728084, worksheet.costpercapita_ba123, 0.001); end
-  def test_costpercapita_bb123; assert_in_epsilon(12.130738267871422, worksheet.costpercapita_bb123, 0.001); end
-  def test_costpercapita_bc123; assert_in_epsilon(12.2562831766189, worksheet.costpercapita_bc123, 0.001); end
-  def test_costpercapita_bd123; assert_in_epsilon(12.525063230994858, worksheet.costpercapita_bd123, 0.001); end
-  def test_costpercapita_be123; assert_in_epsilon(12.823950577888441, worksheet.costpercapita_be123, 0.001); end
-  def test_costpercapita_bf123; assert_in_epsilon(13.139127832577111, worksheet.costpercapita_bf123, 0.001); end
-  def test_costpercapita_bg123; assert_in_epsilon(10.341650256550555, worksheet.costpercapita_bg123, 0.001); end
-  def test_costpercapita_bi123; assert_in_epsilon(7.339098102512057, worksheet.costpercapita_bi123, 0.001); end
-  def test_costpercapita_bj123; assert_in_epsilon(35.05799560059261, worksheet.costpercapita_bj123, 0.001); end
-  def test_costpercapita_bk123; assert_in_epsilon(50.90889612897065, worksheet.costpercapita_bk123, 0.001); end
-  def test_costpercapita_bl123; assert_in_epsilon(61.46331807691178, worksheet.costpercapita_bl123, 0.001); end
-  def test_costpercapita_bm123; assert_in_epsilon(72.04041399385707, worksheet.costpercapita_bm123, 0.001); end
-  def test_costpercapita_bn123; assert_in_epsilon(82.8685151463528, worksheet.costpercapita_bn123, 0.001); end
-  def test_costpercapita_bo123; assert_in_epsilon(87.74188652467106, worksheet.costpercapita_bo123, 0.001); end
-  def test_costpercapita_bp123; assert_in_epsilon(86.73465529085404, worksheet.costpercapita_bp123, 0.001); end
-  def test_costpercapita_bq123; assert_in_epsilon(80.73193915572485, worksheet.costpercapita_bq123, 0.001); end
-  def test_costpercapita_bs123; assert_in_epsilon(24.954170090332493, worksheet.costpercapita_bs123, 0.001); end
-  def test_costpercapita_bt123; assert_in_epsilon(60.22675148128049, worksheet.costpercapita_bt123, 0.001); end
+  def test_costpercapita_ay123; assert_in_epsilon(7.33909810251206, worksheet.costpercapita_ay123, 0.001); end
+  def test_costpercapita_az123; assert_in_epsilon(27.960904766251105, worksheet.costpercapita_az123, 0.001); end
+  def test_costpercapita_ba123; assert_in_epsilon(16.998634462728088, worksheet.costpercapita_ba123, 0.001); end
+  def test_costpercapita_bb123; assert_in_epsilon(12.130738267871426, worksheet.costpercapita_bb123, 0.001); end
+  def test_costpercapita_bc123; assert_in_epsilon(12.256283176618902, worksheet.costpercapita_bc123, 0.001); end
+  def test_costpercapita_bd123; assert_in_epsilon(12.52506323099486, worksheet.costpercapita_bd123, 0.001); end
+  def test_costpercapita_be123; assert_in_epsilon(12.823950577888445, worksheet.costpercapita_be123, 0.001); end
+  def test_costpercapita_bf123; assert_in_epsilon(13.139127832577115, worksheet.costpercapita_bf123, 0.001); end
+  def test_costpercapita_bg123; assert_in_epsilon(10.341650256550558, worksheet.costpercapita_bg123, 0.001); end
+  def test_costpercapita_bi123; assert_in_epsilon(7.33909810251206, worksheet.costpercapita_bi123, 0.001); end
+  def test_costpercapita_bj123; assert_in_epsilon(35.05799560059262, worksheet.costpercapita_bj123, 0.001); end
+  def test_costpercapita_bk123; assert_in_epsilon(50.90889612897066, worksheet.costpercapita_bk123, 0.001); end
+  def test_costpercapita_bl123; assert_in_epsilon(61.46331807691179, worksheet.costpercapita_bl123, 0.001); end
+  def test_costpercapita_bm123; assert_in_epsilon(72.04041399385709, worksheet.costpercapita_bm123, 0.001); end
+  def test_costpercapita_bn123; assert_in_epsilon(82.86851514635282, worksheet.costpercapita_bn123, 0.001); end
+  def test_costpercapita_bo123; assert_in_epsilon(87.74188652467107, worksheet.costpercapita_bo123, 0.001); end
+  def test_costpercapita_bp123; assert_in_epsilon(86.73465529085405, worksheet.costpercapita_bp123, 0.001); end
+  def test_costpercapita_bq123; assert_in_epsilon(80.73193915572487, worksheet.costpercapita_bq123, 0.001); end
+  def test_costpercapita_bs123; assert_in_epsilon(24.954170090332497, worksheet.costpercapita_bs123, 0.001); end
+  def test_costpercapita_bt123; assert_in_epsilon(60.2267514812805, worksheet.costpercapita_bt123, 0.001); end
   def test_costpercapita_bu123; assert_in_epsilon(91.81263474073714, worksheet.costpercapita_bu123, 0.001); end
   def test_costpercapita_bv123; assert_in_epsilon(109.918586451836, worksheet.costpercapita_bv123, 0.001); end
-  def test_costpercapita_bw123; assert_in_epsilon(123.41729199589409, worksheet.costpercapita_bw123, 0.001); end
-  def test_costpercapita_bx123; assert_in_epsilon(138.25274238779042, worksheet.costpercapita_bx123, 0.001); end
+  def test_costpercapita_bw123; assert_in_epsilon(123.41729199589412, worksheet.costpercapita_bw123, 0.001); end
+  def test_costpercapita_bx123; assert_in_epsilon(138.25274238779045, worksheet.costpercapita_bx123, 0.001); end
   def test_costpercapita_by123; assert_in_epsilon(147.5571054390745, worksheet.costpercapita_by123, 0.001); end
   def test_costpercapita_bz123; assert_in_epsilon(151.11082980682968, worksheet.costpercapita_bz123, 0.001); end
   def test_costpercapita_ca123; assert_in_epsilon(149.79297213171003, worksheet.costpercapita_ca123, 0.001); end
   def test_costpercapita_cc123; assert_in_epsilon(110.78256494727609, worksheet.costpercapita_cc123, 0.001); end
   def test_costpercapita_cd123; assert_in_epsilon(2228.233558581614, worksheet.costpercapita_cd123, 0.001); end
-  def test_costpercapita_cf123; assert_in_epsilon(-15.722585256560427, worksheet.costpercapita_cf123, 0.001); end
-  def test_costpercapita_cg123; assert_in_epsilon(-17.659015929618423, worksheet.costpercapita_cg123, 0.001); end
-  def test_costpercapita_ch123; assert_in_epsilon(18.859961501823133, worksheet.costpercapita_ch123, 0.001); end
-  def test_costpercapita_ci123; assert_in_epsilon(38.592231662382595, worksheet.costpercapita_ci123, 0.001); end
-  def test_costpercapita_cj123; assert_in_epsilon(48.932627356022216, worksheet.costpercapita_cj123, 0.001); end
-  def test_costpercapita_ck123; assert_in_epsilon(59.25397519191102, worksheet.costpercapita_ck123, 0.001); end
+  def test_costpercapita_cf123; assert_in_epsilon(-15.722585256560425, worksheet.costpercapita_cf123, 0.001); end
+  def test_costpercapita_cg123; assert_in_epsilon(-17.659015929618416, worksheet.costpercapita_cg123, 0.001); end
+  def test_costpercapita_ch123; assert_in_epsilon(18.85996150182314, worksheet.costpercapita_ch123, 0.001); end
+  def test_costpercapita_ci123; assert_in_epsilon(38.59223166238261, worksheet.costpercapita_ci123, 0.001); end
+  def test_costpercapita_cj123; assert_in_epsilon(48.93262735602223, worksheet.costpercapita_cj123, 0.001); end
+  def test_costpercapita_ck123; assert_in_epsilon(59.253975191911046, worksheet.costpercapita_ck123, 0.001); end
   def test_costpercapita_cl123; assert_in_epsilon(63.56382947934311, worksheet.costpercapita_cl123, 0.001); end
-  def test_costpercapita_cm123; assert_in_epsilon(61.96236844114803, worksheet.costpercapita_cm123, 0.001); end
-  def test_costpercapita_cn123; assert_in_epsilon(61.23396867252288, worksheet.costpercapita_cn123, 0.001); end
-  def test_costpercapita_cp123; assert_in_epsilon(35.44637345766379, worksheet.costpercapita_cp123, 0.001); end
-  def test_costpercapita_cq123; assert_in_epsilon(629.9012537674158, worksheet.costpercapita_cq123, 0.001); end
+  def test_costpercapita_cm123; assert_in_epsilon(61.962368441148044, worksheet.costpercapita_cm123, 0.001); end
+  def test_costpercapita_cn123; assert_in_epsilon(61.2339686725229, worksheet.costpercapita_cn123, 0.001); end
+  def test_costpercapita_cp123; assert_in_epsilon(35.4463734576638, worksheet.costpercapita_cp123, 0.001); end
+  def test_costpercapita_cq123; assert_in_epsilon(629.901253767416, worksheet.costpercapita_cq123, 0.001); end
   def test_costpercapita_cr123; assert_equal("ok", worksheet.costpercapita_cr123); end
   def test_costpercapita_a124; assert_equal("V.b", worksheet.costpercapita_a124); end
   def test_costpercapita_b124; assert_equal("Bioenergy imports", worksheet.costpercapita_b124); end
@@ -18292,46 +18903,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at127; assert_in_epsilon(218.68523896168318, worksheet.costpercapita_at127, 0.001); end
   def test_costpercapita_av127; assert_in_delta(0.1, worksheet.costpercapita_av127, 0.001); end
   def test_costpercapita_aw127; assert_in_epsilon(15, worksheet.costpercapita_aw127, 0.001); end
-  def test_costpercapita_ay127; assert_in_epsilon(1.1786384172964512, worksheet.costpercapita_ay127, 0.001); end
-  def test_costpercapita_az127; assert_in_epsilon(2.427536833459904, worksheet.costpercapita_az127, 0.001); end
-  def test_costpercapita_ba127; assert_in_epsilon(2.8988076812197643, worksheet.costpercapita_ba127, 0.001); end
-  def test_costpercapita_bb127; assert_in_epsilon(3.109755386211047, worksheet.costpercapita_bb127, 0.001); end
-  def test_costpercapita_bc127; assert_in_epsilon(3.33548692928387, worksheet.costpercapita_bc127, 0.001); end
-  def test_costpercapita_bd127; assert_in_epsilon(3.5086845618368097, worksheet.costpercapita_bd127, 0.001); end
-  def test_costpercapita_be127; assert_in_epsilon(3.683869714816015, worksheet.costpercapita_be127, 0.001); end
-  def test_costpercapita_bf127; assert_in_epsilon(3.8649205057412086, worksheet.costpercapita_bf127, 0.001); end
-  def test_costpercapita_bg127; assert_in_epsilon(4.051436418286069, worksheet.costpercapita_bg127, 0.001); end
-  def test_costpercapita_bi127; assert_in_epsilon(1.1786384172964512, worksheet.costpercapita_bi127, 0.001); end
-  def test_costpercapita_bj127; assert_in_epsilon(3.5673095673240636, worksheet.costpercapita_bj127, 0.001); end
-  def test_costpercapita_bk127; assert_in_epsilon(6.349330131236979, worksheet.costpercapita_bk127, 0.001); end
-  def test_costpercapita_bl127; assert_in_epsilon(8.194165463195894, worksheet.costpercapita_bl127, 0.001); end
-  def test_costpercapita_bm127; assert_in_epsilon(9.092590154685709, worksheet.costpercapita_bm127, 0.001); end
-  def test_costpercapita_bn127; assert_in_epsilon(9.719146984845473, worksheet.costpercapita_bn127, 0.001); end
-  def test_costpercapita_bo127; assert_in_epsilon(10.305185653687309, worksheet.costpercapita_bo127, 0.001); end
-  def test_costpercapita_bp127; assert_in_epsilon(10.840663338893412, worksheet.costpercapita_bp127, 0.001); end
-  def test_costpercapita_bq127; assert_in_epsilon(11.387238924360645, worksheet.costpercapita_bq127, 0.001); end
-  def test_costpercapita_bs127; assert_in_epsilon(4.1669109210118735, worksheet.costpercapita_bs127, 0.001); end
-  def test_costpercapita_bt127; assert_in_epsilon(7.529726538394349, worksheet.costpercapita_bt127, 0.001); end
-  def test_costpercapita_bu127; assert_in_epsilon(11.336332921995918, worksheet.costpercapita_bu127, 0.001); end
-  def test_costpercapita_bv127; assert_in_epsilon(13.795170010327857, worksheet.costpercapita_bv127, 0.001); end
-  def test_costpercapita_bw127; assert_in_epsilon(15.34353082127028, worksheet.costpercapita_bw127, 0.001); end
-  def test_costpercapita_bx127; assert_in_epsilon(16.41518473563759, worksheet.costpercapita_bx127, 0.001); end
-  def test_costpercapita_by127; assert_in_epsilon(17.46246530285117, worksheet.costpercapita_by127, 0.001); end
-  def test_costpercapita_bz127; assert_in_epsilon(18.47142958285836, worksheet.costpercapita_bz127, 0.001); end
-  def test_costpercapita_ca127; assert_in_epsilon(19.50458074116908, worksheet.costpercapita_ca127, 0.001); end
-  def test_costpercapita_cc127; assert_in_epsilon(13.780592397279609, worksheet.costpercapita_cc127, 0.001); end
-  def test_costpercapita_cd127; assert_in_epsilon(275.85092782130306, worksheet.costpercapita_cd127, 0.001); end
-  def test_costpercapita_cf127; assert_in_epsilon(-1.809634086418971, worksheet.costpercapita_cf127, 0.001); end
-  def test_costpercapita_cg127; assert_in_delta(-0.12549806463355292, worksheet.costpercapita_cg127, 0.001); end
-  def test_costpercapita_ch127; assert_in_epsilon(1.9396177918659938, worksheet.costpercapita_ch127, 0.001); end
-  def test_costpercapita_ci127; assert_in_epsilon(3.463556120657513, worksheet.costpercapita_ci127, 0.001); end
-  def test_costpercapita_cj127; assert_in_epsilon(4.0185943994086175, worksheet.costpercapita_cj127, 0.001); end
-  def test_costpercapita_ck127; assert_in_epsilon(4.381680236867972, worksheet.costpercapita_ck127, 0.001); end
-  def test_costpercapita_cl127; assert_in_epsilon(4.701224465332882, worksheet.costpercapita_cl127, 0.001); end
-  def test_costpercapita_cm127; assert_in_epsilon(4.961284808447578, worksheet.costpercapita_cm127, 0.001); end
-  def test_costpercapita_cn127; assert_in_epsilon(5.224129421913239, worksheet.costpercapita_cn127, 0.001); end
-  def test_costpercapita_cp127; assert_in_epsilon(2.9727727881601416, worksheet.costpercapita_cp127, 0.001); end
-  def test_costpercapita_cq127; assert_in_epsilon(57.165688859619834, worksheet.costpercapita_cq127, 0.001); end
+  def test_costpercapita_ay127; assert_in_epsilon(1.1786384172964517, worksheet.costpercapita_ay127, 0.001); end
+  def test_costpercapita_az127; assert_in_epsilon(2.427536833459905, worksheet.costpercapita_az127, 0.001); end
+  def test_costpercapita_ba127; assert_in_epsilon(2.8988076812197656, worksheet.costpercapita_ba127, 0.001); end
+  def test_costpercapita_bb127; assert_in_epsilon(3.109755386211048, worksheet.costpercapita_bb127, 0.001); end
+  def test_costpercapita_bc127; assert_in_epsilon(3.335486929283871, worksheet.costpercapita_bc127, 0.001); end
+  def test_costpercapita_bd127; assert_in_epsilon(3.5086845618368114, worksheet.costpercapita_bd127, 0.001); end
+  def test_costpercapita_be127; assert_in_epsilon(3.6838697148160153, worksheet.costpercapita_be127, 0.001); end
+  def test_costpercapita_bf127; assert_in_epsilon(3.86492050574121, worksheet.costpercapita_bf127, 0.001); end
+  def test_costpercapita_bg127; assert_in_epsilon(4.0514364182860705, worksheet.costpercapita_bg127, 0.001); end
+  def test_costpercapita_bi127; assert_in_epsilon(1.1786384172964517, worksheet.costpercapita_bi127, 0.001); end
+  def test_costpercapita_bj127; assert_in_epsilon(3.5673095673240653, worksheet.costpercapita_bj127, 0.001); end
+  def test_costpercapita_bk127; assert_in_epsilon(6.349330131236981, worksheet.costpercapita_bk127, 0.001); end
+  def test_costpercapita_bl127; assert_in_epsilon(8.194165463195896, worksheet.costpercapita_bl127, 0.001); end
+  def test_costpercapita_bm127; assert_in_epsilon(9.092590154685713, worksheet.costpercapita_bm127, 0.001); end
+  def test_costpercapita_bn127; assert_in_epsilon(9.719146984845478, worksheet.costpercapita_bn127, 0.001); end
+  def test_costpercapita_bo127; assert_in_epsilon(10.305185653687312, worksheet.costpercapita_bo127, 0.001); end
+  def test_costpercapita_bp127; assert_in_epsilon(10.840663338893417, worksheet.costpercapita_bp127, 0.001); end
+  def test_costpercapita_bq127; assert_in_epsilon(11.387238924360652, worksheet.costpercapita_bq127, 0.001); end
+  def test_costpercapita_bs127; assert_in_epsilon(4.166910921011874, worksheet.costpercapita_bs127, 0.001); end
+  def test_costpercapita_bt127; assert_in_epsilon(7.529726538394351, worksheet.costpercapita_bt127, 0.001); end
+  def test_costpercapita_bu127; assert_in_epsilon(11.33633292199592, worksheet.costpercapita_bu127, 0.001); end
+  def test_costpercapita_bv127; assert_in_epsilon(13.79517001032786, worksheet.costpercapita_bv127, 0.001); end
+  def test_costpercapita_bw127; assert_in_epsilon(15.343530821270283, worksheet.costpercapita_bw127, 0.001); end
+  def test_costpercapita_bx127; assert_in_epsilon(16.415184735637595, worksheet.costpercapita_bx127, 0.001); end
+  def test_costpercapita_by127; assert_in_epsilon(17.462465302851175, worksheet.costpercapita_by127, 0.001); end
+  def test_costpercapita_bz127; assert_in_epsilon(18.471429582858363, worksheet.costpercapita_bz127, 0.001); end
+  def test_costpercapita_ca127; assert_in_epsilon(19.504580741169082, worksheet.costpercapita_ca127, 0.001); end
+  def test_costpercapita_cc127; assert_in_epsilon(13.780592397279612, worksheet.costpercapita_cc127, 0.001); end
+  def test_costpercapita_cd127; assert_in_epsilon(275.8509278213031, worksheet.costpercapita_cd127, 0.001); end
+  def test_costpercapita_cf127; assert_in_epsilon(-1.8096340864189706, worksheet.costpercapita_cf127, 0.001); end
+  def test_costpercapita_cg127; assert_in_delta(-0.12549806463355115, worksheet.costpercapita_cg127, 0.001); end
+  def test_costpercapita_ch127; assert_in_epsilon(1.9396177918659965, worksheet.costpercapita_ch127, 0.001); end
+  def test_costpercapita_ci127; assert_in_epsilon(3.4635561206575165, worksheet.costpercapita_ci127, 0.001); end
+  def test_costpercapita_cj127; assert_in_epsilon(4.01859439940862, worksheet.costpercapita_cj127, 0.001); end
+  def test_costpercapita_ck127; assert_in_epsilon(4.381680236867976, worksheet.costpercapita_ck127, 0.001); end
+  def test_costpercapita_cl127; assert_in_epsilon(4.701224465332887, worksheet.costpercapita_cl127, 0.001); end
+  def test_costpercapita_cm127; assert_in_epsilon(4.961284808447583, worksheet.costpercapita_cm127, 0.001); end
+  def test_costpercapita_cn127; assert_in_epsilon(5.224129421913245, worksheet.costpercapita_cn127, 0.001); end
+  def test_costpercapita_cp127; assert_in_epsilon(2.9727727881601447, worksheet.costpercapita_cp127, 0.001); end
+  def test_costpercapita_cq127; assert_in_epsilon(57.165688859619905, worksheet.costpercapita_cq127, 0.001); end
   def test_costpercapita_cr127; assert_equal("ok", worksheet.costpercapita_cr127); end
   def test_costpercapita_a128; assert_equal("VI.b.Waste", worksheet.costpercapita_a128); end
   def test_costpercapita_b128; assert_equal("Waste arising", worksheet.costpercapita_b128); end
@@ -18376,46 +18987,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at128; assert_in_epsilon(3906.190234463422, worksheet.costpercapita_at128, 0.001); end
   def test_costpercapita_av128; assert_in_delta(0.1, worksheet.costpercapita_av128, 0.001); end
   def test_costpercapita_aw128; assert_in_epsilon(15, worksheet.costpercapita_aw128, 0.001); end
-  def test_costpercapita_ay128; assert_in_epsilon(19.56260168708006, worksheet.costpercapita_ay128, 0.001); end
-  def test_costpercapita_az128; assert_in_epsilon(34.01105430869374, worksheet.costpercapita_az128, 0.001); end
-  def test_costpercapita_ba128; assert_in_epsilon(37.920846197786936, worksheet.costpercapita_ba128, 0.001); end
-  def test_costpercapita_bb128; assert_in_epsilon(35.89485096068881, worksheet.costpercapita_bb128, 0.001); end
-  def test_costpercapita_bc128; assert_in_epsilon(36.50763172142719, worksheet.costpercapita_bc128, 0.001); end
-  def test_costpercapita_bd128; assert_in_epsilon(38.29215698254403, worksheet.costpercapita_bd128, 0.001); end
-  def test_costpercapita_be128; assert_in_epsilon(36.91916988920794, worksheet.costpercapita_be128, 0.001); end
-  def test_costpercapita_bf128; assert_in_epsilon(37.1994302281214, worksheet.costpercapita_bf128, 0.001); end
-  def test_costpercapita_bg128; assert_in_epsilon(38.47091545838914, worksheet.costpercapita_bg128, 0.001); end
-  def test_costpercapita_bi128; assert_in_epsilon(19.56260168708006, worksheet.costpercapita_bi128, 0.001); end
-  def test_costpercapita_bj128; assert_in_epsilon(52.92857785041174, worksheet.costpercapita_bj128, 0.001); end
-  def test_costpercapita_bk128; assert_in_epsilon(89.1166403035747, worksheet.costpercapita_bk128, 0.001); end
-  def test_costpercapita_bl128; assert_in_epsilon(104.52050742919397, worksheet.costpercapita_bl128, 0.001); end
-  def test_costpercapita_bm128; assert_in_epsilon(107.1645898315602, worksheet.costpercapita_bm128, 0.001); end
-  def test_costpercapita_bn128; assert_in_epsilon(108.03159594227176, worksheet.costpercapita_bn128, 0.001); end
-  def test_costpercapita_bo128; assert_in_epsilon(109.28212663537691, worksheet.costpercapita_bo128, 0.001); end
-  def test_costpercapita_bp128; assert_in_epsilon(110.11010397499628, worksheet.costpercapita_bp128, 0.001); end
-  def test_costpercapita_bq128; assert_in_epsilon(110.48361667669292, worksheet.costpercapita_bq128, 0.001); end
-  def test_costpercapita_bs128; assert_in_epsilon(140.23247219979552, worksheet.costpercapita_bs128, 0.001); end
-  def test_costpercapita_bt128; assert_in_epsilon(178.227602421501, worksheet.costpercapita_bt128, 0.001); end
-  def test_costpercapita_bu128; assert_in_epsilon(218.92824035680223, worksheet.costpercapita_bu128, 0.001); end
-  def test_costpercapita_bv128; assert_in_epsilon(235.80879823043009, worksheet.costpercapita_bv128, 0.001); end
-  def test_costpercapita_bw128; assert_in_epsilon(240.32564577965428, worksheet.costpercapita_bw128, 0.001); end
-  def test_costpercapita_bx128; assert_in_epsilon(241.5830795957868, worksheet.costpercapita_bx128, 0.001); end
-  def test_costpercapita_by128; assert_in_epsilon(243.4834805879239, worksheet.costpercapita_by128, 0.001); end
-  def test_costpercapita_bz128; assert_in_epsilon(245.10789395803926, worksheet.costpercapita_bz128, 0.001); end
-  def test_costpercapita_ca128; assert_in_epsilon(246.41513591872246, worksheet.costpercapita_ca128, 0.001); end
-  def test_costpercapita_cc128; assert_in_epsilon(221.1235943387395, worksheet.costpercapita_cc128, 0.001); end
-  def test_costpercapita_cd128; assert_in_epsilon(4622.354068506165, worksheet.costpercapita_cd128, 0.001); end
-  def test_costpercapita_cf128; assert_in_epsilon(-30.035632906977643, worksheet.costpercapita_cf128, 0.001); end
-  def test_costpercapita_cg128; assert_in_epsilon(1.190421217352481, worksheet.costpercapita_cg128, 0.001); end
-  def test_costpercapita_ch128; assert_in_epsilon(31.430846078202944, worksheet.costpercapita_ch128, 0.001); end
-  def test_costpercapita_ci128; assert_in_epsilon(49.916689374376325, worksheet.costpercapita_ci128, 0.001); end
-  def test_costpercapita_cj128; assert_in_epsilon(51.62859993952009, worksheet.costpercapita_cj128, 0.001); end
-  def test_costpercapita_ck128; assert_in_epsilon(49.78095784681757, worksheet.costpercapita_ck128, 0.001); end
-  def test_costpercapita_cl128; assert_in_epsilon(53.12009833853262, worksheet.costpercapita_cl128, 0.001); end
-  def test_costpercapita_cm128; assert_in_epsilon(53.52173919410386, worksheet.costpercapita_cm128, 0.001); end
-  def test_costpercapita_cn128; assert_in_epsilon(51.96104834529783, worksheet.costpercapita_cn128, 0.001); end
-  def test_costpercapita_cp128; assert_in_epsilon(34.723863047469564, worksheet.costpercapita_cp128, 0.001); end
-  def test_costpercapita_cq128; assert_in_epsilon(716.1638340427432, worksheet.costpercapita_cq128, 0.001); end
+  def test_costpercapita_ay128; assert_in_epsilon(19.56260168708007, worksheet.costpercapita_ay128, 0.001); end
+  def test_costpercapita_az128; assert_in_epsilon(34.01105430869375, worksheet.costpercapita_az128, 0.001); end
+  def test_costpercapita_ba128; assert_in_epsilon(37.92084619778696, worksheet.costpercapita_ba128, 0.001); end
+  def test_costpercapita_bb128; assert_in_epsilon(35.89485096068882, worksheet.costpercapita_bb128, 0.001); end
+  def test_costpercapita_bc128; assert_in_epsilon(36.50763172142721, worksheet.costpercapita_bc128, 0.001); end
+  def test_costpercapita_bd128; assert_in_epsilon(38.29215698254404, worksheet.costpercapita_bd128, 0.001); end
+  def test_costpercapita_be128; assert_in_epsilon(36.919169889207964, worksheet.costpercapita_be128, 0.001); end
+  def test_costpercapita_bf128; assert_in_epsilon(37.199430228121415, worksheet.costpercapita_bf128, 0.001); end
+  def test_costpercapita_bg128; assert_in_epsilon(38.470915458389165, worksheet.costpercapita_bg128, 0.001); end
+  def test_costpercapita_bi128; assert_in_epsilon(19.56260168708007, worksheet.costpercapita_bi128, 0.001); end
+  def test_costpercapita_bj128; assert_in_epsilon(52.92857785041176, worksheet.costpercapita_bj128, 0.001); end
+  def test_costpercapita_bk128; assert_in_epsilon(89.11664030357474, worksheet.costpercapita_bk128, 0.001); end
+  def test_costpercapita_bl128; assert_in_epsilon(104.52050742919401, worksheet.costpercapita_bl128, 0.001); end
+  def test_costpercapita_bm128; assert_in_epsilon(107.16458983156025, worksheet.costpercapita_bm128, 0.001); end
+  def test_costpercapita_bn128; assert_in_epsilon(108.0315959422718, worksheet.costpercapita_bn128, 0.001); end
+  def test_costpercapita_bo128; assert_in_epsilon(109.28212663537698, worksheet.costpercapita_bo128, 0.001); end
+  def test_costpercapita_bp128; assert_in_epsilon(110.11010397499633, worksheet.costpercapita_bp128, 0.001); end
+  def test_costpercapita_bq128; assert_in_epsilon(110.48361667669299, worksheet.costpercapita_bq128, 0.001); end
+  def test_costpercapita_bs128; assert_in_epsilon(140.23247219979555, worksheet.costpercapita_bs128, 0.001); end
+  def test_costpercapita_bt128; assert_in_epsilon(178.22760242150102, worksheet.costpercapita_bt128, 0.001); end
+  def test_costpercapita_bu128; assert_in_epsilon(218.92824035680226, worksheet.costpercapita_bu128, 0.001); end
+  def test_costpercapita_bv128; assert_in_epsilon(235.80879823043014, worksheet.costpercapita_bv128, 0.001); end
+  def test_costpercapita_bw128; assert_in_epsilon(240.32564577965434, worksheet.costpercapita_bw128, 0.001); end
+  def test_costpercapita_bx128; assert_in_epsilon(241.58307959578687, worksheet.costpercapita_bx128, 0.001); end
+  def test_costpercapita_by128; assert_in_epsilon(243.48348058792396, worksheet.costpercapita_by128, 0.001); end
+  def test_costpercapita_bz128; assert_in_epsilon(245.10789395803934, worksheet.costpercapita_bz128, 0.001); end
+  def test_costpercapita_ca128; assert_in_epsilon(246.41513591872254, worksheet.costpercapita_ca128, 0.001); end
+  def test_costpercapita_cc128; assert_in_epsilon(221.12359433873957, worksheet.costpercapita_cc128, 0.001); end
+  def test_costpercapita_cd128; assert_in_epsilon(4622.354068506166, worksheet.costpercapita_cd128, 0.001); end
+  def test_costpercapita_cf128; assert_in_epsilon(-30.035632906977636, worksheet.costpercapita_cf128, 0.001); end
+  def test_costpercapita_cg128; assert_in_epsilon(1.1904212173525022, worksheet.costpercapita_cg128, 0.001); end
+  def test_costpercapita_ch128; assert_in_epsilon(31.430846078202983, worksheet.costpercapita_ch128, 0.001); end
+  def test_costpercapita_ci128; assert_in_epsilon(49.91668937437636, worksheet.costpercapita_ci128, 0.001); end
+  def test_costpercapita_cj128; assert_in_epsilon(51.62859993952013, worksheet.costpercapita_cj128, 0.001); end
+  def test_costpercapita_ck128; assert_in_epsilon(49.780957846817614, worksheet.costpercapita_ck128, 0.001); end
+  def test_costpercapita_cl128; assert_in_epsilon(53.120098338532685, worksheet.costpercapita_cl128, 0.001); end
+  def test_costpercapita_cm128; assert_in_epsilon(53.52173919410391, worksheet.costpercapita_cm128, 0.001); end
+  def test_costpercapita_cn128; assert_in_epsilon(51.961048345297904, worksheet.costpercapita_cn128, 0.001); end
+  def test_costpercapita_cp128; assert_in_epsilon(34.72386304746961, worksheet.costpercapita_cp128, 0.001); end
+  def test_costpercapita_cq128; assert_in_epsilon(716.163834042744, worksheet.costpercapita_cq128, 0.001); end
   def test_costpercapita_cr128; assert_equal("ok", worksheet.costpercapita_cr128); end
   def test_costpercapita_a129; assert_equal("VI.c", worksheet.costpercapita_a129); end
   def test_costpercapita_b129; assert_equal("Marine algae", worksheet.costpercapita_b129); end
@@ -18712,46 +19323,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at132; assert_in_epsilon(4703.488020334728, worksheet.costpercapita_at132, 0.001); end
   def test_costpercapita_av132; assert_in_delta(0.1, worksheet.costpercapita_av132, 0.001); end
   def test_costpercapita_aw132; assert_in_epsilon(20, worksheet.costpercapita_aw132, 0.001); end
-  def test_costpercapita_ay132; assert_in_epsilon(41.021722204456, worksheet.costpercapita_ay132, 0.001); end
-  def test_costpercapita_az132; assert_in_epsilon(67.03925338571473, worksheet.costpercapita_az132, 0.001); end
+  def test_costpercapita_ay132; assert_in_epsilon(41.021722204456005, worksheet.costpercapita_ay132, 0.001); end
+  def test_costpercapita_az132; assert_in_epsilon(67.03925338571474, worksheet.costpercapita_az132, 0.001); end
   def test_costpercapita_ba132; assert_in_epsilon(100.52243648735445, worksheet.costpercapita_ba132, 0.001); end
   def test_costpercapita_bb132; assert_in_epsilon(144.75439014583355, worksheet.costpercapita_bb132, 0.001); end
-  def test_costpercapita_bc132; assert_in_epsilon(133.22794741853232, worksheet.costpercapita_bc132, 0.001); end
+  def test_costpercapita_bc132; assert_in_epsilon(133.22794741853235, worksheet.costpercapita_bc132, 0.001); end
   def test_costpercapita_bd132; assert_in_epsilon(130.10482553285823, worksheet.costpercapita_bd132, 0.001); end
-  def test_costpercapita_be132; assert_in_epsilon(152.96284440135113, worksheet.costpercapita_be132, 0.001); end
-  def test_costpercapita_bf132; assert_in_epsilon(155.80634075109037, worksheet.costpercapita_bf132, 0.001); end
-  def test_costpercapita_bg132; assert_in_epsilon(171.04593797803736, worksheet.costpercapita_bg132, 0.001); end
-  def test_costpercapita_bi132; assert_in_epsilon(41.021722204456, worksheet.costpercapita_bi132, 0.001); end
-  def test_costpercapita_bj132; assert_in_epsilon(106.7082814596817, worksheet.costpercapita_bj132, 0.001); end
+  def test_costpercapita_be132; assert_in_epsilon(152.96284440135116, worksheet.costpercapita_be132, 0.001); end
+  def test_costpercapita_bf132; assert_in_epsilon(155.8063407510904, worksheet.costpercapita_bf132, 0.001); end
+  def test_costpercapita_bg132; assert_in_epsilon(171.04593797803741, worksheet.costpercapita_bg132, 0.001); end
+  def test_costpercapita_bi132; assert_in_epsilon(41.021722204456005, worksheet.costpercapita_bi132, 0.001); end
+  def test_costpercapita_bj132; assert_in_epsilon(106.70828145968171, worksheet.costpercapita_bj132, 0.001); end
   def test_costpercapita_bk132; assert_in_epsilon(203.7372861746452, worksheet.costpercapita_bk132, 0.001); end
   def test_costpercapita_bl132; assert_in_epsilon(342.1832620040143, worksheet.costpercapita_bl132, 0.001); end
-  def test_costpercapita_bm132; assert_in_epsilon(429.8962768224971, worksheet.costpercapita_bm132, 0.001); end
-  def test_costpercapita_bn132; assert_in_epsilon(490.1943278587194, worksheet.costpercapita_bn132, 0.001); end
-  def test_costpercapita_bo132; assert_in_epsilon(542.1593591914136, worksheet.costpercapita_bo132, 0.001); end
-  def test_costpercapita_bp132; assert_in_epsilon(680.059383388766, worksheet.costpercapita_bp132, 0.001); end
-  def test_costpercapita_bq132; assert_in_epsilon(593.5199911513039, worksheet.costpercapita_bq132, 0.001); end
-  def test_costpercapita_bs132; assert_in_epsilon(59.03616093166827, worksheet.costpercapita_bs132, 0.001); end
-  def test_costpercapita_bt132; assert_in_epsilon(123.72063669969003, worksheet.costpercapita_bt132, 0.001); end
+  def test_costpercapita_bm132; assert_in_epsilon(429.89627682249716, worksheet.costpercapita_bm132, 0.001); end
+  def test_costpercapita_bn132; assert_in_epsilon(490.19432785871953, worksheet.costpercapita_bn132, 0.001); end
+  def test_costpercapita_bo132; assert_in_epsilon(542.1593591914138, worksheet.costpercapita_bo132, 0.001); end
+  def test_costpercapita_bp132; assert_in_epsilon(680.0593833887663, worksheet.costpercapita_bp132, 0.001); end
+  def test_costpercapita_bq132; assert_in_epsilon(593.5199911513041, worksheet.costpercapita_bq132, 0.001); end
+  def test_costpercapita_bs132; assert_in_epsilon(59.036160931668284, worksheet.costpercapita_bs132, 0.001); end
+  def test_costpercapita_bt132; assert_in_epsilon(123.72063669969006, worksheet.costpercapita_bt132, 0.001); end
   def test_costpercapita_bu132; assert_in_epsilon(221.99726222108802, worksheet.costpercapita_bu132, 0.001); end
   def test_costpercapita_bv132; assert_in_epsilon(363.9768535028616, worksheet.costpercapita_bv132, 0.001); end
-  def test_costpercapita_bw132; assert_in_epsilon(453.6389326043641, worksheet.costpercapita_bw132, 0.001); end
-  def test_costpercapita_bx132; assert_in_epsilon(515.2420000049834, worksheet.costpercapita_bx132, 0.001); end
-  def test_costpercapita_by132; assert_in_epsilon(569.5504210428777, worksheet.costpercapita_by132, 0.001); end
-  def test_costpercapita_bz132; assert_in_epsilon(709.3662391662384, worksheet.costpercapita_bz132, 0.001); end
-  def test_costpercapita_ca132; assert_in_epsilon(625.1605573750014, worksheet.costpercapita_ca132, 0.001); end
-  def test_costpercapita_cc132; assert_in_epsilon(404.6321181720858, worksheet.costpercapita_cc132, 0.001); end
-  def test_costpercapita_cd132; assert_in_epsilon(7616.37919529493, worksheet.costpercapita_cd132, 0.001); end
-  def test_costpercapita_cf132; assert_in_epsilon(-75.39195975616764, worksheet.costpercapita_cf132, 0.001); end
-  def test_costpercapita_cg132; assert_in_epsilon(-7.440309625182797, worksheet.costpercapita_cg132, 0.001); end
+  def test_costpercapita_bw132; assert_in_epsilon(453.63893260436413, worksheet.costpercapita_bw132, 0.001); end
+  def test_costpercapita_bx132; assert_in_epsilon(515.2420000049835, worksheet.costpercapita_bx132, 0.001); end
+  def test_costpercapita_by132; assert_in_epsilon(569.5504210428779, worksheet.costpercapita_by132, 0.001); end
+  def test_costpercapita_bz132; assert_in_epsilon(709.3662391662385, worksheet.costpercapita_bz132, 0.001); end
+  def test_costpercapita_ca132; assert_in_epsilon(625.1605573750015, worksheet.costpercapita_ca132, 0.001); end
+  def test_costpercapita_cc132; assert_in_epsilon(404.632118172086, worksheet.costpercapita_cc132, 0.001); end
+  def test_costpercapita_cd132; assert_in_epsilon(7616.3791952949305, worksheet.costpercapita_cd132, 0.001); end
+  def test_costpercapita_cf132; assert_in_epsilon(-75.39195975616762, worksheet.costpercapita_cf132, 0.001); end
+  def test_costpercapita_cg132; assert_in_epsilon(-7.440309625182783, worksheet.costpercapita_cg132, 0.001); end
   def test_costpercapita_ch132; assert_in_epsilon(32.576452514550105, worksheet.costpercapita_ch132, 0.001); end
   def test_costpercapita_ci132; assert_in_epsilon(95.70811715974529, worksheet.costpercapita_ci132, 0.001); end
-  def test_costpercapita_cj132; assert_in_epsilon(203.04735290243335, worksheet.costpercapita_cj132, 0.001); end
-  def test_costpercapita_ck132; assert_in_epsilon(268.6631833743075, worksheet.costpercapita_ck132, 0.001); end
-  def test_costpercapita_cl132; assert_in_epsilon(281.70757467813013, worksheet.costpercapita_cl132, 0.001); end
-  def test_costpercapita_cm132; assert_in_epsilon(414.76594140340137, worksheet.costpercapita_cm132, 0.001); end
-  def test_costpercapita_cn132; assert_in_epsilon(302.2778927549254, worksheet.costpercapita_cn132, 0.001); end
-  def test_costpercapita_cp132; assert_in_epsilon(168.43491615623807, worksheet.costpercapita_cp132, 0.001); end
-  def test_costpercapita_cq132; assert_in_epsilon(2912.891174960201, worksheet.costpercapita_cq132, 0.001); end
+  def test_costpercapita_cj132; assert_in_epsilon(203.0473529024334, worksheet.costpercapita_cj132, 0.001); end
+  def test_costpercapita_ck132; assert_in_epsilon(268.6631833743076, worksheet.costpercapita_ck132, 0.001); end
+  def test_costpercapita_cl132; assert_in_epsilon(281.70757467813036, worksheet.costpercapita_cl132, 0.001); end
+  def test_costpercapita_cm132; assert_in_epsilon(414.7659414034016, worksheet.costpercapita_cm132, 0.001); end
+  def test_costpercapita_cn132; assert_in_epsilon(302.2778927549256, worksheet.costpercapita_cn132, 0.001); end
+  def test_costpercapita_cp132; assert_in_epsilon(168.43491615623816, worksheet.costpercapita_cp132, 0.001); end
+  def test_costpercapita_cq132; assert_in_epsilon(2912.8911749602025, worksheet.costpercapita_cq132, 0.001); end
   def test_costpercapita_cr132; assert_equal("ok", worksheet.costpercapita_cr132); end
   def test_costpercapita_a133; assert_equal("VII.c", worksheet.costpercapita_a133); end
   def test_costpercapita_b133; assert_equal("Storage, demand shifting, backup", worksheet.costpercapita_b133); end
@@ -18797,45 +19408,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av133; assert_in_delta(0.1, worksheet.costpercapita_av133, 0.001); end
   def test_costpercapita_aw133; assert_in_epsilon(15, worksheet.costpercapita_aw133, 0.001); end
   def test_costpercapita_ay133; assert_in_delta(0, (worksheet.costpercapita_ay133||0), 0.001); end
-  def test_costpercapita_az133; assert_in_epsilon(2.3998442213496225, worksheet.costpercapita_az133, 0.001); end
-  def test_costpercapita_ba133; assert_in_epsilon(10.89389161715436, worksheet.costpercapita_ba133, 0.001); end
-  def test_costpercapita_bb133; assert_in_epsilon(49.496933853670456, worksheet.costpercapita_bb133, 0.001); end
-  def test_costpercapita_bc133; assert_in_epsilon(46.01966613690411, worksheet.costpercapita_bc133, 0.001); end
-  def test_costpercapita_bd133; assert_in_epsilon(58.36284005519962, worksheet.costpercapita_bd133, 0.001); end
-  def test_costpercapita_be133; assert_in_epsilon(8.09146295178472, worksheet.costpercapita_be133, 0.001); end
-  def test_costpercapita_bf133; assert_in_epsilon(49.3926924541541, worksheet.costpercapita_bf133, 0.001); end
-  def test_costpercapita_bg133; assert_in_epsilon(5.444661652472498, worksheet.costpercapita_bg133, 0.001); end
+  def test_costpercapita_az133; assert_in_epsilon(2.3998442213496234, worksheet.costpercapita_az133, 0.001); end
+  def test_costpercapita_ba133; assert_in_epsilon(10.893891617154365, worksheet.costpercapita_ba133, 0.001); end
+  def test_costpercapita_bb133; assert_in_epsilon(49.49693385367047, worksheet.costpercapita_bb133, 0.001); end
+  def test_costpercapita_bc133; assert_in_epsilon(46.01966613690412, worksheet.costpercapita_bc133, 0.001); end
+  def test_costpercapita_bd133; assert_in_epsilon(58.362840055199655, worksheet.costpercapita_bd133, 0.001); end
+  def test_costpercapita_be133; assert_in_epsilon(8.091462951784724, worksheet.costpercapita_be133, 0.001); end
+  def test_costpercapita_bf133; assert_in_epsilon(49.39269245415412, worksheet.costpercapita_bf133, 0.001); end
+  def test_costpercapita_bg133; assert_in_epsilon(5.444661652472501, worksheet.costpercapita_bg133, 0.001); end
   def test_costpercapita_bi133; assert_in_delta(0, (worksheet.costpercapita_bi133||0), 0.001); end
-  def test_costpercapita_bj133; assert_in_epsilon(2.3998442213496225, worksheet.costpercapita_bj133, 0.001); end
-  def test_costpercapita_bk133; assert_in_epsilon(13.215169377335554, worksheet.costpercapita_bk133, 0.001); end
-  def test_costpercapita_bl133; assert_in_epsilon(62.30291566765041, worksheet.costpercapita_bl133, 0.001); end
-  def test_costpercapita_bm133; assert_in_epsilon(104.4325077078565, worksheet.costpercapita_bm133, 0.001); end
-  def test_costpercapita_bn133; assert_in_epsilon(150.30906977531927, worksheet.costpercapita_bn133, 0.001); end
-  def test_costpercapita_bo133; assert_in_epsilon(109.18696058237096, worksheet.costpercapita_bo133, 0.001); end
-  def test_costpercapita_bp133; assert_in_epsilon(113.30153006806124, worksheet.costpercapita_bp133, 0.001); end
-  def test_costpercapita_bq133; assert_in_epsilon(61.69766722286636, worksheet.costpercapita_bq133, 0.001); end
+  def test_costpercapita_bj133; assert_in_epsilon(2.3998442213496234, worksheet.costpercapita_bj133, 0.001); end
+  def test_costpercapita_bk133; assert_in_epsilon(13.215169377335563, worksheet.costpercapita_bk133, 0.001); end
+  def test_costpercapita_bl133; assert_in_epsilon(62.30291566765044, worksheet.costpercapita_bl133, 0.001); end
+  def test_costpercapita_bm133; assert_in_epsilon(104.43250770785654, worksheet.costpercapita_bm133, 0.001); end
+  def test_costpercapita_bn133; assert_in_epsilon(150.30906977531933, worksheet.costpercapita_bn133, 0.001); end
+  def test_costpercapita_bo133; assert_in_epsilon(109.18696058237101, worksheet.costpercapita_bo133, 0.001); end
+  def test_costpercapita_bp133; assert_in_epsilon(113.30153006806133, worksheet.costpercapita_bp133, 0.001); end
+  def test_costpercapita_bq133; assert_in_epsilon(61.69766722286639, worksheet.costpercapita_bq133, 0.001); end
   def test_costpercapita_bs133; assert_in_epsilon(2.6107540216924687, worksheet.costpercapita_bs133, 0.001); end
   def test_costpercapita_bt133; assert_in_epsilon(4.93800514142745, worksheet.costpercapita_bt133, 0.001); end
-  def test_costpercapita_bu133; assert_in_epsilon(16.229001437795247, worksheet.costpercapita_bu133, 0.001); end
-  def test_costpercapita_bv133; assert_in_epsilon(72.15550476361742, worksheet.costpercapita_bv133, 0.001); end
-  def test_costpercapita_bw133; assert_in_epsilon(117.66715852451847, worksheet.costpercapita_bw133, 0.001); end
-  def test_costpercapita_bx133; assert_in_epsilon(169.12642386159922, worksheet.costpercapita_bx133, 0.001); end
-  def test_costpercapita_by133; assert_in_epsilon(131.88631217053702, worksheet.costpercapita_by133, 0.001); end
-  def test_costpercapita_bz133; assert_in_epsilon(141.2926987627282, worksheet.costpercapita_bz133, 0.001); end
-  def test_costpercapita_ca133; assert_in_epsilon(92.0486628304389, worksheet.costpercapita_ca133, 0.001); end
-  def test_costpercapita_cc133; assert_in_epsilon(83.10605794603937, worksheet.costpercapita_cc133, 0.001); end
-  def test_costpercapita_cd133; assert_in_epsilon(1523.843703951761, worksheet.costpercapita_cd133, 0.001); end
+  def test_costpercapita_bu133; assert_in_epsilon(16.229001437795258, worksheet.costpercapita_bu133, 0.001); end
+  def test_costpercapita_bv133; assert_in_epsilon(72.15550476361743, worksheet.costpercapita_bv133, 0.001); end
+  def test_costpercapita_bw133; assert_in_epsilon(117.6671585245185, worksheet.costpercapita_bw133, 0.001); end
+  def test_costpercapita_bx133; assert_in_epsilon(169.12642386159928, worksheet.costpercapita_bx133, 0.001); end
+  def test_costpercapita_by133; assert_in_epsilon(131.88631217053705, worksheet.costpercapita_by133, 0.001); end
+  def test_costpercapita_bz133; assert_in_epsilon(141.2926987627283, worksheet.costpercapita_bz133, 0.001); end
+  def test_costpercapita_ca133; assert_in_epsilon(92.04866283043893, worksheet.costpercapita_ca133, 0.001); end
+  def test_costpercapita_cc133; assert_in_epsilon(83.1060579460394, worksheet.costpercapita_cc133, 0.001); end
+  def test_costpercapita_cd133; assert_in_epsilon(1523.8437039517614, worksheet.costpercapita_cd133, 0.001); end
   def test_costpercapita_cf133; assert_in_delta(0, (worksheet.costpercapita_cf133||0), 0.001); end
-  def test_costpercapita_cg133; assert_in_epsilon(-1.2508369687183611, worksheet.costpercapita_cg133, 0.001); end
-  def test_costpercapita_ch133; assert_in_epsilon(-3.3567917773009013, worksheet.costpercapita_ch133, 0.001); end
-  def test_costpercapita_ci133; assert_in_epsilon(-12.99260717425031, worksheet.costpercapita_ci133, 0.001); end
-  def test_costpercapita_cj133; assert_in_epsilon(34.42665980964462, worksheet.costpercapita_cj133, 0.001); end
-  def test_costpercapita_ck133; assert_in_epsilon(61.526589440557906, worksheet.costpercapita_ck133, 0.001); end
-  def test_costpercapita_cl133; assert_in_epsilon(96.87809847564633, worksheet.costpercapita_cl133, 0.001); end
-  def test_costpercapita_cm133; assert_in_epsilon(38.164580900674565, worksheet.costpercapita_cm133, 0.001); end
-  def test_costpercapita_cn133; assert_in_epsilon(53.41516134013554, worksheet.costpercapita_cn133, 0.001); end
-  def test_costpercapita_cp133; assert_in_epsilon(29.645650449598822, worksheet.costpercapita_cp133, 0.001); end
-  def test_costpercapita_cq133; assert_in_epsilon(462.7684220965252, worksheet.costpercapita_cq133, 0.001); end
+  def test_costpercapita_cg133; assert_in_epsilon(-1.2508369687183603, worksheet.costpercapita_cg133, 0.001); end
+  def test_costpercapita_ch133; assert_in_epsilon(-3.356791777300893, worksheet.costpercapita_ch133, 0.001); end
+  def test_costpercapita_ci133; assert_in_epsilon(-12.992607174250283, worksheet.costpercapita_ci133, 0.001); end
+  def test_costpercapita_cj133; assert_in_epsilon(34.42665980964466, worksheet.costpercapita_cj133, 0.001); end
+  def test_costpercapita_ck133; assert_in_epsilon(61.526589440557956, worksheet.costpercapita_ck133, 0.001); end
+  def test_costpercapita_cl133; assert_in_epsilon(96.87809847564638, worksheet.costpercapita_cl133, 0.001); end
+  def test_costpercapita_cm133; assert_in_epsilon(38.16458090067466, worksheet.costpercapita_cm133, 0.001); end
+  def test_costpercapita_cn133; assert_in_epsilon(53.415161340135576, worksheet.costpercapita_cn133, 0.001); end
+  def test_costpercapita_cp133; assert_in_epsilon(29.645650449598854, worksheet.costpercapita_cp133, 0.001); end
+  def test_costpercapita_cq133; assert_in_epsilon(462.7684220965258, worksheet.costpercapita_cq133, 0.001); end
   def test_costpercapita_cr133; assert_equal("ok", worksheet.costpercapita_cr133); end
   def test_costpercapita_a134; assert_equal("VIII.a", worksheet.costpercapita_a134); end
   def test_costpercapita_b134; assert_equal("H2 Production", worksheet.costpercapita_b134); end
@@ -18881,23 +19492,23 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av134; assert_in_delta(0.1, worksheet.costpercapita_av134, 0.001); end
   def test_costpercapita_aw134; assert_in_epsilon(25, worksheet.costpercapita_aw134, 0.001); end
   def test_costpercapita_ay134; assert_in_delta(0, (worksheet.costpercapita_ay134||0), 0.001); end
-  def test_costpercapita_az134; assert_in_delta(0.08802216336590152, worksheet.costpercapita_az134, 0.001); end
-  def test_costpercapita_ba134; assert_in_delta(0.13953952900460945, worksheet.costpercapita_ba134, 0.001); end
-  def test_costpercapita_bb134; assert_in_delta(0.92412292376919, worksheet.costpercapita_bb134, 0.001); end
-  def test_costpercapita_bc134; assert_in_epsilon(1.1991004230909463, worksheet.costpercapita_bc134, 0.001); end
+  def test_costpercapita_az134; assert_in_delta(0.08802216336590153, worksheet.costpercapita_az134, 0.001); end
+  def test_costpercapita_ba134; assert_in_delta(0.13953952900460947, worksheet.costpercapita_ba134, 0.001); end
+  def test_costpercapita_bb134; assert_in_delta(0.9241229237691903, worksheet.costpercapita_bb134, 0.001); end
+  def test_costpercapita_bc134; assert_in_epsilon(1.1991004230909466, worksheet.costpercapita_bc134, 0.001); end
   def test_costpercapita_bd134; assert_in_epsilon(1.8636845147541348, worksheet.costpercapita_bd134, 0.001); end
-  def test_costpercapita_be134; assert_in_epsilon(2.3053093846037145, worksheet.costpercapita_be134, 0.001); end
+  def test_costpercapita_be134; assert_in_epsilon(2.305309384603715, worksheet.costpercapita_be134, 0.001); end
   def test_costpercapita_bf134; assert_in_epsilon(3.663174904137174, worksheet.costpercapita_bf134, 0.001); end
-  def test_costpercapita_bg134; assert_in_epsilon(4.985720371249679, worksheet.costpercapita_bg134, 0.001); end
+  def test_costpercapita_bg134; assert_in_epsilon(4.98572037124968, worksheet.costpercapita_bg134, 0.001); end
   def test_costpercapita_bi134; assert_in_delta(0, (worksheet.costpercapita_bi134||0), 0.001); end
-  def test_costpercapita_bj134; assert_in_delta(0.08802216336590152, worksheet.costpercapita_bj134, 0.001); end
-  def test_costpercapita_bk134; assert_in_delta(0.22468000954354864, worksheet.costpercapita_bk134, 0.001); end
-  def test_costpercapita_bl134; assert_in_epsilon(1.1418460595100077, worksheet.costpercapita_bl134, 0.001); end
-  def test_costpercapita_bm134; assert_in_epsilon(2.309751073442626, worksheet.costpercapita_bm134, 0.001); end
+  def test_costpercapita_bj134; assert_in_delta(0.08802216336590153, worksheet.costpercapita_bj134, 0.001); end
+  def test_costpercapita_bk134; assert_in_delta(0.22468000954354866, worksheet.costpercapita_bk134, 0.001); end
+  def test_costpercapita_bl134; assert_in_epsilon(1.141846059510008, worksheet.costpercapita_bl134, 0.001); end
+  def test_costpercapita_bm134; assert_in_epsilon(2.3097510734426265, worksheet.costpercapita_bm134, 0.001); end
   def test_costpercapita_bn134; assert_in_epsilon(4.119027794500031, worksheet.costpercapita_bn134, 0.001); end
-  def test_costpercapita_bo134; assert_in_epsilon(6.259804476325578, worksheet.costpercapita_bo134, 0.001); end
-  def test_costpercapita_bp134; assert_in_epsilon(10.797955461832547, worksheet.costpercapita_bp134, 0.001); end
-  def test_costpercapita_bq134; assert_in_epsilon(14.756028669334821, worksheet.costpercapita_bq134, 0.001); end
+  def test_costpercapita_bo134; assert_in_epsilon(6.259804476325579, worksheet.costpercapita_bo134, 0.001); end
+  def test_costpercapita_bp134; assert_in_epsilon(10.79795546183255, worksheet.costpercapita_bp134, 0.001); end
+  def test_costpercapita_bq134; assert_in_epsilon(14.756028669334825, worksheet.costpercapita_bq134, 0.001); end
   def test_costpercapita_bs134; assert_in_delta(0, (worksheet.costpercapita_bs134||0), 0.001); end
   def test_costpercapita_bt134; assert_in_delta(0.2816536271678965, worksheet.costpercapita_bt134, 0.001); end
   def test_costpercapita_bu134; assert_in_delta(0.5770593420496408, worksheet.costpercapita_bu134, 0.001); end
@@ -18905,21 +19516,21 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_bw134; assert_in_epsilon(5.199321757081761, worksheet.costpercapita_bw134, 0.001); end
   def test_costpercapita_bx134; assert_in_epsilon(8.577694700181436, worksheet.costpercapita_bx134, 0.001); end
   def test_costpercapita_by134; assert_in_epsilon(12.023570450253283, worksheet.costpercapita_by134, 0.001); end
-  def test_costpercapita_bz134; assert_in_epsilon(18.385682611466347, worksheet.costpercapita_bz134, 0.001); end
-  def test_costpercapita_ca134; assert_in_epsilon(23.589834643616147, worksheet.costpercapita_ca134, 0.001); end
-  def test_costpercapita_cc134; assert_in_epsilon(7.939674942694996, worksheet.costpercapita_cc134, 0.001); end
-  def test_costpercapita_cd134; assert_in_epsilon(123.80701467067843, worksheet.costpercapita_cd134, 0.001); end
+  def test_costpercapita_bz134; assert_in_epsilon(18.38568261146635, worksheet.costpercapita_bz134, 0.001); end
+  def test_costpercapita_ca134; assert_in_epsilon(23.58983464361615, worksheet.costpercapita_ca134, 0.001); end
+  def test_costpercapita_cc134; assert_in_epsilon(7.939674942694997, worksheet.costpercapita_cc134, 0.001); end
+  def test_costpercapita_cd134; assert_in_epsilon(123.80701467067844, worksheet.costpercapita_cd134, 0.001); end
   def test_costpercapita_cf134; assert_in_delta(0, (worksheet.costpercapita_cf134||0), 0.001); end
-  def test_costpercapita_cg134; assert_in_delta(-0.07177397650678054, worksheet.costpercapita_cg134, 0.001); end
-  def test_costpercapita_ch134; assert_in_delta(-0.028641168236394596, worksheet.costpercapita_ch134, 0.001); end
-  def test_costpercapita_ci134; assert_in_delta(-0.5358140926532036, worksheet.costpercapita_ci134, 0.001); end
-  def test_costpercapita_cj134; assert_in_delta(0.13289456818817094, worksheet.costpercapita_cj134, 0.001); end
+  def test_costpercapita_cg134; assert_in_delta(-0.07177397650678052, worksheet.costpercapita_cg134, 0.001); end
+  def test_costpercapita_ch134; assert_in_delta(-0.02864116823639457, worksheet.costpercapita_ch134, 0.001); end
+  def test_costpercapita_ci134; assert_in_delta(-0.5358140926532033, worksheet.costpercapita_ci134, 0.001); end
+  def test_costpercapita_cj134; assert_in_delta(0.13289456818817136, worksheet.costpercapita_cj134, 0.001); end
   def test_costpercapita_ck134; assert_in_delta(0.7356800101445019, worksheet.costpercapita_ck134, 0.001); end
-  def test_costpercapita_cl134; assert_in_epsilon(2.0747273686360557, worksheet.costpercapita_cl134, 0.001); end
-  def test_costpercapita_cm134; assert_in_epsilon(4.147798422107224, worksheet.costpercapita_cm134, 0.001); end
-  def test_costpercapita_cn134; assert_in_epsilon(5.704912003427887, worksheet.costpercapita_cn134, 0.001); end
-  def test_costpercapita_cp134; assert_in_epsilon(1.35108701501194, worksheet.costpercapita_cp134, 0.001); end
-  def test_costpercapita_cq134; assert_in_epsilon(17.519239335367697, worksheet.costpercapita_cq134, 0.001); end
+  def test_costpercapita_cl134; assert_in_epsilon(2.0747273686360574, worksheet.costpercapita_cl134, 0.001); end
+  def test_costpercapita_cm134; assert_in_epsilon(4.147798422107227, worksheet.costpercapita_cm134, 0.001); end
+  def test_costpercapita_cn134; assert_in_epsilon(5.70491200342789, worksheet.costpercapita_cn134, 0.001); end
+  def test_costpercapita_cp134; assert_in_epsilon(1.3510870150119412, worksheet.costpercapita_cp134, 0.001); end
+  def test_costpercapita_cq134; assert_in_epsilon(17.519239335367715, worksheet.costpercapita_cq134, 0.001); end
   def test_costpercapita_cr134; assert_equal("ok", worksheet.costpercapita_cr134); end
   def test_costpercapita_a135; assert_equal("IX.a.Heating", worksheet.costpercapita_a135); end
   def test_costpercapita_b135; assert_equal("Domestic heating", worksheet.costpercapita_b135); end
@@ -18964,46 +19575,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at135; assert_in_epsilon(7355.926911852378, worksheet.costpercapita_at135, 0.001); end
   def test_costpercapita_av135; assert_in_delta(0.1, worksheet.costpercapita_av135, 0.001); end
   def test_costpercapita_aw135; assert_in_epsilon(15, worksheet.costpercapita_aw135, 0.001); end
-  def test_costpercapita_ay135; assert_in_epsilon(68.55279668806116, worksheet.costpercapita_ay135, 0.001); end
-  def test_costpercapita_az135; assert_in_epsilon(69.55169060463535, worksheet.costpercapita_az135, 0.001); end
-  def test_costpercapita_ba135; assert_in_epsilon(141.0203477827146, worksheet.costpercapita_ba135, 0.001); end
-  def test_costpercapita_bb135; assert_in_epsilon(166.59587191614608, worksheet.costpercapita_bb135, 0.001); end
-  def test_costpercapita_bc135; assert_in_epsilon(192.0654839029305, worksheet.costpercapita_bc135, 0.001); end
-  def test_costpercapita_bd135; assert_in_epsilon(224.47689971895184, worksheet.costpercapita_bd135, 0.001); end
-  def test_costpercapita_be135; assert_in_epsilon(256.9521185082228, worksheet.costpercapita_be135, 0.001); end
-  def test_costpercapita_bf135; assert_in_epsilon(299.82027010576513, worksheet.costpercapita_bf135, 0.001); end
-  def test_costpercapita_bg135; assert_in_epsilon(348.21406920249103, worksheet.costpercapita_bg135, 0.001); end
-  def test_costpercapita_bi135; assert_in_epsilon(68.55279668806116, worksheet.costpercapita_bi135, 0.001); end
-  def test_costpercapita_bj135; assert_in_epsilon(135.84395407455497, worksheet.costpercapita_bj135, 0.001); end
-  def test_costpercapita_bk135; assert_in_epsilon(272.417022051432, worksheet.costpercapita_bk135, 0.001); end
-  def test_costpercapita_bl135; assert_in_epsilon(368.4413782358626, worksheet.costpercapita_bl135, 0.001); end
-  def test_costpercapita_bm135; assert_in_epsilon(487.03039430811987, worksheet.costpercapita_bm135, 0.001); end
-  def test_costpercapita_bn135; assert_in_epsilon(570.2455249897927, worksheet.costpercapita_bn135, 0.001); end
-  def test_costpercapita_bo135; assert_in_epsilon(660.1834078548808, worksheet.costpercapita_bo135, 0.001); end
-  def test_costpercapita_bp135; assert_in_epsilon(766.9539934642476, worksheet.costpercapita_bp135, 0.001); end
-  def test_costpercapita_bq135; assert_in_epsilon(889.5661109768511, worksheet.costpercapita_bq135, 0.001); end
+  def test_costpercapita_ay135; assert_in_epsilon(68.55279668806118, worksheet.costpercapita_ay135, 0.001); end
+  def test_costpercapita_az135; assert_in_epsilon(69.5516906046354, worksheet.costpercapita_az135, 0.001); end
+  def test_costpercapita_ba135; assert_in_epsilon(141.02034778271465, worksheet.costpercapita_ba135, 0.001); end
+  def test_costpercapita_bb135; assert_in_epsilon(166.59587191614614, worksheet.costpercapita_bb135, 0.001); end
+  def test_costpercapita_bc135; assert_in_epsilon(192.06548390293062, worksheet.costpercapita_bc135, 0.001); end
+  def test_costpercapita_bd135; assert_in_epsilon(224.47689971895196, worksheet.costpercapita_bd135, 0.001); end
+  def test_costpercapita_be135; assert_in_epsilon(256.9521185082229, worksheet.costpercapita_be135, 0.001); end
+  def test_costpercapita_bf135; assert_in_epsilon(299.82027010576525, worksheet.costpercapita_bf135, 0.001); end
+  def test_costpercapita_bg135; assert_in_epsilon(348.21406920249115, worksheet.costpercapita_bg135, 0.001); end
+  def test_costpercapita_bi135; assert_in_epsilon(68.55279668806118, worksheet.costpercapita_bi135, 0.001); end
+  def test_costpercapita_bj135; assert_in_epsilon(135.84395407455503, worksheet.costpercapita_bj135, 0.001); end
+  def test_costpercapita_bk135; assert_in_epsilon(272.4170220514322, worksheet.costpercapita_bk135, 0.001); end
+  def test_costpercapita_bl135; assert_in_epsilon(368.44137823586277, worksheet.costpercapita_bl135, 0.001); end
+  def test_costpercapita_bm135; assert_in_epsilon(487.0303943081202, worksheet.costpercapita_bm135, 0.001); end
+  def test_costpercapita_bn135; assert_in_epsilon(570.2455249897929, worksheet.costpercapita_bn135, 0.001); end
+  def test_costpercapita_bo135; assert_in_epsilon(660.1834078548811, worksheet.costpercapita_bo135, 0.001); end
+  def test_costpercapita_bp135; assert_in_epsilon(766.9539934642478, worksheet.costpercapita_bp135, 0.001); end
+  def test_costpercapita_bq135; assert_in_epsilon(889.5661109768514, worksheet.costpercapita_bq135, 0.001); end
   def test_costpercapita_bs135; assert_in_epsilon(155.8907517972523, worksheet.costpercapita_bs135, 0.001); end
-  def test_costpercapita_bt135; assert_in_epsilon(222.87797920755594, worksheet.costpercapita_bt135, 0.001); end
-  def test_costpercapita_bu135; assert_in_epsilon(356.5740418607201, worksheet.costpercapita_bu135, 0.001); end
-  def test_costpercapita_bv135; assert_in_epsilon(449.240582677903, worksheet.costpercapita_bv135, 0.001); end
-  def test_costpercapita_bw135; assert_in_epsilon(564.1973760135052, worksheet.costpercapita_bw135, 0.001); end
-  def test_costpercapita_bx135; assert_in_epsilon(644.6149925068544, worksheet.costpercapita_bx135, 0.001); end
-  def test_costpercapita_by135; assert_in_epsilon(731.7182404125281, worksheet.costpercapita_by135, 0.001); end
-  def test_costpercapita_bz135; assert_in_epsilon(835.527710499537, worksheet.costpercapita_bz135, 0.001); end
-  def test_costpercapita_ca135; assert_in_epsilon(955.0219984135082, worksheet.costpercapita_ca135, 0.001); end
-  def test_costpercapita_cc135; assert_in_epsilon(546.1848525988182, worksheet.costpercapita_cc135, 0.001); end
-  def test_costpercapita_cd135; assert_in_epsilon(10333.680730390764, worksheet.costpercapita_cd135, 0.001); end
-  def test_costpercapita_cf135; assert_in_epsilon(-105.25321064166748, worksheet.costpercapita_cf135, 0.001); end
-  def test_costpercapita_cg135; assert_in_epsilon(30.04081636715151, worksheet.costpercapita_cg135, 0.001); end
-  def test_costpercapita_ch135; assert_in_epsilon(57.89462660291524, worksheet.costpercapita_ch135, 0.001); end
-  def test_costpercapita_ci135; assert_in_epsilon(115.01308879246818, worksheet.costpercapita_ci135, 0.001); end
-  def test_costpercapita_cj135; assert_in_epsilon(194.85732611146403, worksheet.costpercapita_cj135, 0.001); end
-  def test_costpercapita_ck135; assert_in_epsilon(228.7676956714011, worksheet.costpercapita_ck135, 0.001); end
-  def test_costpercapita_cl135; assert_in_epsilon(269.3037593172984, worksheet.costpercapita_cl135, 0.001); end
-  def test_costpercapita_cm135; assert_in_epsilon(310.86263105878777, worksheet.costpercapita_cm135, 0.001); end
-  def test_costpercapita_cn135; assert_in_epsilon(359.85733186298904, worksheet.costpercapita_cn135, 0.001); end
-  def test_costpercapita_cp135; assert_in_epsilon(162.3715627936453, worksheet.costpercapita_cp135, 0.001); end
-  def test_costpercapita_cq135; assert_in_epsilon(2977.7538185383837, worksheet.costpercapita_cq135, 0.001); end
+  def test_costpercapita_bt135; assert_in_epsilon(222.877979207556, worksheet.costpercapita_bt135, 0.001); end
+  def test_costpercapita_bu135; assert_in_epsilon(356.5740418607203, worksheet.costpercapita_bu135, 0.001); end
+  def test_costpercapita_bv135; assert_in_epsilon(449.2405826779032, worksheet.costpercapita_bv135, 0.001); end
+  def test_costpercapita_bw135; assert_in_epsilon(564.1973760135055, worksheet.costpercapita_bw135, 0.001); end
+  def test_costpercapita_bx135; assert_in_epsilon(644.6149925068547, worksheet.costpercapita_bx135, 0.001); end
+  def test_costpercapita_by135; assert_in_epsilon(731.7182404125284, worksheet.costpercapita_by135, 0.001); end
+  def test_costpercapita_bz135; assert_in_epsilon(835.5277104995373, worksheet.costpercapita_bz135, 0.001); end
+  def test_costpercapita_ca135; assert_in_epsilon(955.0219984135085, worksheet.costpercapita_ca135, 0.001); end
+  def test_costpercapita_cc135; assert_in_epsilon(546.1848525988185, worksheet.costpercapita_cc135, 0.001); end
+  def test_costpercapita_cd135; assert_in_epsilon(10333.680730390768, worksheet.costpercapita_cd135, 0.001); end
+  def test_costpercapita_cf135; assert_in_epsilon(-105.25321064166747, worksheet.costpercapita_cf135, 0.001); end
+  def test_costpercapita_cg135; assert_in_epsilon(30.040816367151567, worksheet.costpercapita_cg135, 0.001); end
+  def test_costpercapita_ch135; assert_in_epsilon(57.8946266029154, worksheet.costpercapita_ch135, 0.001); end
+  def test_costpercapita_ci135; assert_in_epsilon(115.0130887924684, worksheet.costpercapita_ci135, 0.001); end
+  def test_costpercapita_cj135; assert_in_epsilon(194.85732611146435, worksheet.costpercapita_cj135, 0.001); end
+  def test_costpercapita_ck135; assert_in_epsilon(228.76769567140138, worksheet.costpercapita_ck135, 0.001); end
+  def test_costpercapita_cl135; assert_in_epsilon(269.3037593172987, worksheet.costpercapita_cl135, 0.001); end
+  def test_costpercapita_cm135; assert_in_epsilon(310.86263105878805, worksheet.costpercapita_cm135, 0.001); end
+  def test_costpercapita_cn135; assert_in_epsilon(359.85733186298944, worksheet.costpercapita_cn135, 0.001); end
+  def test_costpercapita_cp135; assert_in_epsilon(162.37156279364552, worksheet.costpercapita_cp135, 0.001); end
+  def test_costpercapita_cq135; assert_in_epsilon(2977.7538185383883, worksheet.costpercapita_cq135, 0.001); end
   def test_costpercapita_cr135; assert_equal("ok", worksheet.costpercapita_cr135); end
   def test_costpercapita_a136; assert_equal("IX.a.Insulation", worksheet.costpercapita_a136); end
   def test_costpercapita_b136; assert_equal("Domestic insulation", worksheet.costpercapita_b136); end
@@ -19048,46 +19659,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at136; assert_in_epsilon(10167.582738912317, worksheet.costpercapita_at136, 0.001); end
   def test_costpercapita_av136; assert_in_delta(0.1, worksheet.costpercapita_av136, 0.001); end
   def test_costpercapita_aw136; assert_in_epsilon(30, worksheet.costpercapita_aw136, 0.001); end
-  def test_costpercapita_ay136; assert_in_epsilon(176.89390839974644, worksheet.costpercapita_ay136, 0.001); end
-  def test_costpercapita_az136; assert_in_epsilon(296.6288773376709, worksheet.costpercapita_az136, 0.001); end
-  def test_costpercapita_ba136; assert_in_epsilon(281.25881355945654, worksheet.costpercapita_ba136, 0.001); end
-  def test_costpercapita_bb136; assert_in_epsilon(226.38470197668607, worksheet.costpercapita_bb136, 0.001); end
-  def test_costpercapita_bc136; assert_in_epsilon(207.17929861572316, worksheet.costpercapita_bc136, 0.001); end
-  def test_costpercapita_bd136; assert_in_epsilon(243.63041873177104, worksheet.costpercapita_bd136, 0.001); end
-  def test_costpercapita_be136; assert_in_epsilon(248.74984197980416, worksheet.costpercapita_be136, 0.001); end
-  def test_costpercapita_bf136; assert_in_epsilon(240.69776140412577, worksheet.costpercapita_bf136, 0.001); end
+  def test_costpercapita_ay136; assert_in_epsilon(176.89390839974646, worksheet.costpercapita_ay136, 0.001); end
+  def test_costpercapita_az136; assert_in_epsilon(296.628877337671, worksheet.costpercapita_az136, 0.001); end
+  def test_costpercapita_ba136; assert_in_epsilon(281.2588135594566, worksheet.costpercapita_ba136, 0.001); end
+  def test_costpercapita_bb136; assert_in_epsilon(226.38470197668613, worksheet.costpercapita_bb136, 0.001); end
+  def test_costpercapita_bc136; assert_in_epsilon(207.17929861572324, worksheet.costpercapita_bc136, 0.001); end
+  def test_costpercapita_bd136; assert_in_epsilon(243.6304187317711, worksheet.costpercapita_bd136, 0.001); end
+  def test_costpercapita_be136; assert_in_epsilon(248.74984197980422, worksheet.costpercapita_be136, 0.001); end
+  def test_costpercapita_bf136; assert_in_epsilon(240.69776140412583, worksheet.costpercapita_bf136, 0.001); end
   def test_costpercapita_bg136; assert_in_epsilon(247.16460791929038, worksheet.costpercapita_bg136, 0.001); end
-  def test_costpercapita_bi136; assert_in_epsilon(176.89390839974644, worksheet.costpercapita_bi136, 0.001); end
-  def test_costpercapita_bj136; assert_in_epsilon(467.68969685784776, worksheet.costpercapita_bj136, 0.001); end
-  def test_costpercapita_bk136; assert_in_epsilon(733.6372147589591, worksheet.costpercapita_bk136, 0.001); end
-  def test_costpercapita_bl136; assert_in_epsilon(937.3059593594912, worksheet.costpercapita_bl136, 0.001); end
-  def test_costpercapita_bm136; assert_in_epsilon(1118.8779156673502, worksheet.costpercapita_bm136, 0.001); end
-  def test_costpercapita_bn136; assert_in_epsilon(1336.1523865624035, worksheet.costpercapita_bn136, 0.001); end
-  def test_costpercapita_bo136; assert_in_epsilon(1407.3713241548985, worksheet.costpercapita_bo136, 0.001); end
+  def test_costpercapita_bi136; assert_in_epsilon(176.89390839974646, worksheet.costpercapita_bi136, 0.001); end
+  def test_costpercapita_bj136; assert_in_epsilon(467.68969685784793, worksheet.costpercapita_bj136, 0.001); end
+  def test_costpercapita_bk136; assert_in_epsilon(733.6372147589593, worksheet.costpercapita_bk136, 0.001); end
+  def test_costpercapita_bl136; assert_in_epsilon(937.3059593594915, worksheet.costpercapita_bl136, 0.001); end
+  def test_costpercapita_bm136; assert_in_epsilon(1118.8779156673504, worksheet.costpercapita_bm136, 0.001); end
+  def test_costpercapita_bn136; assert_in_epsilon(1336.1523865624038, worksheet.costpercapita_bn136, 0.001); end
+  def test_costpercapita_bo136; assert_in_epsilon(1407.3713241548987, worksheet.costpercapita_bo136, 0.001); end
   def test_costpercapita_bp136; assert_in_epsilon(1560.749623335512, worksheet.costpercapita_bp136, 0.001); end
-  def test_costpercapita_bq136; assert_in_epsilon(1535.1362346019582, worksheet.costpercapita_bq136, 0.001); end
-  def test_costpercapita_bs136; assert_in_epsilon(176.89390839974644, worksheet.costpercapita_bs136, 0.001); end
-  def test_costpercapita_bt136; assert_in_epsilon(467.68969685784776, worksheet.costpercapita_bt136, 0.001); end
-  def test_costpercapita_bu136; assert_in_epsilon(733.6372147589591, worksheet.costpercapita_bu136, 0.001); end
-  def test_costpercapita_bv136; assert_in_epsilon(937.3059593594912, worksheet.costpercapita_bv136, 0.001); end
-  def test_costpercapita_bw136; assert_in_epsilon(1118.8779156673502, worksheet.costpercapita_bw136, 0.001); end
-  def test_costpercapita_bx136; assert_in_epsilon(1336.1523865624035, worksheet.costpercapita_bx136, 0.001); end
-  def test_costpercapita_by136; assert_in_epsilon(1407.3713241548985, worksheet.costpercapita_by136, 0.001); end
+  def test_costpercapita_bq136; assert_in_epsilon(1535.136234601959, worksheet.costpercapita_bq136, 0.001); end
+  def test_costpercapita_bs136; assert_in_epsilon(176.89390839974646, worksheet.costpercapita_bs136, 0.001); end
+  def test_costpercapita_bt136; assert_in_epsilon(467.68969685784793, worksheet.costpercapita_bt136, 0.001); end
+  def test_costpercapita_bu136; assert_in_epsilon(733.6372147589593, worksheet.costpercapita_bu136, 0.001); end
+  def test_costpercapita_bv136; assert_in_epsilon(937.3059593594915, worksheet.costpercapita_bv136, 0.001); end
+  def test_costpercapita_bw136; assert_in_epsilon(1118.8779156673504, worksheet.costpercapita_bw136, 0.001); end
+  def test_costpercapita_bx136; assert_in_epsilon(1336.1523865624038, worksheet.costpercapita_bx136, 0.001); end
+  def test_costpercapita_by136; assert_in_epsilon(1407.3713241548987, worksheet.costpercapita_by136, 0.001); end
   def test_costpercapita_bz136; assert_in_epsilon(1560.749623335512, worksheet.costpercapita_bz136, 0.001); end
-  def test_costpercapita_ca136; assert_in_epsilon(1535.1362346019582, worksheet.costpercapita_ca136, 0.001); end
+  def test_costpercapita_ca136; assert_in_epsilon(1535.136234601959, worksheet.costpercapita_ca136, 0.001); end
   def test_costpercapita_cc136; assert_in_epsilon(1030.4238070775743, worksheet.costpercapita_cc136, 0.001); end
-  def test_costpercapita_cd136; assert_in_epsilon(20122.345897679093, worksheet.costpercapita_cd136, 0.001); end
-  def test_costpercapita_cf136; assert_in_epsilon(-378.960673005479, worksheet.costpercapita_cf136, 0.001); end
-  def test_costpercapita_cg136; assert_in_epsilon(-91.569314162351, worksheet.costpercapita_cg136, 0.001); end
-  def test_costpercapita_ch136; assert_in_epsilon(203.3566590566368, worksheet.costpercapita_ch136, 0.001); end
-  def test_costpercapita_ci136; assert_in_epsilon(510.484114925719, worksheet.costpercapita_ci136, 0.001); end
-  def test_costpercapita_cj136; assert_in_epsilon(728.2656101911393, worksheet.costpercapita_cj136, 0.001); end
-  def test_costpercapita_ck136; assert_in_epsilon(876.8157627742127, worksheet.costpercapita_ck136, 0.001); end
-  def test_costpercapita_cl136; assert_in_epsilon(938.3826273508035, worksheet.costpercapita_cl136, 0.001); end
-  def test_costpercapita_cm136; assert_in_epsilon(1106.9421815050607, worksheet.costpercapita_cm136, 0.001); end
-  def test_costpercapita_cn136; assert_in_epsilon(1069.1363109775875, worksheet.costpercapita_cn136, 0.001); end
-  def test_costpercapita_cp136; assert_in_epsilon(551.4281421792589, worksheet.costpercapita_cp136, 0.001); end
-  def test_costpercapita_cq136; assert_in_epsilon(9954.763158766773, worksheet.costpercapita_cq136, 0.001); end
+  def test_costpercapita_cd136; assert_in_epsilon(20122.345897679097, worksheet.costpercapita_cd136, 0.001); end
+  def test_costpercapita_cf136; assert_in_epsilon(-378.96067300547895, worksheet.costpercapita_cf136, 0.001); end
+  def test_costpercapita_cg136; assert_in_epsilon(-91.56931416235084, worksheet.costpercapita_cg136, 0.001); end
+  def test_costpercapita_ch136; assert_in_epsilon(203.35665905663703, worksheet.costpercapita_ch136, 0.001); end
+  def test_costpercapita_ci136; assert_in_epsilon(510.4841149257192, worksheet.costpercapita_ci136, 0.001); end
+  def test_costpercapita_cj136; assert_in_epsilon(728.2656101911398, worksheet.costpercapita_cj136, 0.001); end
+  def test_costpercapita_ck136; assert_in_epsilon(876.8157627742129, worksheet.costpercapita_ck136, 0.001); end
+  def test_costpercapita_cl136; assert_in_epsilon(938.3826273508039, worksheet.costpercapita_cl136, 0.001); end
+  def test_costpercapita_cm136; assert_in_epsilon(1106.942181505061, worksheet.costpercapita_cm136, 0.001); end
+  def test_costpercapita_cn136; assert_in_epsilon(1069.1363109775882, worksheet.costpercapita_cn136, 0.001); end
+  def test_costpercapita_cp136; assert_in_epsilon(551.4281421792591, worksheet.costpercapita_cp136, 0.001); end
+  def test_costpercapita_cq136; assert_in_epsilon(9954.763158766778, worksheet.costpercapita_cq136, 0.001); end
   def test_costpercapita_cr136; assert_equal("ok", worksheet.costpercapita_cr136); end
   def test_costpercapita_a137; assert_equal("IX.c", worksheet.costpercapita_a137); end
   def test_costpercapita_b137; assert_equal("Commercial heating and cooling", worksheet.costpercapita_b137); end
@@ -19132,46 +19743,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at137; assert_in_epsilon(1422.5882637836914, worksheet.costpercapita_at137, 0.001); end
   def test_costpercapita_av137; assert_in_delta(0.1, worksheet.costpercapita_av137, 0.001); end
   def test_costpercapita_aw137; assert_in_epsilon(15, worksheet.costpercapita_aw137, 0.001); end
-  def test_costpercapita_ay137; assert_in_epsilon(15.715310484574735, worksheet.costpercapita_ay137, 0.001); end
-  def test_costpercapita_az137; assert_in_epsilon(36.257929645408716, worksheet.costpercapita_az137, 0.001); end
-  def test_costpercapita_ba137; assert_in_epsilon(38.108658729543365, worksheet.costpercapita_ba137, 0.001); end
-  def test_costpercapita_bb137; assert_in_epsilon(35.817130623643735, worksheet.costpercapita_bb137, 0.001); end
-  def test_costpercapita_bc137; assert_in_epsilon(33.952245918980786, worksheet.costpercapita_bc137, 0.001); end
-  def test_costpercapita_bd137; assert_in_epsilon(32.57977518549951, worksheet.costpercapita_bd137, 0.001); end
-  def test_costpercapita_be137; assert_in_epsilon(31.794962037573796, worksheet.costpercapita_be137, 0.001); end
-  def test_costpercapita_bf137; assert_in_epsilon(31.25466152956894, worksheet.costpercapita_bf137, 0.001); end
-  def test_costpercapita_bg137; assert_in_epsilon(30.949566687709346, worksheet.costpercapita_bg137, 0.001); end
-  def test_costpercapita_bi137; assert_in_epsilon(15.715310484574735, worksheet.costpercapita_bi137, 0.001); end
-  def test_costpercapita_bj137; assert_in_epsilon(51.45502667845294, worksheet.costpercapita_bj137, 0.001); end
-  def test_costpercapita_bk137; assert_in_epsilon(87.87914300333158, worksheet.costpercapita_bk137, 0.001); end
-  def test_costpercapita_bl137; assert_in_epsilon(106.73080764954996, worksheet.costpercapita_bl137, 0.001); end
-  def test_costpercapita_bm137; assert_in_epsilon(104.71063203529306, worksheet.costpercapita_bm137, 0.001); end
-  def test_costpercapita_bn137; assert_in_epsilon(99.75020596796459, worksheet.costpercapita_bn137, 0.001); end
-  def test_costpercapita_bo137; assert_in_epsilon(96.12538296207495, worksheet.costpercapita_bo137, 0.001); end
-  def test_costpercapita_bp137; assert_in_epsilon(93.6643074247112, worksheet.costpercapita_bp137, 0.001); end
-  def test_costpercapita_bq137; assert_in_epsilon(92.20016742874455, worksheet.costpercapita_bq137, 0.001); end
-  def test_costpercapita_bs137; assert_in_epsilon(41.13244175932198, worksheet.costpercapita_bs137, 0.001); end
-  def test_costpercapita_bt137; assert_in_epsilon(75.54339529363148, worksheet.costpercapita_bt137, 0.001); end
-  def test_costpercapita_bu137; assert_in_epsilon(107.84617724038633, worksheet.costpercapita_bu137, 0.001); end
-  def test_costpercapita_bv137; assert_in_epsilon(123.04898462247037, worksheet.costpercapita_bv137, 0.001); end
-  def test_costpercapita_bw137; assert_in_epsilon(117.80368821115712, worksheet.costpercapita_bw137, 0.001); end
-  def test_costpercapita_bx137; assert_in_epsilon(109.962120204881, worksheet.costpercapita_bx137, 0.001); end
-  def test_costpercapita_by137; assert_in_epsilon(103.71758726958983, worksheet.costpercapita_by137, 0.001); end
-  def test_costpercapita_bz137; assert_in_epsilon(98.8434994481609, worksheet.costpercapita_bz137, 0.001); end
-  def test_costpercapita_ca137; assert_in_epsilon(95.1336681626464, worksheet.costpercapita_ca137, 0.001); end
-  def test_costpercapita_cc137; assert_in_epsilon(97.00350691247169, worksheet.costpercapita_cc137, 0.001); end
-  def test_costpercapita_cd137; assert_in_epsilon(2100.0869806828996, worksheet.costpercapita_cd137, 0.001); end
-  def test_costpercapita_cf137; assert_in_epsilon(-24.12865651942423, worksheet.costpercapita_cf137, 0.001); end
-  def test_costpercapita_cg137; assert_in_epsilon(-3.70111244496981, worksheet.costpercapita_cg137, 0.001); end
-  def test_costpercapita_ch137; assert_in_epsilon(29.90764536819574, worksheet.costpercapita_ch137, 0.001); end
-  def test_costpercapita_ci137; assert_in_epsilon(52.24521900729668, worksheet.costpercapita_ci137, 0.001); end
-  def test_costpercapita_cj137; assert_in_epsilon(53.06193565979275, worksheet.costpercapita_cj137, 0.001); end
-  def test_costpercapita_ck137; assert_in_epsilon(50.189333896252265, worksheet.costpercapita_ck137, 0.001); end
-  def test_costpercapita_cl137; assert_in_epsilon(47.75838113050644, worksheet.costpercapita_cl137, 0.001); end
-  def test_costpercapita_cm137; assert_in_epsilon(46.11921931737943, worksheet.costpercapita_cm137, 0.001); end
-  def test_costpercapita_cn137; assert_in_epsilon(45.11919444624252, worksheet.costpercapita_cn137, 0.001); end
-  def test_costpercapita_cp137; assert_in_epsilon(32.95235109569686, worksheet.costpercapita_cp137, 0.001); end
-  def test_costpercapita_cq137; assert_in_epsilon(677.4987168992076, worksheet.costpercapita_cq137, 0.001); end
+  def test_costpercapita_ay137; assert_in_epsilon(15.715310484574742, worksheet.costpercapita_ay137, 0.001); end
+  def test_costpercapita_az137; assert_in_epsilon(36.25792964540873, worksheet.costpercapita_az137, 0.001); end
+  def test_costpercapita_ba137; assert_in_epsilon(38.108658729543386, worksheet.costpercapita_ba137, 0.001); end
+  def test_costpercapita_bb137; assert_in_epsilon(35.817130623643756, worksheet.costpercapita_bb137, 0.001); end
+  def test_costpercapita_bc137; assert_in_epsilon(33.95224591898079, worksheet.costpercapita_bc137, 0.001); end
+  def test_costpercapita_bd137; assert_in_epsilon(32.579775185499514, worksheet.costpercapita_bd137, 0.001); end
+  def test_costpercapita_be137; assert_in_epsilon(31.794962037573807, worksheet.costpercapita_be137, 0.001); end
+  def test_costpercapita_bf137; assert_in_epsilon(31.25466152956895, worksheet.costpercapita_bf137, 0.001); end
+  def test_costpercapita_bg137; assert_in_epsilon(30.949566687709364, worksheet.costpercapita_bg137, 0.001); end
+  def test_costpercapita_bi137; assert_in_epsilon(15.715310484574742, worksheet.costpercapita_bi137, 0.001); end
+  def test_costpercapita_bj137; assert_in_epsilon(51.45502667845295, worksheet.costpercapita_bj137, 0.001); end
+  def test_costpercapita_bk137; assert_in_epsilon(87.87914300333162, worksheet.costpercapita_bk137, 0.001); end
+  def test_costpercapita_bl137; assert_in_epsilon(106.73080764955003, worksheet.costpercapita_bl137, 0.001); end
+  def test_costpercapita_bm137; assert_in_epsilon(104.71063203529312, worksheet.costpercapita_bm137, 0.001); end
+  def test_costpercapita_bn137; assert_in_epsilon(99.75020596796463, worksheet.costpercapita_bn137, 0.001); end
+  def test_costpercapita_bo137; assert_in_epsilon(96.12538296207498, worksheet.costpercapita_bo137, 0.001); end
+  def test_costpercapita_bp137; assert_in_epsilon(93.66430742471121, worksheet.costpercapita_bp137, 0.001); end
+  def test_costpercapita_bq137; assert_in_epsilon(92.2001674287446, worksheet.costpercapita_bq137, 0.001); end
+  def test_costpercapita_bs137; assert_in_epsilon(41.132441759321985, worksheet.costpercapita_bs137, 0.001); end
+  def test_costpercapita_bt137; assert_in_epsilon(75.54339529363149, worksheet.costpercapita_bt137, 0.001); end
+  def test_costpercapita_bu137; assert_in_epsilon(107.84617724038637, worksheet.costpercapita_bu137, 0.001); end
+  def test_costpercapita_bv137; assert_in_epsilon(123.04898462247046, worksheet.costpercapita_bv137, 0.001); end
+  def test_costpercapita_bw137; assert_in_epsilon(117.80368821115718, worksheet.costpercapita_bw137, 0.001); end
+  def test_costpercapita_bx137; assert_in_epsilon(109.96212020488105, worksheet.costpercapita_bx137, 0.001); end
+  def test_costpercapita_by137; assert_in_epsilon(103.71758726958986, worksheet.costpercapita_by137, 0.001); end
+  def test_costpercapita_bz137; assert_in_epsilon(98.84349944816091, worksheet.costpercapita_bz137, 0.001); end
+  def test_costpercapita_ca137; assert_in_epsilon(95.13366816264646, worksheet.costpercapita_ca137, 0.001); end
+  def test_costpercapita_cc137; assert_in_epsilon(97.00350691247178, worksheet.costpercapita_cc137, 0.001); end
+  def test_costpercapita_cd137; assert_in_epsilon(2100.0869806829, worksheet.costpercapita_cd137, 0.001); end
+  def test_costpercapita_cf137; assert_in_epsilon(-24.12865651942422, worksheet.costpercapita_cf137, 0.001); end
+  def test_costpercapita_cg137; assert_in_epsilon(-3.701112444969796, worksheet.costpercapita_cg137, 0.001); end
+  def test_costpercapita_ch137; assert_in_epsilon(29.90764536819578, worksheet.costpercapita_ch137, 0.001); end
+  def test_costpercapita_ci137; assert_in_epsilon(52.24521900729675, worksheet.costpercapita_ci137, 0.001); end
+  def test_costpercapita_cj137; assert_in_epsilon(53.0619356597928, worksheet.costpercapita_cj137, 0.001); end
+  def test_costpercapita_ck137; assert_in_epsilon(50.1893338962523, worksheet.costpercapita_ck137, 0.001); end
+  def test_costpercapita_cl137; assert_in_epsilon(47.75838113050647, worksheet.costpercapita_cl137, 0.001); end
+  def test_costpercapita_cm137; assert_in_epsilon(46.119219317379454, worksheet.costpercapita_cm137, 0.001); end
+  def test_costpercapita_cn137; assert_in_epsilon(45.11919444624257, worksheet.costpercapita_cn137, 0.001); end
+  def test_costpercapita_cp137; assert_in_epsilon(32.952351095696905, worksheet.costpercapita_cp137, 0.001); end
+  def test_costpercapita_cq137; assert_in_epsilon(677.4987168992084, worksheet.costpercapita_cq137, 0.001); end
   def test_costpercapita_cr137; assert_equal("ok", worksheet.costpercapita_cr137); end
   def test_costpercapita_a138; assert_equal("X.a", worksheet.costpercapita_a138); end
   def test_costpercapita_b138; assert_equal("Domestic lighting, appliances, and cooking", worksheet.costpercapita_b138); end
@@ -19216,46 +19827,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at138; assert_in_epsilon(1288.3683413844324, worksheet.costpercapita_at138, 0.001); end
   def test_costpercapita_av138; assert_in_delta(0.1, worksheet.costpercapita_av138, 0.001); end
   def test_costpercapita_aw138; assert_in_epsilon(15, worksheet.costpercapita_aw138, 0.001); end
-  def test_costpercapita_ay138; assert_in_epsilon(21.93432238589153, worksheet.costpercapita_ay138, 0.001); end
-  def test_costpercapita_az138; assert_in_epsilon(38.776070352851335, worksheet.costpercapita_az138, 0.001); end
-  def test_costpercapita_ba138; assert_in_epsilon(39.17589017026931, worksheet.costpercapita_ba138, 0.001); end
-  def test_costpercapita_bb138; assert_in_epsilon(39.23926581452008, worksheet.costpercapita_bb138, 0.001); end
-  def test_costpercapita_bc138; assert_in_epsilon(39.235876748759644, worksheet.costpercapita_bc138, 0.001); end
-  def test_costpercapita_bd138; assert_in_epsilon(40.7977115305777, worksheet.costpercapita_bd138, 0.001); end
-  def test_costpercapita_be138; assert_in_epsilon(41.842730604056456, worksheet.costpercapita_be138, 0.001); end
-  def test_costpercapita_bf138; assert_in_epsilon(44.48268515428576, worksheet.costpercapita_bf138, 0.001); end
-  def test_costpercapita_bg138; assert_in_epsilon(47.80078372130194, worksheet.costpercapita_bg138, 0.001); end
-  def test_costpercapita_bi138; assert_in_epsilon(21.93432238589153, worksheet.costpercapita_bi138, 0.001); end
-  def test_costpercapita_bj138; assert_in_epsilon(59.98710693909336, worksheet.costpercapita_bj138, 0.001); end
-  def test_costpercapita_bk138; assert_in_epsilon(97.19913017749738, worksheet.costpercapita_bk138, 0.001); end
-  def test_costpercapita_bl138; assert_in_epsilon(113.5474127455162, worksheet.costpercapita_bl138, 0.001); end
-  def test_costpercapita_bm138; assert_in_epsilon(114.32883691897666, worksheet.costpercapita_bm138, 0.001); end
-  def test_costpercapita_bn138; assert_in_epsilon(116.37754699886925, worksheet.costpercapita_bn138, 0.001); end
-  def test_costpercapita_bo138; assert_in_epsilon(119.26497373962117, worksheet.costpercapita_bo138, 0.001); end
-  def test_costpercapita_bp138; assert_in_epsilon(124.62191020906435, worksheet.costpercapita_bp138, 0.001); end
-  def test_costpercapita_bq138; assert_in_epsilon(131.6961182564802, worksheet.costpercapita_bq138, 0.001); end
-  def test_costpercapita_bs138; assert_in_epsilon(21.93432238589153, worksheet.costpercapita_bs138, 0.001); end
-  def test_costpercapita_bt138; assert_in_epsilon(59.98710693909336, worksheet.costpercapita_bt138, 0.001); end
-  def test_costpercapita_bu138; assert_in_epsilon(97.19913017749738, worksheet.costpercapita_bu138, 0.001); end
-  def test_costpercapita_bv138; assert_in_epsilon(113.5474127455162, worksheet.costpercapita_bv138, 0.001); end
-  def test_costpercapita_bw138; assert_in_epsilon(114.32883691897666, worksheet.costpercapita_bw138, 0.001); end
-  def test_costpercapita_bx138; assert_in_epsilon(116.37754699886925, worksheet.costpercapita_bx138, 0.001); end
-  def test_costpercapita_by138; assert_in_epsilon(119.26497373962117, worksheet.costpercapita_by138, 0.001); end
-  def test_costpercapita_bz138; assert_in_epsilon(124.62191020906435, worksheet.costpercapita_bz138, 0.001); end
-  def test_costpercapita_ca138; assert_in_epsilon(131.6961182564802, worksheet.costpercapita_ca138, 0.001); end
-  def test_costpercapita_cc138; assert_in_epsilon(99.88415093011223, worksheet.costpercapita_cc138, 0.001); end
-  def test_costpercapita_cd138; assert_in_epsilon(2069.9167632606236, worksheet.costpercapita_cd138, 0.001); end
-  def test_costpercapita_cf138; assert_in_epsilon(-33.67707760880528, worksheet.costpercapita_cf138, 0.001); end
-  def test_costpercapita_cg138; assert_in_epsilon(1.000332129894576, worksheet.costpercapita_cg138, 0.001); end
-  def test_costpercapita_ch138; assert_in_epsilon(37.60414310440282, worksheet.costpercapita_ch138, 0.001); end
-  def test_costpercapita_ci138; assert_in_epsilon(53.856017634634675, worksheet.costpercapita_ci138, 0.001); end
-  def test_costpercapita_cj138; assert_in_epsilon(54.642597308820335, worksheet.costpercapita_cj138, 0.001); end
-  def test_costpercapita_ck138; assert_in_epsilon(54.315419483467736, worksheet.costpercapita_ck138, 0.001); end
-  def test_costpercapita_cl138; assert_in_epsilon(55.613146592522035, worksheet.costpercapita_cl138, 0.001); end
-  def test_costpercapita_cm138; assert_in_epsilon(56.954142221548295, worksheet.costpercapita_cm138, 0.001); end
-  def test_costpercapita_cn138; assert_in_epsilon(58.980805966865546, worksheet.costpercapita_cn138, 0.001); end
-  def test_costpercapita_cp138; assert_in_epsilon(37.69883631481675, worksheet.costpercapita_cp138, 0.001); end
-  def test_costpercapita_cq138; assert_in_epsilon(781.5484218761915, worksheet.costpercapita_cq138, 0.001); end
+  def test_costpercapita_ay138; assert_in_epsilon(21.934322385891544, worksheet.costpercapita_ay138, 0.001); end
+  def test_costpercapita_az138; assert_in_epsilon(38.77607035285134, worksheet.costpercapita_az138, 0.001); end
+  def test_costpercapita_ba138; assert_in_epsilon(39.175890170269334, worksheet.costpercapita_ba138, 0.001); end
+  def test_costpercapita_bb138; assert_in_epsilon(39.239265814520095, worksheet.costpercapita_bb138, 0.001); end
+  def test_costpercapita_bc138; assert_in_epsilon(39.23587674875966, worksheet.costpercapita_bc138, 0.001); end
+  def test_costpercapita_bd138; assert_in_epsilon(40.79771153057773, worksheet.costpercapita_bd138, 0.001); end
+  def test_costpercapita_be138; assert_in_epsilon(41.84273060405647, worksheet.costpercapita_be138, 0.001); end
+  def test_costpercapita_bf138; assert_in_epsilon(44.48268515428578, worksheet.costpercapita_bf138, 0.001); end
+  def test_costpercapita_bg138; assert_in_epsilon(47.80078372130197, worksheet.costpercapita_bg138, 0.001); end
+  def test_costpercapita_bi138; assert_in_epsilon(21.934322385891544, worksheet.costpercapita_bi138, 0.001); end
+  def test_costpercapita_bj138; assert_in_epsilon(59.98710693909338, worksheet.costpercapita_bj138, 0.001); end
+  def test_costpercapita_bk138; assert_in_epsilon(97.19913017749744, worksheet.costpercapita_bk138, 0.001); end
+  def test_costpercapita_bl138; assert_in_epsilon(113.54741274551625, worksheet.costpercapita_bl138, 0.001); end
+  def test_costpercapita_bm138; assert_in_epsilon(114.3288369189767, worksheet.costpercapita_bm138, 0.001); end
+  def test_costpercapita_bn138; assert_in_epsilon(116.37754699886933, worksheet.costpercapita_bn138, 0.001); end
+  def test_costpercapita_bo138; assert_in_epsilon(119.26497373962124, worksheet.costpercapita_bo138, 0.001); end
+  def test_costpercapita_bp138; assert_in_epsilon(124.62191020906442, worksheet.costpercapita_bp138, 0.001); end
+  def test_costpercapita_bq138; assert_in_epsilon(131.69611825648028, worksheet.costpercapita_bq138, 0.001); end
+  def test_costpercapita_bs138; assert_in_epsilon(21.934322385891544, worksheet.costpercapita_bs138, 0.001); end
+  def test_costpercapita_bt138; assert_in_epsilon(59.98710693909338, worksheet.costpercapita_bt138, 0.001); end
+  def test_costpercapita_bu138; assert_in_epsilon(97.19913017749744, worksheet.costpercapita_bu138, 0.001); end
+  def test_costpercapita_bv138; assert_in_epsilon(113.54741274551625, worksheet.costpercapita_bv138, 0.001); end
+  def test_costpercapita_bw138; assert_in_epsilon(114.3288369189767, worksheet.costpercapita_bw138, 0.001); end
+  def test_costpercapita_bx138; assert_in_epsilon(116.37754699886933, worksheet.costpercapita_bx138, 0.001); end
+  def test_costpercapita_by138; assert_in_epsilon(119.26497373962124, worksheet.costpercapita_by138, 0.001); end
+  def test_costpercapita_bz138; assert_in_epsilon(124.62191020906442, worksheet.costpercapita_bz138, 0.001); end
+  def test_costpercapita_ca138; assert_in_epsilon(131.69611825648028, worksheet.costpercapita_ca138, 0.001); end
+  def test_costpercapita_cc138; assert_in_epsilon(99.8841509301123, worksheet.costpercapita_cc138, 0.001); end
+  def test_costpercapita_cd138; assert_in_epsilon(2069.916763260625, worksheet.costpercapita_cd138, 0.001); end
+  def test_costpercapita_cf138; assert_in_epsilon(-33.67707760880526, worksheet.costpercapita_cf138, 0.001); end
+  def test_costpercapita_cg138; assert_in_epsilon(1.000332129894597, worksheet.costpercapita_cg138, 0.001); end
+  def test_costpercapita_ch138; assert_in_epsilon(37.60414310440288, worksheet.costpercapita_ch138, 0.001); end
+  def test_costpercapita_ci138; assert_in_epsilon(53.85601763463474, worksheet.costpercapita_ci138, 0.001); end
+  def test_costpercapita_cj138; assert_in_epsilon(54.642597308820385, worksheet.costpercapita_cj138, 0.001); end
+  def test_costpercapita_ck138; assert_in_epsilon(54.315419483467814, worksheet.costpercapita_ck138, 0.001); end
+  def test_costpercapita_cl138; assert_in_epsilon(55.613146592522114, worksheet.costpercapita_cl138, 0.001); end
+  def test_costpercapita_cm138; assert_in_epsilon(56.954142221548366, worksheet.costpercapita_cm138, 0.001); end
+  def test_costpercapita_cn138; assert_in_epsilon(58.98080596686562, worksheet.costpercapita_cn138, 0.001); end
+  def test_costpercapita_cp138; assert_in_epsilon(37.6988363148168, worksheet.costpercapita_cp138, 0.001); end
+  def test_costpercapita_cq138; assert_in_epsilon(781.5484218761926, worksheet.costpercapita_cq138, 0.001); end
   def test_costpercapita_cr138; assert_equal("ok", worksheet.costpercapita_cr138); end
   def test_costpercapita_a139; assert_equal("X.b", worksheet.costpercapita_a139); end
   def test_costpercapita_b139; assert_equal("Commercial lighting, appliances, and catering", worksheet.costpercapita_b139); end
@@ -19300,46 +19911,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at139; assert_in_epsilon(187.28262755209724, worksheet.costpercapita_at139, 0.001); end
   def test_costpercapita_av139; assert_in_delta(0, (worksheet.costpercapita_av139||0), 0.001); end
   def test_costpercapita_aw139; assert_in_epsilon(5, worksheet.costpercapita_aw139, 0.001); end
-  def test_costpercapita_ay139; assert_in_epsilon(1.6333140886172406, worksheet.costpercapita_ay139, 0.001); end
-  def test_costpercapita_az139; assert_in_epsilon(7.556332597424748, worksheet.costpercapita_az139, 0.001); end
-  def test_costpercapita_ba139; assert_in_epsilon(6.806175469088471, worksheet.costpercapita_ba139, 0.001); end
-  def test_costpercapita_bb139; assert_in_epsilon(6.165030056936648, worksheet.costpercapita_bb139, 0.001); end
-  def test_costpercapita_bc139; assert_in_epsilon(5.627572679710409, worksheet.costpercapita_bc139, 0.001); end
-  def test_costpercapita_bd139; assert_in_epsilon(5.178227858833108, worksheet.costpercapita_bd139, 0.001); end
-  def test_costpercapita_be139; assert_in_epsilon(4.796128233226409, worksheet.costpercapita_be139, 0.001); end
-  def test_costpercapita_bf139; assert_in_epsilon(4.468086669221764, worksheet.costpercapita_bf139, 0.001); end
-  def test_costpercapita_bg139; assert_in_epsilon(4.18667207442621, worksheet.costpercapita_bg139, 0.001); end
-  def test_costpercapita_bi139; assert_in_epsilon(1.6333140886172406, worksheet.costpercapita_bi139, 0.001); end
-  def test_costpercapita_bj139; assert_in_epsilon(9.13578804086113, worksheet.costpercapita_bj139, 0.001); end
-  def test_costpercapita_bk139; assert_in_epsilon(15.642874706614007, worksheet.costpercapita_bk139, 0.001); end
-  def test_costpercapita_bl139; assert_in_epsilon(19.84310436948318, worksheet.costpercapita_bl139, 0.001); end
-  def test_costpercapita_bm139; assert_in_epsilon(18.03941756934185, worksheet.costpercapita_bm139, 0.001); end
-  def test_costpercapita_bn139; assert_in_epsilon(16.52858554313676, worksheet.costpercapita_bn139, 0.001); end
-  def test_costpercapita_bo139; assert_in_epsilon(15.241745760826902, worksheet.costpercapita_bo139, 0.001); end
-  def test_costpercapita_bp139; assert_in_epsilon(14.135245069926583, worksheet.costpercapita_bp139, 0.001); end
-  def test_costpercapita_bq139; assert_in_epsilon(13.184113263846418, worksheet.costpercapita_bq139, 0.001); end
-  def test_costpercapita_bs139; assert_in_epsilon(1.6333140886172406, worksheet.costpercapita_bs139, 0.001); end
-  def test_costpercapita_bt139; assert_in_epsilon(9.13578804086113, worksheet.costpercapita_bt139, 0.001); end
-  def test_costpercapita_bu139; assert_in_epsilon(15.642874706614007, worksheet.costpercapita_bu139, 0.001); end
-  def test_costpercapita_bv139; assert_in_epsilon(19.84310436948318, worksheet.costpercapita_bv139, 0.001); end
-  def test_costpercapita_bw139; assert_in_epsilon(18.03941756934185, worksheet.costpercapita_bw139, 0.001); end
-  def test_costpercapita_bx139; assert_in_epsilon(16.52858554313676, worksheet.costpercapita_bx139, 0.001); end
-  def test_costpercapita_by139; assert_in_epsilon(15.241745760826902, worksheet.costpercapita_by139, 0.001); end
-  def test_costpercapita_bz139; assert_in_epsilon(14.135245069926583, worksheet.costpercapita_bz139, 0.001); end
-  def test_costpercapita_ca139; assert_in_epsilon(13.184113263846418, worksheet.costpercapita_ca139, 0.001); end
-  def test_costpercapita_cc139; assert_in_epsilon(13.709354268072673, worksheet.costpercapita_cc139, 0.001); end
-  def test_costpercapita_cd139; assert_in_epsilon(301.4105120317816, worksheet.costpercapita_cd139, 0.001); end
-  def test_costpercapita_cf139; assert_in_epsilon(-2.5077248503148666, worksheet.costpercapita_cf139, 0.001); end
-  def test_costpercapita_cg139; assert_in_epsilon(-2.35902526156332, worksheet.costpercapita_cg139, 0.001); end
-  def test_costpercapita_ch139; assert_in_epsilon(5.289212356259498, worksheet.costpercapita_ch139, 0.001); end
-  def test_costpercapita_ci139; assert_in_epsilon(10.464762615114992, worksheet.costpercapita_ci139, 0.001); end
-  def test_costpercapita_cj139; assert_in_epsilon(9.478664523460612, worksheet.costpercapita_cj139, 0.001); end
-  def test_costpercapita_ck139; assert_in_epsilon(8.651382983923648, worksheet.costpercapita_ck139, 0.001); end
-  def test_costpercapita_cl139; assert_in_epsilon(7.945799227952834, worksheet.costpercapita_cl139, 0.001); end
-  def test_costpercapita_cm139; assert_in_epsilon(7.33832058049113, worksheet.costpercapita_cm139, 0.001); end
-  def test_costpercapita_cn139; assert_in_epsilon(6.815281130861071, worksheet.costpercapita_cn139, 0.001); end
-  def test_costpercapita_cp139; assert_in_epsilon(5.679630367353955, worksheet.costpercapita_cp139, 0.001); end
-  def test_costpercapita_cq139; assert_in_epsilon(114.12788447968435, worksheet.costpercapita_cq139, 0.001); end
+  def test_costpercapita_ay139; assert_in_epsilon(1.6333140886172413, worksheet.costpercapita_ay139, 0.001); end
+  def test_costpercapita_az139; assert_in_epsilon(7.556332597424752, worksheet.costpercapita_az139, 0.001); end
+  def test_costpercapita_ba139; assert_in_epsilon(6.8061754690884735, worksheet.costpercapita_ba139, 0.001); end
+  def test_costpercapita_bb139; assert_in_epsilon(6.16503005693665, worksheet.costpercapita_bb139, 0.001); end
+  def test_costpercapita_bc139; assert_in_epsilon(5.62757267971041, worksheet.costpercapita_bc139, 0.001); end
+  def test_costpercapita_bd139; assert_in_epsilon(5.178227858833111, worksheet.costpercapita_bd139, 0.001); end
+  def test_costpercapita_be139; assert_in_epsilon(4.796128233226411, worksheet.costpercapita_be139, 0.001); end
+  def test_costpercapita_bf139; assert_in_epsilon(4.4680866692217664, worksheet.costpercapita_bf139, 0.001); end
+  def test_costpercapita_bg139; assert_in_epsilon(4.186672074426213, worksheet.costpercapita_bg139, 0.001); end
+  def test_costpercapita_bi139; assert_in_epsilon(1.6333140886172413, worksheet.costpercapita_bi139, 0.001); end
+  def test_costpercapita_bj139; assert_in_epsilon(9.135788040861133, worksheet.costpercapita_bj139, 0.001); end
+  def test_costpercapita_bk139; assert_in_epsilon(15.642874706614014, worksheet.costpercapita_bk139, 0.001); end
+  def test_costpercapita_bl139; assert_in_epsilon(19.843104369483182, worksheet.costpercapita_bl139, 0.001); end
+  def test_costpercapita_bm139; assert_in_epsilon(18.03941756934186, worksheet.costpercapita_bm139, 0.001); end
+  def test_costpercapita_bn139; assert_in_epsilon(16.528585543136767, worksheet.costpercapita_bn139, 0.001); end
+  def test_costpercapita_bo139; assert_in_epsilon(15.241745760826909, worksheet.costpercapita_bo139, 0.001); end
+  def test_costpercapita_bp139; assert_in_epsilon(14.13524506992659, worksheet.costpercapita_bp139, 0.001); end
+  def test_costpercapita_bq139; assert_in_epsilon(13.184113263846426, worksheet.costpercapita_bq139, 0.001); end
+  def test_costpercapita_bs139; assert_in_epsilon(1.6333140886172413, worksheet.costpercapita_bs139, 0.001); end
+  def test_costpercapita_bt139; assert_in_epsilon(9.135788040861133, worksheet.costpercapita_bt139, 0.001); end
+  def test_costpercapita_bu139; assert_in_epsilon(15.642874706614014, worksheet.costpercapita_bu139, 0.001); end
+  def test_costpercapita_bv139; assert_in_epsilon(19.843104369483182, worksheet.costpercapita_bv139, 0.001); end
+  def test_costpercapita_bw139; assert_in_epsilon(18.03941756934186, worksheet.costpercapita_bw139, 0.001); end
+  def test_costpercapita_bx139; assert_in_epsilon(16.528585543136767, worksheet.costpercapita_bx139, 0.001); end
+  def test_costpercapita_by139; assert_in_epsilon(15.241745760826909, worksheet.costpercapita_by139, 0.001); end
+  def test_costpercapita_bz139; assert_in_epsilon(14.13524506992659, worksheet.costpercapita_bz139, 0.001); end
+  def test_costpercapita_ca139; assert_in_epsilon(13.184113263846426, worksheet.costpercapita_ca139, 0.001); end
+  def test_costpercapita_cc139; assert_in_epsilon(13.70935426807268, worksheet.costpercapita_cc139, 0.001); end
+  def test_costpercapita_cd139; assert_in_epsilon(301.4105120317817, worksheet.costpercapita_cd139, 0.001); end
+  def test_costpercapita_cf139; assert_in_epsilon(-2.507724850314866, worksheet.costpercapita_cf139, 0.001); end
+  def test_costpercapita_cg139; assert_in_epsilon(-2.3590252615633163, worksheet.costpercapita_cg139, 0.001); end
+  def test_costpercapita_ch139; assert_in_epsilon(5.2892123562595055, worksheet.costpercapita_ch139, 0.001); end
+  def test_costpercapita_ci139; assert_in_epsilon(10.464762615114998, worksheet.costpercapita_ci139, 0.001); end
+  def test_costpercapita_cj139; assert_in_epsilon(9.478664523460623, worksheet.costpercapita_cj139, 0.001); end
+  def test_costpercapita_ck139; assert_in_epsilon(8.651382983923654, worksheet.costpercapita_ck139, 0.001); end
+  def test_costpercapita_cl139; assert_in_epsilon(7.945799227952841, worksheet.costpercapita_cl139, 0.001); end
+  def test_costpercapita_cm139; assert_in_epsilon(7.3383205804911364, worksheet.costpercapita_cm139, 0.001); end
+  def test_costpercapita_cn139; assert_in_epsilon(6.815281130861078, worksheet.costpercapita_cn139, 0.001); end
+  def test_costpercapita_cp139; assert_in_epsilon(5.679630367353962, worksheet.costpercapita_cp139, 0.001); end
+  def test_costpercapita_cq139; assert_in_epsilon(114.12788447968444, worksheet.costpercapita_cq139, 0.001); end
   def test_costpercapita_cr139; assert_equal("ok", worksheet.costpercapita_cr139); end
   def test_costpercapita_a140; assert_equal("XI.a", worksheet.costpercapita_a140); end
   def test_costpercapita_b140; assert_equal("Industrial processes", worksheet.costpercapita_b140); end
@@ -19384,46 +19995,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at140; assert_in_epsilon(4051.233905169913, worksheet.costpercapita_at140, 0.001); end
   def test_costpercapita_av140; assert_in_delta(0, (worksheet.costpercapita_av140||0), 0.001); end
   def test_costpercapita_aw140; assert_in_epsilon(5, worksheet.costpercapita_aw140, 0.001); end
-  def test_costpercapita_ay140; assert_in_delta(0.6724127320610672, worksheet.costpercapita_ay140, 0.001); end
-  def test_costpercapita_az140; assert_in_epsilon(1.1013353505779846, worksheet.costpercapita_az140, 0.001); end
-  def test_costpercapita_ba140; assert_in_epsilon(1.506919185473288, worksheet.costpercapita_ba140, 0.001); end
-  def test_costpercapita_bb140; assert_in_epsilon(1.7842119144850135, worksheet.costpercapita_bb140, 0.001); end
-  def test_costpercapita_bc140; assert_in_epsilon(2.272982102389025, worksheet.costpercapita_bc140, 0.001); end
-  def test_costpercapita_bd140; assert_in_epsilon(3.122904779933909, worksheet.costpercapita_bd140, 0.001); end
-  def test_costpercapita_be140; assert_in_epsilon(4.511395951179649, worksheet.costpercapita_be140, 0.001); end
-  def test_costpercapita_bf140; assert_in_epsilon(6.838801504732671, worksheet.costpercapita_bf140, 0.001); end
-  def test_costpercapita_bg140; assert_in_epsilon(10.735914903906554, worksheet.costpercapita_bg140, 0.001); end
-  def test_costpercapita_bi140; assert_in_delta(0.6724127320610672, worksheet.costpercapita_bi140, 0.001); end
-  def test_costpercapita_bj140; assert_in_epsilon(1.7515752262340543, worksheet.costpercapita_bj140, 0.001); end
-  def test_costpercapita_bk140; assert_in_epsilon(3.2011510784312747, worksheet.costpercapita_bk140, 0.001); end
-  def test_costpercapita_bl140; assert_in_epsilon(4.276766553874644, worksheet.costpercapita_bl140, 0.001); end
-  def test_costpercapita_bm140; assert_in_epsilon(5.428814286114625, worksheet.costpercapita_bm140, 0.001); end
-  def test_costpercapita_bn140; assert_in_epsilon(7.036932047061634, worksheet.costpercapita_bn140, 0.001); end
-  def test_costpercapita_bo140; assert_in_epsilon(9.73980824108038, worksheet.costpercapita_bo140, 0.001); end
-  def test_costpercapita_bp140; assert_in_epsilon(14.255542038341732, worksheet.costpercapita_bp140, 0.001); end
-  def test_costpercapita_bq140; assert_in_epsilon(21.785984415735026, worksheet.costpercapita_bq140, 0.001); end
+  def test_costpercapita_ay140; assert_in_delta(0.6724127320610676, worksheet.costpercapita_ay140, 0.001); end
+  def test_costpercapita_az140; assert_in_epsilon(1.1013353505779848, worksheet.costpercapita_az140, 0.001); end
+  def test_costpercapita_ba140; assert_in_epsilon(1.5069191854732888, worksheet.costpercapita_ba140, 0.001); end
+  def test_costpercapita_bb140; assert_in_epsilon(1.7842119144850141, worksheet.costpercapita_bb140, 0.001); end
+  def test_costpercapita_bc140; assert_in_epsilon(2.2729821023890264, worksheet.costpercapita_bc140, 0.001); end
+  def test_costpercapita_bd140; assert_in_epsilon(3.1229047799339105, worksheet.costpercapita_bd140, 0.001); end
+  def test_costpercapita_be140; assert_in_epsilon(4.511395951179651, worksheet.costpercapita_be140, 0.001); end
+  def test_costpercapita_bf140; assert_in_epsilon(6.838801504732674, worksheet.costpercapita_bf140, 0.001); end
+  def test_costpercapita_bg140; assert_in_epsilon(10.73591490390656, worksheet.costpercapita_bg140, 0.001); end
+  def test_costpercapita_bi140; assert_in_delta(0.6724127320610676, worksheet.costpercapita_bi140, 0.001); end
+  def test_costpercapita_bj140; assert_in_epsilon(1.7515752262340547, worksheet.costpercapita_bj140, 0.001); end
+  def test_costpercapita_bk140; assert_in_epsilon(3.2011510784312764, worksheet.costpercapita_bk140, 0.001); end
+  def test_costpercapita_bl140; assert_in_epsilon(4.276766553874646, worksheet.costpercapita_bl140, 0.001); end
+  def test_costpercapita_bm140; assert_in_epsilon(5.428814286114627, worksheet.costpercapita_bm140, 0.001); end
+  def test_costpercapita_bn140; assert_in_epsilon(7.036932047061638, worksheet.costpercapita_bn140, 0.001); end
+  def test_costpercapita_bo140; assert_in_epsilon(9.739808241080388, worksheet.costpercapita_bo140, 0.001); end
+  def test_costpercapita_bp140; assert_in_epsilon(14.255542038341737, worksheet.costpercapita_bp140, 0.001); end
+  def test_costpercapita_bq140; assert_in_epsilon(21.785984415735033, worksheet.costpercapita_bq140, 0.001); end
   def test_costpercapita_bs140; assert_in_epsilon(182.83941613200906, worksheet.costpercapita_bs140, 0.001); end
   def test_costpercapita_bt140; assert_in_epsilon(184.77931034775142, worksheet.costpercapita_bt140, 0.001); end
   def test_costpercapita_bu140; assert_in_epsilon(187.26579466757036, worksheet.costpercapita_bu140, 0.001); end
   def test_costpercapita_bv140; assert_in_epsilon(189.8040068445323, worksheet.costpercapita_bv140, 0.001); end
-  def test_costpercapita_bw140; assert_in_epsilon(193.23609270829795, worksheet.costpercapita_bw140, 0.001); end
+  def test_costpercapita_bw140; assert_in_epsilon(193.23609270829797, worksheet.costpercapita_bw140, 0.001); end
   def test_costpercapita_bx140; assert_in_epsilon(197.99869758556034, worksheet.costpercapita_bx140, 0.001); end
   def test_costpercapita_by140; assert_in_epsilon(204.47300085393013, worksheet.costpercapita_by140, 0.001); end
   def test_costpercapita_bz140; assert_in_epsilon(213.2615489569517, worksheet.costpercapita_bz140, 0.001); end
   def test_costpercapita_ca140; assert_in_epsilon(225.6152362835886, worksheet.costpercapita_ca140, 0.001); end
   def test_costpercapita_cc140; assert_in_epsilon(197.6970115977991, worksheet.costpercapita_cc140, 0.001); end
   def test_costpercapita_cd140; assert_in_epsilon(4086.471937650977, worksheet.costpercapita_cd140, 0.001); end
-  def test_costpercapita_cf140; assert_in_epsilon(-1.0323955016424333, worksheet.costpercapita_cf140, 0.001); end
-  def test_costpercapita_cg140; assert_in_delta(0.07620637831322499, worksheet.costpercapita_cg140, 0.001); end
-  def test_costpercapita_ch140; assert_in_delta(0.9088016515730202, worksheet.costpercapita_ch140, 0.001); end
-  def test_costpercapita_ci140; assert_in_epsilon(1.562595018339509, worksheet.costpercapita_ci140, 0.001); end
-  def test_costpercapita_cj140; assert_in_epsilon(1.9711177686772516, worksheet.costpercapita_cj140, 0.001); end
-  def test_costpercapita_ck140; assert_in_epsilon(2.286319637700085, worksheet.costpercapita_ck140, 0.001); end
-  def test_costpercapita_cl140; assert_in_epsilon(2.877000983258367, worksheet.costpercapita_cl140, 0.001); end
-  def test_costpercapita_cm140; assert_in_epsilon(3.8522484437701356, worksheet.costpercapita_cm140, 0.001); end
-  def test_costpercapita_cn140; assert_in_epsilon(5.454339949320185, worksheet.costpercapita_cn140, 0.001); end
-  def test_costpercapita_cp140; assert_in_epsilon(1.9951371477010384, worksheet.costpercapita_cp140, 0.001); end
-  def test_costpercapita_cq140; assert_in_epsilon(35.23803248106346, worksheet.costpercapita_cq140, 0.001); end
+  def test_costpercapita_cf140; assert_in_epsilon(-1.032395501642433, worksheet.costpercapita_cf140, 0.001); end
+  def test_costpercapita_cg140; assert_in_delta(0.07620637831322544, worksheet.costpercapita_cg140, 0.001); end
+  def test_costpercapita_ch140; assert_in_delta(0.9088016515730218, worksheet.costpercapita_ch140, 0.001); end
+  def test_costpercapita_ci140; assert_in_epsilon(1.5625950183395108, worksheet.costpercapita_ci140, 0.001); end
+  def test_costpercapita_cj140; assert_in_epsilon(1.9711177686772534, worksheet.costpercapita_cj140, 0.001); end
+  def test_costpercapita_ck140; assert_in_epsilon(2.286319637700089, worksheet.costpercapita_ck140, 0.001); end
+  def test_costpercapita_cl140; assert_in_epsilon(2.877000983258373, worksheet.costpercapita_cl140, 0.001); end
+  def test_costpercapita_cm140; assert_in_epsilon(3.8522484437701414, worksheet.costpercapita_cm140, 0.001); end
+  def test_costpercapita_cn140; assert_in_epsilon(5.454339949320194, worksheet.costpercapita_cn140, 0.001); end
+  def test_costpercapita_cp140; assert_in_epsilon(1.995137147701042, worksheet.costpercapita_cp140, 0.001); end
+  def test_costpercapita_cq140; assert_in_epsilon(35.23803248106351, worksheet.costpercapita_cq140, 0.001); end
   def test_costpercapita_cr140; assert_equal("ok", worksheet.costpercapita_cr140); end
   def test_costpercapita_a141; assert_equal("XII.a.ICE", worksheet.costpercapita_a141); end
   def test_costpercapita_b141; assert_equal("Conventional cars and buses", worksheet.costpercapita_b141); end
@@ -19468,46 +20079,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at141; assert_in_epsilon(18184.26269287806, worksheet.costpercapita_at141, 0.001); end
   def test_costpercapita_av141; assert_in_delta(0.1, worksheet.costpercapita_av141, 0.001); end
   def test_costpercapita_aw141; assert_in_epsilon(15, worksheet.costpercapita_aw141, 0.001); end
-  def test_costpercapita_ay141; assert_in_epsilon(366.81461517482813, worksheet.costpercapita_ay141, 0.001); end
-  def test_costpercapita_az141; assert_in_epsilon(552.2800783577839, worksheet.costpercapita_az141, 0.001); end
-  def test_costpercapita_ba141; assert_in_epsilon(532.5643106974835, worksheet.costpercapita_ba141, 0.001); end
-  def test_costpercapita_bb141; assert_in_epsilon(124.5977783760128, worksheet.costpercapita_bb141, 0.001); end
+  def test_costpercapita_ay141; assert_in_epsilon(366.8146151748283, worksheet.costpercapita_ay141, 0.001); end
+  def test_costpercapita_az141; assert_in_epsilon(552.2800783577841, worksheet.costpercapita_az141, 0.001); end
+  def test_costpercapita_ba141; assert_in_epsilon(532.5643106974837, worksheet.costpercapita_ba141, 0.001); end
+  def test_costpercapita_bb141; assert_in_epsilon(124.59777837601284, worksheet.costpercapita_bb141, 0.001); end
   def test_costpercapita_bc141; assert_in_delta(0, (worksheet.costpercapita_bc141||0), 0.001); end
-  def test_costpercapita_bd141; assert_in_epsilon(70.26731717742818, worksheet.costpercapita_bd141, 0.001); end
-  def test_costpercapita_be141; assert_in_epsilon(27.64562641498573, worksheet.costpercapita_be141, 0.001); end
+  def test_costpercapita_bd141; assert_in_epsilon(70.26731717742821, worksheet.costpercapita_bd141, 0.001); end
+  def test_costpercapita_be141; assert_in_epsilon(27.64562641498574, worksheet.costpercapita_be141, 0.001); end
   def test_costpercapita_bf141; assert_in_delta(0, (worksheet.costpercapita_bf141||0), 0.001); end
   def test_costpercapita_bg141; assert_in_delta(0, (worksheet.costpercapita_bg141||0), 0.001); end
-  def test_costpercapita_bi141; assert_in_epsilon(366.81461517482813, worksheet.costpercapita_bi141, 0.001); end
-  def test_costpercapita_bj141; assert_in_epsilon(906.9989561949269, worksheet.costpercapita_bj141, 0.001); end
-  def test_costpercapita_bk141; assert_in_epsilon(1409.8697986090326, worksheet.costpercapita_bk141, 0.001); end
-  def test_costpercapita_bl141; assert_in_epsilon(1158.3308263645677, worksheet.costpercapita_bl141, 0.001); end
-  def test_costpercapita_bm141; assert_in_epsilon(623.1687890636318, worksheet.costpercapita_bm141, 0.001); end
-  def test_costpercapita_bn141; assert_in_epsilon(188.60626211015733, worksheet.costpercapita_bn141, 0.001); end
-  def test_costpercapita_bo141; assert_in_epsilon(96.41439564486794, worksheet.costpercapita_bo141, 0.001); end
-  def test_costpercapita_bp141; assert_in_epsilon(94.49112847637464, worksheet.costpercapita_bp141, 0.001); end
-  def test_costpercapita_bq141; assert_in_epsilon(26.588529603323728, worksheet.costpercapita_bq141, 0.001); end
-  def test_costpercapita_bs141; assert_in_epsilon(1246.9978192803926, worksheet.costpercapita_bs141, 0.001); end
-  def test_costpercapita_bt141; assert_in_epsilon(1732.6581889685294, worksheet.costpercapita_bt141, 0.001); end
-  def test_costpercapita_bu141; assert_in_epsilon(2191.3368086137543, worksheet.costpercapita_bu141, 0.001); end
-  def test_costpercapita_bv141; assert_in_epsilon(1672.667224671027, worksheet.costpercapita_bv141, 0.001); end
-  def test_costpercapita_bw141; assert_in_epsilon(872.4479581861686, worksheet.costpercapita_bw141, 0.001); end
-  def test_costpercapita_bx141; assert_in_epsilon(371.88714042268555, worksheet.costpercapita_bx141, 0.001); end
-  def test_costpercapita_by141; assert_in_epsilon(217.29363629208837, worksheet.costpercapita_by141, 0.001); end
+  def test_costpercapita_bi141; assert_in_epsilon(366.8146151748283, worksheet.costpercapita_bi141, 0.001); end
+  def test_costpercapita_bj141; assert_in_epsilon(906.9989561949274, worksheet.costpercapita_bj141, 0.001); end
+  def test_costpercapita_bk141; assert_in_epsilon(1409.8697986090333, worksheet.costpercapita_bk141, 0.001); end
+  def test_costpercapita_bl141; assert_in_epsilon(1158.330826364568, worksheet.costpercapita_bl141, 0.001); end
+  def test_costpercapita_bm141; assert_in_epsilon(623.168789063632, worksheet.costpercapita_bm141, 0.001); end
+  def test_costpercapita_bn141; assert_in_epsilon(188.6062621101574, worksheet.costpercapita_bn141, 0.001); end
+  def test_costpercapita_bo141; assert_in_epsilon(96.41439564486797, worksheet.costpercapita_bo141, 0.001); end
+  def test_costpercapita_bp141; assert_in_epsilon(94.49112847637467, worksheet.costpercapita_bp141, 0.001); end
+  def test_costpercapita_bq141; assert_in_epsilon(26.58852960332374, worksheet.costpercapita_bq141, 0.001); end
+  def test_costpercapita_bs141; assert_in_epsilon(1246.9978192803928, worksheet.costpercapita_bs141, 0.001); end
+  def test_costpercapita_bt141; assert_in_epsilon(1732.6581889685299, worksheet.costpercapita_bt141, 0.001); end
+  def test_costpercapita_bu141; assert_in_epsilon(2191.336808613755, worksheet.costpercapita_bu141, 0.001); end
+  def test_costpercapita_bv141; assert_in_epsilon(1672.6672246710275, worksheet.costpercapita_bv141, 0.001); end
+  def test_costpercapita_bw141; assert_in_epsilon(872.4479581861689, worksheet.costpercapita_bw141, 0.001); end
+  def test_costpercapita_bx141; assert_in_epsilon(371.8871404226856, worksheet.costpercapita_bx141, 0.001); end
+  def test_costpercapita_by141; assert_in_epsilon(217.2936362920884, worksheet.costpercapita_by141, 0.001); end
   def test_costpercapita_bz141; assert_in_epsilon(152.027323199256, worksheet.costpercapita_bz141, 0.001); end
-  def test_costpercapita_ca141; assert_in_epsilon(26.588529603323728, worksheet.costpercapita_ca141, 0.001); end
-  def test_costpercapita_cc141; assert_in_epsilon(942.6560699152474, worksheet.costpercapita_cc141, 0.001); end
-  def test_costpercapita_cd141; assert_in_epsilon(24935.720979635633, worksheet.costpercapita_cd141, 0.001); end
-  def test_costpercapita_cf141; assert_in_epsilon(-563.1924271903886, worksheet.costpercapita_cf141, 0.001); end
-  def test_costpercapita_cg141; assert_in_epsilon(66.86171904702329, worksheet.costpercapita_cg141, 0.001); end
-  def test_costpercapita_ch141; assert_in_epsilon(599.7245007315585, worksheet.costpercapita_ch141, 0.001); end
-  def test_costpercapita_ci141; assert_in_epsilon(968.7907046370991, worksheet.costpercapita_ci141, 0.001); end
-  def test_costpercapita_cj141; assert_in_epsilon(623.1687890636318, worksheet.costpercapita_cj141, 0.001); end
-  def test_costpercapita_ck141; assert_in_epsilon(81.71450188085608, worksheet.costpercapita_ck141, 0.001); end
-  def test_costpercapita_cl141; assert_in_epsilon(54.35942914205191, worksheet.costpercapita_cl141, 0.001); end
-  def test_costpercapita_cm141; assert_in_epsilon(94.49112847637464, worksheet.costpercapita_cm141, 0.001); end
-  def test_costpercapita_cn141; assert_in_epsilon(26.588529603323728, worksheet.costpercapita_cn141, 0.001); end
-  def test_costpercapita_cp141; assert_in_epsilon(216.9452083768367, worksheet.costpercapita_cp141, 0.001); end
-  def test_costpercapita_cq141; assert_in_epsilon(6751.4582867575755, worksheet.costpercapita_cq141, 0.001); end
+  def test_costpercapita_ca141; assert_in_epsilon(26.58852960332374, worksheet.costpercapita_ca141, 0.001); end
+  def test_costpercapita_cc141; assert_in_epsilon(942.6560699152475, worksheet.costpercapita_cc141, 0.001); end
+  def test_costpercapita_cd141; assert_in_epsilon(24935.720979635644, worksheet.costpercapita_cd141, 0.001); end
+  def test_costpercapita_cf141; assert_in_epsilon(-563.1924271903883, worksheet.costpercapita_cf141, 0.001); end
+  def test_costpercapita_cg141; assert_in_epsilon(66.86171904702374, worksheet.costpercapita_cg141, 0.001); end
+  def test_costpercapita_ch141; assert_in_epsilon(599.7245007315591, worksheet.costpercapita_ch141, 0.001); end
+  def test_costpercapita_ci141; assert_in_epsilon(968.7907046370996, worksheet.costpercapita_ci141, 0.001); end
+  def test_costpercapita_cj141; assert_in_epsilon(623.168789063632, worksheet.costpercapita_cj141, 0.001); end
+  def test_costpercapita_ck141; assert_in_epsilon(81.71450188085615, worksheet.costpercapita_ck141, 0.001); end
+  def test_costpercapita_cl141; assert_in_epsilon(54.35942914205193, worksheet.costpercapita_cl141, 0.001); end
+  def test_costpercapita_cm141; assert_in_epsilon(94.49112847637467, worksheet.costpercapita_cm141, 0.001); end
+  def test_costpercapita_cn141; assert_in_epsilon(26.58852960332374, worksheet.costpercapita_cn141, 0.001); end
+  def test_costpercapita_cp141; assert_in_epsilon(216.94520837683694, worksheet.costpercapita_cp141, 0.001); end
+  def test_costpercapita_cq141; assert_in_epsilon(6751.458286757584, worksheet.costpercapita_cq141, 0.001); end
   def test_costpercapita_cr141; assert_equal("ok", worksheet.costpercapita_cr141); end
   def test_costpercapita_a142; assert_equal("XII.a.HEV", worksheet.costpercapita_a142); end
   def test_costpercapita_b142; assert_equal("Hybrid cars and buses", worksheet.costpercapita_b142); end
@@ -19552,46 +20163,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at142; assert_in_epsilon(13487.981690477092, worksheet.costpercapita_at142, 0.001); end
   def test_costpercapita_av142; assert_in_delta(0.1, worksheet.costpercapita_av142, 0.001); end
   def test_costpercapita_aw142; assert_in_epsilon(15, worksheet.costpercapita_aw142, 0.001); end
-  def test_costpercapita_ay142; assert_in_delta(0.6169345407576639, worksheet.costpercapita_ay142, 0.001); end
-  def test_costpercapita_az142; assert_in_epsilon(44.84315654752416, worksheet.costpercapita_az142, 0.001); end
-  def test_costpercapita_ba142; assert_in_epsilon(36.476266164042876, worksheet.costpercapita_ba142, 0.001); end
-  def test_costpercapita_bb142; assert_in_epsilon(636.5359156609811, worksheet.costpercapita_bb142, 0.001); end
-  def test_costpercapita_bc142; assert_in_epsilon(840.1288135598292, worksheet.costpercapita_bc142, 0.001); end
-  def test_costpercapita_bd142; assert_in_epsilon(317.2812205704932, worksheet.costpercapita_bd142, 0.001); end
-  def test_costpercapita_be142; assert_in_epsilon(233.23567450069535, worksheet.costpercapita_be142, 0.001); end
-  def test_costpercapita_bf142; assert_in_epsilon(13.033122582070867, worksheet.costpercapita_bf142, 0.001); end
-  def test_costpercapita_bg142; assert_in_epsilon(10.771666048252479, worksheet.costpercapita_bg142, 0.001); end
-  def test_costpercapita_bi142; assert_in_delta(0.6169345407576639, worksheet.costpercapita_bi142, 0.001); end
-  def test_costpercapita_bj142; assert_in_epsilon(45.43974762907698, worksheet.costpercapita_bj142, 0.001); end
-  def test_costpercapita_bk142; assert_in_epsilon(80.42840049895558, worksheet.costpercapita_bk142, 0.001); end
-  def test_costpercapita_bl142; assert_in_epsilon(713.9147813951218, worksheet.costpercapita_bl142, 0.001); end
-  def test_costpercapita_bm142; assert_in_epsilon(1493.6556238489334, worksheet.costpercapita_bm142, 0.001); end
-  def test_costpercapita_bn142; assert_in_epsilon(1742.181465583654, worksheet.costpercapita_bn142, 0.001); end
-  def test_costpercapita_bo142; assert_in_epsilon(1346.5945617233017, worksheet.costpercapita_bo142, 0.001); end
-  def test_costpercapita_bp142; assert_in_epsilon(545.9368627313271, worksheet.costpercapita_bp142, 0.001); end
-  def test_costpercapita_bq142; assert_in_epsilon(247.87891720646357, worksheet.costpercapita_bq142, 0.001); end
-  def test_costpercapita_bs142; assert_in_epsilon(1.049345520128626, worksheet.costpercapita_bs142, 0.001); end
-  def test_costpercapita_bt142; assert_in_epsilon(71.7443480252015, worksheet.costpercapita_bt142, 0.001); end
-  def test_costpercapita_bu142; assert_in_epsilon(119.54029821222728, worksheet.costpercapita_bu142, 0.001); end
-  def test_costpercapita_bv142; assert_in_epsilon(1069.0931341107867, worksheet.costpercapita_bv142, 0.001); end
-  def test_costpercapita_bw142; assert_in_epsilon(2134.2432941784273, worksheet.costpercapita_bw142, 0.001); end
-  def test_costpercapita_bx142; assert_in_epsilon(2276.552653490715, worksheet.costpercapita_bx142, 0.001); end
-  def test_costpercapita_by142; assert_in_epsilon(1777.419920035586, worksheet.costpercapita_by142, 0.001); end
-  def test_costpercapita_bz142; assert_in_epsilon(766.7344804830058, worksheet.costpercapita_bz142, 0.001); end
-  def test_costpercapita_ca142; assert_in_epsilon(277.2992149606911, worksheet.costpercapita_ca142, 0.001); end
-  def test_costpercapita_cc142; assert_in_epsilon(943.7418543351965, worksheet.costpercapita_cc142, 0.001); end
-  def test_costpercapita_cd142; assert_in_epsilon(18809.08139319383, worksheet.costpercapita_cd142, 0.001); end
-  def test_costpercapita_cf142; assert_in_delta(-0.9472165149725464, worksheet.costpercapita_cf142, 0.001); end
-  def test_costpercapita_cg142; assert_in_epsilon(-22.77637517378328, worksheet.costpercapita_cg142, 0.001); end
-  def test_costpercapita_ch142; assert_in_epsilon(24.940124391560435, worksheet.costpercapita_ch142, 0.001); end
-  def test_costpercapita_ci142; assert_in_epsilon(-254.393775232522, worksheet.costpercapita_ci142, 0.001); end
-  def test_costpercapita_cj142; assert_in_epsilon(215.6383135536177, worksheet.costpercapita_cj142, 0.001); end
-  def test_costpercapita_ck142; assert_in_epsilon(1259.5282276801074, worksheet.costpercapita_ck142, 0.001); end
-  def test_costpercapita_cl142; assert_in_epsilon(991.7927449313522, worksheet.costpercapita_cl142, 0.001); end
-  def test_costpercapita_cm142; assert_in_epsilon(526.1106694163883, worksheet.costpercapita_cm142, 0.001); end
-  def test_costpercapita_cn142; assert_in_epsilon(231.49288753078142, worksheet.costpercapita_cn142, 0.001); end
-  def test_costpercapita_cp142; assert_in_epsilon(330.15395562028107, worksheet.costpercapita_cp142, 0.001); end
-  def test_costpercapita_cq142; assert_in_epsilon(5321.0997027167305, worksheet.costpercapita_cq142, 0.001); end
+  def test_costpercapita_ay142; assert_in_delta(0.6169345407576643, worksheet.costpercapita_ay142, 0.001); end
+  def test_costpercapita_az142; assert_in_epsilon(44.84315654752418, worksheet.costpercapita_az142, 0.001); end
+  def test_costpercapita_ba142; assert_in_epsilon(36.47626616404289, worksheet.costpercapita_ba142, 0.001); end
+  def test_costpercapita_bb142; assert_in_epsilon(636.5359156609815, worksheet.costpercapita_bb142, 0.001); end
+  def test_costpercapita_bc142; assert_in_epsilon(840.1288135598295, worksheet.costpercapita_bc142, 0.001); end
+  def test_costpercapita_bd142; assert_in_epsilon(317.2812205704933, worksheet.costpercapita_bd142, 0.001); end
+  def test_costpercapita_be142; assert_in_epsilon(233.23567450069544, worksheet.costpercapita_be142, 0.001); end
+  def test_costpercapita_bf142; assert_in_epsilon(13.033122582070872, worksheet.costpercapita_bf142, 0.001); end
+  def test_costpercapita_bg142; assert_in_epsilon(10.771666048252484, worksheet.costpercapita_bg142, 0.001); end
+  def test_costpercapita_bi142; assert_in_delta(0.6169345407576643, worksheet.costpercapita_bi142, 0.001); end
+  def test_costpercapita_bj142; assert_in_epsilon(45.439747629077004, worksheet.costpercapita_bj142, 0.001); end
+  def test_costpercapita_bk142; assert_in_epsilon(80.42840049895563, worksheet.costpercapita_bk142, 0.001); end
+  def test_costpercapita_bl142; assert_in_epsilon(713.9147813951221, worksheet.costpercapita_bl142, 0.001); end
+  def test_costpercapita_bm142; assert_in_epsilon(1493.6556238489343, worksheet.costpercapita_bm142, 0.001); end
+  def test_costpercapita_bn142; assert_in_epsilon(1742.1814655836547, worksheet.costpercapita_bn142, 0.001); end
+  def test_costpercapita_bo142; assert_in_epsilon(1346.5945617233024, worksheet.costpercapita_bo142, 0.001); end
+  def test_costpercapita_bp142; assert_in_epsilon(545.9368627313273, worksheet.costpercapita_bp142, 0.001); end
+  def test_costpercapita_bq142; assert_in_epsilon(247.87891720646365, worksheet.costpercapita_bq142, 0.001); end
+  def test_costpercapita_bs142; assert_in_epsilon(1.0493455201286264, worksheet.costpercapita_bs142, 0.001); end
+  def test_costpercapita_bt142; assert_in_epsilon(71.74434802520152, worksheet.costpercapita_bt142, 0.001); end
+  def test_costpercapita_bu142; assert_in_epsilon(119.54029821222731, worksheet.costpercapita_bu142, 0.001); end
+  def test_costpercapita_bv142; assert_in_epsilon(1069.093134110787, worksheet.costpercapita_bv142, 0.001); end
+  def test_costpercapita_bw142; assert_in_epsilon(2134.243294178428, worksheet.costpercapita_bw142, 0.001); end
+  def test_costpercapita_bx142; assert_in_epsilon(2276.552653490716, worksheet.costpercapita_bx142, 0.001); end
+  def test_costpercapita_by142; assert_in_epsilon(1777.4199200355868, worksheet.costpercapita_by142, 0.001); end
+  def test_costpercapita_bz142; assert_in_epsilon(766.734480483006, worksheet.costpercapita_bz142, 0.001); end
+  def test_costpercapita_ca142; assert_in_epsilon(277.2992149606912, worksheet.costpercapita_ca142, 0.001); end
+  def test_costpercapita_cc142; assert_in_epsilon(943.741854335197, worksheet.costpercapita_cc142, 0.001); end
+  def test_costpercapita_cd142; assert_in_epsilon(18809.081393193832, worksheet.costpercapita_cd142, 0.001); end
+  def test_costpercapita_cf142; assert_in_delta(-0.9472165149725461, worksheet.costpercapita_cf142, 0.001); end
+  def test_costpercapita_cg142; assert_in_epsilon(-22.776375173783258, worksheet.costpercapita_cg142, 0.001); end
+  def test_costpercapita_ch142; assert_in_epsilon(24.940124391560477, worksheet.costpercapita_ch142, 0.001); end
+  def test_costpercapita_ci142; assert_in_epsilon(-254.39377523252168, worksheet.costpercapita_ci142, 0.001); end
+  def test_costpercapita_cj142; assert_in_epsilon(215.63831355361853, worksheet.costpercapita_cj142, 0.001); end
+  def test_costpercapita_ck142; assert_in_epsilon(1259.528227680108, worksheet.costpercapita_ck142, 0.001); end
+  def test_costpercapita_cl142; assert_in_epsilon(991.792744931353, worksheet.costpercapita_cl142, 0.001); end
+  def test_costpercapita_cm142; assert_in_epsilon(526.1106694163885, worksheet.costpercapita_cm142, 0.001); end
+  def test_costpercapita_cn142; assert_in_epsilon(231.4928875307815, worksheet.costpercapita_cn142, 0.001); end
+  def test_costpercapita_cp142; assert_in_epsilon(330.1539556202814, worksheet.costpercapita_cp142, 0.001); end
+  def test_costpercapita_cq142; assert_in_epsilon(5321.099702716738, worksheet.costpercapita_cq142, 0.001); end
   def test_costpercapita_cr142; assert_equal("ok", worksheet.costpercapita_cr142); end
   def test_costpercapita_a143; assert_equal("XII.a.EV", worksheet.costpercapita_a143); end
   def test_costpercapita_b143; assert_equal("Electric cars and buses", worksheet.costpercapita_b143); end
@@ -19637,45 +20248,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av143; assert_in_delta(0.1, worksheet.costpercapita_av143, 0.001); end
   def test_costpercapita_aw143; assert_in_epsilon(15, worksheet.costpercapita_aw143, 0.001); end
   def test_costpercapita_ay143; assert_in_delta(0, (worksheet.costpercapita_ay143||0), 0.001); end
-  def test_costpercapita_az143; assert_in_epsilon(33.84737607079058, worksheet.costpercapita_az143, 0.001); end
-  def test_costpercapita_ba143; assert_in_epsilon(47.22999432134525, worksheet.costpercapita_ba143, 0.001); end
-  def test_costpercapita_bb143; assert_in_epsilon(334.5269217259159, worksheet.costpercapita_bb143, 0.001); end
-  def test_costpercapita_bc143; assert_in_epsilon(442.58344811464843, worksheet.costpercapita_bc143, 0.001); end
-  def test_costpercapita_bd143; assert_in_epsilon(670.6589826351532, worksheet.costpercapita_bd143, 0.001); end
-  def test_costpercapita_be143; assert_in_epsilon(793.8177058967926, worksheet.costpercapita_be143, 0.001); end
-  def test_costpercapita_bf143; assert_in_epsilon(1184.0806288361468, worksheet.costpercapita_bf143, 0.001); end
-  def test_costpercapita_bg143; assert_in_epsilon(1374.8562013090134, worksheet.costpercapita_bg143, 0.001); end
+  def test_costpercapita_az143; assert_in_epsilon(33.8473760707906, worksheet.costpercapita_az143, 0.001); end
+  def test_costpercapita_ba143; assert_in_epsilon(47.22999432134527, worksheet.costpercapita_ba143, 0.001); end
+  def test_costpercapita_bb143; assert_in_epsilon(334.52692172591605, worksheet.costpercapita_bb143, 0.001); end
+  def test_costpercapita_bc143; assert_in_epsilon(442.58344811464866, worksheet.costpercapita_bc143, 0.001); end
+  def test_costpercapita_bd143; assert_in_epsilon(670.6589826351535, worksheet.costpercapita_bd143, 0.001); end
+  def test_costpercapita_be143; assert_in_epsilon(793.817705896793, worksheet.costpercapita_be143, 0.001); end
+  def test_costpercapita_bf143; assert_in_epsilon(1184.0806288361475, worksheet.costpercapita_bf143, 0.001); end
+  def test_costpercapita_bg143; assert_in_epsilon(1374.856201309014, worksheet.costpercapita_bg143, 0.001); end
   def test_costpercapita_bi143; assert_in_delta(0, (worksheet.costpercapita_bi143||0), 0.001); end
-  def test_costpercapita_bj143; assert_in_epsilon(33.84737607079058, worksheet.costpercapita_bj143, 0.001); end
-  def test_costpercapita_bk143; assert_in_epsilon(79.96926990208678, worksheet.costpercapita_bk143, 0.001); end
-  def test_costpercapita_bl143; assert_in_epsilon(412.02006515847125, worksheet.costpercapita_bl143, 0.001); end
-  def test_costpercapita_bm143; assert_in_epsilon(812.4882551544908, worksheet.costpercapita_bm143, 0.001); end
-  def test_costpercapita_bn143; assert_in_epsilon(1420.5399334719593, worksheet.costpercapita_bn143, 0.001); end
-  def test_costpercapita_bo143; assert_in_epsilon(1873.1156727681691, worksheet.costpercapita_bo143, 0.001); end
-  def test_costpercapita_bp143; assert_in_epsilon(2605.326623014178, worksheet.costpercapita_bp143, 0.001); end
-  def test_costpercapita_bq143; assert_in_epsilon(3300.304013543667, worksheet.costpercapita_bq143, 0.001); end
+  def test_costpercapita_bj143; assert_in_epsilon(33.8473760707906, worksheet.costpercapita_bj143, 0.001); end
+  def test_costpercapita_bk143; assert_in_epsilon(79.96926990208684, worksheet.costpercapita_bk143, 0.001); end
+  def test_costpercapita_bl143; assert_in_epsilon(412.0200651584715, worksheet.costpercapita_bl143, 0.001); end
+  def test_costpercapita_bm143; assert_in_epsilon(812.4882551544912, worksheet.costpercapita_bm143, 0.001); end
+  def test_costpercapita_bn143; assert_in_epsilon(1420.5399334719602, worksheet.costpercapita_bn143, 0.001); end
+  def test_costpercapita_bo143; assert_in_epsilon(1873.1156727681698, worksheet.costpercapita_bo143, 0.001); end
+  def test_costpercapita_bp143; assert_in_epsilon(2605.326623014179, worksheet.costpercapita_bp143, 0.001); end
+  def test_costpercapita_bq143; assert_in_epsilon(3300.304013543669, worksheet.costpercapita_bq143, 0.001); end
   def test_costpercapita_bs143; assert_in_delta(0, (worksheet.costpercapita_bs143||0), 0.001); end
-  def test_costpercapita_bt143; assert_in_epsilon(43.42584221930341, worksheet.costpercapita_bt143, 0.001); end
-  def test_costpercapita_bu143; assert_in_epsilon(98.88222411278441, worksheet.costpercapita_bu143, 0.001); end
-  def test_costpercapita_bv143; assert_in_epsilon(515.3846284527522, worksheet.costpercapita_bv143, 0.001); end
-  def test_costpercapita_bw143; assert_in_epsilon(994.2020554249901, worksheet.costpercapita_bw143, 0.001); end
-  def test_costpercapita_bx143; assert_in_epsilon(1709.9643237752543, worksheet.costpercapita_bx143, 0.001); end
-  def test_costpercapita_by143; assert_in_epsilon(2258.8666787126494, worksheet.costpercapita_by143, 0.001); end
-  def test_costpercapita_bz143; assert_in_epsilon(3152.6262656923122, worksheet.costpercapita_bz143, 0.001); end
-  def test_costpercapita_ca143; assert_in_epsilon(3993.2082997063885, worksheet.costpercapita_ca143, 0.001); end
-  def test_costpercapita_cc143; assert_in_epsilon(1418.506702010715, worksheet.costpercapita_cc143, 0.001); end
-  def test_costpercapita_cd143; assert_in_epsilon(22349.02916017763, worksheet.costpercapita_cd143, 0.001); end
+  def test_costpercapita_bt143; assert_in_epsilon(43.425842219303426, worksheet.costpercapita_bt143, 0.001); end
+  def test_costpercapita_bu143; assert_in_epsilon(98.88222411278447, worksheet.costpercapita_bu143, 0.001); end
+  def test_costpercapita_bv143; assert_in_epsilon(515.3846284527524, worksheet.costpercapita_bv143, 0.001); end
+  def test_costpercapita_bw143; assert_in_epsilon(994.2020554249906, worksheet.costpercapita_bw143, 0.001); end
+  def test_costpercapita_bx143; assert_in_epsilon(1709.964323775255, worksheet.costpercapita_bx143, 0.001); end
+  def test_costpercapita_by143; assert_in_epsilon(2258.8666787126504, worksheet.costpercapita_by143, 0.001); end
+  def test_costpercapita_bz143; assert_in_epsilon(3152.626265692313, worksheet.costpercapita_bz143, 0.001); end
+  def test_costpercapita_ca143; assert_in_epsilon(3993.20829970639, worksheet.costpercapita_ca143, 0.001); end
+  def test_costpercapita_cc143; assert_in_epsilon(1418.5067020107153, worksheet.costpercapita_cc143, 0.001); end
+  def test_costpercapita_cd143; assert_in_epsilon(22349.029160177637, worksheet.costpercapita_cd143, 0.001); end
   def test_costpercapita_cf143; assert_in_delta(0, (worksheet.costpercapita_cf143||0), 0.001); end
-  def test_costpercapita_cg143; assert_in_epsilon(-17.641790624079903, worksheet.costpercapita_cg143, 0.001); end
-  def test_costpercapita_ch143; assert_in_epsilon(8.122251523957848, worksheet.costpercapita_ch143, 0.001); end
-  def test_costpercapita_ci143; assert_in_epsilon(-96.86760757111111, worksheet.costpercapita_ci143, 0.001); end
-  def test_costpercapita_cj143; assert_in_epsilon(139.2232762472669, worksheet.costpercapita_cj143, 0.001); end
-  def test_costpercapita_ck143; assert_in_epsilon(400.32282476338804, worksheet.costpercapita_ck143, 0.001); end
-  def test_costpercapita_cl143; assert_in_epsilon(665.5475558549058, worksheet.costpercapita_cl143, 0.001); end
-  def test_costpercapita_cm143; assert_in_epsilon(804.0843420527101, worksheet.costpercapita_cm143, 0.001); end
-  def test_costpercapita_cn143; assert_in_epsilon(1208.8508981641758, worksheet.costpercapita_cn143, 0.001); end
-  def test_costpercapita_cp143; assert_in_epsilon(345.7379722679126, worksheet.costpercapita_cp143, 0.001); end
-  def test_costpercapita_cq143; assert_in_epsilon(4885.79752497601, worksheet.costpercapita_cq143, 0.001); end
+  def test_costpercapita_cg143; assert_in_epsilon(-17.64179062407988, worksheet.costpercapita_cg143, 0.001); end
+  def test_costpercapita_ch143; assert_in_epsilon(8.122251523957903, worksheet.costpercapita_ch143, 0.001); end
+  def test_costpercapita_ci143; assert_in_epsilon(-96.86760757111084, worksheet.costpercapita_ci143, 0.001); end
+  def test_costpercapita_cj143; assert_in_epsilon(139.22327624726734, worksheet.costpercapita_cj143, 0.001); end
+  def test_costpercapita_ck143; assert_in_epsilon(400.32282476338884, worksheet.costpercapita_ck143, 0.001); end
+  def test_costpercapita_cl143; assert_in_epsilon(665.5475558549066, worksheet.costpercapita_cl143, 0.001); end
+  def test_costpercapita_cm143; assert_in_epsilon(804.0843420527112, worksheet.costpercapita_cm143, 0.001); end
+  def test_costpercapita_cn143; assert_in_epsilon(1208.8508981641774, worksheet.costpercapita_cn143, 0.001); end
+  def test_costpercapita_cp143; assert_in_epsilon(345.73797226791316, worksheet.costpercapita_cp143, 0.001); end
+  def test_costpercapita_cq143; assert_in_epsilon(4885.797524976019, worksheet.costpercapita_cq143, 0.001); end
   def test_costpercapita_cr143; assert_equal("ok", worksheet.costpercapita_cr143); end
   def test_costpercapita_a144; assert_equal("XII.a.FCV", worksheet.costpercapita_a144); end
   def test_costpercapita_b144; assert_equal("Fuel cell cars and buses", worksheet.costpercapita_b144); end
@@ -19721,45 +20332,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av144; assert_in_delta(0.1, worksheet.costpercapita_av144, 0.001); end
   def test_costpercapita_aw144; assert_in_epsilon(15, worksheet.costpercapita_aw144, 0.001); end
   def test_costpercapita_ay144; assert_in_delta(0, (worksheet.costpercapita_ay144||0), 0.001); end
-  def test_costpercapita_az144; assert_in_epsilon(21.306887466877978, worksheet.costpercapita_az144, 0.001); end
-  def test_costpercapita_ba144; assert_in_epsilon(29.724726980871598, worksheet.costpercapita_ba144, 0.001); end
-  def test_costpercapita_bb144; assert_in_epsilon(210.77882651560034, worksheet.costpercapita_bb144, 0.001); end
-  def test_costpercapita_bc144; assert_in_epsilon(278.8494441891443, worksheet.costpercapita_bc144, 0.001); end
-  def test_costpercapita_bd144; assert_in_epsilon(422.6104401442944, worksheet.costpercapita_bd144, 0.001); end
-  def test_costpercapita_be144; assert_in_epsilon(500.2025779091014, worksheet.costpercapita_be144, 0.001); end
-  def test_costpercapita_bf144; assert_in_epsilon(746.2939853171225, worksheet.costpercapita_bf144, 0.001); end
-  def test_costpercapita_bg144; assert_in_epsilon(866.5353880635716, worksheet.costpercapita_bg144, 0.001); end
+  def test_costpercapita_az144; assert_in_epsilon(21.30688746687799, worksheet.costpercapita_az144, 0.001); end
+  def test_costpercapita_ba144; assert_in_epsilon(29.724726980871615, worksheet.costpercapita_ba144, 0.001); end
+  def test_costpercapita_bb144; assert_in_epsilon(210.77882651560043, worksheet.costpercapita_bb144, 0.001); end
+  def test_costpercapita_bc144; assert_in_epsilon(278.84944418914444, worksheet.costpercapita_bc144, 0.001); end
+  def test_costpercapita_bd144; assert_in_epsilon(422.6104401442946, worksheet.costpercapita_bd144, 0.001); end
+  def test_costpercapita_be144; assert_in_epsilon(500.2025779091016, worksheet.costpercapita_be144, 0.001); end
+  def test_costpercapita_bf144; assert_in_epsilon(746.2939853171229, worksheet.costpercapita_bf144, 0.001); end
+  def test_costpercapita_bg144; assert_in_epsilon(866.535388063572, worksheet.costpercapita_bg144, 0.001); end
   def test_costpercapita_bi144; assert_in_delta(0, (worksheet.costpercapita_bi144||0), 0.001); end
-  def test_costpercapita_bj144; assert_in_epsilon(21.306887466877978, worksheet.costpercapita_bj144, 0.001); end
-  def test_costpercapita_bk144; assert_in_epsilon(50.334066360297015, worksheet.costpercapita_bk144, 0.001); end
-  def test_costpercapita_bl144; assert_in_epsilon(259.554375282996, worksheet.costpercapita_bl144, 0.001); end
-  def test_costpercapita_bm144; assert_in_epsilon(511.8871678957648, worksheet.costpercapita_bm144, 0.001); end
-  def test_costpercapita_bn144; assert_in_epsilon(895.0823121369469, worksheet.costpercapita_bn144, 0.001); end
-  def test_costpercapita_bo144; assert_in_epsilon(1180.274447330063, worksheet.costpercapita_bo144, 0.001); end
-  def test_costpercapita_bp144; assert_in_epsilon(1641.8658304099959, worksheet.costpercapita_bp144, 0.001); end
-  def test_costpercapita_bq144; assert_in_epsilon(2079.978365636105, worksheet.costpercapita_bq144, 0.001); end
+  def test_costpercapita_bj144; assert_in_epsilon(21.30688746687799, worksheet.costpercapita_bj144, 0.001); end
+  def test_costpercapita_bk144; assert_in_epsilon(50.334066360297044, worksheet.costpercapita_bk144, 0.001); end
+  def test_costpercapita_bl144; assert_in_epsilon(259.5543752829961, worksheet.costpercapita_bl144, 0.001); end
+  def test_costpercapita_bm144; assert_in_epsilon(511.8871678957651, worksheet.costpercapita_bm144, 0.001); end
+  def test_costpercapita_bn144; assert_in_epsilon(895.0823121369474, worksheet.costpercapita_bn144, 0.001); end
+  def test_costpercapita_bo144; assert_in_epsilon(1180.2744473300636, worksheet.costpercapita_bo144, 0.001); end
+  def test_costpercapita_bp144; assert_in_epsilon(1641.8658304099965, worksheet.costpercapita_bp144, 0.001); end
+  def test_costpercapita_bq144; assert_in_epsilon(2079.978365636106, worksheet.costpercapita_bq144, 0.001); end
   def test_costpercapita_bs144; assert_in_delta(0, (worksheet.costpercapita_bs144||0), 0.001); end
-  def test_costpercapita_bt144; assert_in_epsilon(43.21256551930645, worksheet.costpercapita_bt144, 0.001); end
-  def test_costpercapita_bu144; assert_in_epsilon(93.25734336173902, worksheet.costpercapita_bu144, 0.001); end
+  def test_costpercapita_bt144; assert_in_epsilon(43.212565519306466, worksheet.costpercapita_bt144, 0.001); end
+  def test_costpercapita_bu144; assert_in_epsilon(93.25734336173905, worksheet.costpercapita_bu144, 0.001); end
   def test_costpercapita_bv144; assert_in_epsilon(501.8298789931247, worksheet.costpercapita_bv144, 0.001); end
-  def test_costpercapita_bw144; assert_in_epsilon(937.8758090101962, worksheet.costpercapita_bw144, 0.001); end
-  def test_costpercapita_bx144; assert_in_epsilon(1575.4567231238384, worksheet.costpercapita_bx144, 0.001); end
-  def test_costpercapita_by144; assert_in_epsilon(2086.880393015704, worksheet.costpercapita_by144, 0.001); end
-  def test_costpercapita_bz144; assert_in_epsilon(2934.2772630876184, worksheet.costpercapita_bz144, 0.001); end
-  def test_costpercapita_ca144; assert_in_epsilon(3718.7723949209544, worksheet.costpercapita_ca144, 0.001); end
-  def test_costpercapita_cc144; assert_in_epsilon(1321.2847078924979, worksheet.costpercapita_cc144, 0.001); end
-  def test_costpercapita_cd144; assert_in_epsilon(20855.948298392395, worksheet.costpercapita_cd144, 0.001); end
+  def test_costpercapita_bw144; assert_in_epsilon(937.8758090101963, worksheet.costpercapita_bw144, 0.001); end
+  def test_costpercapita_bx144; assert_in_epsilon(1575.4567231238386, worksheet.costpercapita_bx144, 0.001); end
+  def test_costpercapita_by144; assert_in_epsilon(2086.880393015705, worksheet.costpercapita_by144, 0.001); end
+  def test_costpercapita_bz144; assert_in_epsilon(2934.2772630876193, worksheet.costpercapita_bz144, 0.001); end
+  def test_costpercapita_ca144; assert_in_epsilon(3718.7723949209553, worksheet.costpercapita_ca144, 0.001); end
+  def test_costpercapita_cc144; assert_in_epsilon(1321.2847078924983, worksheet.costpercapita_cc144, 0.001); end
+  def test_costpercapita_cd144; assert_in_epsilon(20855.9482983924, worksheet.costpercapita_cd144, 0.001); end
   def test_costpercapita_cf144; assert_in_delta(0, (worksheet.costpercapita_cf144||0), 0.001); end
-  def test_costpercapita_cg144; assert_in_epsilon(-11.105488554129858, worksheet.costpercapita_cg144, 0.001); end
-  def test_costpercapita_ch144; assert_in_epsilon(5.116339016333253, worksheet.costpercapita_ch144, 0.001); end
-  def test_costpercapita_ci144; assert_in_epsilon(-61.08572726181088, worksheet.costpercapita_ci144, 0.001); end
-  def test_costpercapita_cj144; assert_in_epsilon(87.69695933725899, worksheet.costpercapita_cj144, 0.001); end
-  def test_costpercapita_ck144; assert_in_epsilon(252.20059055025166, worksheet.costpercapita_ck144, 0.001); end
-  def test_costpercapita_cl144; assert_in_epsilon(419.35833196265696, worksheet.costpercapita_cl144, 0.001); end
-  def test_costpercapita_cm144; assert_in_epsilon(506.5915529296432, worksheet.costpercapita_cm144, 0.001); end
-  def test_costpercapita_cn144; assert_in_epsilon(761.7909543078451, worksheet.costpercapita_cn144, 0.001); end
-  def test_costpercapita_cp144; assert_in_epsilon(217.8403902542276, worksheet.costpercapita_cp144, 0.001); end
-  def test_costpercapita_cq144; assert_in_epsilon(3078.296453701751, worksheet.costpercapita_cq144, 0.001); end
+  def test_costpercapita_cg144; assert_in_epsilon(-11.105488554129847, worksheet.costpercapita_cg144, 0.001); end
+  def test_costpercapita_ch144; assert_in_epsilon(5.1163390163332805, worksheet.costpercapita_ch144, 0.001); end
+  def test_costpercapita_ci144; assert_in_epsilon(-61.085727261810774, worksheet.costpercapita_ci144, 0.001); end
+  def test_costpercapita_cj144; assert_in_epsilon(87.6969593372593, worksheet.costpercapita_cj144, 0.001); end
+  def test_costpercapita_ck144; assert_in_epsilon(252.20059055025214, worksheet.costpercapita_ck144, 0.001); end
+  def test_costpercapita_cl144; assert_in_epsilon(419.35833196265753, worksheet.costpercapita_cl144, 0.001); end
+  def test_costpercapita_cm144; assert_in_epsilon(506.591552929644, worksheet.costpercapita_cm144, 0.001); end
+  def test_costpercapita_cn144; assert_in_epsilon(761.7909543078463, worksheet.costpercapita_cn144, 0.001); end
+  def test_costpercapita_cp144; assert_in_epsilon(217.840390254228, worksheet.costpercapita_cp144, 0.001); end
+  def test_costpercapita_cq144; assert_in_epsilon(3078.2964537017574, worksheet.costpercapita_cq144, 0.001); end
   def test_costpercapita_cr144; assert_equal("ok", worksheet.costpercapita_cr144); end
   def test_costpercapita_a145; assert_equal("XII.a.Bike", worksheet.costpercapita_a145); end
   def test_costpercapita_b145; assert_equal("Bikes", worksheet.costpercapita_b145); end
@@ -19804,46 +20415,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at145; assert_in_epsilon(2635.5274437439934, worksheet.costpercapita_at145, 0.001); end
   def test_costpercapita_av145; assert_in_delta(0.1, worksheet.costpercapita_av145, 0.001); end
   def test_costpercapita_aw145; assert_in_epsilon(5, worksheet.costpercapita_aw145, 0.001); end
-  def test_costpercapita_ay145; assert_in_epsilon(54.41940411984133, worksheet.costpercapita_ay145, 0.001); end
-  def test_costpercapita_az145; assert_in_epsilon(94.00175230874814, worksheet.costpercapita_az145, 0.001); end
-  def test_costpercapita_ba145; assert_in_epsilon(105.03319846885756, worksheet.costpercapita_ba145, 0.001); end
-  def test_costpercapita_bb145; assert_in_epsilon(112.6384833523715, worksheet.costpercapita_bb145, 0.001); end
-  def test_costpercapita_bc145; assert_in_epsilon(117.2686939003321, worksheet.costpercapita_bc145, 0.001); end
-  def test_costpercapita_bd145; assert_in_epsilon(120.9318164803037, worksheet.costpercapita_bd145, 0.001); end
-  def test_costpercapita_be145; assert_in_epsilon(122.8378846158345, worksheet.costpercapita_be145, 0.001); end
-  def test_costpercapita_bf145; assert_in_epsilon(124.24505190665879, worksheet.costpercapita_bf145, 0.001); end
-  def test_costpercapita_bg145; assert_in_epsilon(125.35639367530666, worksheet.costpercapita_bg145, 0.001); end
-  def test_costpercapita_bi145; assert_in_epsilon(54.41940411984133, worksheet.costpercapita_bi145, 0.001); end
-  def test_costpercapita_bj145; assert_in_epsilon(94.00175230874814, worksheet.costpercapita_bj145, 0.001); end
-  def test_costpercapita_bk145; assert_in_epsilon(105.03319846885756, worksheet.costpercapita_bk145, 0.001); end
-  def test_costpercapita_bl145; assert_in_epsilon(112.6384833523715, worksheet.costpercapita_bl145, 0.001); end
-  def test_costpercapita_bm145; assert_in_epsilon(117.2686939003321, worksheet.costpercapita_bm145, 0.001); end
-  def test_costpercapita_bn145; assert_in_epsilon(120.9318164803037, worksheet.costpercapita_bn145, 0.001); end
-  def test_costpercapita_bo145; assert_in_epsilon(122.8378846158345, worksheet.costpercapita_bo145, 0.001); end
-  def test_costpercapita_bp145; assert_in_epsilon(124.24505190665879, worksheet.costpercapita_bp145, 0.001); end
-  def test_costpercapita_bq145; assert_in_epsilon(125.35639367530666, worksheet.costpercapita_bq145, 0.001); end
-  def test_costpercapita_bs145; assert_in_epsilon(84.41779557720047, worksheet.costpercapita_bs145, 0.001); end
-  def test_costpercapita_bt145; assert_in_epsilon(129.6358122040694, worksheet.costpercapita_bt145, 0.001); end
-  def test_costpercapita_bu145; assert_in_epsilon(144.8490443792973, worksheet.costpercapita_bu145, 0.001); end
-  def test_costpercapita_bv145; assert_in_epsilon(155.3373305942119, worksheet.costpercapita_bv145, 0.001); end
-  def test_costpercapita_bw145; assert_in_epsilon(161.72275523065093, worksheet.costpercapita_bw145, 0.001); end
-  def test_costpercapita_bx145; assert_in_epsilon(166.7744894717103, worksheet.costpercapita_bx145, 0.001); end
-  def test_costpercapita_by145; assert_in_epsilon(169.40310739421722, worksheet.costpercapita_by145, 0.001); end
-  def test_costpercapita_bz145; assert_in_epsilon(171.34370179988161, worksheet.costpercapita_bz145, 0.001); end
-  def test_costpercapita_ca145; assert_in_epsilon(172.87632953581763, worksheet.costpercapita_ca145, 0.001); end
-  def test_costpercapita_cc145; assert_in_epsilon(150.70670735411738, worksheet.costpercapita_cc145, 0.001); end
-  def test_costpercapita_cd145; assert_in_epsilon(3160.6467691824146, worksheet.costpercapita_cd145, 0.001); end
-  def test_costpercapita_cf145; assert_in_epsilon(-14.344714925687411, worksheet.costpercapita_cf145, 0.001); end
-  def test_costpercapita_cg145; assert_in_epsilon(22.733632518105612, worksheet.costpercapita_cg145, 0.001); end
-  def test_costpercapita_ch145; assert_in_epsilon(25.401506647978124, worksheet.costpercapita_ch145, 0.001); end
-  def test_costpercapita_ci145; assert_in_epsilon(27.24078886869071, worksheet.costpercapita_ci145, 0.001); end
-  def test_costpercapita_cj145; assert_in_epsilon(28.36057123969443, worksheet.costpercapita_cj145, 0.001); end
-  def test_costpercapita_ck145; assert_in_epsilon(29.246470497490474, worksheet.costpercapita_ck145, 0.001); end
-  def test_costpercapita_cl145; assert_in_epsilon(29.70743905906903, worksheet.costpercapita_cl145, 0.001); end
-  def test_costpercapita_cm145; assert_in_epsilon(30.04775212021313, worksheet.costpercapita_cm145, 0.001); end
-  def test_costpercapita_cn145; assert_in_epsilon(30.316521954284735, worksheet.costpercapita_cn145, 0.001); end
-  def test_costpercapita_cp145; assert_in_epsilon(23.18999644220431, worksheet.costpercapita_cp145, 0.001); end
-  def test_costpercapita_cq145; assert_in_epsilon(525.1193254384212, worksheet.costpercapita_cq145, 0.001); end
+  def test_costpercapita_ay145; assert_in_epsilon(54.419404119841374, worksheet.costpercapita_ay145, 0.001); end
+  def test_costpercapita_az145; assert_in_epsilon(94.0017523087482, worksheet.costpercapita_az145, 0.001); end
+  def test_costpercapita_ba145; assert_in_epsilon(105.03319846885766, worksheet.costpercapita_ba145, 0.001); end
+  def test_costpercapita_bb145; assert_in_epsilon(112.63848335237157, worksheet.costpercapita_bb145, 0.001); end
+  def test_costpercapita_bc145; assert_in_epsilon(117.26869390033217, worksheet.costpercapita_bc145, 0.001); end
+  def test_costpercapita_bd145; assert_in_epsilon(120.9318164803038, worksheet.costpercapita_bd145, 0.001); end
+  def test_costpercapita_be145; assert_in_epsilon(122.8378846158346, worksheet.costpercapita_be145, 0.001); end
+  def test_costpercapita_bf145; assert_in_epsilon(124.24505190665886, worksheet.costpercapita_bf145, 0.001); end
+  def test_costpercapita_bg145; assert_in_epsilon(125.35639367530676, worksheet.costpercapita_bg145, 0.001); end
+  def test_costpercapita_bi145; assert_in_epsilon(54.419404119841374, worksheet.costpercapita_bi145, 0.001); end
+  def test_costpercapita_bj145; assert_in_epsilon(94.0017523087482, worksheet.costpercapita_bj145, 0.001); end
+  def test_costpercapita_bk145; assert_in_epsilon(105.03319846885766, worksheet.costpercapita_bk145, 0.001); end
+  def test_costpercapita_bl145; assert_in_epsilon(112.63848335237157, worksheet.costpercapita_bl145, 0.001); end
+  def test_costpercapita_bm145; assert_in_epsilon(117.26869390033217, worksheet.costpercapita_bm145, 0.001); end
+  def test_costpercapita_bn145; assert_in_epsilon(120.9318164803038, worksheet.costpercapita_bn145, 0.001); end
+  def test_costpercapita_bo145; assert_in_epsilon(122.8378846158346, worksheet.costpercapita_bo145, 0.001); end
+  def test_costpercapita_bp145; assert_in_epsilon(124.24505190665886, worksheet.costpercapita_bp145, 0.001); end
+  def test_costpercapita_bq145; assert_in_epsilon(125.35639367530676, worksheet.costpercapita_bq145, 0.001); end
+  def test_costpercapita_bs145; assert_in_epsilon(84.41779557720051, worksheet.costpercapita_bs145, 0.001); end
+  def test_costpercapita_bt145; assert_in_epsilon(129.63581220406945, worksheet.costpercapita_bt145, 0.001); end
+  def test_costpercapita_bu145; assert_in_epsilon(144.84904437929737, worksheet.costpercapita_bu145, 0.001); end
+  def test_costpercapita_bv145; assert_in_epsilon(155.33733059421198, worksheet.costpercapita_bv145, 0.001); end
+  def test_costpercapita_bw145; assert_in_epsilon(161.722755230651, worksheet.costpercapita_bw145, 0.001); end
+  def test_costpercapita_bx145; assert_in_epsilon(166.77448947171038, worksheet.costpercapita_bx145, 0.001); end
+  def test_costpercapita_by145; assert_in_epsilon(169.4031073942173, worksheet.costpercapita_by145, 0.001); end
+  def test_costpercapita_bz145; assert_in_epsilon(171.3437017998817, worksheet.costpercapita_bz145, 0.001); end
+  def test_costpercapita_ca145; assert_in_epsilon(172.87632953581775, worksheet.costpercapita_ca145, 0.001); end
+  def test_costpercapita_cc145; assert_in_epsilon(150.7067073541175, worksheet.costpercapita_cc145, 0.001); end
+  def test_costpercapita_cd145; assert_in_epsilon(3160.646769182417, worksheet.costpercapita_cd145, 0.001); end
+  def test_costpercapita_cf145; assert_in_epsilon(-14.344714925687374, worksheet.costpercapita_cf145, 0.001); end
+  def test_costpercapita_cg145; assert_in_epsilon(22.73363251810567, worksheet.costpercapita_cg145, 0.001); end
+  def test_costpercapita_ch145; assert_in_epsilon(25.40150664797822, worksheet.costpercapita_ch145, 0.001); end
+  def test_costpercapita_ci145; assert_in_epsilon(27.240788868690792, worksheet.costpercapita_ci145, 0.001); end
+  def test_costpercapita_cj145; assert_in_epsilon(28.360571239694504, worksheet.costpercapita_cj145, 0.001); end
+  def test_costpercapita_ck145; assert_in_epsilon(29.246470497490574, worksheet.costpercapita_ck145, 0.001); end
+  def test_costpercapita_cl145; assert_in_epsilon(29.70743905906913, worksheet.costpercapita_cl145, 0.001); end
+  def test_costpercapita_cm145; assert_in_epsilon(30.0477521202132, worksheet.costpercapita_cm145, 0.001); end
+  def test_costpercapita_cn145; assert_in_epsilon(30.316521954284827, worksheet.costpercapita_cn145, 0.001); end
+  def test_costpercapita_cp145; assert_in_epsilon(23.189996442204396, worksheet.costpercapita_cp145, 0.001); end
+  def test_costpercapita_cq145; assert_in_epsilon(525.1193254384228, worksheet.costpercapita_cq145, 0.001); end
   def test_costpercapita_cr145; assert_equal("ok", worksheet.costpercapita_cr145); end
   def test_costpercapita_a146; assert_equal("XII.a.Rail", worksheet.costpercapita_a146); end
   def test_costpercapita_b146; assert_equal("Rail", worksheet.costpercapita_b146); end
@@ -19888,24 +20499,24 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at146; assert_in_epsilon(3426.8486226184696, worksheet.costpercapita_at146, 0.001); end
   def test_costpercapita_av146; assert_in_delta(0.1, worksheet.costpercapita_av146, 0.001); end
   def test_costpercapita_aw146; assert_in_epsilon(30, worksheet.costpercapita_aw146, 0.001); end
-  def test_costpercapita_ay146; assert_in_delta(0.5499919330635169, worksheet.costpercapita_ay146, 0.001); end
-  def test_costpercapita_az146; assert_in_delta(0.974348235179235, worksheet.costpercapita_az146, 0.001); end
-  def test_costpercapita_ba146; assert_in_epsilon(1.4337513614682487, worksheet.costpercapita_ba146, 0.001); end
-  def test_costpercapita_bb146; assert_in_epsilon(1.354015021566503, worksheet.costpercapita_bb146, 0.001); end
-  def test_costpercapita_bc146; assert_in_epsilon(1.4910499214921165, worksheet.costpercapita_bc146, 0.001); end
+  def test_costpercapita_ay146; assert_in_delta(0.549991933063517, worksheet.costpercapita_ay146, 0.001); end
+  def test_costpercapita_az146; assert_in_delta(0.9743482351792352, worksheet.costpercapita_az146, 0.001); end
+  def test_costpercapita_ba146; assert_in_epsilon(1.433751361468249, worksheet.costpercapita_ba146, 0.001); end
+  def test_costpercapita_bb146; assert_in_epsilon(1.3540150215665032, worksheet.costpercapita_bb146, 0.001); end
+  def test_costpercapita_bc146; assert_in_epsilon(1.491049921492117, worksheet.costpercapita_bc146, 0.001); end
   def test_costpercapita_bd146; assert_in_epsilon(1.6116363088821413, worksheet.costpercapita_bd146, 0.001); end
-  def test_costpercapita_be146; assert_in_epsilon(1.6728621503796108, worksheet.costpercapita_be146, 0.001); end
-  def test_costpercapita_bf146; assert_in_epsilon(1.7878728426422947, worksheet.costpercapita_bf146, 0.001); end
-  def test_costpercapita_bg146; assert_in_epsilon(1.9097898453403084, worksheet.costpercapita_bg146, 0.001); end
-  def test_costpercapita_bi146; assert_in_delta(0.5499919330635169, worksheet.costpercapita_bi146, 0.001); end
-  def test_costpercapita_bj146; assert_in_epsilon(1.5062041461624667, worksheet.costpercapita_bj146, 0.001); end
-  def test_costpercapita_bk146; assert_in_epsilon(2.890645169689427, worksheet.costpercapita_bk146, 0.001); end
-  def test_costpercapita_bl146; assert_in_epsilon(4.155155772527902, worksheet.costpercapita_bl146, 0.001); end
-  def test_costpercapita_bm146; assert_in_epsilon(5.5326862021751895, worksheet.costpercapita_bm146, 0.001); end
-  def test_costpercapita_bn146; assert_in_epsilon(7.0139962378334255, worksheet.costpercapita_bn146, 0.001); end
-  def test_costpercapita_bo146; assert_in_epsilon(8.073899266394418, worksheet.costpercapita_bo146, 0.001); end
-  def test_costpercapita_bp146; assert_in_epsilon(10.265208011758094, worksheet.costpercapita_bp146, 0.001); end
-  def test_costpercapita_bq146; assert_in_epsilon(10.741386781788929, worksheet.costpercapita_bq146, 0.001); end
+  def test_costpercapita_be146; assert_in_epsilon(1.6728621503796113, worksheet.costpercapita_be146, 0.001); end
+  def test_costpercapita_bf146; assert_in_epsilon(1.787872842642295, worksheet.costpercapita_bf146, 0.001); end
+  def test_costpercapita_bg146; assert_in_epsilon(1.9097898453403088, worksheet.costpercapita_bg146, 0.001); end
+  def test_costpercapita_bi146; assert_in_delta(0.549991933063517, worksheet.costpercapita_bi146, 0.001); end
+  def test_costpercapita_bj146; assert_in_epsilon(1.506204146162467, worksheet.costpercapita_bj146, 0.001); end
+  def test_costpercapita_bk146; assert_in_epsilon(2.8906451696894284, worksheet.costpercapita_bk146, 0.001); end
+  def test_costpercapita_bl146; assert_in_epsilon(4.155155772527904, worksheet.costpercapita_bl146, 0.001); end
+  def test_costpercapita_bm146; assert_in_epsilon(5.53268620217519, worksheet.costpercapita_bm146, 0.001); end
+  def test_costpercapita_bn146; assert_in_epsilon(7.013996237833426, worksheet.costpercapita_bn146, 0.001); end
+  def test_costpercapita_bo146; assert_in_epsilon(8.07389926639442, worksheet.costpercapita_bo146, 0.001); end
+  def test_costpercapita_bp146; assert_in_epsilon(10.2652080117581, worksheet.costpercapita_bp146, 0.001); end
+  def test_costpercapita_bq146; assert_in_epsilon(10.741386781788933, worksheet.costpercapita_bq146, 0.001); end
   def test_costpercapita_bs146; assert_in_epsilon(138.39873983617937, worksheet.costpercapita_bs146, 0.001); end
   def test_costpercapita_bt146; assert_in_epsilon(144.22240008299258, worksheet.costpercapita_bt146, 0.001); end
   def test_costpercapita_bu146; assert_in_epsilon(153.93470035751878, worksheet.costpercapita_bu146, 0.001); end
@@ -19918,16 +20529,16 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cc146; assert_in_epsilon(169.45631388134962, worksheet.costpercapita_cc146, 0.001); end
   def test_costpercapita_cd146; assert_in_epsilon(3473.7975448079155, worksheet.costpercapita_cd146, 0.001); end
   def test_costpercapita_cf146; assert_in_epsilon(-1.1782503704442628, worksheet.costpercapita_cf146, 0.001); end
-  def test_costpercapita_cg146; assert_in_delta(-0.330815348656667, worksheet.costpercapita_cg146, 0.001); end
-  def test_costpercapita_ch146; assert_in_delta(0.18747487939158033, worksheet.costpercapita_ch146, 0.001); end
-  def test_costpercapita_ci146; assert_in_epsilon(1.6023190134629484, worksheet.costpercapita_ci146, 0.001); end
-  def test_costpercapita_cj146; assert_in_epsilon(2.7214861869920224, worksheet.costpercapita_cj146, 0.001); end
-  def test_costpercapita_ck146; assert_in_epsilon(3.9754447106884823, worksheet.costpercapita_ck146, 0.001); end
-  def test_costpercapita_cl146; assert_in_epsilon(4.91991358505627, worksheet.costpercapita_cl146, 0.001); end
-  def test_costpercapita_cm146; assert_in_epsilon(6.894383138670057, worksheet.costpercapita_cm146, 0.001); end
-  def test_costpercapita_cn146; assert_in_epsilon(7.140701677399742, worksheet.costpercapita_cn146, 0.001); end
-  def test_costpercapita_cp146; assert_in_epsilon(2.881406385840019, worksheet.costpercapita_cp146, 0.001); end
-  def test_costpercapita_cq146; assert_in_epsilon(46.94892218944568, worksheet.costpercapita_cq146, 0.001); end
+  def test_costpercapita_cg146; assert_in_delta(-0.3308153486566668, worksheet.costpercapita_cg146, 0.001); end
+  def test_costpercapita_ch146; assert_in_delta(0.18747487939158164, worksheet.costpercapita_ch146, 0.001); end
+  def test_costpercapita_ci146; assert_in_epsilon(1.60231901346295, worksheet.costpercapita_ci146, 0.001); end
+  def test_costpercapita_cj146; assert_in_epsilon(2.7214861869920233, worksheet.costpercapita_cj146, 0.001); end
+  def test_costpercapita_ck146; assert_in_epsilon(3.975444710688483, worksheet.costpercapita_ck146, 0.001); end
+  def test_costpercapita_cl146; assert_in_epsilon(4.919913585056272, worksheet.costpercapita_cl146, 0.001); end
+  def test_costpercapita_cm146; assert_in_epsilon(6.894383138670063, worksheet.costpercapita_cm146, 0.001); end
+  def test_costpercapita_cn146; assert_in_epsilon(7.140701677399744, worksheet.costpercapita_cn146, 0.001); end
+  def test_costpercapita_cp146; assert_in_epsilon(2.881406385840021, worksheet.costpercapita_cp146, 0.001); end
+  def test_costpercapita_cq146; assert_in_epsilon(46.948922189445724, worksheet.costpercapita_cq146, 0.001); end
   def test_costpercapita_cr146; assert_equal("ok", worksheet.costpercapita_cr146); end
   def test_costpercapita_a147; assert_equal("XII.a.Air", worksheet.costpercapita_a147); end
   def test_costpercapita_b147; assert_equal("Domestic aviation", worksheet.costpercapita_b147); end
@@ -19972,46 +20583,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at147; assert_in_epsilon(317.74376971549646, worksheet.costpercapita_at147, 0.001); end
   def test_costpercapita_av147; assert_in_delta(0.1, worksheet.costpercapita_av147, 0.001); end
   def test_costpercapita_aw147; assert_in_epsilon(30, worksheet.costpercapita_aw147, 0.001); end
-  def test_costpercapita_ay147; assert_in_epsilon(2.6384629599495146, worksheet.costpercapita_ay147, 0.001); end
+  def test_costpercapita_ay147; assert_in_epsilon(2.6384629599495155, worksheet.costpercapita_ay147, 0.001); end
   def test_costpercapita_az147; assert_in_epsilon(4.409608296021583, worksheet.costpercapita_az147, 0.001); end
   def test_costpercapita_ba147; assert_in_epsilon(5.083296230149382, worksheet.costpercapita_ba147, 0.001); end
-  def test_costpercapita_bb147; assert_in_epsilon(5.356047838354154, worksheet.costpercapita_bb147, 0.001); end
+  def test_costpercapita_bb147; assert_in_epsilon(5.356047838354155, worksheet.costpercapita_bb147, 0.001); end
   def test_costpercapita_bc147; assert_in_epsilon(5.418676131674988, worksheet.costpercapita_bc147, 0.001); end
-  def test_costpercapita_bd147; assert_in_epsilon(5.670756679946189, worksheet.costpercapita_bd147, 0.001); end
-  def test_costpercapita_be147; assert_in_epsilon(5.714891347062752, worksheet.costpercapita_be147, 0.001); end
-  def test_costpercapita_bf147; assert_in_epsilon(5.928438248438695, worksheet.costpercapita_bf147, 0.001); end
-  def test_costpercapita_bg147; assert_in_epsilon(6.152521919366688, worksheet.costpercapita_bg147, 0.001); end
-  def test_costpercapita_bi147; assert_in_epsilon(2.6384629599495146, worksheet.costpercapita_bi147, 0.001); end
-  def test_costpercapita_bj147; assert_in_epsilon(6.961067757150446, worksheet.costpercapita_bj147, 0.001); end
+  def test_costpercapita_bd147; assert_in_epsilon(5.670756679946191, worksheet.costpercapita_bd147, 0.001); end
+  def test_costpercapita_be147; assert_in_epsilon(5.7148913470627525, worksheet.costpercapita_be147, 0.001); end
+  def test_costpercapita_bf147; assert_in_epsilon(5.928438248438696, worksheet.costpercapita_bf147, 0.001); end
+  def test_costpercapita_bg147; assert_in_epsilon(6.15252191936669, worksheet.costpercapita_bg147, 0.001); end
+  def test_costpercapita_bi147; assert_in_epsilon(2.6384629599495155, worksheet.costpercapita_bi147, 0.001); end
+  def test_costpercapita_bj147; assert_in_epsilon(6.961067757150448, worksheet.costpercapita_bj147, 0.001); end
   def test_costpercapita_bk147; assert_in_epsilon(11.816471503792972, worksheet.costpercapita_bk147, 0.001); end
-  def test_costpercapita_bl147; assert_in_epsilon(16.806640325084324, worksheet.costpercapita_bl147, 0.001); end
-  def test_costpercapita_bm147; assert_in_epsilon(21.76615647004197, worksheet.costpercapita_bm147, 0.001); end
-  def test_costpercapita_bn147; assert_in_epsilon(26.92419618909605, worksheet.costpercapita_bn147, 0.001); end
+  def test_costpercapita_bl147; assert_in_epsilon(16.806640325084327, worksheet.costpercapita_bl147, 0.001); end
+  def test_costpercapita_bm147; assert_in_epsilon(21.766156470041977, worksheet.costpercapita_bm147, 0.001); end
+  def test_costpercapita_bn147; assert_in_epsilon(26.924196189096055, worksheet.costpercapita_bn147, 0.001); end
   def test_costpercapita_bo147; assert_in_epsilon(29.84194962472666, worksheet.costpercapita_bo147, 0.001); end
   def test_costpercapita_bp147; assert_in_epsilon(36.484800231128375, worksheet.costpercapita_bp147, 0.001); end
-  def test_costpercapita_bq147; assert_in_epsilon(37.552843726438574, worksheet.costpercapita_bq147, 0.001); end
-  def test_costpercapita_bs147; assert_in_epsilon(6.586787966767325, worksheet.costpercapita_bs147, 0.001); end
-  def test_costpercapita_bt147; assert_in_epsilon(11.233916250135941, worksheet.costpercapita_bt147, 0.001); end
+  def test_costpercapita_bq147; assert_in_epsilon(37.55284372643858, worksheet.costpercapita_bq147, 0.001); end
+  def test_costpercapita_bs147; assert_in_epsilon(6.586787966767326, worksheet.costpercapita_bs147, 0.001); end
+  def test_costpercapita_bt147; assert_in_epsilon(11.233916250135943, worksheet.costpercapita_bt147, 0.001); end
   def test_costpercapita_bu147; assert_in_epsilon(16.518373577263294, worksheet.costpercapita_bu147, 0.001); end
-  def test_costpercapita_bv147; assert_in_epsilon(21.928822575460963, worksheet.costpercapita_bv147, 0.001); end
-  def test_costpercapita_bw147; assert_in_epsilon(27.258775412447147, worksheet.costpercapita_bw147, 0.001); end
-  def test_costpercapita_bx147; assert_in_epsilon(32.796681913011724, worksheet.costpercapita_bx147, 0.001); end
+  def test_costpercapita_bv147; assert_in_epsilon(21.928822575460966, worksheet.costpercapita_bv147, 0.001); end
+  def test_costpercapita_bw147; assert_in_epsilon(27.258775412447154, worksheet.costpercapita_bw147, 0.001); end
+  def test_costpercapita_bx147; assert_in_epsilon(32.79668191301173, worksheet.costpercapita_bx147, 0.001); end
   def test_costpercapita_by147; assert_in_epsilon(36.04536426094235, worksheet.costpercapita_by147, 0.001); end
-  def test_costpercapita_bz147; assert_in_epsilon(43.0180718272535, worksheet.costpercapita_bz147, 0.001); end
-  def test_costpercapita_ca147; assert_in_epsilon(44.4179606314225, worksheet.costpercapita_ca147, 0.001); end
+  def test_costpercapita_bz147; assert_in_epsilon(43.01807182725351, worksheet.costpercapita_bz147, 0.001); end
+  def test_costpercapita_ca147; assert_in_epsilon(44.41796063142252, worksheet.costpercapita_ca147, 0.001); end
   def test_costpercapita_cc147; assert_in_epsilon(26.644972712744973, worksheet.costpercapita_cc147, 0.001); end
-  def test_costpercapita_cd147; assert_in_epsilon(504.9537123460189, worksheet.costpercapita_cd147, 0.001); end
-  def test_costpercapita_cf147; assert_in_epsilon(-5.652391922637453, worksheet.costpercapita_cf147, 0.001); end
-  def test_costpercapita_cg147; assert_in_epsilon(-1.352732290753068, worksheet.costpercapita_cg147, 0.001); end
+  def test_costpercapita_cd147; assert_in_epsilon(504.953712346019, worksheet.costpercapita_cd147, 0.001); end
+  def test_costpercapita_cf147; assert_in_epsilon(-5.652391922637452, worksheet.costpercapita_cf147, 0.001); end
+  def test_costpercapita_cg147; assert_in_epsilon(-1.3527322907530661, worksheet.costpercapita_cg147, 0.001); end
   def test_costpercapita_ch147; assert_in_epsilon(2.232511749396492, worksheet.costpercapita_ch147, 0.001); end
-  def test_costpercapita_ci147; assert_in_epsilon(6.708439354431864, worksheet.costpercapita_ci147, 0.001); end
-  def test_costpercapita_cj147; assert_in_epsilon(11.549877186519721, worksheet.costpercapita_cj147, 0.001); end
+  def test_costpercapita_ci147; assert_in_epsilon(6.708439354431867, worksheet.costpercapita_ci147, 0.001); end
+  def test_costpercapita_cj147; assert_in_epsilon(11.549877186519726, worksheet.costpercapita_cj147, 0.001); end
   def test_costpercapita_ck147; assert_in_epsilon(16.232648552104976, worksheet.costpercapita_ck147, 0.001); end
   def test_costpercapita_cl147; assert_in_epsilon(19.067191241348215, worksheet.costpercapita_cl147, 0.001); end
-  def test_costpercapita_cm147; assert_in_epsilon(25.307424172957646, worksheet.costpercapita_cm147, 0.001); end
-  def test_costpercapita_cn147; assert_in_epsilon(25.952984148410454, worksheet.costpercapita_cn147, 0.001); end
-  def test_costpercapita_cp147; assert_in_epsilon(11.116216910197648, worksheet.costpercapita_cp147, 0.001); end
-  def test_costpercapita_cq147; assert_in_epsilon(187.2099426305225, worksheet.costpercapita_cq147, 0.001); end
+  def test_costpercapita_cm147; assert_in_epsilon(25.307424172957653, worksheet.costpercapita_cm147, 0.001); end
+  def test_costpercapita_cn147; assert_in_epsilon(25.952984148410465, worksheet.costpercapita_cn147, 0.001); end
+  def test_costpercapita_cp147; assert_in_epsilon(11.116216910197654, worksheet.costpercapita_cp147, 0.001); end
+  def test_costpercapita_cq147; assert_in_epsilon(187.2099426305226, worksheet.costpercapita_cq147, 0.001); end
   def test_costpercapita_cr147; assert_equal("ok", worksheet.costpercapita_cr147); end
   def test_costpercapita_a148; assert_equal("XII.b", worksheet.costpercapita_a148); end
   def test_costpercapita_b148; assert_equal("Domestic freight", worksheet.costpercapita_b148); end
@@ -20056,46 +20667,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at148; assert_in_epsilon(3338.540389294142, worksheet.costpercapita_at148, 0.001); end
   def test_costpercapita_av148; assert_in_delta(0.1, worksheet.costpercapita_av148, 0.001); end
   def test_costpercapita_aw148; assert_in_epsilon(10, worksheet.costpercapita_aw148, 0.001); end
-  def test_costpercapita_ay148; assert_in_epsilon(33.15047443062883, worksheet.costpercapita_ay148, 0.001); end
-  def test_costpercapita_az148; assert_in_epsilon(60.54982190928833, worksheet.costpercapita_az148, 0.001); end
-  def test_costpercapita_ba148; assert_in_epsilon(55.6045984878975, worksheet.costpercapita_ba148, 0.001); end
-  def test_costpercapita_bb148; assert_in_epsilon(52.628659070983886, worksheet.costpercapita_bb148, 0.001); end
-  def test_costpercapita_bc148; assert_in_epsilon(50.04767019276614, worksheet.costpercapita_bc148, 0.001); end
-  def test_costpercapita_bd148; assert_in_epsilon(47.7518203569196, worksheet.costpercapita_bd148, 0.001); end
-  def test_costpercapita_be148; assert_in_epsilon(45.640372744518295, worksheet.costpercapita_be148, 0.001); end
-  def test_costpercapita_bf148; assert_in_epsilon(43.65944227947845, worksheet.costpercapita_bf148, 0.001); end
-  def test_costpercapita_bg148; assert_in_epsilon(41.79562330114235, worksheet.costpercapita_bg148, 0.001); end
-  def test_costpercapita_bi148; assert_in_epsilon(33.15047443062883, worksheet.costpercapita_bi148, 0.001); end
-  def test_costpercapita_bj148; assert_in_epsilon(92.6071571498622, worksheet.costpercapita_bj148, 0.001); end
-  def test_costpercapita_bk148; assert_in_epsilon(114.17213121796739, worksheet.costpercapita_bk148, 0.001); end
-  def test_costpercapita_bl148; assert_in_epsilon(106.51154597751861, worksheet.costpercapita_bl148, 0.001); end
-  def test_costpercapita_bm148; assert_in_epsilon(101.23850624067279, worksheet.costpercapita_bm148, 0.001); end
-  def test_costpercapita_bn148; assert_in_epsilon(96.62058285432468, worksheet.costpercapita_bn148, 0.001); end
-  def test_costpercapita_bo148; assert_in_epsilon(92.37381933591107, worksheet.costpercapita_bo148, 0.001); end
-  def test_costpercapita_bp148; assert_in_epsilon(88.38938427483092, worksheet.costpercapita_bp148, 0.001); end
-  def test_costpercapita_bq148; assert_in_epsilon(84.64030462862235, worksheet.costpercapita_bq148, 0.001); end
+  def test_costpercapita_ay148; assert_in_epsilon(33.15047443062885, worksheet.costpercapita_ay148, 0.001); end
+  def test_costpercapita_az148; assert_in_epsilon(60.54982190928836, worksheet.costpercapita_az148, 0.001); end
+  def test_costpercapita_ba148; assert_in_epsilon(55.60459848789752, worksheet.costpercapita_ba148, 0.001); end
+  def test_costpercapita_bb148; assert_in_epsilon(52.62865907098391, worksheet.costpercapita_bb148, 0.001); end
+  def test_costpercapita_bc148; assert_in_epsilon(50.04767019276617, worksheet.costpercapita_bc148, 0.001); end
+  def test_costpercapita_bd148; assert_in_epsilon(47.75182035691963, worksheet.costpercapita_bd148, 0.001); end
+  def test_costpercapita_be148; assert_in_epsilon(45.64037274451832, worksheet.costpercapita_be148, 0.001); end
+  def test_costpercapita_bf148; assert_in_epsilon(43.65944227947847, worksheet.costpercapita_bf148, 0.001); end
+  def test_costpercapita_bg148; assert_in_epsilon(41.79562330114237, worksheet.costpercapita_bg148, 0.001); end
+  def test_costpercapita_bi148; assert_in_epsilon(33.15047443062885, worksheet.costpercapita_bi148, 0.001); end
+  def test_costpercapita_bj148; assert_in_epsilon(92.60715714986225, worksheet.costpercapita_bj148, 0.001); end
+  def test_costpercapita_bk148; assert_in_epsilon(114.17213121796745, worksheet.costpercapita_bk148, 0.001); end
+  def test_costpercapita_bl148; assert_in_epsilon(106.51154597751864, worksheet.costpercapita_bl148, 0.001); end
+  def test_costpercapita_bm148; assert_in_epsilon(101.23850624067285, worksheet.costpercapita_bm148, 0.001); end
+  def test_costpercapita_bn148; assert_in_epsilon(96.62058285432472, worksheet.costpercapita_bn148, 0.001); end
+  def test_costpercapita_bo148; assert_in_epsilon(92.37381933591111, worksheet.costpercapita_bo148, 0.001); end
+  def test_costpercapita_bp148; assert_in_epsilon(88.38938427483093, worksheet.costpercapita_bp148, 0.001); end
+  def test_costpercapita_bq148; assert_in_epsilon(84.64030462862239, worksheet.costpercapita_bq148, 0.001); end
   def test_costpercapita_bs148; assert_in_epsilon(137.60694142954975, worksheet.costpercapita_bs148, 0.001); end
-  def test_costpercapita_bt148; assert_in_epsilon(199.82311658225302, worksheet.costpercapita_bt148, 0.001); end
-  def test_costpercapita_bu148; assert_in_epsilon(215.7388260954224, worksheet.costpercapita_bu148, 0.001); end
+  def test_costpercapita_bt148; assert_in_epsilon(199.82311658225305, worksheet.costpercapita_bt148, 0.001); end
+  def test_costpercapita_bu148; assert_in_epsilon(215.73882609542247, worksheet.costpercapita_bu148, 0.001); end
   def test_costpercapita_bv148; assert_in_epsilon(202.84959456524842, worksheet.costpercapita_bv148, 0.001); end
-  def test_costpercapita_bw148; assert_in_epsilon(192.91522876291643, worksheet.costpercapita_bw148, 0.001); end
-  def test_costpercapita_bx148; assert_in_epsilon(184.154164776316, worksheet.costpercapita_bx148, 0.001); end
-  def test_costpercapita_by148; assert_in_epsilon(176.0976156291004, worksheet.costpercapita_by148, 0.001); end
-  def test_costpercapita_bz148; assert_in_epsilon(168.53750833717655, worksheet.costpercapita_bz148, 0.001); end
-  def test_costpercapita_ca148; assert_in_epsilon(161.42178835061975, worksheet.costpercapita_ca148, 0.001); end
-  def test_costpercapita_cc148; assert_in_epsilon(182.12719828095584, worksheet.costpercapita_cc148, 0.001); end
-  def test_costpercapita_cd148; assert_in_epsilon(4009.970988900967, worksheet.costpercapita_cd148, 0.001); end
-  def test_costpercapita_cf148; assert_in_epsilon(-34.7479638110199, worksheet.costpercapita_cf148, 0.001); end
-  def test_costpercapita_cg148; assert_in_epsilon(18.19666835784422, worksheet.costpercapita_cg148, 0.001); end
-  def test_costpercapita_ch148; assert_in_epsilon(45.83889385903711, worksheet.costpercapita_ch148, 0.001); end
-  def test_costpercapita_ci148; assert_in_epsilon(41.835480508535795, worksheet.costpercapita_ci148, 0.001); end
-  def test_costpercapita_cj148; assert_in_epsilon(39.73425264394726, worksheet.costpercapita_cj148, 0.001); end
-  def test_costpercapita_ck148; assert_in_epsilon(37.93772993379517, worksheet.costpercapita_ck148, 0.001); end
-  def test_costpercapita_cl148; assert_in_epsilon(36.28575272429751, worksheet.costpercapita_cl148, 0.001); end
-  def test_costpercapita_cm148; assert_in_epsilon(34.735709698051785, worksheet.costpercapita_cm148, 0.001); end
-  def test_costpercapita_cn148; assert_in_epsilon(33.27710220889764, worksheet.costpercapita_cn148, 0.001); end
-  def test_costpercapita_cp148; assert_in_epsilon(28.12151401370962, worksheet.costpercapita_cp148, 0.001); end
-  def test_costpercapita_cq148; assert_in_epsilon(671.4305996068243, worksheet.costpercapita_cq148, 0.001); end
+  def test_costpercapita_bw148; assert_in_epsilon(192.91522876291648, worksheet.costpercapita_bw148, 0.001); end
+  def test_costpercapita_bx148; assert_in_epsilon(184.15416477631604, worksheet.costpercapita_bx148, 0.001); end
+  def test_costpercapita_by148; assert_in_epsilon(176.09761562910046, worksheet.costpercapita_by148, 0.001); end
+  def test_costpercapita_bz148; assert_in_epsilon(168.53750833717658, worksheet.costpercapita_bz148, 0.001); end
+  def test_costpercapita_ca148; assert_in_epsilon(161.42178835061978, worksheet.costpercapita_ca148, 0.001); end
+  def test_costpercapita_cc148; assert_in_epsilon(182.1271982809559, worksheet.costpercapita_cc148, 0.001); end
+  def test_costpercapita_cd148; assert_in_epsilon(4009.970988900968, worksheet.costpercapita_cd148, 0.001); end
+  def test_costpercapita_cf148; assert_in_epsilon(-34.74796381101988, worksheet.costpercapita_cf148, 0.001); end
+  def test_costpercapita_cg148; assert_in_epsilon(18.196668357844263, worksheet.costpercapita_cg148, 0.001); end
+  def test_costpercapita_ch148; assert_in_epsilon(45.838893859037164, worksheet.costpercapita_ch148, 0.001); end
+  def test_costpercapita_ci148; assert_in_epsilon(41.83548050853582, worksheet.costpercapita_ci148, 0.001); end
+  def test_costpercapita_cj148; assert_in_epsilon(39.734252643947315, worksheet.costpercapita_cj148, 0.001); end
+  def test_costpercapita_ck148; assert_in_epsilon(37.93772993379522, worksheet.costpercapita_ck148, 0.001); end
+  def test_costpercapita_cl148; assert_in_epsilon(36.28575272429756, worksheet.costpercapita_cl148, 0.001); end
+  def test_costpercapita_cm148; assert_in_epsilon(34.73570969805181, worksheet.costpercapita_cm148, 0.001); end
+  def test_costpercapita_cn148; assert_in_epsilon(33.277102208897674, worksheet.costpercapita_cn148, 0.001); end
+  def test_costpercapita_cp148; assert_in_epsilon(28.12151401370966, worksheet.costpercapita_cp148, 0.001); end
+  def test_costpercapita_cq148; assert_in_epsilon(671.4305996068251, worksheet.costpercapita_cq148, 0.001); end
   def test_costpercapita_cr148; assert_equal("ok", worksheet.costpercapita_cr148); end
   def test_costpercapita_a149; assert_equal("XII.c", worksheet.costpercapita_a149); end
   def test_costpercapita_b149; assert_equal("International aviation", worksheet.costpercapita_b149); end
@@ -20392,46 +21003,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at152; assert_in_epsilon(390.41342302506314, worksheet.costpercapita_at152, 0.001); end
   def test_costpercapita_av152; assert_in_delta(0.1, worksheet.costpercapita_av152, 0.001); end
   def test_costpercapita_aw152; assert_in_epsilon(15, worksheet.costpercapita_aw152, 0.001); end
-  def test_costpercapita_ay152; assert_in_epsilon(3.747595611976263, worksheet.costpercapita_ay152, 0.001); end
-  def test_costpercapita_az152; assert_in_epsilon(5.689302697603886, worksheet.costpercapita_az152, 0.001); end
-  def test_costpercapita_ba152; assert_in_epsilon(5.214761502373702, worksheet.costpercapita_ba152, 0.001); end
-  def test_costpercapita_bb152; assert_in_epsilon(4.793095039548196, worksheet.costpercapita_bb152, 0.001); end
-  def test_costpercapita_bc152; assert_in_epsilon(4.464067734432657, worksheet.costpercapita_bc152, 0.001); end
-  def test_costpercapita_bd152; assert_in_epsilon(4.209253971854447, worksheet.costpercapita_bd152, 0.001); end
-  def test_costpercapita_be152; assert_in_epsilon(4.00615177033837, worksheet.costpercapita_be152, 0.001); end
-  def test_costpercapita_bf152; assert_in_epsilon(3.8402909928059494, worksheet.costpercapita_bf152, 0.001); end
-  def test_costpercapita_bg152; assert_in_epsilon(3.7033619169175216, worksheet.costpercapita_bg152, 0.001); end
-  def test_costpercapita_bi152; assert_in_epsilon(3.747595611976263, worksheet.costpercapita_bi152, 0.001); end
-  def test_costpercapita_bj152; assert_in_epsilon(9.31332108475032, worksheet.costpercapita_bj152, 0.001); end
-  def test_costpercapita_bk152; assert_in_epsilon(14.223181680288237, worksheet.costpercapita_bk152, 0.001); end
-  def test_costpercapita_bl152; assert_in_epsilon(15.179041446909165, worksheet.costpercapita_bl152, 0.001); end
-  def test_costpercapita_bm152; assert_in_epsilon(14.04145227422591, worksheet.costpercapita_bm152, 0.001); end
-  def test_costpercapita_bn152; assert_in_epsilon(13.120494318508502, worksheet.costpercapita_bn152, 0.001); end
-  def test_costpercapita_bo152; assert_in_epsilon(12.39159120565756, worksheet.costpercapita_bo152, 0.001); end
-  def test_costpercapita_bp152; assert_in_epsilon(11.80383894721361, worksheet.costpercapita_bp152, 0.001); end
-  def test_costpercapita_bq152; assert_in_epsilon(11.324953367902515, worksheet.costpercapita_bq152, 0.001); end
+  def test_costpercapita_ay152; assert_in_epsilon(3.747595611976265, worksheet.costpercapita_ay152, 0.001); end
+  def test_costpercapita_az152; assert_in_epsilon(5.689302697603889, worksheet.costpercapita_az152, 0.001); end
+  def test_costpercapita_ba152; assert_in_epsilon(5.214761502373705, worksheet.costpercapita_ba152, 0.001); end
+  def test_costpercapita_bb152; assert_in_epsilon(4.793095039548198, worksheet.costpercapita_bb152, 0.001); end
+  def test_costpercapita_bc152; assert_in_epsilon(4.464067734432658, worksheet.costpercapita_bc152, 0.001); end
+  def test_costpercapita_bd152; assert_in_epsilon(4.209253971854448, worksheet.costpercapita_bd152, 0.001); end
+  def test_costpercapita_be152; assert_in_epsilon(4.006151770338372, worksheet.costpercapita_be152, 0.001); end
+  def test_costpercapita_bf152; assert_in_epsilon(3.8402909928059508, worksheet.costpercapita_bf152, 0.001); end
+  def test_costpercapita_bg152; assert_in_epsilon(3.7033619169175234, worksheet.costpercapita_bg152, 0.001); end
+  def test_costpercapita_bi152; assert_in_epsilon(3.747595611976265, worksheet.costpercapita_bi152, 0.001); end
+  def test_costpercapita_bj152; assert_in_epsilon(9.313321084750326, worksheet.costpercapita_bj152, 0.001); end
+  def test_costpercapita_bk152; assert_in_epsilon(14.223181680288242, worksheet.costpercapita_bk152, 0.001); end
+  def test_costpercapita_bl152; assert_in_epsilon(15.179041446909173, worksheet.costpercapita_bl152, 0.001); end
+  def test_costpercapita_bm152; assert_in_epsilon(14.041452274225913, worksheet.costpercapita_bm152, 0.001); end
+  def test_costpercapita_bn152; assert_in_epsilon(13.120494318508507, worksheet.costpercapita_bn152, 0.001); end
+  def test_costpercapita_bo152; assert_in_epsilon(12.391591205657562, worksheet.costpercapita_bo152, 0.001); end
+  def test_costpercapita_bp152; assert_in_epsilon(11.803838947213613, worksheet.costpercapita_bp152, 0.001); end
+  def test_costpercapita_bq152; assert_in_epsilon(11.324953367902518, worksheet.costpercapita_bq152, 0.001); end
   def test_costpercapita_bs152; assert_in_epsilon(18.114544096241573, worksheet.costpercapita_bs152, 0.001); end
-  def test_costpercapita_bt152; assert_in_epsilon(22.47870585446512, worksheet.costpercapita_bt152, 0.001); end
-  def test_costpercapita_bu152; assert_in_epsilon(26.301850060156312, worksheet.costpercapita_bu152, 0.001); end
-  def test_costpercapita_bv152; assert_in_epsilon(26.386419505087606, worksheet.costpercapita_bv152, 0.001); end
+  def test_costpercapita_bt152; assert_in_epsilon(22.478705854465122, worksheet.costpercapita_bt152, 0.001); end
+  def test_costpercapita_bu152; assert_in_epsilon(26.301850060156315, worksheet.costpercapita_bu152, 0.001); end
+  def test_costpercapita_bv152; assert_in_epsilon(26.38641950508761, worksheet.costpercapita_bv152, 0.001); end
   def test_costpercapita_bw152; assert_in_epsilon(24.56836005253546, worksheet.costpercapita_bw152, 0.001); end
-  def test_costpercapita_bx152; assert_in_epsilon(23.116642448995854, worksheet.costpercapita_bx152, 0.001); end
-  def test_costpercapita_by152; assert_in_epsilon(21.960405930368932, worksheet.costpercapita_by152, 0.001); end
-  def test_costpercapita_bz152; assert_in_epsilon(21.019374675582355, worksheet.costpercapita_bz152, 0.001); end
-  def test_costpercapita_ca152; assert_in_epsilon(20.245193500632958, worksheet.costpercapita_ca152, 0.001); end
+  def test_costpercapita_bx152; assert_in_epsilon(23.116642448995858, worksheet.costpercapita_bx152, 0.001); end
+  def test_costpercapita_by152; assert_in_epsilon(21.960405930368935, worksheet.costpercapita_by152, 0.001); end
+  def test_costpercapita_bz152; assert_in_epsilon(21.01937467558236, worksheet.costpercapita_bz152, 0.001); end
+  def test_costpercapita_ca152; assert_in_epsilon(20.24519350063296, worksheet.costpercapita_ca152, 0.001); end
   def test_costpercapita_cc152; assert_in_epsilon(22.687944013785128, worksheet.costpercapita_cc152, 0.001); end
-  def test_costpercapita_cd152; assert_in_epsilon(493.6249462097008, worksheet.costpercapita_cd152, 0.001); end
-  def test_costpercapita_cf152; assert_in_epsilon(-5.753907782085008, worksheet.costpercapita_cf152, 0.001); end
-  def test_costpercapita_cg152; assert_in_delta(0.6586633540643572, worksheet.costpercapita_cg152, 0.001); end
-  def test_costpercapita_ch152; assert_in_epsilon(6.290403561590148, worksheet.costpercapita_ch152, 0.001); end
-  def test_costpercapita_ci152; assert_in_epsilon(7.887709056490001, worksheet.costpercapita_ci152, 0.001); end
-  def test_costpercapita_cj152; assert_in_epsilon(7.2506414522977805, worksheet.costpercapita_cj152, 0.001); end
-  def test_costpercapita_ck152; assert_in_epsilon(6.717310244074663, worksheet.costpercapita_ck152, 0.001); end
-  def test_costpercapita_cl152; assert_in_epsilon(6.297369429751228, worksheet.costpercapita_cl152, 0.001); end
-  def test_costpercapita_cm152; assert_in_epsilon(5.961927223485222, worksheet.costpercapita_cm152, 0.001); end
-  def test_costpercapita_cn152; assert_in_epsilon(5.691340331760669, worksheet.costpercapita_cn152, 0.001); end
-  def test_costpercapita_cp152; assert_in_epsilon(4.555717430158785, worksheet.costpercapita_cp152, 0.001); end
-  def test_costpercapita_cq152; assert_in_epsilon(103.21152318463771, worksheet.costpercapita_cq152, 0.001); end
+  def test_costpercapita_cd152; assert_in_epsilon(493.62494620970085, worksheet.costpercapita_cd152, 0.001); end
+  def test_costpercapita_cf152; assert_in_epsilon(-5.753907782085006, worksheet.costpercapita_cf152, 0.001); end
+  def test_costpercapita_cg152; assert_in_delta(0.6586633540643624, worksheet.costpercapita_cg152, 0.001); end
+  def test_costpercapita_ch152; assert_in_epsilon(6.2904035615901535, worksheet.costpercapita_ch152, 0.001); end
+  def test_costpercapita_ci152; assert_in_epsilon(7.887709056490008, worksheet.costpercapita_ci152, 0.001); end
+  def test_costpercapita_cj152; assert_in_epsilon(7.250641452297785, worksheet.costpercapita_cj152, 0.001); end
+  def test_costpercapita_ck152; assert_in_epsilon(6.7173102440746675, worksheet.costpercapita_ck152, 0.001); end
+  def test_costpercapita_cl152; assert_in_epsilon(6.297369429751232, worksheet.costpercapita_cl152, 0.001); end
+  def test_costpercapita_cm152; assert_in_epsilon(5.961927223485224, worksheet.costpercapita_cm152, 0.001); end
+  def test_costpercapita_cn152; assert_in_epsilon(5.6913403317606726, worksheet.costpercapita_cn152, 0.001); end
+  def test_costpercapita_cp152; assert_in_epsilon(4.555717430158789, worksheet.costpercapita_cp152, 0.001); end
+  def test_costpercapita_cq152; assert_in_epsilon(103.21152318463781, worksheet.costpercapita_cq152, 0.001); end
   def test_costpercapita_cr152; assert_equal("ok", worksheet.costpercapita_cr152); end
   def test_costpercapita_a153; assert_equal("XV.b.Coal", worksheet.costpercapita_a153); end
   def test_costpercapita_b153; assert_equal("Indigenous fossil-fuel production - Coal", worksheet.costpercapita_b153); end
@@ -20728,46 +21339,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at156; assert_in_epsilon(235.41726259327572, worksheet.costpercapita_at156, 0.001); end
   def test_costpercapita_av156; assert_in_delta(0.1, worksheet.costpercapita_av156, 0.001); end
   def test_costpercapita_aw156; assert_in_epsilon(15, worksheet.costpercapita_aw156, 0.001); end
-  def test_costpercapita_ay156; assert_in_epsilon(13.678464791458294, worksheet.costpercapita_ay156, 0.001); end
-  def test_costpercapita_az156; assert_in_epsilon(6.943214208458588, worksheet.costpercapita_az156, 0.001); end
-  def test_costpercapita_ba156; assert_in_epsilon(7.503177125843668, worksheet.costpercapita_ba156, 0.001); end
-  def test_costpercapita_bb156; assert_in_epsilon(7.437733860535032, worksheet.costpercapita_bb156, 0.001); end
-  def test_costpercapita_bc156; assert_in_epsilon(7.606016529178908, worksheet.costpercapita_bc156, 0.001); end
-  def test_costpercapita_bd156; assert_in_epsilon(6.828608689115487, worksheet.costpercapita_bd156, 0.001); end
-  def test_costpercapita_be156; assert_in_epsilon(5.460463057910946, worksheet.costpercapita_be156, 0.001); end
-  def test_costpercapita_bf156; assert_in_epsilon(3.925611697447484, worksheet.costpercapita_bf156, 0.001); end
-  def test_costpercapita_bg156; assert_in_epsilon(2.907083670824017, worksheet.costpercapita_bg156, 0.001); end
-  def test_costpercapita_bi156; assert_in_epsilon(13.678464791458294, worksheet.costpercapita_bi156, 0.001); end
-  def test_costpercapita_bj156; assert_in_epsilon(20.170630676170575, worksheet.costpercapita_bj156, 0.001); end
-  def test_costpercapita_bk156; assert_in_epsilon(27.013458660322534, worksheet.costpercapita_bk156, 0.001); end
-  def test_costpercapita_bl156; assert_in_epsilon(21.216544975410397, worksheet.costpercapita_bl156, 0.001); end
-  def test_costpercapita_bm156; assert_in_epsilon(21.912762243661692, worksheet.costpercapita_bm156, 0.001); end
-  def test_costpercapita_bn156; assert_in_epsilon(21.31957956100093, worksheet.costpercapita_bn156, 0.001); end
-  def test_costpercapita_bo156; assert_in_epsilon(19.411905813800082, worksheet.costpercapita_bo156, 0.001); end
-  def test_costpercapita_bp156; assert_in_epsilon(15.826817419257532, worksheet.costpercapita_bp156, 0.001); end
-  def test_costpercapita_bq156; assert_in_epsilon(12.011105802553447, worksheet.costpercapita_bq156, 0.001); end
-  def test_costpercapita_bs156; assert_in_epsilon(13.736671358808065, worksheet.costpercapita_bs156, 0.001); end
-  def test_costpercapita_bt156; assert_in_epsilon(20.2594101476292, worksheet.costpercapita_bt156, 0.001); end
-  def test_costpercapita_bu156; assert_in_epsilon(27.08666195979679, worksheet.costpercapita_bu156, 0.001); end
-  def test_costpercapita_bv156; assert_in_epsilon(21.28046997391409, worksheet.costpercapita_bv156, 0.001); end
-  def test_costpercapita_bw156; assert_in_epsilon(21.96278598641953, worksheet.costpercapita_bw156, 0.001); end
-  def test_costpercapita_bx156; assert_in_epsilon(21.35505522263211, worksheet.costpercapita_bx156, 0.001); end
-  def test_costpercapita_by156; assert_in_epsilon(19.43482713284251, worksheet.costpercapita_by156, 0.001); end
-  def test_costpercapita_bz156; assert_in_epsilon(15.842228302587783, worksheet.costpercapita_bz156, 0.001); end
-  def test_costpercapita_ca156; assert_in_epsilon(12.020157051605608, worksheet.costpercapita_ca156, 0.001); end
-  def test_costpercapita_cc156; assert_in_epsilon(19.21980745958174, worksheet.costpercapita_cc156, 0.001); end
-  def test_costpercapita_cd156; assert_in_epsilon(433.8161401683239, worksheet.costpercapita_cd156, 0.001); end
-  def test_costpercapita_cf156; assert_in_epsilon(-21.001365451232196, worksheet.costpercapita_cf156, 0.001); end
-  def test_costpercapita_cg156; assert_in_epsilon(9.608502816397388, worksheet.costpercapita_cg156, 0.001); end
-  def test_costpercapita_ch156; assert_in_epsilon(15.59950630650629, worksheet.costpercapita_ch156, 0.001); end
-  def test_costpercapita_ci156; assert_in_epsilon(9.902145957412134, worksheet.costpercapita_ci156, 0.001); end
-  def test_costpercapita_cj156; assert_in_epsilon(10.342368954215617, worksheet.costpercapita_cj156, 0.001); end
-  def test_costpercapita_ck156; assert_in_epsilon(10.931791439624819, worksheet.costpercapita_ck156, 0.001); end
-  def test_costpercapita_cl156; assert_in_epsilon(11.10536258185401, worksheet.costpercapita_cl156, 0.001); end
-  def test_costpercapita_cm156; assert_in_epsilon(9.85511448292159, worksheet.costpercapita_cm156, 0.001); end
-  def test_costpercapita_cn156; assert_in_epsilon(7.588803896197797, worksheet.costpercapita_cn156, 0.001); end
-  def test_costpercapita_cp156; assert_in_epsilon(7.10358122043305, worksheet.costpercapita_cp156, 0.001); end
-  def test_costpercapita_cq156; assert_in_epsilon(198.3988775750482, worksheet.costpercapita_cq156, 0.001); end
+  def test_costpercapita_ay156; assert_in_epsilon(13.678464791458302, worksheet.costpercapita_ay156, 0.001); end
+  def test_costpercapita_az156; assert_in_epsilon(6.943214208458591, worksheet.costpercapita_az156, 0.001); end
+  def test_costpercapita_ba156; assert_in_epsilon(7.5031771258436715, worksheet.costpercapita_ba156, 0.001); end
+  def test_costpercapita_bb156; assert_in_epsilon(7.437733860535036, worksheet.costpercapita_bb156, 0.001); end
+  def test_costpercapita_bc156; assert_in_epsilon(7.606016529178909, worksheet.costpercapita_bc156, 0.001); end
+  def test_costpercapita_bd156; assert_in_epsilon(6.828608689115491, worksheet.costpercapita_bd156, 0.001); end
+  def test_costpercapita_be156; assert_in_epsilon(5.46046305791095, worksheet.costpercapita_be156, 0.001); end
+  def test_costpercapita_bf156; assert_in_epsilon(3.9256116974474855, worksheet.costpercapita_bf156, 0.001); end
+  def test_costpercapita_bg156; assert_in_epsilon(2.907083670824018, worksheet.costpercapita_bg156, 0.001); end
+  def test_costpercapita_bi156; assert_in_epsilon(13.678464791458302, worksheet.costpercapita_bi156, 0.001); end
+  def test_costpercapita_bj156; assert_in_epsilon(20.170630676170585, worksheet.costpercapita_bj156, 0.001); end
+  def test_costpercapita_bk156; assert_in_epsilon(27.013458660322545, worksheet.costpercapita_bk156, 0.001); end
+  def test_costpercapita_bl156; assert_in_epsilon(21.216544975410404, worksheet.costpercapita_bl156, 0.001); end
+  def test_costpercapita_bm156; assert_in_epsilon(21.9127622436617, worksheet.costpercapita_bm156, 0.001); end
+  def test_costpercapita_bn156; assert_in_epsilon(21.319579561000936, worksheet.costpercapita_bn156, 0.001); end
+  def test_costpercapita_bo156; assert_in_epsilon(19.41190581380009, worksheet.costpercapita_bo156, 0.001); end
+  def test_costpercapita_bp156; assert_in_epsilon(15.826817419257537, worksheet.costpercapita_bp156, 0.001); end
+  def test_costpercapita_bq156; assert_in_epsilon(12.011105802553454, worksheet.costpercapita_bq156, 0.001); end
+  def test_costpercapita_bs156; assert_in_epsilon(13.736671358808072, worksheet.costpercapita_bs156, 0.001); end
+  def test_costpercapita_bt156; assert_in_epsilon(20.25941014762921, worksheet.costpercapita_bt156, 0.001); end
+  def test_costpercapita_bu156; assert_in_epsilon(27.0866619597968, worksheet.costpercapita_bu156, 0.001); end
+  def test_costpercapita_bv156; assert_in_epsilon(21.280469973914094, worksheet.costpercapita_bv156, 0.001); end
+  def test_costpercapita_bw156; assert_in_epsilon(21.962785986419536, worksheet.costpercapita_bw156, 0.001); end
+  def test_costpercapita_bx156; assert_in_epsilon(21.35505522263212, worksheet.costpercapita_bx156, 0.001); end
+  def test_costpercapita_by156; assert_in_epsilon(19.434827132842518, worksheet.costpercapita_by156, 0.001); end
+  def test_costpercapita_bz156; assert_in_epsilon(15.842228302587788, worksheet.costpercapita_bz156, 0.001); end
+  def test_costpercapita_ca156; assert_in_epsilon(12.020157051605613, worksheet.costpercapita_ca156, 0.001); end
+  def test_costpercapita_cc156; assert_in_epsilon(19.21980745958175, worksheet.costpercapita_cc156, 0.001); end
+  def test_costpercapita_cd156; assert_in_epsilon(433.81614016832395, worksheet.costpercapita_cd156, 0.001); end
+  def test_costpercapita_cf156; assert_in_epsilon(-21.00136545123219, worksheet.costpercapita_cf156, 0.001); end
+  def test_costpercapita_cg156; assert_in_epsilon(9.6085028163974, worksheet.costpercapita_cg156, 0.001); end
+  def test_costpercapita_ch156; assert_in_epsilon(15.599506306506301, worksheet.costpercapita_ch156, 0.001); end
+  def test_costpercapita_ci156; assert_in_epsilon(9.902145957412142, worksheet.costpercapita_ci156, 0.001); end
+  def test_costpercapita_cj156; assert_in_epsilon(10.342368954215623, worksheet.costpercapita_cj156, 0.001); end
+  def test_costpercapita_ck156; assert_in_epsilon(10.931791439624828, worksheet.costpercapita_ck156, 0.001); end
+  def test_costpercapita_cl156; assert_in_epsilon(11.105362581854017, worksheet.costpercapita_cl156, 0.001); end
+  def test_costpercapita_cm156; assert_in_epsilon(9.855114482921596, worksheet.costpercapita_cm156, 0.001); end
+  def test_costpercapita_cn156; assert_in_epsilon(7.5888038961978035, worksheet.costpercapita_cn156, 0.001); end
+  def test_costpercapita_cp156; assert_in_epsilon(7.103581220433059, worksheet.costpercapita_cp156, 0.001); end
+  def test_costpercapita_cq156; assert_in_epsilon(198.39887757504835, worksheet.costpercapita_cq156, 0.001); end
   def test_costpercapita_cr156; assert_equal("ok", worksheet.costpercapita_cr156); end
   def test_costpercapita_a157; assert_equal("XVI.b.Coal", worksheet.costpercapita_a157); end
   def test_costpercapita_b157; assert_equal("Balancing imports - Coal", worksheet.costpercapita_b157); end
@@ -21064,46 +21675,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_at160; assert_in_epsilon(12.290967131288447, worksheet.costpercapita_at160, 0.001); end
   def test_costpercapita_av160; assert_in_delta(0.1, worksheet.costpercapita_av160, 0.001); end
   def test_costpercapita_aw160; assert_in_epsilon(15, worksheet.costpercapita_aw160, 0.001); end
-  def test_costpercapita_ay160; assert_in_delta(0.35854959389308044, worksheet.costpercapita_ay160, 0.001); end
-  def test_costpercapita_az160; assert_in_delta(0.33756258274477746, worksheet.costpercapita_az160, 0.001); end
-  def test_costpercapita_ba160; assert_in_delta(0.3137623785444059, worksheet.costpercapita_ba160, 0.001); end
-  def test_costpercapita_bb160; assert_in_delta(0.2924391282082403, worksheet.costpercapita_bb160, 0.001); end
-  def test_costpercapita_bc160; assert_in_delta(0.27403013205504295, worksheet.costpercapita_bc160, 0.001); end
-  def test_costpercapita_bd160; assert_in_delta(0.2581587501154675, worksheet.costpercapita_bd160, 0.001); end
-  def test_costpercapita_be160; assert_in_delta(0.24409121031999653, worksheet.costpercapita_be160, 0.001); end
-  def test_costpercapita_bf160; assert_in_delta(0.23139948962294724, worksheet.costpercapita_bf160, 0.001); end
-  def test_costpercapita_bg160; assert_in_delta(0.2199028364722311, worksheet.costpercapita_bg160, 0.001); end
-  def test_costpercapita_bi160; assert_in_delta(0.35854959389308044, worksheet.costpercapita_bi160, 0.001); end
-  def test_costpercapita_bj160; assert_in_delta(0.6842889789492997, worksheet.costpercapita_bj160, 0.001); end
-  def test_costpercapita_bk160; assert_in_delta(0.9756490019514914, worksheet.costpercapita_bk160, 0.001); end
-  def test_costpercapita_bl160; assert_in_delta(0.9128878136503943, worksheet.costpercapita_bl160, 0.001); end
-  def test_costpercapita_bm160; assert_in_delta(0.854220367376823, worksheet.costpercapita_bm160, 0.001); end
-  def test_costpercapita_bn160; assert_in_delta(0.8034831488427658, worksheet.costpercapita_bn160, 0.001); end
-  def test_costpercapita_bo160; assert_in_delta(0.7586131175839989, worksheet.costpercapita_bo160, 0.001); end
-  def test_costpercapita_bp160; assert_in_delta(0.7182348372742025, worksheet.costpercapita_bp160, 0.001); end
-  def test_costpercapita_bq160; assert_in_delta(0.6817418077260416, worksheet.costpercapita_bq160, 0.001); end
-  def test_costpercapita_bs160; assert_in_delta(0.5178543498142978, worksheet.costpercapita_bs160, 0.001); end
-  def test_costpercapita_bt160; assert_in_delta(0.8323255172496934, worksheet.costpercapita_bt160, 0.001); end
-  def test_costpercapita_bu160; assert_in_epsilon(1.1133723097083965, worksheet.costpercapita_bu160, 0.001); end
-  def test_costpercapita_bv160; assert_in_epsilon(1.0414580710585175, worksheet.costpercapita_bv160, 0.001); end
-  def test_costpercapita_bw160; assert_in_delta(0.9748770788890112, worksheet.costpercapita_bw160, 0.001); end
-  def test_costpercapita_bx160; assert_in_delta(0.9173051908240007, worksheet.costpercapita_bx160, 0.001); end
-  def test_costpercapita_by160; assert_in_delta(0.8663651214628467, worksheet.costpercapita_by160, 0.001); end
-  def test_costpercapita_bz160; assert_in_delta(0.8204991747353455, worksheet.costpercapita_bz160, 0.001); end
-  def test_costpercapita_ca160; assert_in_delta(0.7790260321895762, worksheet.costpercapita_ca160, 0.001); end
-  def test_costpercapita_cc160; assert_in_delta(0.8736758717701874, worksheet.costpercapita_cc160, 0.001); end
-  def test_costpercapita_cd160; assert_in_epsilon(19.30371155472872, worksheet.costpercapita_cd160, 0.001); end
-  def test_costpercapita_cf160; assert_in_delta(-0.5505026454753683, worksheet.costpercapita_cf160, 0.001); end
-  def test_costpercapita_cg160; assert_in_delta(0.17078341040698503, worksheet.costpercapita_cg160, 0.001); end
-  def test_costpercapita_ch160; assert_in_delta(0.49834868249205666, worksheet.costpercapita_ch160, 0.001); end
-  def test_costpercapita_ci160; assert_in_delta(0.4680247616689181, worksheet.costpercapita_ci160, 0.001); end
-  def test_costpercapita_cj160; assert_in_delta(0.4373613730698555, worksheet.costpercapita_cj160, 0.001); end
-  def test_costpercapita_ck160; assert_in_delta(0.41076795311727776, worksheet.costpercapita_ck160, 0.001); end
-  def test_costpercapita_cl160; assert_in_delta(0.3872976870870126, worksheet.costpercapita_cl160, 0.001); end
-  def test_costpercapita_cm160; assert_in_delta(0.3662262541159396, worksheet.costpercapita_cm160, 0.001); end
-  def test_costpercapita_cn160; assert_in_delta(0.3472221161519383, worksheet.costpercapita_cn160, 0.001); end
-  def test_costpercapita_cp160; assert_in_delta(0.28172551029273507, worksheet.costpercapita_cp160, 0.001); end
-  def test_costpercapita_cq160; assert_in_epsilon(7.0127444234402745, worksheet.costpercapita_cq160, 0.001); end
+  def test_costpercapita_ay160; assert_in_delta(0.3585495938930806, worksheet.costpercapita_ay160, 0.001); end
+  def test_costpercapita_az160; assert_in_delta(0.3375625827447776, worksheet.costpercapita_az160, 0.001); end
+  def test_costpercapita_ba160; assert_in_delta(0.31376237854440603, worksheet.costpercapita_ba160, 0.001); end
+  def test_costpercapita_bb160; assert_in_delta(0.2924391282082405, worksheet.costpercapita_bb160, 0.001); end
+  def test_costpercapita_bc160; assert_in_delta(0.2740301320550431, worksheet.costpercapita_bc160, 0.001); end
+  def test_costpercapita_bd160; assert_in_delta(0.2581587501154677, worksheet.costpercapita_bd160, 0.001); end
+  def test_costpercapita_be160; assert_in_delta(0.24409121031999667, worksheet.costpercapita_be160, 0.001); end
+  def test_costpercapita_bf160; assert_in_delta(0.23139948962294732, worksheet.costpercapita_bf160, 0.001); end
+  def test_costpercapita_bg160; assert_in_delta(0.21990283647223124, worksheet.costpercapita_bg160, 0.001); end
+  def test_costpercapita_bi160; assert_in_delta(0.3585495938930806, worksheet.costpercapita_bi160, 0.001); end
+  def test_costpercapita_bj160; assert_in_delta(0.6842889789493001, worksheet.costpercapita_bj160, 0.001); end
+  def test_costpercapita_bk160; assert_in_delta(0.9756490019514918, worksheet.costpercapita_bk160, 0.001); end
+  def test_costpercapita_bl160; assert_in_delta(0.9128878136503947, worksheet.costpercapita_bl160, 0.001); end
+  def test_costpercapita_bm160; assert_in_delta(0.8542203673768234, worksheet.costpercapita_bm160, 0.001); end
+  def test_costpercapita_bn160; assert_in_delta(0.8034831488427661, worksheet.costpercapita_bn160, 0.001); end
+  def test_costpercapita_bo160; assert_in_delta(0.7586131175839992, worksheet.costpercapita_bo160, 0.001); end
+  def test_costpercapita_bp160; assert_in_delta(0.7182348372742027, worksheet.costpercapita_bp160, 0.001); end
+  def test_costpercapita_bq160; assert_in_delta(0.6817418077260421, worksheet.costpercapita_bq160, 0.001); end
+  def test_costpercapita_bs160; assert_in_delta(0.5178543498142979, worksheet.costpercapita_bs160, 0.001); end
+  def test_costpercapita_bt160; assert_in_delta(0.8323255172496937, worksheet.costpercapita_bt160, 0.001); end
+  def test_costpercapita_bu160; assert_in_epsilon(1.113372309708397, worksheet.costpercapita_bu160, 0.001); end
+  def test_costpercapita_bv160; assert_in_epsilon(1.0414580710585177, worksheet.costpercapita_bv160, 0.001); end
+  def test_costpercapita_bw160; assert_in_delta(0.9748770788890117, worksheet.costpercapita_bw160, 0.001); end
+  def test_costpercapita_bx160; assert_in_delta(0.917305190824001, worksheet.costpercapita_bx160, 0.001); end
+  def test_costpercapita_by160; assert_in_delta(0.8663651214628472, worksheet.costpercapita_by160, 0.001); end
+  def test_costpercapita_bz160; assert_in_delta(0.8204991747353458, worksheet.costpercapita_bz160, 0.001); end
+  def test_costpercapita_ca160; assert_in_delta(0.7790260321895766, worksheet.costpercapita_ca160, 0.001); end
+  def test_costpercapita_cc160; assert_in_delta(0.8736758717701876, worksheet.costpercapita_cc160, 0.001); end
+  def test_costpercapita_cd160; assert_in_epsilon(19.30371155472873, worksheet.costpercapita_cd160, 0.001); end
+  def test_costpercapita_cf160; assert_in_delta(-0.5505026454753682, worksheet.costpercapita_cf160, 0.001); end
+  def test_costpercapita_cg160; assert_in_delta(0.17078341040698536, worksheet.costpercapita_cg160, 0.001); end
+  def test_costpercapita_ch160; assert_in_delta(0.4983486824920571, worksheet.costpercapita_ch160, 0.001); end
+  def test_costpercapita_ci160; assert_in_delta(0.4680247616689185, worksheet.costpercapita_ci160, 0.001); end
+  def test_costpercapita_cj160; assert_in_delta(0.4373613730698559, worksheet.costpercapita_cj160, 0.001); end
+  def test_costpercapita_ck160; assert_in_delta(0.41076795311727804, worksheet.costpercapita_ck160, 0.001); end
+  def test_costpercapita_cl160; assert_in_delta(0.387297687087013, worksheet.costpercapita_cl160, 0.001); end
+  def test_costpercapita_cm160; assert_in_delta(0.3662262541159399, worksheet.costpercapita_cm160, 0.001); end
+  def test_costpercapita_cn160; assert_in_delta(0.3472221161519387, worksheet.costpercapita_cn160, 0.001); end
+  def test_costpercapita_cp160; assert_in_delta(0.2817255102927354, worksheet.costpercapita_cp160, 0.001); end
+  def test_costpercapita_cq160; assert_in_epsilon(7.012744423440283, worksheet.costpercapita_cq160, 0.001); end
   def test_costpercapita_cr160; assert_equal("ok", worksheet.costpercapita_cr160); end
   def test_costpercapita_a161; assert_equal("XVIII.a", worksheet.costpercapita_a161); end
   def test_costpercapita_b161; assert_equal("Storage of captured CO2", worksheet.costpercapita_b161); end
@@ -21149,45 +21760,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av161; assert_in_delta(0.1, worksheet.costpercapita_av161, 0.001); end
   def test_costpercapita_aw161; assert_in_epsilon(15, worksheet.costpercapita_aw161, 0.001); end
   def test_costpercapita_ay161; assert_in_delta(0, (worksheet.costpercapita_ay161||0), 0.001); end
-  def test_costpercapita_az161; assert_in_epsilon(1.6506149814073152, worksheet.costpercapita_az161, 0.001); end
-  def test_costpercapita_ba161; assert_in_epsilon(3.9441056835851462, worksheet.costpercapita_ba161, 0.001); end
-  def test_costpercapita_bb161; assert_in_epsilon(5.1449144323454306, worksheet.costpercapita_bb161, 0.001); end
-  def test_costpercapita_bc161; assert_in_epsilon(7.687214476019396, worksheet.costpercapita_bc161, 0.001); end
-  def test_costpercapita_bd161; assert_in_epsilon(10.972791909656994, worksheet.costpercapita_bd161, 0.001); end
-  def test_costpercapita_be161; assert_in_epsilon(14.427861193523082, worksheet.costpercapita_be161, 0.001); end
-  def test_costpercapita_bf161; assert_in_epsilon(17.95017784856897, worksheet.costpercapita_bf161, 0.001); end
-  def test_costpercapita_bg161; assert_in_epsilon(21.971338705488467, worksheet.costpercapita_bg161, 0.001); end
+  def test_costpercapita_az161; assert_in_epsilon(1.6506149814073159, worksheet.costpercapita_az161, 0.001); end
+  def test_costpercapita_ba161; assert_in_epsilon(3.944105683585148, worksheet.costpercapita_ba161, 0.001); end
+  def test_costpercapita_bb161; assert_in_epsilon(5.144914432345433, worksheet.costpercapita_bb161, 0.001); end
+  def test_costpercapita_bc161; assert_in_epsilon(7.6872144760194, worksheet.costpercapita_bc161, 0.001); end
+  def test_costpercapita_bd161; assert_in_epsilon(10.972791909657, worksheet.costpercapita_bd161, 0.001); end
+  def test_costpercapita_be161; assert_in_epsilon(14.427861193523087, worksheet.costpercapita_be161, 0.001); end
+  def test_costpercapita_bf161; assert_in_epsilon(17.95017784856898, worksheet.costpercapita_bf161, 0.001); end
+  def test_costpercapita_bg161; assert_in_epsilon(21.971338705488474, worksheet.costpercapita_bg161, 0.001); end
   def test_costpercapita_bi161; assert_in_delta(0, (worksheet.costpercapita_bi161||0), 0.001); end
-  def test_costpercapita_bj161; assert_in_epsilon(1.6506149814073152, worksheet.costpercapita_bj161, 0.001); end
-  def test_costpercapita_bk161; assert_in_epsilon(5.540682583400719, worksheet.costpercapita_bk161, 0.001); end
-  def test_costpercapita_bl161; assert_in_epsilon(10.514038230467404, worksheet.costpercapita_bl161, 0.001); end
-  def test_costpercapita_bm161; assert_in_epsilon(16.409134379112796, worksheet.costpercapita_bm161, 0.001); end
-  def test_costpercapita_bn161; assert_in_epsilon(23.365402227894545, worksheet.costpercapita_bn161, 0.001); end
-  def test_costpercapita_bo161; assert_in_epsilon(32.512701122215695, worksheet.costpercapita_bo161, 0.001); end
-  def test_costpercapita_bp161; assert_in_epsilon(42.614798634785714, worksheet.costpercapita_bp161, 0.001); end
-  def test_costpercapita_bq161; assert_in_epsilon(53.4627124149893, worksheet.costpercapita_bq161, 0.001); end
+  def test_costpercapita_bj161; assert_in_epsilon(1.6506149814073159, worksheet.costpercapita_bj161, 0.001); end
+  def test_costpercapita_bk161; assert_in_epsilon(5.540682583400722, worksheet.costpercapita_bk161, 0.001); end
+  def test_costpercapita_bl161; assert_in_epsilon(10.51403823046741, worksheet.costpercapita_bl161, 0.001); end
+  def test_costpercapita_bm161; assert_in_epsilon(16.409134379112803, worksheet.costpercapita_bm161, 0.001); end
+  def test_costpercapita_bn161; assert_in_epsilon(23.365402227894553, worksheet.costpercapita_bn161, 0.001); end
+  def test_costpercapita_bo161; assert_in_epsilon(32.51270112221571, worksheet.costpercapita_bo161, 0.001); end
+  def test_costpercapita_bp161; assert_in_epsilon(42.61479863478574, worksheet.costpercapita_bp161, 0.001); end
+  def test_costpercapita_bq161; assert_in_epsilon(53.46271241498932, worksheet.costpercapita_bq161, 0.001); end
   def test_costpercapita_bs161; assert_in_delta(0, (worksheet.costpercapita_bs161||0), 0.001); end
-  def test_costpercapita_bt161; assert_in_epsilon(1.7486098577152647, worksheet.costpercapita_bt161, 0.001); end
-  def test_costpercapita_bu161; assert_in_epsilon(5.829000400080777, worksheet.costpercapita_bu161, 0.001); end
-  def test_costpercapita_bv161; assert_in_epsilon(10.96078743583184, worksheet.costpercapita_bv161, 0.001); end
-  def test_costpercapita_bw161; assert_in_epsilon(17.182202137208904, worksheet.costpercapita_bw161, 0.001); end
-  def test_costpercapita_bx161; assert_in_epsilon(24.619566273388816, worksheet.costpercapita_bx161, 0.001); end
-  def test_costpercapita_by161; assert_in_epsilon(34.35989807807241, worksheet.costpercapita_by161, 0.001); end
-  def test_costpercapita_bz161; assert_in_epsilon(45.15945323656246, worksheet.costpercapita_bz161, 0.001); end
-  def test_costpercapita_ca161; assert_in_epsilon(56.87913061965638, worksheet.costpercapita_ca161, 0.001); end
-  def test_costpercapita_cc161; assert_in_epsilon(21.859849782057424, worksheet.costpercapita_cc161, 0.001); end
-  def test_costpercapita_cd161; assert_in_epsilon(361.9962958110507, worksheet.costpercapita_cd161, 0.001); end
+  def test_costpercapita_bt161; assert_in_epsilon(1.7486098577152653, worksheet.costpercapita_bt161, 0.001); end
+  def test_costpercapita_bu161; assert_in_epsilon(5.82900040008078, worksheet.costpercapita_bu161, 0.001); end
+  def test_costpercapita_bv161; assert_in_epsilon(10.960787435831843, worksheet.costpercapita_bv161, 0.001); end
+  def test_costpercapita_bw161; assert_in_epsilon(17.182202137208908, worksheet.costpercapita_bw161, 0.001); end
+  def test_costpercapita_bx161; assert_in_epsilon(24.619566273388827, worksheet.costpercapita_bx161, 0.001); end
+  def test_costpercapita_by161; assert_in_epsilon(34.359898078072426, worksheet.costpercapita_by161, 0.001); end
+  def test_costpercapita_bz161; assert_in_epsilon(45.159453236562484, worksheet.costpercapita_bz161, 0.001); end
+  def test_costpercapita_ca161; assert_in_epsilon(56.87913061965641, worksheet.costpercapita_ca161, 0.001); end
+  def test_costpercapita_cc161; assert_in_epsilon(21.859849782057438, worksheet.costpercapita_cc161, 0.001); end
+  def test_costpercapita_cd161; assert_in_epsilon(361.99629581105086, worksheet.costpercapita_cd161, 0.001); end
   def test_costpercapita_cf161; assert_in_delta(0, (worksheet.costpercapita_cf161||0), 0.001); end
-  def test_costpercapita_cg161; assert_in_delta(-0.8603267751702336, worksheet.costpercapita_cg161, 0.001); end
-  def test_costpercapita_ch161; assert_in_delta(-0.45915369872554646, worksheet.costpercapita_ch161, 0.001); end
-  def test_costpercapita_ci161; assert_in_epsilon(2.6875125853528603, worksheet.costpercapita_ci161, 0.001); end
-  def test_costpercapita_cj161; assert_in_epsilon(4.715221481783169, worksheet.costpercapita_cj161, 0.001); end
-  def test_costpercapita_ck161; assert_in_epsilon(6.6734166936888855, worksheet.costpercapita_ck161, 0.001); end
-  def test_costpercapita_cl161; assert_in_epsilon(10.564809253432164, worksheet.costpercapita_cl161, 0.001); end
-  def test_costpercapita_cm161; assert_in_epsilon(15.308702661067548, worksheet.costpercapita_cm161, 0.001); end
-  def test_costpercapita_cn161; assert_in_epsilon(20.03956260419418, worksheet.costpercapita_cn161, 0.001); end
-  def test_costpercapita_cp161; assert_in_epsilon(6.518860533958114, worksheet.costpercapita_cp161, 0.001); end
-  def test_costpercapita_cq161; assert_in_epsilon(97.64611050264065, worksheet.costpercapita_cq161, 0.001); end
+  def test_costpercapita_cg161; assert_in_delta(-0.860326775170233, worksheet.costpercapita_cg161, 0.001); end
+  def test_costpercapita_ch161; assert_in_delta(-0.4591536987255439, worksheet.costpercapita_ch161, 0.001); end
+  def test_costpercapita_ci161; assert_in_epsilon(2.687512585352865, worksheet.costpercapita_ci161, 0.001); end
+  def test_costpercapita_cj161; assert_in_epsilon(4.715221481783175, worksheet.costpercapita_cj161, 0.001); end
+  def test_costpercapita_ck161; assert_in_epsilon(6.673416693688895, worksheet.costpercapita_ck161, 0.001); end
+  def test_costpercapita_cl161; assert_in_epsilon(10.564809253432177, worksheet.costpercapita_cl161, 0.001); end
+  def test_costpercapita_cm161; assert_in_epsilon(15.30870266106757, worksheet.costpercapita_cm161, 0.001); end
+  def test_costpercapita_cn161; assert_in_epsilon(20.039562604194202, worksheet.costpercapita_cn161, 0.001); end
+  def test_costpercapita_cp161; assert_in_epsilon(6.518860533958123, worksheet.costpercapita_cp161, 0.001); end
+  def test_costpercapita_cq161; assert_in_epsilon(97.64611050264081, worksheet.costpercapita_cq161, 0.001); end
   def test_costpercapita_cr161; assert_equal("ok", worksheet.costpercapita_cr161); end
   def test_costpercapita_a162; assert_equal("Total", worksheet.costpercapita_a162); end
   def test_costpercapita_b162; assert_equal("Total", worksheet.costpercapita_b162); end
@@ -21230,46 +21841,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq162; assert_in_epsilon(9829.333982519549, worksheet.costpercapita_aq162, 0.001); end
   def test_costpercapita_as162; assert_in_epsilon(7074.193383812492, worksheet.costpercapita_as162, 0.001); end
   def test_costpercapita_at162; assert_in_epsilon(140522.75231377472, worksheet.costpercapita_at162, 0.001); end
-  def test_costpercapita_ay162; assert_in_epsilon(852.8670049256808, worksheet.costpercapita_ay162, 0.001); end
-  def test_costpercapita_az162; assert_in_epsilon(1493.2755544249474, worksheet.costpercapita_az162, 0.001); end
-  def test_costpercapita_ba162; assert_in_epsilon(1631.8812177643688, worksheet.costpercapita_ba162, 0.001); end
-  def test_costpercapita_bb162; assert_in_epsilon(2390.966263366242, worksheet.costpercapita_bb162, 0.001); end
-  def test_costpercapita_bc162; assert_in_epsilon(2644.6250363910253, worksheet.costpercapita_bc162, 0.001); end
-  def test_costpercapita_bd162; assert_in_epsilon(2664.9424393679133, worksheet.costpercapita_bd162, 0.001); end
-  def test_costpercapita_be162; assert_in_epsilon(2829.1030833403624, worksheet.costpercapita_be162, 0.001); end
-  def test_costpercapita_bf162; assert_in_epsilon(3337.5196819700586, worksheet.costpercapita_bf162, 0.001); end
-  def test_costpercapita_bg162; assert_in_epsilon(3693.965204989417, worksheet.costpercapita_bg162, 0.001); end
-  def test_costpercapita_bi162; assert_in_epsilon(852.8670049256808, worksheet.costpercapita_bi162, 0.001); end
-  def test_costpercapita_bj162; assert_in_epsilon(2265.3942903008838, worksheet.costpercapita_bj162, 0.001); end
-  def test_costpercapita_bk162; assert_in_epsilon(3701.1785427912246, worksheet.costpercapita_bk162, 0.001); end
-  def test_costpercapita_bl162; assert_in_epsilon(5352.694668029385, worksheet.costpercapita_bl162, 0.001); end
-  def test_costpercapita_bm162; assert_in_epsilon(6854.601213517991, worksheet.costpercapita_bm162, 0.001); end
-  def test_costpercapita_bn162; assert_in_epsilon(8199.060369239134, worksheet.costpercapita_bn162, 0.001); end
-  def test_costpercapita_bo162; assert_in_epsilon(8795.572063356058, worksheet.costpercapita_bo162, 0.001); end
-  def test_costpercapita_bp162; assert_in_epsilon(9922.434140188512, worksheet.costpercapita_bp162, 0.001); end
-  def test_costpercapita_bq162; assert_in_epsilon(10677.587086431795, worksheet.costpercapita_bq162, 0.001); end
-  def test_costpercapita_bs162; assert_in_epsilon(3337.18356503122, worksheet.costpercapita_bs162, 0.001); end
-  def test_costpercapita_bt162; assert_in_epsilon(4887.750647644398, worksheet.costpercapita_bt162, 0.001); end
-  def test_costpercapita_bu162; assert_in_epsilon(6430.3181081758075, worksheet.costpercapita_bu162, 0.001); end
-  def test_costpercapita_bv162; assert_in_epsilon(8454.419223099077, worksheet.costpercapita_bv162, 0.001); end
-  def test_costpercapita_bw162; assert_in_epsilon(10223.806412767663, worksheet.costpercapita_bw162, 0.001); end
-  def test_costpercapita_bx162; assert_in_epsilon(11709.414045784906, worksheet.costpercapita_bx162, 0.001); end
-  def test_costpercapita_by162; assert_in_epsilon(12428.171467023274, worksheet.costpercapita_by162, 0.001); end
-  def test_costpercapita_bz162; assert_in_epsilon(13820.769664584215, worksheet.costpercapita_bz162, 0.001); end
-  def test_costpercapita_ca162; assert_in_epsilon(14795.48893938599, worksheet.costpercapita_ca162, 0.001); end
-  def test_costpercapita_cc162; assert_in_epsilon(9565.258008166284, worksheet.costpercapita_cc162, 0.001); end
-  def test_costpercapita_cd162; assert_in_epsilon(185392.15645070467, worksheet.costpercapita_cd162, 0.001); end
-  def test_costpercapita_cf162; assert_in_epsilon(-1358.58268218561, worksheet.costpercapita_cf162, 0.001); end
-  def test_costpercapita_cg162; assert_in_epsilon(-65.18365534273106, worksheet.costpercapita_cg162, 0.001); end
-  def test_costpercapita_ch162; assert_in_epsilon(1159.5834907840872, worksheet.costpercapita_ch162, 0.001); end
-  def test_costpercapita_ci162; assert_in_epsilon(1665.31558846331, worksheet.costpercapita_ci162, 0.001); end
-  def test_costpercapita_cj162; assert_in_epsilon(2791.0612284997706, worksheet.costpercapita_cj162, 0.001); end
-  def test_costpercapita_ck162; assert_in_epsilon(4089.1339393709054, worksheet.costpercapita_ck162, 0.001); end
-  def test_costpercapita_cl162; assert_in_epsilon(4413.1209551343645, worksheet.costpercapita_cl162, 0.001); end
-  def test_costpercapita_cm162; assert_in_epsilon(4758.977797593581, worksheet.costpercapita_cm162, 0.001); end
-  def test_costpercapita_cn162; assert_in_epsilon(4966.154956866441, worksheet.costpercapita_cn162, 0.001); end
-  def test_costpercapita_cp162; assert_in_epsilon(2491.0646243537913, worksheet.costpercapita_cp162, 0.001); end
-  def test_costpercapita_cq162; assert_in_epsilon(44869.40413692995, worksheet.costpercapita_cq162, 0.001); end
+  def test_costpercapita_ay162; assert_in_epsilon(852.8670049256812, worksheet.costpercapita_ay162, 0.001); end
+  def test_costpercapita_az162; assert_in_epsilon(1493.275554424948, worksheet.costpercapita_az162, 0.001); end
+  def test_costpercapita_ba162; assert_in_epsilon(1631.88121776437, worksheet.costpercapita_ba162, 0.001); end
+  def test_costpercapita_bb162; assert_in_epsilon(2390.966263366243, worksheet.costpercapita_bb162, 0.001); end
+  def test_costpercapita_bc162; assert_in_epsilon(2644.625036391027, worksheet.costpercapita_bc162, 0.001); end
+  def test_costpercapita_bd162; assert_in_epsilon(2664.942439367914, worksheet.costpercapita_bd162, 0.001); end
+  def test_costpercapita_be162; assert_in_epsilon(2829.103083340364, worksheet.costpercapita_be162, 0.001); end
+  def test_costpercapita_bf162; assert_in_epsilon(3337.51968197006, worksheet.costpercapita_bf162, 0.001); end
+  def test_costpercapita_bg162; assert_in_epsilon(3693.9652049894194, worksheet.costpercapita_bg162, 0.001); end
+  def test_costpercapita_bi162; assert_in_epsilon(852.8670049256812, worksheet.costpercapita_bi162, 0.001); end
+  def test_costpercapita_bj162; assert_in_epsilon(2265.3942903008847, worksheet.costpercapita_bj162, 0.001); end
+  def test_costpercapita_bk162; assert_in_epsilon(3701.178542791226, worksheet.costpercapita_bk162, 0.001); end
+  def test_costpercapita_bl162; assert_in_epsilon(5352.694668029388, worksheet.costpercapita_bl162, 0.001); end
+  def test_costpercapita_bm162; assert_in_epsilon(6854.601213517993, worksheet.costpercapita_bm162, 0.001); end
+  def test_costpercapita_bn162; assert_in_epsilon(8199.060369239138, worksheet.costpercapita_bn162, 0.001); end
+  def test_costpercapita_bo162; assert_in_epsilon(8795.572063356061, worksheet.costpercapita_bo162, 0.001); end
+  def test_costpercapita_bp162; assert_in_epsilon(9922.434140188516, worksheet.costpercapita_bp162, 0.001); end
+  def test_costpercapita_bq162; assert_in_epsilon(10677.5870864318, worksheet.costpercapita_bq162, 0.001); end
+  def test_costpercapita_bs162; assert_in_epsilon(3337.183565031221, worksheet.costpercapita_bs162, 0.001); end
+  def test_costpercapita_bt162; assert_in_epsilon(4887.750647644399, worksheet.costpercapita_bt162, 0.001); end
+  def test_costpercapita_bu162; assert_in_epsilon(6430.318108175809, worksheet.costpercapita_bu162, 0.001); end
+  def test_costpercapita_bv162; assert_in_epsilon(8454.419223099081, worksheet.costpercapita_bv162, 0.001); end
+  def test_costpercapita_bw162; assert_in_epsilon(10223.806412767666, worksheet.costpercapita_bw162, 0.001); end
+  def test_costpercapita_bx162; assert_in_epsilon(11709.41404578491, worksheet.costpercapita_bx162, 0.001); end
+  def test_costpercapita_by162; assert_in_epsilon(12428.171467023281, worksheet.costpercapita_by162, 0.001); end
+  def test_costpercapita_bz162; assert_in_epsilon(13820.769664584217, worksheet.costpercapita_bz162, 0.001); end
+  def test_costpercapita_ca162; assert_in_epsilon(14795.488939385994, worksheet.costpercapita_ca162, 0.001); end
+  def test_costpercapita_cc162; assert_in_epsilon(9565.258008166285, worksheet.costpercapita_cc162, 0.001); end
+  def test_costpercapita_cd162; assert_in_epsilon(185392.1564507047, worksheet.costpercapita_cd162, 0.001); end
+  def test_costpercapita_cf162; assert_in_epsilon(-1358.5826821856097, worksheet.costpercapita_cf162, 0.001); end
+  def test_costpercapita_cg162; assert_in_epsilon(-65.18365534273015, worksheet.costpercapita_cg162, 0.001); end
+  def test_costpercapita_ch162; assert_in_epsilon(1159.5834907840886, worksheet.costpercapita_ch162, 0.001); end
+  def test_costpercapita_ci162; assert_in_epsilon(1665.3155884633125, worksheet.costpercapita_ci162, 0.001); end
+  def test_costpercapita_cj162; assert_in_epsilon(2791.0612284997733, worksheet.costpercapita_cj162, 0.001); end
+  def test_costpercapita_ck162; assert_in_epsilon(4089.1339393709104, worksheet.costpercapita_ck162, 0.001); end
+  def test_costpercapita_cl162; assert_in_epsilon(4413.120955134367, worksheet.costpercapita_cl162, 0.001); end
+  def test_costpercapita_cm162; assert_in_epsilon(4758.977797593586, worksheet.costpercapita_cm162, 0.001); end
+  def test_costpercapita_cn162; assert_in_epsilon(4966.154956866446, worksheet.costpercapita_cn162, 0.001); end
+  def test_costpercapita_cp162; assert_in_epsilon(2491.064624353794, worksheet.costpercapita_cp162, 0.001); end
+  def test_costpercapita_cq162; assert_in_epsilon(44869.404136929996, worksheet.costpercapita_cq162, 0.001); end
   def test_costpercapita_cr162; assert_equal("ok", worksheet.costpercapita_cr162); end
   def test_costpercapita_c164; assert_equal("£m", worksheet.costpercapita_c164); end
   def test_costpercapita_e164; assert_equal("C1.Low", worksheet.costpercapita_e164); end
@@ -22031,7 +22642,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aa174; assert_equal("ok", worksheet.costpercapita_aa174); end
   def test_costpercapita_ab174; assert_equal("ok", worksheet.costpercapita_ab174); end
   def test_costpercapita_ac174; assert_equal("ok", worksheet.costpercapita_ac174); end
-  def test_costpercapita_ad174; assert_in_delta(5.684341886080802e-14, worksheet.costpercapita_ad174, 0.001); end
+  def test_costpercapita_ad174; assert_equal("ok", worksheet.costpercapita_ad174); end
   def test_costpercapita_ae174; assert_equal("ok", worksheet.costpercapita_ae174); end
   def test_costpercapita_af174; assert_equal("ok", worksheet.costpercapita_af174); end
   def test_costpercapita_ag174; assert_equal("ok", worksheet.costpercapita_ag174); end
@@ -22040,7 +22651,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_ak174; assert_equal("ok", worksheet.costpercapita_ak174); end
   def test_costpercapita_al174; assert_equal("ok", worksheet.costpercapita_al174); end
   def test_costpercapita_am174; assert_equal("ok", worksheet.costpercapita_am174); end
-  def test_costpercapita_an174; assert_in_delta(-4.547473508864641e-13, worksheet.costpercapita_an174, 0.001); end
+  def test_costpercapita_an174; assert_equal("ok", worksheet.costpercapita_an174); end
   def test_costpercapita_ao174; assert_equal("ok", worksheet.costpercapita_ao174); end
   def test_costpercapita_ap174; assert_equal("ok", worksheet.costpercapita_ap174); end
   def test_costpercapita_aq174; assert_equal("ok", worksheet.costpercapita_aq174); end
@@ -22072,7 +22683,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_bx174; assert_equal("ok", worksheet.costpercapita_bx174); end
   def test_costpercapita_by174; assert_equal("ok", worksheet.costpercapita_by174); end
   def test_costpercapita_bz174; assert_equal("ok", worksheet.costpercapita_bz174); end
-  def test_costpercapita_ca174; assert_in_delta(-4.547473508864641e-13, worksheet.costpercapita_ca174, 0.001); end
+  def test_costpercapita_ca174; assert_equal("ok", worksheet.costpercapita_ca174); end
   def test_costpercapita_cc174; assert_equal("ok", worksheet.costpercapita_cc174); end
   def test_costpercapita_cd174; assert_equal("ok", worksheet.costpercapita_cd174); end
   def test_costpercapita_cf174; assert_equal("ok", worksheet.costpercapita_cf174); end
@@ -22080,7 +22691,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_ch174; assert_equal("ok", worksheet.costpercapita_ch174); end
   def test_costpercapita_ci174; assert_equal("ok", worksheet.costpercapita_ci174); end
   def test_costpercapita_cj174; assert_equal("ok", worksheet.costpercapita_cj174); end
-  def test_costpercapita_ck174; assert_in_delta(-8.43769498715119e-15, worksheet.costpercapita_ck174, 0.001); end
+  def test_costpercapita_ck174; assert_equal("ok", worksheet.costpercapita_ck174); end
   def test_costpercapita_cl174; assert_equal("ok", worksheet.costpercapita_cl174); end
   def test_costpercapita_cm174; assert_equal("ok", worksheet.costpercapita_cm174); end
   def test_costpercapita_cn174; assert_equal("ok", worksheet.costpercapita_cn174); end
@@ -22222,29 +22833,29 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq178; assert_in_epsilon(295.39015568886805, worksheet.costpercapita_aq178, 0.001); end
   def test_costpercapita_as178; assert_in_epsilon(537.3080068624816, worksheet.costpercapita_as178, 0.001); end
   def test_costpercapita_at178; assert_in_epsilon(12128.215025702673, worksheet.costpercapita_at178, 0.001); end
-  def test_costpercapita_ay178; assert_in_epsilon(6.4730202085243915, worksheet.costpercapita_ay178, 0.001); end
-  def test_costpercapita_az178; assert_in_epsilon(5.798324322039211, worksheet.costpercapita_az178, 0.001); end
-  def test_costpercapita_ba178; assert_in_epsilon(5.451379175434548, worksheet.costpercapita_ba178, 0.001); end
-  def test_costpercapita_bb178; assert_in_epsilon(4.865519092769343, worksheet.costpercapita_bb178, 0.001); end
-  def test_costpercapita_bc178; assert_in_epsilon(4.582395209808406, worksheet.costpercapita_bc178, 0.001); end
-  def test_costpercapita_bd178; assert_in_epsilon(3.8492661316277132, worksheet.costpercapita_bd178, 0.001); end
-  def test_costpercapita_be178; assert_in_epsilon(2.9133774061703765, worksheet.costpercapita_be178, 0.001); end
-  def test_costpercapita_bf178; assert_in_epsilon(1.9997656922987552, worksheet.costpercapita_bf178, 0.001); end
-  def test_costpercapita_bg178; assert_in_epsilon(1.4235295949511249, worksheet.costpercapita_bg178, 0.001); end
-  def test_costpercapita_bi178; assert_in_epsilon(6.4730202085243915, worksheet.costpercapita_bi178, 0.001); end
+  def test_costpercapita_ay178; assert_in_epsilon(6.473020208524392, worksheet.costpercapita_ay178, 0.001); end
+  def test_costpercapita_az178; assert_in_epsilon(5.798324322039212, worksheet.costpercapita_az178, 0.001); end
+  def test_costpercapita_ba178; assert_in_epsilon(5.45137917543455, worksheet.costpercapita_ba178, 0.001); end
+  def test_costpercapita_bb178; assert_in_epsilon(4.865519092769345, worksheet.costpercapita_bb178, 0.001); end
+  def test_costpercapita_bc178; assert_in_epsilon(4.582395209808409, worksheet.costpercapita_bc178, 0.001); end
+  def test_costpercapita_bd178; assert_in_epsilon(3.8492661316277146, worksheet.costpercapita_bd178, 0.001); end
+  def test_costpercapita_be178; assert_in_epsilon(2.9133774061703774, worksheet.costpercapita_be178, 0.001); end
+  def test_costpercapita_bf178; assert_in_epsilon(1.9997656922987557, worksheet.costpercapita_bf178, 0.001); end
+  def test_costpercapita_bg178; assert_in_epsilon(1.4235295949511253, worksheet.costpercapita_bg178, 0.001); end
+  def test_costpercapita_bi178; assert_in_epsilon(6.473020208524392, worksheet.costpercapita_bi178, 0.001); end
   def test_costpercapita_bj178; assert_in_epsilon(12.057896240924103, worksheet.costpercapita_bj178, 0.001); end
-  def test_costpercapita_bk178; assert_in_epsilon(17.114522195146353, worksheet.costpercapita_bk178, 0.001); end
-  def test_costpercapita_bl178; assert_in_epsilon(15.582943951414414, worksheet.costpercapita_bl178, 0.001); end
-  def test_costpercapita_bm178; assert_in_epsilon(14.453252064510513, worksheet.costpercapita_bm178, 0.001); end
-  def test_costpercapita_bn178; assert_in_epsilon(12.944832693825708, worksheet.costpercapita_bn178, 0.001); end
-  def test_costpercapita_bo178; assert_in_epsilon(11.059582375644588, worksheet.costpercapita_bo178, 0.001); end
-  def test_costpercapita_bp178; assert_in_epsilon(8.547055129063189, worksheet.costpercapita_bp178, 0.001); end
-  def test_costpercapita_bq178; assert_in_epsilon(6.1879536250482765, worksheet.costpercapita_bq178, 0.001); end
+  def test_costpercapita_bk178; assert_in_epsilon(17.114522195146357, worksheet.costpercapita_bk178, 0.001); end
+  def test_costpercapita_bl178; assert_in_epsilon(15.582943951414421, worksheet.costpercapita_bl178, 0.001); end
+  def test_costpercapita_bm178; assert_in_epsilon(14.453252064510519, worksheet.costpercapita_bm178, 0.001); end
+  def test_costpercapita_bn178; assert_in_epsilon(12.944832693825715, worksheet.costpercapita_bn178, 0.001); end
+  def test_costpercapita_bo178; assert_in_epsilon(11.059582375644592, worksheet.costpercapita_bo178, 0.001); end
+  def test_costpercapita_bp178; assert_in_epsilon(8.547055129063192, worksheet.costpercapita_bp178, 0.001); end
+  def test_costpercapita_bq178; assert_in_epsilon(6.187953625048278, worksheet.costpercapita_bq178, 0.001); end
   def test_costpercapita_bs178; assert_in_epsilon(710.8125840588549, worksheet.costpercapita_bs178, 0.001); end
   def test_costpercapita_bt178; assert_in_epsilon(720.3496023728204, worksheet.costpercapita_bt178, 0.001); end
   def test_costpercapita_bu178; assert_in_epsilon(706.9498852454208, worksheet.costpercapita_bu178, 0.001); end
   def test_costpercapita_bv178; assert_in_epsilon(639.2677172677484, worksheet.costpercapita_bv178, 0.001); end
-  def test_costpercapita_bw178; assert_in_epsilon(554.5511119101413, worksheet.costpercapita_bw178, 0.001); end
+  def test_costpercapita_bw178; assert_in_epsilon(554.5511119101415, worksheet.costpercapita_bw178, 0.001); end
   def test_costpercapita_bx178; assert_in_epsilon(476.2584379982878, worksheet.costpercapita_bx178, 0.001); end
   def test_costpercapita_by178; assert_in_epsilon(405.9190883859169, worksheet.costpercapita_by178, 0.001); end
   def test_costpercapita_bz178; assert_in_epsilon(351.1908013333818, worksheet.costpercapita_bz178, 0.001); end
@@ -22253,15 +22864,15 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cd178; assert_in_epsilon(12217.299581941734, worksheet.costpercapita_cd178, 0.001); end
   def test_costpercapita_cf178; assert_in_epsilon(-13.178883595666887, worksheet.costpercapita_cf178, 0.001); end
   def test_costpercapita_cg178; assert_in_epsilon(1.495768381150916, worksheet.costpercapita_cg178, 0.001); end
-  def test_costpercapita_ch178; assert_in_epsilon(7.184383647326218, worksheet.costpercapita_ch178, 0.001); end
-  def test_costpercapita_ci178; assert_in_epsilon(6.719998053982442, worksheet.costpercapita_ci178, 0.001); end
-  def test_costpercapita_cj178; assert_in_epsilon(6.1060397628387015, worksheet.costpercapita_cj178, 0.001); end
-  def test_costpercapita_ck178; assert_in_epsilon(5.933075711896835, worksheet.costpercapita_ck178, 0.001); end
-  def test_costpercapita_cl178; assert_in_epsilon(5.75262419967904, worksheet.costpercapita_cl178, 0.001); end
-  def test_costpercapita_cm178; assert_in_epsilon(4.9043163378982655, worksheet.costpercapita_cm178, 0.001); end
-  def test_costpercapita_cn178; assert_in_epsilon(3.594876598139736, worksheet.costpercapita_cn178, 0.001); end
-  def test_costpercapita_cp178; assert_in_epsilon(3.1680221219161404, worksheet.costpercapita_cp178, 0.001); end
-  def test_costpercapita_cq178; assert_in_epsilon(89.08455623906276, worksheet.costpercapita_cq178, 0.001); end
+  def test_costpercapita_ch178; assert_in_epsilon(7.1843836473262215, worksheet.costpercapita_ch178, 0.001); end
+  def test_costpercapita_ci178; assert_in_epsilon(6.719998053982448, worksheet.costpercapita_ci178, 0.001); end
+  def test_costpercapita_cj178; assert_in_epsilon(6.106039762838708, worksheet.costpercapita_cj178, 0.001); end
+  def test_costpercapita_ck178; assert_in_epsilon(5.933075711896842, worksheet.costpercapita_ck178, 0.001); end
+  def test_costpercapita_cl178; assert_in_epsilon(5.752624199679046, worksheet.costpercapita_cl178, 0.001); end
+  def test_costpercapita_cm178; assert_in_epsilon(4.904316337898268, worksheet.costpercapita_cm178, 0.001); end
+  def test_costpercapita_cn178; assert_in_epsilon(3.594876598139738, worksheet.costpercapita_cn178, 0.001); end
+  def test_costpercapita_cp178; assert_in_epsilon(3.1680221219161444, worksheet.costpercapita_cp178, 0.001); end
+  def test_costpercapita_cq178; assert_in_epsilon(89.08455623906283, worksheet.costpercapita_cq178, 0.001); end
   def test_costpercapita_cr178; assert_equal("ok", worksheet.costpercapita_cr178); end
   def test_costpercapita_c179; assert_equal("Bioenergy", worksheet.costpercapita_c179); end
   def test_costpercapita_e179; assert_in_epsilon(51.93416031703077, worksheet.costpercapita_e179, 0.001); end
@@ -22302,24 +22913,24 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq179; assert_in_epsilon(283.6608235074092, worksheet.costpercapita_aq179, 0.001); end
   def test_costpercapita_as179; assert_in_epsilon(225.30642269120563, worksheet.costpercapita_as179, 0.001); end
   def test_costpercapita_at179; assert_in_epsilon(4614.508287144086, worksheet.costpercapita_at179, 0.001); end
-  def test_costpercapita_ay179; assert_in_epsilon(16.34610974516448, worksheet.costpercapita_ay179, 0.001); end
+  def test_costpercapita_ay179; assert_in_epsilon(16.346109745164483, worksheet.costpercapita_ay179, 0.001); end
   def test_costpercapita_az179; assert_in_epsilon(33.20153413584589, worksheet.costpercapita_az179, 0.001); end
-  def test_costpercapita_ba179; assert_in_epsilon(33.281573662552795, worksheet.costpercapita_ba179, 0.001); end
-  def test_costpercapita_bb179; assert_in_epsilon(31.335180493909924, worksheet.costpercapita_bb179, 0.001); end
-  def test_costpercapita_bc179; assert_in_epsilon(32.26067555625329, worksheet.costpercapita_bc179, 0.001); end
+  def test_costpercapita_ba179; assert_in_epsilon(33.2815736625528, worksheet.costpercapita_ba179, 0.001); end
+  def test_costpercapita_bb179; assert_in_epsilon(31.33518049390993, worksheet.costpercapita_bb179, 0.001); end
+  def test_costpercapita_bc179; assert_in_epsilon(32.260675556253304, worksheet.costpercapita_bc179, 0.001); end
   def test_costpercapita_bd179; assert_in_epsilon(33.661340663708174, worksheet.costpercapita_bd179, 0.001); end
-  def test_costpercapita_be179; assert_in_epsilon(33.32655673188571, worksheet.costpercapita_be179, 0.001); end
-  def test_costpercapita_bf179; assert_in_epsilon(33.93036117158078, worksheet.costpercapita_bf179, 0.001); end
-  def test_costpercapita_bg179; assert_in_epsilon(34.245973328621155, worksheet.costpercapita_bg179, 0.001); end
-  def test_costpercapita_bi179; assert_in_epsilon(16.34610974516448, worksheet.costpercapita_bi179, 0.001); end
+  def test_costpercapita_be179; assert_in_epsilon(33.32655673188572, worksheet.costpercapita_be179, 0.001); end
+  def test_costpercapita_bf179; assert_in_epsilon(33.930361171580785, worksheet.costpercapita_bf179, 0.001); end
+  def test_costpercapita_bg179; assert_in_epsilon(34.24597332862116, worksheet.costpercapita_bg179, 0.001); end
+  def test_costpercapita_bi179; assert_in_epsilon(16.346109745164483, worksheet.costpercapita_bi179, 0.001); end
   def test_costpercapita_bj179; assert_in_epsilon(49.008629780178396, worksheet.costpercapita_bj179, 0.001); end
-  def test_costpercapita_bk179; assert_in_epsilon(80.68575154777578, worksheet.costpercapita_bk179, 0.001); end
-  def test_costpercapita_bl179; assert_in_epsilon(96.60745864717106, worksheet.costpercapita_bl179, 0.001); end
-  def test_costpercapita_bm179; assert_in_epsilon(103.05626473297963, worksheet.costpercapita_bm179, 0.001); end
-  def test_costpercapita_bn179; assert_in_epsilon(108.05198213654197, worksheet.costpercapita_bn179, 0.001); end
-  def test_costpercapita_bo179; assert_in_epsilon(111.3587664498356, worksheet.costpercapita_bo179, 0.001); end
-  def test_costpercapita_bp179; assert_in_epsilon(112.63763533515034, worksheet.costpercapita_bp179, 0.001); end
-  def test_costpercapita_bq179; assert_in_epsilon(112.25375855625472, worksheet.costpercapita_bq179, 0.001); end
+  def test_costpercapita_bk179; assert_in_epsilon(80.6857515477758, worksheet.costpercapita_bk179, 0.001); end
+  def test_costpercapita_bl179; assert_in_epsilon(96.60745864717109, worksheet.costpercapita_bl179, 0.001); end
+  def test_costpercapita_bm179; assert_in_epsilon(103.05626473297964, worksheet.costpercapita_bm179, 0.001); end
+  def test_costpercapita_bn179; assert_in_epsilon(108.05198213654201, worksheet.costpercapita_bn179, 0.001); end
+  def test_costpercapita_bo179; assert_in_epsilon(111.35876644983563, worksheet.costpercapita_bo179, 0.001); end
+  def test_costpercapita_bp179; assert_in_epsilon(112.63763533515035, worksheet.costpercapita_bp179, 0.001); end
+  def test_costpercapita_bq179; assert_in_epsilon(112.25375855625475, worksheet.costpercapita_bq179, 0.001); end
   def test_costpercapita_bs179; assert_in_epsilon(117.48032404045199, worksheet.costpercapita_bs179, 0.001); end
   def test_costpercapita_bt179; assert_in_epsilon(167.8169374509515, worksheet.costpercapita_bt179, 0.001); end
   def test_costpercapita_bu179; assert_in_epsilon(223.13417952326012, worksheet.costpercapita_bu179, 0.001); end
@@ -22329,19 +22940,19 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_by179; assert_in_epsilon(300.6467309026692, worksheet.costpercapita_by179, 0.001); end
   def test_costpercapita_bz179; assert_in_epsilon(313.9051954311608, worksheet.costpercapita_bz179, 0.001); end
   def test_costpercapita_ca179; assert_in_epsilon(331.6388959913352, worksheet.costpercapita_ca179, 0.001); end
-  def test_costpercapita_cc179; assert_in_epsilon(251.2098153217678, worksheet.costpercapita_cc179, 0.001); end
+  def test_costpercapita_cc179; assert_in_epsilon(251.20981532176785, worksheet.costpercapita_cc179, 0.001); end
   def test_costpercapita_cd179; assert_in_epsilon(5103.796752440099, worksheet.costpercapita_cd179, 0.001); end
   def test_costpercapita_cf179; assert_in_epsilon(-35.58805057186629, worksheet.costpercapita_cf179, 0.001); end
   def test_costpercapita_cg179; assert_in_epsilon(-16.610446383695262, worksheet.costpercapita_cg179, 0.001); end
-  def test_costpercapita_ch179; assert_in_epsilon(16.90929750050565, worksheet.costpercapita_ch179, 0.001); end
-  def test_costpercapita_ci179; assert_in_epsilon(37.27048775530849, worksheet.costpercapita_ci179, 0.001); end
-  def test_costpercapita_cj179; assert_in_epsilon(42.02399589525698, worksheet.costpercapita_cj179, 0.001); end
-  def test_costpercapita_ck179; assert_in_epsilon(44.42676275301292, worksheet.costpercapita_ck179, 0.001); end
-  def test_costpercapita_cl179; assert_in_epsilon(48.29602271848792, worksheet.costpercapita_cl179, 0.001); end
-  def test_costpercapita_cm179; assert_in_epsilon(48.424391524123095, worksheet.costpercapita_cm179, 0.001); end
-  def test_costpercapita_cn179; assert_in_epsilon(47.978072483925914, worksheet.costpercapita_cn179, 0.001); end
-  def test_costpercapita_cp179; assert_in_epsilon(25.903392630562156, worksheet.costpercapita_cp179, 0.001); end
-  def test_costpercapita_cq179; assert_in_epsilon(489.28846529601196, worksheet.costpercapita_cq179, 0.001); end
+  def test_costpercapita_ch179; assert_in_epsilon(16.909297500505662, worksheet.costpercapita_ch179, 0.001); end
+  def test_costpercapita_ci179; assert_in_epsilon(37.2704877553085, worksheet.costpercapita_ci179, 0.001); end
+  def test_costpercapita_cj179; assert_in_epsilon(42.023995895256995, worksheet.costpercapita_cj179, 0.001); end
+  def test_costpercapita_ck179; assert_in_epsilon(44.42676275301295, worksheet.costpercapita_ck179, 0.001); end
+  def test_costpercapita_cl179; assert_in_epsilon(48.29602271848793, worksheet.costpercapita_cl179, 0.001); end
+  def test_costpercapita_cm179; assert_in_epsilon(48.42439152412312, worksheet.costpercapita_cm179, 0.001); end
+  def test_costpercapita_cn179; assert_in_epsilon(47.97807248392595, worksheet.costpercapita_cn179, 0.001); end
+  def test_costpercapita_cp179; assert_in_epsilon(25.903392630562173, worksheet.costpercapita_cp179, 0.001); end
+  def test_costpercapita_cq179; assert_in_epsilon(489.28846529601213, worksheet.costpercapita_cq179, 0.001); end
   def test_costpercapita_cr179; assert_equal("ok", worksheet.costpercapita_cr179); end
   def test_costpercapita_c180; assert_equal("Electricity", worksheet.costpercapita_c180); end
   def test_costpercapita_e180; assert_in_epsilon(49.05401070354097, worksheet.costpercapita_e180, 0.001); end
@@ -22382,46 +22993,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq180; assert_in_epsilon(416.69228579899726, worksheet.costpercapita_aq180, 0.001); end
   def test_costpercapita_as180; assert_in_epsilon(314.31937887924425, worksheet.costpercapita_as180, 0.001); end
   def test_costpercapita_at180; assert_in_epsilon(6249.585847607524, worksheet.costpercapita_at180, 0.001); end
-  def test_costpercapita_ay180; assert_in_epsilon(13.811584169978424, worksheet.costpercapita_ay180, 0.001); end
+  def test_costpercapita_ay180; assert_in_epsilon(13.81158416997842, worksheet.costpercapita_ay180, 0.001); end
   def test_costpercapita_az180; assert_in_epsilon(46.81504481658807, worksheet.costpercapita_az180, 0.001); end
   def test_costpercapita_ba180; assert_in_epsilon(69.53262746354055, worksheet.costpercapita_ba180, 0.001); end
   def test_costpercapita_bb180; assert_in_epsilon(108.9633744934932, worksheet.costpercapita_bb180, 0.001); end
-  def test_costpercapita_bc180; assert_in_epsilon(102.47017634730064, worksheet.costpercapita_bc180, 0.001); end
-  def test_costpercapita_bd180; assert_in_epsilon(106.55662190910428, worksheet.costpercapita_bd180, 0.001); end
+  def test_costpercapita_bc180; assert_in_epsilon(102.47017634730065, worksheet.costpercapita_bc180, 0.001); end
+  def test_costpercapita_bd180; assert_in_epsilon(106.55662190910427, worksheet.costpercapita_bd180, 0.001); end
   def test_costpercapita_be180; assert_in_epsilon(112.77359918832313, worksheet.costpercapita_be180, 0.001); end
   def test_costpercapita_bf180; assert_in_epsilon(131.16042907414595, worksheet.costpercapita_bf180, 0.001); end
   def test_costpercapita_bg180; assert_in_epsilon(112.61435560617606, worksheet.costpercapita_bg180, 0.001); end
-  def test_costpercapita_bi180; assert_in_epsilon(13.811584169978424, worksheet.costpercapita_bi180, 0.001); end
+  def test_costpercapita_bi180; assert_in_epsilon(13.81158416997842, worksheet.costpercapita_bi180, 0.001); end
   def test_costpercapita_bj180; assert_in_epsilon(60.171191042094826, worksheet.costpercapita_bj180, 0.001); end
-  def test_costpercapita_bk180; assert_in_epsilon(127.73392500071108, worksheet.costpercapita_bk180, 0.001); end
+  def test_costpercapita_bk180; assert_in_epsilon(127.73392500071111, worksheet.costpercapita_bk180, 0.001); end
   def test_costpercapita_bl180; assert_in_epsilon(232.7422133324992, worksheet.costpercapita_bl180, 0.001); end
-  def test_costpercapita_bm180; assert_in_epsilon(316.077526472371, worksheet.costpercapita_bm180, 0.001); end
-  def test_costpercapita_bn180; assert_in_epsilon(371.83811549001825, worksheet.costpercapita_bn180, 0.001); end
-  def test_costpercapita_bo180; assert_in_epsilon(406.0184786751129, worksheet.costpercapita_bo180, 0.001); end
-  def test_costpercapita_bp180; assert_in_epsilon(518.6452494727123, worksheet.costpercapita_bp180, 0.001); end
-  def test_costpercapita_bq180; assert_in_epsilon(468.40968354313225, worksheet.costpercapita_bq180, 0.001); end
+  def test_costpercapita_bm180; assert_in_epsilon(316.07752647237095, worksheet.costpercapita_bm180, 0.001); end
+  def test_costpercapita_bn180; assert_in_epsilon(371.8381154900182, worksheet.costpercapita_bn180, 0.001); end
+  def test_costpercapita_bo180; assert_in_epsilon(406.0184786751128, worksheet.costpercapita_bo180, 0.001); end
+  def test_costpercapita_bp180; assert_in_epsilon(518.6452494727122, worksheet.costpercapita_bp180, 0.001); end
+  def test_costpercapita_bq180; assert_in_epsilon(468.4096835431322, worksheet.costpercapita_bq180, 0.001); end
   def test_costpercapita_bs180; assert_in_epsilon(104.58139630007439, worksheet.costpercapita_bs180, 0.001); end
   def test_costpercapita_bt180; assert_in_epsilon(143.5590957906342, worksheet.costpercapita_bt180, 0.001); end
   def test_costpercapita_bu180; assert_in_epsilon(214.22177946708422, worksheet.costpercapita_bu180, 0.001); end
   def test_costpercapita_bv180; assert_in_epsilon(334.49491354179577, worksheet.costpercapita_bv180, 0.001); end
-  def test_costpercapita_bw180; assert_in_epsilon(431.458594213877, worksheet.costpercapita_bw180, 0.001); end
-  def test_costpercapita_bx180; assert_in_epsilon(500.1277347877295, worksheet.costpercapita_bx180, 0.001); end
-  def test_costpercapita_by180; assert_in_epsilon(550.6795497146857, worksheet.costpercapita_by180, 0.001); end
+  def test_costpercapita_bw180; assert_in_epsilon(431.45859421387695, worksheet.costpercapita_bw180, 0.001); end
+  def test_costpercapita_bx180; assert_in_epsilon(500.1277347877294, worksheet.costpercapita_bx180, 0.001); end
+  def test_costpercapita_by180; assert_in_epsilon(550.6795497146855, worksheet.costpercapita_by180, 0.001); end
   def test_costpercapita_bz180; assert_in_epsilon(679.8095788977201, worksheet.costpercapita_bz180, 0.001); end
   def test_costpercapita_ca180; assert_in_epsilon(637.5485579113057, worksheet.costpercapita_ca180, 0.001); end
-  def test_costpercapita_cc180; assert_in_epsilon(399.6090222916564, worksheet.costpercapita_cc180, 0.001); end
+  def test_costpercapita_cc180; assert_in_epsilon(399.6090222916563, worksheet.costpercapita_cc180, 0.001); end
   def test_costpercapita_cd180; assert_in_epsilon(7479.5661806099215, worksheet.costpercapita_cd180, 0.001); end
-  def test_costpercapita_cf180; assert_in_epsilon(-35.24242653356254, worksheet.costpercapita_cf180, 0.001); end
+  def test_costpercapita_cf180; assert_in_epsilon(-35.24242653356255, worksheet.costpercapita_cf180, 0.001); end
   def test_costpercapita_cg180; assert_in_epsilon(-39.464084259981306, worksheet.costpercapita_cg180, 0.001); end
-  def test_costpercapita_ch180; assert_in_epsilon(-20.977893034930634, worksheet.costpercapita_ch180, 0.001); end
-  def test_costpercapita_ci180; assert_in_epsilon(3.9039285535335946, worksheet.costpercapita_ci180, 0.001); end
-  def test_costpercapita_cj180; assert_in_epsilon(98.99649883614106, worksheet.costpercapita_cj180, 0.001); end
+  def test_costpercapita_ch180; assert_in_epsilon(-20.977893034930627, worksheet.costpercapita_ch180, 0.001); end
+  def test_costpercapita_ci180; assert_in_epsilon(3.9039285535335786, worksheet.costpercapita_ci180, 0.001); end
+  def test_costpercapita_cj180; assert_in_epsilon(98.99649883614104, worksheet.costpercapita_cj180, 0.001); end
   def test_costpercapita_ck180; assert_in_epsilon(146.07451416072675, worksheet.costpercapita_ck180, 0.001); end
-  def test_costpercapita_cl180; assert_in_epsilon(158.91414601820108, worksheet.costpercapita_cl180, 0.001); end
-  def test_costpercapita_cm180; assert_in_epsilon(234.545834859272, worksheet.costpercapita_cm180, 0.001); end
+  def test_costpercapita_cl180; assert_in_epsilon(158.91414601820102, worksheet.costpercapita_cl180, 0.001); end
+  def test_costpercapita_cm180; assert_in_epsilon(234.54583485927196, worksheet.costpercapita_cm180, 0.001); end
   def test_costpercapita_cn180; assert_in_epsilon(220.8562721123085, worksheet.costpercapita_cn180, 0.001); end
-  def test_costpercapita_cp180; assert_in_epsilon(85.28964341241206, worksheet.costpercapita_cp180, 0.001); end
-  def test_costpercapita_cq180; assert_in_epsilon(1229.9803330023988, worksheet.costpercapita_cq180, 0.001); end
+  def test_costpercapita_cp180; assert_in_epsilon(85.28964341241203, worksheet.costpercapita_cp180, 0.001); end
+  def test_costpercapita_cq180; assert_in_epsilon(1229.9803330023985, worksheet.costpercapita_cq180, 0.001); end
   def test_costpercapita_cr180; assert_equal("ok", worksheet.costpercapita_cr180); end
   def test_costpercapita_c181; assert_equal("Buildings", worksheet.costpercapita_c181); end
   def test_costpercapita_e181; assert_in_epsilon(609.715693030128, worksheet.costpercapita_e181, 0.001); end
@@ -22463,45 +23074,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_as181; assert_in_epsilon(762.4887072221777, worksheet.costpercapita_as181, 0.001); end
   def test_costpercapita_at181; assert_in_epsilon(15606.229730968476, worksheet.costpercapita_at181, 0.001); end
   def test_costpercapita_ay181; assert_in_epsilon(167.38792255458333, worksheet.costpercapita_ay181, 0.001); end
-  def test_costpercapita_az181; assert_in_epsilon(262.3766420809929, worksheet.costpercapita_az181, 0.001); end
-  def test_costpercapita_ba181; assert_in_epsilon(301.6337231428378, worksheet.costpercapita_ba181, 0.001); end
-  def test_costpercapita_bb181; assert_in_epsilon(294.62590465194, worksheet.costpercapita_bb181, 0.001); end
-  def test_costpercapita_bc181; assert_in_epsilon(296.9165514801391, worksheet.costpercapita_bc181, 0.001); end
-  def test_costpercapita_bd181; assert_in_epsilon(338.16969231500565, worksheet.costpercapita_bd181, 0.001); end
-  def test_costpercapita_be181; assert_in_epsilon(359.2549540491203, worksheet.costpercapita_be181, 0.001); end
-  def test_costpercapita_bf181; assert_in_epsilon(382.9674321102843, worksheet.costpercapita_bf181, 0.001); end
+  def test_costpercapita_az181; assert_in_epsilon(262.37664208099295, worksheet.costpercapita_az181, 0.001); end
+  def test_costpercapita_ba181; assert_in_epsilon(301.6337231428379, worksheet.costpercapita_ba181, 0.001); end
+  def test_costpercapita_bb181; assert_in_epsilon(294.62590465194006, worksheet.costpercapita_bb181, 0.001); end
+  def test_costpercapita_bc181; assert_in_epsilon(296.9165514801392, worksheet.costpercapita_bc181, 0.001); end
+  def test_costpercapita_bd181; assert_in_epsilon(338.1696923150057, worksheet.costpercapita_bd181, 0.001); end
+  def test_costpercapita_be181; assert_in_epsilon(359.25495404912033, worksheet.costpercapita_be181, 0.001); end
+  def test_costpercapita_bf181; assert_in_epsilon(382.96743211028434, worksheet.costpercapita_bf181, 0.001); end
   def test_costpercapita_bg181; assert_in_epsilon(414.57915021337885, worksheet.costpercapita_bg181, 0.001); end
   def test_costpercapita_bi181; assert_in_epsilon(167.38792255458333, worksheet.costpercapita_bi181, 0.001); end
   def test_costpercapita_bj181; assert_in_epsilon(424.2449362975504, worksheet.costpercapita_bj181, 0.001); end
-  def test_costpercapita_bk181; assert_in_epsilon(711.9896648894093, worksheet.costpercapita_bk181, 0.001); end
-  def test_costpercapita_bl181; assert_in_epsilon(916.8057782040372, worksheet.costpercapita_bl181, 0.001); end
+  def test_costpercapita_bk181; assert_in_epsilon(711.9896648894094, worksheet.costpercapita_bk181, 0.001); end
+  def test_costpercapita_bl181; assert_in_epsilon(916.8057782040371, worksheet.costpercapita_bl181, 0.001); end
   def test_costpercapita_bm181; assert_in_epsilon(1092.9627120426787, worksheet.costpercapita_bm181, 0.001); end
-  def test_costpercapita_bn181; assert_in_epsilon(1266.036785494232, worksheet.costpercapita_bn181, 0.001); end
-  def test_costpercapita_bo181; assert_in_epsilon(1367.4952060695493, worksheet.costpercapita_bo181, 0.001); end
-  def test_costpercapita_bp181; assert_in_epsilon(1542.5665535610174, worksheet.costpercapita_bp181, 0.001); end
-  def test_costpercapita_bq181; assert_in_epsilon(1606.814177415824, worksheet.costpercapita_bq181, 0.001); end
+  def test_costpercapita_bn181; assert_in_epsilon(1266.0367854942324, worksheet.costpercapita_bn181, 0.001); end
+  def test_costpercapita_bo181; assert_in_epsilon(1367.4952060695496, worksheet.costpercapita_bo181, 0.001); end
+  def test_costpercapita_bp181; assert_in_epsilon(1542.5665535610176, worksheet.costpercapita_bp181, 0.001); end
+  def test_costpercapita_bq181; assert_in_epsilon(1606.8141774158244, worksheet.costpercapita_bq181, 0.001); end
   def test_costpercapita_bs181; assert_in_epsilon(261.23996788711077, worksheet.costpercapita_bs181, 0.001); end
-  def test_costpercapita_bt181; assert_in_epsilon(518.5657184952772, worksheet.costpercapita_bt181, 0.001); end
-  def test_costpercapita_bu181; assert_in_epsilon(799.5190432975764, worksheet.costpercapita_bu181, 0.001); end
+  def test_costpercapita_bt181; assert_in_epsilon(518.5657184952773, worksheet.costpercapita_bt181, 0.001); end
+  def test_costpercapita_bu181; assert_in_epsilon(799.5190432975766, worksheet.costpercapita_bu181, 0.001); end
   def test_costpercapita_bv181; assert_in_epsilon(997.283679265719, worksheet.costpercapita_bv181, 0.001); end
-  def test_costpercapita_bw181; assert_in_epsilon(1166.3070412413888, worksheet.costpercapita_bw181, 0.001); end
+  def test_costpercapita_bw181; assert_in_epsilon(1166.307041241389, worksheet.costpercapita_bw181, 0.001); end
   def test_costpercapita_bx181; assert_in_epsilon(1333.0580658648062, worksheet.costpercapita_bx181, 0.001); end
-  def test_costpercapita_by181; assert_in_epsilon(1428.1628610311739, worksheet.costpercapita_by181, 0.001); end
-  def test_costpercapita_bz181; assert_in_epsilon(1596.7275026613268, worksheet.costpercapita_bz181, 0.001); end
+  def test_costpercapita_by181; assert_in_epsilon(1428.162861031174, worksheet.costpercapita_by181, 0.001); end
+  def test_costpercapita_bz181; assert_in_epsilon(1596.727502661327, worksheet.costpercapita_bz181, 0.001); end
   def test_costpercapita_ca181; assert_in_epsilon(1654.2513501576202, worksheet.costpercapita_ca181, 0.001); end
-  def test_costpercapita_cc181; assert_in_epsilon(1083.9016922113335, worksheet.costpercapita_cc181, 0.001); end
-  def test_costpercapita_cd181; assert_in_epsilon(21196.245662855785, worksheet.costpercapita_cd181, 0.001); end
+  def test_costpercapita_cc181; assert_in_epsilon(1083.9016922113337, worksheet.costpercapita_cc181, 0.001); end
+  def test_costpercapita_cd181; assert_in_epsilon(21196.24566285579, worksheet.costpercapita_cd181, 0.001); end
   def test_costpercapita_cf181; assert_in_epsilon(-442.32777047554464, worksheet.costpercapita_cf181, 0.001); end
-  def test_costpercapita_cg181; assert_in_epsilon(-156.9546035959566, worksheet.costpercapita_cg181, 0.001); end
-  def test_costpercapita_ch181; assert_in_epsilon(63.24619637381035, worksheet.costpercapita_ch181, 0.001); end
+  def test_costpercapita_cg181; assert_in_epsilon(-156.95460359595657, worksheet.costpercapita_cg181, 0.001); end
+  def test_costpercapita_ch181; assert_in_epsilon(63.24619637381046, worksheet.costpercapita_ch181, 0.001); end
   def test_costpercapita_ci181; assert_in_epsilon(293.8583545559335, worksheet.costpercapita_ci181, 0.001); end
   def test_costpercapita_cj181; assert_in_epsilon(472.451764916078, worksheet.costpercapita_cj181, 0.001); end
   def test_costpercapita_ck181; assert_in_epsilon(554.5406390176981, worksheet.costpercapita_ck181, 0.001); end
-  def test_costpercapita_cl181; assert_in_epsilon(614.1943476984109, worksheet.costpercapita_cl181, 0.001); end
-  def test_costpercapita_cm181; assert_in_epsilon(745.5240604678767, worksheet.costpercapita_cm181, 0.001); end
-  def test_costpercapita_cn181; assert_in_epsilon(748.1838759440963, worksheet.costpercapita_cn181, 0.001); end
-  def test_costpercapita_cp181; assert_in_epsilon(321.4129849891558, worksheet.costpercapita_cp181, 0.001); end
-  def test_costpercapita_cq181; assert_in_epsilon(5590.015931887311, worksheet.costpercapita_cq181, 0.001); end
+  def test_costpercapita_cl181; assert_in_epsilon(614.194347698411, worksheet.costpercapita_cl181, 0.001); end
+  def test_costpercapita_cm181; assert_in_epsilon(745.5240604678768, worksheet.costpercapita_cm181, 0.001); end
+  def test_costpercapita_cn181; assert_in_epsilon(748.1838759440965, worksheet.costpercapita_cn181, 0.001); end
+  def test_costpercapita_cp181; assert_in_epsilon(321.41298498915586, worksheet.costpercapita_cp181, 0.001); end
+  def test_costpercapita_cq181; assert_in_epsilon(5590.015931887313, worksheet.costpercapita_cq181, 0.001); end
   def test_costpercapita_cr181; assert_equal("ok", worksheet.costpercapita_cr181); end
   def test_costpercapita_c182; assert_equal("Transport", worksheet.costpercapita_c182); end
   def test_costpercapita_e182; assert_in_epsilon(913.2787716938643, worksheet.costpercapita_e182, 0.001); end
@@ -22542,46 +23153,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq182; assert_in_epsilon(1895.8044322894175, worksheet.costpercapita_aq182, 0.001); end
   def test_costpercapita_as182; assert_in_epsilon(2292.096844933732, worksheet.costpercapita_as182, 0.001); end
   def test_costpercapita_at182; assert_in_epsilon(48589.297855308905, worksheet.costpercapita_at182, 0.001); end
-  def test_costpercapita_ay182; assert_in_epsilon(334.17896858574903, worksheet.costpercapita_ay182, 0.001); end
-  def test_costpercapita_az182; assert_in_epsilon(567.2953188077544, worksheet.costpercapita_az182, 0.001); end
-  def test_costpercapita_ba182; assert_in_epsilon(550.6130442496675, worksheet.costpercapita_ba182, 0.001); end
-  def test_costpercapita_bb182; assert_in_epsilon(785.3595350583903, worksheet.costpercapita_bb182, 0.001); end
-  def test_costpercapita_bc182; assert_in_epsilon(821.8504531027675, worksheet.costpercapita_bc182, 0.001); end
-  def test_costpercapita_bd182; assert_in_epsilon(701.2290265981075, worksheet.costpercapita_bd182, 0.001); end
-  def test_costpercapita_be182; assert_in_epsilon(639.8889221084094, worksheet.costpercapita_be182, 0.001); end
-  def test_costpercapita_bf182; assert_in_epsilon(648.4525567769649, worksheet.costpercapita_bf182, 0.001); end
-  def test_costpercapita_bg182; assert_in_epsilon(632.5047071117864, worksheet.costpercapita_bg182, 0.001); end
-  def test_costpercapita_bi182; assert_in_epsilon(334.17896858574903, worksheet.costpercapita_bi182, 0.001); end
+  def test_costpercapita_ay182; assert_in_epsilon(334.1789685857491, worksheet.costpercapita_ay182, 0.001); end
+  def test_costpercapita_az182; assert_in_epsilon(567.2953188077546, worksheet.costpercapita_az182, 0.001); end
+  def test_costpercapita_ba182; assert_in_epsilon(550.6130442496676, worksheet.costpercapita_ba182, 0.001); end
+  def test_costpercapita_bb182; assert_in_epsilon(785.3595350583905, worksheet.costpercapita_bb182, 0.001); end
+  def test_costpercapita_bc182; assert_in_epsilon(821.8504531027676, worksheet.costpercapita_bc182, 0.001); end
+  def test_costpercapita_bd182; assert_in_epsilon(701.2290265981077, worksheet.costpercapita_bd182, 0.001); end
+  def test_costpercapita_be182; assert_in_epsilon(639.8889221084097, worksheet.costpercapita_be182, 0.001); end
+  def test_costpercapita_bf182; assert_in_epsilon(648.452556776965, worksheet.costpercapita_bf182, 0.001); end
+  def test_costpercapita_bg182; assert_in_epsilon(632.5047071117867, worksheet.costpercapita_bg182, 0.001); end
+  def test_costpercapita_bi182; assert_in_epsilon(334.1789685857491, worksheet.costpercapita_bi182, 0.001); end
   def test_costpercapita_bj182; assert_in_epsilon(841.8009941326328, worksheet.costpercapita_bj182, 0.001); end
   def test_costpercapita_bk182; assert_in_epsilon(1259.1290300645642, worksheet.costpercapita_bk182, 0.001); end
-  def test_costpercapita_bl182; assert_in_epsilon(1645.9741618067135, worksheet.costpercapita_bl182, 0.001); end
-  def test_costpercapita_bm182; assert_in_epsilon(1904.8271080019974, worksheet.costpercapita_bm182, 0.001); end
-  def test_costpercapita_bn182; assert_in_epsilon(2059.6661153361206, worksheet.costpercapita_bn182, 0.001); end
-  def test_costpercapita_bo182; assert_in_epsilon(1933.5945721375372, worksheet.costpercapita_bo182, 0.001); end
-  def test_costpercapita_bp182; assert_in_epsilon(1788.4561426880496, worksheet.costpercapita_bp182, 0.001); end
-  def test_costpercapita_bq182; assert_in_epsilon(1739.0532907755062, worksheet.costpercapita_bq182, 0.001); end
+  def test_costpercapita_bl182; assert_in_epsilon(1645.9741618067137, worksheet.costpercapita_bl182, 0.001); end
+  def test_costpercapita_bm182; assert_in_epsilon(1904.8271080019979, worksheet.costpercapita_bm182, 0.001); end
+  def test_costpercapita_bn182; assert_in_epsilon(2059.666115336121, worksheet.costpercapita_bn182, 0.001); end
+  def test_costpercapita_bo182; assert_in_epsilon(1933.5945721375376, worksheet.costpercapita_bo182, 0.001); end
+  def test_costpercapita_bp182; assert_in_epsilon(1788.45614268805, worksheet.costpercapita_bp182, 0.001); end
+  def test_costpercapita_bq182; assert_in_epsilon(1739.0532907755066, worksheet.costpercapita_bq182, 0.001); end
   def test_costpercapita_bs182; assert_in_epsilon(1491.0465150368982, worksheet.costpercapita_bs182, 0.001); end
-  def test_costpercapita_bt182; assert_in_epsilon(2006.6059169017426, worksheet.costpercapita_bt182, 0.001); end
-  def test_costpercapita_bu182; assert_in_epsilon(2417.806254353447, worksheet.costpercapita_bu182, 0.001); end
-  def test_costpercapita_bv182; assert_in_epsilon(2993.0748895671536, worksheet.costpercapita_bv182, 0.001); end
-  def test_costpercapita_bw182; assert_in_epsilon(3310.565088611669, worksheet.costpercapita_bw182, 0.001); end
-  def test_costpercapita_bx182; assert_in_epsilon(3412.118897356446, worksheet.costpercapita_bx182, 0.001); end
-  def test_costpercapita_by182; assert_in_epsilon(3160.707978151433, worksheet.costpercapita_by182, 0.001); end
+  def test_costpercapita_bt182; assert_in_epsilon(2006.6059169017428, worksheet.costpercapita_bt182, 0.001); end
+  def test_costpercapita_bu182; assert_in_epsilon(2417.806254353448, worksheet.costpercapita_bu182, 0.001); end
+  def test_costpercapita_bv182; assert_in_epsilon(2993.0748895671545, worksheet.costpercapita_bv182, 0.001); end
+  def test_costpercapita_bw182; assert_in_epsilon(3310.5650886116705, worksheet.costpercapita_bw182, 0.001); end
+  def test_costpercapita_bx182; assert_in_epsilon(3412.1188973564467, worksheet.costpercapita_bx182, 0.001); end
+  def test_costpercapita_by182; assert_in_epsilon(3160.707978151434, worksheet.costpercapita_by182, 0.001); end
   def test_costpercapita_bz182; assert_in_epsilon(2846.574786072824, worksheet.costpercapita_bz182, 0.001); end
-  def test_costpercapita_ca182; assert_in_epsilon(2548.732927216982, worksheet.costpercapita_ca182, 0.001); end
-  def test_costpercapita_cc182; assert_in_epsilon(2687.470361474288, worksheet.costpercapita_cc182, 0.001); end
-  def test_costpercapita_cd182; assert_in_epsilon(56362.48353385823, worksheet.costpercapita_cd182, 0.001); end
-  def test_costpercapita_cf182; assert_in_epsilon(-579.0998031081152, worksheet.costpercapita_cf182, 0.001); end
-  def test_costpercapita_cg182; assert_in_epsilon(-91.00956096345081, worksheet.costpercapita_cg182, 0.001); end
-  def test_costpercapita_ch182; assert_in_epsilon(357.476455187471, worksheet.costpercapita_ch182, 0.001); end
-  def test_costpercapita_ci182; assert_in_epsilon(314.5463501607706, worksheet.costpercapita_ci182, 0.001); end
-  def test_costpercapita_cj182; assert_in_epsilon(502.1883526750174, worksheet.costpercapita_cj182, 0.001); end
-  def test_costpercapita_ck182; assert_in_epsilon(870.8242334019077, worksheet.costpercapita_ck182, 0.001); end
-  def test_costpercapita_cl182; assert_in_epsilon(849.4540502460377, worksheet.costpercapita_cl182, 0.001); end
-  def test_costpercapita_cm182; assert_in_epsilon(681.0530763378099, worksheet.costpercapita_cm182, 0.001); end
-  def test_costpercapita_cn182; assert_in_epsilon(652.9284949275648, worksheet.costpercapita_cn182, 0.001); end
-  def test_costpercapita_cp182; assert_in_epsilon(395.37351654055703, worksheet.costpercapita_cp182, 0.001); end
-  def test_costpercapita_cq182; assert_in_epsilon(7773.185678549337, worksheet.costpercapita_cq182, 0.001); end
+  def test_costpercapita_ca182; assert_in_epsilon(2548.7329272169827, worksheet.costpercapita_ca182, 0.001); end
+  def test_costpercapita_cc182; assert_in_epsilon(2687.4703614742884, worksheet.costpercapita_cc182, 0.001); end
+  def test_costpercapita_cd182; assert_in_epsilon(56362.48353385824, worksheet.costpercapita_cd182, 0.001); end
+  def test_costpercapita_cf182; assert_in_epsilon(-579.0998031081151, worksheet.costpercapita_cf182, 0.001); end
+  def test_costpercapita_cg182; assert_in_epsilon(-91.00956096345074, worksheet.costpercapita_cg182, 0.001); end
+  def test_costpercapita_ch182; assert_in_epsilon(357.4764551874711, worksheet.costpercapita_ch182, 0.001); end
+  def test_costpercapita_ci182; assert_in_epsilon(314.546350160771, worksheet.costpercapita_ci182, 0.001); end
+  def test_costpercapita_cj182; assert_in_epsilon(502.188352675018, worksheet.costpercapita_cj182, 0.001); end
+  def test_costpercapita_ck182; assert_in_epsilon(870.824233401908, worksheet.costpercapita_ck182, 0.001); end
+  def test_costpercapita_cl182; assert_in_epsilon(849.4540502460382, worksheet.costpercapita_cl182, 0.001); end
+  def test_costpercapita_cm182; assert_in_epsilon(681.0530763378104, worksheet.costpercapita_cm182, 0.001); end
+  def test_costpercapita_cn182; assert_in_epsilon(652.9284949275652, worksheet.costpercapita_cn182, 0.001); end
+  def test_costpercapita_cp182; assert_in_epsilon(395.3735165405574, worksheet.costpercapita_cp182, 0.001); end
+  def test_costpercapita_cq182; assert_in_epsilon(7773.185678549344, worksheet.costpercapita_cq182, 0.001); end
   def test_costpercapita_cr182; assert_equal("ok", worksheet.costpercapita_cr182); end
   def test_costpercapita_c183; assert_equal("Industry", worksheet.costpercapita_c183); end
   def test_costpercapita_e183; assert_in_epsilon(7.435265087402407, worksheet.costpercapita_e183, 0.001); end
@@ -22622,24 +23233,24 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq183; assert_in_epsilon(159.03723272621974, worksheet.costpercapita_aq183, 0.001); end
   def test_costpercapita_as183; assert_in_epsilon(146.36417676897702, worksheet.costpercapita_as183, 0.001); end
   def test_costpercapita_at183; assert_in_epsilon(3043.9927236233407, worksheet.costpercapita_at183, 0.001); end
-  def test_costpercapita_ay183; assert_in_epsilon(2.4490564194715314, worksheet.costpercapita_ay183, 0.001); end
-  def test_costpercapita_az183; assert_in_epsilon(3.7633588252080226, worksheet.costpercapita_az183, 0.001); end
-  def test_costpercapita_ba183; assert_in_epsilon(3.6982816747769975, worksheet.costpercapita_ba183, 0.001); end
-  def test_costpercapita_bb183; assert_in_epsilon(3.599893322942049, worksheet.costpercapita_bb183, 0.001); end
-  def test_costpercapita_bc183; assert_in_epsilon(3.656483479919694, worksheet.costpercapita_bc183, 0.001); end
-  def test_costpercapita_bd183; assert_in_epsilon(3.9310799069620685, worksheet.costpercapita_bd183, 0.001); end
-  def test_costpercapita_be183; assert_in_epsilon(4.497899069207605, worksheet.costpercapita_be183, 0.001); end
-  def test_costpercapita_bf183; assert_in_epsilon(5.544690162365738, worksheet.costpercapita_bf183, 0.001); end
-  def test_costpercapita_bg183; assert_in_epsilon(7.375381204417069, worksheet.costpercapita_bg183, 0.001); end
-  def test_costpercapita_bi183; assert_in_epsilon(2.4490564194715314, worksheet.costpercapita_bi183, 0.001); end
+  def test_costpercapita_ay183; assert_in_epsilon(2.4490564194715323, worksheet.costpercapita_ay183, 0.001); end
+  def test_costpercapita_az183; assert_in_epsilon(3.763358825208023, worksheet.costpercapita_az183, 0.001); end
+  def test_costpercapita_ba183; assert_in_epsilon(3.6982816747769984, worksheet.costpercapita_ba183, 0.001); end
+  def test_costpercapita_bb183; assert_in_epsilon(3.59989332294205, worksheet.costpercapita_bb183, 0.001); end
+  def test_costpercapita_bc183; assert_in_epsilon(3.656483479919695, worksheet.costpercapita_bc183, 0.001); end
+  def test_costpercapita_bd183; assert_in_epsilon(3.9310799069620694, worksheet.costpercapita_bd183, 0.001); end
+  def test_costpercapita_be183; assert_in_epsilon(4.497899069207607, worksheet.costpercapita_be183, 0.001); end
+  def test_costpercapita_bf183; assert_in_epsilon(5.54469016236574, worksheet.costpercapita_bf183, 0.001); end
+  def test_costpercapita_bg183; assert_in_epsilon(7.375381204417071, worksheet.costpercapita_bg183, 0.001); end
+  def test_costpercapita_bi183; assert_in_epsilon(2.4490564194715323, worksheet.costpercapita_bi183, 0.001); end
   def test_costpercapita_bj183; assert_in_epsilon(6.131657439647766, worksheet.costpercapita_bj183, 0.001); end
-  def test_costpercapita_bk183; assert_in_epsilon(9.629199990674783, worksheet.costpercapita_bk183, 0.001); end
-  def test_costpercapita_bl183; assert_in_epsilon(10.71110496581393, worksheet.costpercapita_bl183, 0.001); end
-  def test_costpercapita_bm183; assert_in_epsilon(10.64388804395865, worksheet.costpercapita_bm183, 0.001); end
-  def test_costpercapita_bn183; assert_in_epsilon(10.920494762541782, worksheet.costpercapita_bn183, 0.001); end
-  def test_costpercapita_bo183; assert_in_epsilon(11.839352999166696, worksheet.costpercapita_bo183, 0.001); end
-  def test_costpercapita_bp183; assert_in_epsilon(13.723365115353001, worksheet.costpercapita_bp183, 0.001); end
-  def test_costpercapita_bq183; assert_in_epsilon(17.14250894077624, worksheet.costpercapita_bq183, 0.001); end
+  def test_costpercapita_bk183; assert_in_epsilon(9.629199990674785, worksheet.costpercapita_bk183, 0.001); end
+  def test_costpercapita_bl183; assert_in_epsilon(10.711104965813934, worksheet.costpercapita_bl183, 0.001); end
+  def test_costpercapita_bm183; assert_in_epsilon(10.643888043958654, worksheet.costpercapita_bm183, 0.001); end
+  def test_costpercapita_bn183; assert_in_epsilon(10.920494762541784, worksheet.costpercapita_bn183, 0.001); end
+  def test_costpercapita_bo183; assert_in_epsilon(11.8393529991667, worksheet.costpercapita_bo183, 0.001); end
+  def test_costpercapita_bp183; assert_in_epsilon(13.723365115353008, worksheet.costpercapita_bp183, 0.001); end
+  def test_costpercapita_bq183; assert_in_epsilon(17.142508940776242, worksheet.costpercapita_bq183, 0.001); end
   def test_costpercapita_bs183; assert_in_epsilon(138.34547076865965, worksheet.costpercapita_bs183, 0.001); end
   def test_costpercapita_bt183; assert_in_epsilon(141.52737120768208, worksheet.costpercapita_bt183, 0.001); end
   def test_costpercapita_bu183; assert_in_epsilon(144.74596570970965, worksheet.costpercapita_bu183, 0.001); end
@@ -22653,15 +23264,15 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cd183; assert_in_epsilon(3093.5502493584277, worksheet.costpercapita_cd183, 0.001); end
   def test_costpercapita_cf183; assert_in_epsilon(-4.9862086679308755, worksheet.costpercapita_cf183, 0.001); end
   def test_costpercapita_cg183; assert_in_delta(-0.7236122704248849, worksheet.costpercapita_cg183, 0.001); end
-  def test_costpercapita_ch183; assert_in_epsilon(2.8924736985667967, worksheet.costpercapita_ch183, 0.001); end
-  def test_costpercapita_ci183; assert_in_epsilon(4.153601203229373, worksheet.costpercapita_ci183, 0.001); end
-  def test_costpercapita_cj183; assert_in_epsilon(3.98330062471649, worksheet.costpercapita_cj183, 0.001); end
-  def test_costpercapita_ck183; assert_in_epsilon(3.759707214577184, worksheet.costpercapita_ck183, 0.001); end
-  def test_costpercapita_cl183; assert_in_epsilon(3.646057413966027, worksheet.costpercapita_cl183, 0.001); end
-  def test_costpercapita_cm183; assert_in_epsilon(3.6232528785926377, worksheet.costpercapita_cm183, 0.001); end
-  def test_costpercapita_cn183; assert_in_epsilon(3.707641387830439, worksheet.costpercapita_cn183, 0.001); end
-  def test_costpercapita_cp183; assert_in_epsilon(2.2284681647914653, worksheet.costpercapita_cp183, 0.001); end
-  def test_costpercapita_cq183; assert_in_epsilon(49.5575257350862, worksheet.costpercapita_cq183, 0.001); end
+  def test_costpercapita_ch183; assert_in_epsilon(2.892473698566799, worksheet.costpercapita_ch183, 0.001); end
+  def test_costpercapita_ci183; assert_in_epsilon(4.153601203229375, worksheet.costpercapita_ci183, 0.001); end
+  def test_costpercapita_cj183; assert_in_epsilon(3.9833006247164926, worksheet.costpercapita_cj183, 0.001); end
+  def test_costpercapita_ck183; assert_in_epsilon(3.7597072145771877, worksheet.costpercapita_ck183, 0.001); end
+  def test_costpercapita_cl183; assert_in_epsilon(3.64605741396603, worksheet.costpercapita_cl183, 0.001); end
+  def test_costpercapita_cm183; assert_in_epsilon(3.623252878592643, worksheet.costpercapita_cm183, 0.001); end
+  def test_costpercapita_cn183; assert_in_epsilon(3.707641387830442, worksheet.costpercapita_cn183, 0.001); end
+  def test_costpercapita_cp183; assert_in_epsilon(2.2284681647914675, worksheet.costpercapita_cp183, 0.001); end
+  def test_costpercapita_cq183; assert_in_epsilon(49.557525735086244, worksheet.costpercapita_cq183, 0.001); end
   def test_costpercapita_cr183; assert_equal("ok", worksheet.costpercapita_cr183); end
   def test_costpercapita_c184; assert_equal("Other", worksheet.costpercapita_c184); end
   def test_costpercapita_e184; assert_in_delta(0, (worksheet.costpercapita_e184||0), 0.001); end
@@ -22703,45 +23314,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_as184; assert_in_epsilon(6.967032822922723, worksheet.costpercapita_as184, 0.001); end
   def test_costpercapita_at184; assert_in_epsilon(127.63231387965583, worksheet.costpercapita_at184, 0.001); end
   def test_costpercapita_ay184; assert_in_delta(0, (worksheet.costpercapita_ay184||0), 0.001); end
-  def test_costpercapita_az184; assert_in_delta(0.94067074200182, worksheet.costpercapita_az184, 0.001); end
-  def test_costpercapita_ba184; assert_in_epsilon(2.0999675164629608, worksheet.costpercapita_ba184, 0.001); end
-  def test_costpercapita_bb184; assert_in_epsilon(2.54659189519617, worksheet.costpercapita_bb184, 0.001); end
-  def test_costpercapita_bc184; assert_in_epsilon(3.517003850068319, worksheet.costpercapita_bc184, 0.001); end
-  def test_costpercapita_bd184; assert_in_epsilon(4.609167478354845, worksheet.costpercapita_bd184, 0.001); end
-  def test_costpercapita_be184; assert_in_epsilon(5.520027540057464, worksheet.costpercapita_be184, 0.001); end
+  def test_costpercapita_az184; assert_in_delta(0.9406707420018201, worksheet.costpercapita_az184, 0.001); end
+  def test_costpercapita_ba184; assert_in_epsilon(2.0999675164629616, worksheet.costpercapita_ba184, 0.001); end
+  def test_costpercapita_bb184; assert_in_epsilon(2.546591895196171, worksheet.costpercapita_bb184, 0.001); end
+  def test_costpercapita_bc184; assert_in_epsilon(3.5170038500683205, worksheet.costpercapita_bc184, 0.001); end
+  def test_costpercapita_bd184; assert_in_epsilon(4.609167478354846, worksheet.costpercapita_bd184, 0.001); end
+  def test_costpercapita_be184; assert_in_epsilon(5.520027540057465, worksheet.costpercapita_be184, 0.001); end
   def test_costpercapita_bf184; assert_in_epsilon(6.195248711886684, worksheet.costpercapita_bf184, 0.001); end
-  def test_costpercapita_bg184; assert_in_epsilon(6.760066125071614, worksheet.costpercapita_bg184, 0.001); end
+  def test_costpercapita_bg184; assert_in_epsilon(6.760066125071615, worksheet.costpercapita_bg184, 0.001); end
   def test_costpercapita_bi184; assert_in_delta(0, (worksheet.costpercapita_bi184||0), 0.001); end
-  def test_costpercapita_bj184; assert_in_delta(0.94067074200182, worksheet.costpercapita_bj184, 0.001); end
-  def test_costpercapita_bk184; assert_in_epsilon(3.0098424381918307, worksheet.costpercapita_bk184, 0.001); end
-  def test_costpercapita_bl184; assert_in_epsilon(5.463239153046218, worksheet.costpercapita_bl184, 0.001); end
-  def test_costpercapita_bm184; assert_in_epsilon(7.9733726750034695, worksheet.costpercapita_bm184, 0.001); end
-  def test_costpercapita_bn184; assert_in_epsilon(10.461996573273023, worksheet.costpercapita_bn184, 0.001); end
-  def test_costpercapita_bo184; assert_in_epsilon(13.391818321598086, worksheet.costpercapita_bo184, 0.001); end
+  def test_costpercapita_bj184; assert_in_delta(0.9406707420018201, worksheet.costpercapita_bj184, 0.001); end
+  def test_costpercapita_bk184; assert_in_epsilon(3.0098424381918316, worksheet.costpercapita_bk184, 0.001); end
+  def test_costpercapita_bl184; assert_in_epsilon(5.463239153046219, worksheet.costpercapita_bl184, 0.001); end
+  def test_costpercapita_bm184; assert_in_epsilon(7.973372675003471, worksheet.costpercapita_bm184, 0.001); end
+  def test_costpercapita_bn184; assert_in_epsilon(10.461996573273025, worksheet.costpercapita_bn184, 0.001); end
+  def test_costpercapita_bo184; assert_in_epsilon(13.39181832159809, worksheet.costpercapita_bo184, 0.001); end
   def test_costpercapita_bp184; assert_in_epsilon(16.026051237025047, worksheet.costpercapita_bp184, 0.001); end
-  def test_costpercapita_bq184; assert_in_epsilon(18.148656797568712, worksheet.costpercapita_bq184, 0.001); end
+  def test_costpercapita_bq184; assert_in_epsilon(18.148656797568716, worksheet.costpercapita_bq184, 0.001); end
   def test_costpercapita_bs184; assert_in_delta(0, (worksheet.costpercapita_bs184||0), 0.001); end
   def test_costpercapita_bt184; assert_in_epsilon(1.0009891551775423, worksheet.costpercapita_bt184, 0.001); end
-  def test_costpercapita_bu184; assert_in_epsilon(3.1635595146672735, worksheet.costpercapita_bu184, 0.001); end
-  def test_costpercapita_bv184; assert_in_epsilon(5.676263066189435, worksheet.costpercapita_bv184, 0.001); end
-  def test_costpercapita_bw184; assert_in_epsilon(8.310346588338106, worksheet.costpercapita_bw184, 0.001); end
+  def test_costpercapita_bu184; assert_in_epsilon(3.1635595146672744, worksheet.costpercapita_bu184, 0.001); end
+  def test_costpercapita_bv184; assert_in_epsilon(5.676263066189437, worksheet.costpercapita_bv184, 0.001); end
+  def test_costpercapita_bw184; assert_in_epsilon(8.310346588338108, worksheet.costpercapita_bw184, 0.001); end
   def test_costpercapita_bx184; assert_in_epsilon(10.969669391030815, worksheet.costpercapita_bx184, 0.001); end
-  def test_costpercapita_by184; assert_in_epsilon(14.094417542168262, worksheet.costpercapita_by184, 0.001); end
+  def test_costpercapita_by184; assert_in_epsilon(14.094417542168266, worksheet.costpercapita_by184, 0.001); end
   def test_costpercapita_bz184; assert_in_epsilon(16.94381281814277, worksheet.costpercapita_bz184, 0.001); end
-  def test_costpercapita_ca184; assert_in_epsilon(19.325423068065152, worksheet.costpercapita_ca184, 0.001); end
+  def test_costpercapita_ca184; assert_in_epsilon(19.325423068065156, worksheet.costpercapita_ca184, 0.001); end
   def test_costpercapita_cc184; assert_in_epsilon(8.831609015975484, worksheet.costpercapita_cc184, 0.001); end
-  def test_costpercapita_cd184; assert_in_epsilon(153.2200930499525, worksheet.costpercapita_cd184, 0.001); end
+  def test_costpercapita_cd184; assert_in_epsilon(153.22009304995254, worksheet.costpercapita_cd184, 0.001); end
   def test_costpercapita_cf184; assert_in_delta(0, (worksheet.costpercapita_cf184||0), 0.001); end
-  def test_costpercapita_cg184; assert_in_delta(-0.7728389030531378, worksheet.costpercapita_cg184, 0.001); end
-  def test_costpercapita_ch184; assert_in_delta(-0.8154222725016248, worksheet.costpercapita_ch184, 0.001); end
-  def test_costpercapita_ci184; assert_in_delta(0.8244111555352887, worksheet.costpercapita_ci184, 0.001); end
-  def test_costpercapita_cj184; assert_in_epsilon(1.5668589505914625, worksheet.costpercapita_cj184, 0.001); end
-  def test_costpercapita_ck184; assert_in_epsilon(2.066016367672682, worksheet.costpercapita_ck184, 0.001); end
-  def test_costpercapita_cl184; assert_in_epsilon(3.336631093462571, worksheet.costpercapita_cl184, 0.001); end
+  def test_costpercapita_cg184; assert_in_delta(-0.7728389030531377, worksheet.costpercapita_cg184, 0.001); end
+  def test_costpercapita_ch184; assert_in_delta(-0.815422272501624, worksheet.costpercapita_ch184, 0.001); end
+  def test_costpercapita_ci184; assert_in_delta(0.8244111555352903, worksheet.costpercapita_ci184, 0.001); end
+  def test_costpercapita_cj184; assert_in_epsilon(1.566858950591464, worksheet.costpercapita_cj184, 0.001); end
+  def test_costpercapita_ck184; assert_in_epsilon(2.0660163676726837, worksheet.costpercapita_ck184, 0.001); end
+  def test_costpercapita_cl184; assert_in_epsilon(3.3366310934625742, worksheet.costpercapita_cl184, 0.001); end
   def test_costpercapita_cm184; assert_in_epsilon(4.740892735399622, worksheet.costpercapita_cm184, 0.001); end
-  def test_costpercapita_cn184; assert_in_epsilon(5.834636610367977, worksheet.costpercapita_cn184, 0.001); end
-  def test_costpercapita_cp184; assert_in_epsilon(1.86457619305276, worksheet.costpercapita_cp184, 0.001); end
-  def test_costpercapita_cq184; assert_in_epsilon(25.58777917029671, worksheet.costpercapita_cq184, 0.001); end
+  def test_costpercapita_cn184; assert_in_epsilon(5.83463661036798, worksheet.costpercapita_cn184, 0.001); end
+  def test_costpercapita_cp184; assert_in_epsilon(1.8645761930527616, worksheet.costpercapita_cp184, 0.001); end
+  def test_costpercapita_cq184; assert_in_epsilon(25.587779170296734, worksheet.costpercapita_cq184, 0.001); end
   def test_costpercapita_cr184; assert_equal("ok", worksheet.costpercapita_cr184); end
   def test_costpercapita_c185; assert_equal("Total", worksheet.costpercapita_c185); end
   def test_costpercapita_e185; assert_in_epsilon(1651.0698046361579, worksheet.costpercapita_e185, 0.001); end
@@ -22782,46 +23393,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq185; assert_in_epsilon(3970.143190682133, worksheet.costpercapita_aq185, 0.001); end
   def test_costpercapita_as185; assert_in_epsilon(4284.850570180742, worksheet.costpercapita_as185, 0.001); end
   def test_costpercapita_at185; assert_in_epsilon(90359.46178423465, worksheet.costpercapita_at185, 0.001); end
-  def test_costpercapita_ay185; assert_in_epsilon(540.6466616834712, worksheet.costpercapita_ay185, 0.001); end
-  def test_costpercapita_az185; assert_in_epsilon(920.1908937304302, worksheet.costpercapita_az185, 0.001); end
-  def test_costpercapita_ba185; assert_in_epsilon(966.3105968852732, worksheet.costpercapita_ba185, 0.001); end
-  def test_costpercapita_bb185; assert_in_epsilon(1231.2959990086408, worksheet.costpercapita_bb185, 0.001); end
-  def test_costpercapita_bc185; assert_in_epsilon(1265.2537390262569, worksheet.costpercapita_bc185, 0.001); end
+  def test_costpercapita_ay185; assert_in_epsilon(540.6466616834713, worksheet.costpercapita_ay185, 0.001); end
+  def test_costpercapita_az185; assert_in_epsilon(920.1908937304305, worksheet.costpercapita_az185, 0.001); end
+  def test_costpercapita_ba185; assert_in_epsilon(966.3105968852734, worksheet.costpercapita_ba185, 0.001); end
+  def test_costpercapita_bb185; assert_in_epsilon(1231.2959990086413, worksheet.costpercapita_bb185, 0.001); end
+  def test_costpercapita_bc185; assert_in_epsilon(1265.253739026257, worksheet.costpercapita_bc185, 0.001); end
   def test_costpercapita_bd185; assert_in_epsilon(1192.0061950028705, worksheet.costpercapita_bd185, 0.001); end
-  def test_costpercapita_be185; assert_in_epsilon(1158.1753360931739, worksheet.costpercapita_be185, 0.001); end
+  def test_costpercapita_be185; assert_in_epsilon(1158.1753360931743, worksheet.costpercapita_be185, 0.001); end
   def test_costpercapita_bf185; assert_in_epsilon(1210.2504836995272, worksheet.costpercapita_bf185, 0.001); end
-  def test_costpercapita_bg185; assert_in_epsilon(1209.5031631844024, worksheet.costpercapita_bg185, 0.001); end
-  def test_costpercapita_bi185; assert_in_epsilon(540.6466616834712, worksheet.costpercapita_bi185, 0.001); end
+  def test_costpercapita_bg185; assert_in_epsilon(1209.5031631844029, worksheet.costpercapita_bg185, 0.001); end
+  def test_costpercapita_bi185; assert_in_epsilon(540.6466616834713, worksheet.costpercapita_bi185, 0.001); end
   def test_costpercapita_bj185; assert_in_epsilon(1394.3559756750303, worksheet.costpercapita_bj185, 0.001); end
-  def test_costpercapita_bk185; assert_in_epsilon(2209.291936126473, worksheet.costpercapita_bk185, 0.001); end
+  def test_costpercapita_bk185; assert_in_epsilon(2209.2919361264735, worksheet.costpercapita_bk185, 0.001); end
   def test_costpercapita_bl185; assert_in_epsilon(2923.8869000606956, worksheet.costpercapita_bl185, 0.001); end
-  def test_costpercapita_bm185; assert_in_epsilon(3449.9941240334992, worksheet.costpercapita_bm185, 0.001); end
-  def test_costpercapita_bn185; assert_in_epsilon(3839.9203224865532, worksheet.costpercapita_bn185, 0.001); end
-  def test_costpercapita_bo185; assert_in_epsilon(3854.7577770284447, worksheet.costpercapita_bo185, 0.001); end
-  def test_costpercapita_bp185; assert_in_epsilon(4000.6020525383706, worksheet.costpercapita_bp185, 0.001); end
-  def test_costpercapita_bq185; assert_in_epsilon(3968.0100296541104, worksheet.costpercapita_bq185, 0.001); end
+  def test_costpercapita_bm185; assert_in_epsilon(3449.9941240334997, worksheet.costpercapita_bm185, 0.001); end
+  def test_costpercapita_bn185; assert_in_epsilon(3839.920322486554, worksheet.costpercapita_bn185, 0.001); end
+  def test_costpercapita_bo185; assert_in_epsilon(3854.7577770284456, worksheet.costpercapita_bo185, 0.001); end
+  def test_costpercapita_bp185; assert_in_epsilon(4000.602052538371, worksheet.costpercapita_bp185, 0.001); end
+  def test_costpercapita_bq185; assert_in_epsilon(3968.0100296541113, worksheet.costpercapita_bq185, 0.001); end
   def test_costpercapita_bs185; assert_in_epsilon(2823.50625809205, worksheet.costpercapita_bs185, 0.001); end
-  def test_costpercapita_bt185; assert_in_epsilon(3699.4256313742853, worksheet.costpercapita_bt185, 0.001); end
-  def test_costpercapita_bu185; assert_in_epsilon(4509.540667111165, worksheet.costpercapita_bu185, 0.001); end
+  def test_costpercapita_bt185; assert_in_epsilon(3699.4256313742862, worksheet.costpercapita_bt185, 0.001); end
+  def test_costpercapita_bu185; assert_in_epsilon(4509.540667111167, worksheet.costpercapita_bu185, 0.001); end
   def test_costpercapita_bv185; assert_in_epsilon(5367.557712496795, worksheet.costpercapita_bv185, 0.001); end
-  def test_costpercapita_bw185; assert_in_epsilon(5887.177219861938, worksheet.costpercapita_bw185, 0.001); end
-  def test_costpercapita_bx185; assert_in_epsilon(6166.788788517145, worksheet.costpercapita_bx185, 0.001); end
-  def test_costpercapita_by185; assert_in_epsilon(6012.104555732189, worksheet.costpercapita_by185, 0.001); end
+  def test_costpercapita_bw185; assert_in_epsilon(5887.17721986194, worksheet.costpercapita_bw185, 0.001); end
+  def test_costpercapita_bx185; assert_in_epsilon(6166.788788517146, worksheet.costpercapita_bx185, 0.001); end
+  def test_costpercapita_by185; assert_in_epsilon(6012.10455573219, worksheet.costpercapita_by185, 0.001); end
   def test_costpercapita_bz185; assert_in_epsilon(5961.492674166754, worksheet.costpercapita_bz185, 0.001); end
-  def test_costpercapita_ca185; assert_in_epsilon(5653.227060746365, worksheet.costpercapita_ca185, 0.001); end
+  def test_costpercapita_ca185; assert_in_epsilon(5653.227060746367, worksheet.costpercapita_ca185, 0.001); end
   def test_costpercapita_cc185; assert_in_epsilon(5120.091174233187, worksheet.costpercapita_cc185, 0.001); end
   def test_costpercapita_cd185; assert_in_epsilon(105606.16205411415, worksheet.costpercapita_cd185, 0.001); end
-  def test_costpercapita_cf185; assert_in_epsilon(-1110.4231429526865, worksheet.costpercapita_cf185, 0.001); end
-  def test_costpercapita_cg185; assert_in_epsilon(-304.0393779954111, worksheet.costpercapita_cg185, 0.001); end
-  def test_costpercapita_ch185; assert_in_epsilon(425.9154911002478, worksheet.costpercapita_ch185, 0.001); end
-  def test_costpercapita_ci185; assert_in_epsilon(661.2771314382933, worksheet.costpercapita_ci185, 0.001); end
-  def test_costpercapita_cj185; assert_in_epsilon(1127.3168116606403, worksheet.costpercapita_cj185, 0.001); end
-  def test_costpercapita_ck185; assert_in_epsilon(1627.6249486274924, worksheet.costpercapita_ck185, 0.001); end
-  def test_costpercapita_cl185; assert_in_epsilon(1683.593879388245, worksheet.costpercapita_cl185, 0.001); end
-  def test_costpercapita_cm185; assert_in_epsilon(1722.8158251409723, worksheet.costpercapita_cm185, 0.001); end
-  def test_costpercapita_cn185; assert_in_epsilon(1683.0838700642337, worksheet.costpercapita_cn185, 0.001); end
-  def test_costpercapita_cp185; assert_in_epsilon(835.2406040524475, worksheet.costpercapita_cp185, 0.001); end
-  def test_costpercapita_cq185; assert_in_epsilon(15246.700269879506, worksheet.costpercapita_cq185, 0.001); end
+  def test_costpercapita_cf185; assert_in_epsilon(-1110.4231429526862, worksheet.costpercapita_cf185, 0.001); end
+  def test_costpercapita_cg185; assert_in_epsilon(-304.039377995411, worksheet.costpercapita_cg185, 0.001); end
+  def test_costpercapita_ch185; assert_in_epsilon(425.915491100248, worksheet.costpercapita_ch185, 0.001); end
+  def test_costpercapita_ci185; assert_in_epsilon(661.2771314382936, worksheet.costpercapita_ci185, 0.001); end
+  def test_costpercapita_cj185; assert_in_epsilon(1127.3168116606407, worksheet.costpercapita_cj185, 0.001); end
+  def test_costpercapita_ck185; assert_in_epsilon(1627.6249486274926, worksheet.costpercapita_ck185, 0.001); end
+  def test_costpercapita_cl185; assert_in_epsilon(1683.5938793882456, worksheet.costpercapita_cl185, 0.001); end
+  def test_costpercapita_cm185; assert_in_epsilon(1722.8158251409727, worksheet.costpercapita_cm185, 0.001); end
+  def test_costpercapita_cn185; assert_in_epsilon(1683.0838700642344, worksheet.costpercapita_cn185, 0.001); end
+  def test_costpercapita_cp185; assert_in_epsilon(835.2406040524479, worksheet.costpercapita_cp185, 0.001); end
+  def test_costpercapita_cq185; assert_in_epsilon(15246.700269879513, worksheet.costpercapita_cq185, 0.001); end
   def test_costpercapita_cr185; assert_equal("ok", worksheet.costpercapita_cr185); end
   def test_costpercapita_e186; assert_equal("ok", worksheet.costpercapita_e186); end
   def test_costpercapita_f186; assert_equal("ok", worksheet.costpercapita_f186); end
@@ -22837,7 +23448,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_q186; assert_equal("ok", worksheet.costpercapita_q186); end
   def test_costpercapita_r186; assert_equal("ok", worksheet.costpercapita_r186); end
   def test_costpercapita_s186; assert_equal("ok", worksheet.costpercapita_s186); end
-  def test_costpercapita_t186; assert_in_delta(-4.547473508864641e-13, worksheet.costpercapita_t186, 0.001); end
+  def test_costpercapita_t186; assert_equal("ok", worksheet.costpercapita_t186); end
   def test_costpercapita_u186; assert_equal("ok", worksheet.costpercapita_u186); end
   def test_costpercapita_v186; assert_equal("ok", worksheet.costpercapita_v186); end
   def test_costpercapita_w186; assert_equal("ok", worksheet.costpercapita_w186); end
@@ -22856,7 +23467,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_al186; assert_equal("ok", worksheet.costpercapita_al186); end
   def test_costpercapita_am186; assert_equal("ok", worksheet.costpercapita_am186); end
   def test_costpercapita_an186; assert_equal("ok", worksheet.costpercapita_an186); end
-  def test_costpercapita_ao186; assert_in_delta(-9.094947017729282e-13, worksheet.costpercapita_ao186, 0.001); end
+  def test_costpercapita_ao186; assert_equal("ok", worksheet.costpercapita_ao186); end
   def test_costpercapita_ap186; assert_equal("ok", worksheet.costpercapita_ap186); end
   def test_costpercapita_aq186; assert_equal("ok", worksheet.costpercapita_aq186); end
   def test_costpercapita_as186; assert_equal("ok", worksheet.costpercapita_as186); end
@@ -22876,7 +23487,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_bl186; assert_equal("ok", worksheet.costpercapita_bl186); end
   def test_costpercapita_bm186; assert_equal("ok", worksheet.costpercapita_bm186); end
   def test_costpercapita_bn186; assert_equal("ok", worksheet.costpercapita_bn186); end
-  def test_costpercapita_bo186; assert_in_delta(-4.547473508864641e-13, worksheet.costpercapita_bo186, 0.001); end
+  def test_costpercapita_bo186; assert_equal("ok", worksheet.costpercapita_bo186); end
   def test_costpercapita_bp186; assert_equal("ok", worksheet.costpercapita_bp186); end
   def test_costpercapita_bq186; assert_equal("ok", worksheet.costpercapita_bq186); end
   def test_costpercapita_bs186; assert_equal("ok", worksheet.costpercapita_bs186); end
@@ -22892,8 +23503,8 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cd186; assert_equal("ok", worksheet.costpercapita_cd186); end
   def test_costpercapita_cf186; assert_equal("ok", worksheet.costpercapita_cf186); end
   def test_costpercapita_cg186; assert_equal("ok", worksheet.costpercapita_cg186); end
-  def test_costpercapita_ch186; assert_in_delta(6.821210263296962e-13, worksheet.costpercapita_ch186, 0.001); end
-  def test_costpercapita_ci186; assert_in_delta(-3.410605131648481e-13, worksheet.costpercapita_ci186, 0.001); end
+  def test_costpercapita_ch186; assert_equal("ok", worksheet.costpercapita_ch186); end
+  def test_costpercapita_ci186; assert_equal("ok", worksheet.costpercapita_ci186); end
   def test_costpercapita_cj186; assert_equal("ok", worksheet.costpercapita_cj186); end
   def test_costpercapita_ck186; assert_equal("ok", worksheet.costpercapita_ck186); end
   def test_costpercapita_cl186; assert_equal("ok", worksheet.costpercapita_cl186); end
@@ -22914,7 +23525,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_ay188; assert_equal("Repayments for capital spent in that period", worksheet.costpercapita_ay188); end
   def test_costpercapita_bi188; assert_equal("Repayments for outstanding capital", worksheet.costpercapita_bi188); end
   def test_costpercapita_br188; assert_equal("Total cost (ammortised capital)", worksheet.costpercapita_br188); end
-  def test_costpercapita_ca188; assert_in_epsilon(672247.4082430347, worksheet.costpercapita_ca188, 0.001); end
+  def test_costpercapita_ca188; assert_in_epsilon(672247.4082430348, worksheet.costpercapita_ca188, 0.001); end
   def test_costpercapita_cc188; assert_equal("Amortised Capital", worksheet.costpercapita_cc188); end
   def test_costpercapita_cf188; assert_equal("Extra cost due to financing capital, compared with doing it out of cash", worksheet.costpercapita_cf188); end
   def test_costpercapita_cp188; assert_equal("Extra cost due to financing capital, compared with doing it out of cash", worksheet.costpercapita_cp188); end
@@ -23038,27 +23649,27 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq190; assert_in_epsilon(391.2318007866995, worksheet.costpercapita_aq190, 0.001); end
   def test_costpercapita_as190; assert_in_epsilon(662.3041013274458, worksheet.costpercapita_as190, 0.001); end
   def test_costpercapita_at190; assert_in_epsilon(14927.426418654355, worksheet.costpercapita_at190, 0.001); end
-  def test_costpercapita_ay190; assert_in_epsilon(13.678464791458294, worksheet.costpercapita_ay190, 0.001); end
-  def test_costpercapita_az190; assert_in_epsilon(6.943214208458588, worksheet.costpercapita_az190, 0.001); end
-  def test_costpercapita_ba190; assert_in_epsilon(7.503177125843668, worksheet.costpercapita_ba190, 0.001); end
-  def test_costpercapita_bb190; assert_in_epsilon(7.437733860535032, worksheet.costpercapita_bb190, 0.001); end
-  def test_costpercapita_bc190; assert_in_epsilon(7.606016529178908, worksheet.costpercapita_bc190, 0.001); end
-  def test_costpercapita_bd190; assert_in_epsilon(6.828608689115487, worksheet.costpercapita_bd190, 0.001); end
-  def test_costpercapita_be190; assert_in_epsilon(5.460463057910946, worksheet.costpercapita_be190, 0.001); end
-  def test_costpercapita_bf190; assert_in_epsilon(3.925611697447484, worksheet.costpercapita_bf190, 0.001); end
-  def test_costpercapita_bg190; assert_in_epsilon(2.907083670824017, worksheet.costpercapita_bg190, 0.001); end
-  def test_costpercapita_bi190; assert_in_epsilon(13.678464791458294, worksheet.costpercapita_bi190, 0.001); end
-  def test_costpercapita_bj190; assert_in_epsilon(20.170630676170575, worksheet.costpercapita_bj190, 0.001); end
-  def test_costpercapita_bk190; assert_in_epsilon(27.013458660322534, worksheet.costpercapita_bk190, 0.001); end
-  def test_costpercapita_bl190; assert_in_epsilon(21.216544975410397, worksheet.costpercapita_bl190, 0.001); end
-  def test_costpercapita_bm190; assert_in_epsilon(21.912762243661692, worksheet.costpercapita_bm190, 0.001); end
-  def test_costpercapita_bn190; assert_in_epsilon(21.31957956100093, worksheet.costpercapita_bn190, 0.001); end
-  def test_costpercapita_bo190; assert_in_epsilon(19.411905813800082, worksheet.costpercapita_bo190, 0.001); end
-  def test_costpercapita_bp190; assert_in_epsilon(15.826817419257532, worksheet.costpercapita_bp190, 0.001); end
-  def test_costpercapita_bq190; assert_in_epsilon(12.011105802553447, worksheet.costpercapita_bq190, 0.001); end
+  def test_costpercapita_ay190; assert_in_epsilon(13.678464791458302, worksheet.costpercapita_ay190, 0.001); end
+  def test_costpercapita_az190; assert_in_epsilon(6.943214208458591, worksheet.costpercapita_az190, 0.001); end
+  def test_costpercapita_ba190; assert_in_epsilon(7.5031771258436715, worksheet.costpercapita_ba190, 0.001); end
+  def test_costpercapita_bb190; assert_in_epsilon(7.437733860535036, worksheet.costpercapita_bb190, 0.001); end
+  def test_costpercapita_bc190; assert_in_epsilon(7.606016529178909, worksheet.costpercapita_bc190, 0.001); end
+  def test_costpercapita_bd190; assert_in_epsilon(6.828608689115491, worksheet.costpercapita_bd190, 0.001); end
+  def test_costpercapita_be190; assert_in_epsilon(5.46046305791095, worksheet.costpercapita_be190, 0.001); end
+  def test_costpercapita_bf190; assert_in_epsilon(3.9256116974474855, worksheet.costpercapita_bf190, 0.001); end
+  def test_costpercapita_bg190; assert_in_epsilon(2.907083670824018, worksheet.costpercapita_bg190, 0.001); end
+  def test_costpercapita_bi190; assert_in_epsilon(13.678464791458302, worksheet.costpercapita_bi190, 0.001); end
+  def test_costpercapita_bj190; assert_in_epsilon(20.170630676170585, worksheet.costpercapita_bj190, 0.001); end
+  def test_costpercapita_bk190; assert_in_epsilon(27.013458660322545, worksheet.costpercapita_bk190, 0.001); end
+  def test_costpercapita_bl190; assert_in_epsilon(21.216544975410404, worksheet.costpercapita_bl190, 0.001); end
+  def test_costpercapita_bm190; assert_in_epsilon(21.9127622436617, worksheet.costpercapita_bm190, 0.001); end
+  def test_costpercapita_bn190; assert_in_epsilon(21.319579561000936, worksheet.costpercapita_bn190, 0.001); end
+  def test_costpercapita_bo190; assert_in_epsilon(19.41190581380009, worksheet.costpercapita_bo190, 0.001); end
+  def test_costpercapita_bp190; assert_in_epsilon(15.826817419257537, worksheet.costpercapita_bp190, 0.001); end
+  def test_costpercapita_bq190; assert_in_epsilon(12.011105802553454, worksheet.costpercapita_bq190, 0.001); end
   def test_costpercapita_bs190; assert_in_epsilon(718.0180286417888, worksheet.costpercapita_bs190, 0.001); end
   def test_costpercapita_bt190; assert_in_epsilon(813.3523413693687, worksheet.costpercapita_bt190, 0.001); end
-  def test_costpercapita_bu190; assert_in_epsilon(863.230481964932, worksheet.costpercapita_bu190, 0.001); end
+  def test_costpercapita_bu190; assert_in_epsilon(863.2304819649321, worksheet.costpercapita_bu190, 0.001); end
   def test_costpercapita_bv190; assert_in_epsilon(824.3190160882045, worksheet.costpercapita_bv190, 0.001); end
   def test_costpercapita_bw190; assert_in_epsilon(749.1301520268057, worksheet.costpercapita_bw190, 0.001); end
   def test_costpercapita_bx190; assert_in_epsilon(641.9452862812956, worksheet.costpercapita_bx190, 0.001); end
@@ -23067,17 +23678,17 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_ca190; assert_in_epsilon(398.8206046828973, worksheet.costpercapita_ca190, 0.001); end
   def test_costpercapita_cc190; assert_in_epsilon(669.4076825478787, worksheet.costpercapita_cc190, 0.001); end
   def test_costpercapita_cd190; assert_in_epsilon(15125.825296229406, worksheet.costpercapita_cd190, 0.001); end
-  def test_costpercapita_cf190; assert_in_epsilon(-21.001365451232196, worksheet.costpercapita_cf190, 0.001); end
-  def test_costpercapita_cg190; assert_in_epsilon(9.608502816397388, worksheet.costpercapita_cg190, 0.001); end
-  def test_costpercapita_ch190; assert_in_epsilon(15.59950630650629, worksheet.costpercapita_ch190, 0.001); end
-  def test_costpercapita_ci190; assert_in_epsilon(9.902145957412134, worksheet.costpercapita_ci190, 0.001); end
-  def test_costpercapita_cj190; assert_in_epsilon(10.342368954215617, worksheet.costpercapita_cj190, 0.001); end
-  def test_costpercapita_ck190; assert_in_epsilon(10.931791439624819, worksheet.costpercapita_ck190, 0.001); end
-  def test_costpercapita_cl190; assert_in_epsilon(11.10536258185401, worksheet.costpercapita_cl190, 0.001); end
-  def test_costpercapita_cm190; assert_in_epsilon(9.85511448292159, worksheet.costpercapita_cm190, 0.001); end
-  def test_costpercapita_cn190; assert_in_epsilon(7.588803896197797, worksheet.costpercapita_cn190, 0.001); end
-  def test_costpercapita_cp190; assert_in_epsilon(7.10358122043305, worksheet.costpercapita_cp190, 0.001); end
-  def test_costpercapita_cq190; assert_in_epsilon(198.3988775750482, worksheet.costpercapita_cq190, 0.001); end
+  def test_costpercapita_cf190; assert_in_epsilon(-21.00136545123219, worksheet.costpercapita_cf190, 0.001); end
+  def test_costpercapita_cg190; assert_in_epsilon(9.6085028163974, worksheet.costpercapita_cg190, 0.001); end
+  def test_costpercapita_ch190; assert_in_epsilon(15.599506306506301, worksheet.costpercapita_ch190, 0.001); end
+  def test_costpercapita_ci190; assert_in_epsilon(9.902145957412142, worksheet.costpercapita_ci190, 0.001); end
+  def test_costpercapita_cj190; assert_in_epsilon(10.342368954215623, worksheet.costpercapita_cj190, 0.001); end
+  def test_costpercapita_ck190; assert_in_epsilon(10.931791439624828, worksheet.costpercapita_ck190, 0.001); end
+  def test_costpercapita_cl190; assert_in_epsilon(11.105362581854017, worksheet.costpercapita_cl190, 0.001); end
+  def test_costpercapita_cm190; assert_in_epsilon(9.855114482921596, worksheet.costpercapita_cm190, 0.001); end
+  def test_costpercapita_cn190; assert_in_epsilon(7.5888038961978035, worksheet.costpercapita_cn190, 0.001); end
+  def test_costpercapita_cp190; assert_in_epsilon(7.103581220433059, worksheet.costpercapita_cp190, 0.001); end
+  def test_costpercapita_cq190; assert_in_epsilon(198.39887757504835, worksheet.costpercapita_cq190, 0.001); end
   def test_costpercapita_cr190; assert_equal("ok", worksheet.costpercapita_cr190); end
   def test_costpercapita_c191; assert_equal("Bioenergy", worksheet.costpercapita_c191); end
   def test_costpercapita_e191; assert_in_epsilon(75.64819045684561, worksheet.costpercapita_e191, 0.001); end
@@ -23118,46 +23729,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq191; assert_in_epsilon(431.75921090254894, worksheet.costpercapita_aq191, 0.001); end
   def test_costpercapita_as191; assert_in_epsilon(351.28640406405816, worksheet.costpercapita_as191, 0.001); end
   def test_costpercapita_at191; assert_in_epsilon(7228.90801214807, worksheet.costpercapita_at191, 0.001); end
-  def test_costpercapita_ay191; assert_in_epsilon(28.08033820688857, worksheet.costpercapita_ay191, 0.001); end
-  def test_costpercapita_az191; assert_in_epsilon(64.39949590840475, worksheet.costpercapita_az191, 0.001); end
-  def test_costpercapita_ba191; assert_in_epsilon(57.818288341734785, worksheet.costpercapita_ba191, 0.001); end
-  def test_costpercapita_bb191; assert_in_epsilon(51.13534461477128, worksheet.costpercapita_bb191, 0.001); end
-  def test_costpercapita_bc191; assert_in_epsilon(52.099401827329956, worksheet.costpercapita_bc191, 0.001); end
-  def test_costpercapita_bd191; assert_in_epsilon(54.3259047753757, worksheet.costpercapita_bd191, 0.001); end
-  def test_costpercapita_be191; assert_in_epsilon(53.4269901819124, worksheet.costpercapita_be191, 0.001); end
-  def test_costpercapita_bf191; assert_in_epsilon(54.20347856643972, worksheet.costpercapita_bf191, 0.001); end
-  def test_costpercapita_bg191; assert_in_epsilon(52.86400213322577, worksheet.costpercapita_bg191, 0.001); end
-  def test_costpercapita_bi191; assert_in_epsilon(28.08033820688857, worksheet.costpercapita_bi191, 0.001); end
-  def test_costpercapita_bj191; assert_in_epsilon(91.55388301832842, worksheet.costpercapita_bj191, 0.001); end
-  def test_costpercapita_bk191; assert_in_epsilon(146.37486656378235, worksheet.costpercapita_bk191, 0.001); end
-  def test_costpercapita_bl191; assert_in_epsilon(174.17799096930165, worksheet.costpercapita_bl191, 0.001); end
-  def test_costpercapita_bm191; assert_in_epsilon(188.297593980103, worksheet.costpercapita_bm191, 0.001); end
-  def test_costpercapita_bn191; assert_in_epsilon(200.61925807347004, worksheet.costpercapita_bn191, 0.001); end
-  def test_costpercapita_bo191; assert_in_epsilon(207.32919881373527, worksheet.costpercapita_bo191, 0.001); end
-  def test_costpercapita_bp191; assert_in_epsilon(207.68542260474374, worksheet.costpercapita_bp191, 0.001); end
-  def test_costpercapita_bq191; assert_in_epsilon(202.6027947567784, worksheet.costpercapita_bq191, 0.001); end
-  def test_costpercapita_bs191; assert_in_epsilon(187.69002564543172, worksheet.costpercapita_bs191, 0.001); end
-  def test_costpercapita_bt191; assert_in_epsilon(280.7721455083795, worksheet.costpercapita_bt191, 0.001); end
-  def test_costpercapita_bu191; assert_in_epsilon(375.6877643311464, worksheet.costpercapita_bu191, 0.001); end
+  def test_costpercapita_ay191; assert_in_epsilon(28.08033820688858, worksheet.costpercapita_ay191, 0.001); end
+  def test_costpercapita_az191; assert_in_epsilon(64.39949590840476, worksheet.costpercapita_az191, 0.001); end
+  def test_costpercapita_ba191; assert_in_epsilon(57.818288341734814, worksheet.costpercapita_ba191, 0.001); end
+  def test_costpercapita_bb191; assert_in_epsilon(51.1353446147713, worksheet.costpercapita_bb191, 0.001); end
+  def test_costpercapita_bc191; assert_in_epsilon(52.099401827329984, worksheet.costpercapita_bc191, 0.001); end
+  def test_costpercapita_bd191; assert_in_epsilon(54.32590477537572, worksheet.costpercapita_bd191, 0.001); end
+  def test_costpercapita_be191; assert_in_epsilon(53.42699018191242, worksheet.costpercapita_be191, 0.001); end
+  def test_costpercapita_bf191; assert_in_epsilon(54.20347856643974, worksheet.costpercapita_bf191, 0.001); end
+  def test_costpercapita_bg191; assert_in_epsilon(52.864002133225796, worksheet.costpercapita_bg191, 0.001); end
+  def test_costpercapita_bi191; assert_in_epsilon(28.08033820688858, worksheet.costpercapita_bi191, 0.001); end
+  def test_costpercapita_bj191; assert_in_epsilon(91.55388301832845, worksheet.costpercapita_bj191, 0.001); end
+  def test_costpercapita_bk191; assert_in_epsilon(146.37486656378238, worksheet.costpercapita_bk191, 0.001); end
+  def test_costpercapita_bl191; assert_in_epsilon(174.1779909693017, worksheet.costpercapita_bl191, 0.001); end
+  def test_costpercapita_bm191; assert_in_epsilon(188.29759398010304, worksheet.costpercapita_bm191, 0.001); end
+  def test_costpercapita_bn191; assert_in_epsilon(200.61925807347012, worksheet.costpercapita_bn191, 0.001); end
+  def test_costpercapita_bo191; assert_in_epsilon(207.3291988137354, worksheet.costpercapita_bo191, 0.001); end
+  def test_costpercapita_bp191; assert_in_epsilon(207.6854226047438, worksheet.costpercapita_bp191, 0.001); end
+  def test_costpercapita_bq191; assert_in_epsilon(202.6027947567785, worksheet.costpercapita_bq191, 0.001); end
+  def test_costpercapita_bs191; assert_in_epsilon(187.69002564543175, worksheet.costpercapita_bs191, 0.001); end
+  def test_costpercapita_bt191; assert_in_epsilon(280.77214550837954, worksheet.costpercapita_bt191, 0.001); end
+  def test_costpercapita_bu191; assert_in_epsilon(375.68776433114647, worksheet.costpercapita_bu191, 0.001); end
   def test_costpercapita_bv191; assert_in_epsilon(426.2152600913886, worksheet.costpercapita_bv191, 0.001); end
-  def test_costpercapita_bw191; assert_in_epsilon(458.4632828381664, worksheet.costpercapita_bw191, 0.001); end
-  def test_costpercapita_bx191; assert_in_epsilon(489.5089917218419, worksheet.costpercapita_bx191, 0.001); end
+  def test_costpercapita_bw191; assert_in_epsilon(458.4632828381665, worksheet.costpercapita_bw191, 0.001); end
+  def test_costpercapita_bx191; assert_in_epsilon(489.508991721842, worksheet.costpercapita_bx191, 0.001); end
   def test_costpercapita_by191; assert_in_epsilon(515.7183508033568, worksheet.costpercapita_by191, 0.001); end
-  def test_costpercapita_bz191; assert_in_epsilon(535.6305419341713, worksheet.costpercapita_bz191, 0.001); end
-  def test_costpercapita_ca191; assert_in_epsilon(550.1783573422829, worksheet.costpercapita_ca191, 0.001); end
-  def test_costpercapita_cc191; assert_in_epsilon(424.4294133573517, worksheet.costpercapita_cc191, 0.001); end
+  def test_costpercapita_bz191; assert_in_epsilon(535.6305419341714, worksheet.costpercapita_bz191, 0.001); end
+  def test_costpercapita_ca191; assert_in_epsilon(550.178357342283, worksheet.costpercapita_ca191, 0.001); end
+  def test_costpercapita_cc191; assert_in_epsilon(424.4294133573518, worksheet.costpercapita_cc191, 0.001); end
   def test_costpercapita_cd191; assert_in_epsilon(8632.13878881785, worksheet.costpercapita_cd191, 0.001); end
-  def test_costpercapita_cf191; assert_in_epsilon(-47.56785224995704, worksheet.costpercapita_cf191, 0.001); end
-  def test_costpercapita_cg191; assert_in_epsilon(-16.594092776899497, worksheet.costpercapita_cg191, 0.001); end
-  def test_costpercapita_ch191; assert_in_epsilon(52.23042537189207, worksheet.costpercapita_ch191, 0.001); end
-  def test_costpercapita_ci191; assert_in_epsilon(91.97247715741644, worksheet.costpercapita_ci191, 0.001); end
-  def test_costpercapita_cj191; assert_in_epsilon(104.57982169495094, worksheet.costpercapita_cj191, 0.001); end
-  def test_costpercapita_ck191; assert_in_epsilon(113.41661327559656, worksheet.costpercapita_ck191, 0.001); end
-  def test_costpercapita_cl191; assert_in_epsilon(121.38515228320861, worksheet.costpercapita_cl191, 0.001); end
-  def test_costpercapita_cm191; assert_in_epsilon(120.44539244369946, worksheet.costpercapita_cm191, 0.001); end
-  def test_costpercapita_cn191; assert_in_epsilon(118.41914643973394, worksheet.costpercapita_cn191, 0.001); end
-  def test_costpercapita_cp191; assert_in_epsilon(73.14300929329349, worksheet.costpercapita_cp191, 0.001); end
-  def test_costpercapita_cq191; assert_in_epsilon(1403.230776669779, worksheet.costpercapita_cq191, 0.001); end
+  def test_costpercapita_cf191; assert_in_epsilon(-47.56785224995703, worksheet.costpercapita_cf191, 0.001); end
+  def test_costpercapita_cg191; assert_in_epsilon(-16.594092776899465, worksheet.costpercapita_cg191, 0.001); end
+  def test_costpercapita_ch191; assert_in_epsilon(52.23042537189212, worksheet.costpercapita_ch191, 0.001); end
+  def test_costpercapita_ci191; assert_in_epsilon(91.97247715741648, worksheet.costpercapita_ci191, 0.001); end
+  def test_costpercapita_cj191; assert_in_epsilon(104.57982169495098, worksheet.costpercapita_cj191, 0.001); end
+  def test_costpercapita_ck191; assert_in_epsilon(113.41661327559663, worksheet.costpercapita_ck191, 0.001); end
+  def test_costpercapita_cl191; assert_in_epsilon(121.38515228320868, worksheet.costpercapita_cl191, 0.001); end
+  def test_costpercapita_cm191; assert_in_epsilon(120.44539244369955, worksheet.costpercapita_cm191, 0.001); end
+  def test_costpercapita_cn191; assert_in_epsilon(118.41914643973405, worksheet.costpercapita_cn191, 0.001); end
+  def test_costpercapita_cp191; assert_in_epsilon(73.14300929329355, worksheet.costpercapita_cp191, 0.001); end
+  def test_costpercapita_cq191; assert_in_epsilon(1403.23077666978, worksheet.costpercapita_cq191, 0.001); end
   def test_costpercapita_cr191; assert_equal("ok", worksheet.costpercapita_cr191); end
   def test_costpercapita_c192; assert_equal("Electricity", worksheet.costpercapita_c192); end
   def test_costpercapita_e192; assert_in_epsilon(177.10084344334047, worksheet.costpercapita_e192, 0.001); end
@@ -23198,46 +23809,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq192; assert_in_epsilon(1133.3695554058418, worksheet.costpercapita_aq192, 0.001); end
   def test_costpercapita_as192; assert_in_epsilon(791.3011502462247, worksheet.costpercapita_as192, 0.001); end
   def test_costpercapita_at192; assert_in_epsilon(15487.320209331592, worksheet.costpercapita_at192, 0.001); end
-  def test_costpercapita_ay192; assert_in_epsilon(61.861186377091514, worksheet.costpercapita_ay192, 0.001); end
+  def test_costpercapita_ay192; assert_in_epsilon(61.86118637709153, worksheet.costpercapita_ay192, 0.001); end
   def test_costpercapita_az192; assert_in_epsilon(145.04124582148086, worksheet.costpercapita_az192, 0.001); end
   def test_costpercapita_ba192; assert_in_epsilon(224.2568408917823, worksheet.costpercapita_ba192, 0.001); end
-  def test_costpercapita_bb192; assert_in_epsilon(350.4400848864388, worksheet.costpercapita_bb192, 0.001); end
+  def test_costpercapita_bb192; assert_in_epsilon(350.44008488643885, worksheet.costpercapita_bb192, 0.001); end
   def test_costpercapita_bc192; assert_in_epsilon(331.6710870584909, worksheet.costpercapita_bc192, 0.001); end
   def test_costpercapita_bd192; assert_in_epsilon(347.12633928295156, worksheet.costpercapita_bd192, 0.001); end
   def test_costpercapita_be192; assert_in_epsilon(387.1622170694393, worksheet.costpercapita_be192, 0.001); end
-  def test_costpercapita_bf192; assert_in_epsilon(454.04612374087753, worksheet.costpercapita_bf192, 0.001); end
-  def test_costpercapita_bg192; assert_in_epsilon(426.87055391636306, worksheet.costpercapita_bg192, 0.001); end
-  def test_costpercapita_bi192; assert_in_epsilon(61.861186377091514, worksheet.costpercapita_bi192, 0.001); end
-  def test_costpercapita_bj192; assert_in_epsilon(204.862555293836, worksheet.costpercapita_bj192, 0.001); end
-  def test_costpercapita_bk192; assert_in_epsilon(422.41257502940744, worksheet.costpercapita_bk192, 0.001); end
-  def test_costpercapita_bl192; assert_in_epsilon(759.7732988140896, worksheet.costpercapita_bl192, 0.001); end
-  def test_costpercapita_bm192; assert_in_epsilon(1018.4908001569531, worksheet.costpercapita_bm192, 0.001); end
-  def test_costpercapita_bn192; assert_in_epsilon(1209.6774099668569, worksheet.costpercapita_bn192, 0.001); end
-  def test_costpercapita_bo192; assert_in_epsilon(1347.0114325402449, worksheet.costpercapita_bo192, 0.001); end
-  def test_costpercapita_bp192; assert_in_epsilon(1741.256606764542, worksheet.costpercapita_bp192, 0.001); end
-  def test_costpercapita_bq192; assert_in_epsilon(1598.1602144976735, worksheet.costpercapita_bq192, 0.001); end
-  def test_costpercapita_bs192; assert_in_epsilon(215.91260571853593, worksheet.costpercapita_bs192, 0.001); end
-  def test_costpercapita_bt192; assert_in_epsilon(362.47231612716246, worksheet.costpercapita_bt192, 0.001); end
+  def test_costpercapita_bf192; assert_in_epsilon(454.04612374087765, worksheet.costpercapita_bf192, 0.001); end
+  def test_costpercapita_bg192; assert_in_epsilon(426.8705539163632, worksheet.costpercapita_bg192, 0.001); end
+  def test_costpercapita_bi192; assert_in_epsilon(61.86118637709153, worksheet.costpercapita_bi192, 0.001); end
+  def test_costpercapita_bj192; assert_in_epsilon(204.86255529383604, worksheet.costpercapita_bj192, 0.001); end
+  def test_costpercapita_bk192; assert_in_epsilon(422.41257502940755, worksheet.costpercapita_bk192, 0.001); end
+  def test_costpercapita_bl192; assert_in_epsilon(759.7732988140897, worksheet.costpercapita_bl192, 0.001); end
+  def test_costpercapita_bm192; assert_in_epsilon(1018.4908001569532, worksheet.costpercapita_bm192, 0.001); end
+  def test_costpercapita_bn192; assert_in_epsilon(1209.677409966857, worksheet.costpercapita_bn192, 0.001); end
+  def test_costpercapita_bo192; assert_in_epsilon(1347.0114325402453, worksheet.costpercapita_bo192, 0.001); end
+  def test_costpercapita_bp192; assert_in_epsilon(1741.2566067645425, worksheet.costpercapita_bp192, 0.001); end
+  def test_costpercapita_bq192; assert_in_epsilon(1598.160214497674, worksheet.costpercapita_bq192, 0.001); end
+  def test_costpercapita_bs192; assert_in_epsilon(215.91260571853596, worksheet.costpercapita_bs192, 0.001); end
+  def test_costpercapita_bt192; assert_in_epsilon(362.4723161271625, worksheet.costpercapita_bt192, 0.001); end
   def test_costpercapita_bu192; assert_in_epsilon(600.262034442535, worksheet.costpercapita_bu192, 0.001); end
   def test_costpercapita_bv192; assert_in_epsilon(984.5331111227739, worksheet.costpercapita_bv192, 0.001); end
-  def test_costpercapita_bw192; assert_in_epsilon(1283.8968209291604, worksheet.costpercapita_bw192, 0.001); end
+  def test_costpercapita_bw192; assert_in_epsilon(1283.8968209291606, worksheet.costpercapita_bw192, 0.001); end
   def test_costpercapita_bx192; assert_in_epsilon(1509.2630710518931, worksheet.costpercapita_bx192, 0.001); end
-  def test_costpercapita_by192; assert_in_epsilon(1683.8017254354345, worksheet.costpercapita_by192, 0.001); end
+  def test_costpercapita_by192; assert_in_epsilon(1683.8017254354354, worksheet.costpercapita_by192, 0.001); end
   def test_costpercapita_bz192; assert_in_epsilon(2116.183889452041, worksheet.costpercapita_bz192, 0.001); end
-  def test_costpercapita_ca192; assert_in_epsilon(1991.9791559948587, worksheet.costpercapita_ca192, 0.001); end
-  def test_costpercapita_cc192; assert_in_epsilon(1194.2560811415995, worksheet.costpercapita_cc192, 0.001); end
-  def test_costpercapita_cd192; assert_in_epsilon(22119.012256710048, worksheet.costpercapita_cd192, 0.001); end
-  def test_costpercapita_cf192; assert_in_epsilon(-115.23965706624897, worksheet.costpercapita_cf192, 0.001); end
-  def test_costpercapita_cg192; assert_in_epsilon(-42.718297257659906, worksheet.costpercapita_cg192, 0.001); end
-  def test_costpercapita_ch192; assert_in_epsilon(38.86507091714823, worksheet.costpercapita_ch192, 0.001); end
-  def test_costpercapita_ci192; assert_in_epsilon(167.69250944845524, worksheet.costpercapita_ci192, 0.001); end
-  def test_costpercapita_cj192; assert_in_epsilon(456.38715551295473, worksheet.costpercapita_cj192, 0.001); end
-  def test_costpercapita_ck192; assert_in_epsilon(621.8481924230352, worksheet.costpercapita_ck192, 0.001); end
-  def test_costpercapita_cl192; assert_in_epsilon(678.5732180754815, worksheet.costpercapita_cl192, 0.001); end
-  def test_costpercapita_cm192; assert_in_epsilon(962.57658541619, worksheet.costpercapita_cm192, 0.001); end
-  def test_costpercapita_cn192; assert_in_epsilon(858.6096005890171, worksheet.costpercapita_cn192, 0.001); end
-  def test_costpercapita_cp192; assert_in_epsilon(402.95493089537473, worksheet.costpercapita_cp192, 0.001); end
-  def test_costpercapita_cq192; assert_in_epsilon(6631.692047378459, worksheet.costpercapita_cq192, 0.001); end
+  def test_costpercapita_ca192; assert_in_epsilon(1991.979155994859, worksheet.costpercapita_ca192, 0.001); end
+  def test_costpercapita_cc192; assert_in_epsilon(1194.2560811415997, worksheet.costpercapita_cc192, 0.001); end
+  def test_costpercapita_cd192; assert_in_epsilon(22119.01225671005, worksheet.costpercapita_cd192, 0.001); end
+  def test_costpercapita_cf192; assert_in_epsilon(-115.23965706624895, worksheet.costpercapita_cf192, 0.001); end
+  def test_costpercapita_cg192; assert_in_epsilon(-42.71829725765987, worksheet.costpercapita_cg192, 0.001); end
+  def test_costpercapita_ch192; assert_in_epsilon(38.86507091714829, worksheet.costpercapita_ch192, 0.001); end
+  def test_costpercapita_ci192; assert_in_epsilon(167.69250944845535, worksheet.costpercapita_ci192, 0.001); end
+  def test_costpercapita_cj192; assert_in_epsilon(456.38715551295496, worksheet.costpercapita_cj192, 0.001); end
+  def test_costpercapita_ck192; assert_in_epsilon(621.8481924230355, worksheet.costpercapita_ck192, 0.001); end
+  def test_costpercapita_cl192; assert_in_epsilon(678.5732180754819, worksheet.costpercapita_cl192, 0.001); end
+  def test_costpercapita_cm192; assert_in_epsilon(962.5765854161904, worksheet.costpercapita_cm192, 0.001); end
+  def test_costpercapita_cn192; assert_in_epsilon(858.6096005890175, worksheet.costpercapita_cn192, 0.001); end
+  def test_costpercapita_cp192; assert_in_epsilon(402.954930895375, worksheet.costpercapita_cp192, 0.001); end
+  def test_costpercapita_cq192; assert_in_epsilon(6631.692047378463, worksheet.costpercapita_cq192, 0.001); end
   def test_costpercapita_cr192; assert_equal("ok", worksheet.costpercapita_cr192); end
   def test_costpercapita_c193; assert_equal("Buildings", worksheet.costpercapita_c193); end
   def test_costpercapita_e193; assert_in_epsilon(834.5616634464301, worksheet.costpercapita_e193, 0.001); end
@@ -23278,46 +23889,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq193; assert_in_epsilon(1299.6925386424634, worksheet.costpercapita_aq193, 0.001); end
   def test_costpercapita_as193; assert_in_epsilon(1045.6666376558992, worksheet.costpercapita_as193, 0.001); end
   def test_costpercapita_at193; assert_in_epsilon(21274.0089673366, worksheet.costpercapita_at193, 0.001); end
-  def test_costpercapita_ay193; assert_in_epsilon(286.6371240471361, worksheet.costpercapita_ay193, 0.001); end
-  def test_costpercapita_az193; assert_in_epsilon(456.14929410143446, worksheet.costpercapita_az193, 0.001); end
-  def test_costpercapita_ba193; assert_in_epsilon(518.3474427924556, worksheet.costpercapita_ba193, 0.001); end
-  def test_costpercapita_bb193; assert_in_epsilon(490.89010813256346, worksheet.costpercapita_bb193, 0.001); end
-  def test_costpercapita_bc193; assert_in_epsilon(501.8373702302069, worksheet.costpercapita_bc193, 0.001); end
-  def test_costpercapita_bd193; assert_in_epsilon(579.7089610908504, worksheet.costpercapita_bd193, 0.001); end
-  def test_costpercapita_be193; assert_in_epsilon(627.0350991520849, worksheet.costpercapita_be193, 0.001); end
-  def test_costpercapita_bf193; assert_in_epsilon(674.0234807024908, worksheet.costpercapita_bf193, 0.001); end
-  def test_costpercapita_bg193; assert_in_epsilon(742.5496452094493, worksheet.costpercapita_bg193, 0.001); end
-  def test_costpercapita_bi193; assert_in_epsilon(286.6371240471361, worksheet.costpercapita_bi193, 0.001); end
-  def test_costpercapita_bj193; assert_in_epsilon(733.3345391331961, worksheet.costpercapita_bj193, 0.001); end
-  def test_costpercapita_bk193; assert_in_epsilon(1227.6739654553692, worksheet.costpercapita_bk193, 0.001); end
-  def test_costpercapita_bl193; assert_in_epsilon(1582.483267351164, worksheet.costpercapita_bl193, 0.001); end
-  def test_costpercapita_bm193; assert_in_epsilon(1900.7050263483347, worksheet.costpercapita_bm193, 0.001); end
-  def test_costpercapita_bn193; assert_in_epsilon(2221.901700185567, worksheet.costpercapita_bn193, 0.001); end
-  def test_costpercapita_bo193; assert_in_epsilon(2411.3889908337283, worksheet.costpercapita_bo193, 0.001); end
+  def test_costpercapita_ay193; assert_in_epsilon(286.63712404713624, worksheet.costpercapita_ay193, 0.001); end
+  def test_costpercapita_az193; assert_in_epsilon(456.1492941014347, worksheet.costpercapita_az193, 0.001); end
+  def test_costpercapita_ba193; assert_in_epsilon(518.3474427924557, worksheet.costpercapita_ba193, 0.001); end
+  def test_costpercapita_bb193; assert_in_epsilon(490.8901081325636, worksheet.costpercapita_bb193, 0.001); end
+  def test_costpercapita_bc193; assert_in_epsilon(501.83737023020706, worksheet.costpercapita_bc193, 0.001); end
+  def test_costpercapita_bd193; assert_in_epsilon(579.7089610908506, worksheet.costpercapita_bd193, 0.001); end
+  def test_costpercapita_be193; assert_in_epsilon(627.0350991520851, worksheet.costpercapita_be193, 0.001); end
+  def test_costpercapita_bf193; assert_in_epsilon(674.023480702491, worksheet.costpercapita_bf193, 0.001); end
+  def test_costpercapita_bg193; assert_in_epsilon(742.5496452094495, worksheet.costpercapita_bg193, 0.001); end
+  def test_costpercapita_bi193; assert_in_epsilon(286.63712404713624, worksheet.costpercapita_bi193, 0.001); end
+  def test_costpercapita_bj193; assert_in_epsilon(733.3345391331964, worksheet.costpercapita_bj193, 0.001); end
+  def test_costpercapita_bk193; assert_in_epsilon(1227.6739654553696, worksheet.costpercapita_bk193, 0.001); end
+  def test_costpercapita_bl193; assert_in_epsilon(1582.4832673511648, worksheet.costpercapita_bl193, 0.001); end
+  def test_costpercapita_bm193; assert_in_epsilon(1900.7050263483357, worksheet.costpercapita_bm193, 0.001); end
+  def test_costpercapita_bn193; assert_in_epsilon(2221.9017001855677, worksheet.costpercapita_bn193, 0.001); end
+  def test_costpercapita_bo193; assert_in_epsilon(2411.3889908337287, worksheet.costpercapita_bo193, 0.001); end
   def test_costpercapita_bp193; assert_in_epsilon(2731.188269261543, worksheet.costpercapita_bp193, 0.001); end
-  def test_costpercapita_bq193; assert_in_epsilon(2850.4425377051116, worksheet.costpercapita_bq193, 0.001); end
-  def test_costpercapita_bs193; assert_in_epsilon(399.5515151869957, worksheet.costpercapita_bs193, 0.001); end
-  def test_costpercapita_bt193; assert_in_epsilon(844.6049694196761, worksheet.costpercapita_bt193, 0.001); end
-  def test_costpercapita_bu193; assert_in_epsilon(1331.935742809469, worksheet.costpercapita_bu193, 0.001); end
-  def test_costpercapita_bv193; assert_in_epsilon(1679.7292190235332, worksheet.costpercapita_bv193, 0.001); end
-  def test_costpercapita_bw193; assert_in_epsilon(1991.0857209410963, worksheet.costpercapita_bw193, 0.001); end
-  def test_costpercapita_bx193; assert_in_epsilon(2306.596903981527, worksheet.costpercapita_bx193, 0.001); end
-  def test_costpercapita_by193; assert_in_epsilon(2490.6237797027693, worksheet.costpercapita_by193, 0.001); end
+  def test_costpercapita_bq193; assert_in_epsilon(2850.4425377051125, worksheet.costpercapita_bq193, 0.001); end
+  def test_costpercapita_bs193; assert_in_epsilon(399.55151518699574, worksheet.costpercapita_bs193, 0.001); end
+  def test_costpercapita_bt193; assert_in_epsilon(844.6049694196764, worksheet.costpercapita_bt193, 0.001); end
+  def test_costpercapita_bu193; assert_in_epsilon(1331.9357428094693, worksheet.costpercapita_bu193, 0.001); end
+  def test_costpercapita_bv193; assert_in_epsilon(1679.729219023534, worksheet.costpercapita_bv193, 0.001); end
+  def test_costpercapita_bw193; assert_in_epsilon(1991.085720941097, worksheet.costpercapita_bw193, 0.001); end
+  def test_costpercapita_bx193; assert_in_epsilon(2306.5969039815277, worksheet.costpercapita_bx193, 0.001); end
+  def test_costpercapita_by193; assert_in_epsilon(2490.6237797027698, worksheet.costpercapita_by193, 0.001); end
   def test_costpercapita_bz193; assert_in_epsilon(2805.043442657743, worksheet.costpercapita_bz193, 0.001); end
-  def test_costpercapita_ca193; assert_in_epsilon(2918.929210100134, worksheet.costpercapita_ca193, 0.001); end
-  def test_costpercapita_cc193; assert_in_epsilon(1863.1222782025495, worksheet.costpercapita_cc193, 0.001); end
-  def test_costpercapita_cd193; assert_in_epsilon(36189.11573912227, worksheet.costpercapita_cd193, 0.001); end
-  def test_costpercapita_cf193; assert_in_epsilon(-547.924539399294, worksheet.costpercapita_cf193, 0.001); end
-  def test_costpercapita_cg193; assert_in_epsilon(-69.86735503684008, worksheet.costpercapita_cg193, 0.001); end
-  def test_costpercapita_ch193; assert_in_epsilon(334.61347504312545, worksheet.costpercapita_ch193, 0.001); end
-  def test_costpercapita_ci193; assert_in_epsilon(750.3158310157212, worksheet.costpercapita_ci193, 0.001); end
-  def test_costpercapita_cj193; assert_in_epsilon(1057.588481607775, worksheet.costpercapita_cj193, 0.001); end
-  def test_costpercapita_ck193; assert_in_epsilon(1245.36617707836, worksheet.costpercapita_ck193, 0.001); end
-  def test_costpercapita_cl193; assert_in_epsilon(1359.2049566580033, worksheet.costpercapita_cl193, 0.001); end
-  def test_costpercapita_cm193; assert_in_epsilon(1608.5670664953302, worksheet.costpercapita_cm193, 0.001); end
-  def test_costpercapita_cn193; assert_in_epsilon(1619.2366714576708, worksheet.costpercapita_cn193, 0.001); end
-  def test_costpercapita_cp193; assert_in_epsilon(817.4556405466502, worksheet.costpercapita_cp193, 0.001); end
-  def test_costpercapita_cq193; assert_in_epsilon(14915.106771785675, worksheet.costpercapita_cq193, 0.001); end
+  def test_costpercapita_ca193; assert_in_epsilon(2918.929210100135, worksheet.costpercapita_ca193, 0.001); end
+  def test_costpercapita_cc193; assert_in_epsilon(1863.12227820255, worksheet.costpercapita_cc193, 0.001); end
+  def test_costpercapita_cd193; assert_in_epsilon(36189.11573912229, worksheet.costpercapita_cd193, 0.001); end
+  def test_costpercapita_cf193; assert_in_epsilon(-547.9245393992938, worksheet.costpercapita_cf193, 0.001); end
+  def test_costpercapita_cg193; assert_in_epsilon(-69.8673550368398, worksheet.costpercapita_cg193, 0.001); end
+  def test_costpercapita_ch193; assert_in_epsilon(334.613475043126, worksheet.costpercapita_ch193, 0.001); end
+  def test_costpercapita_ci193; assert_in_epsilon(750.3158310157219, worksheet.costpercapita_ci193, 0.001); end
+  def test_costpercapita_cj193; assert_in_epsilon(1057.5884816077757, worksheet.costpercapita_cj193, 0.001); end
+  def test_costpercapita_ck193; assert_in_epsilon(1245.3661770783606, worksheet.costpercapita_ck193, 0.001); end
+  def test_costpercapita_cl193; assert_in_epsilon(1359.2049566580038, worksheet.costpercapita_cl193, 0.001); end
+  def test_costpercapita_cm193; assert_in_epsilon(1608.567066495331, worksheet.costpercapita_cm193, 0.001); end
+  def test_costpercapita_cn193; assert_in_epsilon(1619.2366714576717, worksheet.costpercapita_cn193, 0.001); end
+  def test_costpercapita_cp193; assert_in_epsilon(817.4556405466509, worksheet.costpercapita_cp193, 0.001); end
+  def test_costpercapita_cq193; assert_in_epsilon(14915.106771785684, worksheet.costpercapita_cq193, 0.001); end
   def test_costpercapita_cr193; assert_equal("ok", worksheet.costpercapita_cr193); end
   def test_costpercapita_c194; assert_equal("Transport", worksheet.costpercapita_c194); end
   def test_costpercapita_e194; assert_in_epsilon(1078.252847894219, worksheet.costpercapita_e194, 0.001); end
@@ -23358,46 +23969,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq194; assert_in_epsilon(6301.72655926339, worksheet.costpercapita_aq194, 0.001); end
   def test_costpercapita_as194; assert_in_epsilon(3994.46000023704, worksheet.costpercapita_as194, 0.001); end
   def test_costpercapita_at194; assert_in_epsilon(76899.09119280068, worksheet.costpercapita_at194, 0.001); end
-  def test_costpercapita_ay194; assert_in_epsilon(458.1898831590689, worksheet.costpercapita_ay194, 0.001); end
-  def test_costpercapita_az194; assert_in_epsilon(812.3010513555796, worksheet.costpercapita_az194, 0.001); end
-  def test_costpercapita_ba194; assert_in_epsilon(813.2896822411205, worksheet.costpercapita_ba194, 0.001); end
-  def test_costpercapita_bb194; assert_in_epsilon(1479.3407704855554, worksheet.costpercapita_bb194, 0.001); end
-  def test_costpercapita_bc194; assert_in_epsilon(1736.9868964329783, worksheet.costpercapita_bc194, 0.001); end
-  def test_costpercapita_bd194; assert_in_epsilon(1658.6476748681748, worksheet.costpercapita_bd194, 0.001); end
-  def test_costpercapita_be194; assert_in_epsilon(1733.0729049639742, worksheet.costpercapita_be194, 0.001); end
-  def test_costpercapita_bf194; assert_in_epsilon(2122.6917169166954, worksheet.costpercapita_bf194, 0.001); end
-  def test_costpercapita_bg194; assert_in_epsilon(2432.363304533243, worksheet.costpercapita_bg194, 0.001); end
-  def test_costpercapita_bi194; assert_in_epsilon(458.1898831590689, worksheet.costpercapita_bi194, 0.001); end
-  def test_costpercapita_bj194; assert_in_epsilon(1202.7571708869614, worksheet.costpercapita_bj194, 0.001); end
-  def test_costpercapita_bk194; assert_in_epsilon(1854.738661740223, worksheet.costpercapita_bk194, 0.001); end
-  def test_costpercapita_bl194; assert_in_epsilon(2785.073719688169, worksheet.costpercapita_bl194, 0.001); end
-  def test_costpercapita_bm194; assert_in_epsilon(3689.315629849486, worksheet.costpercapita_bm194, 0.001); end
-  def test_costpercapita_bn194; assert_in_epsilon(4502.019592858775, worksheet.costpercapita_bn194, 0.001); end
-  def test_costpercapita_bo194; assert_in_epsilon(4755.786434785595, worksheet.costpercapita_bo194, 0.001); end
-  def test_costpercapita_bp194; assert_in_epsilon(5157.8028445180835, worksheet.costpercapita_bp194, 0.001); end
-  def test_costpercapita_bq194; assert_in_epsilon(5927.79678347105, worksheet.costpercapita_bq194, 0.001); end
-  def test_costpercapita_bs194; assert_in_epsilon(1615.0574296102182, worksheet.costpercapita_bs194, 0.001); end
-  def test_costpercapita_bt194; assert_in_epsilon(2377.542249159878, worksheet.costpercapita_bt194, 0.001); end
-  def test_costpercapita_bu194; assert_in_epsilon(3039.805439499917, worksheet.costpercapita_bu194, 0.001); end
-  def test_costpercapita_bv194; assert_in_epsilon(4312.471402987724, worksheet.costpercapita_bv194, 0.001); end
-  def test_costpercapita_bw194; assert_in_epsilon(5506.243781134389, worksheet.costpercapita_bw194, 0.001); end
-  def test_costpercapita_bx194; assert_in_epsilon(6516.364886440401, worksheet.costpercapita_bx194, 0.001); end
-  def test_costpercapita_by194; assert_in_epsilon(6931.829634494755, worksheet.costpercapita_by194, 0.001); end
-  def test_costpercapita_bz194; assert_in_epsilon(7614.022853520133, worksheet.costpercapita_bz194, 0.001); end
-  def test_costpercapita_ca194; assert_in_epsilon(8632.842050861938, worksheet.costpercapita_ca194, 0.001); end
-  def test_costpercapita_cc194; assert_in_epsilon(5171.797747523261, worksheet.costpercapita_cc194, 0.001); end
-  def test_costpercapita_cd194; assert_in_epsilon(98383.97119015332, worksheet.costpercapita_cd194, 0.001); end
-  def test_costpercapita_cf194; assert_in_epsilon(-620.0629647351501, worksheet.costpercapita_cf194, 0.001); end
-  def test_costpercapita_cg194; assert_in_epsilon(54.513043955063566, worksheet.costpercapita_cg194, 0.001); end
-  def test_costpercapita_ch194; assert_in_epsilon(711.5349616309769, worksheet.costpercapita_ch194, 0.001); end
-  def test_costpercapita_ci194; assert_in_epsilon(633.2948082241232, worksheet.costpercapita_ci194, 0.001); end
-  def test_costpercapita_cj194; assert_in_epsilon(1148.2264200271172, worksheet.costpercapita_cj194, 0.001); end
-  def test_costpercapita_ck194; assert_in_epsilon(2081.8941185788267, worksheet.costpercapita_ck194, 0.001); end
-  def test_costpercapita_cl194; assert_in_epsilon(2223.113085869374, worksheet.costpercapita_cl194, 0.001); end
-  def test_costpercapita_cm194; assert_in_epsilon(2032.410760427116, worksheet.costpercapita_cm194, 0.001); end
-  def test_costpercapita_cn194; assert_in_epsilon(2331.115491598546, worksheet.costpercapita_cn194, 0.001); end
-  def test_costpercapita_cp194; assert_in_epsilon(1177.3377472862214, worksheet.costpercapita_cp194, 0.001); end
-  def test_costpercapita_cq194; assert_in_epsilon(21484.879997352647, worksheet.costpercapita_cq194, 0.001); end
+  def test_costpercapita_ay194; assert_in_epsilon(458.18988315906915, worksheet.costpercapita_ay194, 0.001); end
+  def test_costpercapita_az194; assert_in_epsilon(812.3010513555801, worksheet.costpercapita_az194, 0.001); end
+  def test_costpercapita_ba194; assert_in_epsilon(813.289682241121, worksheet.costpercapita_ba194, 0.001); end
+  def test_costpercapita_bb194; assert_in_epsilon(1479.3407704855563, worksheet.costpercapita_bb194, 0.001); end
+  def test_costpercapita_bc194; assert_in_epsilon(1736.986896432979, worksheet.costpercapita_bc194, 0.001); end
+  def test_costpercapita_bd194; assert_in_epsilon(1658.6476748681755, worksheet.costpercapita_bd194, 0.001); end
+  def test_costpercapita_be194; assert_in_epsilon(1733.072904963975, worksheet.costpercapita_be194, 0.001); end
+  def test_costpercapita_bf194; assert_in_epsilon(2122.691716916697, worksheet.costpercapita_bf194, 0.001); end
+  def test_costpercapita_bg194; assert_in_epsilon(2432.363304533244, worksheet.costpercapita_bg194, 0.001); end
+  def test_costpercapita_bi194; assert_in_epsilon(458.18988315906915, worksheet.costpercapita_bi194, 0.001); end
+  def test_costpercapita_bj194; assert_in_epsilon(1202.7571708869623, worksheet.costpercapita_bj194, 0.001); end
+  def test_costpercapita_bk194; assert_in_epsilon(1854.738661740224, worksheet.costpercapita_bk194, 0.001); end
+  def test_costpercapita_bl194; assert_in_epsilon(2785.0737196881705, worksheet.costpercapita_bl194, 0.001); end
+  def test_costpercapita_bm194; assert_in_epsilon(3689.3156298494873, worksheet.costpercapita_bm194, 0.001); end
+  def test_costpercapita_bn194; assert_in_epsilon(4502.019592858777, worksheet.costpercapita_bn194, 0.001); end
+  def test_costpercapita_bo194; assert_in_epsilon(4755.786434785597, worksheet.costpercapita_bo194, 0.001); end
+  def test_costpercapita_bp194; assert_in_epsilon(5157.802844518086, worksheet.costpercapita_bp194, 0.001); end
+  def test_costpercapita_bq194; assert_in_epsilon(5927.7967834710535, worksheet.costpercapita_bq194, 0.001); end
+  def test_costpercapita_bs194; assert_in_epsilon(1615.0574296102184, worksheet.costpercapita_bs194, 0.001); end
+  def test_costpercapita_bt194; assert_in_epsilon(2377.5422491598783, worksheet.costpercapita_bt194, 0.001); end
+  def test_costpercapita_bu194; assert_in_epsilon(3039.805439499918, worksheet.costpercapita_bu194, 0.001); end
+  def test_costpercapita_bv194; assert_in_epsilon(4312.471402987725, worksheet.costpercapita_bv194, 0.001); end
+  def test_costpercapita_bw194; assert_in_epsilon(5506.24378113439, worksheet.costpercapita_bw194, 0.001); end
+  def test_costpercapita_bx194; assert_in_epsilon(6516.364886440404, worksheet.costpercapita_bx194, 0.001); end
+  def test_costpercapita_by194; assert_in_epsilon(6931.829634494757, worksheet.costpercapita_by194, 0.001); end
+  def test_costpercapita_bz194; assert_in_epsilon(7614.022853520135, worksheet.costpercapita_bz194, 0.001); end
+  def test_costpercapita_ca194; assert_in_epsilon(8632.84205086194, worksheet.costpercapita_ca194, 0.001); end
+  def test_costpercapita_cc194; assert_in_epsilon(5171.797747523263, worksheet.costpercapita_cc194, 0.001); end
+  def test_costpercapita_cd194; assert_in_epsilon(98383.97119015336, worksheet.costpercapita_cd194, 0.001); end
+  def test_costpercapita_cf194; assert_in_epsilon(-620.0629647351499, worksheet.costpercapita_cf194, 0.001); end
+  def test_costpercapita_cg194; assert_in_epsilon(54.51304395506418, worksheet.costpercapita_cg194, 0.001); end
+  def test_costpercapita_ch194; assert_in_epsilon(711.5349616309779, worksheet.costpercapita_ch194, 0.001); end
+  def test_costpercapita_ci194; assert_in_epsilon(633.2948082241245, worksheet.costpercapita_ci194, 0.001); end
+  def test_costpercapita_cj194; assert_in_epsilon(1148.2264200271188, worksheet.costpercapita_cj194, 0.001); end
+  def test_costpercapita_ck194; assert_in_epsilon(2081.894118578829, worksheet.costpercapita_ck194, 0.001); end
+  def test_costpercapita_cl194; assert_in_epsilon(2223.113085869377, worksheet.costpercapita_cl194, 0.001); end
+  def test_costpercapita_cm194; assert_in_epsilon(2032.410760427118, worksheet.costpercapita_cm194, 0.001); end
+  def test_costpercapita_cn194; assert_in_epsilon(2331.1154915985494, worksheet.costpercapita_cn194, 0.001); end
+  def test_costpercapita_cp194; assert_in_epsilon(1177.337747286223, worksheet.costpercapita_cp194, 0.001); end
+  def test_costpercapita_cq194; assert_in_epsilon(21484.879997352684, worksheet.costpercapita_cq194, 0.001); end
   def test_costpercapita_cr194; assert_equal("ok", worksheet.costpercapita_cr194); end
   def test_costpercapita_c195; assert_equal("Industry", worksheet.costpercapita_c195); end
   def test_costpercapita_e195; assert_in_epsilon(11.206311627764773, worksheet.costpercapita_e195, 0.001); end
@@ -23438,46 +24049,46 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq195; assert_in_epsilon(234.71474950314064, worksheet.costpercapita_aq195, 0.001); end
   def test_costpercapita_as195; assert_in_epsilon(213.83410103372435, worksheet.costpercapita_as195, 0.001); end
   def test_costpercapita_at195; assert_in_epsilon(4441.647328194977, worksheet.costpercapita_at195, 0.001); end
-  def test_costpercapita_ay195; assert_in_epsilon(4.42000834403733, worksheet.costpercapita_ay195, 0.001); end
-  def test_costpercapita_az195; assert_in_epsilon(6.7906380481818704, worksheet.costpercapita_az195, 0.001); end
-  def test_costpercapita_ba195; assert_in_epsilon(6.72168068784699, worksheet.costpercapita_ba195, 0.001); end
-  def test_costpercapita_bb195; assert_in_epsilon(6.57730695403321, worksheet.costpercapita_bb195, 0.001); end
-  def test_costpercapita_bc195; assert_in_epsilon(6.737049836821682, worksheet.costpercapita_bc195, 0.001); end
-  def test_costpercapita_bd195; assert_in_epsilon(7.332158751788356, worksheet.costpercapita_bd195, 0.001); end
-  def test_costpercapita_be195; assert_in_epsilon(8.517547721518019, worksheet.costpercapita_be195, 0.001); end
-  def test_costpercapita_bf195; assert_in_epsilon(10.67909249753862, worksheet.costpercapita_bf195, 0.001); end
-  def test_costpercapita_bg195; assert_in_epsilon(14.439276820824077, worksheet.costpercapita_bg195, 0.001); end
-  def test_costpercapita_bi195; assert_in_epsilon(4.42000834403733, worksheet.costpercapita_bi195, 0.001); end
-  def test_costpercapita_bj195; assert_in_epsilon(11.064896310984375, worksheet.costpercapita_bj195, 0.001); end
-  def test_costpercapita_bk195; assert_in_epsilon(17.424332758719512, worksheet.costpercapita_bk195, 0.001); end
-  def test_costpercapita_bl195; assert_in_epsilon(19.45580800078381, worksheet.costpercapita_bl195, 0.001); end
-  def test_costpercapita_bm195; assert_in_epsilon(19.470266560340534, worksheet.costpercapita_bm195, 0.001); end
-  def test_costpercapita_bn195; assert_in_epsilon(20.157426365570135, worksheet.costpercapita_bn195, 0.001); end
-  def test_costpercapita_bo195; assert_in_epsilon(22.13139944673794, worksheet.costpercapita_bo195, 0.001); end
-  def test_costpercapita_bp195; assert_in_epsilon(26.059380985555343, worksheet.costpercapita_bp195, 0.001); end
-  def test_costpercapita_bq195; assert_in_epsilon(33.11093778363754, worksheet.costpercapita_bq195, 0.001); end
+  def test_costpercapita_ay195; assert_in_epsilon(4.420008344037332, worksheet.costpercapita_ay195, 0.001); end
+  def test_costpercapita_az195; assert_in_epsilon(6.790638048181874, worksheet.costpercapita_az195, 0.001); end
+  def test_costpercapita_ba195; assert_in_epsilon(6.721680687846994, worksheet.costpercapita_ba195, 0.001); end
+  def test_costpercapita_bb195; assert_in_epsilon(6.577306954033212, worksheet.costpercapita_bb195, 0.001); end
+  def test_costpercapita_bc195; assert_in_epsilon(6.737049836821685, worksheet.costpercapita_bc195, 0.001); end
+  def test_costpercapita_bd195; assert_in_epsilon(7.332158751788358, worksheet.costpercapita_bd195, 0.001); end
+  def test_costpercapita_be195; assert_in_epsilon(8.517547721518023, worksheet.costpercapita_be195, 0.001); end
+  def test_costpercapita_bf195; assert_in_epsilon(10.679092497538624, worksheet.costpercapita_bf195, 0.001); end
+  def test_costpercapita_bg195; assert_in_epsilon(14.439276820824084, worksheet.costpercapita_bg195, 0.001); end
+  def test_costpercapita_bi195; assert_in_epsilon(4.420008344037332, worksheet.costpercapita_bi195, 0.001); end
+  def test_costpercapita_bj195; assert_in_epsilon(11.06489631098438, worksheet.costpercapita_bj195, 0.001); end
+  def test_costpercapita_bk195; assert_in_epsilon(17.42433275871952, worksheet.costpercapita_bk195, 0.001); end
+  def test_costpercapita_bl195; assert_in_epsilon(19.45580800078382, worksheet.costpercapita_bl195, 0.001); end
+  def test_costpercapita_bm195; assert_in_epsilon(19.47026656034054, worksheet.costpercapita_bm195, 0.001); end
+  def test_costpercapita_bn195; assert_in_epsilon(20.157426365570146, worksheet.costpercapita_bn195, 0.001); end
+  def test_costpercapita_bo195; assert_in_epsilon(22.13139944673795, worksheet.costpercapita_bo195, 0.001); end
+  def test_costpercapita_bp195; assert_in_epsilon(26.05938098555535, worksheet.costpercapita_bp195, 0.001); end
+  def test_costpercapita_bq195; assert_in_epsilon(33.11093778363755, worksheet.costpercapita_bq195, 0.001); end
   def test_costpercapita_bs195; assert_in_epsilon(200.95396022825065, worksheet.costpercapita_bs195, 0.001); end
   def test_costpercapita_bt195; assert_in_epsilon(207.25801620221654, worksheet.costpercapita_bt195, 0.001); end
   def test_costpercapita_bu195; assert_in_epsilon(213.56764472772667, worksheet.costpercapita_bu195, 0.001); end
   def test_costpercapita_bv195; assert_in_epsilon(216.1904263496199, worksheet.costpercapita_bv195, 0.001); end
-  def test_costpercapita_bw195; assert_in_epsilon(217.8044527608334, worksheet.costpercapita_bw195, 0.001); end
+  def test_costpercapita_bw195; assert_in_epsilon(217.80445276083344, worksheet.costpercapita_bw195, 0.001); end
   def test_costpercapita_bx195; assert_in_epsilon(221.1153400345562, worksheet.costpercapita_bx195, 0.001); end
   def test_costpercapita_by195; assert_in_epsilon(226.43340678429905, worksheet.costpercapita_by195, 0.001); end
   def test_costpercapita_bz195; assert_in_epsilon(234.28092363253407, worksheet.costpercapita_bz195, 0.001); end
   def test_costpercapita_ca195; assert_in_epsilon(245.86042978422154, worksheet.costpercapita_ca195, 0.001); end
   def test_costpercapita_cc195; assert_in_epsilon(220.38495561158425, worksheet.costpercapita_cc195, 0.001); end
   def test_costpercapita_cd195; assert_in_epsilon(4580.096883860678, worksheet.costpercapita_cd195, 0.001); end
-  def test_costpercapita_cf195; assert_in_epsilon(-6.786303283727442, worksheet.costpercapita_cf195, 0.001); end
-  def test_costpercapita_cg195; assert_in_delta(0.7348697323775821, worksheet.costpercapita_cg195, 0.001); end
-  def test_costpercapita_ch195; assert_in_epsilon(7.199205213163168, worksheet.costpercapita_ch195, 0.001); end
-  def test_costpercapita_ci195; assert_in_epsilon(9.45030407482951, worksheet.costpercapita_ci195, 0.001); end
-  def test_costpercapita_cj195; assert_in_epsilon(9.221759220975033, worksheet.costpercapita_cj195, 0.001); end
-  def test_costpercapita_ck195; assert_in_epsilon(9.003629881774748, worksheet.costpercapita_ck195, 0.001); end
-  def test_costpercapita_cl195; assert_in_epsilon(9.174370413009594, worksheet.costpercapita_cl195, 0.001); end
-  def test_costpercapita_cm195; assert_in_epsilon(9.814175667255357, worksheet.costpercapita_cm195, 0.001); end
-  def test_costpercapita_cn195; assert_in_epsilon(11.145680281080853, worksheet.costpercapita_cn195, 0.001); end
-  def test_costpercapita_cp195; assert_in_epsilon(6.550854577859823, worksheet.costpercapita_cp195, 0.001); end
-  def test_costpercapita_cq195; assert_in_epsilon(138.44955566570118, worksheet.costpercapita_cq195, 0.001); end
+  def test_costpercapita_cf195; assert_in_epsilon(-6.78630328372744, worksheet.costpercapita_cf195, 0.001); end
+  def test_costpercapita_cg195; assert_in_delta(0.7348697323775878, worksheet.costpercapita_cg195, 0.001); end
+  def test_costpercapita_ch195; assert_in_epsilon(7.199205213163175, worksheet.costpercapita_ch195, 0.001); end
+  def test_costpercapita_ci195; assert_in_epsilon(9.45030407482952, worksheet.costpercapita_ci195, 0.001); end
+  def test_costpercapita_cj195; assert_in_epsilon(9.221759220975038, worksheet.costpercapita_cj195, 0.001); end
+  def test_costpercapita_ck195; assert_in_epsilon(9.003629881774756, worksheet.costpercapita_ck195, 0.001); end
+  def test_costpercapita_cl195; assert_in_epsilon(9.174370413009605, worksheet.costpercapita_cl195, 0.001); end
+  def test_costpercapita_cm195; assert_in_epsilon(9.814175667255366, worksheet.costpercapita_cm195, 0.001); end
+  def test_costpercapita_cn195; assert_in_epsilon(11.145680281080868, worksheet.costpercapita_cn195, 0.001); end
+  def test_costpercapita_cp195; assert_in_epsilon(6.550854577859831, worksheet.costpercapita_cp195, 0.001); end
+  def test_costpercapita_cq195; assert_in_epsilon(138.44955566570133, worksheet.costpercapita_cq195, 0.001); end
   def test_costpercapita_cr195; assert_equal("ok", worksheet.costpercapita_cr195); end
   def test_costpercapita_c196; assert_equal("Other", worksheet.costpercapita_c196); end
   def test_costpercapita_e196; assert_in_delta(0, (worksheet.costpercapita_e196||0), 0.001); end
@@ -23519,45 +24130,45 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_as196; assert_in_epsilon(15.340989248099314, worksheet.costpercapita_as196, 0.001); end
   def test_costpercapita_at196; assert_in_epsilon(264.35018530841006, worksheet.costpercapita_at196, 0.001); end
   def test_costpercapita_ay196; assert_in_delta(0, (worksheet.costpercapita_ay196||0), 0.001); end
-  def test_costpercapita_az196; assert_in_epsilon(1.6506149814073152, worksheet.costpercapita_az196, 0.001); end
-  def test_costpercapita_ba196; assert_in_epsilon(3.9441056835851462, worksheet.costpercapita_ba196, 0.001); end
-  def test_costpercapita_bb196; assert_in_epsilon(5.1449144323454306, worksheet.costpercapita_bb196, 0.001); end
-  def test_costpercapita_bc196; assert_in_epsilon(7.687214476019396, worksheet.costpercapita_bc196, 0.001); end
-  def test_costpercapita_bd196; assert_in_epsilon(10.972791909656994, worksheet.costpercapita_bd196, 0.001); end
-  def test_costpercapita_be196; assert_in_epsilon(14.427861193523082, worksheet.costpercapita_be196, 0.001); end
-  def test_costpercapita_bf196; assert_in_epsilon(17.95017784856897, worksheet.costpercapita_bf196, 0.001); end
-  def test_costpercapita_bg196; assert_in_epsilon(21.971338705488467, worksheet.costpercapita_bg196, 0.001); end
+  def test_costpercapita_az196; assert_in_epsilon(1.6506149814073159, worksheet.costpercapita_az196, 0.001); end
+  def test_costpercapita_ba196; assert_in_epsilon(3.944105683585148, worksheet.costpercapita_ba196, 0.001); end
+  def test_costpercapita_bb196; assert_in_epsilon(5.144914432345433, worksheet.costpercapita_bb196, 0.001); end
+  def test_costpercapita_bc196; assert_in_epsilon(7.6872144760194, worksheet.costpercapita_bc196, 0.001); end
+  def test_costpercapita_bd196; assert_in_epsilon(10.972791909657, worksheet.costpercapita_bd196, 0.001); end
+  def test_costpercapita_be196; assert_in_epsilon(14.427861193523087, worksheet.costpercapita_be196, 0.001); end
+  def test_costpercapita_bf196; assert_in_epsilon(17.95017784856898, worksheet.costpercapita_bf196, 0.001); end
+  def test_costpercapita_bg196; assert_in_epsilon(21.971338705488474, worksheet.costpercapita_bg196, 0.001); end
   def test_costpercapita_bi196; assert_in_delta(0, (worksheet.costpercapita_bi196||0), 0.001); end
-  def test_costpercapita_bj196; assert_in_epsilon(1.6506149814073152, worksheet.costpercapita_bj196, 0.001); end
-  def test_costpercapita_bk196; assert_in_epsilon(5.540682583400719, worksheet.costpercapita_bk196, 0.001); end
-  def test_costpercapita_bl196; assert_in_epsilon(10.514038230467404, worksheet.costpercapita_bl196, 0.001); end
-  def test_costpercapita_bm196; assert_in_epsilon(16.409134379112796, worksheet.costpercapita_bm196, 0.001); end
-  def test_costpercapita_bn196; assert_in_epsilon(23.365402227894545, worksheet.costpercapita_bn196, 0.001); end
-  def test_costpercapita_bo196; assert_in_epsilon(32.512701122215695, worksheet.costpercapita_bo196, 0.001); end
-  def test_costpercapita_bp196; assert_in_epsilon(42.614798634785714, worksheet.costpercapita_bp196, 0.001); end
-  def test_costpercapita_bq196; assert_in_epsilon(53.4627124149893, worksheet.costpercapita_bq196, 0.001); end
+  def test_costpercapita_bj196; assert_in_epsilon(1.6506149814073159, worksheet.costpercapita_bj196, 0.001); end
+  def test_costpercapita_bk196; assert_in_epsilon(5.540682583400722, worksheet.costpercapita_bk196, 0.001); end
+  def test_costpercapita_bl196; assert_in_epsilon(10.51403823046741, worksheet.costpercapita_bl196, 0.001); end
+  def test_costpercapita_bm196; assert_in_epsilon(16.409134379112803, worksheet.costpercapita_bm196, 0.001); end
+  def test_costpercapita_bn196; assert_in_epsilon(23.365402227894553, worksheet.costpercapita_bn196, 0.001); end
+  def test_costpercapita_bo196; assert_in_epsilon(32.51270112221571, worksheet.costpercapita_bo196, 0.001); end
+  def test_costpercapita_bp196; assert_in_epsilon(42.61479863478574, worksheet.costpercapita_bp196, 0.001); end
+  def test_costpercapita_bq196; assert_in_epsilon(53.46271241498932, worksheet.costpercapita_bq196, 0.001); end
   def test_costpercapita_bs196; assert_in_delta(0, (worksheet.costpercapita_bs196||0), 0.001); end
-  def test_costpercapita_bt196; assert_in_epsilon(1.7486098577152647, worksheet.costpercapita_bt196, 0.001); end
-  def test_costpercapita_bu196; assert_in_epsilon(5.829000400080777, worksheet.costpercapita_bu196, 0.001); end
-  def test_costpercapita_bv196; assert_in_epsilon(10.96078743583184, worksheet.costpercapita_bv196, 0.001); end
-  def test_costpercapita_bw196; assert_in_epsilon(17.182202137208904, worksheet.costpercapita_bw196, 0.001); end
-  def test_costpercapita_bx196; assert_in_epsilon(24.619566273388816, worksheet.costpercapita_bx196, 0.001); end
-  def test_costpercapita_by196; assert_in_epsilon(34.35989807807241, worksheet.costpercapita_by196, 0.001); end
-  def test_costpercapita_bz196; assert_in_epsilon(45.15945323656246, worksheet.costpercapita_bz196, 0.001); end
-  def test_costpercapita_ca196; assert_in_epsilon(56.87913061965638, worksheet.costpercapita_ca196, 0.001); end
-  def test_costpercapita_cc196; assert_in_epsilon(21.859849782057424, worksheet.costpercapita_cc196, 0.001); end
-  def test_costpercapita_cd196; assert_in_epsilon(361.9962958110507, worksheet.costpercapita_cd196, 0.001); end
+  def test_costpercapita_bt196; assert_in_epsilon(1.7486098577152653, worksheet.costpercapita_bt196, 0.001); end
+  def test_costpercapita_bu196; assert_in_epsilon(5.82900040008078, worksheet.costpercapita_bu196, 0.001); end
+  def test_costpercapita_bv196; assert_in_epsilon(10.960787435831843, worksheet.costpercapita_bv196, 0.001); end
+  def test_costpercapita_bw196; assert_in_epsilon(17.182202137208908, worksheet.costpercapita_bw196, 0.001); end
+  def test_costpercapita_bx196; assert_in_epsilon(24.619566273388827, worksheet.costpercapita_bx196, 0.001); end
+  def test_costpercapita_by196; assert_in_epsilon(34.359898078072426, worksheet.costpercapita_by196, 0.001); end
+  def test_costpercapita_bz196; assert_in_epsilon(45.159453236562484, worksheet.costpercapita_bz196, 0.001); end
+  def test_costpercapita_ca196; assert_in_epsilon(56.87913061965641, worksheet.costpercapita_ca196, 0.001); end
+  def test_costpercapita_cc196; assert_in_epsilon(21.859849782057438, worksheet.costpercapita_cc196, 0.001); end
+  def test_costpercapita_cd196; assert_in_epsilon(361.99629581105086, worksheet.costpercapita_cd196, 0.001); end
   def test_costpercapita_cf196; assert_in_delta(0, (worksheet.costpercapita_cf196||0), 0.001); end
-  def test_costpercapita_cg196; assert_in_delta(-0.8603267751702336, worksheet.costpercapita_cg196, 0.001); end
-  def test_costpercapita_ch196; assert_in_delta(-0.45915369872554646, worksheet.costpercapita_ch196, 0.001); end
-  def test_costpercapita_ci196; assert_in_epsilon(2.6875125853528603, worksheet.costpercapita_ci196, 0.001); end
-  def test_costpercapita_cj196; assert_in_epsilon(4.715221481783169, worksheet.costpercapita_cj196, 0.001); end
-  def test_costpercapita_ck196; assert_in_epsilon(6.6734166936888855, worksheet.costpercapita_ck196, 0.001); end
-  def test_costpercapita_cl196; assert_in_epsilon(10.564809253432164, worksheet.costpercapita_cl196, 0.001); end
-  def test_costpercapita_cm196; assert_in_epsilon(15.308702661067548, worksheet.costpercapita_cm196, 0.001); end
-  def test_costpercapita_cn196; assert_in_epsilon(20.03956260419418, worksheet.costpercapita_cn196, 0.001); end
-  def test_costpercapita_cp196; assert_in_epsilon(6.518860533958114, worksheet.costpercapita_cp196, 0.001); end
-  def test_costpercapita_cq196; assert_in_epsilon(97.64611050264065, worksheet.costpercapita_cq196, 0.001); end
+  def test_costpercapita_cg196; assert_in_delta(-0.860326775170233, worksheet.costpercapita_cg196, 0.001); end
+  def test_costpercapita_ch196; assert_in_delta(-0.4591536987255439, worksheet.costpercapita_ch196, 0.001); end
+  def test_costpercapita_ci196; assert_in_epsilon(2.687512585352865, worksheet.costpercapita_ci196, 0.001); end
+  def test_costpercapita_cj196; assert_in_epsilon(4.715221481783175, worksheet.costpercapita_cj196, 0.001); end
+  def test_costpercapita_ck196; assert_in_epsilon(6.673416693688895, worksheet.costpercapita_ck196, 0.001); end
+  def test_costpercapita_cl196; assert_in_epsilon(10.564809253432177, worksheet.costpercapita_cl196, 0.001); end
+  def test_costpercapita_cm196; assert_in_epsilon(15.30870266106757, worksheet.costpercapita_cm196, 0.001); end
+  def test_costpercapita_cn196; assert_in_epsilon(20.039562604194202, worksheet.costpercapita_cn196, 0.001); end
+  def test_costpercapita_cp196; assert_in_epsilon(6.518860533958123, worksheet.costpercapita_cp196, 0.001); end
+  def test_costpercapita_cq196; assert_in_epsilon(97.64611050264081, worksheet.costpercapita_cq196, 0.001); end
   def test_costpercapita_cr196; assert_equal("ok", worksheet.costpercapita_cr196); end
   def test_costpercapita_c197; assert_equal("Total", worksheet.costpercapita_c197); end
   def test_costpercapita_e197; assert_in_epsilon(2211.4496871112906, worksheet.costpercapita_e197, 0.001); end
@@ -23598,49 +24209,49 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_aq197; assert_in_epsilon(9829.333982519547, worksheet.costpercapita_aq197, 0.001); end
   def test_costpercapita_as197; assert_in_epsilon(7074.193383812491, worksheet.costpercapita_as197, 0.001); end
   def test_costpercapita_at197; assert_in_epsilon(140522.7523137747, worksheet.costpercapita_at197, 0.001); end
-  def test_costpercapita_ay197; assert_in_epsilon(852.8670049256807, worksheet.costpercapita_ay197, 0.001); end
-  def test_costpercapita_az197; assert_in_epsilon(1493.2755544249471, worksheet.costpercapita_az197, 0.001); end
-  def test_costpercapita_ba197; assert_in_epsilon(1631.881217764369, worksheet.costpercapita_ba197, 0.001); end
-  def test_costpercapita_bb197; assert_in_epsilon(2390.966263366243, worksheet.costpercapita_bb197, 0.001); end
-  def test_costpercapita_bc197; assert_in_epsilon(2644.6250363910262, worksheet.costpercapita_bc197, 0.001); end
-  def test_costpercapita_bd197; assert_in_epsilon(2664.9424393679137, worksheet.costpercapita_bd197, 0.001); end
-  def test_costpercapita_be197; assert_in_epsilon(2829.1030833403624, worksheet.costpercapita_be197, 0.001); end
-  def test_costpercapita_bf197; assert_in_epsilon(3337.5196819700586, worksheet.costpercapita_bf197, 0.001); end
-  def test_costpercapita_bg197; assert_in_epsilon(3693.9652049894175, worksheet.costpercapita_bg197, 0.001); end
-  def test_costpercapita_bi197; assert_in_epsilon(852.8670049256807, worksheet.costpercapita_bi197, 0.001); end
-  def test_costpercapita_bj197; assert_in_epsilon(2265.394290300884, worksheet.costpercapita_bj197, 0.001); end
-  def test_costpercapita_bk197; assert_in_epsilon(3701.178542791225, worksheet.costpercapita_bk197, 0.001); end
-  def test_costpercapita_bl197; assert_in_epsilon(5352.694668029385, worksheet.costpercapita_bl197, 0.001); end
-  def test_costpercapita_bm197; assert_in_epsilon(6854.601213517992, worksheet.costpercapita_bm197, 0.001); end
-  def test_costpercapita_bn197; assert_in_epsilon(8199.060369239134, worksheet.costpercapita_bn197, 0.001); end
-  def test_costpercapita_bo197; assert_in_epsilon(8795.572063356058, worksheet.costpercapita_bo197, 0.001); end
-  def test_costpercapita_bp197; assert_in_epsilon(9922.43414018851, worksheet.costpercapita_bp197, 0.001); end
-  def test_costpercapita_bq197; assert_in_epsilon(10677.587086431795, worksheet.costpercapita_bq197, 0.001); end
+  def test_costpercapita_ay197; assert_in_epsilon(852.8670049256812, worksheet.costpercapita_ay197, 0.001); end
+  def test_costpercapita_az197; assert_in_epsilon(1493.275554424948, worksheet.costpercapita_az197, 0.001); end
+  def test_costpercapita_ba197; assert_in_epsilon(1631.8812177643697, worksheet.costpercapita_ba197, 0.001); end
+  def test_costpercapita_bb197; assert_in_epsilon(2390.9662633662438, worksheet.costpercapita_bb197, 0.001); end
+  def test_costpercapita_bc197; assert_in_epsilon(2644.625036391027, worksheet.costpercapita_bc197, 0.001); end
+  def test_costpercapita_bd197; assert_in_epsilon(2664.9424393679146, worksheet.costpercapita_bd197, 0.001); end
+  def test_costpercapita_be197; assert_in_epsilon(2829.103083340364, worksheet.costpercapita_be197, 0.001); end
+  def test_costpercapita_bf197; assert_in_epsilon(3337.5196819700604, worksheet.costpercapita_bf197, 0.001); end
+  def test_costpercapita_bg197; assert_in_epsilon(3693.965204989419, worksheet.costpercapita_bg197, 0.001); end
+  def test_costpercapita_bi197; assert_in_epsilon(852.8670049256812, worksheet.costpercapita_bi197, 0.001); end
+  def test_costpercapita_bj197; assert_in_epsilon(2265.394290300885, worksheet.costpercapita_bj197, 0.001); end
+  def test_costpercapita_bk197; assert_in_epsilon(3701.1785427912264, worksheet.costpercapita_bk197, 0.001); end
+  def test_costpercapita_bl197; assert_in_epsilon(5352.694668029389, worksheet.costpercapita_bl197, 0.001); end
+  def test_costpercapita_bm197; assert_in_epsilon(6854.6012135179935, worksheet.costpercapita_bm197, 0.001); end
+  def test_costpercapita_bn197; assert_in_epsilon(8199.060369239138, worksheet.costpercapita_bn197, 0.001); end
+  def test_costpercapita_bo197; assert_in_epsilon(8795.57206335606, worksheet.costpercapita_bo197, 0.001); end
+  def test_costpercapita_bp197; assert_in_epsilon(9922.434140188514, worksheet.costpercapita_bp197, 0.001); end
+  def test_costpercapita_bq197; assert_in_epsilon(10677.5870864318, worksheet.costpercapita_bq197, 0.001); end
   def test_costpercapita_bs197; assert_in_epsilon(3337.183565031221, worksheet.costpercapita_bs197, 0.001); end
-  def test_costpercapita_bt197; assert_in_epsilon(4887.750647644397, worksheet.costpercapita_bt197, 0.001); end
-  def test_costpercapita_bu197; assert_in_epsilon(6430.3181081758075, worksheet.costpercapita_bu197, 0.001); end
-  def test_costpercapita_bv197; assert_in_epsilon(8454.419223099076, worksheet.costpercapita_bv197, 0.001); end
-  def test_costpercapita_bw197; assert_in_epsilon(10223.806412767657, worksheet.costpercapita_bw197, 0.001); end
-  def test_costpercapita_bx197; assert_in_epsilon(11709.4140457849, worksheet.costpercapita_bx197, 0.001); end
-  def test_costpercapita_by197; assert_in_epsilon(12428.171467023272, worksheet.costpercapita_by197, 0.001); end
+  def test_costpercapita_bt197; assert_in_epsilon(4887.750647644398, worksheet.costpercapita_bt197, 0.001); end
+  def test_costpercapita_bu197; assert_in_epsilon(6430.318108175808, worksheet.costpercapita_bu197, 0.001); end
+  def test_costpercapita_bv197; assert_in_epsilon(8454.419223099077, worksheet.costpercapita_bv197, 0.001); end
+  def test_costpercapita_bw197; assert_in_epsilon(10223.80641276766, worksheet.costpercapita_bw197, 0.001); end
+  def test_costpercapita_bx197; assert_in_epsilon(11709.414045784906, worksheet.costpercapita_bx197, 0.001); end
+  def test_costpercapita_by197; assert_in_epsilon(12428.171467023276, worksheet.costpercapita_by197, 0.001); end
   def test_costpercapita_bz197; assert_in_epsilon(13820.769664584213, worksheet.costpercapita_bz197, 0.001); end
-  def test_costpercapita_ca197; assert_in_epsilon(14795.488939385988, worksheet.costpercapita_ca197, 0.001); end
-  def test_costpercapita_cc197; assert_in_epsilon(9565.25800816628, worksheet.costpercapita_cc197, 0.001); end
-  def test_costpercapita_cd197; assert_in_epsilon(185392.1564507046, worksheet.costpercapita_cd197, 0.001); end
-  def test_costpercapita_cf197; assert_in_epsilon(-1358.5826821856097, worksheet.costpercapita_cf197, 0.001); end
-  def test_costpercapita_cg197; assert_in_epsilon(-65.18365534273119, worksheet.costpercapita_cg197, 0.001); end
-  def test_costpercapita_ch197; assert_in_epsilon(1159.5834907840867, worksheet.costpercapita_ch197, 0.001); end
-  def test_costpercapita_ci197; assert_in_epsilon(1665.3155884633106, worksheet.costpercapita_ci197, 0.001); end
-  def test_costpercapita_cj197; assert_in_epsilon(2791.061228499772, worksheet.costpercapita_cj197, 0.001); end
-  def test_costpercapita_ck197; assert_in_epsilon(4089.1339393709072, worksheet.costpercapita_ck197, 0.001); end
-  def test_costpercapita_cl197; assert_in_epsilon(4413.120955134363, worksheet.costpercapita_cl197, 0.001); end
-  def test_costpercapita_cm197; assert_in_epsilon(4758.97779759358, worksheet.costpercapita_cm197, 0.001); end
-  def test_costpercapita_cn197; assert_in_epsilon(4966.154956866441, worksheet.costpercapita_cn197, 0.001); end
-  def test_costpercapita_cp197; assert_in_epsilon(2491.064624353791, worksheet.costpercapita_cp197, 0.001); end
-  def test_costpercapita_cq197; assert_in_epsilon(44869.404136929945, worksheet.costpercapita_cq197, 0.001); end
+  def test_costpercapita_ca197; assert_in_epsilon(14795.488939385992, worksheet.costpercapita_ca197, 0.001); end
+  def test_costpercapita_cc197; assert_in_epsilon(9565.258008166284, worksheet.costpercapita_cc197, 0.001); end
+  def test_costpercapita_cd197; assert_in_epsilon(185392.1564507047, worksheet.costpercapita_cd197, 0.001); end
+  def test_costpercapita_cf197; assert_in_epsilon(-1358.5826821856092, worksheet.costpercapita_cf197, 0.001); end
+  def test_costpercapita_cg197; assert_in_epsilon(-65.1836553427302, worksheet.costpercapita_cg197, 0.001); end
+  def test_costpercapita_ch197; assert_in_epsilon(1159.5834907840883, worksheet.costpercapita_ch197, 0.001); end
+  def test_costpercapita_ci197; assert_in_epsilon(1665.3155884633127, worksheet.costpercapita_ci197, 0.001); end
+  def test_costpercapita_cj197; assert_in_epsilon(2791.0612284997746, worksheet.costpercapita_cj197, 0.001); end
+  def test_costpercapita_ck197; assert_in_epsilon(4089.1339393709104, worksheet.costpercapita_ck197, 0.001); end
+  def test_costpercapita_cl197; assert_in_epsilon(4413.120955134367, worksheet.costpercapita_cl197, 0.001); end
+  def test_costpercapita_cm197; assert_in_epsilon(4758.977797593584, worksheet.costpercapita_cm197, 0.001); end
+  def test_costpercapita_cn197; assert_in_epsilon(4966.154956866446, worksheet.costpercapita_cn197, 0.001); end
+  def test_costpercapita_cp197; assert_in_epsilon(2491.0646243537935, worksheet.costpercapita_cp197, 0.001); end
+  def test_costpercapita_cq197; assert_in_epsilon(44869.404136929996, worksheet.costpercapita_cq197, 0.001); end
   def test_costpercapita_cr197; assert_equal("ok", worksheet.costpercapita_cr197); end
   def test_costpercapita_e198; assert_equal("ok", worksheet.costpercapita_e198); end
-  def test_costpercapita_f198; assert_in_delta(9.094947017729282e-13, worksheet.costpercapita_f198, 0.001); end
+  def test_costpercapita_f198; assert_equal("ok", worksheet.costpercapita_f198); end
   def test_costpercapita_g198; assert_equal("ok", worksheet.costpercapita_g198); end
   def test_costpercapita_h198; assert_equal("ok", worksheet.costpercapita_h198); end
   def test_costpercapita_i198; assert_equal("ok", worksheet.costpercapita_i198); end
@@ -23657,7 +24268,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_u198; assert_equal("ok", worksheet.costpercapita_u198); end
   def test_costpercapita_v198; assert_equal("ok", worksheet.costpercapita_v198); end
   def test_costpercapita_w198; assert_equal("ok", worksheet.costpercapita_w198); end
-  def test_costpercapita_y198; assert_in_delta(1.1368683772161603e-13, worksheet.costpercapita_y198, 0.001); end
+  def test_costpercapita_y198; assert_equal("ok", worksheet.costpercapita_y198); end
   def test_costpercapita_z198; assert_equal("ok", worksheet.costpercapita_z198); end
   def test_costpercapita_aa198; assert_equal("ok", worksheet.costpercapita_aa198); end
   def test_costpercapita_ab198; assert_equal("ok", worksheet.costpercapita_ab198); end
@@ -23673,7 +24284,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_am198; assert_equal("ok", worksheet.costpercapita_am198); end
   def test_costpercapita_an198; assert_equal("ok", worksheet.costpercapita_an198); end
   def test_costpercapita_ao198; assert_equal("ok", worksheet.costpercapita_ao198); end
-  def test_costpercapita_ap198; assert_in_delta(-1.8189894035458565e-12, worksheet.costpercapita_ap198, 0.001); end
+  def test_costpercapita_ap198; assert_equal("ok", worksheet.costpercapita_ap198); end
   def test_costpercapita_aq198; assert_equal("ok", worksheet.costpercapita_aq198); end
   def test_costpercapita_as198; assert_equal("ok", worksheet.costpercapita_as198); end
   def test_costpercapita_at198; assert_equal("ok", worksheet.costpercapita_at198); end
@@ -23688,7 +24299,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_bg198; assert_equal("ok", worksheet.costpercapita_bg198); end
   def test_costpercapita_bi198; assert_equal("ok", worksheet.costpercapita_bi198); end
   def test_costpercapita_bj198; assert_equal("ok", worksheet.costpercapita_bj198); end
-  def test_costpercapita_bk198; assert_in_delta(4.547473508864641e-13, worksheet.costpercapita_bk198, 0.001); end
+  def test_costpercapita_bk198; assert_equal("ok", worksheet.costpercapita_bk198); end
   def test_costpercapita_bl198; assert_equal("ok", worksheet.costpercapita_bl198); end
   def test_costpercapita_bm198; assert_equal("ok", worksheet.costpercapita_bm198); end
   def test_costpercapita_bn198; assert_equal("ok", worksheet.costpercapita_bn198); end
@@ -23707,7 +24318,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cc198; assert_equal("ok", worksheet.costpercapita_cc198); end
   def test_costpercapita_cd198; assert_equal("ok", worksheet.costpercapita_cd198); end
   def test_costpercapita_cf198; assert_equal("ok", worksheet.costpercapita_cf198); end
-  def test_costpercapita_cg198; assert_in_delta(-1.2789769243681803e-13, worksheet.costpercapita_cg198, 0.001); end
+  def test_costpercapita_cg198; assert_equal("ok", worksheet.costpercapita_cg198); end
   def test_costpercapita_ch198; assert_equal("ok", worksheet.costpercapita_ch198); end
   def test_costpercapita_ci198; assert_equal("ok", worksheet.costpercapita_ci198); end
   def test_costpercapita_cj198; assert_equal("ok", worksheet.costpercapita_cj198); end
@@ -23716,7 +24327,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_cm198; assert_equal("ok", worksheet.costpercapita_cm198); end
   def test_costpercapita_cn198; assert_equal("ok", worksheet.costpercapita_cn198); end
   def test_costpercapita_cp198; assert_equal("ok", worksheet.costpercapita_cp198); end
-  def test_costpercapita_cq198; assert_in_delta(-7.275957614183426e-12, worksheet.costpercapita_cq198, 0.001); end
+  def test_costpercapita_cq198; assert_equal("ok", worksheet.costpercapita_cq198); end
 
   # start of CostAbsolute
 
@@ -23729,7 +24340,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_aq_outputs_d4; assert_in_epsilon(100, worksheet.aq_outputs_d4, 0.001); end
   def test_aq_outputs_c5; assert_equal("Low innovation", worksheet.aq_outputs_c5); end
   def test_aq_outputs_e5; assert_in_epsilon(61.66510555736936, worksheet.aq_outputs_e5, 0.001); end
-  def test_aq_outputs_f5; assert_in_epsilon(32.571834573208065, worksheet.aq_outputs_f5, 0.001); end
+  def test_aq_outputs_f5; assert_in_epsilon(32.57183457320807, worksheet.aq_outputs_f5, 0.001); end
   def test_aq_outputs_c6; assert_equal("High innovation", worksheet.aq_outputs_c6); end
   def test_aq_outputs_e6; assert_in_epsilon(23.45163011927837, worksheet.aq_outputs_e6, 0.001); end
   def test_aq_outputs_f6; assert_in_epsilon(10.215047952339958, worksheet.aq_outputs_f6, 0.001); end

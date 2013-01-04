@@ -11,7 +11,11 @@ class Decc2050ModelUtilities
   
   def convert_float_to_letters(array)
     array.map do |entry|
-      entry.is_a?(Float) ? FLOAT_TO_LETTER_MAP[entry] || entry : entry
+      case entry
+      when Float; FLOAT_TO_LETTER_MAP[entry] || entry
+      when nil; 0
+      else entry
+      end
     end
   end
   
