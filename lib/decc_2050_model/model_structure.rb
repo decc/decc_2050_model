@@ -75,7 +75,7 @@ class ModelStructure < Decc2050ModelUtilities
   end
 
   # FIXME: Only wraps one line into two
-  def wrap(string, wrap_at_length = 42)
+  def wrap(string, wrap_at_length = 45)
     return "" unless string
     string = string.to_s
     length_so_far = 0

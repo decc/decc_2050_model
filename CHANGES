@@ -1,3 +1,9 @@
+# 3.4.5
+
+1. Updated the underlying model to version 3.4.5 which now has full details about the example pathways accessible through model_structure
+2. Make sure the model last modified date updates each time the excel is recompiled
+3. Gem version now set automatically from excel model
+
 # 3.4.4
 
 1. Updated the underlying Excel model to version 3.4.4, which shifts some references
