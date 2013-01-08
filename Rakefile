@@ -1,7 +1,7 @@
 task :default => :generate_new_mode_from_excel
 
 desc "Update all the code, based on the spreadsheet in spreadsheet/2050Model.xlsx"
-task :generate_new_mode_from_excel => [:clean,'ext/decc_2050_model.c',:put_generated_files_in_right_place,:fix_test_require]
+task :generate_new_mode_from_excel => [:clean,'ext/decc_2050_model.c',:put_generated_files_in_right_place,:fix_test_require, :change_last_modified_date]
 
 desc "Generates c version of 2050 pathways model"
 file 'ext/decc_2050_model.c' do
