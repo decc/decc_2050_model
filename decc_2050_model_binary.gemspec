@@ -1,7 +1,14 @@
+require './lib/decc_2050_model'
+
+version = ModelStructure.instance.reported_calculator_version[/\d+\.\d+\.\d+/]
+if `git status --porcelain | wc -l`.to_i > 0
+  version = version + "pre"
+end
+
 Gem::Specification.new do |s|
   s.name = "decc_2050_model"
   s.required_ruby_version = "~>1.9.1"
-  s.version = '3.4.4pre'
+  s.version = version
   s.add_dependency('ffi','>= 1.0.11')
   s.add_development_dependency('excel_to_code')
   s.author = "Thomas Counsell, Department of Energy and Climate Change, Her Majesty's Government, UK"
