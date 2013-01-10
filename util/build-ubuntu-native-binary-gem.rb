@@ -10,6 +10,7 @@
 # the master branch of http://github.com/decc/decc_2050_model.git 
 
 branch = ARGV[0] || "master"
+server_name = ARGV[1] || "decc_2050_model_gem_build_#{branch}"
 
 require 'fog'
 require 'pry'
@@ -30,22 +31,28 @@ connection =  Fog::Compute.new({
   :provider => 'AWS',
 })
 
-
-# This sets up an Ubuntu 12.0.4 Precise high compute instance 
-# As of 22/July/2012 this costs $0.744 per Hour
-puts "Bootstrapping a server"
-server = connection.servers.bootstrap(
-  #:image_id => 'ami-1de8d369', # Ubuntu 12.04
-  :image_id => 'ami-41cacb35', # Ubuntu 11.10
-  :flavor_id=> 'c1.xlarge',
-  :private_key_path => '~/.ssh/id_rsa', # Change this if you use something else
-  :public_key_path => '~/.ssh/id_rsa.pub', # Change this if you use something else
-  :username => 'ubuntu'
-)
+servers = connection.servers.all('tag:Name' => server_name)
+# FIXME: Needs to check if existing servers are terminated or available!
+if servers.empty?
+  # This sets up an Ubuntu 12.0.4 Precise high compute instance 
+  # As of 22/July/2012 this costs $0.744 per Hour
+  puts "Bootstrapping a server"
+  server = connection.servers.bootstrap(
+    #:image_id => 'ami-1de8d369', # Ubuntu 12.04
+    :image_id => 'ami-41cacb35', # Ubuntu 11.10
+    :flavor_id=> 'c1.xlarge',
+    :private_key_path => '~/.ssh/id_rsa', # Change this if you use something else
+    :public_key_path => '~/.ssh/id_rsa.pub', # Change this if you use something else
+    :username => 'ubuntu',
+    :tags => { 'Name' => server_name }
+  )
+else
+  server = servers.first
+  puts "Retrieving server #{server.dns_name}"
+end
 
 puts "Waiting for server to be ready"
 server.wait_for { ready? }
-
 puts "Sever ready"
 
 puts "You can now:"
@@ -71,7 +78,9 @@ git clone http://github.com/decc/decc_2050_model.git
 sudo gem install --no-ri --no-rdoc bundler
 
 # Compile and build
-cd ~/decc_2050_model
+pwd
+cd /home/ubuntu/decc_2050_model
+pwd
 git checkout #{branch}
 bundle
 cd ext
@@ -80,18 +89,24 @@ cd ..
 gem build decc_2050_model_binary.gemspec
 EOT
 
+require 'tempfile'
+script = Tempfile.new 'setup'
+script.puts commands
+script.close
+
+puts "Uploading setup code"
+server.scp_upload(script.path,'setup.sh')
+
 puts "Running setup code"
-commands.lines do |command|
-  command.strip!
-  puts command
-  results = server.ssh(command)
-  results.each { |r| r.display_stdout }
-  results.each { |r| r.display_stderr }
-end
+results = server.ssh('sh setup.sh')
+results.each { |r| r.display_stdout }
+results.each { |r| r.display_stderr }
+
 puts "Server setup"
-gem_name = server.ssh("ls | grep .gem$").stdout.strip
+gem_name = server.ssh("ls decc_2050_model | grep .gem$").first.stdout.strip
+
 puts "Tyring to download gem #{gem_name}"
-server.scp_download(gem_name,".")
+server.scp_download("decc_2050_model/#{gem_name}",".")
 puts "Downloaded"
 
 puts "Tearing down server"
