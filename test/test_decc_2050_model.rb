@@ -10,7 +10,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def init_spreadsheet; Decc2050ModelShim.new end
 
   # start of Control
-  def test_control_m1; assert_equal("Version 3.4.5", worksheet.control_m1); end
+  def test_control_m1; assert_equal("Version 3.4.6", worksheet.control_m1); end
   def test_control_m4; assert_equal("Doesn't tackle climate change (All at level 1)", worksheet.control_m4); end
   def test_control_n4; assert_equal("Maximium demand, no supply", worksheet.control_n4); end
   def test_control_o4; assert_equal("Maximum supply, no demand", worksheet.control_o4); end
@@ -8738,7 +8738,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av1; assert_equal("Loan", worksheet.costpercapita_av1); end
   def test_costpercapita_ay1; assert_equal("Finance cost for capital spent in that period", worksheet.costpercapita_ay1); end
   def test_costpercapita_bi1; assert_equal("Finance cost for outstanding capital", worksheet.costpercapita_bi1); end
-  def test_costpercapita_bs1; assert_equal("Total cost (ammortised capital)", worksheet.costpercapita_bs1); end
+  def test_costpercapita_bs1; assert_equal("Total cost (amortised capital)", worksheet.costpercapita_bs1); end
   def test_costpercapita_cc1; assert_equal("Amortised Capital", worksheet.costpercapita_cc1); end
   def test_costpercapita_cf1; assert_equal("Extra cost due to financing capital, compared with doing it out of cash", worksheet.costpercapita_cf1); end
   def test_costpercapita_cp1; assert_equal("Extra cost due to financing capital, compared with doing it out of cash", worksheet.costpercapita_cp1); end
@@ -13119,7 +13119,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av55; assert_equal("Loan", worksheet.costpercapita_av55); end
   def test_costpercapita_ay55; assert_equal("Finance cost for capital spent in that period", worksheet.costpercapita_ay55); end
   def test_costpercapita_bi55; assert_equal("Finance cost for outstanding capital", worksheet.costpercapita_bi55); end
-  def test_costpercapita_br55; assert_equal("Total cost (ammortised capital)", worksheet.costpercapita_br55); end
+  def test_costpercapita_br55; assert_equal("Total cost (amortised capital)", worksheet.costpercapita_br55); end
   def test_costpercapita_cc55; assert_equal("Amortised Capital", worksheet.costpercapita_cc55); end
   def test_costpercapita_cf55; assert_equal("Extra cost due to financing capital, compared with doing it out of cash", worksheet.costpercapita_cf55); end
   def test_costpercapita_cp55; assert_equal("Extra cost due to financing capital, compared with doing it out of cash", worksheet.costpercapita_cp55); end
@@ -17511,7 +17511,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av110; assert_equal("Loan", worksheet.costpercapita_av110); end
   def test_costpercapita_ay110; assert_equal("Finance cost for capital spent in that period", worksheet.costpercapita_ay110); end
   def test_costpercapita_bi110; assert_equal("Finance cost for outstanding capital", worksheet.costpercapita_bi110); end
-  def test_costpercapita_br110; assert_equal("Total cost (ammortised capital)", worksheet.costpercapita_br110); end
+  def test_costpercapita_br110; assert_equal("Total cost (amortised capital)", worksheet.costpercapita_br110); end
   def test_costpercapita_cc110; assert_equal("Amortised Capital", worksheet.costpercapita_cc110); end
   def test_costpercapita_cf110; assert_equal("Extra cost due to financing capital, compared with doing it out of cash", worksheet.costpercapita_cf110); end
   def test_costpercapita_cp110; assert_equal("Extra cost due to financing capital, compared with doing it out of cash", worksheet.costpercapita_cp110); end
@@ -21892,7 +21892,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av164; assert_equal("Loan", worksheet.costpercapita_av164); end
   def test_costpercapita_ay164; assert_equal("Repayments for capital spent in that period", worksheet.costpercapita_ay164); end
   def test_costpercapita_bi164; assert_equal("Repayments for outstanding capital", worksheet.costpercapita_bi164); end
-  def test_costpercapita_bs164; assert_equal("Total cost (ammortised capital)", worksheet.costpercapita_bs164); end
+  def test_costpercapita_bs164; assert_equal("Total cost (amortised capital)", worksheet.costpercapita_bs164); end
   def test_costpercapita_cc164; assert_equal("Amortised Capital", worksheet.costpercapita_cc164); end
   def test_costpercapita_cf164; assert_equal("Extra cost due to financing capital, compared with doing it out of cash", worksheet.costpercapita_cf164); end
   def test_costpercapita_cp164; assert_equal("Extra cost due to financing capital, compared with doing it out of cash", worksheet.costpercapita_cp164); end
@@ -22707,7 +22707,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av176; assert_equal("Loan", worksheet.costpercapita_av176); end
   def test_costpercapita_ay176; assert_equal("Repayments for capital spent in that period", worksheet.costpercapita_ay176); end
   def test_costpercapita_bi176; assert_equal("Repayments for outstanding capital", worksheet.costpercapita_bi176); end
-  def test_costpercapita_br176; assert_equal("Total cost (ammortised capital)", worksheet.costpercapita_br176); end
+  def test_costpercapita_br176; assert_equal("Total cost (amortised capital)", worksheet.costpercapita_br176); end
   def test_costpercapita_cc176; assert_equal("Amortised Capital", worksheet.costpercapita_cc176); end
   def test_costpercapita_cf176; assert_equal("Extra cost due to financing capital, compared with doing it out of cash", worksheet.costpercapita_cf176); end
   def test_costpercapita_cp176; assert_equal("Extra cost due to financing capital, compared with doing it out of cash", worksheet.costpercapita_cp176); end
@@ -23522,7 +23522,7 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_costpercapita_av188; assert_equal("Loan", worksheet.costpercapita_av188); end
   def test_costpercapita_ay188; assert_equal("Repayments for capital spent in that period", worksheet.costpercapita_ay188); end
   def test_costpercapita_bi188; assert_equal("Repayments for outstanding capital", worksheet.costpercapita_bi188); end
-  def test_costpercapita_br188; assert_equal("Total cost (ammortised capital)", worksheet.costpercapita_br188); end
+  def test_costpercapita_br188; assert_equal("Total cost (amortised capital)", worksheet.costpercapita_br188); end
   def test_costpercapita_ca188; assert_in_epsilon(850786.8913257342, worksheet.costpercapita_ca188, 0.001); end
   def test_costpercapita_cc188; assert_equal("Amortised Capital", worksheet.costpercapita_cc188); end
   def test_costpercapita_cf188; assert_equal("Extra cost due to financing capital, compared with doing it out of cash", worksheet.costpercapita_cf188); end
@@ -24337,11 +24337,11 @@ class TestDecc2050Model < Test::Unit::TestCase
   def test_aq_outputs_c4; assert_equal("Emissions in 2010", worksheet.aq_outputs_c4); end
   def test_aq_outputs_d4; assert_in_epsilon(100, worksheet.aq_outputs_d4, 0.001); end
   def test_aq_outputs_c5; assert_equal("Low innovation", worksheet.aq_outputs_c5); end
-  def test_aq_outputs_e5; assert_in_epsilon(61.810084857224076, worksheet.aq_outputs_e5, 0.001); end
+  def test_aq_outputs_e5; assert_in_epsilon(61.81008485722407, worksheet.aq_outputs_e5, 0.001); end
   def test_aq_outputs_f5; assert_in_epsilon(48.07137660549572, worksheet.aq_outputs_f5, 0.001); end
   def test_aq_outputs_c6; assert_equal("High innovation", worksheet.aq_outputs_c6); end
-  def test_aq_outputs_e6; assert_in_epsilon(23.506766665051114, worksheet.aq_outputs_e6, 0.001); end
-  def test_aq_outputs_f6; assert_in_epsilon(14.095882402221454, worksheet.aq_outputs_f6, 0.001); end
+  def test_aq_outputs_e6; assert_in_epsilon(23.50676666505111, worksheet.aq_outputs_e6, 0.001); end
+  def test_aq_outputs_f6; assert_in_epsilon(14.095882402221452, worksheet.aq_outputs_f6, 0.001); end
 
   # start of AQImpactHInv
 
