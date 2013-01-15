@@ -1,6 +1,13 @@
-require './lib/decc_2050_model'
+begin
+  # If the model has already been compiled, we can check it for its version number
+  require_relative 'lib/decc_2050_model'
 
-version = ModelStructure.instance.reported_calculator_version[/\d+\.\d+\.\d+/]
+  version = ModelStructure.instance.reported_calculator_version[/\d+\.\d+\.\d+/]
+rescue LoadError => e
+  # Otherwise we need to take it from the changes file
+  version = IO.readlines(File.join(File.dirname(__FILE__),"CHANGES")).join[/#\s*(\d+\.\d+\.\d+)\b/,1]
+end
+
 if `git status --porcelain | wc -l`.to_i > 0
   version = version + "pre"
 end

@@ -1,6 +1,6 @@
 begin
   # If the model has already been compiled, we can check it for its version number
-  require './lib/decc_2050_model'
+  require_relative 'lib/decc_2050_model'
 
   version = ModelStructure.instance.reported_calculator_version[/\d+\.\d+\.\d+/]
 rescue LoadError => e
