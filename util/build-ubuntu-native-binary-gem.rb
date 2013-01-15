@@ -86,7 +86,7 @@ bundle
 cd ext
 rake
 cd ..
-gem build decc_2050_model_binary.gemspec
+gem build decc_2050_model.gemspec.binary
 EOT
 
 require 'tempfile'
