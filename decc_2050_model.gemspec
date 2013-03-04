@@ -14,7 +14,7 @@ end
 
 Gem::Specification.new do |s|
   s.name = "decc_2050_model"
-  s.required_ruby_version = "~>1.9.1"
+  s.required_ruby_version = ">1.9.1"
   s.version = version
   s.add_dependency('ffi','>= 1.0.11')
   s.add_development_dependency('excel_to_code')
