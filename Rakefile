@@ -21,7 +21,8 @@ file 'ext/decc_2050_model.c' do
     "CostPerCapita" => :all, 
     "Land Use" => :all, 
     "Flows" => :all, 
-    "AQ Outputs" => :all, 
+    "AQ Outputs" => :all,
+    "Water Impacts" => :all, 
   }
   
   # Add the version number

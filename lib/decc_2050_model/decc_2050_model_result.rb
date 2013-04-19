@@ -24,6 +24,7 @@ class Decc2050ModelResult < Decc2050ModelUtilities
       energy_imports 
       energy_diversity
       air_quality
+      water_impacts
     end
     return pathway
   end
@@ -178,6 +179,15 @@ class Decc2050ModelResult < Decc2050ModelUtilities
     pathway['air_quality'] = {}
     pathway['air_quality']['low'] = r("aq_outputs_f6")
     pathway['air_quality']['high'] = r("aq_outputs_f5")
+  end
+  
+  def water_impacts
+    pathway['water_impacts'] = {}
+    pathway['water_impacts']['unabated'] = r("water_impacts_i163")
+    pathway['water_impacts']['ccs'] = r("water_impacts_i164")
+    pathway['water_impacts']['nuclear'] = r("water_impacts_i165")
+    pathway['water_impacts']['industry'] = r("water_impacts_i166")
+    pathway['water_impacts']['other'] = r("water_impacts_i167")
   end
   
   # Helper methods
