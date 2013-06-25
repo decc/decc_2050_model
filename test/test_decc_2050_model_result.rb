@@ -13,7 +13,7 @@ class TestDecc2050ModelResult < Test::Unit::TestCase
     tests_folder = File.join(File.dirname(__FILE__),"expected_results")
     Dir[File.join(tests_folder, "*.json")].each do |test|
       expected = IO.readlines(test)
-      pathway = expected.shift
+      pathway = expected.shift.strip
       expected = expected.join
       puts "Testing #{pathway}"
       @model.reset
