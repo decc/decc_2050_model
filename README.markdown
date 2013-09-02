@@ -37,7 +37,7 @@ Then, from the top directory of the gem:
     bundle
     bundle exec rake
   
-The next step is to check whether lib/decc_2050_model/decc_2050_model_result.rb and lib/decc_2050_model/model_structure.rb need to be altered so that they
+The next step is to check whether Rakefile, lib/decc_2050_model/decc_2050_model_result.rb and lib/decc_2050_model/model_structure.rb need to be altered so that they
 pick up the correct places in the underlying excel.
   
 The final stage is to build and install the new gem:
