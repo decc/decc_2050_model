@@ -1,3 +1,7 @@
+# 3.4.8
+
+1. Updating the underlying excel model to version 3.4.8 which alters the naming of some outputs
+
 # 3.4.7
 1. Seems to work with Ruby 2.0 so altering the gemspec to be happy with that
 
