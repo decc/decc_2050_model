@@ -1,3 +1,8 @@
+# 3.5.0
+
+1. Updated the underlying excel model to version 3.5.0 which alters bike costs
+2. Now uses excel_to_c version 0.1.20 (so should be able to translate updated spreadsheets in ruby 2.0 as well as ruby 1.9)
+
 # 3.4.8
 
 1. Updating the underlying excel model to version 3.4.8 which alters the naming of some outputs

@@ -38,7 +38,7 @@ file 'ext/decc_2050_model.c' do
   command.actually_compile_code = true
   command.actually_run_tests = true
 
-  # command.run_in_memory = true
+  command.run_in_memory = true
 
   command.go!
 end
