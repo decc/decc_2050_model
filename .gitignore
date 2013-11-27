@@ -2,7 +2,7 @@
 *.so
 *.dylib
 *.gem
-spreadsheet/2050Model
+spreadsheet/model
 ext/Makefile
 ext/test_decc_2050_model.rb
 ext/decc_2050_model.rb

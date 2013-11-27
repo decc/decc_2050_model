@@ -1,7 +1,6 @@
-require_relative "decc_2050_model/decc_2050_model"
-require_relative "decc_2050_model/decc_2050_model_utilities"
-require_relative "decc_2050_model/decc_2050_model_result"
-require_relative "decc_2050_model/model_structure"
-require_relative "decc_2050_model/model_choice"
-require_relative "decc_2050_model/model_alternative"
-require_relative "decc_2050_model/decc_2050_model_version"
+require_relative 'model'
+
+Decc2050Model = Model
+Decc2050ModelShim = ModelShim
+Decc2050ModelResult = ModelResult
+

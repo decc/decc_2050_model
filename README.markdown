@@ -30,19 +30,19 @@ First of all, you need to be working on the github version of the code, not the 
     
     git clone http://github.com/decc/decc_2050_model
 
-Then put the new spreadsheet in spreadsheet/2050Model.xlsx
+Then put the new spreadsheet in spreadsheet/model.xlsx
 
 Then, from the top directory of the gem:
   
     bundle
     bundle exec rake
   
-The next step is to check whether Rakefile, lib/decc_2050_model/decc_2050_model_result.rb and lib/decc_2050_model/model_structure.rb need to be altered so that they
+The next step is to check whether Rakefile, lib/model/_model_result.rb and lib/model/model_structure.rb need to be altered so that they
 pick up the correct places in the underlying excel.
   
 The final stage is to build and install the new gem:
     
-    gem build decc_2050_model.gemspec
+    gem build model.gemspec
     gem install decc_2050_model-<version>.gem 
 
 ... where <version> is the version number of the gem file that was created in the folder.

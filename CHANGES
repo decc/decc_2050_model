@@ -1,3 +1,8 @@
+# 3.5.1
+
+1. Updated the underlying excel model to version 3.5.1 which alters the car battery/fuel cell choice to be ABCD not 1234
+2. Renamed many files to remove the decc_2050_ prefix and many classes to remove the Decc2050 prefix. This allows quicker adaptation to other countries.
+
 # 3.5.0
 
 1. Updated the underlying excel model to version 3.5.0 which alters bike costs
