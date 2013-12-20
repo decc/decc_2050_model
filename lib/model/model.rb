@@ -116,8 +116,6 @@ module Model
 
   # use this function to reset all cell values
   attach_function 'reset', [], :void
-
-  # start of Control
   attach_function 'set_control_e5', [ExcelValue.by_value], :void
   attach_function 'set_control_e6', [ExcelValue.by_value], :void
   attach_function 'set_control_e7', [ExcelValue.by_value], :void
@@ -1615,11 +1613,7 @@ module Model
   attach_function 'control_ab59', [], ExcelValue.by_value
   attach_function 'control_ab60', [], ExcelValue.by_value
   # end of Control
-
-  # start of Preferences
   # end of Preferences
-
-  # start of Intermediate output
   attach_function 'intermediate_output_b2', [], ExcelValue.by_value
   attach_function 'intermediate_output_h3', [], ExcelValue.by_value
   attach_function 'intermediate_output_ay3', [], ExcelValue.by_value
@@ -6640,8 +6634,6 @@ module Model
   attach_function 'intermediate_output_e345', [], ExcelValue.by_value
   attach_function 'intermediate_output_f345', [], ExcelValue.by_value
   # end of Intermediate output
-
-  # start of Land Use
   attach_function 'land_use_b2', [], ExcelValue.by_value
   attach_function 'land_use_c4', [], ExcelValue.by_value
   attach_function 'land_use_d4', [], ExcelValue.by_value
@@ -6949,8 +6941,6 @@ module Model
   attach_function 'land_use_p37', [], ExcelValue.by_value
   attach_function 'land_use_q37', [], ExcelValue.by_value
   # end of Land Use
-
-  # start of Flows
   attach_function 'flows_b2', [], ExcelValue.by_value
   attach_function 'flows_q2', [], ExcelValue.by_value
   attach_function 'flows_n4', [], ExcelValue.by_value
@@ -9290,8 +9280,6 @@ module Model
   attach_function 'flows_m94', [], ExcelValue.by_value
   attach_function 'flows_n94', [], ExcelValue.by_value
   # end of Flows
-
-  # start of CostPerCapita
   attach_function 'costpercapita_b1', [], ExcelValue.by_value
   attach_function 'costpercapita_e1', [], ExcelValue.by_value
   attach_function 'costpercapita_f1', [], ExcelValue.by_value
@@ -24893,11 +24881,7 @@ module Model
   attach_function 'costpercapita_cp198', [], ExcelValue.by_value
   attach_function 'costpercapita_cq198', [], ExcelValue.by_value
   # end of CostPerCapita
-
-  # start of CostAbsolute
   # end of CostAbsolute
-
-  # start of AQ Outputs
   attach_function 'aq_outputs_b2', [], ExcelValue.by_value
   attach_function 'aq_outputs_d3', [], ExcelValue.by_value
   attach_function 'aq_outputs_e3', [], ExcelValue.by_value
@@ -24911,200 +24895,70 @@ module Model
   attach_function 'aq_outputs_e6', [], ExcelValue.by_value
   attach_function 'aq_outputs_f6', [], ExcelValue.by_value
   # end of AQ Outputs
-
-  # start of AQImpactHInv
   # end of AQImpactHInv
-
-  # start of AQImpactLInv
   # end of AQImpactLInv
-
-  # start of Other AQ Sources
   # end of Other AQ Sources
-
-  # start of Conversions
   # end of Conversions
-
-  # start of Global assumptions
   # end of Global assumptions
-
-  # start of Constants
   # end of Constants
-
-  # start of Structure of the model
   # end of Structure of the model
-
-  # start of I.a
   # end of I.a
-
-  # start of I.b
   # end of I.b
-
-  # start of II.a
   # end of II.a
-
-  # start of III.a.1
   # end of III.a.1
-
-  # start of III.a.2
   # end of III.a.2
-
-  # start of III.b
   # end of III.b
-
-  # start of III.c
   # end of III.c
-
-  # start of III.d
   # end of III.d
-
-  # start of IV.a
   # end of IV.a
-
-  # start of IV.b
   # end of IV.b
-
-  # start of IV.c
   # end of IV.c
-
-  # start of V.a
   # end of V.a
-
-  # start of V.b
   # end of V.b
-
-  # start of VI.a
   # end of VI.a
-
-  # start of VI.b
   # end of VI.b
-
-  # start of VI.c
   # end of VI.c
-
-  # start of VII.a
   # end of VII.a
-
-  # start of VII.b
   # end of VII.b
-
-  # start of VII.c
   # end of VII.c
-
-  # start of VIII.a
   # end of VIII.a
-
-  # start of IX.a
   # end of IX.a
-
-  # start of IX.c
   # end of IX.c
-
-  # start of X.a
   # end of X.a
-
-  # start of X.b
   # end of X.b
-
-  # start of XI.a
   # end of XI.a
-
-  # start of XII.a
   # end of XII.a
-
-  # start of XII.b
   # end of XII.b
-
-  # start of XII.c
   # end of XII.c
-
-  # start of XII.e
   # end of XII.e
-
-  # start of XIV.a
   # end of XIV.a
-
-  # start of XV.a
   # end of XV.a
-
-  # start of XV.b
   # end of XV.b
-
-  # start of XVI.a
   # end of XVI.a
-
-  # start of XVI.b
   # end of XVI.b
-
-  # start of XVII.a
   # end of XVII.a
-
-  # start of XVIII.a
   # end of XVIII.a
-
-  # start of 2007 (Actual, frozen)
   # end of 2007 (Actual, frozen)
-
-  # start of 2007 (Consistent)
   # end of 2007 (Consistent)
-
-  # start of 2007
   # end of 2007
-
-  # start of 2010
   # end of 2010
-
-  # start of 2015
   # end of 2015
-
-  # start of 2020
   # end of 2020
-
-  # start of 2025
   # end of 2025
-
-  # start of 2030
   # end of 2030
-
-  # start of 2035
   # end of 2035
-
-  # start of 2040
   # end of 2040
-
-  # start of 2045
   # end of 2045
-
-  # start of 2050
   # end of 2050
-
-  # start of DUKES 09 (1.2)
   # end of DUKES 09 (1.2)
-
-  # start of DUKES 09 (1.9)
   # end of DUKES 09 (1.9)
-
-  # start of DUKES 09 (2.5)
   # end of DUKES 09 (2.5)
-
-  # start of DUKES 09 (5.1)
   # end of DUKES 09 (5.1)
-
-  # start of DUKES 09 (5.6)
   # end of DUKES 09 (5.6)
-
-  # start of DUKES 09 (7.2)
   # end of DUKES 09 (7.2)
-
-  # start of DUKES 09 (7.4)
   # end of DUKES 09 (7.4)
-
-  # start of DUKES 09 (A.1)
   # end of DUKES 09 (A.1)
-
-  # start of DECC Energy Cons. (1.14)
   # end of DECC Energy Cons. (1.14)
-
-  # start of DECC Energy Cons. (4.1)
   # end of DECC Energy Cons. (4.1)
   # Start of named references
   # End of named references

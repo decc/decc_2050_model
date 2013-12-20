@@ -1,12 +1,11 @@
 # coding: utf-8
 # Test for model_result
-require 'rubygems'
 gem 'minitest'
 require 'test/unit'
 require_relative '../lib/model'
 require 'pp'
 
-class TestModelResult < Test::Unit::TestCase
+class TestModelResult < Test::Unit::Test
 
   def test_results
     @model = ModelResult.new
