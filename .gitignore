@@ -7,3 +7,5 @@ ext/Makefile
 ext/test_decc_2050_model.rb
 ext/decc_2050_model.rb
 *.swp
+*.dSYM
+*.actual

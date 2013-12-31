@@ -1,13 +1,10 @@
 # coding: utf-8
 # Test for model_result
-require 'rubygems'
-gem 'minitest'
-require 'minitest/autorun'
-
 require_relative '../lib/model'
+require 'minitest/autorun'
 require 'pp'
 
-class TestModelResult < MiniTest::Test
+class TestModelResult < Minitest::Unit::TestCase
 
   def model
     @model ||= ModelResult.new
