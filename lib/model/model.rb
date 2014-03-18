@@ -6633,6 +6633,20 @@ module Model
   attach_function 'intermediate_output_d345', [], ExcelValue.by_value
   attach_function 'intermediate_output_e345', [], ExcelValue.by_value
   attach_function 'intermediate_output_f345', [], ExcelValue.by_value
+  attach_function 'intermediate_output_ax96', [], ExcelValue.by_value
+  attach_function 'intermediate_output_ax97', [], ExcelValue.by_value
+  attach_function 'intermediate_output_ax98', [], ExcelValue.by_value
+  attach_function 'intermediate_output_ax111', [], ExcelValue.by_value
+  attach_function 'intermediate_output_f188', [], ExcelValue.by_value
+  attach_function 'intermediate_output_ax30', [], ExcelValue.by_value
+  attach_function 'intermediate_output_ax39', [], ExcelValue.by_value
+  attach_function 'intermediate_output_ax35', [], ExcelValue.by_value
+  attach_function 'intermediate_output_ax37', [], ExcelValue.by_value
+  attach_function 'intermediate_output_ax41', [], ExcelValue.by_value
+  attach_function 'intermediate_output_ax44', [], ExcelValue.by_value
+  attach_function 'intermediate_output_ax18', [], ExcelValue.by_value
+  attach_function 'intermediate_output_ax52', [], ExcelValue.by_value
+  attach_function 'intermediate_output_ax53', [], ExcelValue.by_value
   # end of Intermediate output
   attach_function 'land_use_b2', [], ExcelValue.by_value
   attach_function 'land_use_c4', [], ExcelValue.by_value
@@ -9279,6 +9293,18 @@ module Model
   attach_function 'flows_l94', [], ExcelValue.by_value
   attach_function 'flows_m94', [], ExcelValue.by_value
   attach_function 'flows_n94', [], ExcelValue.by_value
+  attach_function 'flows_c95', [], ExcelValue.by_value
+  attach_function 'flows_e95', [], ExcelValue.by_value
+  attach_function 'flows_f95', [], ExcelValue.by_value
+  attach_function 'flows_g95', [], ExcelValue.by_value
+  attach_function 'flows_h95', [], ExcelValue.by_value
+  attach_function 'flows_i95', [], ExcelValue.by_value
+  attach_function 'flows_j95', [], ExcelValue.by_value
+  attach_function 'flows_k95', [], ExcelValue.by_value
+  attach_function 'flows_l95', [], ExcelValue.by_value
+  attach_function 'flows_m95', [], ExcelValue.by_value
+  attach_function 'flows_n95', [], ExcelValue.by_value
+  attach_function 'flows_d95', [], ExcelValue.by_value
   # end of Flows
   attach_function 'costpercapita_b1', [], ExcelValue.by_value
   attach_function 'costpercapita_e1', [], ExcelValue.by_value

@@ -1,11 +1,9 @@
 # coding: utf-8
 # Test for model
-require 'rubygems'
-gem 'minitest'
 require 'minitest/autorun'
 require_relative '../lib/model'
 
-class TestModel < Minitest::Test
+class TestModel < Minitest::Unit::TestCase
   def self.runnable_methods
     puts 'Overriding minitest to run tests in a defined order'
     methods = methods_matching(/^test_/)
