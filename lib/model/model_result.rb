@@ -30,14 +30,14 @@ class ModelResult < ModelUtilities
       
   def sankey_table
     s = [] 
-    (6..94).each do |row|
+    (6..67).each do |row|
       s << [r("flows_c#{row}"),r("flows_n#{row}"),r("flows_d#{row}")]
     end
     pathway[:sankey] = s
   end
   
   def primary_energy_tables
-    pathway[:ghg] = table 182, 192
+    pathway[:ghg] = table 144, 154
     pathway[:final_energy_demand, ] = table 13, 18
     pathway[:primary_energy_supply] = table 283, 296
     pathway[:ghg][:percent_reduction_from_1990] = (r("intermediate_output_bh155") * 100).round
